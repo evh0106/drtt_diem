@@ -12,3 +12,9 @@
 | JSP | 1.2 |
 | Java | 1.4 |
 | Tomcat | 5.5 |
+
+## Troubleshooting
+- Encrypted Korean Characters - Converting EUC-KR Documents to UTF-8
+```powershell
+Get-ChildItem -Filter *.java -Recurse | ForEach-Object { $content = Get-Content $_.FullName -Encoding String; [System.IO.File]::WriteAllLines($_.FullName, $content, (New-Object System.Text.UTF8Encoding($false))) }
+```

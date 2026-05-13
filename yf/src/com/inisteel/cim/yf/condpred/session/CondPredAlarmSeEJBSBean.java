@@ -2,15 +2,15 @@
  * @(#)CondPredAlarmSeEJBSBean
  *
  * @version		V1.00
- * @author		Çö´ëÁ¦Ã¶
+ * @author		í˜„ëŒ€ì œì² 
  * @date		2025/04/17
  *
- * @description	¿­¿¬ °á·Î ¿¹Ãø(Condensation Prediction) ½Ã½ºÅÛ ¾Ë¶÷ session EJB
+ * @description	ì—´ì—° ê²°ë¡œ ì˜ˆì¸¡(Condensation Prediction) ì‹œìŠ¤í…œ ì•ŒëŒ session EJB
  * 
  * -------------------------------------------------------------------------------
- * Ver.		¼öÁ¤ÀÏÀÚ	¿äÃ»ÀÚ	¼öÁ¤ÀÚ	³»¿ë
+ * Ver.		ìˆ˜ì •ì¼ì	ìš”ì²­ì	ìˆ˜ì •ì	ë‚´ìš©
  * =======	==========	======	======	==========================================
- * V1.00	2025/04/17	Á¤Á¾±Õ	¾çÅÂÈ£	ÃÖÃÊ µî·Ï
+ * V1.00	2025/04/17	ì •ì¢…ê· 	ì–‘íƒœí˜¸	ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.yf.condpred.session;
@@ -29,7 +29,7 @@ import jspeed.base.record.JDTORecordSet;
 
 
 /**
- * [A] Å¬·¡½º¸í : ¿­¿¬ °á·Î ¿¹Ãø(Condensation Prediction) ½Ã½ºÅÛ ¾Ë¶÷ session EJB
+ * [A] í´ë˜ìŠ¤ëª… : ì—´ì—° ê²°ë¡œ ì˜ˆì¸¡(Condensation Prediction) ì‹œìŠ¤í…œ ì•ŒëŒ session EJB
  *
  * @ejb.bean name="CondPredAlarmSeEJB" jndi-name="CondPredAlarmSeEJB" type="Stateless" view-type="remote" display-name="" description=""
  * @weblogic.enable-call-by-reference True
@@ -50,16 +50,16 @@ public class CondPredAlarmSeEJBSBean extends BaseSessionBean implements CondPred
 	}
 
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¿­¿¬ °á·Î ¿¹Ãø ½Ã½ºÅÛ ¾Ë¶÷ ¸Ş½ÃÁö(¾Ë¸²Åå) ¹ß¼Û
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì—´ì—° ê²°ë¡œ ì˜ˆì¸¡ ì‹œìŠ¤í…œ ì•ŒëŒ ë©”ì‹œì§€(ì•Œë¦¼í†¡) ë°œì†¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param JDTORecord
 	 *            gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	 */
 	public JDTORecord sendAlarmMsg(JDTORecord gdReq) throws DAOException {
-		String methodNm = "¿­¿¬ °á·Î ¾Ë¶÷ ¸Ş½ÃÁö(¾Ë¸²Åå) ¹ß¼Û [CondPredAlarmSeEJB.sendAlarmMsg] < " + gdReq.getResultMsg();
+		String methodNm = "ì—´ì—° ê²°ë¡œ ì•ŒëŒ ë©”ì‹œì§€(ì•Œë¦¼í†¡) ë°œì†¡ [CondPredAlarmSeEJB.sendAlarmMsg] < " + gdReq.getResultMsg();
 		gdReq.setResultCode(commUtils.getLogId(YfConstant.YD_GP_1));
 		String logId = gdReq.getResultCode();
 
@@ -69,15 +69,15 @@ public class CondPredAlarmSeEJBSBean extends BaseSessionBean implements CondPred
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getFieldString("userid")));
 			/**********************************************************
-			 * 1. SMS Àü¼Û ¸ñ·Ï Á¶È¸
+			 * 1. SMS ì „ì†¡ ëª©ë¡ ì¡°íšŒ
 			 **********************************************************/
 			jrParam.setResultCode(logId); 		// Log ID
 			jrParam.setResultMsg(methodNm); 	// Log Method Name
 			jrParam.setField("SND_STS", "S");
-			smsListSet = commDao.select(jrParam, selAlarmMsgList, logId, methodNm, "¿­¿¬ °á·Î ¾Ë¶÷ ¸Ş½ÃÁö ¸ñ·Ï Á¶È¸");
+			smsListSet = commDao.select(jrParam, selAlarmMsgList, logId, methodNm, "ì—´ì—° ê²°ë¡œ ì•ŒëŒ ë©”ì‹œì§€ ëª©ë¡ ì¡°íšŒ");
 
 			/**********************************************************
-			 * 2. SMS Àü¼Û
+			 * 2. SMS ì „ì†¡
 			 **********************************************************/
 			if (smsListSet != null && smsListSet.size() > 0) {
 				for (int i = 0; i < smsListSet.size(); i++) {
@@ -85,11 +85,11 @@ public class CondPredAlarmSeEJBSBean extends BaseSessionBean implements CondPred
 
 					MessageSenderTalk sender = new MessageSenderTalk();
 					
-					commUtils.printParam("¿­¿¬ °á·Î ¾Ë¶÷ Àü¼Û-" + i, smsListSet.getRecord(i));
+					commUtils.printParam("ì—´ì—° ê²°ë¡œ ì•ŒëŒ ì „ì†¡-" + i, smsListSet.getRecord(i));
 					
 					String seq = commUtils.nvl(smsListSet.getRecord(i).getFieldString("SEQ"), "");
 					String yd_gp = commUtils.nvl(smsListSet.getRecord(i).getFieldString("YD_GP"), "");
-					String yd_gp_nm = (yd_gp.equals("1")) ? "¹ÚÆÇ" : (yd_gp.equals("3")) ? "1¿­¿¬" : (yd_gp.equals("J")) ? "2¿­¿¬" : "¿­¿¬";
+					String yd_gp_nm = (yd_gp.equals("1")) ? "ë°•íŒ" : (yd_gp.equals("3")) ? "1ì—´ì—°" : (yd_gp.equals("J")) ? "2ì—´ì—°" : "ì—´ì—°";
 					String send_subject = yd_gp_nm;
 					String send_content = commUtils.nvl(smsListSet.getRecord(i).getFieldString("SEND_CONTENT"), "");
 					String recv_id = commUtils.nvl(smsListSet.getRecord(i).getFieldString("RECV_ID"), "");
@@ -98,7 +98,7 @@ public class CondPredAlarmSeEJBSBean extends BaseSessionBean implements CondPred
 					recPara1 = JDTORecordFactory.getInstance().create();
 					recPara1.setField("PHONE_NUM", phone_num);
 					recPara1.setField("TMPL_CD", new String("CM1"));
-					recPara1.setField("SND_MSG", new String("[Çö´ëÁ¦Ã¶ °øÁö»çÇ×]-[" + send_subject + "]" + '\n' + send_content));
+					recPara1.setField("SND_MSG", new String("[í˜„ëŒ€ì œì²  ê³µì§€ì‚¬í•­]-[" + send_subject + "]" + '\n' + send_content));
 					recPara1.setField("SUBJECT", send_subject);
 					recPara1.setField("SMS_SND_NUM", new String(phone_num));
 					recPara1.setField("RECV_ID", recv_id);
@@ -112,7 +112,7 @@ public class CondPredAlarmSeEJBSBean extends BaseSessionBean implements CondPred
 					recPara2.setField("SND_STS", "C");
 					recPara2.setField("MODIFIER", "usryfa");
 					recPara2.setField("SEQ", seq);
-					commDao.update(recPara2, udtAlarmMsgList, logId, methodNm, "¿­¿¬ °á·Î ¾Ë¶÷ ¸Ş½ÃÁö »óÅÂ º¯°æ");
+					commDao.update(recPara2, udtAlarmMsgList, logId, methodNm, "ì—´ì—° ê²°ë¡œ ì•ŒëŒ ë©”ì‹œì§€ ìƒíƒœ ë³€ê²½");
 				}
 			}
 

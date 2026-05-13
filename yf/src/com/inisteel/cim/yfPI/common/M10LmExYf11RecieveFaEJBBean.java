@@ -32,7 +32,7 @@ import jspeed.base.util.StringHelper;
 import tmt.json.JSONException;
 
 /**
- *      [A] Å¬·¡½º¸í : RabbitMQ Yd
+ *      [A] í´ë˜ìŠ¤ëª… : RabbitMQ Yd
  * 
  * @ejb.bean name="M10LmExYf11RecieveFaEJBD" jndi-name="M10LmExYf11RecieveFaEJBD" type="Stateless"
  *           view-type="remote" display-name="" description="RabbitMQ Yd"
@@ -54,7 +54,7 @@ public class M10LmExYf11RecieveFaEJBBean extends BaseSessionBean{
 	private RabbitmqMessageBean messagBean = new RabbitmqMessageBean();   
 	
 	/**
-	 *  EJB »ı¼º½ÃÁ¡¿¡ WEBLOGIC ÄÁÅ×ÀÌ³Ê°¡ È£ÃâÇÏ´Â ¸Ş¼Òµå
+	 *  EJB ìƒì„±ì‹œì ì— WEBLOGIC ì»¨í…Œì´ë„ˆê°€ í˜¸ì¶œí•˜ëŠ” ë©”ì†Œë“œ
 	 * 
 	 * @throws javax.ejb.CreateException
 	 */

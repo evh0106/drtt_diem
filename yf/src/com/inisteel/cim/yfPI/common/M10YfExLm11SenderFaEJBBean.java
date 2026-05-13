@@ -13,7 +13,7 @@ import jspeed.base.property.PropertyService;
 import com.inisteel.cim.yd.pSlabCommon.util.PSlabYdUtils;
 
 ///**
-// *      [A] Å¬·¡½º¸í : RabbitMQ Yd-»èÁ¦
+// *      [A] í´ë˜ìŠ¤ëª… : RabbitMQ Yd-ì‚­ì œ
 // * 
 // * @ejb.bean name="M10YdExLm11SenderFaEJB" jndi-name="M10YdExLm11SenderFaEJB" type="Stateless"
 // *           view-type="remote" display-name="" description="RabbitMQ Yd"
@@ -36,9 +36,9 @@ public class M10YfExLm11SenderFaEJBBean { //extends BaseSessionBean{
 
 	
 //	/**
-//	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SendMessage:»èÁ¦ »ç¿ë ¾ÈÇÔ
+//	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SendMessage:ì‚­ì œ ì‚¬ìš© ì•ˆí•¨
 //	 * 
-//	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+//	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 //	 * @param HashMap
 //	 * @return HashMap
 //	 * @throws IOException, TimeoutException, Exception 
@@ -46,14 +46,14 @@ public class M10YfExLm11SenderFaEJBBean { //extends BaseSessionBean{
 	public HashMap SendMessageD(final HashMap paramMap) throws IOException, TimeoutException, Exception{
 
 		//logger.println(LogLevel.DEBUG_TEXT, this, "PiRabbitSenderFaEJBBean SendMessage called ");
-//		slabUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm11SenderFaEJB(¹ÚÆÇ¾ßµå¼Û½Å) SendMessage called", "S+");
+//		slabUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm11SenderFaEJB(ë°•íŒì•¼ë“œì†¡ì‹ ) SendMessage called", "S+");
 		
 		HashMap mapResult = new HashMap();
 		String keyName       = (String) paramMap.get("ROUTING_KEY_NAME");
 		String exchangeName  = (String) paramMap.get("EXCHANGENAME");
 		
 
-		// just return¿ë ¼º°ø½Ã 200¸®ÅÏ.
+		// just returnìš© ì„±ê³µì‹œ 200ë¦¬í„´.
 		mapResult.put("STATUSCODE", "200");
 		return mapResult;
 	}

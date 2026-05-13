@@ -9,21 +9,21 @@ public interface CondPredQueryIF {
 	MERGE INTO USRYFA.TB_YF_X_KMA_FCST T
 	USING (
 	  SELECT
-	      :V_PLNT_TP     AS PLNT_TP     -- °øÀå±¸ºÐ
-	    , :V_FCST_TP     AS FCST_TP     -- ´Ü±â,ÃÊ´Ü±â_±¸ºÐ
-	    , :V_FCST_LOC    AS FCST_LOC    -- ±â»óÀ§Ä¡
-	    , :V_FCST_TIME   AS FCST_TIME   -- ½Ã°£
-	    , :V_FCST_MESTM  AS FCST_MESTM  -- µî·Ï½Ã°£
-	    , :V_FCST_TEMP   AS FCST_TEMP   -- ÇöÀç½Ã°£¿Âµµ
-	    , :V_FCST_SKY    AS FCST_SKY    -- ÇÏ´Ã»óÅÂÄÚµå
-	    , :V_FCST_PTY    AS FCST_PTY    -- °­¼ö»óÅÂÄÚµå
-	    , :V_FCST_POP    AS FCST_POP    -- °­¼öÈ®·ü
-	    , :V_FCST_WSD    AS FCST_WSD    -- Ç³¼Ó
-	    , :V_FCST_VEC    AS FCST_VEC    -- Ç³Çâ
-	    , :V_FCST_REH    AS FCST_REH    -- ½Àµµ
-	    , :V_FCST_RN1    AS FCST_RN1    -- °­¼ö·®
-	    , :V_REGISTER    AS REGISTER    -- µî·ÏÀÚ
-	    , :V_MODIFIER    AS MODIFIER    -- ¼öÁ¤ÀÚ
+	      :V_PLNT_TP     AS PLNT_TP     -- ê³µìž¥êµ¬ë¶„
+	    , :V_FCST_TP     AS FCST_TP     -- ë‹¨ê¸°,ì´ˆë‹¨ê¸°_êµ¬ë¶„
+	    , :V_FCST_LOC    AS FCST_LOC    -- ê¸°ìƒìœ„ì¹˜
+	    , :V_FCST_TIME   AS FCST_TIME   -- ì‹œê°„
+	    , :V_FCST_MESTM  AS FCST_MESTM  -- ë“±ë¡ì‹œê°„
+	    , :V_FCST_TEMP   AS FCST_TEMP   -- í˜„ìž¬ì‹œê°„ì˜¨ë„
+	    , :V_FCST_SKY    AS FCST_SKY    -- í•˜ëŠ˜ìƒíƒœì½”ë“œ
+	    , :V_FCST_PTY    AS FCST_PTY    -- ê°•ìˆ˜ìƒíƒœì½”ë“œ
+	    , :V_FCST_POP    AS FCST_POP    -- ê°•ìˆ˜í™•ë¥ 
+	    , :V_FCST_WSD    AS FCST_WSD    -- í’ì†
+	    , :V_FCST_VEC    AS FCST_VEC    -- í’í–¥
+	    , :V_FCST_REH    AS FCST_REH    -- ìŠµë„
+	    , :V_FCST_RN1    AS FCST_RN1    -- ê°•ìˆ˜ëŸ‰
+	    , :V_REGISTER    AS REGISTER    -- ë“±ë¡ìž
+	    , :V_MODIFIER    AS MODIFIER    -- ìˆ˜ì •ìž
 	  FROM DUAL
 	) S
 	ON (
@@ -47,43 +47,43 @@ public interface CondPredQueryIF {
 	    , T.MOD_DDTT   = SYSDATE
 	WHEN NOT MATCHED THEN
 	  INSERT (
-	    PLNT_TP     -- °øÀå±¸ºÐ
-	  , FCST_TP     -- ´Ü±â,ÃÊ´Ü±â_±¸ºÐ
-	  , FCST_LOC    -- ±â»óÀ§Ä¡
-	  , FCST_TIME   -- ½Ã°£
-	  , FCST_MESTM  -- µî·Ï½Ã°£
-	  , FCST_TEMP   -- ÇöÀç½Ã°£¿Âµµ
-	  , FCST_SKY    -- ÇÏ´Ã»óÅÂÄÚµå
-	  , FCST_PTY    -- °­¼ö»óÅÂÄÚµå
-	  , FCST_POP    -- °­¼öÈ®·ü
-	  , FCST_WSD    -- Ç³¼Ó
-	  , FCST_VEC    -- Ç³Çâ
-	  , FCST_REH    -- ½Àµµ
-	  , FCST_RN1    -- °­¼ö·®
-	  , REGISTER    -- µî·ÏÀÚ
-	  , REG_DDTT    -- µî·ÏÀÏ½Ã
-	  , MODIFIER    -- ¼öÁ¤ÀÚ
-	  , MOD_DDTT    -- ¼öÁ¤ÀÏ½Ã
+	    PLNT_TP     -- ê³µìž¥êµ¬ë¶„
+	  , FCST_TP     -- ë‹¨ê¸°,ì´ˆë‹¨ê¸°_êµ¬ë¶„
+	  , FCST_LOC    -- ê¸°ìƒìœ„ì¹˜
+	  , FCST_TIME   -- ì‹œê°„
+	  , FCST_MESTM  -- ë“±ë¡ì‹œê°„
+	  , FCST_TEMP   -- í˜„ìž¬ì‹œê°„ì˜¨ë„
+	  , FCST_SKY    -- í•˜ëŠ˜ìƒíƒœì½”ë“œ
+	  , FCST_PTY    -- ê°•ìˆ˜ìƒíƒœì½”ë“œ
+	  , FCST_POP    -- ê°•ìˆ˜í™•ë¥ 
+	  , FCST_WSD    -- í’ì†
+	  , FCST_VEC    -- í’í–¥
+	  , FCST_REH    -- ìŠµë„
+	  , FCST_RN1    -- ê°•ìˆ˜ëŸ‰
+	  , REGISTER    -- ë“±ë¡ìž
+	  , REG_DDTT    -- ë“±ë¡ì¼ì‹œ
+	  , MODIFIER    -- ìˆ˜ì •ìž
+	  , MOD_DDTT    -- ìˆ˜ì •ì¼ì‹œ
 	  )
 	VALUES
 	  (
-	    S.PLNT_TP     -- °øÀå±¸ºÐ
-	  , S.FCST_TP     -- ´Ü±â,ÃÊ´Ü±â_±¸ºÐ
-	  , S.FCST_LOC    -- ±â»óÀ§Ä¡
-	  , S.FCST_TIME   -- ½Ã°£
-	  , S.FCST_MESTM  -- µî·Ï½Ã°£
-	  , S.FCST_TEMP   -- ÇöÀç½Ã°£¿Âµµ
-	  , S.FCST_SKY    -- ÇÏ´Ã»óÅÂÄÚµå
-	  , S.FCST_PTY    -- °­¼ö»óÅÂÄÚµå
-	  , S.FCST_POP    -- °­¼öÈ®·ü
-	  , S.FCST_WSD    -- Ç³¼Ó
-	  , S.FCST_VEC    -- Ç³Çâ
-	  , S.FCST_REH    -- ½Àµµ
-	  , S.FCST_RN1    -- °­¼ö·®
-	  , S.REGISTER    -- µî·ÏÀÚ
-	  , SYSDATE       -- µî·ÏÀÏ½Ã
-	  , S.MODIFIER    -- ¼öÁ¤ÀÚ
-	  , SYSDATE       -- ¼öÁ¤ÀÏ½Ã
+	    S.PLNT_TP     -- ê³µìž¥êµ¬ë¶„
+	  , S.FCST_TP     -- ë‹¨ê¸°,ì´ˆë‹¨ê¸°_êµ¬ë¶„
+	  , S.FCST_LOC    -- ê¸°ìƒìœ„ì¹˜
+	  , S.FCST_TIME   -- ì‹œê°„
+	  , S.FCST_MESTM  -- ë“±ë¡ì‹œê°„
+	  , S.FCST_TEMP   -- í˜„ìž¬ì‹œê°„ì˜¨ë„
+	  , S.FCST_SKY    -- í•˜ëŠ˜ìƒíƒœì½”ë“œ
+	  , S.FCST_PTY    -- ê°•ìˆ˜ìƒíƒœì½”ë“œ
+	  , S.FCST_POP    -- ê°•ìˆ˜í™•ë¥ 
+	  , S.FCST_WSD    -- í’ì†
+	  , S.FCST_VEC    -- í’í–¥
+	  , S.FCST_REH    -- ìŠµë„
+	  , S.FCST_RN1    -- ê°•ìˆ˜ëŸ‰
+	  , S.REGISTER    -- ë“±ë¡ìž
+	  , SYSDATE       -- ë“±ë¡ì¼ì‹œ
+	  , S.MODIFIER    -- ìˆ˜ì •ìž
+	  , SYSDATE       -- ìˆ˜ì •ì¼ì‹œ
 	  )
 	 * </pre>
 	 */
@@ -95,14 +95,14 @@ public interface CondPredQueryIF {
 	-- select weather forecast count list
 	-- com.inisteel.cim.yf.condpred.dao.selWthrFcstCntList
 	SELECT
-	    -- ´Ü±â ¿¹º¸
+	    -- ë‹¨ê¸° ì˜ˆë³´
 	    (
 	    SELECT
 	      COUNT(*)
 	    FROM USRYFA.TB_YF_X_KMA_FCST
 	    WHERE PLNT_TP = '2000'
 	    AND FCST_TP = '1'
-	    AND FCST_LOC = '¼Û»ê¸é'
+	    AND FCST_LOC = 'ì†¡ì‚°ë©´'
 	    AND FCST_MESTM = :V_MESTM
 	    ) AS VF1
 	  , (
@@ -111,15 +111,15 @@ public interface CondPredQueryIF {
 	    FROM USRYFA.TB_YF_X_KMA_FCST
 	    WHERE PLNT_TP = '2000'
 	    AND FCST_TP = '1'
-	    AND FCST_LOC = '¼Û¾ÇÀ¾'
+	    AND FCST_LOC = 'ì†¡ì•…ì'
 	    AND FCST_MESTM = :V_MESTM
 	    )  AS VF2
 	    
-	    -- ¾Æ·¡´Â ¼ö·® Ã¼Å© ±â´ÉÀ» ºñÈ°¼ºÇÏ¿© ÃÖ½Å ¿¹º¸¸¦ Àû¿ëÇÒ ¼ö ÀÖµµ·Ï ÇÔ.
-	    -- ÃÊ´Ü±â ½ÇÈ²
+	    -- ì•„ëž˜ëŠ” ìˆ˜ëŸ‰ ì²´í¬ ê¸°ëŠ¥ì„ ë¹„í™œì„±í•˜ì—¬ ìµœì‹  ì˜ˆë³´ë¥¼ ì ìš©í•  ìˆ˜ ìžˆë„ë¡ í•¨.
+	    -- ì´ˆë‹¨ê¸° ì‹¤í™©
 	  , 0 AS UN1
 	  , 0 AS UN2
-	    -- ÃÊ´Ü±â ¿¹º¸
+	    -- ì´ˆë‹¨ê¸° ì˜ˆë³´
 	  , 0 AS UF1
 	  , 0 AS UF2
 	FROM DUAL
@@ -135,33 +135,33 @@ public interface CondPredQueryIF {
 	MERGE INTO USRYFA.TB_YF_X_TH_MEAS T
 	USING (
 	  SELECT
-	   :V_YD_GP            AS YD_GP             -- ¾ßµå ±¸ºÐ
-	  ,:V_MEA_LOC          AS MEA_LOC           -- °á·Î±×·ìÀ§Ä¡
-	  ,:V_MEA_DH           AS MEA_DH            -- ÃøÁ¤ÀÏ½Ã
-	  ,:V_TEM_IN_LOC1      AS TEM_IN_LOC1       -- ¿Âµµ_½Ç³»(M1)
-	  ,:V_TEM_IN_LOC2      AS TEM_IN_LOC2       -- ¿Âµµ_½Ç³»(M2)
-	  ,:V_TEM_IN_LOC3      AS TEM_IN_LOC3       -- ¿Âµµ_½Ç³»(M3)
-	  ,:V_TEM_IN_LOC4      AS TEM_IN_LOC4       -- ¿Âµµ_½Ç³»(M4)
-	  ,:V_TEM_IN_LOC5      AS TEM_IN_LOC5       -- ¿Âµµ_½Ç³»(M5)
-	  ,:V_TEM_OUT_LOC1     AS TEM_OUT_LOC1      -- ¿Âµµ_½Ç¿Ü(M7)
-	  ,:V_HUM_IN_LOC1      AS HUM_IN_LOC1       -- ½Àµµ_½Ç³»(M1)
-	  ,:V_HUM_IN_LOC2      AS HUM_IN_LOC2       -- ½Àµµ_½Ç³»(M2)
-	  ,:V_HUM_IN_LOC3      AS HUM_IN_LOC3       -- ½Àµµ_½Ç³»(M3)
-	  ,:V_HUM_IN_LOC4      AS HUM_IN_LOC4       -- ½Àµµ_½Ç³»(M4)
-	  ,:V_HUM_IN_LOC5      AS HUM_IN_LOC5       -- ½Àµµ_½Ç³»(M5)
-	  ,:V_HUM_OUT_LOC1     AS HUM_OUT_LOC1      -- ½Àµµ_½Ç¿Ü(M7)
-	  ,:V_TEM_COIL_LOC1    AS TEM_COIL_LOC1     -- ¿Âµµ_ÄÚÀÏ(M1)
-	  ,:V_TEM_COIL_LOC2    AS TEM_COIL_LOC2     -- ¿Âµµ_ÄÚÀÏ(M2)
-	  ,:V_TEM_COIL_LOC3    AS TEM_COIL_LOC3     -- ¿Âµµ_ÄÚÀÏ(M3)
-	  ,:V_TEM_COIL_LOC4    AS TEM_COIL_LOC4     -- ¿Âµµ_ÄÚÀÏ(M4)
-	  ,:V_TEM_COIL_LOC5    AS TEM_COIL_LOC5     -- ¿Âµµ_ÄÚÀÏ(M5)
-	  ,:V_TEM_IN_LOC6      AS TEM_IN_LOC6       -- ¿Âµµ_½Ç³»(M6)
-	  ,:V_HUM_IN_LOC6      AS HUM_IN_LOC6       -- ½Àµµ_½Ç³»(M6)
-	  ,:V_TEM_COIL_LOC6    AS TEM_COIL_LOC6     -- ¿Âµµ_ÄÚÀÏ(M6)
-	  ,:V_REGISTER         AS REGISTER          -- µî·ÏÀÚ
-	  , SYSDATE            AS REG_DDTT          -- µî·ÏÀÏ½Ã
-	  ,:V_MODIFIER         AS MODIFIER          -- ¼öÁ¤ÀÚ
-	  , SYSDATE            AS MOD_DDTT          -- ¼öÁ¤ÀÏ½Ã
+	   :V_YD_GP            AS YD_GP             -- ì•¼ë“œ êµ¬ë¶„
+	  ,:V_MEA_LOC          AS MEA_LOC           -- ê²°ë¡œê·¸ë£¹ìœ„ì¹˜
+	  ,:V_MEA_DH           AS MEA_DH            -- ì¸¡ì •ì¼ì‹œ
+	  ,:V_TEM_IN_LOC1      AS TEM_IN_LOC1       -- ì˜¨ë„_ì‹¤ë‚´(M1)
+	  ,:V_TEM_IN_LOC2      AS TEM_IN_LOC2       -- ì˜¨ë„_ì‹¤ë‚´(M2)
+	  ,:V_TEM_IN_LOC3      AS TEM_IN_LOC3       -- ì˜¨ë„_ì‹¤ë‚´(M3)
+	  ,:V_TEM_IN_LOC4      AS TEM_IN_LOC4       -- ì˜¨ë„_ì‹¤ë‚´(M4)
+	  ,:V_TEM_IN_LOC5      AS TEM_IN_LOC5       -- ì˜¨ë„_ì‹¤ë‚´(M5)
+	  ,:V_TEM_OUT_LOC1     AS TEM_OUT_LOC1      -- ì˜¨ë„_ì‹¤ì™¸(M7)
+	  ,:V_HUM_IN_LOC1      AS HUM_IN_LOC1       -- ìŠµë„_ì‹¤ë‚´(M1)
+	  ,:V_HUM_IN_LOC2      AS HUM_IN_LOC2       -- ìŠµë„_ì‹¤ë‚´(M2)
+	  ,:V_HUM_IN_LOC3      AS HUM_IN_LOC3       -- ìŠµë„_ì‹¤ë‚´(M3)
+	  ,:V_HUM_IN_LOC4      AS HUM_IN_LOC4       -- ìŠµë„_ì‹¤ë‚´(M4)
+	  ,:V_HUM_IN_LOC5      AS HUM_IN_LOC5       -- ìŠµë„_ì‹¤ë‚´(M5)
+	  ,:V_HUM_OUT_LOC1     AS HUM_OUT_LOC1      -- ìŠµë„_ì‹¤ì™¸(M7)
+	  ,:V_TEM_COIL_LOC1    AS TEM_COIL_LOC1     -- ì˜¨ë„_ì½”ì¼(M1)
+	  ,:V_TEM_COIL_LOC2    AS TEM_COIL_LOC2     -- ì˜¨ë„_ì½”ì¼(M2)
+	  ,:V_TEM_COIL_LOC3    AS TEM_COIL_LOC3     -- ì˜¨ë„_ì½”ì¼(M3)
+	  ,:V_TEM_COIL_LOC4    AS TEM_COIL_LOC4     -- ì˜¨ë„_ì½”ì¼(M4)
+	  ,:V_TEM_COIL_LOC5    AS TEM_COIL_LOC5     -- ì˜¨ë„_ì½”ì¼(M5)
+	  ,:V_TEM_IN_LOC6      AS TEM_IN_LOC6       -- ì˜¨ë„_ì‹¤ë‚´(M6)
+	  ,:V_HUM_IN_LOC6      AS HUM_IN_LOC6       -- ìŠµë„_ì‹¤ë‚´(M6)
+	  ,:V_TEM_COIL_LOC6    AS TEM_COIL_LOC6     -- ì˜¨ë„_ì½”ì¼(M6)
+	  ,:V_REGISTER         AS REGISTER          -- ë“±ë¡ìž
+	  , SYSDATE            AS REG_DDTT          -- ë“±ë¡ì¼ì‹œ
+	  ,:V_MODIFIER         AS MODIFIER          -- ìˆ˜ì •ìž
+	  , SYSDATE            AS MOD_DDTT          -- ìˆ˜ì •ì¼ì‹œ
 	  FROM DUAL ) S
 	ON (T.YD_GP = S.YD_GP AND T.MEA_LOC = S.MEA_LOC AND T.MEA_DH = S.MEA_DH)
 	WHEN MATCHED THEN
@@ -274,7 +274,7 @@ public interface CondPredQueryIF {
 	
 	/**
 	 * <pre>
-	-- ¿­¿¬ °á·Î ¾Ë¶÷ ¸Þ½ÃÁö ¸ñ·Ï Á¶È¸
+	-- ì—´ì—° ê²°ë¡œ ì•ŒëžŒ ë©”ì‹œì§€ ëª©ë¡ ì¡°íšŒ
 	-- com.inisteel.cim.yf.condpred.dao.selAlarmMsgList
 	SELECT
 	    SEQ
@@ -295,7 +295,7 @@ public interface CondPredQueryIF {
 	
 	/**
 	 * <pre>
-	-- ¿­¿¬ °á·Î ¾Ë¶÷ ¸Þ½ÃÁö »óÅÂ º¯°æ
+	-- ì—´ì—° ê²°ë¡œ ì•ŒëžŒ ë©”ì‹œì§€ ìƒíƒœ ë³€ê²½
 	-- com.inisteel.cim.yf.condpred.dao.udtAlarmMsgList
 	UPDATE USRYFA.TB_YF_X_DEW_ALARM_MSG SET
 	    SND_STS = :V_SND_STS
@@ -309,7 +309,7 @@ public interface CondPredQueryIF {
 	
 	/**
 	 * <pre>
-	-- ¿­¿¬ °á·Î ¿¹º¸ ¾Ë¶÷ ¹ß¼Û ÇÁ·Î½ÃÀú È£Ãâ
+	-- ì—´ì—° ê²°ë¡œ ì˜ˆë³´ ì•ŒëžŒ ë°œì†¡ í”„ë¡œì‹œì € í˜¸ì¶œ
 	-- com.inisteel.cim.yf.condpred.dao.callSpYfCfAlmProc
 	call USRYFA.SP_YF_CF_ALM_PROC(?,?,?)
 	 * </pre>
@@ -318,13 +318,13 @@ public interface CondPredQueryIF {
 	
 	/**
 	 * <pre>
-	-- ¿­¿¬ °á·Î ¿¹Ãø °ø°øµ¥ÀÌÅÍÆ÷ÅÐ ¼­ºñ½ºÅ° Á¶È¸
+	-- ì—´ì—° ê²°ë¡œ ì˜ˆì¸¡ ê³µê³µë°ì´í„°í¬í„¸ ì„œë¹„ìŠ¤í‚¤ ì¡°íšŒ
 	-- com.inisteel.cim.yf.condpred.dao.selApisServiceKey
-	-- 2025.10.27 ±â»óÃ» API ´ëÃ¼
+	-- 2025.10.27 ê¸°ìƒì²­ API ëŒ€ì²´
 	SELECT 
-	  A.USE_YN -- ´ëÃ¼ À¯¹«
-	, CASE WHEN A.USE_YN = 'Y' THEN A.CRNT_OTD_CFM_KEY -- ´ëÃ¼ API ÀÎÁõÅ°
-		   ELSE A.BF_OTD_CFM_KEY -- ±âÁ¸ API ÀÎÁõÅ°
+	  A.USE_YN -- ëŒ€ì²´ ìœ ë¬´
+	, CASE WHEN A.USE_YN = 'Y' THEN A.CRNT_OTD_CFM_KEY -- ëŒ€ì²´ API ì¸ì¦í‚¤
+		   ELSE A.BF_OTD_CFM_KEY -- ê¸°ì¡´ API ì¸ì¦í‚¤
 		   END AS SERVICEKEY
 	FROM BRE.VW_YD_YDCP04 A
 	WHERE ROWNUM = 1
