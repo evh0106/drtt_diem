@@ -18,3 +18,14 @@
 ```powershell
 Get-ChildItem -Filter *.java -Recurse | ForEach-Object { $content = Get-Content $_.FullName -Encoding String; [System.IO.File]::WriteAllLines($_.FullName, $content, (New-Object System.Text.UTF8Encoding($false))) }
 ```
+
+## ETC
+
+### Shortcuts
+- Bookmark Function
+  + Install Bookmarks Extension
+```
+Ctrl + Alt + K - Toggle current line bookmark
+Ctrl + Alt + J - Go to previous bookmark
+Ctrl + Alt + L - Go to next bookmark
+```
