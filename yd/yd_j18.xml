@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<project name="yd_j18" default="default">
+
+	<tstamp>
+		<format property="today_kr" pattern="yyyy-MM-dd" locale="ko" />
+	</tstamp>
+	<property file="build.properties" />
+	
+	<!-- =================================================================== -->
+	<!-- 컴파일 클래스 패스 설정	                                                 -->
+	<!-- =================================================================== -->
+	<path id="build.class.path">
+		<fileset dir="${project.home.dir}/${project.lib}" includes="**/*.jar" />
+	</path>
+	
+	<taskdef name="ejbdoclet" classname="xdoclet.modules.ejb.EjbDocletTask" classpathref="build.class.path" />
+	<taskdef name="wldeploy" classname="weblogic.ant.taskdefs.management.WLDeploy" classpathref="build.class.path"/>
+
+	<!-- =================================================================== -->
+	<!-- DEFAULT                                                             -->
+	<!-- =================================================================== -->
+	<target name="default">
+		<antcall target="init" />
+		<antcall target="jar" />
+		<antcall target="all.copy" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- INIT	                                                             -->
+	<!-- =================================================================== -->
+	<target name="init">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| INIT                                              |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<antcall target="clean" />
+		<antcall target="prepare" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- CLEAN	                                                             -->
+	<!-- =================================================================== -->
+	<target name="clean">
+		<delete file="${project.home.dir}/${project.name}/${dist_new}/${project.name}-ejb.jar" />
+		<delete file="${project.home.dir}/${project.name}/${dist_new}/${project.name}.jar" />
+		<delete dir="${project.home.dir}/${project.name}/${classes}" />
+		<delete dir="${project.home.dir}/${project.name}/${gensrc}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- PREPARE	                                                         -->
+	<!-- =================================================================== -->
+	<target name="prepare">
+		<mkdir dir="${project.home.dir}/${project.name}/${dist_new}" />
+		<mkdir dir="${project.home.dir}/${project.name}/target" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- COPY ALL	                                                         -->
+	<!-- =================================================================== -->
+	<target name="all.copy">
+		<antcall target="com.lib.copy" />
+		<antcall target="hsteelApp.lib.copy" />
+		<antcall target="jspeedApp.lib.copy" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- TEST EJBDOCLET 실행                                                                                                       -->
+	<!-- =================================================================== -->
+	<target name="ejbdoclet">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name} EJBDOCLET EXEC                     |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<mkdir dir="${project.home.dir}/${project.name}/${gensrc}" />
+		<ejbdoclet destdir="${project.home.dir}/${project.name}/${gensrc}"
+		           mergedir="parent-fake-to-debug"
+		           excludedtags="@version,@author,@todo"
+		           addedtags="@author 일관제철 정보화 시스템,@version ${xdoclet.version},@copyright 현대제철"
+		           ejbspec="${xdoclet.ejbspec}"
+		           force="${xdoclet.force}"
+		           verbose="${xdoclet.verbose}" >
+			<fileset dir="${project.home.dir}/${project.name}/${src}">
+				<include name="**/*EJB*.java" />
+			</fileset>
+
+			<remoteinterface templateFile="${project.home.dir}/${project.build}/${xdoclet.template}/ini.remote.xdt" />
+			<homeinterface templateFile="${project.home.dir}/${project.build}/${xdoclet.template}/ini.home.xdt" />
+			 <deploymentdescriptor destdir="${meta-inf.dir}"
+			                         xmlencoding="MS949"
+			                         validatexml="true"
+			                         mergedir="fake-to-debug" />
+
+			   <weblogic version="8.1"
+			             xmlencoding="MS949"
+			             destdir="${meta-inf.dir}"
+			             validatexml="true"
+			             mergedir="fake-to-debug"
+			             createtables="Disabled" />
+		</ejbdoclet>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- ${project.name} 프로젝트 컴파일                                                                                -->
+	<!-- =================================================================== -->
+	<target name="compile" depends="ejbdoclet">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name} PROC            |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<mkdir dir="${project.home.dir}/${project.name}/${classes}" />
+		<javac srcdir="${project.home.dir}/${project.name}/${src}"
+			   destdir="${project.home.dir}/${project.name}/${classes}"
+			   debug="${compiler.debug.option}"
+			   deprecation="${compiler.deprecation.option}"
+			   >
+			<src path="${project.home.dir}/${project.name}/${gensrc}" />
+			<classpath refid="build.class.path" />
+		</javac>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- ${project.name} 프로젝트 JAR                                          -->
+	<!-- =================================================================== -->
+	<target name="jar" depends="compile">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name} jar                               |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<mkdir dir="${project.home.dir}/${project.name}/${dist_new}" />
+		<jar jarfile="${project.home.dir}/${project.name}/${dist_new}/${project.name}-ejb.jar" update="yes">
+			<fileset dir="${project.home.dir}/${project.name}">
+				<include name = "META-INF/*.xml"/>
+			</fileset>
+			<fileset dir="${project.home.dir}/${project.name}/${classes}" >
+				<include name="**/*EJB*.class" />
+			</fileset>
+		</jar>
+		<jar jarfile="${project.home.dir}/${project.name}/${dist_new}/${project.name}.jar" update="yes">
+			<fileset dir="${project.home.dir}/${project.name}/${classes}" includes = "**/*.class">
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- =================================================================== -->
+	<!--  ${project.name} COPY				                                 -->
+	<!-- =================================================================== -->
+	<target name="com.lib.copy" >
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name} -> com.lib.copy                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<copy todir="${project.home.dir}/${project.lib}/inisteel" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+		      <include name="*.jar"/>
+		      <exclude name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${project.home.dir}/${project.lib}/inisteel/ejb" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+		      <include name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jspeedApp.lib.copy">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name} -> jspeedApp.lib.copy             |</echo>
+		<echo>+---------------------------------------------------+</echo>
+
+		<copy todir="${project.home.dir}/${project.jspeedApp}/APP-INF/lib" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+				<include name="*.jar"/>
+		    	<exclude name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${project.home.dir}/${project.jspeedApp}/" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+		    	<include name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="hsteelApp.lib.copy" >
+		<echo>+---------------------------------------------------+</echo>
+		<echo>| ${project.name}-> hsteelApp.lib.copy              |</echo>
+		<echo>+---------------------------------------------------+</echo>
+
+		<copy todir="${project.home.dir}/${project.hsteelApp}/APP-INF/lib" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+			  <include name="*.jar"/>
+		      <exclude name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${project.home.dir}/${project.hsteelApp}/" overwrite="true">
+		    <fileset dir="${project.home.dir}/${project.name}/${dist_new}">
+		      <include name="*-ejb.jar"/>
+			</fileset>
+		</copy>
+	</target>
+</project>

@@ -1,0 +1,240 @@
+stages:
+  - mr
+
+# 공통 Anchor (기본 환경 설정)
+.default_mr_job: &default_mr_job
+  stage: mr
+  image: debian:12
+  tags:
+    - docker
+  allow_failure: true
+  before_script:
+    - set -e
+    - cp glab /usr/local/bin/glab || true
+    - chmod +x /usr/local/bin/glab
+
+    # 내부 Nexus apt 설정
+    - echo 'deb https://nexus.hmc.co.kr/repository/apt-debian-deb-bookworm/ bookworm main contrib non-free-firmware' > /etc/apt/sources.list.d/source.list
+    - echo 'deb https://nexus.hmc.co.kr/repository/apt-debian-deb-bookworm/ bookworm-updates main contrib non-free-firmware' >> /etc/apt/sources.list.d/source.list
+    - echo 'deb https://nexus.hmc.co.kr/repository/apt-debian-deb-security bookworm-security main contrib non-free-firmware' >> /etc/apt/sources.list.d/source.list
+    - echo 'Acquire::https::Verify-Peer "false";' > /etc/apt/apt.conf.d/99insecure
+    - echo 'Acquire::https::Verify-Host "false";' >> /etc/apt/apt.conf.d/99insecure
+    - apt update && apt install -y ca-certificates curl bash git jq
+    - update-ca-certificates
+    - rm -f /etc/apt/apt.conf.d/99insecure || true
+
+    # Git 설정
+    - git config --global user.name "ci-bot"
+    - git config --global user.email "ci-bot@hmg-corp.io"
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+    - git fetch --all --prune --tags
+
+    # GitLab 인증
+    - git remote set-url origin "https://gitlab.hmg-corp.io/$CI_PROJECT_PATH.git"
+    - export GITLAB_TOKEN=$GITLAB_TOKEN
+    - mkdir -p $HOME/.config/glab-cli
+    - |
+      cat > $HOME/.config/glab-cli/config.yml <<EOF
+      hosts:
+        gitlab.hmg-corp.io:
+          token: $GITLAB_TOKEN
+      EOF
+    - glab auth status || true
+    - glab --version || true
+
+
+# =======================================
+# 1️⃣ feature → develop (theirs 전략, 직접 지정)
+# =======================================
+merge_feature_to_develop:
+  <<: *default_mr_job
+  resource_group: feature-merge
+  script:
+    - |
+      echo "🌀 feature/* 브랜치에서 develop으로 MR 생성 시도"
+      chmod 755 glab || ture
+      ./glab mr create \
+        --source-branch "$CI_COMMIT_BRANCH" \
+        --target-branch develop \
+        --title "Auto MR: $CI_COMMIT_BRANCH → develop" \
+        --description '자동 생성 MR' -y || true
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^feature\//'
+
+# =======================================
+# 2️⃣ feature/* → develop (누적 병합)
+# =======================================
+#merge_project_to_develop:
+#  <<: *default_mr_job
+# resource_group: develop-merge
+# script:
+#   - |
+#     SRC="$CI_COMMIT_BRANCH"  # ex) project/cs, project/bf, project/or ...
+#     TGT="develop-c"
+#
+#     echo "🌀 ${SRC} → ${TGT} 병합 시작 (누적형 구조)"
+#     git fetch origin ${SRC} ${TGT}
+#     git rebase --abort 2>/dev/null || true
+#     git checkout ${TGT}
+#     git pull origin ${TGT}
+#
+#     # 1️⃣ 병합 수행 (project 우선)
+#     git merge --no-ff --allow-unrelated-histories -X theirs origin/${SRC} -m "auto merge (${SRC} → ${TGT}) using -X theirs" || {
+#       echo "⚠️ 병합 충돌 — project 기준 복구"
+#       git checkout --theirs .
+#       git add .
+#       git commit -m "auto-resolved conflict by keeping ${SRC} version" || true
+#     }
+#
+#     # 2️⃣ 보호 대상 파일 복원 (.gitlab-ci.yml, .gitignore)
+#     echo "🧩 보호 대상 파일 복원 (.gitlab-ci.yml, .gitignore)"
+#     git checkout origin/${TGT} -- .gitlab-ci.yml .gitignore || true
+#     git restore --staged .gitlab-ci.yml .gitignore || true
+#     git restore --worktree .gitlab-ci.yml .gitignore || true
+#     git reset HEAD .gitlab-ci.yml .gitignore || true
+#
+#     git rebase --abort 2>/dev/null || true
+#
+#     # 3️⃣ push (rebase 포함)
+#     git push origin ${TGT} || {
+#       echo "⚠️ push 실패 — rebase 후 재시도"
+#       git rebase --abort 2>/dev/null || true
+#       git fetch origin ${TGT}
+#       git pull --rebase origin ${TGT} || true
+#       git push origin ${TGT}
+#     }
+#
+#     # 4️⃣ 삭제된 폴더 자동 복구 (common_dirs.txt 기반)
+#     if [ -f "common_dirs.txt" ]; then
+#       echo "📂 common_dirs.txt 발견 — 삭제된 폴더 복구 시작"
+#       mapfile -t COMMON_DIRS < common_dirs.txt
+#       RESTORED=0
+#       for dir in "${COMMON_DIRS[@]}"; do
+#         [[ -z "$dir" ]] && continue
+#         if [ ! -d "$dir" ]; then
+#           echo "🔄 복원: $dir (develop-c 기준)"
+#           git checkout origin/${TGT} -- "$dir" || true
+#           git add "$dir" || true
+#           RESTORED=$((RESTORED+1))
+#         fi
+#       done
+#       if [ "$RESTORED" -gt 0 ]; then
+#         git commit -m "auto restore missing dirs from ${TGT} (${RESTORED} dirs)" || true
+#         git push origin ${TGT} || true
+#       else
+#         echo "✅ 복원할 폴더 없음"
+#       fi
+#     else
+#       echo "⚠️ common_dirs.txt 없음 — 복원 스킵"
+#     fi
+#
+#     echo "✅ ${SRC} → ${TGT} 병합 완료 (누적 완료)"
+#       exit 0
+# rules:
+#   - if: '$CI_COMMIT_BRANCH =~ /^project\//'
+
+# =======================================
+# 3️⃣ develop → release (자동 MR 생성)
+# =======================================
+#auto_mr_to_release:
+#  <<: *default_mr_job
+#  script:
+#    - |
+#      echo "🌀 develop → release cherry-pick 시작"
+#      git fetch origin release develop
+#      git checkout release
+#      git pull origin release
+#
+#      CHERRY_KEYWORD="\[cherry-rel\]"
+#      echo "🔍 develop 커밋 로그에서 ${CHERRY_KEYWORD} 포함 커밋 추출"
+#
+#      # develop에서 [cherry] 키워드 포함된 커밋 목록 추출
+#      mapfile -t PICK_COMMITS < <(git log origin/develop --grep="${CHERRY_KEYWORD}" -i --format="%H" --no-merges --reverse)
+#
+#      if [ "${#PICK_COMMITS[@]}" -eq 0 ]; then
+#        echo "[SKIP] cherry-pick 대상 커밋 없음 ([cherry-rel] 키워드 없음)"
+#        exit 0
+#      fi
+#
+#      # 실제 release에 없는 변경만 필터링 (내용 기반)
+#      mapfile -t MISSING_COMMITS < <(git cherry -v origin/release origin/develop | grep '^\+' | awk '{print $2}')
+#
+#      if [ "${#MISSING_COMMITS[@]}" -eq 0 ]; then
+#        echo "[SKIP] release에 이미 모든 변경이 반영되어 있습니다."
+#        exit 0
+#      fi
+#
+#      echo "✅ cherry-pick 대상 (${#MISSING_COMMITS[@]}건):"
+#      printf ' - %s\n' "${MISSING_COMMITS[@]}"
+#
+#      # develop 에서 [cherry-rel] 포함된 커밋 중 release에 없는 것만 적용
+#      for c in "${PICK_COMMITS[@]}"; do
+#        if printf '%s\n' "${MISSING_COMMITS[@]}" | grep -q "$c"; then
+#          echo "[APPLY] $c → release cherry-pick"
+#          if ! git cherry-pick -x "$c"; then
+#            echo "[WARN] cherry-pick 실패. 충돌 발생."
+#            git cherry-pick --abort || true
+#            exit 1
+#          fi
+#        else
+#          echo "[SKIP] 이미 반영된 변경 (hash: $c)"
+#        fi
+#      done
+#
+#      git push origin release
+#      echo "✅ develop → release cherry-pick 완료"
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "develop"'
+#
+## =======================================
+## 4️⃣ release → main (커밋 메시지 기반 cherry-pick)
+## =======================================
+#auto_cherry_pick_to_main:
+#  <<: *default_mr_job
+#  script:
+#    - |
+#      echo "🌀 release → main cherry-pick 시작"
+#      git fetch origin main release
+#      git checkout main
+#      git pull origin main
+#
+#      CHERRY_KEYWORD="\[cherry-main\]"
+#      echo "🔍 release 커밋 로그에서 ${CHERRY_KEYWORD} 포함 커밋 추출"
+#
+#      # release에서 [cherry-main] 키워드 포함된 커밋 목록 추출
+#      mapfile -t PICK_COMMITS < <(git log origin/release --grep="${CHERRY_KEYWORD}" -i --format="%H" --no-merges --reverse)
+#
+#      if [ "${#PICK_COMMITS[@]}" -eq 0 ]; then
+#        echo "[SKIP] cherry-pick 대상 커밋 없음 ([cherry] 키워드 없음)"
+#        exit 0
+#      fi
+#
+#      # 실제 main에 없는 변경만 필터링 (내용 기반)
+#      mapfile -t MISSING_COMMITS < <(git cherry -v origin/main origin/release | grep '^\+' | awk '{print $2}')
+#
+#      if [ "${#MISSING_COMMITS[@]}" -eq 0 ]; then
+#        echo "[SKIP] main에 이미 모든 변경이 반영되어 있습니다."
+#        exit 0
+#      fi
+#
+#      echo "✅ cherry-pick 대상 (${#MISSING_COMMITS[@]}건):"
+#      printf ' - %s\n' "${MISSING_COMMITS[@]}"
+#
+#      # release에서 [cherry] 포함된 커밋 중 main에 없는 것만 적용
+#      for c in "${PICK_COMMITS[@]}"; do
+#        if printf '%s\n' "${MISSING_COMMITS[@]}" | grep -q "$c"; then
+#          echo "[APPLY] $c → main cherry-pick"
+#          if ! git cherry-pick -x "$c"; then
+#            echo "[WARN] cherry-pick 실패. 충돌 발생."
+#            git cherry-pick --abort || true
+#            exit 1
+#          fi
+#        else
+#          echo "[SKIP] 이미 반영된 변경 (hash: $c)"
+#        fi
+#      done
+#
+#      git push origin main
+#      echo "✅ release → main cherry-pick 완료"
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "release"'

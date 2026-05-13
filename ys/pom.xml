@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!--
+================================================================================
+ MAVEN POM GENERATED FROM ANT BUILD FILE - CONVERSION TRACEABILITY
+================================================================================
+ Original Ant File   : build.xml
+ Ant Project Name    : cm
+ Properties File     : build.properties
+ Main Ant Targets    : 
+   - (ejbdoclet) -> (compile) -> jar -> 
+        (com.lib.copy) -> (jspeedApp.lib.copy) -> (hsteelApp.lib.copy)
+   - (ejbdoclet) -> (compile) -> javadoc
+ Profile Mapping     :
+ Conversion Date     : 2025-07-30
+ Description         : Maven conversion of hds cm
+================================================================================
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- =================================================================== -->
+    <!-- PROJECT BASIC INFO                                                  -->
+    <!-- =================================================================== -->
+    <groupId>com.hyundai.steel.hds.inisteel</groupId>
+    <artifactId>ys</artifactId>
+    <version>2025.00-SNAPSHOT</version> <!-- {연도}.{릴리즈 번호} -->
+    <packaging>jar</packaging>
+
+    <name>ys 특수강 야드관리 (EJB)</name>
+
+    <!-- 
+    TODO: Name & Description
+    -->
+    <parent>
+        <groupId>com.hyundai.steel.hds</groupId>
+        <artifactId>hds-parent</artifactId>
+        <version>2025.00-mars_r2-SNAPSHOT</version> <!-- {연도}.{릴리즈 번호}-{환경 구분} -->
+        <relativePath>../pom-parent.hds.mars_r2.xml </relativePath>
+    </parent>
+    
+    <!-- =================================================================== -->
+    <!-- PROPERTIES (공통 속성)                                             -->
+    <!-- =================================================================== -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- TODO: 빌드 인코딩 확인. -->
+        <project.build.sourceEncoding>MS949</project.build.sourceEncoding>
+        
+        <!-- Java Compiler Properties -->
+        <maven.compiler.debug>true</maven.compiler.debug>
+        <maven.compiler.showDeprecation>false</maven.compiler.showDeprecation>
+
+        <!-- Project Directory Properties -->
+        <project.lib>lib</project.lib>
+        <project.inisteelApp>inisteelApp</project.inisteelApp>
+        <project.hsteelApp>hsteelApp</project.hsteelApp>
+        <project.jspeedApp>jspeedApp</project.jspeedApp>
+        <project.build>build</project.build>
+
+        <!-- XDoclet Properties -->
+        <xdoclet.force>true</xdoclet.force>
+        <xdoclet.verbose>true</xdoclet.verbose>
+        <xdoclet.version>1.0</xdoclet.version>
+        <xdoclet.ejbspec>2.0</xdoclet.ejbspec>
+        <xdoclet.template>xdoclet.template</xdoclet.template>
+
+        <!--
+        =====================================================
+        settings
+        =====================================================
+        -->
+        <finalName>ys</finalName>
+    </properties>
+
+    <!-- =================================================================== -->
+    <!-- REPOSITORIES - Maven 저장소 설정                                   -->
+    <!-- =================================================================== -->
+    <repositories>
+        <!-- REPOSITORY_PLACEHOLDER -->
+        <repository>
+            <id>maven-public</id>
+            <url>http://10.216.132.161:8081/repository/maven-public</url>
+        </repository>
+    </repositories>
+
+    <!-- =================================================================== -->
+    <!-- BUILD CONFIGURATION - 공통 빌드 설정                               -->
+    <!-- =================================================================== -->
+    <build>
+        <finalName>${finalName}</finalName>
+        <sourceDirectory>src</sourceDirectory>
+
+        <plugins>
+            <!-- Git Commit Plugin -->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>ejbdoclet</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <taskdef name="ejbdoclet" 
+                                     classname="xdoclet.modules.ejb.EjbDocletTask" 
+                                     classpathref="maven.dependency.classpath" />
+                                <echo>+===================================================+</echo>
+                                <echo>| ${project.name} EJBDOCLET                         |</echo>
+                                <echo>+===================================================+</echo>
+                                <mkdir dir="${project.build.directory}/generated-sources" />
+                                <mkdir dir="${project.build.outputDirectory}/META-INF" />
+                                <ejbdoclet destdir="${project.build.directory}/generated-sources"
+                                        mergedir="parent-fake-to-debug"
+                                        excludedtags="@version,@author,@todo"
+                                        addedtags="@author 일관제철 정보화 시스템,@version ${xdoclet.version},@copyright 현대제철"
+                                        ejbspec="${xdoclet.ejbspec}"
+                                        force="${xdoclet.force}"
+                                        verbose="${xdoclet.verbose}" >
+                                    <fileset dir="${project.build.sourceDirectory}">
+                                        <include name="**/*EJB*.java" />
+                                    </fileset>
+
+                                    <remoteinterface templateFile="../lib/${xdoclet.template}/ini.remote.xdt" />
+                                    <homeinterface templateFile="../lib/${xdoclet.template}/ini.home.xdt" />
+                                    <deploymentdescriptor destdir="${project.build.outputDirectory}/META-INF"
+                                                            xmlencoding="MS949"
+                                                            validatexml="true"
+                                                            mergedir="fake-to-debug" />
+
+                                    <weblogic version="8.1"
+                                                xmlencoding="MS949"
+                                                destdir="${project.build.outputDirectory}/META-INF"
+                                                validatexml="true"
+                                                mergedir="fake-to-debug"
+                                                createtables="Disabled" />
+                                </ejbdoclet>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-gen-sources</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <!-- Maven JAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.build.finalName}</finalName>
+                    <archive>
+                        <manifest>
+                            <addClasspath>false</addClasspath>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                            <Git-Commit-Id>${git.commit.id}</Git-Commit-Id>
+                            <Git-Commit-Id-Abbrev>${git.commit.id.abbrev}</Git-Commit-Id-Abbrev>
+                            <Git-Commit-Time>${git.commit.time}</Git-Commit-Time>
+                            <Git-Commit-Message-Short>${git.commit.message.short}</Git-Commit-Message-Short>
+                            <Git-Branch>${git.branch}</Git-Branch>
+                        </manifestEntries>
+                        <compress>true</compress>
+                    </archive>
+                </configuration>
+                <executions>
+                    <!-- 기본 JAR 생성 (Skip) -->
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <!-- EJB JAR 생성 -->
+                    <execution>
+                        <id>ejb-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.build.finalName}-ejb</finalName>
+                            <includes>
+                                <include>META-INF/*.xml</include>
+                                <include>**/*EJB*.class</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                    <!-- 일반 JAR 생성 -->
+                    <execution>
+                        <id>main-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.build.finalName}</finalName>
+                            <includes>
+                                <include>**/*.class</include>
+                            </includes>
+                            <excludes>
+                                <exclude>META-INF/*.xml</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- EJB/JAR Install Plugin (로컬 배포) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-ejb</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.build.directory}/${project.build.finalName}-ejb.jar</file>
+                            <groupId>${project.groupId}.ejb</groupId>
+                            <artifactId>${project.artifactId}-ejb</artifactId>
+                            <version>${project.version}</version>
+                            <generatePom>false</generatePom>
+                            <pomFile>${project.file}</pomFile> 
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- EJB/JAR Deploy Plugin (원격 배포) -->
+            <!--
+            !! Nexus 권한에 따라 CI 단계 자동 관리 특정 사용자에게만 배포 권한 부여
+            COMMENT: CI 단계 자동 관리 추천
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>deploy-ejb</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.build.directory}/${project.build.finalName}-ejb.jar</file>
+                            <groupId>${project.groupId}.ejb</groupId>
+                            <artifactId>${project.artifactId}-ejb</artifactId>
+                            <version>${project.version}</version>
+                            <repositoryId>${hds.dist.snapshot.id}</repositoryId>
+                            <url>${hds.dist.snapshot.url}</url>
+                            <generatePom>false</generatePom>
+                            <pomFile>${project.file}</pomFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!-- =================================================================== -->
+    <!-- DEPENDENCIE MANAGEMENT                                              -->
+    <!-- =================================================================== -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.hyundai.steel.hds.libs.inisteel</groupId>
+                <artifactId>libs-inisteel-ROOT</artifactId>
+                <version>2025.00-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- =================================================================== -->
+    <!-- DEPENDENCIES                                                        -->
+    <!-- =================================================================== -->
+    <!-- 
+    COMMENT: 의존 아티팩트는 Parent POM 상속
+    * 의존 아티팩트 교체 등은 직접 설정
+
+    ** 자식 POM 의존 제외 예시: `provided` 선언으로 컴파일 시에만 활용. 패키징 포함 제외
+    ```xml
+    <dependency>
+        <groupId>com.hyundai.steel.CR.GlueSDK.DJ2.gluelib</groupId>
+        <artifactId>MESSecurity</artifactId>
+        <version>1.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+    ```
+    -->
+    <dependencies>
+        <!-- DEPENDENCY_PLACEHOLDER -->
+
+        <dependency>
+            <groupId>com.hyundai.steel.hds.inisteel</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.inisteel</groupId>
+            <artifactId>hr</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs.inisteel</groupId>
+            <artifactId>libs-flex</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs.inisteel</groupId>
+            <artifactId>libs-eai</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs.inisteel</groupId>
+            <artifactId>libs-etc</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency> 
+
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-dom4j</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-j2ee</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-jakarta-commons</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-jwizard</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-oracle</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-servlet</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-weblogic</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-xdoclet</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hyundai.steel.hds.libs</groupId>
+            <artifactId>libs-xml</artifactId>
+            <version>2025.00-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+</project>

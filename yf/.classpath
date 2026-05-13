@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.flex"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.dom4j"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.eai"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.etc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.inisteel"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.j2ee"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.jakarta-commons"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.jwizard"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.oracle"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.servlet"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.weblogic"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xdoclet"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xml"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
