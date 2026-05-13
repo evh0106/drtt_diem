@@ -2,14 +2,14 @@
  * @(#)CCoilDAO
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2019/05/02
  *
- * @description      2¿­¿¬ COIL ¾ßµå  DAO
+ * @description      2ì—´ì—° COIL ì•¼ë“œ  DAO
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ     ¿äÃ»ÀÚ  ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì     ìš”ì²­ì  ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2019/05/02   Á¤Á¾±Õ  ÀÌÇöÁø      ÃÖÃÊ µî·Ï
+ * V1.00  2019/05/02   ì •ì¢…ê·   ì´í˜„ì§„      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ysPI.dao;
@@ -18,7 +18,7 @@ import com.inisteel.cim.common.dao.CommonDAO;
 import com.inisteel.cim.common.exception.DAOException;
 import com.inisteel.cim.ys.common.dao.YsCommDAO;
 
-// package com.inisteel.cim.ym.steelinfo.steelinforecv.dao.YdStockDAO Âü°í
+// package com.inisteel.cim.ym.steelinfo.steelinforecv.dao.YdStockDAO ì°¸ê³ 
 public class YsPiDAO extends CommonDAO {
     
 	private YsCommDAO commDao = new YsCommDAO();

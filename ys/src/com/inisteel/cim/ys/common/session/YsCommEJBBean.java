@@ -2,15 +2,15 @@
  * @(#)YsCommEJBBean
  *
  * @version          V1.00
- * @author           ÇãÃ¶È£
+ * @author           í—ˆì² í˜¸
  * @date             2012/11/22
  * 
- * @description      ¾ßµå°ü¸® °øÅë Ã³¸®
+ * @description      ì•¼ë“œê´€ë¦¬ ê³µí†µ ì²˜ë¦¬
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2012/11/22   ÇãÃ¶È£      ÇãÃ¶È£      ÃÖÃÊ µî·Ï
- * v1.10  2014/12/15   À±Àç±¤      Á¶º´±â     yd->ys º¯È¯
+ * V1.00  2012/11/22   í—ˆì² í˜¸      í—ˆì² í˜¸      ìµœì´ˆ ë“±ë¡
+ * v1.10  2014/12/15   ìœ¤ì¬ê´‘      ì¡°ë³‘ê¸°     yd->ys ë³€í™˜
  */
 package com.inisteel.cim.ys.common.session;
 
@@ -27,7 +27,7 @@ import com.inisteel.cim.ys.common.util.YsCommUtils;
 import com.inisteel.cim.ysPI.common.M10YsExLm41SenderFaEJBBean;
 import com.inisteel.cim.ysPI.common.M10YsExLm54SenderFaEJBBean;
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµå°ü¸® °øÅë Ã³¸®
+ *      [A] í´ë˜ìŠ¤ëª… : ì•¼ë“œê´€ë¦¬ ê³µí†µ ì²˜ë¦¬
  *
  * @ejb.bean name="YsCommEJB" jndi-name="YsCommEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -55,25 +55,25 @@ public class YsCommEJBBean extends BaseSessionBean {
 	}
 
 	/***************************************************************************
-	 * Interface Ã³¸® °øÅë
+	 * Interface ì²˜ë¦¬ ê³µí†µ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : EAI, JMS Interface °øÅë ¼ö½Å Ã³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : EAI, JMS Interface ê³µí†µ ìˆ˜ì‹  ì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public void rcvInterface(JDTORecord rcvMsg) throws DAOException {
 		String logId = commUtils.getLogId();
-		String methodNm = "¼ö½Å[YsCommEJB.rcvInterface]";
+		String methodNm = "ìˆ˜ì‹ [YsCommEJB.rcvInterface]";
 		String msgId = ""; //IF ID
-		String msgNm = ""; //IF ¸í
+		String msgNm = ""; //IF ëª…
 
 		try {
-			//JMS¼Û½Å½Ã Ãß°¡µÇ´Â Ç×¸ñ°ªÀÌ ÀÖÀ¸¸é logId¸¦ º¯°æ
+			//JMSì†¡ì‹ ì‹œ ì¶”ê°€ë˜ëŠ” í•­ëª©ê°’ì´ ìˆìœ¼ë©´ logIdë¥¼ ë³€ê²½
 			String uniqueId = commUtils.trim(rcvMsg.getFieldString("UNIQUE_ID"));
 			if (!"".equals(uniqueId)) {
 				logId = uniqueId;
@@ -81,28 +81,28 @@ public class YsCommEJBBean extends BaseSessionBean {
 			
 			commUtils.printLog(logId, "I/F" + methodNm, "I+");
 
-			String classNm = ""; //Ã³¸® Class¸í
-			String mthdNm  = ""; //Ã³¸® Method¸í
-			String errMsg  = ""; //¿À·ù³»¿ë
+			String classNm = ""; //ì²˜ë¦¬ Classëª…
+			String mthdNm  = ""; //ì²˜ë¦¬ Methodëª…
+			String errMsg  = ""; //ì˜¤ë¥˜ë‚´ìš©
 
-			//EAI, JMS, HTTP(ÃâÇÏ°ü¸® µî) ¼ö½Å Àü¹® IF ID
+			//EAI, JMS, HTTP(ì¶œí•˜ê´€ë¦¬ ë“±) ìˆ˜ì‹  ì „ë¬¸ IF ID
 			msgId = commUtils.getMsgId(rcvMsg);
 			
 			if ("".equals(msgId)) {
-		    	errMsg = "¼ö½ÅµÈ Àü¹®ÀÇ IF ID°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.";
+		    	errMsg = "ìˆ˜ì‹ ëœ ì „ë¬¸ì˜ IF IDê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
 			} else {
 				JDTORecordSet jrRst = commDao.getMsgInfo(msgId);
 				
 				if (jrRst != null && jrRst.size() > 0) { 
-					msgNm   = commUtils.trim(jrRst.getRecord(0).getFieldString("IF_NM"       )); //IF ¸í
-			    	classNm = commUtils.trim(jrRst.getRecord(0).getFieldString("CLASS_NAME"  )); //Class¸í
-			    	mthdNm  = commUtils.trim(jrRst.getRecord(0).getFieldString("METHODE_NAME")); //Method¸í
+					msgNm   = commUtils.trim(jrRst.getRecord(0).getFieldString("IF_NM"       )); //IF ëª…
+			    	classNm = commUtils.trim(jrRst.getRecord(0).getFieldString("CLASS_NAME"  )); //Classëª…
+			    	mthdNm  = commUtils.trim(jrRst.getRecord(0).getFieldString("METHODE_NAME")); //Methodëª…
 
 			    	if ("".equals(classNm) || "".equals(mthdNm)) { 
-				    	errMsg = "[ " + msgId + " ]ÀÇ Ã³¸® ÇÁ·Î±×·¥ÀÌ I/F(TB_YS_Z_IF) Table¿¡ Á¤ÀÇµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n";
+				    	errMsg = "[ " + msgId + " ]ì˜ ì²˜ë¦¬ í”„ë¡œê·¸ë¨ì´ I/F(TB_YS_Z_IF) Tableì— ì •ì˜ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n";
 				    }
 			    } else {
-			    	errMsg = "[ " + msgId + " ]ÀÇ Á¤º¸°¡  I/F(TB_YS_Z_IF) Table¿¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n";
+			    	errMsg = "[ " + msgId + " ]ì˜ ì •ë³´ê°€  I/F(TB_YS_Z_IF) Tableì— ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n";
 			    }
 			}
 
@@ -116,14 +116,14 @@ public class YsCommEJBBean extends BaseSessionBean {
 			rcvMsg.setResultCode(logId);
 			rcvMsg.setResultMsg(methodNm);
 			
-			//¼ö½Å Àü¹®Ã³¸® Log
+			//ìˆ˜ì‹  ì „ë¬¸ì²˜ë¦¬ Log
 			commUtils.printLog(logId, msgNm + "(" + msgId + ") >> [ " + classNm + "." + mthdNm + " ]", "IR");
 
 			EJBConnector rcvConn = new EJBConnector("default", classNm, this);
 			
 			JDTORecord jrRst = (JDTORecord)rcvConn.trx(mthdNm, new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
 			
-			//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+			//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);
 				jrRst.setResultMsg(methodNm);
@@ -141,26 +141,26 @@ public class YsCommEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸® (EAI, JMS °øÅë)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬ (EAI, JMS ê³µí†µ)
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord sndData
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public void sndInterface(JDTORecord sndData) throws DAOException {
 		String logId = sndData.getResultCode();
-		String methodNm = "I/F¼Û½Å[YsCommEJB.sndInterface] < " + sndData.getResultMsg();
+		String methodNm = "I/Fì†¡ì‹ [YsCommEJB.sndInterface] < " + sndData.getResultMsg();
 
 		try {
 			commUtils.printLog(logId, methodNm, "I+");
 
 			String msgId   = ""; //IF ID
-			String queueNm = ""; //Queue¸í
+			String queueNm = ""; //Queueëª…
 
-			int msgNo  = 0;  //IF ID ¹øÈ£
-			int sndCnt = 0;  //Àü¼ÛData °Ç¼ö
-			boolean chkOK = false; //Á¤»ó¿©ºÎ Check
+			int msgNo  = 0;  //IF ID ë²ˆí˜¸
+			int sndCnt = 0;  //ì „ì†¡Data ê±´ìˆ˜
+			boolean chkOK = false; //ì •ìƒì—¬ë¶€ Check
 
 			// PIDEV			
 //			String sApplyYnPI = commDao.ApplyYnPI("", "", "APPPI0", "K", "*");
@@ -172,22 +172,22 @@ public class YsCommEJBBean extends BaseSessionBean {
 			
 //			JDTORecordSet sndMsgSet = (JDTORecordSet)sndData.getField("SEND_DATA");
 //			if (sndMsgSet == null || sndMsgSet.size() <= 0) {
-//				commUtils.printLog("", commUtils.makeErrorLog(logId, methodNm, "Àü¼ÛÇÒ Data°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù ."), "IS");
+//				commUtils.printLog("", commUtils.makeErrorLog(logId, methodNm, "ì „ì†¡í•  Dataê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ ."), "IS");
 //				return;
 //			}
 //
-//			//ÀÎÅÍÆäÀÌ½º Á¤º¸
-//			sndCnt = sndMsgSet.size(); //Àü¼ÛData °Ç¼ö
-//			int[][] msgNos = new int[sndCnt][sndCnt+1]; //ÀÎÅÍÆäÀÌ½ºº° °Ç¼ö ¹× IF ID ¹øÈ£
-//			String[][] msgInfo = new String[sndCnt][2]; //IF ID, Queue¸í
+//			//ì¸í„°í˜ì´ìŠ¤ ì •ë³´
+//			sndCnt = sndMsgSet.size(); //ì „ì†¡Data ê±´ìˆ˜
+//			int[][] msgNos = new int[sndCnt][sndCnt+1]; //ì¸í„°í˜ì´ìŠ¤ë³„ ê±´ìˆ˜ ë° IF ID ë²ˆí˜¸
+//			String[][] msgInfo = new String[sndCnt][2]; //IF ID, Queueëª…
 //			
-//			//°°Àº IF ID ³¢¸® Á¤¸®
+//			//ê°™ì€ IF ID ë¼ë¦¬ ì •ë¦¬
 //			for (int ii = 0; ii < sndCnt; ii++) {
-//				//EAI, JMS, HTTP(ÃâÇÏ°ü¸® µî) ¼Û½Å Àü¹® IF ID
+//				//EAI, JMS, HTTP(ì¶œí•˜ê´€ë¦¬ ë“±) ì†¡ì‹  ì „ë¬¸ IF ID
 //				msgId = commUtils.getMsgId(sndMsgSet.getRecord(ii));
 //				
 //				if (!"".equals(msgId) && msgId.length() == 8) {
-//					//±â µî·ÏµÈ List¿¡¼­ Ã£±â
+//					//ê¸° ë“±ë¡ëœ Listì—ì„œ ì°¾ê¸°
 //					chkOK = true;
 //					for (int kk = 0; kk < sndCnt; kk++) {
 //						if (msgId.equals(msgInfo[kk][0])) {
@@ -198,9 +198,9 @@ public class YsCommEJBBean extends BaseSessionBean {
 //						}
 //					}
 //
-//					//¸ø Ã£À¸¸é ½Å±Ô·Î µî·Ï
+//					//ëª» ì°¾ìœ¼ë©´ ì‹ ê·œë¡œ ë“±ë¡
 //					if (chkOK) {
-//						//Queue¸í Á¶È¸
+//						//Queueëª… ì¡°íšŒ
 //						queueNm = getQueueNm(logId, methodNm, msgId);
 //						
 //						if (!"".equals(queueNm)) {
@@ -210,18 +210,18 @@ public class YsCommEJBBean extends BaseSessionBean {
 //							msgInfo[msgNo][1] = queueNm;
 //							msgNo++;
 //						} else {
-//							commUtils.printParam("[ " + msgId + " ]ÀÇ Queue¸íÀ» Ã£À» ¼ö ¾øÀ½", sndMsgSet.getRecord(ii));
+//							commUtils.printParam("[ " + msgId + " ]ì˜ Queueëª…ì„ ì°¾ì„ ìˆ˜ ì—†ìŒ", sndMsgSet.getRecord(ii));
 //						}
 //
 //					}
 //				}
 //			}
 //				
-//			//¼Û½Å Àü¹® Æí¼º
+//			//ì†¡ì‹  ì „ë¬¸ í¸ì„±
 //			for (int ii = 0; ii < msgNo; ii++) {
 //				msgId   = msgInfo[ii][0];
 //				queueNm = msgInfo[ii][1];
-//				//msgId°¡ ¾øÀ¸¸é Skip
+//				//msgIdê°€ ì—†ìœ¼ë©´ Skip
 //				if ("".equals(msgId)) {	continue; }
 //
 //				int sCnt = 0;
@@ -232,19 +232,19 @@ public class YsCommEJBBean extends BaseSessionBean {
 //					}
 //				}
 //				
-//				//Àü¼Û°Ç¼ö º° Àü¼ÛÃ³¸®
+//				//ì „ì†¡ê±´ìˆ˜ ë³„ ì „ì†¡ì²˜ë¦¬
 //				if (sCnt == 1) {
-//					//Àü¼Û°Ç¼ö°¡ 1°³ÀÏ °æ¿ì
+//					//ì „ì†¡ê±´ìˆ˜ê°€ 1ê°œì¼ ê²½ìš°
 //					JDTORecord sndMsg = sndMsgSet.getRecord(msgNos[ii][1]);
 //
-//					//msgId »èÁ¦
+//					//msgId ì‚­ì œ
 //					msgInfo[ii][0] = "";
 //
 //					if (sndMsg != null) {
 //						sndQueue(logId, methodNm, queueNm, sndMsg);
 //					}
 //				} else {
-//					//¿©·¯°³ÀÏ °æ¿ì
+//					//ì—¬ëŸ¬ê°œì¼ ê²½ìš°
 //					int sNo  = 0;
 //					JDTORecord[] sndMsgs = new JDTORecord[sCnt];
 //
@@ -263,13 +263,13 @@ public class YsCommEJBBean extends BaseSessionBean {
 //						}
 //					}
 //
-//					//¿©·¯°Ç Àü¼Û
+//					//ì—¬ëŸ¬ê±´ ì „ì†¡
 //					sndQueue(logId, methodNm, queueNm, sndMsgs);
 //				}
 //			}
 //
-//			//¼Û½Å °á°ú Log Ã³¸®ºÎºĞ
-//			commUtils.printLog(logId, "Àü¼Û ÇÕ°è : " + sndCnt + " °Ç", "IS");
+//			//ì†¡ì‹  ê²°ê³¼ Log ì²˜ë¦¬ë¶€ë¶„
+//			commUtils.printLog(logId, "ì „ì†¡ í•©ê³„ : " + sndCnt + " ê±´", "IS");
 			commUtils.printLog(logId, methodNm, "I-");
 		} catch (DAOException e) {
 			throw e;
@@ -279,9 +279,9 @@ public class YsCommEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : JMS ÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸® - Main ÇÁ·Î±×·¥°ú »ó°ü¾øÀÌ ¹«Á¶°Ç Àü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : JMS ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬ - Main í”„ë¡œê·¸ë¨ê³¼ ìƒê´€ì—†ì´ ë¬´ì¡°ê±´ ì „ì†¡
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord sndData
 	 *      @return void
 	 *      @throws DAOException
@@ -289,7 +289,7 @@ public class YsCommEJBBean extends BaseSessionBean {
 	*/
 	public void sndToJMS(JDTORecord sndData) throws DAOException {
 		String logId = sndData.getResultCode();
-		String methodNm = "JMS¼Û½Å[YsCommEJB.sndToJMS] < " + sndData.getResultMsg();
+		String methodNm = "JMSì†¡ì‹ [YsCommEJB.sndToJMS] < " + sndData.getResultMsg();
 
 		try {
 			commUtils.printLog(logId, methodNm, "I+");
@@ -297,29 +297,29 @@ public class YsCommEJBBean extends BaseSessionBean {
 			String msgId = ""; //IF ID
 
 			JDTORecord sndMsg = (JDTORecord)sndData.getField("SEND_DATA");
-			//SEND_DATA°¡ ¾øÀ» °æ¿ì
+			//SEND_DATAê°€ ì—†ì„ ê²½ìš°
 			if (sndMsg == null) {
 				sndMsg = sndData;
 			}
 
-			//JMS ¼Û½Å Àü¹® IF ID
+			//JMS ì†¡ì‹  ì „ë¬¸ IF ID
 			msgId = commUtils.trim(sndData.getFieldString("JMS_TC_CD"));
 
-			//ºÒ·® Àü¹®Àº LoggingÇÏ°í Á¾·á
+			//ë¶ˆëŸ‰ ì „ë¬¸ì€ Loggingí•˜ê³  ì¢…ë£Œ
 			if ("".equals(msgId)) {
-				commUtils.printParam("JMS_TC_CD°¡ ¾øÀ½", sndMsg);
-				throw new Exception("JMS_TC_CD°¡ ¾ø´Â Àü¹®ÀÔ´Ï´Ù.");
+				commUtils.printParam("JMS_TC_CDê°€ ì—†ìŒ", sndMsg);
+				throw new Exception("JMS_TC_CDê°€ ì—†ëŠ” ì „ë¬¸ì…ë‹ˆë‹¤.");
 			}
 			
-			//Queue¸í Á¶È¸
+			//Queueëª… ì¡°íšŒ
 			String queueNm = getQueueNm(logId, methodNm, msgId);
 			
 			if ("".equals(queueNm)) {
-				commUtils.printParam("[ " + msgId + " ]ÀÇ Queue¸íÀ» Ã£À» ¼ö ¾øÀ½", sndMsg);
-				throw new Exception("[ " + msgId + " ]ÀÇ Queue¸íÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+				commUtils.printParam("[ " + msgId + " ]ì˜ Queueëª…ì„ ì°¾ì„ ìˆ˜ ì—†ìŒ", sndMsg);
+				throw new Exception("[ " + msgId + " ]ì˜ Queueëª…ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//JMS Queue·Î Àü¼Û
+			//JMS Queueë¡œ ì „ì†¡
 			sndQueue(logId, methodNm, queueNm, sndMsg);
 
 			commUtils.printLog(logId, methodNm, "I-");
@@ -332,11 +332,11 @@ public class YsCommEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : EAIÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸® - Main ÇÁ·Î±×·¥°ú »ó°ü¾øÀÌ ¹«Á¶°Ç Àü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : EAIì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬ - Main í”„ë¡œê·¸ë¨ê³¼ ìƒê´€ì—†ì´ ë¬´ì¡°ê±´ ì „ì†¡
 	 *      
-	 *      [B] Ã³¸® °³¿ä          : 3°³(JMS_TC_CD, JMS_TC_CREATE_DDTT, JMS_TC_MESSAGE)ÀÇ Ç×¸ñÀÌ ¹İµå½Ã Á¸ÀçÇÏ¿©¾ß ÇÔ.
+	 *      [B] ì²˜ë¦¬ ê°œìš”          : 3ê°œ(JMS_TC_CD, JMS_TC_CREATE_DDTT, JMS_TC_MESSAGE)ì˜ í•­ëª©ì´ ë°˜ë“œì‹œ ì¡´ì¬í•˜ì—¬ì•¼ í•¨.
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord sndData
 	 *      @return void
 	 *      @throws DAOException
@@ -344,7 +344,7 @@ public class YsCommEJBBean extends BaseSessionBean {
 	*/
 	public void sndToEAI(JDTORecord sndData) throws DAOException {
 		String logId = sndData.getResultCode();
-		String methodNm = "EAI¼Û½Å[YsCommEJB.sndToEAI] < " + sndData.getResultMsg();
+		String methodNm = "EAIì†¡ì‹ [YsCommEJB.sndToEAI] < " + sndData.getResultMsg();
 		
 		try {
 			commUtils.printLog(logId, methodNm, "I+");
@@ -364,51 +364,51 @@ public class YsCommEJBBean extends BaseSessionBean {
 				} else if (obj instanceof JDTORecordSet) {
 					sndMsgSet = (JDTORecordSet)obj;
 				} else {
-					commUtils.printLog(logId, methodNm + " : [SEND_DATA] Àß¸øµÈ Data TypeÀÔ´Ï´Ù .", "IS");
+					commUtils.printLog(logId, methodNm + " : [SEND_DATA] ì˜ëª»ëœ Data Typeì…ë‹ˆë‹¤ .", "IS");
 					return;
 				}
 			}
 			
-			//EAI Queue·Î Àü¼Û
+			//EAI Queueë¡œ ì „ì†¡
 			if (sndMsg != null) {
-				//1°Ç Àü¼Û
+				//1ê±´ ì „ì†¡
 				msgId = commUtils.trim(sndMsg.getFieldString("JMS_TC_CD"     )); //IF ID
 				tcMsg = commUtils.trim(sndMsg.getFieldString("JMS_TC_MESSAGE")); //TCMessage
 
-				//ºÒ·® Àü¹®Àº LoggingÇÏ°í Á¾·á
+				//ë¶ˆëŸ‰ ì „ë¬¸ì€ Loggingí•˜ê³  ì¢…ë£Œ
 				if ("".equals(msgId) || "".equals(tcMsg)) {
-					commUtils.printParam("JMS_TC_CD ¶Ç´Â JMS_TC_MESSAGE°¡ ¾øÀ½", sndMsg);
-					throw new Exception("JMS_TC_CD ¶Ç´Â JMS_TC_MESSAGE°¡ ¾ø´Â Àü¹®ÀÔ´Ï´Ù.");
+					commUtils.printParam("JMS_TC_CD ë˜ëŠ” JMS_TC_MESSAGEê°€ ì—†ìŒ", sndMsg);
+					throw new Exception("JMS_TC_CD ë˜ëŠ” JMS_TC_MESSAGEê°€ ì—†ëŠ” ì „ë¬¸ì…ë‹ˆë‹¤.");
 				}
 
-				//EAI Queue·Î Àü¼Û
+				//EAI Queueë¡œ ì „ì†¡
 				sndQueue(logId, methodNm, "jms.queue.YS_WM_EAI_QUEUE", sndMsg);
 			} else {
-				//Multi Àü¼Û
-				int sndCnt = sndMsgSet.size(); //Àü¼ÛData °Ç¼ö
+				//Multi ì „ì†¡
+				int sndCnt = sndMsgSet.size(); //ì „ì†¡Data ê±´ìˆ˜
 
 				if (sndCnt <= 0) {
-					commUtils.printLog(logId, "Àü¼ÛÇÒ Data°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù . < " + methodNm, "IS");
+					commUtils.printLog(logId, "ì „ì†¡í•  Dataê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ . < " + methodNm, "IS");
 					return;
 				}
 				
-				//JMS¿¡ ¼Û½ÅÇÏ±â À§ÇØ JDTORecord[]¿¡ Set
+				//JMSì— ì†¡ì‹ í•˜ê¸° ìœ„í•´ JDTORecord[]ì— Set
 				JDTORecord[] sndMsgs = new JDTORecord[sndCnt];
 
 				for (int ii = 0; ii < sndCnt; ii++) {
 					msgId = commUtils.trim(sndMsgSet.getRecord(ii).getFieldString("JMS_TC_CD"     )); //IF ID
 					tcMsg = commUtils.trim(sndMsgSet.getRecord(ii).getFieldString("JMS_TC_MESSAGE")); //TCMessage
 
-					//ºÒ·® Àü¹®Àº LIngÇÏ°í Á¾·á
+					//ë¶ˆëŸ‰ ì „ë¬¸ì€ LIngí•˜ê³  ì¢…ë£Œ
 					if ("".equals(msgId) || "".equals(tcMsg)) {
-						commUtils.printParam("JMS_TC_CD ¶Ç´Â JMS_TC_MESSAGE°¡ ¾øÀ½", sndMsgSet.getRecord(ii));
-						throw new Exception("JMS_TC_CD ¶Ç´Â JMS_TC_MESSAGE°¡ ¾ø´Â Àü¹®ÀÔ´Ï´Ù.");
+						commUtils.printParam("JMS_TC_CD ë˜ëŠ” JMS_TC_MESSAGEê°€ ì—†ìŒ", sndMsgSet.getRecord(ii));
+						throw new Exception("JMS_TC_CD ë˜ëŠ” JMS_TC_MESSAGEê°€ ì—†ëŠ” ì „ë¬¸ì…ë‹ˆë‹¤.");
 					}
 
 					sndMsgs[ii] = sndMsgSet.getRecord(ii);
 				}
 
-				//EAI Queue·Î Àü¼Û
+				//EAI Queueë¡œ ì „ì†¡
 				sndQueue(logId, methodNm, "jms.queue.YS_WM_EAI_QUEUE", sndMsgs);
 			}
 
@@ -422,9 +422,9 @@ public class YsCommEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : IF ID·Î Queue¸íÀ» Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : IF IDë¡œ Queueëª…ì„ ì¡°íšŒ
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù. 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤. 
 	 *      @param String logId
 	 *      @param String methodNm
 	 *      @param String msgId
@@ -433,7 +433,7 @@ public class YsCommEJBBean extends BaseSessionBean {
 	*/
 	public String getQueueNm(String logId, String methodNm, String msgId) throws DAOException {
 		try {
-			String queueNm = ""; //JMS Queue¸í
+			String queueNm = ""; //JMS Queueëª…
 
 			if ("".equals(msgId) || msgId.length() < 5) {
 				return queueNm;
@@ -441,38 +441,38 @@ public class YsCommEJBBean extends BaseSessionBean {
 			
 			if("Y".equals(commDao.getWebMothodYn())) {
 				
-				//WebMethod EAI »ç¿ë(Y): BRE¿¡ µî·ÏµÈ Queue¸íÀ» Á¶È¸
+				//WebMethod EAI ì‚¬ìš©(Y): BREì— ë“±ë¡ëœ Queueëª…ì„ ì¡°íšŒ
 				queueNm = jmsQSnder.getQueueName("YS",msgId);
 				
 				if(!"".equals(queueNm)) {
 					
-					//BRE¿¡ µî·ÏµÈ Queue ¸íÀº "jms.queue." ±¸¹®ÀÌ ¾ø±â ¶§¹®¿¡ ¾ÕºÎºĞ¿¡ Ãß°¡ÇÑ´Ù.  
+					//BREì— ë“±ë¡ëœ Queue ëª…ì€ "jms.queue." êµ¬ë¬¸ì´ ì—†ê¸° ë•Œë¬¸ì— ì•ë¶€ë¶„ì— ì¶”ê°€í•œë‹¤.  
 					queueNm = "jms.queue." + queueNm;
 					
-					return queueNm;  //BRE¿¡ µî·ÏµÈ Å¥¸í ¸®ÅÏ
+					return queueNm;  //BREì— ë“±ë¡ëœ íëª… ë¦¬í„´
 				}
 			}
 				
-			//TB_YS_Z_IF Table¿¡ µî·ÏµÈ Queue¸íÀ» Á¶È¸
+			//TB_YS_Z_IF Tableì— ë“±ë¡ëœ Queueëª…ì„ ì¡°íšŒ
 			JDTORecordSet jrRst = commDao.getMsgInfo(msgId);
 			
 			if (jrRst != null && jrRst.size() > 0) {
-				queueNm = commUtils.trim(jrRst.getRecord(0).getFieldString("QUEUE_NAME")); //Queue¸í
+				queueNm = commUtils.trim(jrRst.getRecord(0).getFieldString("QUEUE_NAME")); //Queueëª…
 		    }
 
-			//TB_YS_Z_IF Table¿¡ µî·ÏµÈ Queue¸íÀÌ ¾øÀ¸¸é
+			//TB_YS_Z_IF Tableì— ë“±ë¡ëœ Queueëª…ì´ ì—†ìœ¼ë©´
 			if ("".equals(queueNm) || !queueNm.startsWith("jms.queue.")) {
-				queueNm = msgId.substring(2, 4); //¼ö½ÅÃ³
+				queueNm = msgId.substring(2, 4); //ìˆ˜ì‹ ì²˜
 
 				if ("YS".equals(queueNm)) {
 					queueNm = "jms.queue.YS_MDB_QUEUE"; 	
 				} else {
 					if ("L".equals(msgId.substring(4, 5))) {
-						//¾ßµå°ü¸® EAI Queue
-						queueNm = "jms.queue.YS_EAI_QUEUE"; //¾ßµå°ü¸® EAI Queue
+						//ì•¼ë“œê´€ë¦¬ EAI Queue
+						queueNm = "jms.queue.YS_EAI_QUEUE"; //ì•¼ë“œê´€ë¦¬ EAI Queue
 					} else {
-						//³»ºÎ JMS Queue¸í
-						queueNm = "jms.queue." + queueNm + "_MDB_QUEUE"; //³»ºÎ JMS Queue¸í
+						//ë‚´ë¶€ JMS Queueëª…
+						queueNm = "jms.queue." + queueNm + "_MDB_QUEUE"; //ë‚´ë¶€ JMS Queueëª…
 					}
 				}
 			}
@@ -481,15 +481,15 @@ public class YsCommEJBBean extends BaseSessionBean {
 		} catch (DAOException e) {
 			throw e;
 		} catch (Exception e) {
-			throw new DAOException(commUtils.makeErrorLog(logId, "Queue¸í[YsCommEJB.getQueueNm] < " + methodNm, e));
+			throw new DAOException(commUtils.makeErrorLog(logId, "Queueëª…[YsCommEJB.getQueueNm] < " + methodNm, e));
 		}
 	}
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Queue·Î Àü¹® 1°Ç ¼Û½Å
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Queueë¡œ ì „ë¬¸ 1ê±´ ì†¡ì‹ 
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù. 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤. 
 	 *      @param String logId
 	 *      @param String methodNm
 	 *      @param String queueNm
@@ -499,37 +499,37 @@ public class YsCommEJBBean extends BaseSessionBean {
 	*/
 	public void sndQueue(String logId, String methodNm, String queueNm, JDTORecord sndMsg) throws DAOException {
 		try {
-			commUtils.printParam(logId + " " + queueNm + " ¼Û½Å  < " + methodNm, sndMsg);
+			commUtils.printParam(logId + " " + queueNm + " ì†¡ì‹   < " + methodNm, sndMsg);
 
-			// Property Service ÀÎ½ºÅÏ½º¸¦ ÃëµæÇÕ´Ï´Ù.
+			// Property Service ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì·¨ë“í•©ë‹ˆë‹¤.
 			PropertyService propertyService = PropertyService.getInstance();
-			// Queue ¸íÄªÀ» Property·ÎºÎÅÍ ÃëµæÇÕ´Ï´Ù.
+			// Queue ëª…ì¹­ì„ Propertyë¡œë¶€í„° ì·¨ë“í•©ë‹ˆë‹¤.
 			String queueName = propertyService.getProperty("common.properties", queueNm);
 
 			JmsQueueSender sender = new JmsQueueSender();
-			// Queue¿¡ ¿¬°áÇÒ ¸®¼Ò½º¸¦ »ı¼ºÇÕ´Ï´Ù.
+			// Queueì— ì—°ê²°í•  ë¦¬ì†ŒìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 			sender.initQueueService(queueName);
 
-			//JMS Log¿¡ ³²À¸¹Ç·Î ÃÊ±âÈ­
+			//JMS Logì— ë‚¨ìœ¼ë¯€ë¡œ ì´ˆê¸°í™”
 			String rstCd = (logId == null || "".equals(logId)) ? null : logId;
 			sndMsg.setResultCode(rstCd);
 			sndMsg.setResultMsg(null);
 
-			// Queue¿¡ µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÕ´Ï´Ù.
+			// Queueì— ë°ì´í„°ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.
 			String id = sender.send(sndMsg);
 
-			commUtils.printLog(logId, queueNm + " 1 °Ç ¼Û½Å : " + id, "SQ");
+			commUtils.printLog(logId, queueNm + " 1 ê±´ ì†¡ì‹  : " + id, "SQ");
 		} catch (DAOException e) {
 			throw e;
 		} catch (Exception e) {
-			throw new DAOException(commUtils.makeErrorLog(logId, queueNm + " ¼Û½Å[sndQueue] < " + methodNm, e));
+			throw new DAOException(commUtils.makeErrorLog(logId, queueNm + " ì†¡ì‹ [sndQueue] < " + methodNm, e));
 		}
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Queue·Î Àü¹® ¿©·¯°Ç ¼Û½Å
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Queueë¡œ ì „ë¬¸ ì—¬ëŸ¬ê±´ ì†¡ì‹ 
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù. 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤. 
 	 *      @param String logId
 	 *      @param String methodNm
 	 *      @param String queueNm
@@ -539,56 +539,56 @@ public class YsCommEJBBean extends BaseSessionBean {
 	*/
 	public void sndQueue(String logId, String methodNm, String queueNm, JDTORecord[] sndMsg) throws DAOException {
 		try {
-			commUtils.printParam(logId + " " + queueNm + " ¼Û½Å  < " + methodNm, sndMsg);
+			commUtils.printParam(logId + " " + queueNm + " ì†¡ì‹   < " + methodNm, sndMsg);
 
-			// ÇÁ·ÎÆÛÆ¼ ¼­ºñ½º ÀÎ½ºÅÏ½º¸¦ ÃëµæÇÕ´Ï´Ù.
+			// í”„ë¡œí¼í‹° ì„œë¹„ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì·¨ë“í•©ë‹ˆë‹¤.
 			PropertyService propertyService = PropertyService.getInstance();
-			// ¿­¿¬ EAI Queue ¸íÄªÀ» ÇÁ·ÎÆÛÆ¼·ÎºÎÅÍ ÃëµæÇÕ´Ï´Ù.
+			// ì—´ì—° EAI Queue ëª…ì¹­ì„ í”„ë¡œí¼í‹°ë¡œë¶€í„° ì·¨ë“í•©ë‹ˆë‹¤.
 			String queueName = propertyService.getProperty("common.properties", queueNm);
 
 			JmsQueueSender sender = new JmsQueueSender();
-			// Å¥¿¡ ¿¬°áÇÒ ¸®¼Ò½º¸¦ »ı¼ºÇÕ´Ï´Ù.
+			// íì— ì—°ê²°í•  ë¦¬ì†ŒìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 			sender.initQueueService(queueName);
 
-			//JMS Log¿¡ ³²À¸¹Ç·Î ÃÊ±âÈ­
+			//JMS Logì— ë‚¨ìœ¼ë¯€ë¡œ ì´ˆê¸°í™”
 			String rstCd = (logId == null || "".equals(logId)) ? null : logId;
 			for (int ii = 0; ii < sndMsg.length; ii++) {
 				sndMsg[ii].setResultCode(rstCd);
 				sndMsg[ii].setResultMsg(null);
 			}
 
-			// Å¥¿¡ µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÕ´Ï´Ù.
+			// íì— ë°ì´í„°ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.
 			String[] id = sender.send(sndMsg);
 
-			commUtils.printLog(logId, queueNm + " " + sndMsg.length + " °Ç ¼Û½Å : " +	commUtils.toString(id), "SQ");
+			commUtils.printLog(logId, queueNm + " " + sndMsg.length + " ê±´ ì†¡ì‹  : " +	commUtils.toString(id), "SQ");
 		} catch (DAOException e) {
 			throw e;
 		} catch (Exception e) {
-			throw new DAOException(commUtils.makeErrorLog(logId, queueNm + " Multi¼Û½Å[sndQueue] < " + methodNm, e));
+			throw new DAOException(commUtils.makeErrorLog(logId, queueNm + " Multiì†¡ì‹ [sndQueue] < " + methodNm, e));
 		}
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸® (EAI, JMS °øÅë)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬ (EAI, JMS ê³µí†µ)
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord sndData
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public void sndInterfacePI(JDTORecord sndData) throws DAOException {
 		String logId = sndData.getResultCode();
-		String methodNm = "I/F¼Û½Å[YsCommEJB.sndInterfacePI] < " + sndData.getResultMsg();
+		String methodNm = "I/Fì†¡ì‹ [YsCommEJB.sndInterfacePI] < " + sndData.getResultMsg();
 
 		try {
 			commUtils.printLog(logId, methodNm, "I+");
 
 			String msgId   = ""; //IF ID
-			String queueNm = ""; //Queue¸í
+			String queueNm = ""; //Queueëª…
 
-			int msgNo  = 0;  //IF ID ¹øÈ£
-			int sndCnt = 0;  //Àü¼ÛData °Ç¼ö
-			boolean chkOK = false; //Á¤»ó¿©ºÎ Check
+			int msgNo  = 0;  //IF ID ë²ˆí˜¸
+			int sndCnt = 0;  //ì „ì†¡Data ê±´ìˆ˜
+			boolean chkOK = false; //ì •ìƒì—¬ë¶€ Check
 
 			//PIDEV			
 
@@ -598,11 +598,11 @@ public class YsCommEJBBean extends BaseSessionBean {
 			JDTORecord    jrSndMsg = JDTORecordFactory.getInstance().create();
 			JDTORecordSet jsSndMsg = (JDTORecordSet)sndData.getField("SEND_DATA");
 			if (jsSndMsg == null || jsSndMsg.size() <= 0) {
-				commUtils.printLog("", "\n" + logId + " ¡áInfo¡á " + "Method  : " + methodNm + "\n" + logId + " ¡áInfo¡á " + "Message : " + "Àü¼ÛÇÒ Data°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù .", "IS");
+				commUtils.printLog("", "\n" + logId + " â– Infoâ–  " + "Method  : " + methodNm + "\n" + logId + " â– Infoâ–  " + "Message : " + "ì „ì†¡í•  Dataê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ .", "IS");
 				return;
 			}
-			//MQÀÎÅÍÆäÀÌ½º Á¤º¸ °Ë»ö
-			int sndCnt1 = jsSndMsg.size(); //Àü¼ÛData °Ç¼ö			
+			//MQì¸í„°í˜ì´ìŠ¤ ì •ë³´ ê²€ìƒ‰
+			int sndCnt1 = jsSndMsg.size(); //ì „ì†¡Data ê±´ìˆ˜			
 			for (int ii = 1; ii <= sndCnt1; ii++) {
 				jsSndMsg.absolute(ii);
 				jrSndMsg = jsSndMsg.getRecord();
@@ -611,15 +611,15 @@ public class YsCommEJBBean extends BaseSessionBean {
 				if(msgIdMq.startsWith("M10")) { 					
 					commUtils.printLog(logId, "YD_GP:" + ydGp, "SL");
 //					if ("K".equals (ydGp)) {
-//				   //MQ ¼Û½ÅÃ³¸® ÇØ¾ß ÇÔ
+//				   //MQ ì†¡ì‹ ì²˜ë¦¬ í•´ì•¼ í•¨
 //						M10YdExLm41Sender.SendMessage(commUtils.jdtoRecordToLinkedHashMap(jrSndMsg));
 //					}
-					//ÀÓ°¡°ø	
+					//ì„ê°€ê³µ	
 					if (msgIdMq.endsWith("5")) {
-				   //MQ ¼Û½ÅÃ³¸® ÇØ¾ß ÇÔ
+				   //MQ ì†¡ì‹ ì²˜ë¦¬ í•´ì•¼ í•¨
 						M10YsExLm54Sender.SendMessage(commUtils.jdtoRecordToLinkedHashMap(jrSndMsg));
 					} else {
-					   //MQ ¼Û½ÅÃ³¸® ÇØ¾ß ÇÔ
+					   //MQ ì†¡ì‹ ì²˜ë¦¬ í•´ì•¼ í•¨
 						M10YsExLm41Sender.SendMessage(commUtils.jdtoRecordToLinkedHashMap(jrSndMsg));
 					}					
 				} else {
@@ -629,22 +629,22 @@ public class YsCommEJBBean extends BaseSessionBean {
 						
 			JDTORecordSet sndMsgSet = (JDTORecordSet)sndData.getField("SEND_DATA");
 			if (sndMsgSet == null || sndMsgSet.size() <= 0) {
-				commUtils.printLog("", commUtils.makeErrorLog(logId, methodNm, "Àü¼ÛÇÒ Data°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù ."), "IS");
+				commUtils.printLog("", commUtils.makeErrorLog(logId, methodNm, "ì „ì†¡í•  Dataê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ ."), "IS");
 				return;
 			}
 
-			//ÀÎÅÍÆäÀÌ½º Á¤º¸
-			sndCnt = sndMsgSet.size(); //Àü¼ÛData °Ç¼ö
-			int[][] msgNos = new int[sndCnt][sndCnt+1]; //ÀÎÅÍÆäÀÌ½ºº° °Ç¼ö ¹× IF ID ¹øÈ£
-			String[][] msgInfo = new String[sndCnt][2]; //IF ID, Queue¸í
+			//ì¸í„°í˜ì´ìŠ¤ ì •ë³´
+			sndCnt = sndMsgSet.size(); //ì „ì†¡Data ê±´ìˆ˜
+			int[][] msgNos = new int[sndCnt][sndCnt+1]; //ì¸í„°í˜ì´ìŠ¤ë³„ ê±´ìˆ˜ ë° IF ID ë²ˆí˜¸
+			String[][] msgInfo = new String[sndCnt][2]; //IF ID, Queueëª…
 			
-			//°°Àº IF ID ³¢¸® Á¤¸®
+			//ê°™ì€ IF ID ë¼ë¦¬ ì •ë¦¬
 			for (int ii = 0; ii < sndCnt; ii++) {
-				//EAI, JMS, HTTP(ÃâÇÏ°ü¸® µî) ¼Û½Å Àü¹® IF ID
+				//EAI, JMS, HTTP(ì¶œí•˜ê´€ë¦¬ ë“±) ì†¡ì‹  ì „ë¬¸ IF ID
 				msgId = commUtils.getMsgId(sndMsgSet.getRecord(ii));
 				
 				if (!"".equals(msgId) && msgId.length() == 8) {
-					//±â µî·ÏµÈ List¿¡¼­ Ã£±â
+					//ê¸° ë“±ë¡ëœ Listì—ì„œ ì°¾ê¸°
 					chkOK = true;
 					for (int kk = 0; kk < sndCnt; kk++) {
 						if (msgId.equals(msgInfo[kk][0])) {
@@ -655,9 +655,9 @@ public class YsCommEJBBean extends BaseSessionBean {
 						}
 					}
 
-					//¸ø Ã£À¸¸é ½Å±Ô·Î µî·Ï
+					//ëª» ì°¾ìœ¼ë©´ ì‹ ê·œë¡œ ë“±ë¡
 					if (chkOK) {
-						//Queue¸í Á¶È¸
+						//Queueëª… ì¡°íšŒ
 						queueNm = getQueueNm(logId, methodNm, msgId);
 						
 						if (!"".equals(queueNm)) {
@@ -667,18 +667,18 @@ public class YsCommEJBBean extends BaseSessionBean {
 							msgInfo[msgNo][1] = queueNm;
 							msgNo++;
 						} else {
-							commUtils.printParam("[ " + msgId + " ]ÀÇ Queue¸íÀ» Ã£À» ¼ö ¾øÀ½", sndMsgSet.getRecord(ii));
+							commUtils.printParam("[ " + msgId + " ]ì˜ Queueëª…ì„ ì°¾ì„ ìˆ˜ ì—†ìŒ", sndMsgSet.getRecord(ii));
 						}
 
 					}
 				}
 			}
 				
-			//¼Û½Å Àü¹® Æí¼º
+			//ì†¡ì‹  ì „ë¬¸ í¸ì„±
 			for (int ii = 0; ii < msgNo; ii++) {
 				msgId   = msgInfo[ii][0];
 				queueNm = msgInfo[ii][1];
-				//msgId°¡ ¾øÀ¸¸é Skip
+				//msgIdê°€ ì—†ìœ¼ë©´ Skip
 				if ("".equals(msgId)) {	continue; }
 
 				int sCnt = 0;
@@ -689,19 +689,19 @@ public class YsCommEJBBean extends BaseSessionBean {
 					}
 				}
 				
-				//Àü¼Û°Ç¼ö º° Àü¼ÛÃ³¸®
+				//ì „ì†¡ê±´ìˆ˜ ë³„ ì „ì†¡ì²˜ë¦¬
 				if (sCnt == 1) {
-					//Àü¼Û°Ç¼ö°¡ 1°³ÀÏ °æ¿ì
+					//ì „ì†¡ê±´ìˆ˜ê°€ 1ê°œì¼ ê²½ìš°
 					JDTORecord sndMsg = sndMsgSet.getRecord(msgNos[ii][1]);
 
-					//msgId »èÁ¦
+					//msgId ì‚­ì œ
 					msgInfo[ii][0] = "";
 
 					if (sndMsg != null) {
 						sndQueue(logId, methodNm, queueNm, sndMsg);
 					}
 				} else {
-					//¿©·¯°³ÀÏ °æ¿ì
+					//ì—¬ëŸ¬ê°œì¼ ê²½ìš°
 					int sNo  = 0;
 					JDTORecord[] sndMsgs = new JDTORecord[sCnt];
 
@@ -720,13 +720,13 @@ public class YsCommEJBBean extends BaseSessionBean {
 						}
 					}
 
-					//¿©·¯°Ç Àü¼Û
+					//ì—¬ëŸ¬ê±´ ì „ì†¡
 					sndQueue(logId, methodNm, queueNm, sndMsgs);
 				}
 			}
 
-			//¼Û½Å °á°ú Log Ã³¸®ºÎºĞ
-			commUtils.printLog(logId, "Àü¼Û ÇÕ°è : " + sndCnt + " °Ç", "IS");
+			//ì†¡ì‹  ê²°ê³¼ Log ì²˜ë¦¬ë¶€ë¶„
+			commUtils.printLog(logId, "ì „ì†¡ í•©ê³„ : " + sndCnt + " ê±´", "IS");
 			commUtils.printLog(logId, methodNm, "I-");
 		} catch (DAOException e) {
 			throw e;
