@@ -11,7 +11,7 @@ import com.inisteel.cim.yd.common.util.YdDaoUtils;
 import com.inisteel.cim.yd.common.util.YdUtils;
 
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµåÂ÷·®»ç¾ç DAO
+ *      [A] í´ëž˜ìŠ¤ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ DAO
  * 
 */
 
@@ -29,24 +29,24 @@ public class YdCarSpecDao {
 	//select query id
 	private String szQueryIdGet1 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspec";
 	private String szQueryIdGet2 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspecEQPID";
-	//ÀÌÇö¼º 20090308 
+	//ì´í˜„ì„± 20090308 
 	private String szQueryIdGet3 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspecTRN_EQP_CD";
-	//ÀÌÇö¼º 20090310 
+	//ì´í˜„ì„± 20090310 
 	private String szQueryIdGet4 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspecTrnEqpClass";
 
-	//±Ç¿ÀÃ¢ 20090318
+	//ê¶Œì˜¤ì°½ 20090318
 	private String szQueryIdGet5 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspecCarNoTrnEqp";	
 	
-	//ÀÌÇö¼º - ±¸³»¿î¼Û Idle Â÷·®
+	//ì´í˜„ì„± - êµ¬ë‚´ìš´ì†¡ Idle ì°¨ëŸ‰
 	private String szQueryIdGet6 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarspecLIdelCar";
-	//½É¸í¼ø - Â÷·®ÀÛ¾÷°ü¸® ¿î¼Û¹øÈ£ À¯¹«È®ÀÎ
+	//ì‹¬ëª…ìˆœ - ì°¨ëŸ‰ìž‘ì—…ê´€ë¦¬ ìš´ì†¡ë²ˆí˜¸ ìœ ë¬´í™•ì¸
 	private String szQueryIdGet7 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getCarSpecInfo";
-	//½É¸í¼ø - Â÷·®ÀÛ¾÷°ü¸® Â÷·®¹øÈ£ À¯¹«È®ÀÎ
+	//ì‹¬ëª…ìˆœ - ì°¨ëŸ‰ìž‘ì—…ê´€ë¦¬ ì°¨ëŸ‰ë²ˆí˜¸ ìœ ë¬´í™•ì¸
 	private String szQueryIdGet8 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getCarSpecInfo2";
 	
 	//insert query id
 	private String szQueryIdIns1 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.insYdCarspec";
-	//½É¸í¼ø -¾ßµåÂ÷·®µî·Ï¼ø¹ø °íÀ¯Å° »ý¼º Äõ¸®
+	//ì‹¬ëª…ìˆœ -ì•¼ë“œì°¨ëŸ‰ë“±ë¡ìˆœë²ˆ ê³ ìœ í‚¤ ìƒì„± ì¿¼ë¦¬
 	private String szQueryIdKey = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.getYdCarSpecSeq";
 	//update query id
 	private String szQueryIdUpd1 = "com.inisteel.cim.yd.dao.ydcarspecdao.YdCarspecDao.updYdCarspec";
@@ -56,17 +56,17 @@ public class YdCarSpecDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ SELECT
 	 *      
 	 * @param  JDTORecord inRec         parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
-	 *         int intGp                ±¸ºÐ(0:YD_CAR_REG_SEQ,YD_EQP_ID
+	 *         int intGp                êµ¬ë¶„(0:YD_CAR_REG_SEQ,YD_EQP_ID
 	 *                                      1:YD_EQP_ID,YD_CAR_USE_GP[LIKE],TRN_EQP_CD[LIKE],CAR_NO[LIKE]
 	 *                                      2:TRN_EQP_CD
 	 *                                      3:TRN_EQP_CLASS
 	 *                                      4:CAR_NO
 	 *                                      5:X)
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -79,7 +79,7 @@ public class YdCarSpecDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -122,7 +122,7 @@ public class YdCarSpecDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
@@ -133,16 +133,16 @@ public class YdCarSpecDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec  parameter record
-	 *         int        intGp  ±¸ºÐ(0:YD_CAR_REG_SEQ,YD_EQP_ID
+	 *         int        intGp  êµ¬ë¶„(0:YD_CAR_REG_SEQ,YD_EQP_ID
 	 *                               1:YD_EQP_ID,YD_CAR_USE_GP[LIKE],TRN_EQP_CD[LIKE],CAR_NO[LIKE]
 	 *                               2:TRN_EQP_CD
 	 *                               3:TRN_EQP_CLASS
 	 *                               4:CAR_NO
 	 *                               5:X)
-	 * @return boolean           true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean           true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkPara_getYdCarspec(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -179,7 +179,7 @@ public class YdCarSpecDao {
 				szFieldName = "V_TRN_EQP_CD";
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 8, 1, 'S', 0, 0);
 				
-			} else if (intGp == 3) {	//TEST È­¸é Ã¼Å©ÇÏÁö¾Ê´Â´Ù. 			
+			} else if (intGp == 3) {	//TEST í™”ë©´ ì²´í¬í•˜ì§€ì•ŠëŠ”ë‹¤. 			
 				szFieldName = "V_TRN_EQP_CLASS";
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 0, 3, 'S', 0, 0);				
 			} else if (intGp == 4) {				
@@ -199,7 +199,7 @@ public class YdCarSpecDao {
 				
 			}			
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -210,7 +210,7 @@ public class YdCarSpecDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -226,7 +226,7 @@ public class YdCarSpecDao {
 		
 		try {
 			if( ydDaoUtils.paraRecChkNull(inRec, "YD_CAR_REG_SEQ").equals("") ) {
-				//°íÀ¯Å° »ý¼º
+				//ê³ ìœ í‚¤ ìƒì„±
 				recKey.setField("JSPEED_QUERY_ID", szQueryIdKey);
 				JDTORecordSet rsTemp = dbAssDao.getRecordSet(recKey);
 				rsTemp.first();
@@ -234,7 +234,7 @@ public class YdCarSpecDao {
 				
 				inRec.setField("YD_CAR_REG_SEQ", ydDaoUtils.paraRecChkNull(recPara, "YD_CAR_REG_SEQ"));
 			}
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -250,7 +250,7 @@ public class YdCarSpecDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -260,10 +260,10 @@ public class YdCarSpecDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç INSERT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ INSERT parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -332,7 +332,7 @@ public class YdCarSpecDao {
 			if (!blnErr) return blnErr;
 
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -342,11 +342,11 @@ public class YdCarSpecDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºÐ(0:YD_CAR_REG_SEQ,YD_EQP_ID)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 *         int        intGp êµ¬ë¶„(0:YD_CAR_REG_SEQ,YD_EQP_ID)
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -362,11 +362,11 @@ public class YdCarSpecDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -396,7 +396,7 @@ public class YdCarSpecDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 			
 	
@@ -419,7 +419,7 @@ public class YdCarSpecDao {
 			//execution error return
 			if (intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -428,7 +428,7 @@ public class YdCarSpecDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®»ç¾ç UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ì‚¬ì–‘ UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -484,7 +484,7 @@ public class YdCarSpecDao {
 			szFieldName = "V_YD_WRK_ALW_WT";
 			ydDaoUtils.mappingData(inRec, outRec, szFieldName);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 	} // end of dataMapping

@@ -2,14 +2,14 @@
  * @(#)SlabYdScrSeEJBBean
  *
  * @version          V1.00
- * @author           ÇãÃ¶È£
+ * @author           í—ˆì² í˜¸
  * @date             2012/11/22
  *
- * @description      Slab¾ßµå È­¸é Ã³¸®
+ * @description      Slabì•¼ë“œ í™”ë©´ ì²˜ë¦¬
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2012/11/22   ÇãÃ¶È£      ÇãÃ¶È£      ÃÖÃÊ µî·Ï
+ * V1.00  2012/11/22   í—ˆì² í˜¸      í—ˆì² í˜¸      ìµœì´ˆ ë“±ë¡
  */
 package com.inisteel.cim.yd.jsp.session;
    
@@ -22,7 +22,7 @@ import com.inisteel.cim.yd.common.util.YdSlabUtils;
 import com.inisteel.cim.yd.jsp.dao.SlabYdScrDAO;
 
 /**
- *      [A] Å¬·¡½º¸í : Slab¾ßµå È­¸é Ã³¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Slabì•¼ë“œ í™”ë©´ ì²˜ë¦¬
  *
  * @ejb.bean name="SlabYdScrSeEJB" jndi-name="SlabYdScrSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -47,19 +47,19 @@ public class SlabYdScrSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * ½ºÄ«ÇÎ ÇÈ¾÷ ¸ğ´ÏÅÍ¸µ Á¤º¸ Á¶È¸
+	 * ìŠ¤ì¹´í•‘ í”½ì—… ëª¨ë‹ˆí„°ë§ ì •ë³´ ì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ ÇÈ¾÷ ¸ğ´ÏÅÍ¸µ Á¤º¸ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ í”½ì—… ëª¨ë‹ˆí„°ë§ ì •ë³´ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getPickUpScarfMonitor(GridData gdReq) throws DAOException {
-		String methodNm = "ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸[SlabYdScrSeEJB.getPickUpScarfMonitor] < " + gdReq.getNavigateValue();
+		String methodNm = "ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ[SlabYdScrSeEJB.getPickUpScarfMonitor] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		try {
 			JDTORecordSet jrRst = scrDao.getPickUpScarfMonitor(gdReq);

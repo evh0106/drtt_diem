@@ -11,7 +11,7 @@
 //import com.inisteel.cim.yd.common.util.YdUtils;
 //
 ///**
-// * ³»ºÎ JMS ¸Ş½ÃÁö ¼ö½Å Message Driven Bean 
+// * ë‚´ë¶€ JMS ë©”ì‹œì§€ ìˆ˜ì‹  Message Driven Bean 
 // * 
 // * @ejb.bean name="YdEaiSndEJB" jndi-name="YdEaiSndEJB"
 // *           transaction-type="Container" acknowledge-mode="Auto-acknowledge"
@@ -34,9 +34,9 @@
 //	}
 //
 //	/**
-//	 * Å¬·¡½º ¼³¸í°ú µ¿ÀÏ
+//	 * í´ë˜ìŠ¤ ì„¤ëª…ê³¼ ë™ì¼
 //	 * 
-//	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+//	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 //	 * @param message
 //	 * @return
 //	 * @throws EJBServiceException
@@ -47,43 +47,43 @@
 //		String szMethodName="onMessage";
 //		JDTORecord rcvRec=null;
 //		
-//		// JMS Message °´Ã¼
+//		// JMS Message ê°ì²´
 //		ObjectMessage objMsg = null;
 //
-//		// JMS ¿¬µ¿ ¸Ş¼¼Áö
+//		// JMS ì—°ë™ ë©”ì„¸ì§€
 //		String szEaiMessage = null;
 //
 //
 //		try {
 //			
 //			/*
-//			 * JMS·ÎºÎÅÍ ¸Ş¼¼Áö¸¦ dequeueÇÕ´Ï´Ù.
+//			 * JMSë¡œë¶€í„° ë©”ì„¸ì§€ë¥¼ dequeueí•©ë‹ˆë‹¤.
 //			 */
 //			objMsg = (ObjectMessage) message;
 //
 //			//
-//			// dequeueµÈ ObjectMessage·ÎºÎÅÍ JDTORecord¸¦ ÃëµæÇÕ´Ï´Ù.
+//			// dequeueëœ ObjectMessageë¡œë¶€í„° JDTORecordë¥¼ ì·¨ë“í•©ë‹ˆë‹¤.
 //			//
 //			rcvRec =(JDTORecord)  objMsg.getObject();
 //			
 //			
 //			//
 //			// DEBUG Msg
-//			// ¼ö½ÅÇÑ ¸Ş½ÃÁö¸¦ Display
-//			szMsg="YdEAIRcvEJB ¼ö½Å ¸Ş½ÃÁö ";
+//			// ìˆ˜ì‹ í•œ ë©”ì‹œì§€ë¥¼ Display
+//			szMsg="YdEAIRcvEJB ìˆ˜ì‹  ë©”ì‹œì§€ ";
 //			System.out.println(szMsg);
 //			ydUtils.disyRec(rcvRec);
 //			
 //			
 //			// 
-//			// JMS_TC_CD Key Á¦°Å
+//			// JMS_TC_CD Key ì œê±°
 //			rcvRec =ydUtils.delRecKey(rcvRec, "JMS_TC_CD");
 //			
 //			szEaiMessage =ydUtils.makeRec2Str(rcvRec);
 //			
 //
 //			//
-//			// EAI Socket Å¬¶óÀÌ¾ğÆ®¸¦ ¿¬°áÇÏ¿© ¸Ş¼¼Áö¸¦ Àü¼ÛÇÕ´Ï´Ù.
+//			// EAI Socket í´ë¼ì´ì–¸íŠ¸ë¥¼ ì—°ê²°í•˜ì—¬ ë©”ì„¸ì§€ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.
 //			//
 //			ydDeleComm.socketSender(szEaiMessage);
 //			

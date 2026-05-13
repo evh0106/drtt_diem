@@ -36,11 +36,11 @@ public class QmBuySlabInfoDao {
 	private String szQueryIdUpd2 = "com.inisteel.cim.yd.common.dao.qmBuySlabInfoDao.";
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±¸ÀÔ½½¶óºêÁ¤º¸ SELECT
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : êµ¬ì…ìŠ¬ë¼ë¸Œì •ë³´ SELECT
 	 * @param inRec
 	 * @param outRecSet
-	 * @param intGp			±¸ºĞ(
-	 * 							1: ¾øÀ½
+	 * @param intGp			êµ¬ë¶„(
+	 * 							1: ì—†ìŒ
 	 * 						)
 	 * @return
 	 * @throws DAOException
@@ -55,7 +55,7 @@ public class QmBuySlabInfoDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 					
@@ -91,14 +91,14 @@ public class QmBuySlabInfoDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
 	} //end of getQmBuySlabInfo
 	
 	/**
-	 * ÆÄ¶ó¹ÌÅÍ Ã¼Å©
+	 * íŒŒë¼ë¯¸í„° ì²´í¬
 	 * @param inRec
 	 * @param intGp
 	 * @return
@@ -108,7 +108,7 @@ public class QmBuySlabInfoDao {
 		String szFieldName = null;
 		boolean blnErr = true;
 //		if( intGp == 0 || intGp == 1 ) {
-//			szFieldName = "V_MSLAB_NO";						//ÁÖÆí¹øÈ£
+//			szFieldName = "V_MSLAB_NO";						//ì£¼í¸ë²ˆí˜¸
 //			blnErr = ydDaoUtils.chkField(inRec, szFieldName, 9, 1, YdDaoUtils.STRING_TYPE, 0, 0);
 //			if (!blnErr) return blnErr;
 //			

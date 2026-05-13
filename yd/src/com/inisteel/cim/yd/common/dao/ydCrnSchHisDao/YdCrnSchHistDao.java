@@ -10,7 +10,7 @@ import com.inisteel.cim.yd.common.util.YdDaoUtils;
 import com.inisteel.cim.yd.common.util.YdUtils;
 
 /**
- *      [A] Å¬·¡½º¸í : Å©·¹ÀÎ½ºÄÉÁÙÀÌ·Â DAO
+ *      [A] í´ëž˜ìŠ¤ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë ¥ DAO
  * 
 */
 
@@ -27,7 +27,7 @@ public class YdCrnSchHistDao {
 
 	//select query id
 	private String szQueryIdGet1 = "com.inisteel.cim.yd.dao.ydcrnschhistdao.YdCrnschhistDao.getYdCrnschhist";	
-	//2009.03.06 ÀÌÇö¼º 
+	//2009.03.06 ì´í˜„ì„± 
 	private String szQueryIdGet2 = "com.inisteel.cim.yd.dao.ydcrnschhistdao.YdCrnschhistDao.getplateYdWrkWrDdArtclRef_PAGE_PIDEV";
 	//insert query id
 	private String szQueryIdIns1 = "com.inisteel.cim.yd.dao.ydcrnschhistdao.YdCrnschhistDao.insYdCrnschhist";
@@ -38,13 +38,13 @@ public class YdCrnSchHistDao {
 /*------------------------------------- SELECT -------------------------------------------*/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙÀÌ·Â SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë ¥ SELECT
 	 *      
 	 * @param  JDTORecord inRec         parameter record
 	 *         JDTORecordSet outRecSet  result recordSet
-	 *         int intGp                ±¸ºÐ( 0:YD_CRN_SCH_ID
+	 *         int intGp                êµ¬ë¶„( 0:YD_CRN_SCH_ID
 	 *                                       1:YD_GP, YD_BAY_GP, YD_WRK_DUTY, YD_WRK_HDS_DD_FROM, YD_WRK_HDS_DD_TO, ORD_YEOJAE_GP, PAGE_CNT1, ROW_CNT1, PAGE_CNT2, ROW_CNT2)
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -58,7 +58,7 @@ public class YdCrnSchHistDao {
 		try {
 			JDTORecord recPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 					
 			//parameter check
@@ -89,19 +89,19 @@ public class YdCrnSchHistDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
 	} //end of getYdCrnschhist
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºÐ( 0:YD_CRN_SCH_ID
+	 *         int        intGp êµ¬ë¶„( 0:YD_CRN_SCH_ID
 	 *                               1:YD_GP, YD_BAY_GP, YD_WRK_DUTY, YD_WRK_HDS_DD_FROM, YD_WRK_HDS_DD_TO, ORD_YEOJAE_GP, PAGE_CNT1, ROW_CNT1, PAGE_CNT2, ROW_CNT2)
-	 * @return boolean    true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean    true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkPara_getYdCrnschhist(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -157,7 +157,7 @@ public class YdCrnSchHistDao {
 		
 			} 
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -168,7 +168,7 @@ public class YdCrnSchHistDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÅ©·¹ÀÎ½ºÄÉÁÙÀÌ·Â INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë ¥ INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -182,7 +182,7 @@ public class YdCrnSchHistDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -198,17 +198,17 @@ public class YdCrnSchHistDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of insYdCrnschhist
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -529,7 +529,7 @@ public class YdCrnSchHistDao {
 			szFieldName = "V_YD_DN_WR_ZAXIS";
 			blnErr = ydDaoUtils.chkField(inRec, szFieldName, 5, 2, 'L', 0, 0);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -539,11 +539,11 @@ public class YdCrnSchHistDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÅ©·¹ÀÎ½ºÄÉÁÙÀÌ·Â UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë ¥ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºÐ(0:YD_CRN_SCH_ID)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 *         int        intGp êµ¬ë¶„(0:YD_CRN_SCH_ID)
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -558,11 +558,11 @@ public class YdCrnSchHistDao {
 		//recordSet create
 		JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 		
-		//º¯È¯¿ë ·¹ÄÚµå
+		//ë³€í™˜ìš© ë ˆì½”ë“œ
 		JDTORecord recInPara = null;
 		JDTORecord recOutPara = null;
 		
-		//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+		//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 		recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 		
 		//update data select
@@ -592,7 +592,7 @@ public class YdCrnSchHistDao {
 		outRecSet.first();
 		outRec = outRecSet.getRecord();
 		
-		//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+		//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 		recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 			
 			//data mapping
@@ -614,7 +614,7 @@ public class YdCrnSchHistDao {
 			//execution error return
 			if (intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -623,7 +623,7 @@ public class YdCrnSchHistDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -869,7 +869,7 @@ public class YdCrnSchHistDao {
 			szFieldName = "V_YD_DN_WR_ZAXIS";
 			ydDaoUtils.mappingData(inRec, outRec, szFieldName);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 

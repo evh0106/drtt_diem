@@ -18,7 +18,7 @@ import com.inisteel.cim.ydPI.dao.YdPICommDAO;
 import com.inisteel.cim.yd.ccommon.util.CCommUtils;
 import com.inisteel.cim.ym.common.dao.ymCommonDAO;
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµåÀûÄ¡´Ü DAO
+ *      [A] í´ë˜ìŠ¤ëª… : ì•¼ë“œì ì¹˜ë‹¨ DAO
  * 
 */
 
@@ -36,28 +36,28 @@ public class YdStkLyrDao {
 	private CCommUtils	   commUtils   = new CCommUtils();	
 	
 	//------------------------------select query id--------------------------------------------//
-	//¿­°ú BED,ÀûÄ¡´ÜÀ¸·Î Á¶È¸
+	//ì—´ê³¼ BED,ì ì¹˜ë‹¨ìœ¼ë¡œ ì¡°íšŒ
 	private String szQueryIdGet1 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyr";
-	//¿­°ú BED¸¸À¸·Î Á¶È¸
+	//ì—´ê³¼ BEDë§Œìœ¼ë¡œ ì¡°íšŒ
 	private String szQueryIdGet2 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrBED";
-	//¿­°ú BED¸¸À¸·Î Á¶È¸(PAGE Ã³¸®)
+	//ì—´ê³¼ BEDë§Œìœ¼ë¡œ ì¡°íšŒ(PAGE ì²˜ë¦¬)
 	private String szQueryIdGet3 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrBED_PAGE";
 	
-	//Àç·á¹øÈ£·Î Á¶È¸( ÀÌÇö¼º_20081213)
+	//ì¬ë£Œë²ˆí˜¸ë¡œ ì¡°íšŒ( ì´í˜„ì„±_20081213)
 	private String szQueryIdGet4 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrSTLNO";
 	
-	// ÀÌÇö¼º_20081218 - ÀûÄ¡´Ü,ÀúÀåÇ°,ÀÛ¾÷¿¹¾àÀç·á JOIN
+	// ì´í˜„ì„±_20081218 - ì ì¹˜ë‹¨,ì €ì¥í’ˆ,ì‘ì—…ì˜ˆì•½ì¬ë£Œ JOIN
 	private String szQueryIdGet5 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWBookStock";
-	//¿­·Î Á¶È¸(BED¹øÈ£ DESCENDING)
+	//ì—´ë¡œ ì¡°íšŒ(BEDë²ˆí˜¸ DESCENDING)
 	private String szQueryIdGet6 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrCOL";
 	
-	// ÀÌÇö¼º 20080108 - ÀúÀåÇ° JOIN
+	// ì´í˜„ì„± 20080108 - ì €ì¥í’ˆ JOIN
 	private String szQueryIdGet7 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrYdStock";
-	//C¿­¿¬¼ÒÀçÁ¤¸®LotÆí¼º,C¿­¿¬Á¦Ç°Á¤¸®LotÆí¼º
+	//Cì—´ì—°ì†Œì¬ì •ë¦¬Lotí¸ì„±,Cì—´ì—°ì œí’ˆì •ë¦¬Lotí¸ì„±
 	private String szQueryIdGet8 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrCNT";	
-	// ÀÌÇö¼º 20080305  
+	// ì´í˜„ì„± 20080305  
 	private String szQueryIdGet9 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getSlabYdStkPos";
-	// ÀÌÇö¼º 20080306  
+	// ì´í˜„ì„± 20080306  
 	private String szQueryIdGet10 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdRTDetMatMonitor_PAGE";
 	private String szQueryIdGet11 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdDdArtclStkRef_PAGE_PIDEV";
 	private String szQueryIdGet12 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdOrdInfoStkRef_PAGE";
@@ -67,224 +67,224 @@ public class YdStkLyrDao {
 	                                  
 	private String szQueryIdGet16 = "com.inisteel.cim.yd.dao.ydStkLyrDao.getStkLyrbyWBookIdEtc";
 	
-	// ÀÌÇö¼º 20080310
+	// ì´í˜„ì„± 20080310
 	private String szQueryIdGet17 = "com.inisteel.cim.yd.dao.ydStkLyrDao.getStkLyrbyStkColGpEtc";
 	private String szQueryIdGet18 = "com.inisteel.cim.yd.dao.ydStkLyrDao.getStkLyrbyYdGpYdTCar";
 	private String szQueryIdGet19 = "com.inisteel.cim.yd.dao.ydStkLyrDao.getStkLyrbyYdTCar";
 	private String szQueryIdGet20 = "com.inisteel.cim.yd.dao.ydStkLyrDao.getYdCSlabStlnoStatFlex";
 	
-	// ±èÃ¢ÀÏ 20090305 - ÄÚÀÏ¾ßµå ÀúÀåÀ§Ä¡º° Á¤º¸ Á¶È¸
-	private String szQueryIdGet21 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdStkLocInfoList_PAGE"; //SPANº° ÀúÀåÀ§Ä¡°ü¸® Á¶È¸ 
-	private String szQueryIdGet22 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdColStkPosList_PAGE";  //¿­º° ÀúÀåÀ§Ä¡ °ü¸® 
+	// ê¹€ì°½ì¼ 20090305 - ì½”ì¼ì•¼ë“œ ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ ì¡°íšŒ
+	private String szQueryIdGet21 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdStkLocInfoList_PAGE"; //SPANë³„ ì €ì¥ìœ„ì¹˜ê´€ë¦¬ ì¡°íšŒ 
+	private String szQueryIdGet22 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdColStkPosList_PAGE";  //ì—´ë³„ ì €ì¥ìœ„ì¹˜ ê´€ë¦¬ 
 	private String szQueryIdGet23 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayInvList_PAGE";
 	private String szQueryIdGet24 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdConveyorMgt_PAGE";
 	private String szQueryIdGet25 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdStkPosInfo_PIDEV";
 	private String szQueryIdGet26 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getStlNoRegYn";
-	// ±èÃ¢ÀÏ 20090317 - ÈÄÆÇÁ¦Ç°¾ßµå µ¿º° BED »ç¿ëÇöÈ² Á¶È¸
+	// ê¹€ì°½ì¼ 20090317 - í›„íŒì œí’ˆì•¼ë“œ ë™ë³„ BED ì‚¬ìš©í˜„í™© ì¡°íšŒ
 	private String szQueryIdGet27 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdBayBedUseStat";
-	// ±Ç¿ÀÃ¢ 20090323 
+	// ê¶Œì˜¤ì°½ 20090323 
 	private String szQueryIdGet28 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrStkColGpBedNoMtlStat";
-	// ±èÃ¢ÀÏ 20090324 - º£µå join ´Ü - ¿­±¸ºĞ°ú º£µå¹øÈ£·Î Á¶È¸ (descending) 
+	// ê¹€ì°½ì¼ 20090324 - ë² ë“œ join ë‹¨ - ì—´êµ¬ë¶„ê³¼ ë² ë“œë²ˆí˜¸ë¡œ ì¡°íšŒ (descending) 
 	private String szQueryIdGet29 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStkBedLyrDesc";
-	// ÀÌÇö¼º  20090330   
+	// ì´í˜„ì„±  20090330   
 	private String szQueryIdGet30 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrByColGpBedNo";
 	
-	// ±èÁø¿í 20090406
+	// ê¹€ì§„ìš± 20090406
 	private String szQueryIdGet31 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWrkBookIDColGpBedNoLyrNoIn";
 	private String szQueryIdGet32 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrYdStockColGpBedNoLyrNoIN";
 	
 	private String szQueryIdGet33 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrByStkColGpDesc";
 
-	// ±èÃ¢ÀÏ 20090409 - ÄÚÀÏÁ¦Ç°Ã¢°í  ÀÏÇ°º°Àç°íÁ¶È¸
+	// ê¹€ì°½ì¼ 20090409 - ì½”ì¼ì œí’ˆì°½ê³   ì¼í’ˆë³„ì¬ê³ ì¡°íšŒ
 	private String szQueryIdGet34 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdDdArtclStkRef_PIDEV";
 	
-	// ±èÁ¾°Ç  20090408 - Å©·¹ÀÎ ¹øÈ£ Select
+	// ê¹€ì¢…ê±´  20090408 - í¬ë ˆì¸ ë²ˆí˜¸ Select
 	private String szQueryIdGet36 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdCrNo";
 	
-	// ±èÃ¢ÀÏ  20090414 - ÄÚÀÏ¼ÒÀç ÄÁº£¾îÁ¤º¸ Á¶È¸
+	// ê¹€ì°½ì¼  20090414 - ì½”ì¼ì†Œì¬ ì»¨ë² ì–´ì •ë³´ ì¡°íšŒ
 	private String szQueryIdGet38 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdConveyorMgt_PAGE2";
 	
-	// ÀÌÇö¼º 20090415 - ÀûÄ¡Àç·á Á¶È¸ (FLEX È­¸é - ½½¶óºêÇüÅÂ)
+	// ì´í˜„ì„± 20090415 - ì ì¹˜ì¬ë£Œ ì¡°íšŒ (FLEX í™”ë©´ - ìŠ¬ë¼ë¸Œí˜•íƒœ)
 	private String szQueryIdGet39 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStlnoStatFlex";
 	
-	//ÀÌÇö¼º 20090420 - 
+	//ì´í˜„ì„± 20090420 - 
 	private String szQueryIdGet40 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStkBedLyrByColGpBedNoLyrNo";
 	
-	//±èÃ¢ÀÏ 20090421 - 
+	//ê¹€ì°½ì¼ 20090421 - 
 	private String szQueryIdGet41 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdGdsStockList";
 	
-	//ÀÌÇö¼º 20090427
+	//ì´í˜„ì„± 20090427
 	private String szQueryIdGet42 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdRetCrnRegSelect_PAGE_PIDEV";
-	//±èÃ¢ÀÏ  20090511
+	//ê¹€ì°½ì¼  20090511
 	private String szQueryIdGet43 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdSpanStkPosList_PAGE";
 	
-	//ÀÌÇö¼º  20090513
+	//ì´í˜„ì„±  20090513
 	private String szQueryIdGet44 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilStateWorkGbn_Flex";
 
-	//±èÃ¢ÀÏ  20090513
+	//ê¹€ì°½ì¼  20090513
 	private String szQueryIdGet45 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayOrdInv1";
-	//±èÃ¢ÀÏ  20090513
+	//ê¹€ì°½ì¼  20090513
 	private String szQueryIdGet46 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayOrdInv2";
 	
-	//±èÃ¢ÀÏ  20090521
+	//ê¹€ì°½ì¼  20090521
 	private String szQueryIdGet47 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdInPlanDtl_PIDEV";
 	
-	//ÀÌÇö¼º  20090527 - ÄÚÀÏÁ¦Ç°¾ßµå Flex ½ºÆÇº° ÀûÄ¡¿­ Á¶È¸
+	//ì´í˜„ì„±  20090527 - ì½”ì¼ì œí’ˆì•¼ë“œ Flex ìŠ¤íŒë³„ ì ì¹˜ì—´ ì¡°íšŒ
 	private String szQueryIdGet48 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilGdsStateWorkGbn_Flex";
-	//ÀÌÇö¼º  20090605 - ½ºÄ«ÇÎ °ü¸®È­¸é Á¶È¸ 
+	//ì´í˜„ì„±  20090605 - ìŠ¤ì¹´í•‘ ê´€ë¦¬í™”ë©´ ì¡°íšŒ 
 	private String szQueryIdGet49 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getScarfMgt_PAGE";
-	//ÀÌÇö¼º  20090605 - PICK UP BED Á¶È¸ 
+	//ì´í˜„ì„±  20090605 - PICK UP BED ì¡°íšŒ 
 	private String szQueryIdGet50 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPickUpBed";
 	private String szQueryIdGet51 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPickUpBedDet";
-	//±èÃ¢ÀÏ  200906211 - ¿­º°ÀúÀåÀ§Ä¡ Á¶È¸
+	//ê¹€ì°½ì¼  200906211 - ì—´ë³„ì €ì¥ìœ„ì¹˜ ì¡°íšŒ
 	private String szQueryIdGet52 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdStkLocLyrGpInfoList";
-	//±èÃ¢ÀÏ  200906211 - ÄÚÀÏÀúÀåÀ§Ä¡ Á¶È¸
+	//ê¹€ì°½ì¼  200906211 - ì½”ì¼ì €ì¥ìœ„ì¹˜ ì¡°íšŒ
 	private String szQueryIdGet53 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdCoilStkPos";
 	
 	
-	//±èÃ¢ÀÏ  200906213 - Á¤Á¤º¸±Ş È­¸é Á¶È¸ Äõ¸® ( 55 : »ı»ê±âÇÑÀÏ¼ø  , 56 : HEAT ¹øÈ£ ¼ø)
+	//ê¹€ì°½ì¼  200906213 - ì •ì •ë³´ê¸‰ í™”ë©´ ì¡°íšŒ ì¿¼ë¦¬ ( 55 : ìƒì‚°ê¸°í•œì¼ìˆœ  , 56 : HEAT ë²ˆí˜¸ ìˆœ)
 	
 	private String szQueryIdGet54 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getShearDueDate";
 	private String szQueryIdGet55 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getShearHeatNo";
 	
-	//±èÁ¾°Ç 20090616 - ÈÄÆÇÁ¦Ç° ÀúÀåÀ§Ä¡ ¼öÁ¤
+	//ê¹€ì¢…ê±´ 20090616 - í›„íŒì œí’ˆ ì €ì¥ìœ„ì¹˜ ìˆ˜ì •
 	private String szQueryIdGet56 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdStkPosFix";
-	//±èÃ¢ÀÏ  20090616 - ´ÜÁ¤º¸¿¡¼­ ¿­º° º£µå ¼ö Á¶È¸
+	//ê¹€ì°½ì¼  20090616 - ë‹¨ì •ë³´ì—ì„œ ì—´ë³„ ë² ë“œ ìˆ˜ ì¡°íšŒ
 	private String szQueryIdGet57 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdColBedCnt";
 	
-	//ÀÌÇö¼º  20090616 - PICK UP BED Á¶È¸ (AÈÄÆÇ½½¶óºê¾ßµå)
+	//ì´í˜„ì„±  20090616 - PICK UP BED ì¡°íšŒ (Aí›„íŒìŠ¬ë¼ë¸Œì•¼ë“œ)
 	private String szQueryIdGet58 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPickUpBedDet2";
 	
-	//±èÁ¾°Ç  20090619 - ÀúÀåÀ§Ä¡º° Á¤º¸Á¶È¸ (ÈÄÆÇÁ¦Ç°)
+	//ê¹€ì¢…ê±´  20090619 - ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ì¡°íšŒ (í›„íŒì œí’ˆ)
 	private String szQueryIdGet59 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdStkLocInfoList_PIDEV";
 	
-	//½É¸í¼ø  20090630 - ¹İ³³ Å©·¹ÀÎ µî·ÏÈ­¸é Á¶È¸  (ÄÚÀÏÁ¦Ç°)
+	//ì‹¬ëª…ìˆœ  20090630 - ë°˜ë‚© í¬ë ˆì¸ ë“±ë¡í™”ë©´ ì¡°íšŒ  (ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet60 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdGdsRetCrnReg_PAGE";
-	//½É¸í¼ø  20090630 - ¹İ³³ Å©·¹ÀÎ µî·ÏÈ­¸é Á¶È¸  (ÄÚÀÏÁ¦Ç°)
+	//ì‹¬ëª…ìˆœ  20090630 - ë°˜ë‚© í¬ë ˆì¸ ë“±ë¡í™”ë©´ ì¡°íšŒ  (ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet61 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdGdsRetCrnRegSelect_PAGE";
-	// ½É¸í¼ø  20090630 - ¿­º°ÀúÀåÀ§Ä¡ Á¶È¸  (ÄÚÀÏÁ¦Ç°)
+	// ì‹¬ëª…ìˆœ  20090630 - ì—´ë³„ì €ì¥ìœ„ì¹˜ ì¡°íšŒ  (ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet62 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdColStkPosList_PAGE";
-	// ½É¸í¼ø  20090714 - ÁÖ¹®º°Àç°í Á¶È¸  (ÄÚÀÏÁ¦Ç°)
+	// ì‹¬ëª…ìˆœ  20090714 - ì£¼ë¬¸ë³„ì¬ê³  ì¡°íšŒ  (ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet63 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilGdsYdOrdInfoStkRef_PAGE";
-	// ½É¸í¼ø  20090714 - ÀúÀåÀ§Ä¡º° Àç°í  Á¶È¸  (ÄÚÀÏÁ¦Ç°)
+	// ì‹¬ëª…ìˆœ  20090714 - ì €ì¥ìœ„ì¹˜ë³„ ì¬ê³   ì¡°íšŒ  (ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet64 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilGdsYdStkLocInfoList_PAGE_PIDEV";
-	// ½É¸í¼ø  20090715 - ¿­º°ÀúÀåÀ§Ä¡ Á¶È¸(ÄÚÀÏÁ¦Ç°)
+	// ì‹¬ëª…ìˆœ  20090715 - ì—´ë³„ì €ì¥ìœ„ì¹˜ ì¡°íšŒ(ì½”ì¼ì œí’ˆ)
 	private String szQueryIdGet65 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdColStkPosLyrGpList_PIDEV";
-	// ±èÃ¢ÀÏ  20090729 - ¿©Àçº¸À¯ÇöÈ² 
+	// ê¹€ì°½ì¼  20090729 - ì—¬ì¬ë³´ìœ í˜„í™© 
 	private String szQueryIdGet66 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdRmnPossList";
 	private String szQueryIdGet67 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayInlnDtlList";
 	private String szQueryIdGet68 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayInlnList_PIDEV";
-	// ±èÁ¾°Ç  20090804 - ¿­º° ÀúÀåÇ° Á¶È¸
+	// ê¹€ì¢…ê±´  20090804 - ì—´ë³„ ì €ì¥í’ˆ ì¡°íšŒ
 	private String szQueryIdGet69 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdStkColStockList";
 	
-	// ±èÁ¾°Ç  20090820 - ¿­º° ÀúÀåÇ° Á¶È¸
+	// ê¹€ì¢…ê±´  20090820 - ì—´ë³„ ì €ì¥í’ˆ ì¡°íšŒ
 	private String szQueryIdGet70 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrBEDAplate_PAGE";
 	
-	// ½É¸í¼ø  20090824 - »çÀ¯º°ÀÌÀûÁ¶È¸ »ó´Üµ¥ÀÌÅÍÁ¶È¸
+	// ì‹¬ëª…ìˆœ  20090824 - ì‚¬ìœ ë³„ì´ì ì¡°íšŒ ìƒë‹¨ë°ì´í„°ì¡°íšŒ
 	private String szQueryIdGet71 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getBecauseMvUpLyr";
 	
-	//±èÁø¿í 20090831 - ÀûÄ¡´Ü ÀûÄ¡ÁßÀÎ Àç·áÀÇ µÎ²²Á¶È¸
+	//ê¹€ì§„ìš± 20090831 - ì ì¹˜ë‹¨ ì ì¹˜ì¤‘ì¸ ì¬ë£Œì˜ ë‘ê»˜ì¡°íšŒ
 	private String szQueryIdGet72 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getStkLyrMtlSumW";
 
-	// ±Ç¿ÀÃ¢ 20090910 - ÀûÄ¡¿­±¸ºĞ, BED¹øÈ£, »óÅÂ(ÀûÄ¡Áß : C . . .)
+	// ê¶Œì˜¤ì°½ 20090910 - ì ì¹˜ì—´êµ¬ë¶„, BEDë²ˆí˜¸, ìƒíƒœ(ì ì¹˜ì¤‘ : C . . .)
 	private String szQueryIdGet73 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrColGpBedNoMtlStat";
 	
-	// ±èÁ¾°Ç 20090911 - ÀÔ°í ¿¹Á¤ À§Ä¡ µî·Ï ÇÒ ÀúÀåÇ° Á¶È¸
+	// ê¹€ì¢…ê±´ 20090911 - ì…ê³  ì˜ˆì • ìœ„ì¹˜ ë“±ë¡ í•  ì €ì¥í’ˆ ì¡°íšŒ
 	private String szQueryIdGet74 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrRcptStrLocStlNo";
 	
-	//CrnSchSort ÀÌÇö¼º
+	//CrnSchSort ì´í˜„ì„±
 	private String szQueryIdGet75 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.CrnSchSort01";
 	
 	private String szQueryIdGet76 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrByColGpBedNoLike";
 	
 	
 
-	// ÈÄÆÇÁ¦Ç° ¹İ³³Å©·¹ÀÎµî·ÏÈ­¸é¿¡¼­ ¹İ¼ÛÁ¶°Ç (77:Çö¹°, 78:Á¤º¸, 79:ÀüÃ¼)
+	// í›„íŒì œí’ˆ ë°˜ë‚©í¬ë ˆì¸ë“±ë¡í™”ë©´ì—ì„œ ë°˜ì†¡ì¡°ê±´ (77:í˜„ë¬¼, 78:ì •ë³´, 79:ì „ì²´)
 	private String szQueryIdGet77 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdRetCrnRegSelect_PAGE_2";
 	private String szQueryIdGet78 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdRetCrnRegSelect_PAGE_3";
 	private String szQueryIdGet79 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdRetCrnRegSelect_PAGE_4";
 	
-	// ÈÄÆÇÁ¦Ç° À§Ä¡º° ÀúÀåÇ° Á¶È¸(PDA)
+	// í›„íŒì œí’ˆ ìœ„ì¹˜ë³„ ì €ì¥í’ˆ ì¡°íšŒ(PDA)
 	private String szQueryIdGet80 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateYdDongSpanLineRef_PDA";
 	
-	//ÀûÄ¡´ÜÀÇ ÃÖ»ó´Ü Àç·áÀÇ PilingÄÚµå·Î Á¶È¸ : ÀûÄ¡¿­ ASC - ÀÓÃá¼ö 2009.12.02						-- »ç¿ë¾ÈÇÔ : À±Àç±¤ ÀûÄ¡ºñÀ²Äõ¸®·Î ÅëÇÕ
+	//ì ì¹˜ë‹¨ì˜ ìµœìƒë‹¨ ì¬ë£Œì˜ Pilingì½”ë“œë¡œ ì¡°íšŒ : ì ì¹˜ì—´ ASC - ì„ì¶˜ìˆ˜ 2009.12.02						-- ì‚¬ìš©ì•ˆí•¨ : ìœ¤ì¬ê´‘ ì ì¹˜ë¹„ìœ¨ì¿¼ë¦¬ë¡œ í†µí•©
 	private String szQueryIdGet81 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCd";
-	//ÀûÄ¡´ÜÀÇ ÃÖ»ó´Ü Àç·áÀÇ PilingÄÚµå·Î Á¶È¸ : ÀûÄ¡¿­ DESC - ÀÓÃá¼ö 2009.12.02					-- »ç¿ë¾ÈÇÔ : À±Àç±¤ ÀûÄ¡ºñÀ²Äõ¸®·Î ÅëÇÕ
+	//ì ì¹˜ë‹¨ì˜ ìµœìƒë‹¨ ì¬ë£Œì˜ Pilingì½”ë“œë¡œ ì¡°íšŒ : ì ì¹˜ì—´ DESC - ì„ì¶˜ìˆ˜ 2009.12.02					-- ì‚¬ìš©ì•ˆí•¨ : ìœ¤ì¬ê´‘ ì ì¹˜ë¹„ìœ¨ì¿¼ë¦¬ë¡œ í†µí•©
 	private String szQueryIdGet82 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCdColDesc";
-	//ÀûÄ¡´ÜÀÇ ÃÖ»ó´Ü Àç·áÀÇ PilingÄÚµå·Î Á¶È¸ : ÇØ´ç¿­º¸´Ù Å«/ÀÛÀº ¿­, ÀûÄ¡¿­ ASC - ÀÓÃá¼ö 2009.12.07	-- »ç¿ë¾ÈÇÔ : À±Àç±¤ ÀûÄ¡ºñÀ²Äõ¸®·Î ÅëÇÕ
+	//ì ì¹˜ë‹¨ì˜ ìµœìƒë‹¨ ì¬ë£Œì˜ Pilingì½”ë“œë¡œ ì¡°íšŒ : í•´ë‹¹ì—´ë³´ë‹¤ í°/ì‘ì€ ì—´, ì ì¹˜ì—´ ASC - ì„ì¶˜ìˆ˜ 2009.12.07	-- ì‚¬ìš©ì•ˆí•¨ : ìœ¤ì¬ê´‘ ì ì¹˜ë¹„ìœ¨ì¿¼ë¦¬ë¡œ í†µí•©
 	private String szQueryIdGet83 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCdColAscForAidWrk";
-	//ÀûÄ¡´ÜÀÇ ÃÖ»ó´Ü Àç·áÀÇ PilingÄÚµå·Î Á¶È¸ : ÇØ´ç¿­º¸´Ù Å«/ÀÛÀº ¿­, ÀûÄ¡¿­ DESC - ÀÓÃá¼ö 2009.12.07	-- »ç¿ë¾ÈÇÔ : À±Àç±¤ ÀûÄ¡ºñÀ²Äõ¸®·Î ÅëÇÕ
+	//ì ì¹˜ë‹¨ì˜ ìµœìƒë‹¨ ì¬ë£Œì˜ Pilingì½”ë“œë¡œ ì¡°íšŒ : í•´ë‹¹ì—´ë³´ë‹¤ í°/ì‘ì€ ì—´, ì ì¹˜ì—´ DESC - ì„ì¶˜ìˆ˜ 2009.12.07	-- ì‚¬ìš©ì•ˆí•¨ : ìœ¤ì¬ê´‘ ì ì¹˜ë¹„ìœ¨ì¿¼ë¦¬ë¡œ í†µí•©
 	private String szQueryIdGet84 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCdColDescForAidWrk";
-	//ÀûÄ¡´ÜÀÇ Àç·áÀÇ PilingÄÚµå·Î Á¶È¸ : ÀûÄ¡ºñÀ² - À±Àç±¤ 2010.08.09
+	//ì ì¹˜ë‹¨ì˜ ì¬ë£Œì˜ Pilingì½”ë“œë¡œ ì¡°íšŒ : ì ì¹˜ë¹„ìœ¨ - ìœ¤ì¬ê´‘ 2010.08.09
 	private String szQueryIdGet106 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCdRatio";
-	//ÀûÄ¡´ÜÀÇ Àç·áÀÇ È¥Àûº£µå Á¶È¸ : ÀûÀç³ôÀÌ ASC - À±Àç±¤ 2010.08.09
+	//ì ì¹˜ë‹¨ì˜ ì¬ë£Œì˜ í˜¼ì ë² ë“œ ì¡°íšŒ : ì ì¬ë†’ì´ ASC - ìœ¤ì¬ê´‘ 2010.08.09
 	private String szQueryIdGet107 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithMinSimilarBed";
-	//ÀûÄ¡´ÜÀÇ Àç·áÀÇ È¥Àûº£µå Á¶È¸ : ±Ç¿ªº° ÃâÇÏ - À±Àç±¤ 2010.08.09
+	//ì ì¹˜ë‹¨ì˜ ì¬ë£Œì˜ í˜¼ì ë² ë“œ ì¡°íšŒ : ê¶Œì—­ë³„ ì¶œí•˜ - ìœ¤ì¬ê´‘ 2010.08.09
 	private String szQueryIdGet108 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithShipSimilarBed_PIDEV";
 	
-	//Depiler Á¶È¸  - ÀÌÇö¼º  2009.12.23
+	//Depiler ì¡°íšŒ  - ì´í˜„ì„±  2009.12.23
 	private String szQueryIdGet85 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getDepilerBed";
 	
 	
-	// ÃÑ¸Å¼ö Á¶È¸ - ÀÌÇö¼º 2010.01.12 
+	// ì´ë§¤ìˆ˜ ì¡°íšŒ - ì´í˜„ì„± 2010.01.12 
 	private String szQueryIdGet86 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getAPlateYdTotCount";
 	
-	// ÃÑÁß·® Á¶È¸ - ÀÌÇö¼º 2010.01.12
+	// ì´ì¤‘ëŸ‰ ì¡°íšŒ - ì´í˜„ì„± 2010.01.12
 	private String szQueryIdGet87 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getAPlateYdTotSumMgt";
 	
-	// ÁÖ¹®º° Àç°íÁ¶È¸ - Àç·áÁ¤º¸ 2010.02.01
+	// ì£¼ë¬¸ë³„ ì¬ê³ ì¡°íšŒ - ì¬ë£Œì •ë³´ 2010.02.01
 	private String szQueryIdGet88 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoidGdsYdOrdInfoMtl_PIDEV";
 	
-	// ¼öÁÖº°,°í°´»çº° Àç°íÁ¶È¸ - Àç·áÁ¤º¸ 2010.02.02
+	// ìˆ˜ì£¼ë³„,ê³ ê°ì‚¬ë³„ ì¬ê³ ì¡°íšŒ - ì¬ë£Œì •ë³´ 2010.02.02
 	private String szQueryIdGet89 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoidGdsYdOrdGpMtl_PIDEV";
 	
-	// C¿­¿¬ Á¤Á¤Áö½Ã½ÇÀû + ÀÛ¾÷¿¹¾à + ÀÛ¾÷¿¹¾à Àç·á + ÀûÄ¡´Ü : Á¤Á¤´ë»óÀç ÃßÃâ 2010.03.03 ÀÌ¿µ±Ù
+	// Cì—´ì—° ì •ì •ì§€ì‹œì‹¤ì  + ì‘ì—…ì˜ˆì•½ + ì‘ì—…ì˜ˆì•½ ì¬ë£Œ + ì ì¹˜ë‹¨ : ì •ì •ëŒ€ìƒì¬ ì¶”ì¶œ 2010.03.03 ì´ì˜ê·¼
 	private String szQueryIdGet90 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrHRShearWK";
 	private String szQueryIdGet91 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrHRShearWK01";
 	private String szQueryIdGet92 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrHRShearWK02";
 	
-	//ÇöÀç ÀûÄ¡´Üº¸´Ù »óÀ§´ÜÀÌ ¸î°³°¡ Á¸ÀçÇÏ´Â Áö¸¦ Á¶È¸ - ÇöÀç ÀûÄ¡´Ü Æ÷ÇÔ : 2010.03.04 - ÀÓÃá¼ö
+	//í˜„ì¬ ì ì¹˜ë‹¨ë³´ë‹¤ ìƒìœ„ë‹¨ì´ ëª‡ê°œê°€ ì¡´ì¬í•˜ëŠ” ì§€ë¥¼ ì¡°íšŒ - í˜„ì¬ ì ì¹˜ë‹¨ í¬í•¨ : 2010.03.04 - ì„ì¶˜ìˆ˜
 	private String szQueryIdGet93 ="com.inisteel.cim.yd.dao.ydStkLyrDao.getStkLyrCntOverCurLyr";
-	//ÇØ´çÇÏ´Â ÀûÄ¡´ÜºÎÅÍ ¾Æ·¡´Ü¿¡ ÀûÄ¡µÈ Àç·áµéÀÇ Á¤º¸ Á¶È¸ - ÇöÀç ÀûÄ¡´Ü Æ÷ÇÔ 2010.03.05 : ÀÓÃá¼ö
+	//í•´ë‹¹í•˜ëŠ” ì ì¹˜ë‹¨ë¶€í„° ì•„ë˜ë‹¨ì— ì ì¹˜ëœ ì¬ë£Œë“¤ì˜ ì •ë³´ ì¡°íšŒ - í˜„ì¬ ì ì¹˜ë‹¨ í¬í•¨ 2010.03.05 : ì„ì¶˜ìˆ˜
 	private String szQueryIdGet94 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrYdStockBelowLyr";
 	
-	//ÀûÄ¡Àç·á (Àç·á»óÅÂ°¡ : 'C','U') ÀûÄ¡´Ü Á¤º¸Á¶È¸
+	//ì ì¹˜ì¬ë£Œ (ì¬ë£Œìƒíƒœê°€ : 'C','U') ì ì¹˜ë‹¨ ì •ë³´ì¡°íšŒ
 	private String szQueryIdGet95 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStkBedLyrAsc";
 	
-	//ÄÚÀÏÁ¦Ç° ÀúÀåÀ§Ä¡º° Àç°íÁ¶È¸ (2010.03.09)
+	//ì½”ì¼ì œí’ˆ ì €ì¥ìœ„ì¹˜ë³„ ì¬ê³ ì¡°íšŒ (2010.03.09)
 	private String szQueryIdGet96 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrCoilGdsPos_PIDEV";
 	
-	//¼±º°ÃâÇÏ¼Û½ÅÀÌ°í ¿î¼ÛÁö½Ã¹øÈ£°¡ Á¸ÀçÇÏ´Â Àç·á°¡ ÇØ´ç º£µå¿¡ Á¸ÀçÇÏ´Â Á¶È¸ - ÀÓÃá¼ö 2010.03.10
+	//ì„ ë³„ì¶œí•˜ì†¡ì‹ ì´ê³  ìš´ì†¡ì§€ì‹œë²ˆí˜¸ê°€ ì¡´ì¬í•˜ëŠ” ì¬ë£Œê°€ í•´ë‹¹ ë² ë“œì— ì¡´ì¬í•˜ëŠ” ì¡°íšŒ - ì„ì¶˜ìˆ˜ 2010.03.10
 	private String szQueryIdGet97 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrSelCompTransOrd";
-	//°¡Àå ÃÖ±Ù¿¡ ÀûÄ¡´Ü¿¡ µî·ÏµÈ Á¤º¸¸¦ Á¶È¸	- ÀÓÃá¼ö 2010.03.11
+	//ê°€ì¥ ìµœê·¼ì— ì ì¹˜ë‹¨ì— ë“±ë¡ëœ ì •ë³´ë¥¼ ì¡°íšŒ	- ì„ì¶˜ìˆ˜ 2010.03.11
 	private String szQueryIdGet98 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrStlOderByModDate";
-	// ½ÇÁ¦ ÀûÄ¡´ÜÀÇ ÃÖ°í TOP ÀûÄ¡À§Ä¡¸¦ Á¶È¸ - ¼®Ã¢È­ 2010.03.11
+	// ì‹¤ì œ ì ì¹˜ë‹¨ì˜ ìµœê³  TOP ì ì¹˜ìœ„ì¹˜ë¥¼ ì¡°íšŒ - ì„ì°½í™” 2010.03.11
 	private String szQueryIdGet99 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrRealTopLyr";
-	// ÀûÄ¡´ÜÀÇ ´õ¹ÌÀç Á¶È¸ - ¼®Ã¢È­ 2010.03.17
+	// ì ì¹˜ë‹¨ì˜ ë”ë¯¸ì¬ ì¡°íšŒ - ì„ì°½í™” 2010.03.17
 	private String szQueryIdGet100 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrDummy";
-	// ÀûÄ¡´ÜÀÇ ´õ¹ÌÀç Á¶È¸ - ¼®Ã¢È­ 2010.03.18
+	// ì ì¹˜ë‹¨ì˜ ë”ë¯¸ì¬ ì¡°íšŒ - ì„ì°½í™” 2010.03.18
 	private String szQueryIdGet101 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrRealMoveLyr";
-	// ÀûÄ¡BEDÀÇ Àç·áÁß ¿î¼Û´ë±â, ¿î¼ÛÁö½Ã´ë±âÀÎ Àç·áÀÇ ¼ö - ¼®Ã¢È­ 2010.03.23
+	// ì ì¹˜BEDì˜ ì¬ë£Œì¤‘ ìš´ì†¡ëŒ€ê¸°, ìš´ì†¡ì§€ì‹œëŒ€ê¸°ì¸ ì¬ë£Œì˜ ìˆ˜ - ì„ì°½í™” 2010.03.23
 	private String szQueryIdGet102 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getStlMoveCnt";
 	
 	private String szQueryIdGet103 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrSchSTLNO";
-	// ÀûÄ¡BEDÀÇ Àç·áÁß ÀåÀÔÀçÀÎ Àç·áÀÇ ¼ö 
+	// ì ì¹˜BEDì˜ ì¬ë£Œì¤‘ ì¥ì…ì¬ì¸ ì¬ë£Œì˜ ìˆ˜ 
 	private String szQueryIdGet104 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrLotSTLNO";
-	// ÀûÄ¡BEDÀÇ Àç·áÁß ÇØ´çÀç·áÀÇ ¼±¼øÀ§ ÀåÀÔÀçÀÎ Àç·áÀÇ ¼ö 
+	// ì ì¹˜BEDì˜ ì¬ë£Œì¤‘ í•´ë‹¹ì¬ë£Œì˜ ì„ ìˆœìœ„ ì¥ì…ì¬ì¸ ì¬ë£Œì˜ ìˆ˜ 
 	private String szQueryIdGet105 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrPriorLotSTLNO";
 	
-	// Á¤Á¤¾ßµå ÃÑÁß·®/ÃÑ¸Å¼ö  - ±ÇÈÖ¿ø 2013.03.08
+	// ì •ì •ì•¼ë“œ ì´ì¤‘ëŸ‰/ì´ë§¤ìˆ˜  - ê¶Œíœ˜ì› 2013.03.08
 	private String szQueryIdGet109 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getPlateShareYdTotCntMgt";
 	
 	
-	//ÇØ´ç ´Ü,¿­,º£µå¿¡ Àç·á°¡ Á¸ÀçÇÏ´ÂÁö Á¶È¸ - ½ÅÁöÀº 2017.03.27
+	//í•´ë‹¹ ë‹¨,ì—´,ë² ë“œì— ì¬ë£Œê°€ ì¡´ì¬í•˜ëŠ”ì§€ ì¡°íšŒ - ì‹ ì§€ì€ 2017.03.27
 	private String szQueryIdGet110 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrCurStlNo";
 	
 	private String szQueryIdGet111 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithSamePilingCdRatioWithAlFrTo";
 	private String szQueryIdGet112 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithShipSimilarBed_PIDEVWithAlFrTo";
 	private String szQueryIdGet113 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWithMinSimilarBedWithAlFrTo";
 	
-	//2025-12-29 : ÀúÀåÀ§Ä¡ ¼öÁ¤½Ã ¿¹¿Ü Á¶°Ç Ã¼Å©
+	//2025-12-29 : ì €ì¥ìœ„ì¹˜ ìˆ˜ì •ì‹œ ì˜ˆì™¸ ì¡°ê±´ ì²´í¬
 	private String szQueryIdGet114 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyryAllowCheckYdStkColGp";
 	
 //	!AT	
@@ -296,12 +296,12 @@ public class YdStkLyrDao {
 
 	private String szQueryIdGet393 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdHrTrackingBackUpNew";
 	
-//	´ÙÀ½°øÁ¤º° Àç°øÇöÈ²_ÆË¾÷	
+//	ë‹¤ìŒê³µì •ë³„ ì¬ê³µí˜„í™©_íŒì—…	
 	private String szQueryIdGet305 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilYdBayInlnList_Pp";
 	
-//	Àç·áÁøµµº° Àç°øÇöÈ² - 2010.04.21
+//	ì¬ë£Œì§„ë„ë³„ ì¬ê³µí˜„í™© - 2010.04.21
 	private String szQueryIdGet306 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilMtlProgIdInlnStat";	
-//	Àç·áÁøµµº° Àç°øÇöÈ² - 2010.04.21
+//	ì¬ë£Œì§„ë„ë³„ ì¬ê³µí˜„í™© - 2010.04.21
 	private String szQueryIdGet307 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getCoilGdsMtlProgIdInlnStat";	
 	
 	private String szQueryIdGet308 ="com.inisteel.cim.yd.dao.ydcarschdao.YdCarschDao.getCoilTotYdNextproctListDetail_PIDEV";	
@@ -309,7 +309,7 @@ public class YdStkLyrDao {
 	private String szQueryIdGet309 ="ym.facilitystatus.facilityinquiry.dao.YdStackLayerDAO.getSpanStockList";
 	
 	
-//	Àç·áÁøµµº° Àç°øÇöÈ² - 2010.04.21
+//	ì¬ë£Œì§„ë„ë³„ ì¬ê³µí˜„í™© - 2010.04.21
 	private String szQueryIdGet400 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrSchSCHID";	
 	private String szQueryIdGet401 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrWrkBookIDColGpBedNoLyrNoLineOff";	
 	private String szQueryIdGet402 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrCoilCOMM";
@@ -360,42 +360,42 @@ public class YdStkLyrDao {
 	
 	private String szQueryIdGet621 ="com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getHotcoilStrLocList_PIDEV";
 
-	//ÀúÀåÀ§Ä¡¼öÁ¤ Àç·áº° Çö ÀúÀåÀ§Ä¡Á¶È¸
+	//ì €ì¥ìœ„ì¹˜ìˆ˜ì • ì¬ë£Œë³„ í˜„ ì €ì¥ìœ„ì¹˜ì¡°íšŒ
 	private String szQueryIdGet622 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrStlNo3";
 	
 	private String szQueryIdGet623 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.getYdStklyrStlchk";
 	
 	private String szQueryIdGet999 ="com.inisteel.cim.yd.common.util.YdUtils.chklist";
 	
-	//Ç×¸¸½½¶óºê¾ßµå ±×¶óÀÎµù¸Ó½Å ÀÎÃâ/º¸±Ş Æ®·¡Å·¿ë ÀÛ¾÷ÀÌ·Â get
+	//í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ ê·¸ë¼ì¸ë”©ë¨¸ì‹  ì¸ì¶œ/ë³´ê¸‰ íŠ¸ë˜í‚¹ìš© ì‘ì—…ì´ë ¥ get
 	private String szQueryIdGet700 = "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.getLatestYdWrkHist";
 	//------------------------------insert query id--------------------------------------------//
-	//±âº» insert
+	//ê¸°ë³¸ insert
 	private String szQueryIdIns1 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.insYdStklyr";
 	
-	//Ç×¸¸½½¶óºê¾ßµå ±×¶óÀÎµù¸Ó½Å ÀÎÃâ/º¸±Ş Æ®·¡Å·
+	//í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ ê·¸ë¼ì¸ë”©ë¨¸ì‹  ì¸ì¶œ/ë³´ê¸‰ íŠ¸ë˜í‚¹
 	private String szQueryIdGet9999 = "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.insSlabYdWrkHistByGrinder";
 	//------------------------------update query id--------------------------------------------//
-	//±âº» update
+	//ê¸°ë³¸ update
 	private String szQueryIdUpd1 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyr";
-	//¿Ï·áÀÏ½Ã -> ¼öÁ¤ÀÏ½Ã
+	//ì™„ë£Œì¼ì‹œ -> ìˆ˜ì •ì¼ì‹œ
 	private String szQueryIdUpd2 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyr2";
-	//Àç·á¹øÈ£¸¦ ±âÁØÀ¸·Î ¾÷µ¥ÀÌÆ®
+	//ì¬ë£Œë²ˆí˜¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì—…ë°ì´íŠ¸
 	private String szQueryIdUpd3 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrSTLNO";
 
 	private String szQueryIdUpd4 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrColGpBedNo";
 
-	//±èÁø¿í ÀûÄ¡¿­¹øÈ£·Î ÀûÄ¡´Ü¾÷µ¥ÀÌÆ®(Â÷·®¿ë ¸ÊÁ¤¸®¿ë)
+	//ê¹€ì§„ìš± ì ì¹˜ì—´ë²ˆí˜¸ë¡œ ì ì¹˜ë‹¨ì—…ë°ì´íŠ¸(ì°¨ëŸ‰ìš© ë§µì •ë¦¬ìš©)
 	private String szQueryIdUpd5 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrYdStkColGp";
-	//±èÁø¿í ÀûÄ¡¿­, º£µå¹øÈ£·Î ÀûÄ¡´Ü ¾÷µ¥ÀÌÆ®(´ëÂ÷ ¸ÊÁ¤¸®¿ë)
+	//ê¹€ì§„ìš± ì ì¹˜ì—´, ë² ë“œë²ˆí˜¸ë¡œ ì ì¹˜ë‹¨ ì—…ë°ì´íŠ¸(ëŒ€ì°¨ ë§µì •ë¦¬ìš©)
 	private String szQueryIdUpd6 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrYdStkColGpYdStkBedNo";
-	//±èÁø¿í ÀûÄ¡¿­, º£µå¹øÈ£·Î ÀûÄ¡´Ü ¾÷µ¥ÀÌÆ®(´ëÂ÷ ¸ÊÁ¤¸®¿ë)
+	//ê¹€ì§„ìš± ì ì¹˜ì—´, ë² ë“œë²ˆí˜¸ë¡œ ì ì¹˜ë‹¨ ì—…ë°ì´íŠ¸(ëŒ€ì°¨ ë§µì •ë¦¬ìš©)
 	private String szQueryIdUpd7 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrYdStkColGpYdStkBedNo2";
 
-	// ±Ç¿ÀÃ¢ (2009.09.30 ROTÀç·áÁ¤º¸ ¼ö½Å½Ã ¾÷µ¥ÀÌÆ®)
+	// ê¶Œì˜¤ì°½ (2009.09.30 ROTì¬ë£Œì •ë³´ ìˆ˜ì‹ ì‹œ ì—…ë°ì´íŠ¸)
 	private String szQueryIdUpd8 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updYdStklyrStlNoOnRcvROT";
 
-	// ±Ç¿ÀÃ¢ (2010.01.18 ÇØ´ç ÀûÄ¡¿­+ÀûÄ¡BEDÀ§Ä¡¿¡ ÀÖ´Â ¸ğµç´ÜÀÇ Àç·á¹øÈ£¿Í Àç·áÀûÄ¡»óÅÂ¸¦ Å¬¸®¾î)
+	// ê¶Œì˜¤ì°½ (2010.01.18 í•´ë‹¹ ì ì¹˜ì—´+ì ì¹˜BEDìœ„ì¹˜ì— ìˆëŠ” ëª¨ë“ ë‹¨ì˜ ì¬ë£Œë²ˆí˜¸ì™€ ì¬ë£Œì ì¹˜ìƒíƒœë¥¼ í´ë¦¬ì–´)
 	private String szQueryIdUpd9 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updClearYdStkColGpStkBedNo";
 	
 	private String szQueryIdUpd10 = "com.inisteel.cim.yd.dao.ydstklyrdao.YdStklyrDao.updClearYmStklyr";
@@ -417,11 +417,11 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ SELECT
 	 *      
 	 * @param  JDTORecord inRec         parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
-	 *         int intGp                ±¸ºĞ(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO
+	 *         int intGp                êµ¬ë¶„(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO
 	 *                                      1:YD_STK_COL_GP,YD_STK_BED_NO
 	 *                                      2:YD_STK_COL_GP,YD_STK_BED_NO[PAGE]
 	 *                                      3:STL_NO
@@ -457,11 +457,11 @@ public class YdStkLyrDao {
 	 *                                     40: 
 	 *                                     41: YD_AIM_RT_GP,YD_GP, YD_BAY_GP, CRN_RET_GP, PAGE_CNT1, ROW_CNT1, PAGE_CNT2, ROW_CNT2
 	 *                                     42:
-	 *                                     43: YD_STK_COL_GP (½ºÆÇÁ¤º¸±îÁö 4ÀÚ¸® µé¾î¿È)
+	 *                                     43: YD_STK_COL_GP (ìŠ¤íŒì •ë³´ê¹Œì§€ 4ìë¦¬ ë“¤ì–´ì˜´)
 	 *                                     44:
 	 *                                     45:
 	 *                                     46:
-	 *                                     47: YD_STK_COL_GP  (½ºÆÇÁ¤º¸±îÁö 4ÀÚ¸® µé¾î¿È)
+	 *                                     47: YD_STK_COL_GP  (ìŠ¤íŒì •ë³´ê¹Œì§€ 4ìë¦¬ ë“¤ì–´ì˜´)
 	 *                                     48: YD_BAY_GP , YD_MTL_ITEM , WO_MSLAB_RPR_MTD
 	 *                                     49: V_YD_STK_COL_GP, V_YD_STK_BED_NO 
 	 *                                     50: V_YD_STK_COL_GP, V_YD_STK_BED_NO
@@ -501,7 +501,7 @@ public class YdStkLyrDao {
 	 *                                     97: STL_NO, YD_STK_LYR_MTL_STAT
 	 *                                     )
 	 *
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -514,7 +514,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -865,7 +865,7 @@ public class YdStkLyrDao {
 			
 			
 //PIDEV
-			//PIDEV_S :º´Çà°¡µ¿¿ë:PI_YD
+			//PIDEV_S :ë³‘í–‰ê°€ë™ìš©:PI_YD
 //			String sPI_YD     = commUtils.nvl(recPara.getFieldString("V_PI_YD"), "*");				
 //			String toQuery_ID = ydPICommDAO.getYdRulePI("", szMethodName, "YD0001", recPara.getField("JSPEED_QUERY_ID").toString(), "APPPI0", sPI_YD, "*" );
 //			recPara.setField("JSPEED_QUERY_ID", toQuery_ID);				
@@ -885,17 +885,17 @@ public class YdStkLyrDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
 	} //end of getYdStklyr
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec  parameter record
-	 *         int        intGp  ±¸ºĞ(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO
+	 *         int        intGp  êµ¬ë¶„(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO
 	 *                               1:YD_STK_COL_GP,YD_STK_BED_NO
 	 *                               2:YD_STK_COL_GP,YD_STK_BED_NO[PAGE]
 	 *                               3:STL_NO 
@@ -931,11 +931,11 @@ public class YdStkLyrDao {
  	 *                              40:
  	 *                              41: YD_AIM_RT_GP,YD_GP, YD_BAY_GP, CRN_RET_GP, PAGE_CNT1, ROW_CNT1, PAGE_CNT2, ROW_CNT2
  	 *                              42:
- 	 *                              43: YD_STK_COL_GP (½ºÆÇÁ¤º¸±îÁö 4ÀÚ¸® µé¾î¿È)
+ 	 *                              43: YD_STK_COL_GP (ìŠ¤íŒì •ë³´ê¹Œì§€ 4ìë¦¬ ë“¤ì–´ì˜´)
 	 *                              44:
 	 *                              45:
 	 *                              46:
-	 *                              47: YD_STK_COL_GP  (½ºÆÇÁ¤º¸±îÁö 4ÀÚ¸® µé¾î¿È)\
+	 *                              47: YD_STK_COL_GP  (ìŠ¤íŒì •ë³´ê¹Œì§€ 4ìë¦¬ ë“¤ì–´ì˜´)\
 	 *                              48: YD_BAY_GP , YD_MTL_ITEM , WO_MSLAB_RPR_MTD 
 	 *                              49: V_YD_STK_COL_GP, V_YD_STK_BED_NO
 	 *                              50: V_YD_STK_COL_GP, V_YD_STK_BED_NO 
@@ -975,7 +975,7 @@ public class YdStkLyrDao {
 	 *                              96: YD_STK_COL_GP, YD_STK_BED_NO
 	 *                              97: STL_NO, YD_STK_LYR_MTL_STAT
  	 *                              )
-	 * @return boolean           true(¼º°ø), false(½ÇÆĞ)
+	 * @return boolean           true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException
 	 */
 	public boolean chkPara_getYdStklyr(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -1674,11 +1674,11 @@ public class YdStkLyrDao {
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 1, 1, 'S', 0, 0);
 				if(!blnErr) return blnErr;
 
-				szFieldName = "ORD_GP"; //!A ¼öÁÖ±¸ºĞ (¹ÚÁö¿­ - 2010/03/24)
+				szFieldName = "ORD_GP"; //!A ìˆ˜ì£¼êµ¬ë¶„ (ë°•ì§€ì—´ - 2010/03/24)
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 1, 3, 'S', 0, 0);
 				if(!blnErr) return blnErr;
 				
-				szFieldName = "CUST_CD"; //!A °í°´»çÄÚµå (¹ÚÁö¿­ - 2010/03/24)
+				szFieldName = "CUST_CD"; //!A ê³ ê°ì‚¬ì½”ë“œ (ë°•ì§€ì—´ - 2010/03/24)
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 6, 3, 'S', 0, 0);
 				if(!blnErr) return blnErr;
 
@@ -1823,7 +1823,7 @@ public class YdStkLyrDao {
 				szFieldName = "V_YD_STK_LYR_NO";
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 3, 1, 'S', 0, 0);
 				
-				// !A ¸ñÀûÁöÄÚµå Ãß°¡
+				// !A ëª©ì ì§€ì½”ë“œ ì¶”ê°€
 				szFieldName = "V_DEST_CD1";
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 3, 3, 'S', 0, 0);
 				szFieldName = "V_DEST_CD2";
@@ -2088,7 +2088,7 @@ public class YdStkLyrDao {
 			}
 			 
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -2099,7 +2099,7 @@ public class YdStkLyrDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -2112,7 +2112,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -2128,17 +2128,17 @@ public class YdStkLyrDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of insYdStklyr
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü INSERT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ INSERT parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆĞ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -2201,7 +2201,7 @@ public class YdStkLyrDao {
 			szFieldName = "V_YD_STK_LYR_ZAXIS";
 			blnErr = ydDaoUtils.chkField(inRec, szFieldName, 5, 2, 'L', 0, 0);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -2210,11 +2210,11 @@ public class YdStkLyrDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
 	 *         int        intGp  
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -2228,24 +2228,24 @@ public class YdStkLyrDao {
 		ymCommonDAO dao = ymCommonDAO.getInstance();
 		List sposYNChklist = null;
 		try {
-			//Àå¾Ö ¹ß»ı½Ã ÀÌÀü ¼Ò½º·Î ¿øº¹ ÇÏ±â À§ÇÑ Á¶Ä¡
+			//ì¥ì•  ë°œìƒì‹œ ì´ì „ ì†ŒìŠ¤ë¡œ ì›ë³µ í•˜ê¸° ìœ„í•œ ì¡°ì¹˜
 			String QueryId 	= "com.inisteel.cim.yd.dao.ydstkcoldao.YdStklyrDao.updYdStklyrchklist";
 		    sposYNChklist = dao.getCommonList(QueryId, new Object[]{});
 
 		    JDTORecord unloadPointrec = (JDTORecord)sposYNChklist.get(0);
 	    	String CHK   = StringHelper.evl(unloadPointrec.getFieldString("CHK"), "");
 	    	if(CHK.equals("Y")){
-				//Æ®·»Á§¼Ç ºĞ¸® Àû¿ë	
+				//íŠ¸ë Œì ì…˜ ë¶„ë¦¬ ì ìš©	
 			
 				String StringGp=Integer.toString(intGp) ;
 			
 				ejbConn = new EJBConnector("default", "StockSpecRegSeEJB", this);
 				iRtn =(Integer)ejbConn.trx("updYdStklyrReTX", new Class[] { JDTORecord.class, String.class }, new Object[] { inRec,StringGp });
-				if( iRtn.intValue() != YdConstant.RETN_INT_SUCCESS.intValue() ) {			//¼º°ø
+				if( iRtn.intValue() != YdConstant.RETN_INT_SUCCESS.intValue() ) {			//ì„±ê³µ
 					return intRtnVal = -1;
 				}
 		    }else{
-	    		//±âÁ¸ ¹æ½Ä Àû¿ë 
+	    		//ê¸°ì¡´ ë°©ì‹ ì ìš© 
 	    		intRtnVal = this.updYdStklyrNEWTX(inRec,intGp);
 	    		if(intRtnVal ==0){
 	    			return intRtnVal = -1;
@@ -2255,7 +2255,7 @@ public class YdStkLyrDao {
 			intRtnVal = 1;
 			
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2263,20 +2263,20 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºĞ(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO,
-	 *                              1:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO(¼öÁ¤ÀÏ->¿Ï·áÀÏ½Ã)
+	 *         int        intGp êµ¬ë¶„(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO,
+	 *                              1:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO(ìˆ˜ì •ì¼->ì™„ë£Œì¼ì‹œ)
 	 *                              2:STL_NO)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
 	public int updYdStklyrNEWTX(JDTORecord inRec, int intGp) throws DAOException, JDTOException {
 		String szMethodName = "updYdStklyrNEWTX";
 		String szMsg = null;
-		String szOperationName = "¾ßµåÀûÄ¡´Ü UPDATE TX";
+		String szOperationName = "ì•¼ë“œì ì¹˜ë‹¨ UPDATE TX";
 		JDTORecord outRec = null;
 		int intRtnVal = 0;
 		boolean blnChk_Field = true;
@@ -2285,11 +2285,11 @@ public class YdStkLyrDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -2318,7 +2318,7 @@ public class YdStkLyrDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 	
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 			
 			//data mapping
@@ -2351,7 +2351,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2359,20 +2359,20 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºĞ(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO,
-	 *                              1:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO(¼öÁ¤ÀÏ->¿Ï·áÀÏ½Ã)
+	 *         int        intGp êµ¬ë¶„(0:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO,
+	 *                              1:YD_STK_COL_GP,YD_STK_BED_NO,YD_STK_LYR_NO(ìˆ˜ì •ì¼->ì™„ë£Œì¼ì‹œ)
 	 *                              2:STL_NO)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
 	public int updYdStklyr(JDTORecord inRec, int intGp) throws DAOException, JDTOException {
 		String szMethodName = "updYdStklyr";
 		String szMsg = null;
-		String szOperationName = "¾ßµåÀûÄ¡´Ü UPDATE";
+		String szOperationName = "ì•¼ë“œì ì¹˜ë‹¨ UPDATE";
 		JDTORecord outRec = null;
 		int intRtnVal = 0;
 		boolean blnChk_Field = true;
@@ -2381,11 +2381,11 @@ public class YdStkLyrDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -2414,7 +2414,7 @@ public class YdStkLyrDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 	
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 			
 			//data mapping
@@ -2447,17 +2447,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyr
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE_STL_NO[K]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE_STL_NO[K]
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2467,7 +2467,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
 			//parameter check
@@ -2478,7 +2478,7 @@ public class YdStkLyrDao {
 				return intRtnVal = -2;
 			
 			
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd1);
 	
 			//query execute
@@ -2487,7 +2487,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2495,10 +2495,10 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀÛ¾÷¿¹¾à parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì‘ì—…ì˜ˆì•½ parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆĞ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter_STL_NO(JDTORecord inRec) throws JDTOException  {
@@ -2550,7 +2550,7 @@ public class YdStkLyrDao {
 	} //end of chkParameter_STL_NO
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -2603,7 +2603,7 @@ public class YdStkLyrDao {
 			szFieldName = "V_YD_STK_LYR_ZAXIS";
 			ydDaoUtils.mappingData(inRec, outRec, szFieldName);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 
@@ -2611,10 +2611,10 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE_YD_STK_COL_GP
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE_YD_STK_COL_GP
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2624,7 +2624,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
 //			//parameter check
@@ -2634,7 +2634,7 @@ public class YdStkLyrDao {
 //			if(!blnChk_Field)
 //				return intRtnVal = -2;
 			
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd5);
 	
 			//query execute
@@ -2643,7 +2643,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2651,10 +2651,10 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE_YD_STK_COL_GP
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE_YD_STK_COL_GP
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2664,10 +2664,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
  
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd10);
 	
 			//query execute
@@ -2676,17 +2676,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYmStklyr
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE_YD_STK_COL_GP, YD_STK_BED_NO
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE_YD_STK_COL_GP, YD_STK_BED_NO
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2696,7 +2696,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
 //			//parameter check
@@ -2706,7 +2706,7 @@ public class YdStkLyrDao {
 //			if(!blnChk_Field)
 //				return intRtnVal = -2;
 			
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd6);
 	
 			//query execute
@@ -2715,17 +2715,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyrYdStkColGpBedNo
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE_YD_STK_COL_GP, YD_STK_BED_NO
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE_YD_STK_COL_GP, YD_STK_BED_NO
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2735,7 +2735,7 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
 //			//parameter check
@@ -2745,7 +2745,7 @@ public class YdStkLyrDao {
 //			if(!blnChk_Field)
 //				return intRtnVal = -2;
 			
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd7);
 	
 			//query execute
@@ -2754,7 +2754,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2766,30 +2766,30 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü ¾÷µ¥ÀÌÆ®  
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ ì—…ë°ì´íŠ¸  
 	 *      
-	 *      C3ROTÀç·áµµÂøÅë°úÁ¤º¸ ¿Ã ½Ã 
+	 *      C3ROTì¬ë£Œë„ì°©í†µê³¼ì •ë³´ ì˜¬ ì‹œ 
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
 	public int updYdStklyrStlNoOnRcvROT(JDTORecord inRec) throws DAOException, JDTOException {
-		// ·¹ÄÚµå ¼±¾ğ
+		// ë ˆì½”ë“œ ì„ ì–¸
 		JDTORecord recPara = null;
 
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		int nRet = 0;
 
 		try {
-			// ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			// í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 				
-			// Äõ¸® ¾ÆÀÌµğ ¼³Á¤
+			// ì¿¼ë¦¬ ì•„ì´ë”” ì„¤ì •
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd8);
 	
-			// Äõ¸® ½ÇÇà
+			// ì¿¼ë¦¬ ì‹¤í–‰
 			nRet = dbAssDao.trtProcess(recPara);
 			if(nRet <= 0){
 				nRet = -3;
@@ -2807,29 +2807,29 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡À§Ä¡(YD_STK_COL_GP + YD_STK_BED_NO)ÀÇ ¸ğµç´Ü Àç·á¹øÈ£¿Í Àç·áÀûÄ¡»óÅÂ Å¬¸®¾î  
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ìœ„ì¹˜(YD_STK_COL_GP + YD_STK_BED_NO)ì˜ ëª¨ë“ ë‹¨ ì¬ë£Œë²ˆí˜¸ì™€ ì¬ë£Œì ì¹˜ìƒíƒœ í´ë¦¬ì–´  
 	 *      
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
 	public int updYdStklyrClearStkColGpStkBedNo(JDTORecord inRec) throws DAOException, JDTOException {
-		// ·¹ÄÚµå ¼±¾ğ
+		// ë ˆì½”ë“œ ì„ ì–¸
 		JDTORecord recPara = null;
 
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		int nRet = 0;
 
 		try {
-			// ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			// í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 				
-			// Äõ¸® ¾ÆÀÌµğ ¼³Á¤
+			// ì¿¼ë¦¬ ì•„ì´ë”” ì„¤ì •
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd9);
 	
-			// Äõ¸® ½ÇÇà
+			// ì¿¼ë¦¬ ì‹¤í–‰
 			nRet = dbAssDao.trtProcess(recPara);
 			if(nRet <= 0){
 				nRet = -3;
@@ -2843,10 +2843,10 @@ public class YdStkLyrDao {
 	} 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2856,10 +2856,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd300);
 	
 			//query execute
@@ -2868,17 +2868,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // e
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ UPDATE
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2888,10 +2888,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd301);
 	
 			//query execute
@@ -2900,7 +2900,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2908,10 +2908,10 @@ public class YdStkLyrDao {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü ÁÂÇ¥¸¸  UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ ì¢Œí‘œë§Œ  UPDATE
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2921,10 +2921,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd302);
 	
 			//query execute
@@ -2933,7 +2933,7 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -2941,10 +2941,10 @@ public class YdStkLyrDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü updYdStklyrACT_STAT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ updYdStklyrACT_STAT
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2954,10 +2954,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd304);
 	
 			//query execute
@@ -2966,17 +2966,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyr_STL_NO
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü updYdStklyrWithColStock
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ updYdStklyrWithColStock
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -2986,27 +2986,27 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd305);
 	
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyr_STL_NO
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü updYdStklyrWithColStock
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ updYdStklyrWithColStock
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -3016,27 +3016,27 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd309);
 	
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyr_STL_NO
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Ç×¸¸ ±×¶óÀÎµù¸Ó½Å Æ®·¡Å·Á¤º¸ SHIFT updYdStklyrWithGM
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í•­ë§Œ ê·¸ë¼ì¸ë”©ë¨¸ì‹  íŠ¸ë˜í‚¹ì •ë³´ SHIFT updYdStklyrWithGM
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -3046,27 +3046,27 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd311);
 	
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyrWithGM
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡BED UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜BED UPDATE
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -3076,10 +3076,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd306);
 	
 			//query execute
@@ -3088,17 +3088,17 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü updYdStklyrWithColStock
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ updYdStklyrWithColStock
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -3108,27 +3108,27 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd307);
 	
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyr_STL_NO
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡´Ü updYdStklyrJplateStlNo
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ë‹¨ updYdStklyrJplateStlNo
 	 *      
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -3138,10 +3138,10 @@ public class YdStkLyrDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd310);
 	
 			//query execute
@@ -3150,48 +3150,48 @@ public class YdStkLyrDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of updYdStklyrJplateStlNo
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Ç×¸¸½½¶óºê¾ßµå ±×¶óÀÎµù¸Ó½Å ÀÎÃâ/º¸±Ş ÀÛ¾÷ÀÌ·Â insert
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ ê·¸ë¼ì¸ë”©ë¨¸ì‹  ì¸ì¶œ/ë³´ê¸‰ ì‘ì—…ì´ë ¥ insert
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */
 	public int insYdWrkHistByGrinder(JDTORecord inRec) throws DAOException, JDTOException {
 		String szMethodName = "insYdWrkHistByGrinder";
-		String szOperationName = "Ç×¸¸½½¶óºê¾ßµå ±×¶óÀÎµù¸Ó½Å ÀÎÃâ/º¸±Ş ÀÛ¾÷ÀÌ·Â insert";
+		String szOperationName = "í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ ê·¸ë¼ì¸ë”©ë¨¸ì‹  ì¸ì¶œ/ë³´ê¸‰ ì‘ì—…ì´ë ¥ insert";
 		int intRtnVal = 0;
 		boolean blnChk_Field = true;
 		JDTORecord recPara = null;
-		//ydUtils.putLog(szDaoName, szMethodName, "¼öÁ¤ÀÚ"+inRec.getField("MODIFIER").toString(), 1);
-		//ydUtils.putLog(szDaoName, szMethodName, "Àç·á¹øÈ£"+inRec.getField("STL_NO").toString(), 1);
+		//ydUtils.putLog(szDaoName, szMethodName, "ìˆ˜ì •ì"+inRec.getField("MODIFIER").toString(), 1);
+		//ydUtils.putLog(szDaoName, szMethodName, "ì¬ë£Œë²ˆí˜¸"+inRec.getField("STL_NO").toString(), 1);
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 						
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdGet9999);
 			//ydUtils.putLog(szDaoName, szMethodName, "modi: "+recPara.getField("V_MODIFIER").toString(), 1);
 			//ydUtils.putLog(szDaoName, szMethodName, "stl_no: "+recPara.getField("V_STL_NO").toString(), 1);
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of insYdWrkHistByGrinderIn
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÃÖ±Ù ÀÛ¾÷ÀÌ·ÂÀÇ ±ÇÇÏÀ§Ä¡ get (Ç×¸¸½ºÄ«ÇÎ¾ßµå ±×¶óÀÎ´õ ÀÎÃâ È®ÀÎ¸ñÀû)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìµœê·¼ ì‘ì—…ì´ë ¥ì˜ ê¶Œí•˜ìœ„ì¹˜ get (í•­ë§ŒìŠ¤ì¹´í•‘ì•¼ë“œ ê·¸ë¼ì¸ë” ì¸ì¶œ í™•ì¸ëª©ì )
 	 * 
 	 * @param  JDTORecord inRec parameter record
 	 * @return 
@@ -3204,15 +3204,15 @@ public class YdStkLyrDao {
 		JDTORecord temp =null;
 		JDTORecordSet rsTemp = null;
 		String YdDnWrLoc = null;
-		//ydUtils.putLog(szDaoName, szMethodName, "¼öÁ¤ÀÚ"+inRec.getField("MODIFIER").toString(), 1);
-		//ydUtils.putLog(szDaoName, szMethodName, "Àç·á¹øÈ£"+inRec.getField("STL_NO").toString(), 1);
+		//ydUtils.putLog(szDaoName, szMethodName, "ìˆ˜ì •ì"+inRec.getField("MODIFIER").toString(), 1);
+		//ydUtils.putLog(szDaoName, szMethodName, "ì¬ë£Œë²ˆí˜¸"+inRec.getField("STL_NO").toString(), 1);
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 						
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdGet700);
 			
 			//query execute
@@ -3235,7 +3235,7 @@ public class YdStkLyrDao {
 			//query execute
 			//intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return RtnVal;

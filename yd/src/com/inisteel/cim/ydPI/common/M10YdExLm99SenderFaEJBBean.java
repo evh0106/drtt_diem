@@ -9,7 +9,7 @@ import com.rabbitmq.client.Channel;
 import jspeed.base.property.PropertyService;
 import com.inisteel.cim.ydPI.common.util.PIYdUtils;
 ///**
-// *      [A] Å¬·¡½º¸í : RabbitMQ Yd-È­¸é¿¡¼­ TEST ¿ë
+// *      [A] í´ë˜ìŠ¤ëª… : RabbitMQ Yd-í™”ë©´ì—ì„œ TEST ìš©
 // * 
 // * @ejb.bean name="M10YdExLm99SenderFaEJB" jndi-name="M10YdExLm99SenderFaEJB" type="Stateless"
 // *           view-type="remote" display-name="" description="RabbitMQ Yd"
@@ -32,9 +32,9 @@ public class M10YdExLm99SenderFaEJBBean { //extends BaseSessionBean{
 
 	
 //	/**
-//	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SendMessage
+//	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SendMessage
 //	 * 
-//	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+//	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 //	 * @param HashMap
 //	 * @return HashMap
 //	 * @throws IOException, TimeoutException, Exception 
@@ -55,15 +55,15 @@ public class M10YdExLm99SenderFaEJBBean { //extends BaseSessionBean{
 		try {
 			//if((this.channel == null) && (!this.channel.isOpen())) 
 			
-			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (¾ßµå)¼Û½ÅMessage Àü¹®: >>RabbitConnect :" + paramMap, "S+");
+			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (ì•¼ë“œ)ì†¡ì‹ Message ì „ë¬¸: >>RabbitConnect :" + paramMap, "S+");
 			RabbitConnect(keyName,exchangeName);
 			
-			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (¾ßµå)¼Û½ÅMessage Àü¹®: >>SendMessage :" + paramMap, "S+");
+			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (ì•¼ë“œ)ì†¡ì‹ Message ì „ë¬¸: >>SendMessage :" + paramMap, "S+");
 			rabbitSender.SendMessage(paramMap);
 			
 			//RabbitDisConnect();
 			
-			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (¾ßµå)¼Û½ÅMessage Àü¹®: >>>>>>>>>> :" + paramMap, "S+");
+			piYdUtils.printLog("MES_PI_RABBIT_MQ", "===== M10YdExLm99SenderFaEJB (ì•¼ë“œ)ì†¡ì‹ Message ì „ë¬¸: >>>>>>>>>> :" + paramMap, "S+");
  
 		} 
 		catch (IOException e) {
@@ -73,16 +73,16 @@ public class M10YdExLm99SenderFaEJBBean { //extends BaseSessionBean{
 			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10YdExLm99SenderFaEJB Exception Error " + e.getMessage());
 		}
 
-		// just return¿ë ¼º°ø½Ã 200¸®ÅÏ.
+		// just returnìš© ì„±ê³µì‹œ 200ë¦¬í„´.
 		mapResult.put("STATUSCODE", "200");
 		return mapResult;
 	}
 	
 
 //	/**
-//	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Rabbit Connect
+//	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Rabbit Connect
 //	 * 
-//	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+//	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 //	 * @param void
 //	 * @return HashMap
 //	 * @throws Exception 
@@ -90,7 +90,7 @@ public class M10YdExLm99SenderFaEJBBean { //extends BaseSessionBean{
 	public HashMap RabbitConnect(String keyName, String exchangeName) throws IOException, TimeoutException, Exception{
 		
 		HashMap mapResult = new HashMap();
-		// just return¿ë
+		// just returnìš©
 		mapResult.put("STATUSCODE", "200");
 
 		//if((this.channel != null) && this.channel.isOpen()) return mapResult;
@@ -131,9 +131,9 @@ public class M10YdExLm99SenderFaEJBBean { //extends BaseSessionBean{
 
  
 //	/**
-//	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Rabbit DisConnect
+//	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Rabbit DisConnect
 //	 * 
-//	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+//	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 //	 * @param void
 //	 * @return void
 //	 * @throws IOException,TimeoutException

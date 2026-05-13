@@ -29,7 +29,7 @@ public class GetBreRule5 {
 	private static final BRERule5 breRule5 = new BRERule5();
 	
 	/**
-	 * C¿­¿¬ÄÚÀÏÁ¦Ç°¾ßµå¿¡ Àû¿ëµÇ´Â Â÷·®»óÂ÷LOTÆí¼º ÀÚµ¿À¯¹« ÆÇ´Ü°ª ¹İÈ¯ÇÏ´Â ¸Ş¼Òµå
+	 * Cì—´ì—°ì½”ì¼ì œí’ˆì•¼ë“œì— ì ìš©ë˜ëŠ” ì°¨ëŸ‰ìƒì°¨LOTí¸ì„± ìë™ìœ ë¬´ íŒë‹¨ê°’ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œ
 	 * @param jdtoRcd
 	 * @return
 	 */
@@ -39,7 +39,7 @@ public class GetBreRule5 {
 		String szMethodName="getYDB599";
 
 		String szItems [] =new String[] {
-				 "AUTO_LOT_YN"		// ÀÚµ¿LOTÆí¼º»ç¿ëÀ¯¹«
+				 "AUTO_LOT_YN"		// ìë™LOTí¸ì„±ì‚¬ìš©ìœ ë¬´
 		};
 		
 		Hashtable htRule =new Hashtable();
@@ -105,7 +105,7 @@ public class GetBreRule5 {
 	
 	
 	/**
-	 *  ±Ç¿ÀÃ¢ - ÄÚµå¸ÅÇÎ µ¿ºĞ»ê ±¸ºĞ 2010.01.12
+	 *  ê¶Œì˜¤ì°½ - ì½”ë“œë§¤í•‘ ë™ë¶„ì‚° êµ¬ë¶„ 2010.01.12
 	 * 
 	 * @param jdtoRcd
 	 * @return
@@ -116,14 +116,14 @@ public class GetBreRule5 {
 
 		String szMethodName       = "getYDB001";
 		String szMsg              = "";
-		String szOperationName    = "ÄÚµå¸ÅÇÎ µ¿ºĞ»ê ±¸ºĞ";
+		String szOperationName    = "ì½”ë“œë§¤í•‘ ë™ë¶„ì‚° êµ¬ë¶„";
 		String szSCARFING_YN      = "";
 		String szSCARFING_DONE_YN = "";
 		String szHCR_GP           = "";
 		String szORD_YEOJAE_GP    = "";
 		String szSTL_APPEAR_GP    = "";
 		String szItems []         = new String[] {
-													"YD_BAY_GP"    // ¾ßµåµ¿±¸ºĞ
+													"YD_BAY_GP"    // ì•¼ë“œë™êµ¬ë¶„
 												 };
 		int nColCnt               = 0;
 		boolean bRtc              = false;
@@ -136,14 +136,14 @@ public class GetBreRule5 {
 			//ydUtils.displayRecord(szOperationName, inRec);
 			//ydUtils.putLog(szClassName, szMethodName, "\n===============================================================\n", YdConstant.DEBUG);				
 
-			// ÆÄ¶ó¹ÌÅÍ ÃßÃâ
+			// íŒŒë¼ë¯¸í„° ì¶”ì¶œ
 			szSCARFING_YN      = ydDaoUtils.paraRecChkNull(inRec, "SCARFING_YN");
 			szSCARFING_DONE_YN = ydDaoUtils.paraRecChkNull(inRec, "SCARFING_DONE_YN");
 			szHCR_GP           = ydDaoUtils.paraRecChkNull(inRec, "HCR_GP");
 			szORD_YEOJAE_GP    = ydDaoUtils.paraRecChkNull(inRec, "ORD_YEOJAE_GP");
 			szSTL_APPEAR_GP    = ydDaoUtils.paraRecChkNull(inRec, "STL_APPEAR_GP");
 		 	
-			// BRE È£Ãâ
+			// BRE í˜¸ì¶œ
 			PropertyService jprop = PropertyService.getInstance();			
 			String javaVersion = jprop.getProperty("cm.properties","java.version");
 			
@@ -160,7 +160,7 @@ public class GetBreRule5 {
 				return false;
 			}
 			
-			// Ä«¿îÆ® ÃßÃâ
+			// ì¹´ìš´íŠ¸ ì¶”ì¶œ
 			Object objX = htRule.get("YDB001_ColCnt");
 			if(objX instanceof Integer){
 				nColCnt =((Integer)objX).intValue();
@@ -195,7 +195,7 @@ public class GetBreRule5 {
 	
 	
 	/**
-	 *  ±Ç¿ÀÃ¢ - ÄÚµå¸ÅÇÎ ¸ñÇ¥¾ßµå 2010.01.12
+	 *  ê¶Œì˜¤ì°½ - ì½”ë“œë§¤í•‘ ëª©í‘œì•¼ë“œ 2010.01.12
 	 * 
 	 * @param jdtoRcd
 	 * @return
@@ -206,14 +206,14 @@ public class GetBreRule5 {
 
 		String szMethodName       = "getYDB002";
 		String szMsg              = "";
-		String szOperationName    = "ÄÚµå¸ÅÇÎ ¸ñÇ¥¾ßµå";
+		String szOperationName    = "ì½”ë“œë§¤í•‘ ëª©í‘œì•¼ë“œ";
 		String szCurrYD           = "";
 		String szSLAB_WO_RT_CD    = "";
 		String szSTL_PROG_CD      = "";
 		String szARR_WLOC_CD      = "";
 		String szSTL_APPEAR_GP    = "";
 		String szItems []         = new String[] {
-													"YD_AIM_YD_GP"    // ¸ñÇ¥¾ßµå±¸ºĞ
+													"YD_AIM_YD_GP"    // ëª©í‘œì•¼ë“œêµ¬ë¶„
 												 };
 		int nColCnt               = 0;
 		boolean bRtc              = false;
@@ -226,7 +226,7 @@ public class GetBreRule5 {
 			//ydUtils.displayRecord(szOperationName, inRec);
 			//ydUtils.putLog(szClassName, szMethodName, "\n===============================================================\n", YdConstant.DEBUG);				
 
-			// ÆÄ¶ó¹ÌÅÍ ÃßÃâ
+			// íŒŒë¼ë¯¸í„° ì¶”ì¶œ
 			szCurrYD        = ydDaoUtils.paraRecChkNull(inRec, "YD_GP");
 			szSLAB_WO_RT_CD = ydDaoUtils.paraRecChkNull(inRec, "SLAB_WO_RT_CD");
 			szSTL_PROG_CD   = ydDaoUtils.paraRecChkNull(inRec, "CURR_PROG_CD");
@@ -235,7 +235,7 @@ public class GetBreRule5 {
 			szMsg = "Rule YDB002 in:"+szCurrYD+","+szSLAB_WO_RT_CD+","+szSTL_PROG_CD+","+szARR_WLOC_CD;
 			ydUtils.putLog(szClassName, szMethodName, szMsg, YdConstant.INFO);
 			
-			// BRE È£Ãâ 
+			// BRE í˜¸ì¶œ 
 			PropertyService jprop = PropertyService.getInstance();			
 			String javaVersion = jprop.getProperty("cm.properties","java.version");
 			
@@ -251,7 +251,7 @@ public class GetBreRule5 {
 				return false;
 			}
 			
-			// Ä«¿îÆ® ÃßÃâ
+			// ì¹´ìš´íŠ¸ ì¶”ì¶œ
 			Object objX = htRule.get("YDB002_ColCnt");
 			if(objX instanceof Integer){
 				nColCnt =((Integer)objX).intValue();
@@ -286,7 +286,7 @@ public class GetBreRule5 {
 	
 	
 	/**
-	 *  ±Ç¿ÀÃ¢ - ÄÚµå¸ÅÇÎ ¸ñÇ¥µ¿  2010.01.12
+	 *  ê¶Œì˜¤ì°½ - ì½”ë“œë§¤í•‘ ëª©í‘œë™  2010.01.12
 	 * 
 	 * @param jdtoRcd
 	 * @return
@@ -297,13 +297,13 @@ public class GetBreRule5 {
 
 		String szMethodName        = "getYDB003";
 		String szMsg               = "";
-		String szOperationName     = "ÄÚµå¸ÅÇÎ ¸ñÇ¥µ¿";
+		String szOperationName     = "ì½”ë“œë§¤í•‘ ëª©í‘œë™";
 		String szYD_AIM_YD_GP      = "";
 		String szSLAB_WO_RT_CD     = "";
 		String szSTL_APPEAR_GP     = "";
 		String szBayDistributionGp = "";
 		String szItems []         = new String[] {
-												     "YD_AIM_BAY_GP"    // ¸ñÇ¥µ¿±¸ºĞ
+												     "YD_AIM_BAY_GP"    // ëª©í‘œë™êµ¬ë¶„
 			 									 };
 		int nColCnt               = 0;
 		boolean bRtc              = false;
@@ -317,14 +317,14 @@ public class GetBreRule5 {
 			//ydUtils.displayRecord(szOperationName, inRec);
 			//ydUtils.putLog(szClassName, szMethodName, "\n===============================================================\n", YdConstant.DEBUG);				
 
-			// ÆÄ¶ó¹ÌÅÍ ÃßÃâ
+			// íŒŒë¼ë¯¸í„° ì¶”ì¶œ
 			szYD_AIM_YD_GP      = ydDaoUtils.paraRecChkNull(inRec, "YD_AIM_YD_GP");
 			szSLAB_WO_RT_CD     = ydDaoUtils.paraRecChkNull(inRec, "SLAB_WO_RT_CD");
 			szSTL_APPEAR_GP     = ydDaoUtils.paraRecChkNull(inRec, "STL_APPEAR_GP");
 			szBayDistributionGp = ydDaoUtils.paraRecChkNull(inRec, "YD_BAY_GP");
 
 			
-			// BRE È£Ãâ 
+			// BRE í˜¸ì¶œ 
 			PropertyService jprop = PropertyService.getInstance();			
 			String javaVersion = jprop.getProperty("cm.properties","java.version");
 			
@@ -340,7 +340,7 @@ public class GetBreRule5 {
 				return false;
 			}
 			
-			// Ä«¿îÆ® ÃßÃâ
+			// ì¹´ìš´íŠ¸ ì¶”ì¶œ
 			Object objX = htRule.get("YDB003_ColCnt");
 			if(objX instanceof Integer){
 				nColCnt =((Integer)objX).intValue();
@@ -375,7 +375,7 @@ public class GetBreRule5 {
 	
 	
 	/**
-	 *  ±Ç¿ÀÃ¢ - ÄÚµå¸ÅÇÎ ¸ñÇ¥Çà¼±±¸ºĞ  2010.01.12
+	 *  ê¶Œì˜¤ì°½ - ì½”ë“œë§¤í•‘ ëª©í‘œí–‰ì„ êµ¬ë¶„  2010.01.12
 	 * 
 	 * @param jdtoRcd
 	 * @return
@@ -386,14 +386,14 @@ public class GetBreRule5 {
 
 		String szMethodName        = "getYDB004";
 		String szMsg               = "";
-		String szOperationName     = "ÄÚµå¸ÅÇÎ ¸ñÇ¥Çà¼±±¸ºĞ";
+		String szOperationName     = "ì½”ë“œë§¤í•‘ ëª©í‘œí–‰ì„ êµ¬ë¶„";
 		String szYD_AIM_YD_GP      = "";
 		String szSLAB_WO_RT_CD     = "";
 		String szSTL_APPEAR_GP     = "";
 		String szSTL_PROG_CD       = "";
 		String szBayDistributionGp = "";
 		String szItems []         = new String[] {
-												     "YD_AIM_RT_GP"    // ¸ñÇ¥Çà¼±±¸ºĞ
+												     "YD_AIM_RT_GP"    // ëª©í‘œí–‰ì„ êµ¬ë¶„
 			 									 };
 		int nColCnt               = 0;
 		boolean bRtc              = false;
@@ -407,14 +407,14 @@ public class GetBreRule5 {
 			//ydUtils.displayRecord(szOperationName, inRec);
 			//ydUtils.putLog(szClassName, szMethodName, "\n===============================================================\n", YdConstant.DEBUG);				
 
-			// ÆÄ¶ó¹ÌÅÍ ÃßÃâ
+			// íŒŒë¼ë¯¸í„° ì¶”ì¶œ
 			szSLAB_WO_RT_CD     = ydDaoUtils.paraRecChkNull(inRec, "SLAB_WO_RT_CD");
 			szSTL_APPEAR_GP     = ydDaoUtils.paraRecChkNull(inRec, "STL_APPEAR_GP");
 			szBayDistributionGp = ydDaoUtils.paraRecChkNull(inRec, "YD_BAY_GP");
 			szSTL_PROG_CD       = ydDaoUtils.paraRecChkNull(inRec, "STL_PROG_CD");
 
 			
-			// BRE È£Ãâ 
+			// BRE í˜¸ì¶œ 
 			PropertyService jprop = PropertyService.getInstance();			
 			String javaVersion = jprop.getProperty("cm.properties","java.version");
 			
@@ -429,7 +429,7 @@ public class GetBreRule5 {
 				return false;
 			}
 			
-			// Ä«¿îÆ® ÃßÃâ
+			// ì¹´ìš´íŠ¸ ì¶”ì¶œ
 			Object objX = htRule.get("YDB004_ColCnt");
 			if(objX instanceof Integer){
 				nColCnt =((Integer)objX).intValue();

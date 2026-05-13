@@ -2,14 +2,14 @@
  * @(#)CCoilJspFaEJBSBean
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2019/05/02
  *
- * @description      2¿­¿¬ COIL ¾ßµå È­¸é°ü¸® Facade EJB
+ * @description      2ì—´ì—° COIL ì•¼ë“œ í™”ë©´ê´€ë¦¬ Facade EJB
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ     ¿äÃ»ÀÚ  ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì     ìš”ì²­ì  ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2019/05/02   Á¤Á¾±Õ  ÀÌÇöÁø      ÃÖÃÊ µî·Ï
+ * V1.00  2019/05/02   ì •ì¢…ê·   ì´í˜„ì§„      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.yd.ccoil.session;
@@ -30,7 +30,7 @@ import com.inisteel.cim.yd.ccommon.util.CCommUtils;
 import com.inisteel.cim.yd.ccommon.util.CConstant;
 
 /**
- *      [A] Å¬·¡½º¸í : 2¿­¿¬ COIL ¾ßµå È­¸é°ü¸® Facade EJB
+ *      [A] í´ë˜ìŠ¤ëª… : 2ì—´ì—° COIL ì•¼ë“œ í™”ë©´ê´€ë¦¬ Facade EJB
  *
  * @ejb.bean name="CCoilJspFaEJB" jndi-name="CCoilJspFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -54,21 +54,21 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : YD¾ßµå ÄÚµå Á¶È¸(WiseGrid)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : YDì•¼ë“œ ì½”ë“œ ì¡°íšŒ(WiseGrid)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getYdCode(GridData gdReq) throws DAOException {
-		String mthdNm = "YD¾ßµåÄÚµåÁ¶È¸[CCoilJspFaEJB.getYdCode]";
+		String mthdNm = "YDì•¼ë“œì½”ë“œì¡°íšŒ[CCoilJspFaEJB.getYdCode]";
 		String logId  = commUtils.getLogId();
 
 		try {
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
-			//ÄÚµåÁ¶È¸
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
+			//ì½”ë“œì¡°íšŒ
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			return (GridData)ejbConn.trx("getYdCode", new Class[] { GridData.class }, new Object[] { gdReq });
 		} catch(DAOException e) {
@@ -79,14 +79,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * GridData - ´Ü¼ø Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * GridData - ë‹¨ìˆœ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData getSelectData(GridData gdReq) throws DAOException {
-		String mthdNm = "Á¶È¸[CCoilJspFaEJB.getSelectData]";
+		String mthdNm = "ì¡°íšŒ[CCoilJspFaEJB.getSelectData]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -112,14 +112,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}		
 
 	/**
-	 * ´Ü¼ø Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë‹¨ìˆœ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param JDTORecord
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecordSet getSelectData(JDTORecord recPara) throws DAOException {
-		String mthdNm = "Á¶È¸[CCoilJspFaEJB.getSelectData]";
+		String mthdNm = "ì¡°íšŒ[CCoilJspFaEJB.getSelectData]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -145,15 +145,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 
 	/**
-	 * IFTest Layout º¯°æ 
+	 * IFTest Layout ë³€ê²½ 
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updIfTestData(GridData gdReq) throws DAOException {
-		String mthdNm = "IFTest Layout º¯°æ[CCoilJspFaEJB.updIfTestData]";
+		String mthdNm = "IFTest Layout ë³€ê²½[CCoilJspFaEJB.updIfTestData]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -161,8 +161,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			ejbConn.trx("updIfTestData", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -180,15 +180,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 * IFTest Àü¼Û 
+	 * IFTest ì „ì†¡ 
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData sndIfTest(GridData gdReq) throws DAOException {
-		String mthdNm = "IFTest Àü¼Û[CCoilJspFaEJB.sndIfTest]";
+		String mthdNm = "IFTest ì „ì†¡[CCoilJspFaEJB.sndIfTest]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -196,8 +196,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");		
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			ejbConn.trx("sndIfTest", new Class[] { GridData.class }, new Object[] { gdReq });			
@@ -215,23 +215,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 * IFTest EAIÀü¼Û
+	 * IFTest EAIì „ì†¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData sndIfTestEAI(GridData gdReq) throws DAOException {
-		String mthdNm = "IFTest EAIÀü¼Û[CCoilJspFaEJB.sndIfTestEAI]";
+		String mthdNm = "IFTest EAIì „ì†¡[CCoilJspFaEJB.sndIfTestEAI]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			GridData gdRet = (GridData) ejbConn.trx("sndIfTestEAI", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -248,9 +248,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ TOÀ§Ä¡ Àç¼³Á¤ 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ TOìœ„ì¹˜ ì¬ì„¤ì • 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
@@ -258,14 +258,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData updCarprg(GridData gdReq) throws DAOException {
-		String mthdNm	= "Â÷·®µ¿°£ÀÌÀû »óÂ÷¿Ï·áÃ³¸®[CCoilJspFaEJB.updCarprg]";
+		String mthdNm	= "ì°¨ëŸ‰ë™ê°„ì´ì  ìƒì°¨ì™„ë£Œì²˜ë¦¬[CCoilJspFaEJB.updCarprg]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -273,7 +273,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "updCarprg rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -290,7 +290,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷·®µ¿°£ÀÌÀû »óÂ÷¿Ï·áÃ³¸® µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ëŸ‰ë™ê°„ì´ì  ìƒì°¨ì™„ë£Œì²˜ë¦¬ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");			
 			return gdRes;	
@@ -303,23 +303,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/******
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trxRunSchedule(GridData gdReq) throws DAOException {
-		String mthdNm = "Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿[CCoilJspFaEJB.trxRunSchedule]";
+		String mthdNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™[CCoilJspFaEJB.trxRunSchedule]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			JDTORecord [] jrInRecArr =  commUtils.genJDTORecordSet(gdReq);
 			
@@ -337,14 +337,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
     		String sAPP021_H_YN = coilDao.ApplyYn(logId, mthdNm, "APP021", "H", "*");
     		String sAPP021_J_YN = coilDao.ApplyYn(logId, mthdNm, "APP021", "J", "*");
     		
-    		commUtils.printLog(logId, "========== ¾ßµå±¸ºĞ ["+ ydLocGp +"]", "SL");
-    		commUtils.printLog(logId, "==========[[[ APP021 ÀÛ¾÷¿¹¾à YDYDJ552È£Ãâ ¼ÒÀç : " + sAPP021_H_YN + " ]]]============", "SL");
-    		commUtils.printLog(logId, "==========[[[ APP021 ÀÛ¾÷¿¹¾à YDYDJ552È£Ãâ Á¦Ç° : " + sAPP021_J_YN + " ]]]============", "SL");
+    		commUtils.printLog(logId, "========== ì•¼ë“œêµ¬ë¶„ ["+ ydLocGp +"]", "SL");
+    		commUtils.printLog(logId, "==========[[[ APP021 ì‘ì—…ì˜ˆì•½ YDYDJ552í˜¸ì¶œ ì†Œì¬ : " + sAPP021_H_YN + " ]]]============", "SL");
+    		commUtils.printLog(logId, "==========[[[ APP021 ì‘ì—…ì˜ˆì•½ YDYDJ552í˜¸ì¶œ ì œí’ˆ : " + sAPP021_J_YN + " ]]]============", "SL");
     		
     		if( "Y".equals(sAPP021_H_YN) && "H".equals(ydLocGp) ) {
 
-    			commUtils.printLog(logId, "½ºÄÉÁì COUNT["+ gdReq.getHeader("CHECK").getRowCount() +"]", "SL");
-    			// ´ÙÁß½ºÄÉÁì ±âµ¿
+    			commUtils.printLog(logId, "ìŠ¤ì¼€ì¥´ COUNT["+ gdReq.getHeader("CHECK").getRowCount() +"]", "SL");
+    			// ë‹¤ì¤‘ìŠ¤ì¼€ì¥´ ê¸°ë™
     			if( gdReq.getHeader("CHECK").getRowCount() > 1 ) {
     				ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
     				JDTORecord jrRtn = (JDTORecord)ejbConn.trx("trxRunScheduleNew", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -352,7 +352,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
     				rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
     				commUtils.printLog(logId, ">> rtnCd:["+ rtnCd +"] rtnMsg:["+ rtnMsg +"]", "SL");
     				
-        			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+        			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
         			if (!"0".equals(rtnCd)) {
 
         				jrRtn.setResultCode(logId);
@@ -362,7 +362,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
         				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
         			}
     			} else {
-    				// ´ÜÀÏ½ºÄÉÁì ±âµ¿
+    				// ë‹¨ì¼ìŠ¤ì¼€ì¥´ ê¸°ë™
 					ydSchCd    = commUtils.trim(jrInRecArr[0].getFieldString("YD_SCH_CD"));
 					ydSchPrior = commUtils.trim(jrInRecArr[0].getFieldString("YD_SCH_PRIOR"));
 					ydWbookId  = commUtils.trim(jrInRecArr[0].getFieldString("YD_WBOOK_ID")); 
@@ -371,7 +371,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					jrInParam.setField("YD_SCH_CD"   , ydSchCd);
 					jrInParam.setField("YD_SCH_PRIOR", ydSchPrior);
 					jrInParam.setField("YD_WBOOK_ID" , ydWbookId); 
-					jrInParam.setField("RUN_FLAG"    , "Y"      ); //ÀÛ¾÷¿¹¾à Á¶È¸¿¡¼­ ½ºÄÉÁÙ ±âµ¿
+					jrInParam.setField("RUN_FLAG"    , "Y"      ); //ì‘ì—…ì˜ˆì•½ ì¡°íšŒì—ì„œ ìŠ¤ì¼€ì¤„ ê¸°ë™
 					
 					ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 					JDTORecord jrRtn = (JDTORecord)ejbConn.trx("trxRunSchedule", new Class[] { JDTORecord.class }, new Object[] { jrInParam });
@@ -379,9 +379,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 					rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 					
-					commUtils.printLog(logId, "¡àejbEnd¡à RTN_CD:"+ rtnCd + "RTN_MSG : " + rtnMsg, "SL");
+					commUtils.printLog(logId, "â–¡ejbEndâ–¡ RTN_CD:"+ rtnCd + "RTN_MSG : " + rtnMsg, "SL");
 					
-					//ROLLBACK ½Ã Àü¹® ¹ß»ı
+					//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 					if (!"0".equals(rtnCd)) {
 						
 						jrRtn.setResultCode(logId);
@@ -399,7 +399,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				commUtils.printLog(logId, ">> rtnCd:["+ rtnCd +"] rtnMsg:["+ rtnMsg +"]", "SL");
 				
-    			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+    			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
     			if (!"0".equals(rtnCd)) {
 
     				jrRtn.setResultCode(logId);
@@ -420,7 +420,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					jrInParam.setField("YD_SCH_CD"   , ydSchCd);
 					jrInParam.setField("YD_SCH_PRIOR", ydSchPrior);
 					jrInParam.setField("YD_WBOOK_ID" , ydWbookId); 
-					jrInParam.setField("RUN_FLAG"    , "Y"      ); //ÀÛ¾÷¿¹¾à Á¶È¸¿¡¼­ ½ºÄÉÁÙ ±âµ¿
+					jrInParam.setField("RUN_FLAG"    , "Y"      ); //ì‘ì—…ì˜ˆì•½ ì¡°íšŒì—ì„œ ìŠ¤ì¼€ì¤„ ê¸°ë™
 					
 					ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 					JDTORecord jrRtn = (JDTORecord)ejbConn.trx("trxRunSchedule", new Class[] { JDTORecord.class }, new Object[] { jrInParam });
@@ -428,9 +428,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 					rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 					
-					commUtils.printLog(logId, "¡àejbEnd¡à RTN_CD:"+ rtnCd + "RTN_MSG : " + rtnMsg, "SL");
+					commUtils.printLog(logId, "â–¡ejbEndâ–¡ RTN_CD:"+ rtnCd + "RTN_MSG : " + rtnMsg, "SL");
 					
-					//ROLLBACK ½Ã Àü¹® ¹ß»ı
+					//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 					if (!"0".equals(rtnCd)) {
 						
 						jrRtn.setResultCode(logId);
@@ -442,17 +442,17 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				}
     		}
 			
-    		commUtils.printLog(logId, "¡àEND¡à rtnCd:"+ rtnCd + "rtnMsg : " + rtnMsg, "SL");
+    		commUtils.printLog(logId, "â–¡ENDâ–¡ rtnCd:"+ rtnCd + "rtnMsg : " + rtnMsg, "SL");
     		
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
 				if ("".equals(rtnMsg)) {
-					gdRet.setMessage("Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+					gdRet.setMessage("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 				} else {
 					gdRet.setMessage(rtnMsg);	
 				}
@@ -469,23 +469,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à »èÁ¦ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ ì‚­ì œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData delWrkBook(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÛ¾÷¿¹¾à»èÁ¦[CCoilJspFaEJB.delWrkBook]";
+		String mthdNm = "ì‘ì—…ì˜ˆì•½ì‚­ì œ[CCoilJspFaEJB.delWrkBook]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
             EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("delWrkBook", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -502,14 +502,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Á¤»óÀûÀ¸·Î ÀÛ¾÷¿¹¾àÀÌ »èÁ¦ µÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ì •ìƒì ìœ¼ë¡œ ì‘ì—…ì˜ˆì•½ì´ ì‚­ì œ ë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -523,15 +523,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ¾ßµåÀûÄ¡¿­Á¤º¸ ¼öÁ¤
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œì ì¹˜ì—´ì •ë³´ ìˆ˜ì •
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */ 
 	public GridData updCoilYdColStsSet(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµåÀûÄ¡¿­Á¤º¸ ¼öÁ¤[CCoilJspFaEJB.updCoilYdColStsSet]";
+		String mthdNm = "ì•¼ë“œì ì¹˜ì—´ì •ë³´ ìˆ˜ì •[CCoilJspFaEJB.updCoilYdColStsSet]";
 		String logId  = commUtils.getLogId();
 
 		try{
@@ -539,8 +539,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdColStsSet", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -567,10 +567,10 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 * ¾ßµåÀûÄ¡¿­Á¤º¸ ¼öÁ¤
-	 * @ÀÛ¼ºÀÚ : ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.07.30
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œì ì¹˜ì—´ì •ë³´ ìˆ˜ì •
+	 * @ì‘ì„±ì : ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.07.30
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
@@ -578,7 +578,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */	
 	
 	public GridData updCoilYdColStsSetInfo(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµåÀûÄ¡¿­Á¤º¸ ¼öÁ¤[CCoilJspFaEJB.updCoilYdColStsSetInfo]";
+		String mthdNm = "ì•¼ë“œì ì¹˜ì—´ì •ë³´ ìˆ˜ì •[CCoilJspFaEJB.updCoilYdColStsSetInfo]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -586,8 +586,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			//JDTORecord [] inRecord = commUtils.genJDTORecordSet(gdReq);
 			
@@ -596,7 +596,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			
 			if (!"1".equals(rtnCd)) {		
 				m_ctx.setRollbackOnly();
@@ -614,24 +614,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 *  ÄÚÀÏ ¾ßµå º£µå±İÁö / ÇØÁ¦ 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ ë² ë“œê¸ˆì§€ / í•´ì œ 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdBedBanCnc(GridData gdReq) throws DAOException {
-		String mthdNm = "ÄÚÀÏ ¾ßµå º£µå±İÁö/ÇØÁ¦[CCoilJspFaEJB.updCoilYdBedBanCnc]";
+		String mthdNm = "ì½”ì¼ ì•¼ë“œ ë² ë“œê¸ˆì§€/í•´ì œ[CCoilJspFaEJB.updCoilYdBedBanCnc]";
 		String logId  = commUtils.getLogId();		
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			
@@ -657,23 +657,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      Àç°øÀ² Á¶Á¤ÀÛ¾÷
-	 *      ¿°¿ë¼±
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      ì¬ê³µìœ¨ ì¡°ì •ì‘ì—…
+	 *      ì—¼ìš©ì„ 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updYdNextprocList2Pop(GridData gdReq) throws DAOException {
-		String mthdNm = "Àç°øÀ² Á¶Á¤ÀÛ¾÷[CCoilJspFaEJB.updYdNextprocList2Pop]";
+		String mthdNm = "ì¬ê³µìœ¨ ì¡°ì •ì‘ì—…[CCoilJspFaEJB.updYdNextprocList2Pop]";
 		String logId  = commUtils.getLogId();		
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			
@@ -699,15 +699,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      HOT COILÀÌ¿ëÇÑ °á·Î¹æÁö ½Ã½ºÅÛ
-	 *      ¿°¿ë¼±
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      HOT COILì´ìš©í•œ ê²°ë¡œë°©ì§€ ì‹œìŠ¤í…œ
+	 *      ì—¼ìš©ì„ 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData procHotcoilAuto(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀçº¸±Ş[CCoilJspFaEJB.procHotcoilAuto]";
+		String mthdNm = "ê²°ë¡œì¬ë³´ê¸‰[CCoilJspFaEJB.procHotcoilAuto]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -715,15 +715,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord) ejbConn.trx("procHotcoilAuto", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -737,7 +737,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("°á·ÎÀçº¸±Ş Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ê²°ë¡œì¬ë³´ê¸‰ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -751,15 +751,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      HOT COILÀÌ¿ëÇÑ °á·Î¹æÁö ½Ã½ºÅÛ
-	 *      ¿°¿ë¼±
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      HOT COILì´ìš©í•œ ê²°ë¡œë°©ì§€ ì‹œìŠ¤í…œ
+	 *      ì—¼ìš©ì„ 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData procHotcoilchklist(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀçÃßÃâ[CCoilJspFaEJB.procHotcoilchklist]";
+		String mthdNm = "ê²°ë¡œì¬ì¶”ì¶œ[CCoilJspFaEJB.procHotcoilchklist]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -767,15 +767,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord) ejbConn.trx("procHotcoilchklist", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -789,7 +789,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("°á·ÎÀçÃßÃâ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ê²°ë¡œì¬ì¶”ì¶œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -803,16 +803,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * Line-Off ºĞ±â Conv
+	 * Line-Off ë¶„ê¸° Conv
 	 * L3 interface
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updDivConvLineOff(GridData gdReq) throws DAOException {
-		String mthdNm	= "¼öÀÔ¹é¾÷Ã³¸®[CCoilJspFaEJB.updDivConvLineOff]";
+		String mthdNm	= "ìˆ˜ì…ë°±ì—…ì²˜ë¦¬[CCoilJspFaEJB.updDivConvLineOff]";
 		String logId	= commUtils.getLogId();
 
 		try{
@@ -820,8 +820,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");		
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);	
 			
@@ -831,7 +831,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -845,7 +845,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				m_ctx.setRollbackOnly();
 				gdRes.setMessage(rtnMsg);
 			}else{
-				gdRes.setMessage("¼öÀÔ¹é¾÷Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ìˆ˜ì…ë°±ì—…ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 
 			
@@ -862,35 +862,35 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 		
 	/**
-	 * ÄÚÀÏÁ¦Ç°¾ßµå tracking ÆË¾÷ Á¶È¸º¸±Şµî·Ï[ÃßÃâ µî·Ï]
-	 * SPM/HFLÀÔÃø°ü¸® > ÃßÃâ
-	 * ¿°¿ë¼± 2019.08.14
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì œí’ˆì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ë“±ë¡[ì¶”ì¶œ ë“±ë¡]
+	 * SPM/HFLì…ì¸¡ê´€ë¦¬ > ì¶”ì¶œ
+	 * ì—¼ìš©ì„  2019.08.14
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData inscoilGdsYdLineWrPp(GridData gdReq) throws DAOException {	
-		String mthdNm	= "ÃßÃâ µî·Ï[CCoilJspFaEJB.inscoilGdsYdLineWrPp]";
+		String mthdNm	= "ì¶”ì¶œ ë“±ë¡[CCoilJspFaEJB.inscoilGdsYdLineWrPp]";
 		String logId	= commUtils.getLogId();		
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");	
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			String sModifier = commUtils.trim(gdReq.getParam("YD_USER_ID"));
 			
-			String jmsTcCdMthNm = ""; // È£ÃâÇÒ EJB ¸Ş¼Òµå[Àü¹®Ã³¸® ÀÎÅÍÆäÀÌ½º]
+			String jmsTcCdMthNm = ""; // í˜¸ì¶œí•  EJB ë©”ì†Œë“œ[ì „ë¬¸ì²˜ë¦¬ ì¸í„°í˜ì´ìŠ¤]
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
 			JDTORecord jrRec = CmUtil.genJDTORecord(gdReq);			
-			//			 * TREAT_GP	Ã³¸®±¸ºĞ	C	1	Y	1:º¸±Ş, 2:º¸±ŞÃë¼Ò, 3:ÃßÃâ, 4:Take-Out, 5:Take-In				
-			//			 * STL_NO	Àç·á¹øÈ£	C	11	Y					
-			//           * EQP_GP	¼³ºñ±¸ºĞ	C	6		º¸±Ş, Take-In ¿ä±¸½Ã Coil À§Ä¡					
+			//			 * TREAT_GP	ì²˜ë¦¬êµ¬ë¶„	C	1	Y	1:ë³´ê¸‰, 2:ë³´ê¸‰ì·¨ì†Œ, 3:ì¶”ì¶œ, 4:Take-Out, 5:Take-In				
+			//			 * STL_NO	ì¬ë£Œë²ˆí˜¸	C	11	Y					
+			//           * EQP_GP	ì„¤ë¹„êµ¬ë¶„	C	6		ë³´ê¸‰, Take-In ìš”êµ¬ì‹œ Coil ìœ„ì¹˜					
 			
 			JDTORecord jrRtn   = commUtils.getParam(logId, mthdNm, sModifier);
 			JDTORecord jrInRec = commUtils.getParam(logId, mthdNm, sModifier);
@@ -901,43 +901,43 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			jrInRec.setField("TREAT_GP"		    , sTreatGp); 
 			if(("D".equals(ydBay))||("F".equals(ydBay))){
-				jmsTcCdMthNm = "rcvHRYDJ009";   //HR¿­¿¬Á¤Á¤Line-Off¿ä±¸
+				jmsTcCdMthNm = "rcvHRYDJ009";   //HRì—´ì—°ì •ì •Line-Offìš”êµ¬
 				jrInRec.setField("JMS_TC_CD"		, "HRYDJ009"); 
 				jrInRec.setField("TREAT_GP"			, "3"); 
-            //CÁõ¼³					
+            //Cì¦ì„¤					
 			} else if("A".equals(ydBay)){
 				
-				jmsTcCdMthNm = "rcvH2YDL073"; //SPM5 ÃâÃøLine-Off¿ä±¸
+				jmsTcCdMthNm = "rcvH2YDL073"; //SPM5 ì¶œì¸¡Line-Offìš”êµ¬
 				jrInRec.setField("JMS_TC_CD"	, "H2YDL073");
 				
 			} else if("B".equals(ydBay)){
 				if("K".equals(ydEqp.substring(2,3))){
-					jmsTcCdMthNm = "rcvH2YDL043"; //SPM4 ÃâÃøLine-Off¿ä±¸
+					jmsTcCdMthNm = "rcvH2YDL043"; //SPM4 ì¶œì¸¡Line-Offìš”êµ¬
 					jrInRec.setField("JMS_TC_CD"	, "H2YDL043");
 				} else{	 
-					jmsTcCdMthNm = "rcvHRYDJ009";   //HR¿­¿¬Á¤Á¤Line-Off¿ä±¸
+					jmsTcCdMthNm = "rcvHRYDJ009";   //HRì—´ì—°ì •ì •Line-Offìš”êµ¬
 					jrInRec.setField("JMS_TC_CD"	, "HRYDJ009"); //HFL#5
 					jrInRec.setField("TREAT_GP"			, "3"); 
 				}
 			} else if("C".equals(ydBay)){
 				if("K".equals(ydEqp.substring(2,3))){
-					jmsTcCdMthNm = "rcvH2YDL033"; //SPM3 ÃâÃøLine-Off¿ä±¸
+					jmsTcCdMthNm = "rcvH2YDL033"; //SPM3 ì¶œì¸¡Line-Offìš”êµ¬
 					jrInRec.setField("JMS_TC_CD"	, "H2YDL033");
 				} else{	
-					jmsTcCdMthNm = "rcvH2YDL053"; //HFL4 ÃâÃøLine-Off¿ä±¸
+					jmsTcCdMthNm = "rcvH2YDL053"; //HFL4 ì¶œì¸¡Line-Offìš”êµ¬
 					jrInRec.setField("JMS_TC_CD"	, "H2YDL053");
 				}
 				
 					
 				
 			} else if("E".equals(ydBay)){ 
-				jmsTcCdMthNm = "rcvH2YDL023"; //SPM2 ÃâÃøLine-Off¿ä±¸
+				jmsTcCdMthNm = "rcvH2YDL023"; //SPM2 ì¶œì¸¡Line-Offìš”êµ¬
 				jrInRec.setField("JMS_TC_CD"		, "H2YDL023"); 
 			} else if("G".equals(ydBay)){ 
-				jmsTcCdMthNm = "rcvH2YDL013"; //HFL1 ÃâÃøLine-Off¿ä±¸
+				jmsTcCdMthNm = "rcvH2YDL013"; //HFL1 ì¶œì¸¡Line-Offìš”êµ¬
 				jrInRec.setField("JMS_TC_CD"		, "H2YDL013"); 
 			} else if("H".equals(ydBay)){
-				jmsTcCdMthNm = "rcvH2YDL003"; //SPM1 ÃâÃø Line-Off¿ä±¸
+				jmsTcCdMthNm = "rcvH2YDL003"; //SPM1 ì¶œì¸¡ Line-Offìš”êµ¬
 				jrInRec.setField("JMS_TC_CD"		, "H2YDL003"); 
 			}
 			jrInRec.setField("STL_NO"		    , jrRec.getFieldString("PARA_STL_NO")); 
@@ -959,7 +959,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				String rtnMsg	= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				commUtils.printLog(logId, " rtnMsg11:"+ rtnMsg, "FL");
 				commUtils.printLog(logId, " rtnCd:"+ rtnCd, "FL");
-				//ROLLBACK ½Ã Àü¹® ¹ß»ı
+				//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 				if (!"0".equals(rtnCd)) {
 					
 					jrRtn.setResultCode(logId);
@@ -973,25 +973,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					gdRes.setMessage(rtnMsg);
 					m_ctx.setRollbackOnly();
 				}else{
-					//Ã³¸®±¸ºĞ 1:º¸±Ş, 2:º¸±ŞÃë¼Ò, 3:ÃßÃâ, 4:Take-Out, 5:Take-In
+					//ì²˜ë¦¬êµ¬ë¶„ 1:ë³´ê¸‰, 2:ë³´ê¸‰ì·¨ì†Œ, 3:ì¶”ì¶œ, 4:Take-Out, 5:Take-In
 					String Msg = "";
 					if("1".equals(sTreatGp)){
-						Msg = "º¸±Ş";
+						Msg = "ë³´ê¸‰";
 					}else if("2".equals(sTreatGp)){
-						Msg = "º¸±ŞÃë¼Ò";
+						Msg = "ë³´ê¸‰ì·¨ì†Œ";
 					}else if("3".equals(sTreatGp)){
-						Msg = "ÃßÃâ";
+						Msg = "ì¶”ì¶œ";
 					}else if("4".equals(sTreatGp)){
 						Msg = "Take-Out";
 					}else if("5".equals(sTreatGp)){
 						Msg = "Take-In";
 					}
-					gdRes.setMessage(Msg+" Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+					gdRes.setMessage(Msg+" ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 				}
 				commUtils.printLog(logId, " rtnMsg22:"+ rtnMsg, "FL");
 				
 			}else{
-				gdRes.setMessage("Ã³¸®ÇÒ ¸Ş¼Òµå ¸íÀÌ ¾ø½À´Ï´Ù ¼±ÅÃ µ¿À» È®ÀÎ ÇÏ¼¼¿ä.");
+				gdRes.setMessage("ì²˜ë¦¬í•  ë©”ì†Œë“œ ëª…ì´ ì—†ìŠµë‹ˆë‹¤ ì„ íƒ ë™ì„ í™•ì¸ í•˜ì„¸ìš”.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -1005,36 +1005,36 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ Á¶È¸º¸±Şµî·Ï
-	 * * SPM/HFLÀÔÃø°ü¸® > º¸±Ş > µî·Ï
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ë“±ë¡
+	 * * SPM/HFLì…ì¸¡ê´€ë¦¬ > ë³´ê¸‰ > ë“±ë¡
 	 * YYS 2019.08.14
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData inscoilYdLineWrPp(GridData gdReq) throws DAOException {
-		String mthdNm	= "¼ÒÀçÀÔÃø º¸±Ş[CCoilJspFaEJB.inscoilYdLineWrPp]";
+		String mthdNm	= "ì†Œì¬ì…ì¸¡ ë³´ê¸‰[CCoilJspFaEJB.inscoilYdLineWrPp]";
 		String logId	= commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
-			String jmsTcCdMthNm = ""; // È£ÃâÇÒ EJB ¸Ş¼Òµå[Àü¹®Ã³¸® ÀÎÅÍÆäÀÌ½º]
+			String jmsTcCdMthNm = ""; // í˜¸ì¶œí•  EJB ë©”ì†Œë“œ[ì „ë¬¸ì²˜ë¦¬ ì¸í„°í˜ì´ìŠ¤]
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			JDTORecord [] jrInRecArr =  commUtils.genJDTORecordSet(gdReq);			
-//			 * TREAT_GP	Ã³¸®±¸ºĞ	C	1	Y	1:º¸±Ş, 2:º¸±ŞÃë¼Ò, 3:ÃßÃâ, 4:Take-Out, 5:Take-In				
-//			 * STL_NO	Àç·á¹øÈ£	C	11	Y					
-//           * EQP_GP	¼³ºñ±¸ºĞ	C	6		º¸±Ş, Take-In ¿ä±¸½Ã Coil À§Ä¡
+//			 * TREAT_GP	ì²˜ë¦¬êµ¬ë¶„	C	1	Y	1:ë³´ê¸‰, 2:ë³´ê¸‰ì·¨ì†Œ, 3:ì¶”ì¶œ, 4:Take-Out, 5:Take-In				
+//			 * STL_NO	ì¬ë£Œë²ˆí˜¸	C	11	Y					
+//           * EQP_GP	ì„¤ë¹„êµ¬ë¶„	C	6		ë³´ê¸‰, Take-In ìš”êµ¬ì‹œ Coil ìœ„ì¹˜
 			String sModifier = commUtils.trim(gdReq.getParam("YD_USER_ID"));
 			JDTORecord jrInRec 	= commUtils.getParam(logId, mthdNm, sModifier);
 			String ydEqpId      = "";
@@ -1043,9 +1043,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				jrInRec.setField("TREAT_GP"		, "1"); 
 				ydEqpId = jrInRecArr[i].getFieldString("PARA_YD_EQP_ID");
 				
-				//°á¼Ó´ë BACKUPÀÎ °æ¿ì 
+				//ê²°ì†ëŒ€ BACKUPì¸ ê²½ìš° 
 				if ("JFFE02".equals(ydEqpId) || "JDFE03".equals(ydEqpId)|| "JBFE05".equals(ydEqpId)){						
-					jmsTcCdMthNm = "rcvHRYDJ008";  // 2¿­¿¬ Á¤Á¤ÀÔÃø º¸±ŞLot Æí¼º ¹é¾÷
+					jmsTcCdMthNm = "rcvHRYDJ008";  // 2ì—´ì—° ì •ì •ì…ì¸¡ ë³´ê¸‰Lot í¸ì„± ë°±ì—…
 					jrInRec.setField("JMS_TC_CD"		, "HRYDJ008"); 
 					if ("JFFE02".equals(ydEqpId)){
 						jrInRec.setField("WORD_PROC"		, "FH"); 
@@ -1055,13 +1055,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 						jrInRec.setField("WORD_PROC"		, "BH");
 					}					
 				}else{
-					jmsTcCdMthNm = "rcvH2YDL001";  // SPM1 ÀÔÃø Line-In¿ä±¸
+					jmsTcCdMthNm = "rcvH2YDL001";  // SPM1 ì…ì¸¡ Line-Inìš”êµ¬
 					jrInRec.setField("JMS_TC_CD"		, "H2YDL001"); 
 				}
 				jrInRec.setField("STL_NO"			, jrInRecArr[i].getFieldString("COIL_NO")); 
 				jrInRec.setField("YD_EQP_ID"		, jrInRecArr[i].getFieldString("PARA_YD_EQP_ID")); 
-				jrInRec.setResultCode(logId);	//Logging À» À§ÇÑ ID
-				jrInRec.setResultMsg(mthdNm);	//»óÀ§ Method ¸í
+				jrInRec.setResultCode(logId);	//Logging ì„ ìœ„í•œ ID
+				jrInRec.setResultMsg(mthdNm);	//ìƒìœ„ Method ëª…
 				commUtils.printLog(logId,  " YD_EQP_ID:"+ jrInRecArr[i].getFieldString("PARA_YD_EQP_ID"), "FL");
 				commUtils.printLog(logId,  " STL_NO:"+ jrInRecArr[i].getFieldString("COIL_NO"), "FL");
 				commUtils.printLog(logId, mthdNm + " LOC:"+ jrInRecArr[i].getFieldString("LOC"), "FL");
@@ -1071,7 +1071,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 				String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-				//ROLLBACK ½Ã Àü¹® ¹ß»ı
+				//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 				if (!"0".equals(rtnCd)) {
 					
 					jrRtn.setResultCode(logId);
@@ -1085,7 +1085,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					gdRes.setMessage(rtnMsg);
 					m_ctx.setRollbackOnly();
 				}else{
-					gdRes.setMessage("¼ÒÀçÀÔÃø º¸±Ş Ã³¸® ¿Ï·á µÆ½À´Ï´Ù.");
+					gdRes.setMessage("ì†Œì¬ì…ì¸¡ ë³´ê¸‰ ì²˜ë¦¬ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 				}
 
 				gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -1103,32 +1103,32 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ Á¶È¸º¸±ŞÃë¼Òµî·Ï
-	 * SPM/HFLÀÔÃø°ü¸® > º¸±ŞÃë¼Ò > µî·Ï
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ì·¨ì†Œë“±ë¡
+	 * SPM/HFLì…ì¸¡ê´€ë¦¬ > ë³´ê¸‰ì·¨ì†Œ > ë“±ë¡
 	 * YYS 2019.08.14
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updcoilYdLineWrCancelPp(GridData gdReq) throws DAOException {
-		String mthdNm = " Á¶È¸º¸±ŞÃë¼Òµî·Ï[CCoilJspFaEJB.updcoilYdLineWrCancelPp]";
+		String mthdNm = " ì¡°íšŒë³´ê¸‰ì·¨ì†Œë“±ë¡[CCoilJspFaEJB.updcoilYdLineWrCancelPp]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updcoilYdLineWrCancel", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1138,14 +1138,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("º¸±ŞÃë¼Ò µî·Ï ¿Ï·á Çß½À´Ï´Ù.");	
+				gdRet.setMessage("ë³´ê¸‰ì·¨ì†Œ ë“±ë¡ ì™„ë£Œ í–ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1160,24 +1160,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¾ßµå°ü¸® > ÄÚÀÏÁ¦Ç°Ã¢°í > ±âÁØ°ü¸® > À§Ä¡°Ë»ö¼ø¼­°ü¸®   ÀûÄ¡±¸ºĞ ÄŞº¸¸®½ºÆ® Á¶È¸ 
+	 * ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì œí’ˆì°½ê³  > ê¸°ì¤€ê´€ë¦¬ > ìœ„ì¹˜ê²€ìƒ‰ìˆœì„œê´€ë¦¬   ì ì¹˜êµ¬ë¶„ ì½¤ë³´ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : YYS
-	 * @ÀÛ¼ºÀÏ : 2019.07.07
+	 * @ì‘ì„±ì : YYS
+	 * @ì‘ì„±ì¼ : 2019.07.07
 	 */
 	public GridData getYDB700ComboList(GridData gdReq) throws JDTOException {
-		String mthdNm = "ÀûÄ¡±¸ºĞ ÄŞº¸¸®½ºÆ® Á¶È¸[CCoilJspFaEJB.getYDB700ComboList]";
+		String mthdNm = "ì ì¹˜êµ¬ë¶„ ì½¤ë³´ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ[CCoilJspFaEJB.getYDB700ComboList]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -1194,23 +1194,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 * °øÅë ÄÚµå Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê³µí†µ ì½”ë“œ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 * @throws JDTOException
 	 */
 	public GridData getComboCodeList(GridData gdReq) throws JDTOException {
-		String mthdNm = "°øÅë ÄÚµå Á¶È¸[CCoilJspFaEJB.getComboCodeList]";
+		String mthdNm = "ê³µí†µ ì½”ë“œ ì¡°íšŒ[CCoilJspFaEJB.getComboCodeList]";
 		String logId  = commUtils.getLogId();		
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			JDTORecord jrInRec = CmUtil.genJDTORecord(gdReq);
 			
@@ -1232,30 +1232,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¹İ³³¹İ¼Û¿äÃ»
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë°˜ë‚©ë°˜ì†¡ìš”ì²­
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdRetCrnReg(GridData gdReq) throws DAOException {
-		String mthdNm = "¹İ³³¹İ¼Û¿äÃ»[CCoilJspFaEJB.updCoilYdRetCrnReg]";
+		String mthdNm = "ë°˜ë‚©ë°˜ì†¡ìš”ì²­[CCoilJspFaEJB.updCoilYdRetCrnReg]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdRetCrnReg", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1265,14 +1265,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("¹İ³³¿äÃ» Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ë°˜ë‚©ìš”ì²­ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1286,24 +1286,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 * ¹İ³³´ë»ó ±ä±ŞÀç ÁöÁ¤
+	 * ë°˜ë‚©ëŒ€ìƒ ê¸´ê¸‰ì¬ ì§€ì •
 	 * YYS 2019-08-27
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdemergencyMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "¹İ³³´ë»ó ±ä±ŞÀç ÁöÁ¤[CCoilJspFaEJB.updCoilYdemergencyMgt]";
+		String mthdNm = "ë°˜ë‚©ëŒ€ìƒ ê¸´ê¸‰ì¬ ì§€ì •[CCoilJspFaEJB.updCoilYdemergencyMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");			
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -1312,14 +1312,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("±ä±ŞÀç ÁöÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ê¸´ê¸‰ì¬ ì§€ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1332,16 +1332,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ TakeIn µî·Ï
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… TakeIn ë“±ë¡
 	 * YYS 2019-08-28
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updcoilYdLineWrTakeInPp(GridData gdReq) throws DAOException {
-		String mthdNm = "¼ÒÀç¾ßµå TakeIn µî·Ï[CCoilJspFaEJB.updcoilYdLineWrTakeInPp]";
+		String mthdNm = "ì†Œì¬ì•¼ë“œ TakeIn ë“±ë¡[CCoilJspFaEJB.updcoilYdLineWrTakeInPp]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -1349,8 +1349,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			String sModifier	= commUtils.trim(gdReq.getParam("YD_USER_ID"));
 			String sTreatGp     = commUtils.trim(gdReq.getParam("TREAT_GP"));
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -1365,15 +1365,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			/*
 			 * 
-			 * String sTreatGp   = commUtils.trim(rcvMsg.getFieldString("TREAT_GP" ));	//Ã³¸®±¸ºĞ 1:º¸±Ş, 2:º¸±ŞÃë¼Ò, 3:ÃßÃâ, 4:Take-Out, 5:Take-In
-			String sWordProc  = commUtils.trim(rcvMsg.getFieldString("WORD_PROC"));	//ÀÛ¾÷Áö½Ã°øÁ¤
+			 * String sTreatGp   = commUtils.trim(rcvMsg.getFieldString("TREAT_GP" ));	//ì²˜ë¦¬êµ¬ë¶„ 1:ë³´ê¸‰, 2:ë³´ê¸‰ì·¨ì†Œ, 3:ì¶”ì¶œ, 4:Take-Out, 5:Take-In
+			String sWordProc  = commUtils.trim(rcvMsg.getFieldString("WORD_PROC"));	//ì‘ì—…ì§€ì‹œê³µì •
 			
 			//H2YDL001, H2YDL004 ..
-			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"    ));	//¼³ºñID
+			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"    ));	//ì„¤ë¹„ID
 			String ydBayGp    = ydEqpId.substring(1, 2);
 			String sTmpEqp    = ydEqpId.substring(2, 3);
 			
-			String ydStkBedNo = commUtils.trim(rcvMsg.getFieldString("YD_STK_BED_NO"));	//¾ßµåÀûÄ¡Bed¹øÈ£
+			String ydStkBedNo = commUtils.trim(rcvMsg.getFieldString("YD_STK_BED_NO"));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 			String sStlNo     = commUtils.trim(rcvMsg.getFieldString("STL_NO"       )); 
 			*/
 			for(int i=0; i< jrInRecArr.length; i++){
@@ -1382,7 +1382,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				ydEqpId = commUtils.trim(jrInRecArr[i].getFieldString("PARA_YD_EQP_ID"));
 				ydBedNo = commUtils.trim(jrInRecArr[i].getFieldString("YD_STK_BED_NO"));
 				
-				sWordProc  = commUtils.trim(jrInRecArr[i].getFieldString("WORD_PROC"));	//ÀÛ¾÷Áö½Ã°øÁ¤
+				sWordProc  = commUtils.trim(jrInRecArr[i].getFieldString("WORD_PROC"));	//ì‘ì—…ì§€ì‹œê³µì •
 				commUtils.printLog(logId, sTreatGp, "SL=====sTreatGp");
 				commUtils.printLog(logId, sWordProc, "SL=====sWordProc");
 				commUtils.printLog(logId, sStlNo, "SL=====sStlNo");
@@ -1390,19 +1390,19 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				commUtils.printLog(logId, ydBedNo, "SL=====ydBedNo");
 				commUtils.printLog(logId, sModifier+"> MSG_ID : H2YDL004", "SL=====sModifier");
 				jrInRec = commUtils.getParam(logId, mthdNm, sModifier);
-				jrInRec.setField("MSG_ID"		, "H2YDL004"); 							//¿­¿¬Á¶¾÷ take_in  Àü¹®ÄÚµå
-				jrInRec.setField("STL_NO"		, sStlNo);								//Àç·á¹øÈ£
+				jrInRec.setField("MSG_ID"		, "H2YDL004"); 							//ì—´ì—°ì¡°ì—… take_in  ì „ë¬¸ì½”ë“œ
+				jrInRec.setField("STL_NO"		, sStlNo);								//ì¬ë£Œë²ˆí˜¸
 				jrInRec.setField("YD_EQP_ID"	, ydEqpId); 
 				jrInRec.setField("YD_STK_BED_NO", ydBedNo);	
 				jrInRec.setField("TREAT_GP"	, sTreatGp); 
 				jrInRec.setField("WORD_PROC", sWordProc);
-//				Å©·¹ÀÎ ¹× ÀÛ¾÷ ¿¹¾à È®ÀÎ
+//				í¬ë ˆì¸ ë° ì‘ì—… ì˜ˆì•½ í™•ì¸
 				ejbConn = new EJBConnector("default", "CCoilL3RcvSeEJB", this);
 				JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCCoilShearInSupLotComp", new Class[] { JDTORecord.class }, new Object[] { jrInRec });
 				String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 				String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-				//ROLLBACK ½Ã Àü¹® ¹ß»ı
+				//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 				if (!"0".equals(rtnCd)) {
 					
 					jrRtn.setResultCode(logId);
@@ -1416,7 +1416,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					gdRes.setMessage(rtnMsg);
 					m_ctx.setRollbackOnly();
 				}else{
-					gdRes.setMessage("Take-In Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+					gdRes.setMessage("Take-In ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 				}
 				
 
@@ -1435,25 +1435,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ Á¶È¸º¸±ŞÃë¼Òµî·Ï
-	 * SPM/HFLÀÔÃø°ü¸® > º¸±ŞÃë¼Ò > µî·Ï
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ì·¨ì†Œë“±ë¡
+	 * SPM/HFLì…ì¸¡ê´€ë¦¬ > ë³´ê¸‰ì·¨ì†Œ > ë“±ë¡
 	 * YYS 2019.08.14
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updcoilYdLineWrTakeOutPp(GridData gdReq) throws DAOException {
-		String mthdNm = "TakeOut µî·Ï[CCoilJspFaEJB.updcoilYdLineWrTakeOutPp]";
+		String mthdNm = "TakeOut ë“±ë¡[CCoilJspFaEJB.updcoilYdLineWrTakeOutPp]";
 		String logId  = commUtils.getLogId();
 	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 	
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updcoilYdLineWrTakeOutPp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -1461,7 +1461,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1471,14 +1471,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 	
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("Take-Out Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("Take-Out ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1492,25 +1492,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏÁ¦Ç°Ã¢°í > ¼³ºñ°ü¸® > ´ëÂ÷½ºÄÉÁÙ°ü¸®  --> ÀÔ°í´ëÂ÷ ÁöÁ¤
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì œí’ˆì°½ê³  > ì„¤ë¹„ê´€ë¦¬ > ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬  --> ì…ê³ ëŒ€ì°¨ ì§€ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws JDTOException
-	 * @ÀÛ¼ºÀÚ : ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.09.15 
+	 * @ì‘ì„±ì : ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.09.15 
 	 */
 	public GridData updCoilYdTcarStsSetRcpt(GridData gdReq) throws JDTOException {
-		String mthdNm = "ÀÔ°í´ëÂ÷ ¼³Á¤[CCoilJspFaEJB.updCoilYdTcarStsSetRcpt]";
+		String mthdNm = "ì…ê³ ëŒ€ì°¨ ì„¤ì •[CCoilJspFaEJB.updCoilYdTcarStsSetRcpt]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+"); 
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			JDTORecord jrRtn	= (JDTORecord)ejbConn.trx("updCoilYdTcarStsSetRcpt",new Class[] { GridData.class }, new Object[] { gdReq });
@@ -1519,14 +1519,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÀÔ°í´ëÂ÷ ¹é¾÷ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì…ê³ ëŒ€ì°¨ ë°±ì—… ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1540,25 +1540,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏÁ¦Ç°Ã¢°í > ¼³ºñ°ü¸® > ´ëÂ÷½ºÄÉÁÙ°ü¸®  --> °á·ÎÀç ÁöÁ¤
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì œí’ˆì°½ê³  > ì„¤ë¹„ê´€ë¦¬ > ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬  --> ê²°ë¡œì¬ ì§€ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws JDTOException
-	 * @ÀÛ¼ºÀÚ :  ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.09.15 
+	 * @ì‘ì„±ì :  ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.09.15 
 	 */
 	public GridData updCoilYdTcarStsSetCond(GridData gdReq) throws JDTOException {
-		String mthdNm = "°á·ÎÀçÁöÁ¤[CCoilJspFaEJB.updCoilYdTcarStsSetCond]";
+		String mthdNm = "ê²°ë¡œì¬ì§€ì •[CCoilJspFaEJB.updCoilYdTcarStsSetCond]";
 		String logId  = commUtils.getLogId();
 
 		try{
             mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
             commUtils.printLog(logId, mthdNm, "F+");
             
-            gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+            gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdTcarStsSetCond", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -1567,14 +1567,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("°á·ÎÀç Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ê²°ë¡œì¬ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1587,26 +1587,26 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *  °ø´ëÂ÷ ½ºÄÉÁÙ È£Ãâ 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ê³µëŒ€ì°¨ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
 	 * @throws JDTOException
-	 * ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.09.15 
+	 * ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.09.15 
 	 */
 	
 	public GridData procTcarStsSetTcarA(GridData gdReq) throws JDTOException {
-		String mthdNm = "°ø´ëÂ÷ ½ºÄÉÁÙ È£Ãâ[CCoilJspFaEJB.procTcarStsSetTcarA]";
+		String mthdNm = "ê³µëŒ€ì°¨ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ[CCoilJspFaEJB.procTcarStsSetTcarA]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+"); 
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);			
@@ -1616,7 +1616,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1626,14 +1626,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("°ø´ëÂ÷ÀÌµ¿Áö½Ã Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ê³µëŒ€ì°¨ì´ë™ì§€ì‹œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1647,8 +1647,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 *  Ãâ¹ß ½ÇÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì¶œë°œ ì‹¤ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
@@ -1656,15 +1656,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData procTcarStsSetTcarB(GridData gdReq) throws JDTOException {
-		String mthdNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®--Ãâ¹ß ½ÇÀû[CCoilJspFaEJB.procTcarStsSetTcarB]"; 
+		String mthdNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--ì¶œë°œ ì‹¤ì [CCoilJspFaEJB.procTcarStsSetTcarB]"; 
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+"); 
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -1674,7 +1674,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd  = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1684,14 +1684,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Ãâ¹ß½ÇÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì¶œë°œì‹¤ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1705,8 +1705,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 *  µµÂø½ÇÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ë„ì°©ì‹¤ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
@@ -1714,15 +1714,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData procTcarStsSetTcarC(GridData gdReq) throws JDTOException {
-		String mthdNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®--´ëÂ÷ µµÂø ½ÇÀû[CCoilJspFaEJB.procTcarStsSetTcarC]";
+		String mthdNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--ëŒ€ì°¨ ë„ì°© ì‹¤ì [CCoilJspFaEJB.procTcarStsSetTcarC]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+"); 
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
@@ -1733,7 +1733,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1743,14 +1743,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("µµÂø Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ë„ì°© ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1763,8 +1763,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 *  ¿Ï·á ½ÇÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì™„ë£Œ ì‹¤ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
@@ -1772,15 +1772,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData procTcarStsSetTcarD(GridData gdReq) throws JDTOException {
-		String mthdNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®--´ëÂ÷ ¿Ï·á½ÇÀû[CCoilJspFaEJB.procTcarStsSetTcarD]";
+		String mthdNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--ëŒ€ì°¨ ì™„ë£Œì‹¤ì [CCoilJspFaEJB.procTcarStsSetTcarD]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
@@ -1792,7 +1792,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1802,14 +1802,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("½ÇÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì‹¤ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1822,8 +1822,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 *  ÇöÀçµ¿ º¯°æ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  í˜„ì¬ë™ ë³€ê²½
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
@@ -1831,15 +1831,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData procTcarStsSetTcarE(GridData gdReq) throws JDTOException {
-		String mthdNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®--ÇöÀ§Ä¡ º¯°æ[CCoilJspFaEJB.procTcarStsSetTcarE]";
+		String mthdNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--í˜„ìœ„ì¹˜ ë³€ê²½[CCoilJspFaEJB.procTcarStsSetTcarE]";
 		String logId  = commUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+"); 
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
@@ -1850,7 +1850,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1860,14 +1860,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-//Á¶È¸
+//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÇöÀ§Ä¡º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("í˜„ìœ„ì¹˜ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1880,8 +1880,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 
 	/**
-	 * ´ëÂ÷½ºÄÉÁÙ°ü¸®--HOME µ¿ º¯°æ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--HOME ë™ ë³€ê²½
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
@@ -1889,15 +1889,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData procTcarStsSetTcarF(GridData gdReq) throws JDTOException {
-		String mthdNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®--HOME µ¿ º¯°æ[CCoilJspFaEJB.procTcarStsSetTcarF]";
+		String mthdNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬--HOME ë™ ë³€ê²½[CCoilJspFaEJB.procTcarStsSetTcarF]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
@@ -1908,7 +1908,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1918,14 +1918,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("HOME µ¿ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("HOME ë™ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1939,23 +1939,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  	
 
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏ¼ÒÀç¾ßµå > Àç°ø°ü¸® > ¿­´ÜÀ§ÀÌÀûµî·Ï[Á¦Ç°] (ÀÌÀûÁö½Ã)
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì†Œì¬ì•¼ë“œ > ì¬ê³µê´€ë¦¬ > ì—´ë‹¨ìœ„ì´ì ë“±ë¡[ì œí’ˆ] (ì´ì ì§€ì‹œ)
 	 *  YYS 2019.09.06 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updColUnitMvstkReg(GridData gdReq) throws DAOException {
-		String mthdNm	= "¿­´ÜÀ§ÀÌÀûµî·Ï/½ºÆÇ´ÜÀ§ÀÌÀûµî·Ï[CCoilJspFaEJB.updColUnitMvstkReg]";
+		String mthdNm	= "ì—´ë‹¨ìœ„ì´ì ë“±ë¡/ìŠ¤íŒë‹¨ìœ„ì´ì ë“±ë¡[CCoilJspFaEJB.updColUnitMvstkReg]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updColUnitMvstkReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -1963,7 +1963,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -1974,12 +1974,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¿­´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì—´ë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -1992,22 +1992,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ÀúÀå°ü¸®  > ¿­´ÜÀ§ÀÌÀûµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì €ì¥ê´€ë¦¬  > ì—´ë‹¨ìœ„ì´ì ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updColUnitMvstkRegJ(GridData gdReq) throws DAOException {
-		String mthdNm	= "¿­´ÜÀ§ÀÌÀûµî·Ï[Á¦Ç°][CCoilJspFaEJB.updColUnitMvstkRegJ]";
+		String mthdNm	= "ì—´ë‹¨ìœ„ì´ì ë“±ë¡[ì œí’ˆ][CCoilJspFaEJB.updColUnitMvstkRegJ]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updColUnitMvstkRegJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2015,7 +2015,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2026,12 +2026,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¿­´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì—´ë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2045,23 +2045,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏ¼ÒÀç¾ßµå > Àç°ø°ü¸® > ¿­´ÜÀ§ÀÌÀûµî·Ï[Á¦Ç°] (ÀÌÀûÁö½Ã)
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì†Œì¬ì•¼ë“œ > ì¬ê³µê´€ë¦¬ > ì—´ë‹¨ìœ„ì´ì ë“±ë¡[ì œí’ˆ] (ì´ì ì§€ì‹œ)
 	 *  YYS 2019.09.06 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updColUnitMvstkRegH(GridData gdReq) throws DAOException {
-		String mthdNm	= "¿­´ÜÀ§ÀÌÀûµî·Ï[¼ÒÀç][CCoilJspFaEJB.updColUnitMvstkRegH]";
+		String mthdNm	= "ì—´ë‹¨ìœ„ì´ì ë“±ë¡[ì†Œì¬][CCoilJspFaEJB.updColUnitMvstkRegH]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updColUnitMvstkRegH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2069,7 +2069,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2080,12 +2080,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¿­´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì—´ë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2100,24 +2100,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *  ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ Ãë¼Ò)
-	 *  ¿°¿ë¼± 2019.09.11
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì·¨ì†Œ)
+	 *  ì—¼ìš©ì„  2019.09.11
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCraneSchCancel(GridData gdReq)throws DAOException {	
-		String mthdNm = "½ºÄÉÁÙ Ãë¼Ò[CCoilJspFaEJB.updCraneSchCancel]";
+		String mthdNm = "ìŠ¤ì¼€ì¤„ ì·¨ì†Œ[CCoilJspFaEJB.updCraneSchCancel]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -2128,7 +2128,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2142,7 +2142,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("½ºÄÉÁÙÃë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ìŠ¤ì¼€ì¤„ì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 	
 
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -2155,29 +2155,29 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * ÁöÆ÷Àå º¸±Ş µî·Ï 
-	 * °­Á¤¼± 2019.09.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ë³´ê¸‰ ë“±ë¡ 
+	 * ê°•ì •ì„  2019.09.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdSendGF(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷Àå µî·Ï[CCoilJspFaEJB.updCoilYdSendGF]";
+		String mthdNm = "ì§€í¬ì¥ ë“±ë¡[CCoilJspFaEJB.updCoilYdSendGF]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdSendGF", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2194,7 +2194,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁöÆ÷Àåº¸±Ş Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì§€í¬ì¥ë³´ê¸‰ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -2209,29 +2209,29 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÁöÆ÷Àå ±ä±ŞÀç º¸±Ş ¿äÃ» 
-	 * °­Á¤¼± 2019.09.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ê¸´ê¸‰ì¬ ë³´ê¸‰ ìš”ì²­ 
+	 * ê°•ì •ì„  2019.09.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdSendGFEmergency(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷Àå ±ä±ŞÀç º¸±Ş ¿äÃ»[CCoilJspFaEJB.updCoilYdSendGFEmergency]";
+		String mthdNm = "ì§€í¬ì¥ ê¸´ê¸‰ì¬ ë³´ê¸‰ ìš”ì²­[CCoilJspFaEJB.updCoilYdSendGFEmergency]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn 	 	= (JDTORecord)ejbConn.trx("updCoilYdSendGFEmergency", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2249,7 +2249,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁöÆ÷Àå ±ä±ŞÀç º¸±Ş Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì§€í¬ì¥ ê¸´ê¸‰ì¬ ë³´ê¸‰ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -2264,30 +2264,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÁöÆ÷Àå ÀÔ°í µî·Ï 
-	 * °­Á¤¼± 2019.09.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ì…ê³  ë“±ë¡ 
+	 * ê°•ì •ì„  2019.09.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdSendGF2(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷Àå ÀÔ°í µî·Ï[CCoilJspFaEJB.updCoilYdSendGF2]";
+		String mthdNm = "ì§€í¬ì¥ ì…ê³  ë“±ë¡[CCoilJspFaEJB.updCoilYdSendGF2]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("updCoilYdSendGF2", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2304,7 +2304,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁöÆ÷Àå ÀÔ°í Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì§€í¬ì¥ ì…ê³  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 	
 
 			
@@ -2320,15 +2320,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÁöÆ÷Àå »èÁ¦ 
-	 * °­Á¤¼± 2019.09.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ì‚­ì œ 
+	 * ê°•ì •ì„  2019.09.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilGdsYdReSendGFDel(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷Àå »èÁ¦[CCoilJspFaEJB.updCoilGdsYdReSendGFDel]";
+		String mthdNm = "ì§€í¬ì¥ ì‚­ì œ[CCoilJspFaEJB.updCoilGdsYdReSendGFDel]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -2336,15 +2336,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilGdsYdReSendGFDel", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2360,7 +2360,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁöÆ÷Àå »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì§€í¬ì¥ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -2375,15 +2375,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/***
-	 * ¼ÒÀçÄÚÀÏ¾ßµå ¸Ş´º¾ó ÀÛ¾÷Áö½Ã Æí¼º-ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì†Œì¬ì½”ì¼ì•¼ë“œ ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ í¸ì„±-ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updMtlUnitMvstkReg(GridData gdReq)throws DAOException {
-		String mthdNm = "ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï[CCoilJspFaEJB.updMtlUnitMvstkReg]";
+		String mthdNm = "ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡[CCoilJspFaEJB.updMtlUnitMvstkReg]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
@@ -2392,8 +2392,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String gubun = gdReq.getParam("YD_LOC_GP");
 
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			JDTORecord jrRtn  = commUtils.getParam(logId, mthdNm, "");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -2406,7 +2406,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2417,12 +2417,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2435,15 +2435,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/***
-	 * ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ÀúÀå°ü¸®  > Á¦Ç°´ÜÀ§ÀÌÀûµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì €ì¥ê´€ë¦¬  > ì œí’ˆë‹¨ìœ„ì´ì ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updMtlUnitMvstkRegJ(GridData gdReq)throws DAOException {
-		String mthdNm = "ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï[CCoilJspFaEJB.updMtlUnitMvstkRegJ]";
+		String mthdNm = "ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡[CCoilJspFaEJB.updMtlUnitMvstkRegJ]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
@@ -2452,8 +2452,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 //			String gubun = gdReq.getParam("YD_LOC_GP");
 
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			JDTORecord jrRtn  = commUtils.getParam(logId, mthdNm, "");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -2462,7 +2462,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2473,12 +2473,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2491,15 +2491,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/***
-	 * ¼ÒÀçÄÚÀÏ¾ßµå ¸Ş´º¾ó ÀÛ¾÷Áö½Ã Æí¼º-ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì†Œì¬ì½”ì¼ì•¼ë“œ ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ í¸ì„±-ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updMtlUnitMvstkRegH(GridData gdReq)throws DAOException {
-		String mthdNm = "ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï[CCoilJspFaEJB.updMtlUnitMvstkRegH]";
+		String mthdNm = "ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡[CCoilJspFaEJB.updMtlUnitMvstkRegH]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
@@ -2508,8 +2508,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 //			String gubun = gdReq.getParam("YD_LOC_GP");
 
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			JDTORecord jrRtn  = commUtils.getParam(logId, mthdNm, "");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -2518,7 +2518,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2534,7 +2534,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀÏÇ°´ÜÀ§ ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì¼í’ˆë‹¨ìœ„ ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 				
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -2547,31 +2547,31 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ »óÅÂ ¼öÁ¤(UPDATE) 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ìƒíƒœ ìˆ˜ì •(UPDATE) 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdCrnStsSetCrnStat(GridData gdReq) throws DAOException {
-		String mthdNm = "ÄÚÀÏ ¾ßµå Å©·¹ÀÎ »óÅÂ ¼öÁ¤(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnStat]";
+		String mthdNm = "ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ìƒíƒœ ìˆ˜ì •(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnStat]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);	
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdCrnStsSetCrnStat", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2587,7 +2587,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Å©·¹ÀÎ »óÅÂ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("í¬ë ˆì¸ ìƒíƒœ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 				
 			
@@ -2601,31 +2601,31 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ ¿îÀü¸ğµå ¼öÁ¤(UPDATE) 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ìš´ì „ëª¨ë“œ ìˆ˜ì •(UPDATE) 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdCrnStsSetCrnMode(GridData gdReq) throws DAOException {
-		String mthdNm = "ÄÚÀÏ ¾ßµå Å©·¹ÀÎ »óÅÂ ¼öÁ¤(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnMode]";
+		String mthdNm = "ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ìƒíƒœ ìˆ˜ì •(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnMode]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);	
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdCrnStsSetCrnMode", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2641,7 +2641,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Å©·¹ÀÎ »óÅÂ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("í¬ë ˆì¸ ìƒíƒœ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");	
@@ -2655,9 +2655,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ¸í·É¼±ÅÃ±âµ¿
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ëª…ë ¹ì„ íƒê¸°ë™
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
@@ -2665,7 +2665,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 
 	public GridData updCmdSelStart(GridData gdReq) throws JDTOException {	
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¸í·É¼±ÅÃ±âµ¿[CCoilJspFaEJB.updCmdSelStart]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ëª…ë ¹ì„ íƒê¸°ë™[CCoilJspFaEJB.updCmdSelStart]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
@@ -2674,15 +2674,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID		
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID		
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);	
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCmdSelStart", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2700,7 +2700,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				m_ctx.setRollbackOnly();
 			}else{
 				gdRes.setStatus(rtnCd);
-				gdRes.setMessage("¸í·É¼±ÅÃ±âµ¿ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ëª…ë ¹ì„ íƒê¸°ë™ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			return gdRes;
@@ -2713,9 +2713,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 * Å©·¹ÀÎ ÀÛ¾÷ ±¸ºĞ ÁöÁ¤
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ ì‘ì—… êµ¬ë¶„ ì§€ì •
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
@@ -2723,15 +2723,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 
 	public GridData crnWrkGPartSet(GridData gdReq) throws JDTOException {	
-		String mthdNm = "Å©·¹ÀÎ ÀÛ¾÷ ±¸ºĞ ÁöÁ¤[CCoilJspFaEJB.crnWrkGPartSet]";
+		String mthdNm = "í¬ë ˆì¸ ì‘ì—… êµ¬ë¶„ ì§€ì •[CCoilJspFaEJB.crnWrkGPartSet]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);	
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("crnWrkGPartSet", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2762,16 +2762,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ ÀÛ¾÷¸ğµå ¼öÁ¤(UPDATE) 
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ì‘ì—…ëª¨ë“œ ìˆ˜ì •(UPDATE) 
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCoilYdCrnStsSetCrnMode2(GridData gdReq) throws DAOException {
-		String mthdNm	= "ÄÚÀÏ ¾ßµå Å©·¹ÀÎ ÀÛ¾÷¸ğµå ¼öÁ¤(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnMode2]";
+		String mthdNm	= "ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ì‘ì—…ëª¨ë“œ ìˆ˜ì •(UPDATE)[CCoilJspFaEJB.updCoilYdCrnStsSetCrnMode2]";
 		String logId	= commUtils.getLogId();	
 		
 		
@@ -2779,8 +2779,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);	
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdCrnStsSetCrnMode2", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2794,7 +2794,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÛ¾÷¸ğµå ¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì‘ì—…ëª¨ë“œ ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;	
@@ -2806,24 +2806,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±Ç»ó½ÇÀû Ã³¸®)
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œìƒì‹¤ì  ì²˜ë¦¬)
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
 	 */
 
 	public GridData updCrnUpPrsBackUp(GridData gdReq) throws JDTOException {
-		String mthdNm = "¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±Ç»ó½ÇÀû Ã³¸®)[CCoilJspFaEJB.updCrnUpPrsBackUp]";
+		String mthdNm = "ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œìƒì‹¤ì  ì²˜ë¦¬)[CCoilJspFaEJB.updCrnUpPrsBackUp]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			//JDTORecord [] jrParam = ydComUtil.genJDTORecordSet(gdReq);		
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
@@ -2832,7 +2832,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnMsg:"+ rtnMsg, "SL");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2853,7 +2853,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("±Ç»ó½ÇÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ê¶Œìƒì‹¤ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -2865,24 +2865,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±ÇÇÏ½ÇÀû Ã³¸®)
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œí•˜ì‹¤ì  ì²˜ë¦¬)
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData updCrnDnPrsBackUp(GridData gdReq) throws DAOException {
-		String mthdNm	= "¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±ÇÇÏ½ÇÀû Ã³¸®)[CCoilJspFaEJB.updCrnDnPrsBackUp]";
+		String mthdNm	= "ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œí•˜ì‹¤ì  ì²˜ë¦¬)[CCoilJspFaEJB.updCrnDnPrsBackUp]";
 		String logId  = commUtils.getLogId();	
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
             EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
             JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCrnDnPrsBackUp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2890,7 +2890,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
             String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
             commUtils.printLog(logId, mthdNm + " rtnMsg:"+ rtnMsg, "SL");
             commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2912,7 +2912,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("±ÇÇÏ½ÇÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ê¶Œí•˜ì‹¤ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			gdRes.setStatus(rtnCd);
 			
@@ -2928,27 +2928,27 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±Ç»ó/±ÇÇÏ Ã³¸®)
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œìƒ/ê¶Œí•˜ ì²˜ë¦¬)
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
 	 */
 
 	public GridData updCrnUpDnPrsBackUp(GridData gdReq) throws JDTOException {
-		String mthdNm	= "¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® POP_UP (±Ç»ó/±ÇÇÏ Ã³¸®)[CCoilJspFaEJB.updCrnUpDnPrsBackUp]";
+		String mthdNm	= "ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ POP_UP (ê¶Œìƒ/ê¶Œí•˜ ì²˜ë¦¬)[CCoilJspFaEJB.updCrnUpDnPrsBackUp]";
 		String logId	= commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");	
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			
 			/***********************
-			 * ±Ç»ó½ÇÀû Ã³¸®				
+			 * ê¶Œìƒì‹¤ì  ì²˜ë¦¬				
 			 ***********************/
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCrnUpPrsBackUp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2971,11 +2971,11 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 			/*****************************************************
-			 * ±ÇÇÏ½ÇÀû Ã³¸®
-			 *  - ±Ç»ó ½ÇÀûÃ³¸®°¡ ÂüÀÏ °æ¿ì¸¸ ±ÇÇÏ Ã³¸®¸¦ ½ÇÇàÇÑ´Ù.
+			 * ê¶Œí•˜ì‹¤ì  ì²˜ë¦¬
+			 *  - ê¶Œìƒ ì‹¤ì ì²˜ë¦¬ê°€ ì°¸ì¼ ê²½ìš°ë§Œ ê¶Œí•˜ ì²˜ë¦¬ë¥¼ ì‹¤í–‰í•œë‹¤.
 			 ****************************************************/
 			if ( "1".equals(rtnCd)) {
-				//±ÇÇÏ ½ÇÀû Ã³¸®				
+				//ê¶Œí•˜ ì‹¤ì  ì²˜ë¦¬				
 				ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
 				jrRtn = (JDTORecord)ejbConn.trx("updCrnDnPrsBackUp", new Class[] { GridData.class }, new Object[] { gdReq });
 				
@@ -2983,7 +2983,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				rtnMsg	= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				
 				commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-				//ROLLBACK ½Ã Àü¹® ¹ß»ı
+				//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 				if (!"0".equals(rtnCd)) {
 					
 					jrRtn.setResultCode(logId);
@@ -3003,7 +3003,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("±Ç»ó/±ÇÇÏ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ê¶Œìƒ/ê¶Œí•˜ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 
 			commUtils.printLog(logId, mthdNm, "F-");	
@@ -3017,9 +3017,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ ÀÛ¾÷½ÇÀû ÀÀ´ä (SEND) 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ì‘ì—…ì‹¤ì  ì‘ë‹µ (SEND) 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
@@ -3027,14 +3027,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData sendCoilYdCrnAnswer(GridData gdReq) throws DAOException {
-		String mthdNm	= "ÄÚÀÏ ¾ßµå Å©·¹ÀÎ ÀÛ¾÷½ÇÀû ÀÀ´ä (SEND) [CCoilJspFaEJB.sendCoilYdCrnAnswer]";
+		String mthdNm	= "ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ ì‘ì—…ì‹¤ì  ì‘ë‹µ (SEND) [CCoilJspFaEJB.sendCoilYdCrnAnswer]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -3042,7 +3042,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3059,7 +3059,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÛ¾÷½ÇÀû ÀÀ´ä Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì‘ì—…ì‹¤ì  ì‘ë‹µ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");			
 			return gdRes;	
@@ -3071,9 +3071,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *  ÄÚÀÏ ¾ßµå Å©·¹ÀÎ TOÀ§Ä¡ Àç¼³Á¤ 
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì½”ì¼ ì•¼ë“œ í¬ë ˆì¸ TOìœ„ì¹˜ ì¬ì„¤ì • 
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws DAOException
@@ -3081,14 +3081,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData updToLocSch(GridData gdReq) throws DAOException {
-		String mthdNm	= "Å©·¹ÀÎ TOÀ§Ä¡ Àç¼³Á¤[CCoilJspFaEJB.updToLocSch]";
+		String mthdNm	= "í¬ë ˆì¸ TOìœ„ì¹˜ ì¬ì„¤ì •[CCoilJspFaEJB.updToLocSch]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -3096,7 +3096,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "updToLocSch rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3113,7 +3113,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("TOÀ§Ä¡ Àç¼³Á¤ÀÌ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("TOìœ„ì¹˜ ì¬ì„¤ì •ì´ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");			
 			return gdRes;	
@@ -3126,22 +3126,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ÀûÄ¡ °¡´É ¹øÁö ¸®½ºÆ® Á¶È¸ (select box¿ë  ¼ÒÀç,Á¦Ç° °øÅë )
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì ì¹˜ ê°€ëŠ¥ ë²ˆì§€ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ (select boxìš©  ì†Œì¬,ì œí’ˆ ê³µí†µ )
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
-	 * @ÀÛ¼ºÀÚ : ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.09.14
+	 * @ì‘ì„±ì : ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.09.14
 	 */
 	public GridData getUsableBedList(GridData gdReq) throws DAOException {
-		String mthdNm	= "ÀûÄ¡ °¡´É ¹øÁö ¸®½ºÆ® Á¶È¸[CCoilJspFaEJB.getUsableBedList]";
+		String mthdNm	= "ì ì¹˜ ê°€ëŠ¥ ë²ˆì§€ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ[CCoilJspFaEJB.getUsableBedList]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			GridData gdRes = (GridData)ejbConn.trx("getUsableBedList", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3156,32 +3156,32 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ¼³ºñÈŞÁöÅ×ÀÌºí¿¡ µî·Ï (ÆË¾÷)-È®ÀÎ
-	 * ±èÈ¯Áø
+	 * ì„¤ë¹„íœ´ì§€í…Œì´ë¸”ì— ë“±ë¡ (íŒì—…)-í™•ì¸
+	 * ê¹€í™˜ì§„
 	 * 2019.09.27
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */ 
 	public GridData insEqpPauseHist(GridData gdReq) throws JDTOException {
-		String mthdNm = "¼³ºñÈŞÁöÅ×ÀÌºí¿¡ µî·Ï (ÆË¾÷))[CCoilJspFaEJB.insEqpPauseHist]";
+		String mthdNm = "ì„¤ë¹„íœ´ì§€í…Œì´ë¸”ì— ë“±ë¡ (íŒì—…))[CCoilJspFaEJB.insEqpPauseHist]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("insEqpPauseHist", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3196,7 +3196,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¼³ºñÀÌ·Â µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì„¤ë¹„ì´ë ¥ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			
@@ -3211,23 +3211,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ÀÔµ¿Â÷·®Á¤º¸ »èÁ¦
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ÀÌ¼ÛÀÛ¾÷°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì…ë™ì°¨ëŸ‰ì •ë³´ ì‚­ì œ
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì´ì†¡ì‘ì—…ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCarPntCarInfoClear(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÔµ¿Â÷·®Á¤º¸ »èÁ¦[CCoilJspFaEJB.procCarPntCarInfoClear]";
+		String mthdNm = "ì…ë™ì°¨ëŸ‰ì •ë³´ ì‚­ì œ[CCoilJspFaEJB.procCarPntCarInfoClear]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCarPntCarInfoClear", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3235,7 +3235,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -3262,30 +3262,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·® Point °³Æó ±âÁ¸ : procCoilYdGdsPntUnitCLCoil
-	 * °­Á¤¼± 2019.10.01
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ Point ê°œí ê¸°ì¡´ : procCoilYdGdsPntUnitCLCoil
+	 * ê°•ì •ì„  2019.10.01
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCoilYdPntUnitCL(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®Point°³Æó[CCoilJspFaEJB.procCoilYdPntUnitCL]";
+		String mthdNm = "ì°¨ëŸ‰Pointê°œí[CCoilJspFaEJB.procCoilYdPntUnitCL]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procCoilYdPntUnitCL", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3297,13 +3297,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Â÷·®Point°³Æó Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì°¨ëŸ‰Pointê°œí ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3317,30 +3317,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÀÔµ¿¼ø¼­ º¯°æ : ±âÁ¸ procCoilYdGdsBayInWoSeqChangCoil
-	 * °­Á¤¼± 2019.10.02
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì…ë™ìˆœì„œ ë³€ê²½ : ê¸°ì¡´ procCoilYdGdsBayInWoSeqChangCoil
+	 * ê°•ì •ì„  2019.10.02
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procBayInWoSeqChange(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÔµ¿¼ø¼­º¯°æ[CCoilJspFaEJB.procBayInWoSeqChange]";
+		String mthdNm = "ì…ë™ìˆœì„œë³€ê²½[CCoilJspFaEJB.procBayInWoSeqChange]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procBayInWoSeqChange", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3351,13 +3351,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀÔµ¿¼ø¼­º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì…ë™ìˆœì„œë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -3370,30 +3370,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®µµÂøÃ³¸® : ±âÁ¸ CarArrivalNEW
-	 * °­Á¤¼± 2019.10.02
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ë„ì°©ì²˜ë¦¬ : ê¸°ì¡´ CarArrivalNEW
+	 * ê°•ì •ì„  2019.10.02
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCarArrival(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®µµÂøÃ³¸®[CCoilJspFaEJB.procCarArrival]";
+		String mthdNm = "ì°¨ëŸ‰ë„ì°©ì²˜ë¦¬[CCoilJspFaEJB.procCarArrival]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCarArrival", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3404,13 +3404,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Â÷·®µµÂø Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì°¨ëŸ‰ë„ì°© ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -3423,29 +3423,29 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·® ÃÊ±âÈ­
-	 * °­Á¤¼± 2019.10.02
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ ì´ˆê¸°í™”
+	 * ê°•ì •ì„  2019.10.02
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarWrMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®ÃÊ±âÈ­[CCoilJspFaEJB.updCarWrMgt]";
+		String mthdNm = "ì°¨ëŸ‰ì´ˆê¸°í™”[CCoilJspFaEJB.updCarWrMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("updCarWrMgt", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3456,13 +3456,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Â÷·®ÃÊ±âÈ­ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì°¨ëŸ‰ì´ˆê¸°í™” ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -3475,30 +3475,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - »óÂ÷LOTÆí¼º
-	 * °­Á¤¼± 2019.10.03
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ìƒì°¨LOTí¸ì„±
+	 * ê°•ì •ì„  2019.10.03
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData insCarLdLotCoil(GridData gdReq) throws DAOException {
-		String mthdNm = "»óÂ÷LOTÆí¼º[CCoilJspFaEJB.insCarLdLotCoil]";
+		String mthdNm = "ìƒì°¨LOTí¸ì„±[CCoilJspFaEJB.insCarLdLotCoil]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("insCarLdLotCoil", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3509,13 +3509,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("»óÂ÷LOTÆí¼º Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìƒì°¨LOTí¸ì„± ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3529,30 +3529,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® »óÂ÷LOTÆí¼º Ãë¼Ò
-	 * °­Á¤¼± 2019.10.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ ìƒì°¨LOTí¸ì„± ì·¨ì†Œ
+	 * ê°•ì •ì„  2019.10.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData delCarLdLotCoil(GridData gdReq) throws DAOException {
-		String mthdNm = "»óÂ÷LOTÃë¼Ò[CCoilJspFaEJBdelCarLdLotCoil]";
+		String mthdNm = "ìƒì°¨LOTì·¨ì†Œ[CCoilJspFaEJBdelCarLdLotCoil]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("delCarLdLotCoil", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3563,13 +3563,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("»óÂ÷LOTÃë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìƒì°¨LOTì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3583,30 +3583,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·® »óÂ÷¿Ï·á Ã³¸®
-	 * °­Á¤¼± 2019.10.16
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ ìƒì°¨ì™„ë£Œ ì²˜ë¦¬
+	 * ê°•ì •ì„  2019.10.16
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdCarUpEndPp(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®»óÂ÷¿Ï·á[CCoilJspFaEJB.updCoilYdCarUpEndPp]";
+		String mthdNm = "ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ[CCoilJspFaEJB.updCoilYdCarUpEndPp]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("updCoilYdCarUpEndPp", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3617,13 +3617,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 						
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Â÷·®»óÂ÷ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì°¨ëŸ‰ìƒì°¨ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -3636,30 +3636,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * »óÂ÷Á¤º¸Á¶È¸ - Â÷»óÀ§¼öÁ¤
-	 * °­Á¤¼± 2019.10.16
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ìƒì°¨ì •ë³´ì¡°íšŒ - ì°¨ìƒìœ„ìˆ˜ì •
+	 * ê°•ì •ì„  2019.10.16
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData carLiftPosSet(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷»óÀ§¼öÁ¤[CCoilJspFaEJB.carLiftPosSet]";
+		String mthdNm = "ì°¨ìƒìœ„ìˆ˜ì •[CCoilJspFaEJB.carLiftPosSet]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("carLiftPosSet", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3670,13 +3670,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷»óÀ§¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ìƒìœ„ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3690,24 +3690,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - ÀüÃ¼ÀÔµ¿Á¦ÇÑ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2019.11.05
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì „ì²´ì…ë™ì œí•œ
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.05
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procAllCarPntYnReg(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀüÃ¼ÀÔµ¿Á¦ÇÑ[CCoilJspFaEJB.procAllCarPntYnReg]";
+		String mthdNm = "ì „ì²´ì…ë™ì œí•œ[CCoilJspFaEJB.procAllCarPntYnReg]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procAllCarPntYnReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3715,7 +3715,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3727,13 +3727,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀüÃ¼ÀÔµ¿Á¦ÇÑ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì „ì²´ì…ë™ì œí•œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3747,24 +3747,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - ÀüÃ¼ÀÔµ¿Á¦ÇÑ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ÀÌ¼ÛÀÛ¾÷°ü¸® > ¼ÒÀçÂ÷·®ÀÛ¾÷°ü¸®
-	 * ¿°¿ë¼± 2023.05.31
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì „ì²´ì…ë™ì œí•œ
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì´ì†¡ì‘ì—…ê´€ë¦¬ > ì†Œì¬ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ì—¼ìš©ì„  2023.05.31
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procAllCarPntYnRegH(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀüÃ¼ÀÔµ¿Á¦ÇÑ[CCoilJspFaEJB.procAllCarPntYnRegH]";
+		String mthdNm = "ì „ì²´ì…ë™ì œí•œ[CCoilJspFaEJB.procAllCarPntYnRegH]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procAllCarPntYnRegH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3772,7 +3772,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3784,13 +3784,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀüÃ¼ÀÔµ¿Á¦ÇÑ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì „ì²´ì…ë™ì œí•œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3804,24 +3804,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¹èÂ÷Â÷·®ÀÛ¾÷°ü¸® - Á¦Ç°ÀÌ¼Û¿ì¼±¼øÀ§
-	 * ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏ°ü¸® > ¹èÂ÷Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2020.01.17
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë°°ì°¨ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì œí’ˆì´ì†¡ìš°ì„ ìˆœìœ„
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ê´€ë¦¬ > ë°°ì°¨ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2020.01.17
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilCarMovYn(GridData gdReq) throws DAOException {
-		String mthdNm = "Á¦Ç°ÀÌ¼Û¿ì¼±¼øÀ§[CCoilJspFaEJB.updCoilCarMovYn]";
+		String mthdNm = "ì œí’ˆì´ì†¡ìš°ì„ ìˆœìœ„[CCoilJspFaEJB.updCoilCarMovYn]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilCarMovYn", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3829,7 +3829,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3839,13 +3839,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Á¦Ç°ÀÌ¼Û¿ì¼±¼øÀ§ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì œí’ˆì´ì†¡ìš°ì„ ìˆœìœ„ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3859,24 +3859,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - ´ë±âÀåµµÂø
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2019.11.05
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ëŒ€ê¸°ì¥ë„ì°©
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.05
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procStandByYdArrive(GridData gdReq) throws DAOException {
-		String mthdNm = "´ë±âÀåµµÂø[CCoilJspFaEJB.procStandByYdArrive]";
+		String mthdNm = "ëŒ€ê¸°ì¥ë„ì°©[CCoilJspFaEJB.procStandByYdArrive]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procStandByYdArrive", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3884,7 +3884,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3895,13 +3895,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("´ë±âÀåµµÂø Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ëŒ€ê¸°ì¥ë„ì°© ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -3914,24 +3914,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - Ãâ¹ßÃ³¸®
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2019.11.05
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì¶œë°œì²˜ë¦¬
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.05
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCarStart(GridData gdReq) throws DAOException {
-		String mthdNm = "Ãâ¹ßÃ³¸®[CCoilJspFaEJB.procCarStart]";
+		String mthdNm = "ì¶œë°œì²˜ë¦¬[CCoilJspFaEJB.procCarStart]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCarStart", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3939,7 +3939,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -3951,13 +3951,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷·®Ãâ¹ß Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ëŸ‰ì¶œë°œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -3971,24 +3971,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - Â÷·®POINT SPAN ¹üÀ§ ¼³Á¤
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2019.11.08
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì°¨ëŸ‰POINT SPAN ë²”ìœ„ ì„¤ì •
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.08
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarSpanRng(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®Æ÷ÀÎÆ®SPAN¹üÀ§¼³Á¤[CCoilJspFaEJB.updCarSpanRng]";
+		String mthdNm = "ì°¨ëŸ‰í¬ì¸íŠ¸SPANë²”ìœ„ì„¤ì •[CCoilJspFaEJB.updCarSpanRng]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCarSpanRng", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -3996,7 +3996,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4008,13 +4008,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§¼³Á¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ì„¤ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4028,30 +4028,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Á¦Ç° ¹İÇ°/È¸¼ÛÀÛ¾÷ µî·Ï - ÇÏÂ÷ÀÛ¾÷µî·Ï
-	 * °­Á¤¼± 2019.10.22
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì œí’ˆ ë°˜í’ˆ/íšŒì†¡ì‘ì—… ë“±ë¡ - í•˜ì°¨ì‘ì—…ë“±ë¡
+	 * ê°•ì •ì„  2019.10.22
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData regCarUdWrk(GridData gdReq) throws DAOException {
-		String mthdNm = "ÇÏÂ÷ÀÛ¾÷µî·Ï[CCoilJspFaEJB.regCarUdWrk]";
+		String mthdNm = "í•˜ì°¨ì‘ì—…ë“±ë¡[CCoilJspFaEJB.regCarUdWrk]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("regCarUdWrk", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4062,13 +4062,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÇÏÂ÷ÀÛ¾÷µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("í•˜ì°¨ì‘ì—…ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4082,30 +4082,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ¼ÒÀç ¹İÇ°/ºÎºĞÇÏÂ÷ µî·Ï - ÇÏÂ÷ÀÛ¾÷µî·Ï
-	 * ¿°¿ë¼± 2023 03 17
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì†Œì¬ ë°˜í’ˆ/ë¶€ë¶„í•˜ì°¨ ë“±ë¡ - í•˜ì°¨ì‘ì—…ë“±ë¡
+	 * ì—¼ìš©ì„  2023 03 17
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData regCarUdWrkH(GridData gdReq) throws DAOException {
-		String mthdNm = "ÇÏÂ÷ÀÛ¾÷µî·Ï[CCoilJspFaEJB.regCarUdWrkH]";
+		String mthdNm = "í•˜ì°¨ì‘ì—…ë“±ë¡[CCoilJspFaEJB.regCarUdWrkH]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("regCarUdWrkH", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4116,13 +4116,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÇÏÂ÷ÀÛ¾÷µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("í•˜ì°¨ì‘ì—…ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4136,24 +4136,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Á¦Ç° ÅëÇÕÀÌÀûÁö½Ã - ÀÌÀûÁö½Ã
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸®  > Á¦Ç°ÅëÇÕÀÌÀûÁö½Ã
-	 * °­Á¤¼± 2019.11.04
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì œí’ˆ í†µí•©ì´ì ì§€ì‹œ - ì´ì ì§€ì‹œ
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬  > ì œí’ˆí†µí•©ì´ì ì§€ì‹œ
+	 * ê°•ì •ì„  2019.11.04
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updGdsColUnitMvstkReg(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÌÀûÁö½Ã[CCoilJspFaEJB.updGdsColUnitMvstkReg]";
+		String mthdNm = "ì´ì ì§€ì‹œ[CCoilJspFaEJB.updGdsColUnitMvstkReg]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updGdsColUnitMvstkReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4161,7 +4161,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4171,13 +4171,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Á¦Ç°ÅëÇÕ ÀÌÀûÁö½Ã Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì œí’ˆí†µí•© ì´ì ì§€ì‹œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4191,24 +4191,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸ - Ãâ°í°Ë¼ö
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸
-	 * °­Á¤¼± 2019.11.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ - ì¶œê³ ê²€ìˆ˜
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ
+	 * ê°•ì •ì„  2019.11.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCarExamination(GridData gdReq) throws DAOException {
-		String mthdNm = "Ãâ°í°Ë¼ö[CCoilJspFaEJB.procCarExamination]";
+		String mthdNm = "ì¶œê³ ê²€ìˆ˜[CCoilJspFaEJB.procCarExamination]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCarExamination", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4216,7 +4216,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4226,13 +4226,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Ãâ°í°Ë¼ö Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì¶œê³ ê²€ìˆ˜ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4246,24 +4246,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸ - Â÷»óÀ§Ä¡ ¼öÁ¤
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸
-	 * °­Á¤¼± 2019.11.19
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ - ì°¨ìƒìœ„ì¹˜ ìˆ˜ì •
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ
+	 * ê°•ì •ì„  2019.11.19
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarExaminationCarUppLocCd(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷»óÀ§Ä¡¼öÁ¤[CCoilJspFaEJB.updCarExaminationCarUppLocCd]";
+		String mthdNm = "ì°¨ìƒìœ„ì¹˜ìˆ˜ì •[CCoilJspFaEJB.updCarExaminationCarUppLocCd]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCarExaminationCarUppLocCd", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4272,13 +4272,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷»óÀ§Ä¡¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ìƒìœ„ì¹˜ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4292,24 +4292,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸ - ÀÌ»óÄÚµå ¼öÁ¤
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > °Ë¼öÀÌ»óÁ¦Ç°Á¶È¸
-	 * °­Á¤¼± 2019.11.19
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ - ì´ìƒì½”ë“œ ìˆ˜ì •
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ê²€ìˆ˜ì´ìƒì œí’ˆì¡°íšŒ
+	 * ê°•ì •ì„  2019.11.19
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarExaminationYdAbCd(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÌ»óÄÚµå¼öÁ¤[CCoilJspFaEJB.updCarExaminationYdAbCd]";
+		String mthdNm = "ì´ìƒì½”ë“œìˆ˜ì •[CCoilJspFaEJB.updCarExaminationYdAbCd]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCarExaminationYdAbCd", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4319,13 +4319,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÌ»óÄÚµå¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì´ìƒì½”ë“œìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4339,23 +4339,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  °á·ÎÀç º¸±Ş ON/OFF
+	 *  ê²°ë¡œì¬ ë³´ê¸‰ ON/OFF
 	 *  YYS 2019.11.05
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updConOffResultList(GridData gdReq) throws DAOException {
-		String mthdNm	= "°á·ÎÀç º¸±Ş ON/OFF[CCoilJspFaEJB.updConOffResultList]";
+		String mthdNm	= "ê²°ë¡œì¬ ë³´ê¸‰ ON/OFF[CCoilJspFaEJB.updConOffResultList]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updConOffResultList", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4365,7 +4365,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
@@ -4374,7 +4374,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				if( "N".equals(gdReq.getParam("MODE") ) ) {
 					sMsg = "OFF";
 				}
-				gdRet.setMessage("°á·ÎÀç º¸±Ş "+ sMsg +" Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ê²°ë¡œì¬ ë³´ê¸‰ "+ sMsg +" ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4387,19 +4387,19 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÁØºñ½ºÄÉÁÙ°ú ÁØºñÀç·á»èÁ¦
+	 * ì¤€ë¹„ìŠ¤ì¼€ì¤„ê³¼ ì¤€ë¹„ì¬ë£Œì‚­ì œ
 	 * 
-	 * ±èÈ¯Áø 2019.11.20
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê¹€í™˜ì§„ 2019.11.20
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
 	 */
 	public GridData delYdPrepSch(GridData gdReq) throws JDTOException {
 		/*
-		 * ¾÷¹«±âÁØ : ±×¸®µå¿¡ ¼±ÅÃµÈ ÁØºñ½ºÄÉÁÙ°ú ÁØºñÀç·á »èÁ¦
+		 * ì—…ë¬´ê¸°ì¤€ : ê·¸ë¦¬ë“œì— ì„ íƒëœ ì¤€ë¹„ìŠ¤ì¼€ì¤„ê³¼ ì¤€ë¹„ì¬ë£Œ ì‚­ì œ
 		 */
-		String mthdNm	= "ÁØºñ½ºÄÉÁÙ°ú ÁØºñÀç·á»èÁ¦ [CCoilJspFaEJB.delYdPrepSch]";
+		String mthdNm	= "ì¤€ë¹„ìŠ¤ì¼€ì¤„ê³¼ ì¤€ë¹„ì¬ë£Œì‚­ì œ [CCoilJspFaEJB.delYdPrepSch]";
 		String logId	= commUtils.getLogId();	
 
 		try{
@@ -4414,7 +4414,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4424,13 +4424,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁØºñÀç·á»èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì¤€ë¹„ì¬ë£Œì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4445,25 +4445,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * (Á¦Ç°)ÁöÆ÷ÀåÀç ¹İÀÔ°ü¸® - Àç¹İÀÔ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > Á¦Ç°ÁöÆ÷ÀåÀç ¹İÀÔ°ü¸®
-	 * °­Á¤¼± 2019.11.22
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * (ì œí’ˆ)ì§€í¬ì¥ì¬ ë°˜ì…ê´€ë¦¬ - ì¬ë°˜ì…
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ì œí’ˆì§€í¬ì¥ì¬ ë°˜ì…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.22
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * ±âÁ¸ : updCoilGdsYdReSendGF
+	 * ê¸°ì¡´ : updCoilGdsYdReSendGF
 	 */
 	public GridData updCoilReSendGF(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷ÀåÀç Àç¹İÀÔ[CCoilJspFaEJB.updCoilReSendGF]";
+		String mthdNm = "ì§€í¬ì¥ì¬ ì¬ë°˜ì…[CCoilJspFaEJB.updCoilReSendGF]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilReSendGF", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4471,7 +4471,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4481,12 +4481,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÁöÆ÷ÀåÀç Àç¹İÀÔ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì§€í¬ì¥ì¬ ì¬ë°˜ì… ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4499,25 +4499,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *  ¾ßµå°ü¸® > ±âÁØ°ü¸® > ¼ÒÁ¦½ºÄÉÁÙ±âÁØ°ü¸® (¼öÁ¤)
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ê¸°ì¤€ê´€ë¦¬ > ì†Œì œìŠ¤ì¼€ì¤„ê¸°ì¤€ê´€ë¦¬ (ìˆ˜ì •)
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws JDTOException
-	 * @ÀÛ¼ºÀÚ : ¼ÛÁ¤Çö
-	 * @ÀÛ¼ºÀÏ : 2019.11.30
+	 * @ì‘ì„±ì : ì†¡ì •í˜„
+	 * @ì‘ì„±ì¼ : 2019.11.30
 	 */
 	
 	public GridData updSchRuleMgtH(GridData gdReq) throws DAOException {
-		String mthdNm = "¼ÒÀçÅ©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ[CCoilJspFaEJB.updSchRuleMgtH]";
+		String mthdNm = "ì†Œì¬í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½[CCoilJspFaEJB.updSchRuleMgtH]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID		
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID		
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updSchRuleMgtH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4525,7 +4525,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4536,12 +4536,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4555,25 +4555,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 *  ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > Å©·¹ÀÎÀÛ¾÷°ü¸® > Å©·¹ÀÎ½ºÄÉÁìÇöÈ²Á¶È¸ (¼öÁ¤) 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ > í¬ë ˆì¸ìŠ¤ì¼€ì¥´í˜„í™©ì¡°íšŒ (ìˆ˜ì •) 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws JDTOException
-	 * @ÀÛ¼ºÀÚ : Á¤Á¾±Õ
-	 * @ÀÛ¼ºÀÏ : 2024.07.02
+	 * @ì‘ì„±ì : ì •ì¢…ê· 
+	 * @ì‘ì„±ì¼ : 2024.07.02
 	 */
 	
 	public GridData updSchProhExnH(GridData gdReq) throws DAOException {
-		String mthdNm = "¼ÒÀçÅ©·¹ÀÎ½ºÄÉÁÙ±İÁö ±âÁØ º¯°æ[CCoilJspFaEJB.updSchProhExnH]";
+		String mthdNm = "ì†Œì¬í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸ˆì§€ ê¸°ì¤€ ë³€ê²½[CCoilJspFaEJB.updSchProhExnH]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID		
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID		
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updSchProhExnH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4581,7 +4581,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4592,12 +4592,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Å©·¹ÀÎ½ºÄÉÁÙ±İÁö ±âÁØ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸ˆì§€ ê¸°ì¤€ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4610,25 +4610,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 		
 	}
 	/**
-	 *  ¾ßµå°ü¸® > ±âÁØ°ü¸® > Á¦Ç°½ºÄÉÁÙ±âÁØ°ü¸® (¼öÁ¤)
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆìŠ¤ì¼€ì¤„ê¸°ì¤€ê´€ë¦¬ (ìˆ˜ì •)
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws JDTOException
-	 * @ÀÛ¼ºÀÚ : ¼ÛÁ¤Çö
-	 * @ÀÛ¼ºÀÏ : 2019.11.30
+	 * @ì‘ì„±ì : ì†¡ì •í˜„
+	 * @ì‘ì„±ì¼ : 2019.11.30
 	 */
 	
 	public GridData updSchRuleMgtJ(GridData gdReq) throws DAOException {
-		String mthdNm = "Á¦Ç°Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ[CCoilJspFaEJB.updSchRuleMgtJ]";
+		String mthdNm = "ì œí’ˆí¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½[CCoilJspFaEJB.updSchRuleMgtJ]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID		
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID		
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updSchRuleMgtJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4636,7 +4636,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4648,12 +4648,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4666,24 +4666,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ´ëÂ÷ÀÌµ¿°¡´É±¸°£¼³Á¤
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ´ëÂ÷ÀÛ¾÷°ü¸® > (¼ÒÀç)´ëÂ÷ÀÛ¾÷ÇöÈ²Á¶È¸
-	 * °­Á¤¼± 2019.11.26
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ì´ë™ê°€ëŠ¥êµ¬ê°„ì„¤ì •
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ëŒ€ì°¨ì‘ì—…ê´€ë¦¬ > (ì†Œì¬)ëŒ€ì°¨ì‘ì—…í˜„í™©ì¡°íšŒ
+	 * ê°•ì •ì„  2019.11.26
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdTcarWrkBay(GridData gdReq) throws DAOException {
-		String mthdNm = "´ëÂ÷ÀÌµ¿°¡´É±¸°£¼³Á¤[CCoilJspFaEJB.updCoilYdTcarWrkBay]";
+		String mthdNm = "ëŒ€ì°¨ì´ë™ê°€ëŠ¥êµ¬ê°„ì„¤ì •[CCoilJspFaEJB.updCoilYdTcarWrkBay]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdTcarWrkBay", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -4691,7 +4691,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4701,12 +4701,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("´ëÂ÷ÀÌµ¿°¡´É±¸°£¼³Á¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ëŒ€ì°¨ì´ë™ê°€ëŠ¥êµ¬ê°„ì„¤ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4718,10 +4718,10 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 		}
 	}
 	/**
-	 * ÀúÀåÀ§Ä¡ ÁÂÇ¥¼³Á¤È­¸é ¿­ ¼öÁ¤ 
-	 * @ÀÛ¼ºÀÚ : ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.07.26
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ ì¢Œí‘œì„¤ì •í™”ë©´ ì—´ ìˆ˜ì • 
+	 * @ì‘ì„±ì : ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.07.26
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
@@ -4729,15 +4729,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData updCoilYdStkPosSetH(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁÂÇ¥¼³Á¤[CCoilJspFaEJB.updCoilYdStkPosSetH]";
+		String mthdNm = "ì¢Œí‘œì„¤ì •[CCoilJspFaEJB.updCoilYdStkPosSetH]";
 		String logId  = commUtils.getLogId();
 			
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
@@ -4746,7 +4746,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4760,7 +4760,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁÂÇ¥¼³Á¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì¢Œí‘œì„¤ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4774,29 +4774,29 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå ¹× ¼³ºñ º£µåÁ¤º¸¼öÁ¤ 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œ ë° ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì • 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updCoilYdStkPosSetBedH(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµå ¹× ¼³ºñ º£µåÁ¤º¸¼öÁ¤[CCoilJspFaEJB.updCoilYdStkPosSetBedH]";
+		String mthdNm = "ì•¼ë“œ ë° ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì •[CCoilJspFaEJB.updCoilYdStkPosSetBedH]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdStkPosSetBedH", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4808,12 +4808,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("º£µåÁ¤º¸¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ë² ë“œì •ë³´ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4826,10 +4826,10 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡ ÁÂÇ¥¼³Á¤È­¸é ¿­ ¼öÁ¤ 
-	 * @ÀÛ¼ºÀÚ : ¿°¿ë¼±
-	 * @ÀÛ¼ºÀÏ : 2019.07.26
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ ì¢Œí‘œì„¤ì •í™”ë©´ ì—´ ìˆ˜ì • 
+	 * @ì‘ì„±ì : ì—¼ìš©ì„ 
+	 * @ì‘ì„±ì¼ : 2019.07.26
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
@@ -4837,15 +4837,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 	
 	public GridData updCoilYdStkPosSetJ(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀúÀåÀ§Ä¡ ÁÂÇ¥¼³Á¤È­¸é ¿­ ¼öÁ¤[CCoilJspFaEJB.updCoilYdStkPosSetJ]";
+		String mthdNm = "ì €ì¥ìœ„ì¹˜ ì¢Œí‘œì„¤ì •í™”ë©´ ì—´ ìˆ˜ì •[CCoilJspFaEJB.updCoilYdStkPosSetJ]";
 		String logId  = commUtils.getLogId();
 			
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);			
@@ -4854,7 +4854,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4868,7 +4868,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÁÂÇ¥¼³Á¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì¢Œí‘œì„¤ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -4882,29 +4882,29 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå ¹× ¼³ºñ º£µåÁ¤º¸¼öÁ¤ 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œ ë° ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì • 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updCoilYdStkPosSetBedJ(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµå ¹× ¼³ºñ º£µåÁ¤º¸¼öÁ¤[CCoilJspFaEJB.updCoilYdStkPosSetBedJ]";
+		String mthdNm = "ì•¼ë“œ ë° ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì •[CCoilJspFaEJB.updCoilYdStkPosSetBedJ]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdStkPosSetBedJ", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4915,14 +4915,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("º£µåÁ¤º¸¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ë² ë“œì •ë³´ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4937,30 +4937,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ Ãë¼Ò)-Á¦Ç°
-	 * ¿°¿ë¼± 2019.11.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì·¨ì†Œ)-ì œí’ˆ
+	 * ì—¼ìš©ì„  2019.11.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData cancelSchCoilYdCrnWorkMgtJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "½ºÄÉÁÙ Ãë¼Ò[CCoilJspFaEJB.cancelSchCoilYdCrnWorkMgtJ]";
+		String mthdNm = "ìŠ¤ì¼€ì¤„ ì·¨ì†Œ[CCoilJspFaEJB.cancelSchCoilYdCrnWorkMgtJ]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("cancelSchCoilYdCrnWorkMgtJ", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -4971,14 +4971,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("½ºÄÉÁÙ Ãë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ìŠ¤ì¼€ì¤„ ì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -4993,30 +4993,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ Ãë¼Ò)-Á¦Ç°
-	 * ¿°¿ë¼± 2019.11.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì·¨ì†Œ)-ì œí’ˆ
+	 * ì—¼ìš©ì„  2019.11.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData cancelSchCoilYdCrnWorkMgtH(GridData gdReq) throws JDTOException {
-		String mthdNm = "½ºÄÉÁÙ Ãë¼Ò[CCoilJspFaEJB.cancelSchCoilYdCrnWorkMgtH]";
+		String mthdNm = "ìŠ¤ì¼€ì¤„ ì·¨ì†Œ[CCoilJspFaEJB.cancelSchCoilYdCrnWorkMgtH]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("cancelSchCoilYdCrnWorkMgtH", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5027,14 +5027,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("½ºÄÉÁÙ Ãë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ìŠ¤ì¼€ì¤„ ì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5048,23 +5048,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 		
 	/**
-	 *  ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (ÀÛ¾÷Ãë¼Ò) - Á¦Ç°
-	 *  ¿°¿ë¼± 2019.09.11
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ì‘ì—…ì·¨ì†Œ) - ì œí’ˆ
+	 *  ì—¼ìš©ì„  2019.09.11
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 */
 	public GridData delWorkCoilYdCrnWorkMgtJ(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (ÀÛ¾÷Ãë¼Ò)[CCoilJspFaEJB.delWorkCoilYdCrnWorkMgtJ]";
+		String mthdNm = "ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ì‘ì—…ì·¨ì†Œ)[CCoilJspFaEJB.delWorkCoilYdCrnWorkMgtJ]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -5073,7 +5073,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5087,7 +5087,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÛ¾÷Ãë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì‘ì—…ì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			
@@ -5102,23 +5102,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (ÀÛ¾÷Ãë¼Ò) - ¼ÒÀç
-	 *  ¿°¿ë¼± 2019.09.11
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ì‘ì—…ì·¨ì†Œ) - ì†Œì¬
+	 *  ì—¼ìš©ì„  2019.09.11
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 */
 	public GridData delWorkCoilYdCrnWorkMgtH(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (ÀÛ¾÷Ãë¼Ò)[CCoilJspFaEJB.delWorkCoilYdCrnWorkMgtH]";
+		String mthdNm = "ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ì‘ì—…ì·¨ì†Œ)[CCoilJspFaEJB.delWorkCoilYdCrnWorkMgtH]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
@@ -5127,7 +5127,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5141,7 +5141,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÛ¾÷Ãë¼Ò Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì‘ì—…ì·¨ì†Œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -5155,30 +5155,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ ÀçÀü¼Û)-Á¦Ç°
-	 * ¿°¿ë¼± 2019.11.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡)-ì œí’ˆ
+	 * ì—¼ìš©ì„  2019.11.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData reSendSchCoilYdCrnWorkMgtJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ ÀçÀü¼Û)-Á¦Ç°[CCoilJspFaEJB.reSendSchCoilYdCrnWorkMgtJ]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡)-ì œí’ˆ[CCoilJspFaEJB.reSendSchCoilYdCrnWorkMgtJ]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("reSendSchCoilYdCrnWorkMgtJ", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5187,14 +5187,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("½ºÄÉÁÙ ÀçÀü¼Û Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5207,30 +5207,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 /**
-	 * ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ ÀçÀü¼Û) - ¼ÒÀç
-	 * ¿°¿ë¼± 2019.11.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡) - ì†Œì¬
+	 * ì—¼ìš©ì„  2019.11.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData reSendSchCoilYdCrnWorkMgtH(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¾ßµåÅ©·¹ÀÎ ÀÛ¾÷°ü¸® (½ºÄÉÁÙ ÀçÀü¼Û)-¼ÒÀç[CCoilJspFaEJB.reSendSchCoilYdCrnWorkMgtH]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ì•¼ë“œí¬ë ˆì¸ ì‘ì—…ê´€ë¦¬ (ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡)-ì†Œì¬[CCoilJspFaEJB.reSendSchCoilYdCrnWorkMgtH]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("reSendSchCoilYdCrnWorkMgtH", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5240,14 +5240,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("½ºÄÉÁÙ ÀçÀü¼Û Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5261,23 +5261,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ¼øÀ§º¯°æ[Á¦Ç°]
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆœìœ„ë³€ê²½[ì œí’ˆ]
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData crnSchPriorOrderJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¼øÀ§º¯°æ[Á¦Ç°][CCoilJspFaEJB.crnSchPriorOrderJ]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆœìœ„ë³€ê²½[ì œí’ˆ][CCoilJspFaEJB.crnSchPriorOrderJ]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("crnChgSchPriorCoilJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -5285,14 +5285,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 	
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼øÀ§º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆœìœ„ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5305,23 +5305,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ¼øÀ§º¯°æ ¼ÒÀç
-	 * ¿°¿ë¼± 2019.09.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆœìœ„ë³€ê²½ ì†Œì¬
+	 * ì—¼ìš©ì„  2019.09.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData crnSchPriorOrderH(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¼øÀ§ º¯°æ[¼ÒÀç][CCoilJspFaEJB.crnSchPriorOrderH]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆœìœ„ ë³€ê²½[ì†Œì¬][CCoilJspFaEJB.crnSchPriorOrderH]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("crnChgSchPriorCoilH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -5329,14 +5329,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼øÀ§º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆœìœ„ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5349,28 +5349,28 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ±ä±ŞÀÛ¾÷ º¯°æ[Á¦Ç°]
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ê¸´ê¸‰ì‘ì—… ë³€ê²½[ì œí’ˆ]
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData crnSchPriorCoilJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ±ä±ŞÀÛ¾÷ º¯°æ[Á¦Ç°][CCoilJspFaEJB.crnSchPriorCoilJ]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ê¸´ê¸‰ì‘ì—… ë³€ê²½[ì œí’ˆ][CCoilJspFaEJB.crnSchPriorCoilJ]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 			
-			String sApp825 = coilDao.ApplyYn(logId, mthdNm, "APP825","J","*"); //±ä±ŞÀÛ¾÷
+			String sApp825 = coilDao.ApplyYn(logId, mthdNm, "APP825","J","*"); //ê¸´ê¸‰ì‘ì—…
 			
 			if ("Y".equals(sApp825)) {
 				jrRtn = (JDTORecord)ejbConn.trx("updPriorWrkChange", new Class[] { GridData.class }, new Object[] { gdReq });	
@@ -5381,7 +5381,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5392,14 +5392,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("±ä±ŞÀÛ¾÷ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ê¸´ê¸‰ì‘ì—… ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5413,30 +5413,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ±ä±ŞÀÛ¾÷ º¯°æ[ ¼ÒÀç]
-	 * ¿°¿ë¼± 2019.09.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ê¸´ê¸‰ì‘ì—… ë³€ê²½[ ì†Œì¬]
+	 * ì—¼ìš©ì„  2019.09.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 */
 	
 	public GridData crnSchPriorCoilH(GridData gdReq) throws JDTOException {
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ±ä±ŞÀÛ¾÷ º¯°æ[CCoilJspFaEJB.crnSchPriorCoilH]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ê¸´ê¸‰ì‘ì—… ë³€ê²½[CCoilJspFaEJB.crnSchPriorCoilH]";
 		String logId  = commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("crnSchPriorCoilH", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5446,14 +5446,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("±ä±ŞÀÛ¾÷ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ê¸´ê¸‰ì‘ì—… ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5465,23 +5465,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 		}
 	}
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - Å©·¹ÀÎ º¯°æ[Á¦Ç°]
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - í¬ë ˆì¸ ë³€ê²½[ì œí’ˆ]
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
 	 * @throws JDTOException
 	 */
 	public GridData wrkCrnChangeJ(GridData gdReq) throws JDTOException {					
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - Å©·¹ÀÎ º¯°æ[Á¦Ç°][CCoilJspFaEJB.wrkCrnChangeJ]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - í¬ë ˆì¸ ë³€ê²½[ì œí’ˆ][CCoilJspFaEJB.wrkCrnChangeJ]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");	
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);				
@@ -5490,7 +5490,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
    			JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 			
-			String sApp826 = coilDao.ApplyYn(logId, mthdNm, "APP826","J","*"); //Å©·¹ÀÎº¯°æ
+			String sApp826 = coilDao.ApplyYn(logId, mthdNm, "APP826","J","*"); //í¬ë ˆì¸ë³€ê²½
 			
 			if ("Y".equals(sApp826)) {
 				jrRtn = (JDTORecord)ejbConn.trx("wrkCrnChangeJNew", new Class[] { GridData.class }, new Object[] { gdReq });	
@@ -5502,7 +5502,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -5514,7 +5514,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("Å©·¹ÀÎ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("í¬ë ˆì¸ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -5529,8 +5529,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - Å©·¹ÀÎ º¯°æ[¼ÒÀç]
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - í¬ë ˆì¸ ë³€ê²½[ì†Œì¬]
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
@@ -5538,15 +5538,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 
 	public GridData wrkCrnChangeH(GridData gdReq) throws JDTOException {						
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - Å©·¹ÀÎ º¯°æ[¼ÒÀç][CCoilJspFaEJB.wrkCrnChangeH]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - í¬ë ˆì¸ ë³€ê²½[ì†Œì¬][CCoilJspFaEJB.wrkCrnChangeH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");	
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);				
@@ -5557,7 +5557,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5571,7 +5571,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Å©·¹ÀÎ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("í¬ë ˆì¸ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -5585,8 +5585,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 * Å©·¹ÀÎ»óÅÂ°ü¸® - ¼öÀÔÀÛ¾÷½Ã Å©·¹ÀÎ º¯°æ[¼ÒÀç]
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆ˜ì…ì‘ì—…ì‹œ í¬ë ˆì¸ ë³€ê²½[ì†Œì¬]
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws JDTOException
@@ -5594,15 +5594,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	 */
 
 	public GridData cvCrnChangeH(GridData gdReq) throws JDTOException {						
-		String mthdNm = "Å©·¹ÀÎ»óÅÂ°ü¸® - ¼öÀÔÀÛ¾÷½Ã Å©·¹ÀÎ º¯°æ[¼ÒÀç][CCoilJspFaEJB.cvCrnChangeH]";
+		String mthdNm = "í¬ë ˆì¸ìƒíƒœê´€ë¦¬ - ìˆ˜ì…ì‘ì—…ì‹œ í¬ë ˆì¸ ë³€ê²½[ì†Œì¬][CCoilJspFaEJB.cvCrnChangeH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");	
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);				
@@ -5613,7 +5613,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5627,7 +5627,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¼öÀÔ Å©·¹ÀÎ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ìˆ˜ì… í¬ë ˆì¸ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -5642,23 +5642,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *  ±ÇÇÏÀ§Ä¡ º¯°æ (Å©·¹ÀÎÀÛ¾÷°ü¸® È­¸é)-¼ÒÀç
-	 *  ¿°¿ë¼± 2019.09.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ (í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í™”ë©´)-ì†Œì¬
+	 *  ì—¼ìš©ì„  2019.09.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
 	 */
 	public GridData updToPosFixCoilH(GridData gdReq) throws JDTOException {
-		String mthdNm = "±ÇÇÏÀ§Ä¡ º¯°æ (Å©·¹ÀÎÀÛ¾÷°ü¸® È­¸é[¼ÒÀç])[CCoilJspFaEJB.updToPosFixCoilH]";
+		String mthdNm = "ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ (í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í™”ë©´[ì†Œì¬])[CCoilJspFaEJB.updToPosFixCoilH]";
 		String logId  	= commUtils.getLogId();
 	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -5668,7 +5668,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5685,7 +5685,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("±ÇÇÏÀ§Ä¡ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");			
@@ -5700,23 +5700,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *  ±ÇÇÏÀ§Ä¡ º¯°æ (Å©·¹ÀÎÀÛ¾÷°ü¸® È­¸é)-Á¦Ç°
-	 *  ¿°¿ë¼± 2019.09.10
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ (í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í™”ë©´)-ì œí’ˆ
+	 *  ì—¼ìš©ì„  2019.09.10
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
 	 */
 	public GridData updToPosFixCoilJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "±ÇÇÏÀ§Ä¡ º¯°æ (Å©·¹ÀÎÀÛ¾÷°ü¸® È­¸é[Á¦Ç°])[CCoilJspFaEJB.updToPosFixCoilJ]";
+		String mthdNm = "ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ (í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í™”ë©´[ì œí’ˆ])[CCoilJspFaEJB.updToPosFixCoilJ]";
 		String logId  = commUtils.getLogId();
 	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -5726,7 +5726,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5740,7 +5740,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("±ÇÇÏÀ§Ä¡ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");			
@@ -5754,23 +5754,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 	
 	/**
-	 *  ±ÇÇÏÀ§Ä¡ º¯°æ (Å©·¹ÀÎÀÛ¾÷°ü¸® È­¸é)-Á¦Ç°
+	 *  ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ (í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í™”ë©´)-ì œí’ˆ
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws JDTOException
 	 */
 	public GridData updToPosFixCoil(GridData gdReq) throws JDTOException {
-		String mthdNm = "±ÇÇÏÀ§Ä¡ º¯°æ[CCoilJspFaEJB.updToPosFixCoilJ]";
+		String mthdNm = "ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½[CCoilJspFaEJB.updToPosFixCoilJ]";
 		String logId  = commUtils.getLogId();
 	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);
@@ -5793,7 +5793,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("±ÇÇÏÀ§Ä¡ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");			
@@ -5808,24 +5808,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏ¼ÒÀç¾ßµå > Àç°ø°ü¸® > Â÷·®ÀÌÀûµî·Ï  (Á¦Ç°µµÀÌÀûÁö½Ã)
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì†Œì¬ì•¼ë“œ > ì¬ê³µê´€ë¦¬ > ì°¨ëŸ‰ì´ì ë“±ë¡  (ì œí’ˆë„ì´ì ì§€ì‹œ)
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updColUnitCarMvstkRegH(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®µ¿°£ÀÌÀûµî·Ï[CCoilJspFaEJB.updColUnitCarMvstkRegH]";
+		String mthdNm = "ì°¨ëŸ‰ë™ê°„ì´ì ë“±ë¡[CCoilJspFaEJB.updColUnitCarMvstkRegH]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updColUnitCarMvstkRegH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -5833,7 +5833,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5843,14 +5843,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("Â÷·®µ¿°£ÀÌÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì°¨ëŸ‰ë™ê°„ì´ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5863,23 +5863,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®µ¿°£ÀÌÀû (ÀÌÀûÁö½Ã ) - BCoilJspFaEJB.updColUnitCarMvstkRegNew
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ë™ê°„ì´ì  (ì´ì ì§€ì‹œ ) - BCoilJspFaEJB.updColUnitCarMvstkRegNew
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updBayAndBayCarMvstkRegJ(GridData gdReq) throws DAOException {		
-		String mthdNm = "Â÷·®ÀÌÀûµî·Ï[CCoilJspFaEJB.updBayAndBayCarMvstkRegJ]";
+		String mthdNm = "ì°¨ëŸ‰ì´ì ë“±ë¡[CCoilJspFaEJB.updBayAndBayCarMvstkRegJ]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updBayAndBayCarMvstkRegJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -5888,7 +5888,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			commUtils.printLog(logId, mthdNm + " rtnMsg:"+ rtnMsg, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5898,14 +5898,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Â÷·®ÀÌÀûµî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì°¨ëŸ‰ì´ì ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5920,25 +5920,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/** 
-	 * ´ëÂ÷»óÅÂº¯°æ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ´ëÂ÷ÀÛ¾÷°ü¸® > ´ëÂ÷ÀÛ¾÷ÇöÈ²Á¶È¸ > ´ëÂ÷ÀÛ¾÷ BackUp
-	 * °­Á¤¼± 2019.11.27
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ìƒíƒœë³€ê²½
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ëŒ€ì°¨ì‘ì—…ê´€ë¦¬ > ëŒ€ì°¨ì‘ì—…í˜„í™©ì¡°íšŒ > ëŒ€ì°¨ì‘ì—… BackUp
+	 * ê°•ì •ì„  2019.11.27
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * ±âÁ¸ : updCoilYdTcarStsSet
+	 * ê¸°ì¡´ : updCoilYdTcarStsSet
 	 */
 	public GridData updCoilYdTcarStsSet(GridData gdReq) throws DAOException {
-		String mthdNm = "´ëÂ÷»óÅÂº¯°æ[CCoilJspFaEJB.updCoilYdTcarStsSet]";
+		String mthdNm = "ëŒ€ì°¨ìƒíƒœë³€ê²½[CCoilJspFaEJB.updCoilYdTcarStsSet]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdTcarStsSet", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -5946,7 +5946,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -5955,14 +5955,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("´ëÂ÷»óÅÂº¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ëŒ€ì°¨ìƒíƒœë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -5976,24 +5976,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/** 
-	 * ´ëÂ÷¿îÀü¸ğµåº¯°æ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ´ëÂ÷ÀÛ¾÷°ü¸® > ´ëÂ÷ÀÛ¾÷ÇöÈ²Á¶È¸ > ´ëÂ÷ÀÛ¾÷ BackUp
-	 * °­Á¤¼± 2019.11.27
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ìš´ì „ëª¨ë“œë³€ê²½
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ëŒ€ì°¨ì‘ì—…ê´€ë¦¬ > ëŒ€ì°¨ì‘ì—…í˜„í™©ì¡°íšŒ > ëŒ€ì°¨ì‘ì—… BackUp
+	 * ê°•ì •ì„  2019.11.27
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdTcarStsSetCrnMode(GridData gdReq) throws DAOException {
-		String mthdNm = "´ëÂ÷¿îÀü¸ğµåº¯°æ[CCoilJspFaEJB.updCoilYdTcarStsSetCrnMode]";
+		String mthdNm = "ëŒ€ì°¨ìš´ì „ëª¨ë“œë³€ê²½[CCoilJspFaEJB.updCoilYdTcarStsSetCrnMode]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdTcarStsSetCrnMode", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6001,7 +6001,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6010,14 +6010,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("´ëÂ÷¿îÀü¸ğµåº¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ëŒ€ì°¨ìš´ì „ëª¨ë“œë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}					
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6030,24 +6030,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/** 
-	 * ´ëÂ÷»óÅÂÃÊ±âÈ­
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ´ëÂ÷ÀÛ¾÷°ü¸® > ´ëÂ÷ÀÛ¾÷ÇöÈ²Á¶È¸ > ´ëÂ÷ÀÛ¾÷ BackUp
-	 * °­Á¤¼± 2019.11.27
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ìƒíƒœì´ˆê¸°í™”
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ëŒ€ì°¨ì‘ì—…ê´€ë¦¬ > ëŒ€ì°¨ì‘ì—…í˜„í™©ì¡°íšŒ > ëŒ€ì°¨ì‘ì—… BackUp
+	 * ê°•ì •ì„  2019.11.27
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCoilYdTcarClear(GridData gdReq) throws DAOException {
-		String mthdNm = "´ëÂ÷»óÅÂÃÊ±âÈ­[CCoilJspFaEJB.updCoilYdTcarClear]";
+		String mthdNm = "ëŒ€ì°¨ìƒíƒœì´ˆê¸°í™”[CCoilJspFaEJB.updCoilYdTcarClear]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdTcarClear", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6055,7 +6055,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6065,14 +6065,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("´ëÂ÷»óÅÂÃÊ±âÈ­ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ëŒ€ì°¨ìƒíƒœì´ˆê¸°í™” ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}				
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6086,24 +6086,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  ¾ßµå°ü¸® > ÄÚÀÏ¼ÒÀç¾ßµå > Àç°ø°ü¸® > Â÷·®ÀÌÀûµî·Ï  (Á¦Ç°µµÀÌÀûÁö½Ã)
-	 *  ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ì½”ì¼ì†Œì¬ì•¼ë“œ > ì¬ê³µê´€ë¦¬ > ì°¨ëŸ‰ì´ì ë“±ë¡  (ì œí’ˆë„ì´ì ì§€ì‹œ)
+	 *  ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updColUnitCarMvstkRegJ(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®ÀÌÀûµî·Ï[CCoilJspFaEJB.updColUnitCarMvstkRegJ]";
+		String mthdNm = "ì°¨ëŸ‰ì´ì ë“±ë¡[CCoilJspFaEJB.updColUnitCarMvstkRegJ]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updColUnitCarMvstkRegJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6111,7 +6111,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6121,14 +6121,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("Â÷·®µ¿°£ÀÌÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì°¨ëŸ‰ë™ê°„ì´ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6143,24 +6143,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡ »èÁ¦(ÇöÀçÀ§Ä¡ÀÇ Àç·á¹øÈ£¸¦ NULL·Î ¼öÁ¤, ½ºÄÉÁÙ/ÀÛ¾÷¿¹¾à »èÁ¦, Â÷·®/´ëÂ÷½ºÄÉÁÙ »èÁ¦)-Á¦Ç°
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ ì‚­ì œ(í˜„ì¬ìœ„ì¹˜ì˜ ì¬ë£Œë²ˆí˜¸ë¥¼ NULLë¡œ ìˆ˜ì •, ìŠ¤ì¼€ì¤„/ì‘ì—…ì˜ˆì•½ ì‚­ì œ, ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì‚­ì œ)-ì œí’ˆ
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData delCoilYdStkPosInfoJ(GridData gdReq) throws DAOException {
-		String mthdNm	= "ÀúÀåÀ§Ä¡ »èÁ¦[Á¦Ç°][CCoilJspFaEJB.delCoilYdStkPosInfoJ]";
+		String mthdNm	= "ì €ì¥ìœ„ì¹˜ ì‚­ì œ[ì œí’ˆ][CCoilJspFaEJB.delCoilYdStkPosInfoJ]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("delCoilYdStkPosJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6168,7 +6168,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6178,14 +6178,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÀúÀåÀ§Ä¡ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì €ì¥ìœ„ì¹˜ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6202,24 +6202,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡ »èÁ¦(ÇöÀçÀ§Ä¡ÀÇ Àç·á¹øÈ£¸¦ NULL·Î ¼öÁ¤, ½ºÄÉÁÙ/ÀÛ¾÷¿¹¾à »èÁ¦, Â÷·®/´ëÂ÷½ºÄÉÁÙ »èÁ¦)-¼ÒÀç
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ ì‚­ì œ(í˜„ì¬ìœ„ì¹˜ì˜ ì¬ë£Œë²ˆí˜¸ë¥¼ NULLë¡œ ìˆ˜ì •, ìŠ¤ì¼€ì¤„/ì‘ì—…ì˜ˆì•½ ì‚­ì œ, ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì‚­ì œ)-ì†Œì¬
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData delCoilYdStkPosInfoH(GridData gdReq) throws DAOException {
-		String mthdNm	= "ÀúÀåÀ§Ä¡ »èÁ¦[¼ÒÀç][CCoilJspFaEJB.delCoilYdStkPosInfoH]";
+		String mthdNm	= "ì €ì¥ìœ„ì¹˜ ì‚­ì œ[ì†Œì¬][CCoilJspFaEJB.delCoilYdStkPosInfoH]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("delCoilYdStkPosH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6227,7 +6227,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6237,14 +6237,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÀúÀåÀ§Ä¡ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì €ì¥ìœ„ì¹˜ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6259,23 +6259,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡º¯°æ°ü¸® (ÀúÀåÀ§Ä¡¼öÁ¤[Á¦Ç°])
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬ (ì €ì¥ìœ„ì¹˜ìˆ˜ì •[ì œí’ˆ])
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updStrlocMod3J(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀúÀåÀ§Ä¡º¯°æ°ü¸®[Á¦Ç°][CCoilJspFaEJB.updStrlocMod3J]";
+		String mthdNm = "ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬[ì œí’ˆ][CCoilJspFaEJB.updStrlocMod3J]";
 		String logId  = commUtils.getLogId();	
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocMod3J", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6283,7 +6283,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6293,14 +6293,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÀúÀåÀ§Ä¡º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì €ì¥ìœ„ì¹˜ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6315,23 +6315,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡º¯°æ°ü¸® (ÀúÀåÀ§Ä¡¼öÁ¤:¼ÒÀç)
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬ (ì €ì¥ìœ„ì¹˜ìˆ˜ì •:ì†Œì¬)
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updStrlocMod3H(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀúÀåÀ§Ä¡º¯°æ°ü¸®[¼ÒÀç][CCoilJspFaEJB.updStrlocMod3H]";
+		String mthdNm = "ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬[ì†Œì¬][CCoilJspFaEJB.updStrlocMod3H]";
 		String logId  = commUtils.getLogId();	
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocMod3H", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6339,7 +6339,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6349,14 +6349,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÀúÀåÀ§Ä¡º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì €ì¥ìœ„ì¹˜ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6369,24 +6369,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 
 	/**
-	 * ÀúÀåÀ§Ä¡º¯°æ°ü¸® (ÀúÀåÀ§Ä¡¼öÁ¤: ¼Û½ÅÃ³¸®[¼ÒÀç])
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬ (ì €ì¥ìœ„ì¹˜ìˆ˜ì •: ì†¡ì‹ ì²˜ë¦¬[ì†Œì¬])
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updStrlocMod2H(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀúÀåÀ§Ä¡ »èÁ¦[¼ÒÀç][CCoilJspFaEJB.updStrlocMod2H]";
+		String mthdNm = "ì €ì¥ìœ„ì¹˜ ì‚­ì œ[ì†Œì¬][CCoilJspFaEJB.updStrlocMod2H]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocMod2H", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6394,7 +6394,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6404,14 +6404,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("¼Û½ÅÃ³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì†¡ì‹ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6425,24 +6425,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀåÀ§Ä¡º¯°æ°ü¸® (ÀúÀåÀ§Ä¡¼öÁ¤: ¼Û½ÅÃ³¸®[Á¦Ç°])
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì €ì¥ìœ„ì¹˜ë³€ê²½ê´€ë¦¬ (ì €ì¥ìœ„ì¹˜ìˆ˜ì •: ì†¡ì‹ ì²˜ë¦¬[ì œí’ˆ])
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updStrlocMod2J(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀúÀåÀ§Ä¡ »èÁ¦[Á¦Ç°][CCoilJspFaEJB.updStrlocMod2J]";
+		String mthdNm = "ì €ì¥ìœ„ì¹˜ ì‚­ì œ[ì œí’ˆ][CCoilJspFaEJB.updStrlocMod2J]";
 		String logId  = commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocMod2J", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6450,7 +6450,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6460,14 +6460,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("¼Û½ÅÃ³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì†¡ì‹ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6480,25 +6480,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * Á¦Ç°ÀúÀåÀ§Ä¡´ë¿ëµµÄÚµå µî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀåÀ§Ä¡¿ëµµ°ü¸® 
+	 * ì œí’ˆì €ì¥ìœ„ì¹˜ëŒ€ìš©ë„ì½”ë“œ ë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ìœ„ì¹˜ìš©ë„ê´€ë¦¬ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/11/29
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/11/29
 	 */
 	public GridData updStrlocUsgSetJ(GridData gdReq){
-		String mthdNm	= "Á¦Ç°ÀúÀåÀ§Ä¡¿ëµµ°ü¸® µî·Ï[CCoilJspFaEJB.updStrlocUsgSetJ]";
+		String mthdNm	= "ì œí’ˆì €ì¥ìœ„ì¹˜ìš©ë„ê´€ë¦¬ ë“±ë¡[CCoilJspFaEJB.updStrlocUsgSetJ]";
 		String logId	= commUtils.getLogId();	
 
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocUsgSetJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6509,14 +6509,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 
 		
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÄÚµå µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì½”ë“œ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}		
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6529,25 +6529,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¼ÒÀçÀúÀåÀ§Ä¡´ë¿ëµµÄÚµå µî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀåÀ§Ä¡¿ëµµ°ü¸® 
+	 * ì†Œì¬ì €ì¥ìœ„ì¹˜ëŒ€ìš©ë„ì½”ë“œ ë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ìœ„ì¹˜ìš©ë„ê´€ë¦¬ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/11/29
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/11/29
 	 */
 	public GridData updStrlocUsgSetH(GridData gdReq){
-		String mthdNm	= "¼ÒÀçÀúÀåÀ§Ä¡´ë¿ëµµÄÚµå µî·Ï[CCoilJspFaEJB.updStrlocUsgSetH]";
+		String mthdNm	= "ì†Œì¬ì €ì¥ìœ„ì¹˜ëŒ€ìš©ë„ì½”ë“œ ë“±ë¡[CCoilJspFaEJB.updStrlocUsgSetH]";
 		String logId	= commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocUsgSetH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6557,14 +6557,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("ÄÚµå µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì½”ë“œ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -6578,25 +6578,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * Á¦Ç°À§Ä¡°Ë»ö ¹üÀ§ ¼öÁ¤ (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ìˆ˜ì • (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData updYdLocSrchRngCoilJ(GridData gdReq) throws JDTOException {						
-		String mthdNm = "Á¦Ç°À§Ä¡°Ë»ö ¹üÀ§ ¼öÁ¤- È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.updYdLocSrchRngCoilJ]";
+		String mthdNm = "ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ìˆ˜ì •- í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.updYdLocSrchRngCoilJ]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6610,7 +6610,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("¹üÀ§¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ë²”ìœ„ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");			
@@ -6624,25 +6624,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡°Ë»ö ¹üÀ§ ¼öÁ¤ (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ìˆ˜ì • (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData updYdLocSrchRngCoilH(GridData gdReq) throws JDTOException {						
-		String mthdNm = "¼ÒÀçÀ§Ä¡°Ë»ö ¹üÀ§ ¼öÁ¤- È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.updYdLocSrchRngCoilH]";
+		String mthdNm = "ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ìˆ˜ì •- í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.updYdLocSrchRngCoilH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6657,7 +6657,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("¹üÀ§¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ë²”ìœ„ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");			
@@ -6671,25 +6671,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * Á¦Ç°À§Ä¡°Ë»ö Å×ÀÌºí UPDATE/INSERT (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” UPDATE/INSERT (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData updYdLocSrchBedCoilJ(GridData gdReq) throws JDTOException {						
-		String mthdNm	= "Á¦Ç°À§Ä¡°Ë»ö Å×ÀÌºí UPDATE/INSERT - È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.updYdLocSrchBedCoilJ]";
+		String mthdNm	= "ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” UPDATE/INSERT - í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.updYdLocSrchBedCoilJ]";
 		String logId	= commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6704,7 +6704,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -6717,25 +6717,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡°Ë»ö Å×ÀÌºí UPDATE/INSERT (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” UPDATE/INSERT (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData updYdLocSrchBedCoilH(GridData gdReq) throws JDTOException {						
-		String mthdNm	= "¼ÒÀçÀ§Ä¡°Ë»ö Å×ÀÌºí UPDATE/INSERT - È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.updYdLocSrchBedCoilH]";
+		String mthdNm	= "ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” UPDATE/INSERT - í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.updYdLocSrchBedCoilH]";
 		String logId	= commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6750,7 +6750,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -6763,25 +6763,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Á¦Ç°À§Ä¡°Ë»ö Å×ÀÌºí »èÁ¦ (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” ì‚­ì œ (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData delYdLocSrchBedCoilJ(GridData gdReq) throws JDTOException {						
-		String mthdNm = "Á¦Ç°À§Ä¡°Ë»ö ¹üÀ§ »èÁ¦- È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.delYdLocSrchBedCoilJ]";
+		String mthdNm = "ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ì‚­ì œ- í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.delYdLocSrchBedCoilJ]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6796,7 +6796,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -6809,25 +6809,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * Á¦Ç°À§Ä¡°Ë»ö Å×ÀÌºí »èÁ¦ (È­¸é:Çì´õ»èÁ¦)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” ì‚­ì œ (í™”ë©´:í—¤ë”ì‚­ì œ)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2020/02/25
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2020/02/25
 	 */
 	public GridData deldYdLocsrchrngJ(GridData gdReq) throws JDTOException {						
-		String mthdNm = "Á¦Ç°À§Ä¡°Ë»ö ¹üÀ§ »èÁ¦- È­¸é:Çì´õ»èÁ¦[CCoilJspFaEJB.deldYdLocsrchrngJ]";
+		String mthdNm = "ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ì‚­ì œ- í™”ë©´:í—¤ë”ì‚­ì œ[CCoilJspFaEJB.deldYdLocsrchrngJ]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6842,7 +6842,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -6855,25 +6855,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡°Ë»ö Å×ÀÌºí »èÁ¦ (È­¸é:À§Ä¡°Ë»öSPAN°ü¸®)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” ì‚­ì œ (í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData delYdLocSrchBedCoilH(GridData gdReq) throws JDTOException {						
-		String mthdNm = "¼ÒÀçÀ§Ä¡°Ë»ö ¹üÀ§ »èÁ¦- È­¸é:À§Ä¡°Ë»öSPAN°ü¸®[CCoilJspFaEJB.delYdLocSrchBedCoilH]";
+		String mthdNm = "ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ì‚­ì œ- í™”ë©´:ìœ„ì¹˜ê²€ìƒ‰SPANê´€ë¦¬[CCoilJspFaEJB.delYdLocSrchBedCoilH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6887,7 +6887,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 	
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -6900,25 +6900,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡°Ë»ö Å×ÀÌºí »èÁ¦ (È­¸é:Çì´õ»èÁ¦)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ í…Œì´ë¸” ì‚­ì œ (í™”ë©´:í—¤ë”ì‚­ì œ)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2020/02/25
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2020/02/25
 	 */
 	public GridData deldYdLocsrchrngH(GridData gdReq) throws JDTOException {						
-		String mthdNm = "¼ÒÀçÀ§Ä¡°Ë»ö ¹üÀ§ »èÁ¦- È­¸é:Çì´õ»èÁ¦[CCoilJspFaEJB.deldYdLocsrchrngH]";
+		String mthdNm = "ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ ë²”ìœ„ ì‚­ì œ- í™”ë©´:í—¤ë”ì‚­ì œ[CCoilJspFaEJB.deldYdLocsrchrngH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
 			
@@ -6933,7 +6933,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§ »èÁ¦ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ ì‚­ì œ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -6946,25 +6946,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/**
-	 * Á¦Ç°À§Ä¡°Ë»öº£¹üÀ§ µî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > Á¦Ç°ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ë² ë²”ìœ„ ë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì œí’ˆì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData insLocSrchRngJ(GridData gdReq) throws JDTOException {
-		String mthdNm = "Á¦Ç°À§Ä¡°Ë»öº£µå¹üÀ§ µî·Ï[CCoilJspFaEJB.insLocSrchRngJ]";
+		String mthdNm = "ì œí’ˆìœ„ì¹˜ê²€ìƒ‰ë² ë“œë²”ìœ„ ë“±ë¡[CCoilJspFaEJB.insLocSrchRngJ]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("insLocSrchRngJ", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -6973,7 +6973,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -6984,14 +6984,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("º£µå¹üÀ§ µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ë² ë“œë²”ìœ„ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7004,25 +7004,25 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡°Ë»öº£¹üÀ§ µî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀçÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ 
+	 * ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ë² ë²”ìœ„ ë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
-	 * @ÀÛ¼ºÀÚ : ±èÈ¯Áø
-	 * @ÀÛ¼ºÀÏ : 2019/12/05
+	 * @ì‘ì„±ì : ê¹€í™˜ì§„
+	 * @ì‘ì„±ì¼ : 2019/12/05
 	 */
 	public GridData insLocSrchRngH(GridData gdReq) throws JDTOException {
-		String mthdNm = "¼ÒÀçÀ§Ä¡°Ë»öº£µå¹üÀ§ µî·Ï[CCoilJspFaEJB.insLocSrchRngH]";
+		String mthdNm = "ì†Œì¬ìœ„ì¹˜ê²€ìƒ‰ë² ë“œë²”ìœ„ ë“±ë¡[CCoilJspFaEJB.insLocSrchRngH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("insLocSrchRngH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7031,7 +7031,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7042,14 +7042,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("º£µå¹üÀ§ µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ë² ë“œë²”ìœ„ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7063,23 +7063,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * Á¦Ç°ÁØºñ½ºÄÉÁÙ¼öÁ¤ - ÀÌÇöÁø
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > ÄÚÀÏÀÌ¼ÛLOTÆí¼º 
+	 * ì œí’ˆì¤€ë¹„ìŠ¤ì¼€ì¤„ìˆ˜ì • - ì´í˜„ì§„
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì½”ì¼ì´ì†¡LOTí¸ì„± 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdPrepSch(GridData gdReq) throws JDTOException {
-		String mthdNm	= "ÁØºñ½ºÄÉÁÙ¼öÁ¤ [CCoilJspFaEJB.updYdPrepSch";
+		String mthdNm	= "ì¤€ë¹„ìŠ¤ì¼€ì¤„ìˆ˜ì • [CCoilJspFaEJB.updYdPrepSch";
 		String logId	= commUtils.getLogId();	
 
 		try{	
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 					
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updYdPrepSch", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7088,7 +7088,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 	
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7099,14 +7099,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 				
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 	
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -7121,24 +7121,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/** 
-	 * Â÷·®¿¹Á¤Á¤º¸ Àü¼Û ¹é¾÷
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Á¦Ç°Â÷·®¿¹Á¤Á¤º¸ ¹é¾÷Àü¼Û
-	 * °­Á¤¼± 2019.12.09
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì˜ˆì •ì •ë³´ ì „ì†¡ ë°±ì—…
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì œí’ˆì°¨ëŸ‰ì˜ˆì •ì •ë³´ ë°±ì—…ì „ì†¡
+	 * ê°•ì •ì„  2019.12.09
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData regCarUdExplainInfo(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®¿¹Á¤Á¤º¸¹é¾÷[CCoilJspFaEJB.regCarUdExplainInfo]";
+		String mthdNm = "ì°¨ëŸ‰ì˜ˆì •ì •ë³´ë°±ì—…[CCoilJspFaEJB.regCarUdExplainInfo]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("regCarUdExplainInfo", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7146,7 +7146,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7155,14 +7155,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("Â÷·®¿¹Á¤Á¤º¸¹é¾÷ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì°¨ëŸ‰ì˜ˆì •ì •ë³´ë°±ì—… ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7175,17 +7175,17 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷°ü¸® - ÀÌ¼Û´ë»óÀç¸¦ ÁØºñ½ºÄÉÁÙ¿¡ µî·Ï -ÀÚµ¿
-	 * ±èÈ¯Áø 2019.10.17
-	 * ÀÌ¼Û´ë»óÀç¸¦ ÁØºñ½ºÄÉÁÙ¿¡ µî·Ï - Å©·¹ÀÎ¼³ºñ µî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì´ì†¡ì‘ì—…ê´€ë¦¬ - ì´ì†¡ëŒ€ìƒì¬ë¥¼ ì¤€ë¹„ìŠ¤ì¼€ì¤„ì— ë“±ë¡ -ìë™
+	 * ê¹€í™˜ì§„ 2019.10.17
+	 * ì´ì†¡ëŒ€ìƒì¬ë¥¼ ì¤€ë¹„ìŠ¤ì¼€ì¤„ì— ë“±ë¡ - í¬ë ˆì¸ì„¤ë¹„ ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws JDTOException
 	 */
 	public GridData insYdPrepSchNCrnH(GridData gdReq) throws JDTOException {
 
-		String mthdNm = "ÀÌ¼ÛÀÛ¾÷°ü¸® - ÀÌ¼Û´ë»óÀç¸¦ ÁØºñ½ºÄÉÁÙ¿¡ µî·Ï -ÀÚµ¿[CCoilJspFaEJB.insYdPrepSchNCrnH]";
+		String mthdNm = "ì´ì†¡ì‘ì—…ê´€ë¦¬ - ì´ì†¡ëŒ€ìƒì¬ë¥¼ ì¤€ë¹„ìŠ¤ì¼€ì¤„ì— ë“±ë¡ -ìë™[CCoilJspFaEJB.insYdPrepSchNCrnH]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -7213,14 +7213,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			 	
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 	
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -7233,15 +7233,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÀÌ¼Û´ë»óÀç¸¦ ÁØºñ½ºÄÉÁÙ¿¡ µî·Ï - ¼öµ¿, Å©·¹ÀÎ¼³ºñ µî·Ï
-	 * ±èÈ¯Áø 2019.10.17
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì´ì†¡ëŒ€ìƒì¬ë¥¼ ì¤€ë¹„ìŠ¤ì¼€ì¤„ì— ë“±ë¡ - ìˆ˜ë™, í¬ë ˆì¸ì„¤ë¹„ ë“±ë¡
+	 * ê¹€í™˜ì§„ 2019.10.17
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return GridData
 	 * @throws JDTOException
 	 */
 	public GridData insYdPrepSchNCrnByManualH(GridData gdReq) throws JDTOException {
-		String mthdNm = "ÀÌ¼ÛÀÛ¾÷°ü¸® - ÀÌ¼Û´ë»óÀç¸¦ ÁØºñ½ºÄÉÁÙ¿¡ µî·Ï - ¼öµ¿[insYdPrepSchNCrnByManualH]";
+		String mthdNm = "ì´ì†¡ì‘ì—…ê´€ë¦¬ - ì´ì†¡ëŒ€ìƒì¬ë¥¼ ì¤€ë¹„ìŠ¤ì¼€ì¤„ì— ë“±ë¡ - ìˆ˜ë™[insYdPrepSchNCrnByManualH]";
 		String logId  = commUtils.getLogId();		
 		
 		try{
@@ -7256,7 +7256,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7267,14 +7267,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 	
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -7288,28 +7288,28 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀÌ¼Û»óÂ÷BackupÃ³¸® È­¸é : ÃÊ±âÈ­
+	 * ì´ì†¡ìƒì°¨Backupì²˜ë¦¬ í™”ë©´ : ì´ˆê¸°í™”
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData initMvCarSchMgt(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼Û»óÂ÷BackupÃ³¸® È­¸é - ÃÊ±âÈ­[CCoilJspFaEJB.initMvCarSchMgt]";
+		String mthdNm =  "ì´ì†¡ìƒì°¨Backupì²˜ë¦¬ í™”ë©´ - ì´ˆê¸°í™”[CCoilJspFaEJB.initMvCarSchMgt]";
 		String logId = commUtils.getLogId();
 		 
 		try{
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			String modifier  = commUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier  = commUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 			
 			EJBConnector ejbConn 	= null;
 			JDTORecord outRecord  	= commUtils.getParam(logId, mthdNm, modifier);
@@ -7342,7 +7342,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				
 			}
 			
-			//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+			//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);
 				jrRst.setResultMsg(mthdNm);
@@ -7366,31 +7366,31 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * »óÂ÷¿Ï·áBackupÃ³¸® È­¸é : ÃÊ±âÈ­
+	 * ìƒì°¨ì™„ë£ŒBackupì²˜ë¦¬ í™”ë©´ : ì´ˆê¸°í™”
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData mkUdCarSch(GridData gdReq) throws DAOException {
-		String mthdNm = "ÇÏÂ÷¹é¾÷»ı¼º[CCoilJspFaEJB.mkUdCarSch]";
+		String mthdNm = "í•˜ì°¨ë°±ì—…ìƒì„±[CCoilJspFaEJB.mkUdCarSch]";
 		String logId  = commUtils.getLogId();
 		 
 		try{
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)ejbConn.trx("mkUdCarSch", new Class[] { GridData.class }, new Object[] { gdReq });
 			
-			//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+			//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);
 				jrRst.setResultMsg(mthdNm);
@@ -7413,23 +7413,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ±¸³»¿î¼ÛÂ÷·®Ãâ¹ß
+	 * êµ¬ë‚´ìš´ì†¡ì°¨ëŸ‰ì¶œë°œ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData reqTsStart(GridData gdReq) throws DAOException {
-		String mthdNm = "±¸³»¿î¼ÛÂ÷·®Ãâ¹ß [CCoilJspFaEJB.reqTsStart]";
+		String mthdNm = "êµ¬ë‚´ìš´ì†¡ì°¨ëŸ‰ì¶œë°œ [CCoilJspFaEJB.reqTsStart]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
@@ -7442,12 +7442,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrParam.setField("ARR_YD_PNT_CD"		, "" );
 			jrParam.setField("TRN_WRK_FULLVOID_GP"	, "E" );
 //			jrParam.setField("YD_WO_CNCL_YN"		, "N" );
-//			jrParam.setField("L3_HMI"				, "Y" );   //¹é¾÷È­¸é ±âµ¿ ¿©ºÎ
+//			jrParam.setField("L3_HMI"				, "Y" );   //ë°±ì—…í™”ë©´ ê¸°ë™ ì—¬ë¶€
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilCarMvSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)ejbConn.trx("rcvTSYDJ004", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 
-			//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+			//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);
 				jrRst.setResultMsg(mthdNm);
@@ -7456,12 +7456,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 			}
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -7474,33 +7474,33 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ÀÌ¼ÛÂ÷·® ½ÇÀûÃ³¸® ÆË¾÷ - µî·Ï
+	 * ì´ì†¡ì°¨ëŸ‰ ì‹¤ì ì²˜ë¦¬ íŒì—… - ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData trtMvCarStatSet(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼ÛÂ÷·® ½ÇÀûÃ³¸® ÆË¾÷ - µî·Ï[CCoilJspFaEJB.trtMvCarStatSet]";
+		String mthdNm =  "ì´ì†¡ì°¨ëŸ‰ ì‹¤ì ì²˜ë¦¬ íŒì—… - ë“±ë¡[CCoilJspFaEJB.trtMvCarStatSet]";
 		String logId = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
  
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)ejbConn.trx("trtMvCarStatSet", new Class[] { GridData.class }, new Object[] { gdReq });
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 			
-			//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+			//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);
 				jrRst.setResultMsg(mthdNm);
@@ -7511,7 +7511,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -7524,23 +7524,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarFtMvMtl(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï[CCoilJspFaEJB.updCarFtMvMtl]";
+		String mthdNm =  "ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡[CCoilJspFaEJB.updCarFtMvMtl]";
 		String logId = commUtils.getLogId();
 		
 		try {
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
@@ -7548,12 +7548,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			ejbConn.trx("updCarFtMvMtl", new Class[] { GridData.class }, new Object[] { gdReq });
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 			
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -7566,23 +7566,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData delCarFtMvMtl(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦[CCoilJspFaEJB.delCarFtMvMtl]";
+		String mthdNm =  "ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ[CCoilJspFaEJB.delCarFtMvMtl]";
 		String logId = commUtils.getLogId();
 		
 		try {
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
@@ -7590,12 +7590,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			JDTORecord jrRst =  (JDTORecord)ejbConn.trx("delCarFtMvMtl", new Class[] { GridData.class }, new Object[] { gdReq });
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 			
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -7608,23 +7608,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·áÀ§Ä¡º¯°æ
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œìœ„ì¹˜ë³€ê²½
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData chgCarFtMvMtl(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼ÛÀÛ¾÷Àç·áÀ§Ä¡º¯°æ[CCoilJspFaEJB.chgCarFtMvMtl]";
+		String mthdNm =  "ì´ì†¡ì‘ì—…ì¬ë£Œìœ„ì¹˜ë³€ê²½[CCoilJspFaEJB.chgCarFtMvMtl]";
 		String logId = commUtils.getLogId();
 		
 		try {
 
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
@@ -7633,12 +7633,12 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			JDTORecord jrRst =  (JDTORecord)ejbConn.trx("chgCarFtMvMtl", new Class[] { GridData.class }, new Object[] { gdReq });
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 			
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -7652,24 +7652,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  Â÷·®µ¿°£ÀÌÀû(µµÂø¹é¾÷) ¼Û½Å --[Â÷·®µ¿°£ÀÌÀû(µµÂø)] Àü¹®À» ¼Û½ÅÇÑ´Ù
-	 * ¿°¿ë¼± 2020-02-13
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì°¨ëŸ‰ë™ê°„ì´ì (ë„ì°©ë°±ì—…) ì†¡ì‹  --[ì°¨ëŸ‰ë™ê°„ì´ì (ë„ì°©)] ì „ë¬¸ì„ ì†¡ì‹ í•œë‹¤
+	 * ì—¼ìš©ì„  2020-02-13
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
 	 */
 
 	public GridData sendY5YDL018(GridData gdReq) throws JDTOException {
-		String mthdNm = "Â÷·®µ¿°£ÀÌÀû(µµÂø) ¼Û½Å [CCoilJspFaEJB.sendY5YDL018]" ;
+		String mthdNm = "ì°¨ëŸ‰ë™ê°„ì´ì (ë„ì°©) ì†¡ì‹  [CCoilJspFaEJB.sendY5YDL018]" ;
 		String logId = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
             EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("sendY5YDL018", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7678,7 +7678,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnMsg:"+ rtnMsg, "FL");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "FL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7693,14 +7693,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			} 	
 
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);		
-			//Á¶È¸
+			//ì¡°íšŒ
 						
 			gdRes.setStatus(rtnCd);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷·®µ¿°£ÀÌÀû(µµÂø¹é¾÷)Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ëŸ‰ë™ê°„ì´ì (ë„ì°©ë°±ì—…)ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRes;
@@ -7712,22 +7712,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/** 
-	 * Å©·¹ÀÎÀÛ¾÷ ÀÀ´äBackUp
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í¬ë ˆì¸ì‘ì—… ì‘ë‹µBackUp
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCrnSchReqBackUp(GridData gdReq) throws DAOException {
-		String mthdNm = "Å©·¹ÀÎÀÛ¾÷ ÀÀ´äBackUp[CCoilJspFaEJB.procCrnSchReqBackUp]";
+		String mthdNm = "í¬ë ˆì¸ì‘ì—… ì‘ë‹µBackUp[CCoilJspFaEJB.procCrnSchReqBackUp]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procCrnSchReqBackUp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7735,7 +7735,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7744,14 +7744,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÀÀ´ä¹é¾÷ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì‘ë‹µë°±ì—… ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7764,23 +7764,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/** 
-	 * °á·ÎÀç º¸±Ş(ÀÓ½Ã Å×½ºÆ®¿ë)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > °á·ÎHOTÄÚÀÏÀÌÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²°ë¡œì¬ ë³´ê¸‰(ì„ì‹œ í…ŒìŠ¤íŠ¸ìš©)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ê²°ë¡œHOTì½”ì¼ì´ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procConHotCoilInOut(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀçº¸±Ş/ÃßÃâ[CCoilJspFaEJB.procConHotCoilInOut]";
+		String mthdNm = "ê²°ë¡œì¬ë³´ê¸‰/ì¶”ì¶œ[CCoilJspFaEJB.procConHotCoilInOut]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			String sModifier  = commUtils.nvl(gdReq.getParam("YD_USER_ID"), "");
 			
 			JDTORecord jrParam  = commUtils.getParam(logId, mthdNm, sModifier);
@@ -7795,7 +7795,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7805,14 +7805,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 				*/
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("°á·ÎÀç º¸±Ş/ÃßÃâ Ã³¸®°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ê²°ë¡œì¬ ë³´ê¸‰/ì¶”ì¶œ ì²˜ë¦¬ê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7825,22 +7825,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/** 
-	 * 2¿­¿¬ ±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 2ì—´ì—° ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdRuleMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "2¿­¿¬±âÁØ°ü¸®-¼öÁ¤[CCoilJspFaEJB.updYdRuleMgt]";
+		String mthdNm = "2ì—´ì—°ê¸°ì¤€ê´€ë¦¬-ìˆ˜ì •[CCoilJspFaEJB.updYdRuleMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updYdRuleMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7848,7 +7848,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7857,14 +7857,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7878,23 +7878,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * 2¿­¿¬ ±âÁØ°ü¸®
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > 2¿­¿¬±âÁØ°ü¸® 
+	 * 2ì—´ì—° ê¸°ì¤€ê´€ë¦¬
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > 2ì—´ì—°ê¸°ì¤€ê´€ë¦¬ 
 	 * @ejb.interface-method
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData insYdRuleMgt(GridData gdReq) throws JDTOException {
-		String mthdNm = "2¿­¿¬±âÁØ°ü¸®-µî·Ï[CCoilJspFaEJB.insYdRuleMgt]";
+		String mthdNm = "2ì—´ì—°ê¸°ì¤€ê´€ë¦¬-ë“±ë¡[CCoilJspFaEJB.insYdRuleMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("insYdRuleMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7903,7 +7903,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -7914,14 +7914,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("±âÁØ°ü¸® µî·Ï Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ê¸°ì¤€ê´€ë¦¬ ë“±ë¡ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7934,22 +7934,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * 2¿­¿¬ ¼³ºñ±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 2ì—´ì—° ì„¤ë¹„ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updEqpOprnStat(GridData gdReq) throws DAOException {
-		String mthdNm = "¼³ºñ»óÅÂ º¯°æ[CCoilJspFaEJB.updEqpOprnStat]";
+		String mthdNm = "ì„¤ë¹„ìƒíƒœ ë³€ê²½[CCoilJspFaEJB.updEqpOprnStat]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updEqpOprnStat", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -7957,7 +7957,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -7966,14 +7966,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼³ºñ»óÅÂ¸¦ º¯°æÇÏ¿´½À´Ï´Ù.");
+				gdRet.setMessage("ì„¤ë¹„ìƒíƒœë¥¼ ë³€ê²½í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -7987,34 +7987,34 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌ¼ÛÁö½Ã Ãë¼Ò
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì†¡ì§€ì‹œ ì·¨ì†Œ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updFtmvWrkCancel(GridData gdReq) throws DAOException {
-		String mthdNm =  "ÀÌ¼ÛÁö½Ã Ãë¼Ò[CCoilJspFaEJB.updFtmvWrkCancel]";
+		String mthdNm =  "ì´ì†¡ì§€ì‹œ ì·¨ì†Œ[CCoilJspFaEJB.updFtmvWrkCancel]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//ÀÌ¼ÛÁö½Ã Ãë¼Ò(1) - YDPTJ007 Àü¹® Àú¼Û
+			//ì´ì†¡ì§€ì‹œ ì·¨ì†Œ(1) - YDPTJ007 ì „ë¬¸ ì €ì†¡
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updFtmvWrkCancel", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "updFtmvWrkCancel >> rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8028,14 +8028,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				m_ctx.setRollbackOnly();
 			} else {
 				
-				//ÀÌ¼ÛÁö½Ã Ãë¼Ò(2) - Å©·¹ÀÎ½ºÄÉÁÙ,ÀÛ¾÷¿¹¾à ID Ãë¼Ò Ã³¸®
+				//ì´ì†¡ì§€ì‹œ ì·¨ì†Œ(2) - í¬ë ˆì¸ìŠ¤ì¼€ì¤„,ì‘ì—…ì˜ˆì•½ ID ì·¨ì†Œ ì²˜ë¦¬
 				jrRtn = (JDTORecord)ejbConn.trx("updFtmvWrkCancel2", new Class[] { GridData.class }, new Object[] { gdReq });
 				 rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 				 rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 				commUtils.printLog(logId, mthdNm + "updFtmvWrkCancel2 >> rtnCd:"+ rtnCd, "SL");
 	
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
-				// ROLLBACK ½Ã Àü¹® ¹ß»ı
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
+				// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 				if (!"0".equals(rtnCd)) {
 					
 					jrRtn.setResultCode(logId);
@@ -8049,13 +8049,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 					gdRet.setMessage(rtnMsg);		
 					m_ctx.setRollbackOnly();
 				} else {
-					gdRet.setMessage("ÀÌ¼ÛÁö½Ã Ãë¼Ò ÀÛ¾÷ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
+					gdRet.setMessage("ì´ì†¡ì§€ì‹œ ì·¨ì†Œ ì‘ì—…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
 				}
 			
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -8068,15 +8068,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±ÇÇÏÀ§Ä¡º¯°æ°¡´É À§Ä¡
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ê°€ëŠ¥ ìœ„ì¹˜
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData
 	 *      @return GridData
 	 *      @throws DAOException
      */			
 	public GridData getDownLocChange(GridData gdReq) throws DAOException {
-		String mthdNm = "±ÇÇÏÀ§Ä¡º¯°æ°¡´É À§Ä¡ - [CCoilJspFaEJB.getDownLocChange]";
+		String mthdNm = "ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ê°€ëŠ¥ ìœ„ì¹˜ - [CCoilJspFaEJB.getDownLocChange]";
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -8085,15 +8085,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
             + "("   + commUtils.trim(gdReq.getParam("jsp_page_id")) 
             + ")_"  + commUtils.trim(gdReq.getParam("jsp_page_func_nm"));
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			GridData gdRet = (GridData)ejbConn.trx("getDownLocChange", new Class[] { GridData.class }, new Object[] { gdReq });
 			
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRet;
 			
 		} catch(DAOException e) {
@@ -8105,22 +8105,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 * ÁöÆ÷Àå ÃßÃâ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ì¶”ì¶œ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procGPackOutReq(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷ÀåÃßÃâ[CCoilJspFaEJB.procGPackOutReq]";
+		String mthdNm = "ì§€í¬ì¥ì¶”ì¶œ[CCoilJspFaEJB.procGPackOutReq]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procGPackOutReq", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8128,7 +8128,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8137,14 +8137,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÁöÆ÷Àå ÃßÃâ¿ä±¸¸¦ ÇÏ¿´½À´Ï´Ù.");
+				gdRet.setMessage("ì§€í¬ì¥ ì¶”ì¶œìš”êµ¬ë¥¼ í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -8158,23 +8158,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ´ëÂ÷ Á¤º¸ ¼öÁ¤
-	 * ¿°¿ë¼±
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ëŒ€ì°¨ ì •ë³´ ìˆ˜ì •
+	 * ì—¼ìš©ì„ 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updTcInfo(GridData gdReq) throws DAOException {
-		String mthdNm = "´ëÂ÷ Á¤º¸ ¼öÁ¤[CCoilJspFaEJB.updTcInfo]";
+		String mthdNm = "ëŒ€ì°¨ ì •ë³´ ìˆ˜ì •[CCoilJspFaEJB.updTcInfo]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updTcInfo", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8182,15 +8182,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
@@ -8208,7 +8208,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 					EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
-					gdRet.setMessage("´ëÂ÷Á¤º¸ ¼öÁ¤À» ¿Ï·á ÇÏ¿´½À´Ï´Ù.");
+					gdRet.setMessage("ëŒ€ì°¨ì •ë³´ ìˆ˜ì •ì„ ì™„ë£Œ í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				}else{
 					gdRet.setMessage(rtnMsg);
 				}
@@ -8227,22 +8227,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¹İ¼ÛÁö½Ãµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë°˜ì†¡ì§€ì‹œë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updRetnTgMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "¹İ¼ÛÁö½Ãµî·Ï[CCoilJspFaEJB.updRetnTgMgt]";
+		String mthdNm = "ë°˜ì†¡ì§€ì‹œë“±ë¡[CCoilJspFaEJB.updRetnTgMgt]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updRetnTgMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8250,7 +8250,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8259,9 +8259,9 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
@@ -8279,24 +8279,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * Â÷·®ÀÛ¾÷°ü¸® - Â÷·®µ¿°£ÀÌÀûPOINT SPAN ¹üÀ§ ¼³Á¤
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏÀÌ¼Û°ü¸® > Â÷·®ÀÛ¾÷°ü¸®
-	 * °­Á¤¼± 2019.11.08
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ - ì°¨ëŸ‰ë™ê°„ì´ì POINT SPAN ë²”ìœ„ ì„¤ì •
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ì´ì†¡ê´€ë¦¬ > ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ê°•ì •ì„  2019.11.08
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCarSpanRngApp008(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®Æ÷ÀÎÆ®SPAN¹üÀ§¼³Á¤[CCoilJspFaEJB.updCarSpanRngApp008]";
+		String mthdNm = "ì°¨ëŸ‰í¬ì¸íŠ¸SPANë²”ìœ„ì„¤ì •[CCoilJspFaEJB.updCarSpanRngApp008]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCarSpanRngApp008", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8304,7 +8304,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8316,13 +8316,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			}
 			
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("¹üÀ§¼³Á¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë²”ìœ„ì„¤ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8337,16 +8337,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ Á¶È¸º¸±Şµî·Ï
-	 * * SPM/HFLÀÔÃø°ü¸® > º¸±Ş > µî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ë“±ë¡
+	 * * SPM/HFLì…ì¸¡ê´€ë¦¬ > ë³´ê¸‰ > ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData inscoilYdLineWr(GridData gdReq) throws DAOException {
-		String mthdNm = "¼ÒÀçÀÔÃø º¸±Ş[CCoilJspFaEJB.inscoilYdLineWr]";
+		String mthdNm = "ì†Œì¬ì…ì¸¡ ë³´ê¸‰[CCoilJspFaEJB.inscoilYdLineWr]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -8354,8 +8354,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");		
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);	
 			
@@ -8366,7 +8366,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8380,7 +8380,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				m_ctx.setRollbackOnly();
 				gdRes.setMessage(rtnMsg);
 			}else{
-				gdRes.setMessage("º¸±ŞÃ³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ë³´ê¸‰ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 
 			
@@ -8394,16 +8394,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  
 	
 	/**
-	 * ÄÚÀÏ¼ÒÀç¾ßµå tracking ÆË¾÷ Á¶È¸º¸±Şµî·Ï
-	 * * SPM/HFLÀÔÃø°ü¸® > ÃßÃâ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì†Œì¬ì•¼ë“œ tracking íŒì—… ì¡°íšŒë³´ê¸‰ë“±ë¡
+	 * * SPM/HFLì…ì¸¡ê´€ë¦¬ > ì¶”ì¶œ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData inscoilGdsYdLineWr(GridData gdReq) throws DAOException {
-		String mthdNm = "ÃßÃâ µî·Ï[CCoilJspFaEJB.inscoilGdsYdLineWr]";
+		String mthdNm = "ì¶”ì¶œ ë“±ë¡[CCoilJspFaEJB.inscoilGdsYdLineWr]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -8411,8 +8411,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");		
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			gdRes = CmUtil.copyGDParam(gdReq, gdRes);	
 			
@@ -8423,7 +8423,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8437,7 +8437,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				m_ctx.setRollbackOnly();
 				gdRes.setMessage(rtnMsg);
 			}else{
-				gdRes.setMessage("ÃßÃâÃ³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("ì¶”ì¶œì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 
 			
@@ -8451,24 +8451,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}  	
 	
 	/**
-	 * ¼ÒÀçÀ§Ä¡º°ÀûÄ¡ÇöÈ²Á¶È¸ - BED È°¼º»óÅÂ º¯°æ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ¾ßµåÇöÈ²°ü¸® > À§Ä¡º°ÀûÄ¡ÇöÈ²Á¶È¸
-	 * °­Á¤¼± 2020.06.01
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì†Œì¬ìœ„ì¹˜ë³„ì ì¹˜í˜„í™©ì¡°íšŒ - BED í™œì„±ìƒíƒœ ë³€ê²½
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì•¼ë“œí˜„í™©ê´€ë¦¬ > ìœ„ì¹˜ë³„ì ì¹˜í˜„í™©ì¡°íšŒ
+	 * ê°•ì •ì„  2020.06.01
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updBedActStat(GridData gdReq) throws DAOException {
-		String mthdNm = "BEDÈ°¼º»óÅÂº¯°æ[CCoilJspFaEJB.updBedActStat]";
+		String mthdNm = "BEDí™œì„±ìƒíƒœë³€ê²½[CCoilJspFaEJB.updBedActStat]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updBedActStat", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8476,7 +8476,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8486,13 +8486,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("BED»óÅÂ ¼öÁ¤ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRes.setMessage("BEDìƒíƒœ ìˆ˜ì • ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8506,24 +8506,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÀÌÀû´ë»óÀçÁ¶È¸(¾ßµå°£ÀÌÀû) - ÀÌÀûÁö½Ãµî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > ÀÌÀû´ë»óÀçÁ¶È¸
-	 * °­Á¤¼± 2020.06.05
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì´ì ëŒ€ìƒì¬ì¡°íšŒ(ì•¼ë“œê°„ì´ì ) - ì´ì ì§€ì‹œë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ì´ì ëŒ€ìƒì¬ì¡°íšŒ
+	 * ê°•ì •ì„  2020.06.05
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData insUnitMvYdLocGp(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÌÀûÁö½Ãµî·Ï[CCoilJspFaEJB.insUnitMvYdLocGp]";
+		String mthdNm = "ì´ì ì§€ì‹œë“±ë¡[CCoilJspFaEJB.insUnitMvYdLocGp]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("insUnitMvYdLocGp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8531,7 +8531,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8541,13 +8541,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("ÀÌÀûÁö½Ãµî·ÏÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRes.setMessage("ì´ì ì§€ì‹œë“±ë¡ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8562,23 +8562,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * °ø³ÃÀç ÀÌÀû
+	 * ê³µëƒ‰ì¬ ì´ì 
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procAirclMtlMvstk(GridData gdReq) throws DAOException {
-		String mthdNm = "°ø³ÃÀçÀÌÀûÁö½Ãµî·Ï[CCoilJspFaEJB.procAirclMtlMvstk]";
+		String mthdNm = "ê³µëƒ‰ì¬ì´ì ì§€ì‹œë“±ë¡[CCoilJspFaEJB.procAirclMtlMvstk]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procAirclMtlMvstk", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8586,7 +8586,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8596,13 +8596,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("°ø³ÃÀçÀÌÀûµî·ÏÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRes.setMessage("ê³µëƒ‰ì¬ì´ì ë“±ë¡ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8616,23 +8616,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 		
 	/**
-	 * ÄÚÀÏÀÌ¼ÛÀç·áLIST - ±ä±ŞÀÛ¾÷
-	 * °­Á¤¼± 2020.06.19
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì´ì†¡ì¬ë£ŒLIST - ê¸´ê¸‰ì‘ì—…
+	 * ê°•ì •ì„  2020.06.19
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updUgntWork(GridData gdReq) throws DAOException {
-		String mthdNm = "±ä±ŞÀÛ¾÷[CCoilJspFaEJB.updUgntWork]";
+		String mthdNm = "ê¸´ê¸‰ì‘ì—…[CCoilJspFaEJB.updUgntWork]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updUgntWork", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8640,7 +8640,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8650,13 +8650,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("±ä±ŞÀÛ¾÷µî·ÏÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRes.setMessage("ê¸´ê¸‰ì‘ì—…ë“±ë¡ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8670,23 +8670,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ÄÚÀÏÀÌ¼ÛÀç·áLIST - ½ºÄÉÁÙ±âµ¿
-	 * °­Á¤¼± 2020.06.19
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì´ì†¡ì¬ë£ŒLIST - ìŠ¤ì¼€ì¤„ê¸°ë™
+	 * ê°•ì •ì„  2020.06.19
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData reqCarLdSchRun(GridData gdReq) throws DAOException {
-		String mthdNm = "½ºÄÉÁÙ±âµ¿[CCoilJspFaEJB.reqCarLdSchRun]";
+		String mthdNm = "ìŠ¤ì¼€ì¤„ê¸°ë™[CCoilJspFaEJB.reqCarLdSchRun]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("reqCarLdSchRun", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8694,7 +8694,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8704,13 +8704,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("½ºÄÉÁÙ±âµ¿ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRes.setMessage("ìŠ¤ì¼€ì¤„ê¸°ë™ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8724,24 +8724,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÄÚÀÏÁ¦Ç°Â÷·®ÀÛ¾÷ °ü¸®- Æ÷ÀÎÆ® º¯°æ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ÃâÇÏ°ü¸® > ¹èÂ÷Â÷·®ÀÛ¾÷°ü¸®
-	 * ÀÌ¹¦¿ø 2020.06.18
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì½”ì¼ì œí’ˆì°¨ëŸ‰ì‘ì—… ê´€ë¦¬- í¬ì¸íŠ¸ ë³€ê²½
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì¶œí•˜ê´€ë¦¬ > ë°°ì°¨ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬
+	 * ì´ë¬˜ì› 2020.06.18
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  gdReq
 	 * @return gdRet
 	 * @throws JDTOException
 	 */
 	public GridData changeCarLoc(GridData gdReq) throws JDTOException {
-		String mthdNm = "Â÷·®ÀÔµ¿À§Ä¡º¯°æ[CCoilJspFaEJBSBean.changeCarLoc]";
+		String mthdNm = "ì°¨ëŸ‰ì…ë™ìœ„ì¹˜ë³€ê²½[CCoilJspFaEJBSBean.changeCarLoc]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("changeCarLoc", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8749,7 +8749,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8759,13 +8759,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRes.setMessage("Â÷·®ÀÔµ¿Æ÷ÀÎÆ® º¯°æÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRes.setMessage("ì°¨ëŸ‰ì…ë™í¬ì¸íŠ¸ ë³€ê²½ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -8779,16 +8779,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÀûÄ¡À§Ä¡º¯°æ
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç/Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ¼ÒÀç/Á¦Ç° ÀûÄ¡À§Ä¡º¯°æ  µî·Ï
-	 * ±èÈ£¿¬ 2020.06.23
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì ì¹˜ìœ„ì¹˜ë³€ê²½
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬/ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì†Œì¬/ì œí’ˆ ì ì¹˜ìœ„ì¹˜ë³€ê²½  ë“±ë¡
+	 * ê¹€í˜¸ì—° 2020.06.23
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updStrlocChgSet(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀûÄ¡À§Ä¡º¯°æ  µî·Ï[CCoilJspFaEJB.updStrlocChgSet]";
+		String mthdNm = "ì ì¹˜ìœ„ì¹˜ë³€ê²½  ë“±ë¡[CCoilJspFaEJB.updStrlocChgSet]";
 		String logId  = commUtils.getLogId();
 		
 		try{
@@ -8796,8 +8796,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updStrlocChgSet", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8805,7 +8805,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8814,14 +8814,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("ÀûÄ¡À§Ä¡º¯°æÀÌ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ì ì¹˜ìœ„ì¹˜ë³€ê²½ì´ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -8834,24 +8834,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °á·ÎÀúÀåÀ§Ä¡ ON/OFF
-	 * ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ÀúÀåÀ§Ä¡ÁÂÇ¥¼³Á¤  
-	 * °­Á¤¼± 2020.06.25
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²°ë¡œì €ì¥ìœ„ì¹˜ ON/OFF
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì €ì¥ìœ„ì¹˜ì¢Œí‘œì„¤ì •  
+	 * ê°•ì •ì„  2020.06.25
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdRuleCondYn(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀúÀåÀ§Ä¡ ON/OFF[CCoilJspFaEJB.updYdRuleCondYn]";
+		String mthdNm = "ê²°ë¡œì €ì¥ìœ„ì¹˜ ON/OFF[CCoilJspFaEJB.updYdRuleCondYn]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updYdRuleCondYn", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8859,7 +8859,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8869,7 +8869,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
@@ -8889,24 +8889,24 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °á·ÎÀúÀåÀ§Ä¡ ON/OFF
-	 * ¾ßµå°ü¸® > 2¿­¿¬ Á¦Ç° ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > ÀúÀåÀ§Ä¡ÁÂÇ¥¼³Á¤  
+	 * ê²°ë¡œì €ì¥ìœ„ì¹˜ ON/OFF
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì œí’ˆ ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > ì €ì¥ìœ„ì¹˜ì¢Œí‘œì„¤ì •  
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdRuleCondYnNew(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀúÀåÀ§Ä¡ ON/OFF[CCoilJspFaEJB.updYdRuleCondYn]";
+		String mthdNm = "ê²°ë¡œì €ì¥ìœ„ì¹˜ ON/OFF[CCoilJspFaEJB.updYdRuleCondYn]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updYdRuleCondYnNew", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -8914,7 +8914,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -8924,7 +8924,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);
@@ -8944,30 +8944,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÀÔµ¿Áö½Ã SMS Àü¼Û
+	 * ì…ë™ì§€ì‹œ SMS ì „ì†¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procBayInWoSmsSend(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÔµ¿Áö½Ã SMS Àü¼Û[CCoilJspFaEJB.procBayInWoSmsSend]";
+		String mthdNm = "ì…ë™ì§€ì‹œ SMS ì „ì†¡[CCoilJspFaEJB.procBayInWoSmsSend]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procBayInWoSmsSend", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd			= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg			= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -8977,7 +8977,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
@@ -8996,23 +8996,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¼³ºñº¸±Ş½ºÄÉÁì ±âµ¿/±İÁö
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ¼³ºñÀÔÃø°ü¸® > SPM/HFLÀÔÃø°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì„¤ë¹„ë³´ê¸‰ìŠ¤ì¼€ì¥´ ê¸°ë™/ê¸ˆì§€
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì„¤ë¹„ì…ì¸¡ê´€ë¦¬ > SPM/HFLì…ì¸¡ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updLineInSchProhExn(GridData gdReq) throws DAOException {
-		String mthdNm = "¼³ºñº¸±Ş½ºÄÉÁì ±âµ¿/±İÁö[CCoilJspFaEJB.updLineInSchProhExn]";
+		String mthdNm = "ì„¤ë¹„ë³´ê¸‰ìŠ¤ì¼€ì¥´ ê¸°ë™/ê¸ˆì§€[CCoilJspFaEJB.updLineInSchProhExn]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updLineInSchProhExn", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9020,7 +9020,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -9047,23 +9047,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ÁöÆ÷Àå ÀÌÀûµî·Ï
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ¼³ºñÀÔÃø°ü¸® > ÁöÆ÷Àåº¸±Ş°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì§€í¬ì¥ ì´ì ë“±ë¡
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì„¤ë¹„ì…ì¸¡ê´€ë¦¬ > ì§€í¬ì¥ë³´ê¸‰ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData regGFUnitMvStkH(GridData gdReq) throws DAOException {
-		String mthdNm = "ÁöÆ÷Àå ÀÌÀûµî·Ï[CCoilJspFaEJB.regGFUnitMvStkH]";
+		String mthdNm = "ì§€í¬ì¥ ì´ì ë“±ë¡[CCoilJspFaEJB.regGFUnitMvStkH]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("regGFUnitMvStkH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9071,7 +9071,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -9098,30 +9098,30 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 		
 	/**
-	 * ÀÔ°í½ºÄÉÁÙ º¯°æ
+	 * ì…ê³ ìŠ¤ì¼€ì¤„ ë³€ê²½
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procChgRcptSch(GridData gdReq) throws DAOException {
-		String mthdNm = "ÀÔ°í½ºÄÉÁÙ º¯°æ[CCoilJspFaEJB.procChgRcptSch]";
+		String mthdNm = "ì…ê³ ìŠ¤ì¼€ì¤„ ë³€ê²½[CCoilJspFaEJB.procChgRcptSch]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procChgRcptSch", new Class[] { GridData.class }, new Object[] { gdReq });
 			String rtnCd	 		= commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -9130,13 +9130,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀÔ°í½ºÄÉÁÙ º¯°æÃ³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ì…ê³ ìŠ¤ì¼€ì¤„ ë³€ê²½ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -9152,23 +9152,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * °á¼ÓÀå ½ºÄÉÁì ±âµ¿/±İÁö
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ¼³ºñÀÔÃø°ü¸® > SPM/HFLÀÔÃø°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²°ì†ì¥ ìŠ¤ì¼€ì¥´ ê¸°ë™/ê¸ˆì§€
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì„¤ë¹„ì…ì¸¡ê´€ë¦¬ > SPM/HFLì…ì¸¡ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updLineInSupMtdGp(GridData gdReq) throws DAOException {
-		String mthdNm = "°á¼ÓÀå ±âµ¿/±İÁö[CCoilJspFaEJB.updLineInSupMtdGp]";
+		String mthdNm = "ê²°ì†ì¥ ê¸°ë™/ê¸ˆì§€[CCoilJspFaEJB.updLineInSupMtdGp]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updLineInSupMtdGp", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9176,7 +9176,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -9204,23 +9204,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¼ÒÀç °á·ÎHOTÄÚÀÏÀÌÀû
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > °á·ÎHOTÄÚÀÏÀÌÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì†Œì¬ ê²°ë¡œHOTì½”ì¼ì´ì 
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ê²°ë¡œHOTì½”ì¼ì´ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updCondenMvStkReg(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎHOTÄÚÀÏÀÌÀû[CCoilJspFaEJB.updCondenMvStkReg]";
+		String mthdNm = "ê²°ë¡œHOTì½”ì¼ì´ì [CCoilJspFaEJB.updCondenMvStkReg]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCondenMvStkReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9228,7 +9228,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı ¾ÈÇÔ
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ ì•ˆí•¨
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -9254,15 +9254,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 		}
 	}
 	/** 
-	 * Àå±â°ø³ÃÀç ÀÚµ¿ÀÌÀû Ã³¸®
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > jsp
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì¥ê¸°ê³µëƒ‰ì¬ ìë™ì´ì  ì²˜ë¦¬
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > jsp
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  JDTORecord
 	 * @return JDTORecord
 	 * @throws DAOException
 	 */
 	public JDTORecord procHotCoilMove(JDTORecord rcvMsg) throws DAOException {
-		String mthdNm = "Àå±â°ø³ÃÀç ÀÚµ¿ÀÌÀû Ã³¸®[CCoilJspFaEJB.procHotCoilMove]"+ rcvMsg.getResultMsg();
+		String mthdNm = "ì¥ê¸°ê³µëƒ‰ì¬ ìë™ì´ì  ì²˜ë¦¬[CCoilJspFaEJB.procHotCoilMove]"+ rcvMsg.getResultMsg();
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -9287,7 +9287,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn0.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"A"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"A"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", 'B');
@@ -9295,7 +9295,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn1.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +'B'+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +'B'+ "ë™ rtnCd:"+ rtnCd, "SL");
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "C");
@@ -9303,7 +9303,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn2.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"C"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"C"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "D");
@@ -9311,7 +9311,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn3.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"D"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"D"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "E");
@@ -9319,7 +9319,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn4.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"E"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"E"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			 
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "F");
@@ -9327,7 +9327,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn5.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"F"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"F"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			 
 			
 			jrParam.setField("MODIFIER" , sModifier);
@@ -9336,7 +9336,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn6.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"G"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"G"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			 
 			
 			jrParam.setField("MODIFIER" , sModifier);
@@ -9345,10 +9345,10 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn7.trx("procHotCoilMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm +"H"+ "µ¿ rtnCd:"+ rtnCd, "SL");
+			commUtils.printLog(logId, mthdNm +"H"+ "ë™ rtnCd:"+ rtnCd, "SL");
 			 
 			
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -9359,11 +9359,11 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				*/
 			} 
 			
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) { 		
 				m_ctx.setRollbackOnly();
 			} else {
-				commUtils.printLog(logId, mthdNm +"°ø³ÃÀçÀÚµ¿ÀÌÀûÃ³¸®°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.", "SL"); 
+				commUtils.printLog(logId, mthdNm +"ê³µëƒ‰ì¬ìë™ì´ì ì²˜ë¦¬ê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.", "SL"); 
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return jrRtn;
@@ -9376,15 +9376,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**	
-	 * °ø³ÃÀçÀÔ°íÀÚµ¿ Ã³¸®
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > jsp
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê³µëƒ‰ì¬ì…ê³ ìë™ ì²˜ë¦¬
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > jsp
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  JDTORecord
 	 * @return JDTORecord
 	 * @throws DAOException
 	 */
 	public JDTORecord procJicMove(JDTORecord jrRtn) throws DAOException {
-		String mthdNm = "°ø³ÃÀçÀÔ°íÀÚµ¿ Ã³¸®[CCoilJspFaEJB.procJicMove]"+ jrRtn.getResultMsg();;
+		String mthdNm = "ê³µëƒ‰ì¬ì…ê³ ìë™ ì²˜ë¦¬[CCoilJspFaEJB.procJicMove]"+ jrRtn.getResultMsg();;
 		String logId  = commUtils.getLogId();
 		
 		try {
@@ -9405,7 +9405,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn0.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "A"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "A"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "B");
@@ -9413,7 +9413,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn1.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "B"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "B"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "C");
@@ -9421,7 +9421,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn2.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "C"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "C"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "D");
@@ -9429,7 +9429,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn3.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "D"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "D"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "E");
@@ -9437,7 +9437,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn4.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "E"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "E"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "F");
@@ -9445,7 +9445,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn5.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "F"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "F"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "G");
@@ -9453,7 +9453,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn6.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "G"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "G"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			
 			jrParam.setField("MODIFIER" , sModifier);
 			jrParam.setField("YD_BAY_GP", "H");
@@ -9461,10 +9461,10 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			jrRtn = (JDTORecord)ejbConn7.trx("procJicMove", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			rtnCd	 = commUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
-			commUtils.printLog(logId, mthdNm + "H"+"µ¿ rtnCd:"+ rtnCd, "SL"); 
+			commUtils.printLog(logId, mthdNm + "H"+"ë™ rtnCd:"+ rtnCd, "SL"); 
 			 
 			
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -9475,11 +9475,11 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				*/
 			} 
 			
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) { 		
 				m_ctx.setRollbackOnly();
 			} else {
-				commUtils.printLog(logId, mthdNm +"°ø³ÃÀçÀÚµ¿ÀÔ°íÃ³¸®°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.", "SL"); 
+				commUtils.printLog(logId, mthdNm +"ê³µëƒ‰ì¬ìë™ì…ê³ ì²˜ë¦¬ê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.", "SL"); 
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return jrRtn;
@@ -9492,23 +9492,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}		
 	
 	/**	
-	 * º¸±ŞÁ¸ ÀÚµ¿ÀÌÀû(Å×½ºÆ®¿ë)
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > 2¿­¿¬±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë³´ê¸‰ì¡´ ìë™ì´ì (í…ŒìŠ¤íŠ¸ìš©)
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > 2ì—´ì—°ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procSupplyZoneMove(GridData gdReq) throws DAOException {
-		String mthdNm = "º¸±ŞÁ¸ ÀÚµ¿ÀÌÀû[CCoilJspFaEJB.procSupplyZoneMove]";
+		String mthdNm = "ë³´ê¸‰ì¡´ ìë™ì´ì [CCoilJspFaEJB.procSupplyZoneMove]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			String sModifier  = commUtils.nvl(gdReq.getParam("YD_USER_ID"), "");
 			
 			JDTORecord jrParam  = commUtils.getParam(logId, mthdNm, sModifier);
@@ -9524,7 +9524,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "rtnCd:"+ rtnCd +"/"+rtnMsg, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -9534,14 +9534,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 				*/
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("º¸±ŞÁ¸ ÀÚµ¿ÀÌÀû Ã³¸®¿Ï·á.");	
+				gdRet.setMessage("ë³´ê¸‰ì¡´ ìë™ì´ì  ì²˜ë¦¬ì™„ë£Œ.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9554,23 +9554,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}		
 
 	/**	
-	 * °á·Î¹æÁö¿ë HOT COIL ¹İ³³ÀåÀ¸·Î ÀÚµ¿ÀÌÀû
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > °á·ÎHOTÄÚÀÏÀÌÀû
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê²°ë¡œë°©ì§€ìš© HOT COIL ë°˜ë‚©ì¥ìœ¼ë¡œ ìë™ì´ì 
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ê²°ë¡œHOTì½”ì¼ì´ì 
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procHotCoilRetnMove(GridData gdReq) throws DAOException {
-		String mthdNm = "°á·ÎÀçHOTCOIL ¹İ³³Àå ÀÚµ¿ÀÌÀû[CCoilJspFaEJB.procHotCoilRetnMove]";
+		String mthdNm = "ê²°ë¡œì¬HOTCOIL ë°˜ë‚©ì¥ ìë™ì´ì [CCoilJspFaEJB.procHotCoilRetnMove]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			String sModifier  = commUtils.nvl(gdReq.getParam("YD_USER_ID"), "");
 			
 			JDTORecord jrParam  = commUtils.getParam(logId, mthdNm, sModifier);
@@ -9588,7 +9588,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "rtnCd:"+ rtnCd +"/"+rtnMsg, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -9598,14 +9598,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 				*/
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("°á·ÎHOTÄÚÀÏ ¹İ³³Àå ÀÚµ¿ÀÌÀû µî·ÏÇÏ¿´½À´Ï´Ù.");	
+				gdRet.setMessage("ê²°ë¡œHOTì½”ì¼ ë°˜ë‚©ì¥ ìë™ì´ì  ë“±ë¡í•˜ì˜€ìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9618,22 +9618,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * °ø³ÃÀçÀÚµ¿ÀÌÀû ON/OFF
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê³µëƒ‰ì¬ìë™ì´ì  ON/OFF
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updAutoAriClMoveMgt(GridData gdReq) throws DAOException {
-		String mthdNm	= "°ø³ÃÀçÀÚµ¿ÀÌÀû ON/OFF[CCoilJspFaEJB.updAutoAriClMoveMgt]";
+		String mthdNm	= "ê³µëƒ‰ì¬ìë™ì´ì  ON/OFF[CCoilJspFaEJB.updAutoAriClMoveMgt]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updAutoAriClMoveMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9643,7 +9643,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
@@ -9652,7 +9652,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				if( "N".equals(gdReq.getParam("MODE") ) ) {
 					sMsg = "OFF";
 				}
-				gdRet.setMessage("°ø³ÃÀçÀÚµ¿ÀÌÀû ½Ã½ºÅÛ "+ sMsg +" Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ê³µëƒ‰ì¬ìë™ì´ì  ì‹œìŠ¤í…œ "+ sMsg +" ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9665,22 +9665,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * C-HOOK ÀÚµ¿ÃßÃâ ½Ã°£¼³Á¤
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * C-HOOK ìë™ì¶”ì¶œ ì‹œê°„ì„¤ì •
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updCHookAutoOutMgt(GridData gdReq) throws DAOException {
-		String mthdNm	= "C-HOOK ÀÚµ¿ÃßÃâ ½Ã°£¼³Á¤[CCoilJspFaEJB.updCHookAutoOutMgt]";
+		String mthdNm	= "C-HOOK ìë™ì¶”ì¶œ ì‹œê°„ì„¤ì •[CCoilJspFaEJB.updCHookAutoOutMgt]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCHookAutoOutMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9690,13 +9690,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
 
-				gdRet.setMessage("C-HOOK ÀÚµ¿ÃßÃâ ½Ã°£º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("C-HOOK ìë™ì¶”ì¶œ ì‹œê°„ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9709,23 +9709,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**	
-	 * C-HOOK ÀÚµ¿ÃßÃâ ½ºÄÉÁì»ı¼º
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > ±âÁØ°ü¸® > 2¿­¿¬±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * C-HOOK ìë™ì¶”ì¶œ ìŠ¤ì¼€ì¥´ìƒì„±
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ê¸°ì¤€ê´€ë¦¬ > 2ì—´ì—°ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCHookAutoOut(GridData gdReq) throws DAOException {
-		String mthdNm = "C-HOOK ÀÚµ¿ÃßÃâ ½ºÄÉÁì»ı¼º[CCoilJspFaEJB.procCHookAutoOut]";
+		String mthdNm = "C-HOOK ìë™ì¶”ì¶œ ìŠ¤ì¼€ì¥´ìƒì„±[CCoilJspFaEJB.procCHookAutoOut]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			String sModifier  = commUtils.nvl(gdReq.getParam("YD_USER_ID"), "");
 			
 			JDTORecord jrParam  = commUtils.getParam(logId, mthdNm, sModifier);
@@ -9741,20 +9741,20 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "rtnCd:"+ rtnCd +"/"+rtnMsg, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("C-HOOK ÀÚµ¿ÃßÃâ ½ºÄÉÁì»ı¼º ¿Ï·á.");	
+				gdRet.setMessage("C-HOOK ìë™ì¶”ì¶œ ìŠ¤ì¼€ì¥´ìƒì„± ì™„ë£Œ.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9768,22 +9768,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/** 
-	 * ÃâÇÏºĞ»êÄÚÀÏ ±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì¶œí•˜ë¶„ì‚°ì½”ì¼ ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdRuleDspr(GridData gdReq) throws DAOException {
-		String mthdNm = "ÃâÇÏºĞ»êÄÚÀÏ-¼öÁ¤[CCoilJspFaEJB.updYdRuleDspr]";
+		String mthdNm = "ì¶œí•˜ë¶„ì‚°ì½”ì¼-ìˆ˜ì •[CCoilJspFaEJB.updYdRuleDspr]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updYdRuleDspr", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9791,7 +9791,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -9800,14 +9800,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -9821,22 +9821,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/** 
-	 * ÃâÇÏÄÚÀÏ ºĞ»ê°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì¶œí•˜ì½”ì¼ ë¶„ì‚°ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procDmCoilDsprMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "ÃâÇÏÄÚÀÏ ºĞ»ê°ü¸®[CCoilJspFaEJB.procDmCoilDsprMgt]";
+		String mthdNm = "ì¶œí•˜ì½”ì¼ ë¶„ì‚°ê´€ë¦¬[CCoilJspFaEJB.procDmCoilDsprMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			String userid		= commUtils.trim(gdReq.getParam("YD_USER_ID"));
 			JDTORecord jrParam	= commUtils.getParam(logId, mthdNm, userid);
@@ -9844,7 +9844,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("procDmCoilDsprMgt", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
 	
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -9858,22 +9858,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ½ºÅ©·¦ ºñ¿ì±â
+	 * ìŠ¤í¬ë© ë¹„ìš°ê¸°
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procClearScrap(GridData gdReq) throws DAOException {
-		String mthdNm =  "½ºÅ©·¦ÇöÈ²Á¶È¸-½ºÅ©·¦ºñ¿ì±â[CCoilJspFaEJB.procClearScrap]";
+		String mthdNm =  "ìŠ¤í¬ë©í˜„í™©ì¡°íšŒ-ìŠ¤í¬ë©ë¹„ìš°ê¸°[CCoilJspFaEJB.procClearScrap]";
 		String logId  = commUtils.getLogId();
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procClearScrap", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9881,7 +9881,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -9890,13 +9890,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("½ºÅ©·¦ ºñ¿ì±â Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìŠ¤í¬ë© ë¹„ìš°ê¸° ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -9910,22 +9910,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ½ºÅ©·¦ »ı¼º
+	 * ìŠ¤í¬ë© ìƒì„±
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procCreateScrap(GridData gdReq) throws DAOException {
-		String mthdNm =  "½ºÅ©·¦ÇöÈ²Á¶È¸-½ºÅ©·¦»ı¼º[CCoilJspFaEJB.procCreateScrap]";
+		String mthdNm =  "ìŠ¤í¬ë©í˜„í™©ì¡°íšŒ-ìŠ¤í¬ë©ìƒì„±[CCoilJspFaEJB.procCreateScrap]";
 		String logId  = commUtils.getLogId();
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("procCreateScrap", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9933,7 +9933,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -9942,13 +9942,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("½ºÅ©·¦ »ı¼º Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìŠ¤í¬ë© ìƒì„± ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -9963,23 +9963,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	// 
 	/**
-	 *      ½ºÅ©·¦ Â÷·® ÁøÀÔ¿©ºÎ º¯°æ
+	 *      ìŠ¤í¬ë© ì°¨ëŸ‰ ì§„ì…ì—¬ë¶€ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData
 	 *      @return GridData
 	 *      @throws DAOException
      */	
 	public GridData updScrpCar(GridData gdReq) throws DAOException {
-		String mthdNm = "½ºÅ©·¦ Â÷·® ÁøÀÔ¿©ºÎ º¯°æ[CCoilJspFaEJBupdScrpCar]";
+		String mthdNm = "ìŠ¤í¬ë© ì°¨ëŸ‰ ì§„ì…ì—¬ë¶€ ë³€ê²½[CCoilJspFaEJBupdScrpCar]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn		= (JDTORecord)ejbConn.trx("updScrpCar", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -9987,7 +9987,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -9996,13 +9996,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
 			
-			// Á¶È¸
+			// ì¡°íšŒ
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("½ºÅ©·¦ Â÷·® ÁøÀÔ¿©ºÎ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìŠ¤í¬ë© ì°¨ëŸ‰ ì§„ì…ì—¬ë¶€ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
@@ -10016,15 +10016,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ±âÁØ°ü¸® - ¼¼ºÎÇ×¸ñ¼öÁ¤
+	 * ê¸°ì¤€ê´€ë¦¬ - ì„¸ë¶€í•­ëª©ìˆ˜ì •
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updYdRuleScrap(GridData gdReq) throws DAOException {
-		String mthdNm = "½ºÅ©·¦±âÁØ ¼öÁ¤[CCoilJspFaEJB.updYdRuleScrap]";
+		String mthdNm = "ìŠ¤í¬ë©ê¸°ì¤€ ìˆ˜ì •[CCoilJspFaEJB.updYdRuleScrap]";
 		String logId    = commUtils.getLogId();
 		
 		try {
@@ -10032,8 +10032,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn	 = (JDTORecord)ejbConn.trx("updYdRuleScrap", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10042,7 +10042,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -10050,19 +10050,19 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			// Á¶È¸
+			// ì¡°íšŒ
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("ÀÚµ¿ÀÌÀû/¼öµ¿ÀÌÀû º¯°æÃ³¸®°¡  ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìë™ì´ì /ìˆ˜ë™ì´ì  ë³€ê²½ì²˜ë¦¬ê°€  ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 			
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRes;
 			
 		} catch(DAOException e) {
@@ -10073,15 +10073,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ScrapÀÌÀûÀÛ¾÷ ¿¹¾à µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Scrapì´ì ì‘ì—… ì˜ˆì•½ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updScrapMvStkWrkBook(GridData gdReq) throws DAOException {
-		String mthdNm = "ScrapÀÌÀûÀÛ¾÷ ¿¹¾à µî·Ï[CCoilJspFaEJB.updScrapMvStkWrkBook]";
+		String mthdNm = "Scrapì´ì ì‘ì—… ì˜ˆì•½ ë“±ë¡[CCoilJspFaEJB.updScrapMvStkWrkBook]";
 		String logId  = commUtils.getLogId();
 
 		try {
@@ -10090,8 +10090,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 			
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updScrapMvStkWrkBook", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10100,7 +10100,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 			
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				jrRtn.setResultCode(logId);
 				jrRtn.setResultMsg(mthdNm);
@@ -10108,19 +10108,19 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			// Á¶È¸
+			// ì¡°íšŒ
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
 			if (!"1".equals(rtnCd)) {
 				gdRes.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRes.setMessage("½ºÅ©·¦ Â÷·® ÁøÀÔ¿©ºÎ º¯°æ Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRes.setMessage("ìŠ¤í¬ë© ì°¨ëŸ‰ ì§„ì…ì—¬ë¶€ ë³€ê²½ ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}
 
 			commUtils.printLog(logId, mthdNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRes;
 			
 		} catch(DAOException e) {
@@ -10131,22 +10131,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/** 
-	 * Á¦Ç°ÀÌ¼ÛÇÏÂ÷ ÀÔµ¿Á¦ÇÑ ±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì œí’ˆì´ì†¡í•˜ì°¨ ì…ë™ì œí•œ ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updGdsFtmvCarudStdMgt(GridData gdReq) throws DAOException {
-		String mthdNm = "Á¦Ç°ÀÌ¼ÛÇÏÂ÷ ÀÔµ¿Á¦ÇÑ ±âÁØ°ü¸®[CCoilJspFaEJB.updGdsFtmvCarudStdMgt]";
+		String mthdNm = "ì œí’ˆì´ì†¡í•˜ì°¨ ì…ë™ì œí•œ ê¸°ì¤€ê´€ë¦¬[CCoilJspFaEJB.updGdsFtmvCarudStdMgt]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updGdsFtmvCarudStdMgt", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10154,7 +10154,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -10163,14 +10163,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -10183,23 +10183,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 * °ø³ÃÀç HFLÀç º¯°æ ÀÌÀûÁö½Ã
-	 * ¾ßµå°ü¸® > 2¿­¿¬ ¼ÒÀç ÄÚÀÏ¾ßµå[½Å] > »êÀûLOT°ü¸® > °ø³ÃÀçÀÌÀû´ë»óÀçÁ¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê³µëƒ‰ì¬ HFLì¬ ë³€ê²½ ì´ì ì§€ì‹œ
+	 * ì•¼ë“œê´€ë¦¬ > 2ì—´ì—° ì†Œì¬ ì½”ì¼ì•¼ë“œ[ì‹ ] > ì‚°ì LOTê´€ë¦¬ > ê³µëƒ‰ì¬ì´ì ëŒ€ìƒì¬ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData procAirClHflMoveReg(GridData gdReq) throws DAOException {
-		String mthdNm = "°ø³ÃÀç HFLÀç º¯°æ ÀÌÀûÁö½Ã[CCoilJspFaEJB.procAirClHflMoveReg]";
+		String mthdNm = "ê³µëƒ‰ì¬ HFLì¬ ë³€ê²½ ì´ì ì§€ì‹œ[CCoilJspFaEJB.procAirClHflMoveReg]";
 		String logId  = commUtils.getLogId();
 
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn1.trx("procAirClHflMoveReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10208,7 +10208,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + "rtnCd:"+ rtnCd +"/"+rtnMsg, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 
 				jrRtn.setResultCode(logId);
@@ -10217,14 +10217,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("°ø³ÃÀç ÀÌÀûÁö½Ã ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				gdRet.setMessage("ê³µëƒ‰ì¬ ì´ì ì§€ì‹œ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -10238,15 +10238,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * È­¸é µµ¿ò¸» µî·Ï
+	 * í™”ë©´ ë„ì›€ë§ ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData setPageHelpInfo(GridData gdReq) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» µî·Ï[CCoilJspFaEJB.setPageHelpInfo]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ ë“±ë¡[CCoilJspFaEJB.setPageHelpInfo]";
 		String logId = commUtils.getLogId();
 		
 		try {
@@ -10269,15 +10269,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	// end of insEqpTrblReg
 	
 	/**
-	 * È­¸é µµ¿ò¸» - ¹öÆ°µî·Ï
+	 * í™”ë©´ ë„ì›€ë§ - ë²„íŠ¼ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData setPageHelpBtnInfo(GridData gdReq) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» - ¹öÆ°µî·Ï[CCoilJspFaEJB.setPageHelpBtnInfo]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ - ë²„íŠ¼ë“±ë¡[CCoilJspFaEJB.setPageHelpBtnInfo]";
 		String logId = commUtils.getLogId();
 		
 		try {
@@ -10302,15 +10302,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * È­¸é µµ¿ò¸» - ÀÛ¾÷¹æ¹ı(¹öÆ°»ó¼¼) µî·Ï
+	 * í™”ë©´ ë„ì›€ë§ - ì‘ì—…ë°©ë²•(ë²„íŠ¼ìƒì„¸) ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData setPageHelpBtnDtlInfo(GridData gdReq) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» - ÀÛ¾÷¹æ¹ı(¹öÆ°»ó¼¼) µî·Ï[CCoilJspFaEJB.setPageHelpBtnDtlInfo]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ - ì‘ì—…ë°©ë²•(ë²„íŠ¼ìƒì„¸) ë“±ë¡[CCoilJspFaEJB.setPageHelpBtnDtlInfo]";
 		String logId = commUtils.getLogId();
 		
 		try {
@@ -10334,15 +10334,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	// end of setPageHelpBtnDtlInfo
 	
 	/**
-	 * È­¸é µµ¿ò¸» - ½Å±Ô ¹®¼­¹øÈ£ Ã¤¹ø
+	 * í™”ë©´ ë„ì›€ë§ - ì‹ ê·œ ë¬¸ì„œë²ˆí˜¸ ì±„ë²ˆ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public JDTORecord getPageHelpDocMaxDocSeq(JDTORecord inRecord) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» - ½Å±Ô ¹®¼­¹øÈ£ Ã¤¹ø[CCoilJspFaEJB.getPageHelpDocMaxDocSeq]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ - ì‹ ê·œ ë¬¸ì„œë²ˆí˜¸ ì±„ë²ˆ[CCoilJspFaEJB.getPageHelpDocMaxDocSeq]";
 		String logId = commUtils.getLogId();
 		JDTORecord outRecord = null;
 		try {
@@ -10362,15 +10362,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * È­¸é µµ¿ò¸» - Ã·ºÎ¹®¼­ µî·Ï
+	 * í™”ë©´ ë„ì›€ë§ - ì²¨ë¶€ë¬¸ì„œ ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public JDTORecord setPageHelpDoc(JDTORecord inRecord) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» - Ã·ºÎ¹®¼­ µî·Ï[CCoilJspFaEJB.setPageHelpDoc]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ - ì²¨ë¶€ë¬¸ì„œ ë“±ë¡[CCoilJspFaEJB.setPageHelpDoc]";
 		String logId = commUtils.getLogId();
 		JDTORecord outRecord = null;
 		try {
@@ -10388,15 +10388,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	// end of setPageHelpDoc
 	
 	/**
-	 * È­¸é µµ¿ò¸» - Ã·ºÎ¹®¼­ »èÁ¦
+	 * í™”ë©´ ë„ì›€ë§ - ì²¨ë¶€ë¬¸ì„œ ì‚­ì œ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public JDTORecord delPageHelpDoc(JDTORecord inRecord) throws DAOException {
-		String mthdNm =  "È­¸é µµ¿ò¸» - Ã·ºÎ¹®¼­ µî·Ï[CCoilJspFaEJB.setPageHelpDoc]";
+		String mthdNm =  "í™”ë©´ ë„ì›€ë§ - ì²¨ë¶€ë¬¸ì„œ ë“±ë¡[CCoilJspFaEJB.setPageHelpDoc]";
 		String logId = commUtils.getLogId();
 		JDTORecord outRecord = null;
 		try {
@@ -10414,23 +10414,23 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}	// end of setPageHelpDoc	
 	
 	/**
-	 * ¼öÀÔ °Ë»ö ½ÃÀÛ¿­ º¯°æ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ìˆ˜ì… ê²€ìƒ‰ ì‹œì‘ì—´ ë³€ê²½
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updLocSrchCvRule(GridData gdReq) throws DAOException {
-		String mthdNm	= "¼öÀÔ °Ë»ö ½ÃÀÛ¿­ º¯°æ[CCoilJspFaEJB.updLocSrchCvRule]";
+		String mthdNm	= "ìˆ˜ì… ê²€ìƒ‰ ì‹œì‘ì—´ ë³€ê²½[CCoilJspFaEJB.updLocSrchCvRule]";
 		String logId	= commUtils.getLogId();	
 		
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updLocSrchCvRule", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10440,13 +10440,13 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			} else {
 
-				gdRet.setMessage("¼öÀÔ °Ë»ö ½ÃÀÛ¿­ÀÌ ¼öÁ¤ µÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆ˜ì… ê²€ìƒ‰ ì‹œì‘ì—´ì´ ìˆ˜ì • ë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -10459,22 +10459,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  Á¤Á¤¼³ºñ ³­¹æÄÚÀÏ º¸±Ş ON/OFF
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì •ì •ì„¤ë¹„ ë‚œë°©ì½”ì¼ ë³´ê¸‰ ON/OFF
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updSpmWarmOnOff(GridData gdReq) throws DAOException {
-		String mthdNm	= "Á¤Á¤¼³ºñ ³­¹æÄÚÀÏ º¸±Ş ON/OFF[CCoilJspFaEJB.updSpmWarmOnOff]";
+		String mthdNm	= "ì •ì •ì„¤ë¹„ ë‚œë°©ì½”ì¼ ë³´ê¸‰ ON/OFF[CCoilJspFaEJB.updSpmWarmOnOff]";
 		String logId	= commUtils.getLogId();	
 		try{
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updSpmWarmOnOff", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10484,7 +10484,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
@@ -10493,7 +10493,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				if( "N".equals(gdReq.getParam("MODE") ) ) {
 					sMsg = "OFF";
 				}
-				gdRet.setMessage("³­¹æÄÚÀÏ º¸±Ş "+ sMsg +" Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");	
+				gdRet.setMessage("ë‚œë°©ì½”ì¼ ë³´ê¸‰ "+ sMsg +" ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -10506,16 +10506,16 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¾ßµå¹İ³³°ø³ÃÀç ÁøµµÄÚµåº¯°æ
-	 * exbuilder ÆäÀÌÁö Ã³¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œë°˜ë‚©ê³µëƒ‰ì¬ ì§„ë„ì½”ë“œë³€ê²½
+	 * exbuilder í˜ì´ì§€ ì²˜ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */ 
 	public GridData updCoilYdAirProcSet(GridData gdReq) throws DAOException {
-		String mthdNm = "¾ßµå¹İ³³°ø³ÃÀç ÁøµµÄÚµåº¯°æ[CCoilJspFaEJB.updCoilYdAirProcSet]";
+		String mthdNm = "ì•¼ë“œë°˜ë‚©ê³µëƒ‰ì¬ ì§„ë„ì½”ë“œë³€ê²½[CCoilJspFaEJB.updCoilYdAirProcSet]";
 		String logId  = commUtils.getLogId();
 
 		try{
@@ -10523,8 +10523,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updCoilYdAirProcSet", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10553,15 +10553,15 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 
 	} 
 	/**
-	 * °ø³ÃÀçÀÚµ¿Ã³¸® »ç¿ëÀ¯¹« »ûÆÃ
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ê³µëƒ‰ì¬ìë™ì²˜ë¦¬ ì‚¬ìš©ìœ ë¬´ ìƒ›íŒ…
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return GridData
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */ 
 	public GridData updateGongSupSetH(GridData gdReq) throws DAOException {
-		String mthdNm = "°ø³ÃÀçÀÚµ¿Ã³¸® »ç¿ëÀ¯¹«[CCoilJspFaEJB.updateGongSupSetH]";
+		String mthdNm = "ê³µëƒ‰ì¬ìë™ì²˜ë¦¬ ì‚¬ìš©ìœ ë¬´[CCoilJspFaEJB.updateGongSupSetH]";
 		String logId  = commUtils.getLogId();
 
 		try{
@@ -10569,8 +10569,8 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			commUtils.printLog(logId, mthdNm, "F+");
 			
 			GridData gdRes = OperateGridData.cloneResponseGridData(gdReq);
-			gdReq.setNavigateValue(mthdNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updateGongSupSetH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10597,22 +10597,22 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 	} 
 	
 	/** 
-	 * 2¿­¿¬ ±âÁØ°ü¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 2ì—´ì—° ê¸°ì¤€ê´€ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param  GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */
 	public GridData updateGongSupBaySetH(GridData gdReq) throws DAOException {
-		String mthdNm = "2¿­¿¬±âÁØ°ü¸®-¼öÁ¤[CCoilJspFaEJB.updateGongSupBaySetH]";
+		String mthdNm = "2ì—´ì—°ê¸°ì¤€ê´€ë¦¬-ìˆ˜ì •[CCoilJspFaEJB.updateGongSupBaySetH]";
 		String logId  = commUtils.getLogId();
 		
 		try {
 			mthdNm = mthdNm + " < " + commUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + commUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			commUtils.printLog(logId, mthdNm, "F+");
 			
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn	= new EJBConnector("default", "CCoilJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updateGongSupBaySetH", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -10620,7 +10620,7 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 = commUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			commUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			// ROLLBACK ½Ã Àü¹® ¹ß»ı
+			// ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -10629,14 +10629,14 @@ public class CCoilJspFaEJBBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "CCommSeEJB", this);
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);		
 				m_ctx.setRollbackOnly();
 			} else {
-				gdRet.setMessage("¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");	
+				gdRet.setMessage("ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");	
 			}			
 			commUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;

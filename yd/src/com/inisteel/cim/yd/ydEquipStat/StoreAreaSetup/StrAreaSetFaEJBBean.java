@@ -11,7 +11,7 @@ import com.inisteel.cim.yd.common.util.YdUtils;
 
 
 /**
- * ÀúÀå¿µ¿ª¼³Á¤ Facade Session EJB
+ * ì €ì¥ì˜ì—­ì„¤ì • Facade Session EJB
  *
  * @ejb.bean name="StrAreaSetFaEJB" jndi-name="StrAreaSetFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -42,9 +42,9 @@ public class StrAreaSetFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Test1
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Test1
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return: 
 	 * @throws JDTOException
@@ -53,7 +53,7 @@ public class StrAreaSetFaEJBBean extends BaseSessionBean {
 		// TKOVLOC
 		// YD-UC-????
 		// TC : ????????
-		// C¿¬ÁÖÁ¤Á¤L2½Ã½ºÅÛÀ¸·ÎºÎÅÍ ¼öºÒ±¸¿ëµµº¯°æ¿ä±¸ ¼ö½Å
+		// Cì—°ì£¼ì •ì •L2ì‹œìŠ¤í…œìœ¼ë¡œë¶€í„° ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ìš”êµ¬ ìˆ˜ì‹ 
 		//
 		
 		String szMsg="";
@@ -61,7 +61,7 @@ public class StrAreaSetFaEJBBean extends BaseSessionBean {
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){
 			
-			szMsg=szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg=szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -71,10 +71,10 @@ public class StrAreaSetFaEJBBean extends BaseSessionBean {
 		
 //		try {
 //		
-//		// Slab Spec Ã³¸® EJB.Áö½ÃÁ¤º¸ µî·Ï ¿äÃ» 
+//		// Slab Spec ì²˜ë¦¬ EJB.ì§€ì‹œì •ë³´ ë“±ë¡ ìš”ì²­ 
 //		ejbCon.trx("SlabSpecRegSeEJB", "woInfoRegReq", inRecord);
 //		
-//		// Slab Spec Ã³¸® EJB.ÀúÀåÇ°Á¦¿øµî·Ï¿äÃ»
+//		// Slab Spec ì²˜ë¦¬ EJB.ì €ì¥í’ˆì œì›ë“±ë¡ìš”ì²­
 //		ejbCon.trx( "SlabSpecRegSeEJB", "reqStockSpecReg", inRecord);
 //		
 //		} catch (Exception e) {	
@@ -84,7 +84,7 @@ public class StrAreaSetFaEJBBean extends BaseSessionBean {
 //		} // end of try catch
 
 		
-		szMsg="Test1¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Test1ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvTest1()

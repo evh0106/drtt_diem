@@ -2,14 +2,14 @@
  * @(#)SlabYdScrFaEJBBean
  *
  * @version          V1.00
- * @author           ÇãÃ¶È£
+ * @author           í—ˆì² í˜¸
  * @date             2012/11/22
  *
- * @description      Slab¾ßµå È­¸é °ü¸®
+ * @description      Slabì•¼ë“œ í™”ë©´ ê´€ë¦¬
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2012/11/22   ÇãÃ¶È£      ÇãÃ¶È£      ÃÖÃÊ µî·Ï
+ * V1.00  2012/11/22   í—ˆì² í˜¸      í—ˆì² í˜¸      ìµœì´ˆ ë“±ë¡
  */
 package com.inisteel.cim.yd.jsp.session;
 
@@ -21,7 +21,7 @@ import com.inisteel.cim.common.exception.DAOException;
 import com.inisteel.cim.yd.common.util.YdSlabUtils;
 
 /**
- *      [A] Å¬·¡½º¸í : Slab¾ßµå È­¸é°ü¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Slabì•¼ë“œ í™”ë©´ê´€ë¦¬
  *
  * @ejb.bean name="SlabYdScrFaEJB" jndi-name="SlabYdScrFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -45,15 +45,15 @@ public class SlabYdScrFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÇÈ¾÷½ºÄ«ÇÎ ¸ğ´ÏÅÍ¸µ Á¶È¸[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í”½ì—…ìŠ¤ì¹´í•‘ ëª¨ë‹ˆí„°ë§ ì¡°íšŒ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrPickUpScarfMonitor(GridData gdReq) throws DAOException {
-		String methodNm = "ÇÈ¾÷½ºÄ«ÇÎ Á¶È¸ [SlabYdScrFaEJB.scrPickUpScarfMonitor]";
+		String methodNm = "í”½ì—…ìŠ¤ì¹´í•‘ ì¡°íšŒ [SlabYdScrFaEJB.scrPickUpScarfMonitor]";
 		String logId = slabUtils.getLogId();
 		try {   
 			GridData gdRtn = OperateGridData.cloneResponseGridData(gdReq);
@@ -63,10 +63,10 @@ public class SlabYdScrFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdScrSeEJB", this);			
 			
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			slabUtils.printLog(logId, methodNm, "F-");
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;

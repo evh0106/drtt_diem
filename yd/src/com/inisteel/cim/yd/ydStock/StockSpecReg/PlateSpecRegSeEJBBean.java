@@ -2,18 +2,18 @@
  * @(#)PlateSpecRegSeEJBBean.java
  * 
  * @version			1.0
- * @author 			Çö´ëÁ¦Ã¶
+ * @author 			í˜„ëŒ€ì œì² 
  * @date			2011/07/13
  * 
- * @description		ÀÌÅ¬·¡½º´Â PlateÁ¦¿øµî·Ï Session EJB Å¬·¡½ºÀÔ´Ï´Ù.
+ * @description		ì´í´ë˜ìŠ¤ëŠ” Plateì œì›ë“±ë¡ Session EJB í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
  * ------------------------------------------------------------------------------
- * Ver.    ¼öÁ¤ÀÏÀÚ           ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ         ³»¿ë
+ * Ver.    ìˆ˜ì •ì¼ì           ìš”ì²­ì       ìˆ˜ì •ì         ë‚´ìš©
  * =====  ===========  ======  ======  ==================================================
- * V1.00  2011/07/13                    ÃÖÃÊ µî·Ï
- * V1.01  2013/01/17   Á¶º´±â       Á¶º´±â      procPlGdsRetngds ¸Ş¼Òµå ¼öÁ¤ 
- *                                     :ÀúÀåÇ°Á¦¿øÁ¤º¸(YDY8L002) ÈÄÆÇÁ¦Ç° L2 ·Î ¼Û½Å Ãß°¡
- * V1.02  2013/03/26   Á¶º´±â       Á¶º´±â      °³¹ßÇ¥ÁØÁ¡°Ë¿¡ ÀÇÇÑ º¸¿Ï¿äÃ»»çÇ× ¼öÁ¤ (°³¹ßÇ¥ÁØ°ËÁõ°á°ú¼­ ÂüÁ¶)                                    
- * V1.03  2013/04/05   Á¶º´±â       Á¶º´±â      procPl2GdsPrdWr : 2ÈÄÆÇ Á¦Ç°»ı»ê½ÇÀû (PPYDJ004) Ãß°¡                                
+ * V1.00  2011/07/13                    ìµœì´ˆ ë“±ë¡
+ * V1.01  2013/01/17   ì¡°ë³‘ê¸°       ì¡°ë³‘ê¸°      procPlGdsRetngds ë©”ì†Œë“œ ìˆ˜ì • 
+ *                                     :ì €ì¥í’ˆì œì›ì •ë³´(YDY8L002) í›„íŒì œí’ˆ L2 ë¡œ ì†¡ì‹  ì¶”ê°€
+ * V1.02  2013/03/26   ì¡°ë³‘ê¸°       ì¡°ë³‘ê¸°      ê°œë°œí‘œì¤€ì ê²€ì— ì˜í•œ ë³´ì™„ìš”ì²­ì‚¬í•­ ìˆ˜ì • (ê°œë°œí‘œì¤€ê²€ì¦ê²°ê³¼ì„œ ì°¸ì¡°)                                    
+ * V1.03  2013/04/05   ì¡°ë³‘ê¸°       ì¡°ë³‘ê¸°      procPl2GdsPrdWr : 2í›„íŒ ì œí’ˆìƒì‚°ì‹¤ì  (PPYDJ004) ì¶”ê°€                                
  */
 
 package com.inisteel.cim.yd.ydStock.StockSpecReg;
@@ -55,7 +55,7 @@ import com.inisteel.cim.ydPI.common.util.PIYdUtils;
 import com.inisteel.cim.ydPI.dao.YdPICommDAO;
 
 /**
- * PlateÁ¦¿øµî·Ï Session EJB
+ * Plateì œì›ë“±ë¡ Session EJB
  *
  * @ejb.bean name="PlateSpecRegSeEJB" jndi-name="PlateSpecRegSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -91,15 +91,15 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ¾Ğ¿¬»ç¾çÈ®Á¤µî·Ï (CTYDJ021)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì••ì—°ì‚¬ì–‘í™•ì •ë“±ë¡ (CTYDJ021)
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procPlMillSpecCmmt(JDTORecord msgRecord)throws JDTOException  {
-        //ÀúÀåÇ°DAO
+        //ì €ì¥í’ˆDAO
 		YdStockDao ydStockDao = new YdStockDao();
 		YdEqpDao	ydEqpDao 	= new YdEqpDao();
 		
@@ -110,7 +110,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		String szMsg		  				= "";
 		String szMethodName	  				= "procPlMillSpecCmmt";
-		String szOperationName              = "ÈÄÆÇ¾Ğ¿¬»ç¾çÈ®Á¤µî·Ï";
+		String szOperationName              = "í›„íŒì••ì—°ì‚¬ì–‘í™•ì •ë“±ë¡";
 		String szPTOP_PLNT_GP 				= "";
 		String szCT_MILL_SPEC_WRK_STAT_GP 	= "";
 		String szPRPL_MILL_WO_DT 			= "";
@@ -134,35 +134,35 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			return ;
 		}
 		if(bDebugFlag){
-			szMsg="Àü¹®¼ö½Å : TCCODE=" +szRcvTcCode ;
+			szMsg="ì „ë¬¸ìˆ˜ì‹  : TCCODE=" +szRcvTcCode ;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}
 		
 		try{
 			//=============================================================
-			// Log Å×ÀÌºí µî·Ï 
+			// Log í…Œì´ë¸” ë“±ë¡ 
 			//=============================================================
-			szMsg = "[»ı»êÅëÁ¦] ÈÄÆÇ¾Ğ¿¬»ç¾çÈ®Á¤µî·Ï ¼ö½Å";
+			szMsg = "[ìƒì‚°í†µì œ] í›„íŒì••ì—°ì‚¬ì–‘í™•ì •ë“±ë¡ ìˆ˜ì‹ ";
 			ydUtils.putLogMsg("X", YdConstant.YD_MONITORING_CHANNEL_D, szMsg, "", "", "", "I", "A", "I", szRcvTcCode, szSessionName, szMethodName);
 			
-			// ¼ö½ÅÇ×¸ñ[PTOP_PLNT_GP: Á¶¾÷°øÀå±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[PTOP_PLNT_GP: ì¡°ì—…ê³µì¥êµ¬ë¶„]
 			szPTOP_PLNT_GP 				= ydDaoUtils.paraRecChkNull(msgRecord,"PTOP_PLNT_GP");
 			
-			// ¼ö½ÅÇ×¸ñ[CT_MILL_SPEC_WRK_STAT_GP: »ı»êÅëÁ¦»ç¾çÀÛ¾÷»óÅÂ±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[CT_MILL_SPEC_WRK_STAT_GP: ìƒì‚°í†µì œì‚¬ì–‘ì‘ì—…ìƒíƒœêµ¬ë¶„]
 			szCT_MILL_SPEC_WRK_STAT_GP 	= ydDaoUtils.paraRecChkNull(msgRecord,"CT_MILL_SPEC_WRK_STAT_GP");
 			
-			// ¼ö½ÅÇ×¸ñ[PRPL_MILL_WO_DT: °øÁ¤°èÈ¹¾Ğ¿¬Áö½ÃÀÏ½Ã]
+			// ìˆ˜ì‹ í•­ëª©[PRPL_MILL_WO_DT: ê³µì •ê³„íšì••ì—°ì§€ì‹œì¼ì‹œ]
 			szPRPL_MILL_WO_DT 			= ydDaoUtils.paraRecChkNull(msgRecord,"PRPL_MILL_WO_DT");
 			
-			// ÈÄÆÇPlate»ç¾ç 
+			// í›„íŒPlateì‚¬ì–‘ 
 			intRtnVal = ydStockDao.getYdStock(msgRecord, rsOut, 76);
 			if (intRtnVal <= 0){
 				if(intRtnVal == 0){
-					szMsg = "\n PTOP_PLNT_GP: [" + szPTOP_PLNT_GP +"] \n CT_MILL_SPEC_WRK_STAT_GP: [" + szCT_MILL_SPEC_WRK_STAT_GP + "] \n PRPL_MILL_WO_DT: [" + szPRPL_MILL_WO_DT + "]À» ¸¸Á·ÇÏ´Â °á°ú °ªÀÌ ¾øÀ½ \n=================================";
+					szMsg = "\n PTOP_PLNT_GP: [" + szPTOP_PLNT_GP +"] \n CT_MILL_SPEC_WRK_STAT_GP: [" + szCT_MILL_SPEC_WRK_STAT_GP + "] \n PRPL_MILL_WO_DT: [" + szPRPL_MILL_WO_DT + "]ì„ ë§Œì¡±í•˜ëŠ” ê²°ê³¼ ê°’ì´ ì—†ìŒ \n=================================";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}else{
-					szMsg= "getCtPlatspec [ÈÄÆÇPlate»ç¾ç] Error :: PARAMETER ERROR" ;
+					szMsg= "getCtPlatspec [í›„íŒPlateì‚¬ì–‘] Error :: PARAMETER ERROR" ;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}	
@@ -175,7 +175,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 
 				recSetYd = rsOut.getRecord();
 				
-				// [STL_NO: Àç·á¹øÈ£]
+				// [STL_NO: ì¬ë£Œë²ˆí˜¸]
 				szSTL_NO = ydDaoUtils.paraRecChkNull(recSetYd,"STL_NO");
 
 				ydUtils.putLog(szSessionName, szMethodName, "szSTL_NO" + szSTL_NO, YdConstant.ERROR);
@@ -183,31 +183,31 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				
 				intRtnVal = ydStockDao.getYdStock(recSetYd, rsOutYd, 0);
 				if(intRtnVal < 0){
-					ydUtils.putLog(szSessionName, szMethodName, "[ÀúÀåÇ°] Error :: PARAMETER ERROR", 1);
+					ydUtils.putLog(szSessionName, szMethodName, "[ì €ì¥í’ˆ] Error :: PARAMETER ERROR", 1);
 					return ;
 				} else if(intRtnVal == 0){
-					recSetYd.setField("REGISTER"   	 , "CTYDJ021");		//µî·Ï		
+					recSetYd.setField("REGISTER"   	 , "CTYDJ021");		//ë“±ë¡		
 					intRtnVal  = this.InsStock(recSetYd);
 					if(intRtnVal <0)
 					{
-						ydUtils.putLog(szSessionName, szMethodName, "[ÀúÀåÇ°]INSERT Error !" + intRtnVal, 1);
+						ydUtils.putLog(szSessionName, szMethodName, "[ì €ì¥í’ˆ]INSERT Error !" + intRtnVal, 1);
 						return ;
 					} 
-					ydUtils.putLog(szSessionName, szMethodName, szSTL_NO+"::[ÀúÀåÇ°]INSERT SUCCESS", 3);
+					ydUtils.putLog(szSessionName, szMethodName, szSTL_NO+"::[ì €ì¥í’ˆ]INSERT SUCCESS", 3);
 					
 				} else{
 
 //??				recStock  = rsOutYd.getRecord(0);
-//SJH01001  ERROR ¹ß»ıÇÔ
-					recSetYd.setField("REG_DDTT"   	 , null);		    //µî·Ï		
-					recSetYd.setField("MODIFIER"   	 , "CTYDJ021");		//¼öÁ¤ÀÚ
+//SJH01001  ERROR ë°œìƒí•¨
+					recSetYd.setField("REG_DDTT"   	 , null);		    //ë“±ë¡		
+					recSetYd.setField("MODIFIER"   	 , "CTYDJ021");		//ìˆ˜ì •ì
 					intRtnVal = this.UpdYdStock(recSetYd,0);
 					if(intRtnVal <0)
 					{
-						ydUtils.putLog(szSessionName, szMethodName, "[ÀúÀåÇ°]UPDATE Error !" + intRtnVal, 1);
+						ydUtils.putLog(szSessionName, szMethodName, "[ì €ì¥í’ˆ]UPDATE Error !" + intRtnVal, 1);
 						return ;
 					} 
-					ydUtils.putLog(szSessionName, szMethodName, "2)"+szSTL_NO+"::[ÀúÀåÇ°]UPDATE SUCCESS", 3);
+					ydUtils.putLog(szSessionName, szMethodName, "2)"+szSTL_NO+"::[ì €ì¥í’ˆ]UPDATE SUCCESS", 3);
 				}
 				
 				rsOut.next();    //??
@@ -216,10 +216,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 
 //SJH05008
 			//------------------------------------------------------------------------------------------------------------
-			//	µ¿º°ÀúÀå°èÈ¹  Àû¿ë¿©ºÎ
+			//	ë™ë³„ì €ì¥ê³„íš  ì ìš©ì—¬ë¶€
 			//------------------------------------------------------------------------------------------------------------
 			
-			inRecord1.setField("REPR_CD_GP", "K00060");    //µ¿º°ÀúÀå°èÈ¹  Àû¿ë ¿©ºÎ
+			inRecord1.setField("REPR_CD_GP", "K00060");    //ë™ë³„ì €ì¥ê³„íš  ì ìš© ì—¬ë¶€
 			
 			/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 			intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -228,7 +228,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				outRecord  = outResult.getRecord();
 				szAPPLY_YN = outRecord.getFieldString("ITEM1");				
 			}
-			szMsg="µ¿º°ÀúÀå°èÈ¹  Àû¿ë¿©ºÎ " + szAPPLY_YN ;
+			szMsg="ë™ë³„ì €ì¥ê³„íš  ì ìš©ì—¬ë¶€ " + szAPPLY_YN ;
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 			if(szAPPLY_YN.equals("Y")) {	
 				
@@ -240,18 +240,18 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 		}catch(Exception e){
 	
-			szMsg = "[ÈÄÆÇ¾Ğ¿¬»ç¾çÈ®Á¤µî·Ï¼ö½Å] Exception Error:" +e.getMessage();
+			szMsg = "[í›„íŒì••ì—°ì‚¬ì–‘í™•ì •ë“±ë¡ìˆ˜ì‹ ] Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
 
-		szMsg = "ÈÄÆÇ¾Ğ¿¬»ç¾çÈ®Á¤µî·Ï¼ö½Å Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "í›„íŒì••ì—°ì‚¬ì–‘í™•ì •ë“±ë¡ìˆ˜ì‹  ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	
 	}// end of procPlMillSpecCmmt()
 	
 	/**
-	 * ÀúÀåÇ° UPDATE
+	 * ì €ì¥í’ˆ UPDATE
 	 * @param inRecord
 	 * @param outRec
 	 * @throws JDTOException
@@ -283,7 +283,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 		} catch(Exception e){
 			
-			szMsg="UpdYdStock[ÀúÀåÇ°]UPDATE Exception Error:" +e.getMessage();
+			szMsg="UpdYdStock[ì €ì¥í’ˆ]UPDATE Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
@@ -292,7 +292,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} //end of UpdYdStock()
 	
 	/**
-	 * ÀúÀåÇ° INSERT
+	 * ì €ì¥í’ˆ INSERT
 	 * @param inRec
 	 *
 	 * @throws JDTOException
@@ -308,13 +308,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		try{
 			intRtn = ydStockDao.insYdStock(inRec);
 			if(intRtn == -2){
-				szMsg = "ydStockDao[ÀúÀåÇ°]INSERT ERROR :: PARAMETER ERROR";
+				szMsg = "ydStockDao[ì €ì¥í’ˆ]INSERT ERROR :: PARAMETER ERROR";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return intRtn = -1;
 			}
 		} catch(Exception e){
 			
-			szMsg="ydStockDao[ÀúÀåÇ°]INSERT Exception Error:" +e.getMessage();
+			szMsg="ydStockDao[ì €ì¥í’ˆ]INSERT Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
@@ -324,32 +324,32 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * AÈÄÆÇ ½½¶óºêºĞÇÒ½ÇÀû (PRYDJ003)
+	 * Aí›„íŒ ìŠ¬ë¼ë¸Œë¶„í• ì‹¤ì  (PRYDJ003)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @throws JDTOException
 	 */
 	public void procAPlSlabDivWr(JDTORecord inRecord)throws JDTOException  {
 		String szMethodName = "procAPlSlabDivWr";
-		String szMsg = "[ERROR] ÀÌ Àü¹® »ç¿ëÇÏÁö ¾ÊÀ½[PRYDJ003]";
+		String szMsg = "[ERROR] ì´ ì „ë¬¸ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ[PRYDJ003]";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 	} // end of procAPlSlabDivWr()
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇ Á¦Ç°»ı»ê½ÇÀû (PRYDJ004)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒ ì œí’ˆìƒì‚°ì‹¤ì  (PRYDJ004)
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procAPlGdsPrdWr(JDTORecord msgRecord)throws JDTOException  {
 		
-		// DAO ¹× UTIL °´Ã¼ »ı¼º
+		// DAO ë° UTIL ê°ì²´ ìƒì„±
 		YdStockDao ydStockDao     = new YdStockDao();
 		
-		// ·¹ÄÚµå ¼±¾ğ
+		// ë ˆì½”ë“œ ì„ ì–¸
 		JDTORecordSet rsOutRecSet = null;
 		JDTORecordSet rsGetStock  = null;
 		JDTORecord outRec         = null;
@@ -360,10 +360,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		JDTORecord recInTemp      = null;
 		JDTORecord recGetVal      = null;
 		
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		String szMethodName       = "procAPlGdsPrdWr";
 		String szMsg              = "";
-		String szOperationName    = "AÈÄÆÇ Á¦Ç°»ı»ê½ÇÀû";
+		String szOperationName    = "Aí›„íŒ ì œí’ˆìƒì‚°ì‹¤ì ";
 		String szSTL_NO           = "";
 		String szPL_RCPT_LN_GP    = "";
 		String szPL_WRK_PROC      = "";
@@ -381,7 +381,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		String szAPPLY_YN 				= "N";
 		String szAPPLY_YN130			= "N";
-		String szAPPLY_YN250			= "N"; // ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ)
+		String szAPPLY_YN250			= "N"; // í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨)
 		
 		int Str_Count 			  		= 0;
 		long lnPL_TOT_ROUTE_CNT   		= 0;
@@ -397,45 +397,45 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		}
 		
 		if(bDebugFlag){
-			szMsg = "Àü¹®¼ö½Å : TCCODE=" + szRcvTcCode;
+			szMsg = "ì „ë¬¸ìˆ˜ì‹  : TCCODE=" + szRcvTcCode;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}
 				
 		try{
 			//=============================================================
-			// Log Å×ÀÌºí µî·Ï 
+			// Log í…Œì´ë¸” ë“±ë¡ 
 			//=============================================================
-			szMsg = "[ÈÄÆÇÁ¶¾÷] Á¦Ç°»ı»ê½ÇÀû ¼ö½Å";
+			szMsg = "[í›„íŒì¡°ì—…] ì œí’ˆìƒì‚°ì‹¤ì  ìˆ˜ì‹ ";
 			ydUtils.putLogMsg("D", YdConstant.YD_MONITORING_CHANNEL_D, szMsg, "", "", "", "I", "A", "I", szRcvTcCode, szSessionName, szMethodName);
 			
-			// ¼ö½Å¹ŞÀº Àü¹®¿¡¼­ Àç·á¹øÈ£ ÃßÃâ
+			// ìˆ˜ì‹ ë°›ì€ ì „ë¬¸ì—ì„œ ì¬ë£Œë²ˆí˜¸ ì¶”ì¶œ
 			szSTL_NO 		 = msgRecord.getFieldString("STL_NO");
-			szPL_RCPT_LN_GP  = msgRecord.getFieldString("PL_RCPT_LN_GP"); // ÈÄÆÇÀÔ°íLine±¸ºĞ
-			szPL_WRK_PROC    = msgRecord.getFieldString("PL_WRK_PROC");   // ÈÄÆÇ°øÁ¤ÄÚµå
+			szPL_RCPT_LN_GP  = msgRecord.getFieldString("PL_RCPT_LN_GP"); // í›„íŒì…ê³ Lineêµ¬ë¶„
+			szPL_WRK_PROC    = msgRecord.getFieldString("PL_WRK_PROC");   // í›„íŒê³µì •ì½”ë“œ
 			
-			// ·¹ÄÚµå »ı¼º
+			// ë ˆì½”ë“œ ìƒì„±
 			rsOutRecSet = JDTORecordFactory.getInstance().createRecordSet("");
 			rsGetStock  = JDTORecordFactory.getInstance().createRecordSet("");
 			recEdit     = JDTORecordFactory.getInstance().create();
 
-			// PLATE°øÅë Á¶È¸  Dao È£Ãâ - [GP : 4]
+			// PLATEê³µí†µ ì¡°íšŒ  Dao í˜¸ì¶œ - [GP : 4]
 			//==============================================================================================
-			// 2009.11.17 ±Ç¿ÀÃ¢  : Äõ¸®¼öÁ¤ (172)
+			// 2009.11.17 ê¶Œì˜¤ì°½  : ì¿¼ë¦¬ìˆ˜ì • (172)
 			//    com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getPLATECOMMOSCOMM
 			// 
-			//    Á¶È¸ ÈÄ ÀúÀåÇ°¿¡ ¾÷µ¥ÀÌÆ® ½Ã ORD_GP°ú DEST_CD°¡ ¾øÀ½ 
-			//    PLATECOMM °ú OSCOMMÀ» Á¶ÀÎ°É¾î¼­ °¡Á®¿È
+			//    ì¡°íšŒ í›„ ì €ì¥í’ˆì— ì—…ë°ì´íŠ¸ ì‹œ ORD_GPê³¼ DEST_CDê°€ ì—†ìŒ 
+			//    PLATECOMM ê³¼ OSCOMMì„ ì¡°ì¸ê±¸ì–´ì„œ ê°€ì ¸ì˜´
 			//==============================================================================================
 			recIn = JDTORecordFactory.getInstance().create();
 			recIn.setField("PLATE_NO", szSTL_NO);
 			/* com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getPLATECOMMOSCOMM */
 			intRtnVal = ydStockDao.getYdStock(recIn, rsOutRecSet, 172);
 			if(intRtnVal < 0){
-				szMsg = "PLATECOMM[PLATE°øÅë] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
+				szMsg = "PLATECOMM[PLATEê³µí†µ] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			} else if(intRtnVal == 0){
-				szMsg = "PLATECOMM[PLATE°øÅë] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "DO NOT EXIST";
+				szMsg = "PLATECOMM[PLATEê³µí†µ] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "DO NOT EXIST";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				return ;
 			}
@@ -445,81 +445,81 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 			recGetVal.setField("PL_RCPT_LN_GP", szPL_RCPT_LN_GP);
 			
-			// PLATE°øÅë Å×ÀÌºí¿¡¼­ ÀĞÀº Àü¹® Ç×¸ñÆíÁı
+			// PLATEê³µí†µ í…Œì´ë¸”ì—ì„œ ì½ì€ ì „ë¬¸ í•­ëª©í¸ì§‘
 			intRtnVal = this.edtPlateComm3G(recGetVal, recEdit, "PA");
 			if(intRtnVal < 0){
-				szMsg= "PLATECOMM[PLATE°øÅë] Ç×¸ñ ÆíÁı Error :: [" + intRtnVal + "]";
+				szMsg= "PLATECOMM[PLATEê³µí†µ] í•­ëª© í¸ì§‘ Error :: [" + intRtnVal + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}
 			
 			//-------------------------------------------------------------------------------------------------------
-			//3±â ÀÌÈÄ 1ÈÄÆÇ ON-LINE ÀÌ 56, 59 ÀÏ ¼ö ÀÖ±â ¶§¹®¿¡
-			//edtPlateComm ¿¡¼­ BOOK-OUT LOC °¡  59ÀÌ´õ¶óµµ 1O ÀÌ¸é 56À¸·Î , 56Àº AO ÀÌ¸é 59 ·Î º¯°æÇÑ´Ù.
+			//3ê¸° ì´í›„ 1í›„íŒ ON-LINE ì´ 56, 59 ì¼ ìˆ˜ ìˆê¸° ë•Œë¬¸ì—
+			//edtPlateComm ì—ì„œ BOOK-OUT LOC ê°€  59ì´ë”ë¼ë„ 1O ì´ë©´ 56ìœ¼ë¡œ , 56ì€ AO ì´ë©´ 59 ë¡œ ë³€ê²½í•œë‹¤.
 			szYdBookOutLoc 			= ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC");
 			if(szYdBookOutLoc.startsWith("59")&&"1O".equals(szPL_WRK_PROC)) {
 				//szYdBookOutLoc = "56" + szYdBookOutLoc.substring(2);
-				//59000 --> 56000 À¸·Î º¯°æ
+				//59000 --> 56000 ìœ¼ë¡œ ë³€ê²½
 				szYdBookOutLoc = StringHelper.evl(YdCommonUtils.getY4ChgABookOutLoc(szYdBookOutLoc),"");
 			} else if(szYdBookOutLoc.startsWith("56")&&"AO".equals(szPL_WRK_PROC)) {
 				//szYdBookOutLoc = "59" + szYdBookOutLoc.substring(2); 
-				//56000 --> 59000 À¸·Î º¯°æ
+				//56000 --> 59000 ìœ¼ë¡œ ë³€ê²½
 				szYdBookOutLoc = StringHelper.evl(YdCommonUtils.getY4ChgCBookOutLoc(szYdBookOutLoc),"");
 			}
 			recEdit.setField("YD_BOOK_OUT_LOC", szYdBookOutLoc);
 			//-------------------------------------------------------------------------------------------------------
 			
 			/*
-			 * PLATE°øÅë¿¡ UPDATEÇÒ ·¹ÄÚµå.
-			 * »óÀ§ÀÇ ¸Ş¼Òµå¿¡¼­´Â ÁÖ¹®ÀçÀÏ °æ¿ì OS°øÅëÀÇ BOOK OUT ¹× ¿¹Á¤À§Ä¡¸¦ °¡Á®¿Â´Ù.
-			 * ½Å±ÔÀÏ°æ¿ì´Â OS°øÅëÁ¤º¸, ¼öÁ¤ÀÏ °æ¿ì´Â ÀúÀåÇ°Á¤º¸¸¦ PLATE°øÅë¿¡ UPDATEÇÑ´Ù.
+			 * PLATEê³µí†µì— UPDATEí•  ë ˆì½”ë“œ.
+			 * ìƒìœ„ì˜ ë©”ì†Œë“œì—ì„œëŠ” ì£¼ë¬¸ì¬ì¼ ê²½ìš° OSê³µí†µì˜ BOOK OUT ë° ì˜ˆì •ìœ„ì¹˜ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+			 * ì‹ ê·œì¼ê²½ìš°ëŠ” OSê³µí†µì •ë³´, ìˆ˜ì •ì¼ ê²½ìš°ëŠ” ì €ì¥í’ˆì •ë³´ë¥¼ PLATEê³µí†µì— UPDATEí•œë‹¤.
 			 */
 			recInTemp  = JDTORecordFactory.getInstance().create();
 			
-			// ÀúÀåÇ° Á¶È¸¸¦ ÇØ¼­ Á¸ÀçÇÏ¸é UPDATE ¾øÀ¸¸é INSERT Ã³¸®
+			// ì €ì¥í’ˆ ì¡°íšŒë¥¼ í•´ì„œ ì¡´ì¬í•˜ë©´ UPDATE ì—†ìœ¼ë©´ INSERT ì²˜ë¦¬
 			intRtnVal = ydStockDao.getYdStock(recEdit, rsGetStock, 0);
 			if(intRtnVal < 0){
-				szMsg= "YD_STOCK[ÀúÀåÇ°] SELECT Error :: [" + intRtnVal + "]";
+				szMsg= "YD_STOCK[ì €ì¥í’ˆ] SELECT Error :: [" + intRtnVal + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}else if(intRtnVal == 0){
 				
-				szMsg = "YD_STOCK[ÀúÀåÇ°] INSERT :: ";
+				szMsg = "YD_STOCK[ì €ì¥í’ˆ] INSERT :: ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				
 				// INSERT
 				recEdit.setField("REGISTER", "PRYDJ004");
 				
 				/*--------------------------------------------------------------
-				 * PLATE °øÅë UPDATE ·¹ÄÚµå
+				 * PLATE ê³µí†µ UPDATE ë ˆì½”ë“œ
 				 */
 				recInTemp.setField("PLATE_NO", 			szSTL_NO);
 				recInTemp.setField("YD_PILING_CD", 		ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD"));
 				recInTemp.setField("YD_BOOK_OUT_LOC", 	ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC"));
 				
 				/*--------------------------------------------------------------
-				 * 2010.03.02 ÀÌ¿µ±Ù
-				 * ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã, ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) Ç×¸ñ Ãß°¡ 
+				 * 2010.03.02 ì´ì˜ê·¼
+				 * í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ, í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) í•­ëª© ì¶”ê°€ 
 				 */
 				szPL_RCPT_DDTT   = YdUtils.getCurDate("yyyyMMddHHmmss");
 				szPL_RCPT_TRK_NO = szPL_WRK_PROC + YdUtils.getCurDate("yyyyMMddHHmmss");
 				
-				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã                                                  char(14) 'YYYYMMDDHHMMSS'
-				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) char(16) '1MYYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ                                                  char(14) 'YYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) char(16) '1MYYYYMMDDHHMMSS'
 				//--------------------------------------------------------------
 				
 				intRtnVal = ydStockDao.insYdStock(recEdit);
 				if(intRtnVal < 0){
-					szMsg = "YD_STOCK[ÀúÀåÇ°] INSERT Error :: [" + intRtnVal + "]";
+					szMsg = "YD_STOCK[ì €ì¥í’ˆ] INSERT Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}
 				
-				szMsg = "YD_STOCK[AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] INSERT SUCCESS";
+				szMsg = "YD_STOCK[Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] INSERT SUCCESS";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			}else{
 				
-				szMsg = "YD_STOCK[ÀúÀåÇ°] UPDATE ::";
+				szMsg = "YD_STOCK[ì €ì¥í’ˆ] UPDATE ::";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 				// UPDATE
@@ -546,40 +546,40 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				//--------------------------------------------------------------
 						
 				/*--------------------------------------------------------------
-				 * PLATE °øÅë UPDATE ·¹ÄÚµå
+				 * PLATE ê³µí†µ UPDATE ë ˆì½”ë“œ
 				 */
 				recInTemp.setField("PLATE_NO", 			szSTL_NO);
 				recInTemp.setField("YD_PILING_CD", 		szPilingCd);
 				recInTemp.setField("YD_BOOK_OUT_LOC", 	szYdBookOutLoc);
 				/*--------------------------------------------------------------
-				 * 2010.03.02 ÀÌ¿µ±Ù
-				 * ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã, ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) Ç×¸ñ Ãß°¡ 
+				 * 2010.03.02 ì´ì˜ê·¼
+				 * í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ, í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) í•­ëª© ì¶”ê°€ 
 				 */
 				szPL_RCPT_DDTT   = YdUtils.getCurDate("yyyyMMddHHmmss");
 				szPL_RCPT_TRK_NO = szPL_WRK_PROC + YdUtils.getCurDate("yyyyMMddHHmmss");
 				
-				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã                                                  char(14) 'YYYYMMDDHHMMSS'
-				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) char(16) '1MYYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ                                                  char(14) 'YYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) char(16) '1MYYYYMMDDHHMMSS'
 				//--------------------------------------------------------------
 				
 				intRtnVal = ydStockDao.updYdStock(recEdit, 0);
 				if(intRtnVal <= 0){
-					szMsg = "YD_STOCK[ÀúÀåÇ°] UPDATE Error :: [" + intRtnVal + "]";
+					szMsg = "YD_STOCK[ì €ì¥í’ˆ] UPDATE Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}
 				
-				szMsg = "YD_STOCK[AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] UPDATE SUCCESS";
+				szMsg = "YD_STOCK[Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] UPDATE SUCCESS";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			}
 			
 			//--------------------------------------------------------------------------------------------------------
-			//	ÈÄÆÇÁ¦Ç° »ı»ê½ÇÀû ½Ã°£ UPDATE
+			//	í›„íŒì œí’ˆ ìƒì‚°ì‹¤ì  ì‹œê°„ UPDATE
 			//--------------------------------------------------------------------------------------------------------
 			recPara = JDTORecordFactory.getInstance().create();
 			recPara.setField("STL_NO", szSTL_NO);
 			
-			szMsg = "[»ı»ê½ÇÀû ¼ö½Å ]["+szSTL_NO+"]";
+			szMsg = "[ìƒì‚°ì‹¤ì  ìˆ˜ì‹  ]["+szSTL_NO+"]";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			intRtnVal = ydStockDao.update_Dm_Time(recPara,1);
 
@@ -587,7 +587,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			inRecord1 	= JDTORecordFactory.getInstance().create();
 			outRecord1  = JDTORecordFactory.getInstance().create();
 
-			inRecord1.setField("REPR_CD_GP", "T00130");    //½ÃÇè ½ÃÆíÀç
+			inRecord1.setField("REPR_CD_GP", "T00130");    //ì‹œí—˜ ì‹œí¸ì¬
 			
 			/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 			intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -596,7 +596,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				outRecord1  	= outResult.getRecord();
 				szAPPLY_YN130 	= outRecord1.getFieldString("ITEM1");				
 			}
-			szMsg="½ÃÇè ½ÃÆíÀç Àû¿ë :" + szAPPLY_YN130 ;
+			szMsg="ì‹œí—˜ ì‹œí¸ì¬ ì ìš© :" + szAPPLY_YN130 ;
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 
 			if(szAPPLY_YN130.equals("Y")){
@@ -607,32 +607,32 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				String sOrdYeojaeGp 	= ydDaoUtils.paraRecChkNull(recGetVal,"ORD_YEOJAE_GP");
 				
 				if("1".equals(sOrdYeojaeGp)&&
-				   sORD_TP.equals("TC") && //OSCOMM³» ORDER TYPE (TC:½ÃÇè»ı»ê+½ÃÆíÀç)
-				   sORD_GP.equals("T") &&  //OSCOMM³» ¼öÁÖ±¸ºĞ (T: ½ÃÇè»ı»ê)
-				   sORD_PATTERN_CD.equals("C") &&  //OSCOMM³» ÁÖ¹®À¯Çü(C:½ÃÆíÀç)
+				   sORD_TP.equals("TC") && //OSCOMMë‚´ ORDER TYPE (TC:ì‹œí—˜ìƒì‚°+ì‹œí¸ì¬)
+				   sORD_GP.equals("T") &&  //OSCOMMë‚´ ìˆ˜ì£¼êµ¬ë¶„ (T: ì‹œí—˜ìƒì‚°)
+				   sORD_PATTERN_CD.equals("C") &&  //OSCOMMë‚´ ì£¼ë¬¸ìœ í˜•(C:ì‹œí¸ì¬)
 				   "1N".equals(szPL_WRK_PROC)) {
 					
 					//--------------------------------------------------------------------------------------------------------
-					//	ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ Piling Code¿Í Book-OutÀ§Ä¡ ¼öÁ¤
+					//	í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— Piling Codeì™€ Book-Outìœ„ì¹˜ ìˆ˜ì •
 					//--------------------------------------------------------------------------------------------------------
 					/*com.inisteel.cim.yd.common.dao.ptPlateCommDao.updPtPlateCommPilingStrLocBookOut*/
 					String szRtnMsg = DaoManager.updPtPlateComm(recInTemp, 6);
 					
 					if( !szRtnMsg.equals(YdConstant.RETN_CD_SUCCESS) ) {
-						szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ ÀúÀåÀ§Ä¡.ÆÄÀÏ¸µÄÚµå.¿¹Á¤À§Ä¡ µî·Ï ½Ã ¿À·ù¹ß»ı - ¸Ş¼¼Áö : " + szRtnMsg;
+						szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— ì €ì¥ìœ„ì¹˜.íŒŒì¼ë§ì½”ë“œ.ì˜ˆì •ìœ„ì¹˜ ë“±ë¡ ì‹œ ì˜¤ë¥˜ë°œìƒ - ë©”ì„¸ì§€ : " + szRtnMsg;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					}
 					
-					szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ¿Ï·á : " + szRtnMsg;
+					szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì™„ë£Œ : " + szRtnMsg;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);			
 					//--------------------------------------------------------------------------------------------------------
 					
-					/* ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ) È£Ãâ½ÃÀÛ */ 
+					/* í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨) í˜¸ì¶œì‹œì‘ */ 
 					outResult  	= JDTORecordFactory.getInstance().createRecordSet("");
 					inRecord1 	= JDTORecordFactory.getInstance().create();
 					outRecord1  = JDTORecordFactory.getInstance().create();
 
-					inRecord1.setField("REPR_CD_GP", "T00250");    //½ÃÇè ½ÃÆíÀç
+					inRecord1.setField("REPR_CD_GP", "T00250");    //ì‹œí—˜ ì‹œí¸ì¬
 					
 					/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 					intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -641,12 +641,12 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						outRecord1  	= outResult.getRecord();
 						szAPPLY_YN250 	= outRecord1.getFieldString("ITEM1");				
 					}
-					szMsg="ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë :" + szAPPLY_YN250 ;
+					szMsg="í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš© :" + szAPPLY_YN250 ;
 					ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
-					/* ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ) È£Ãâ³¡ */ 					
+					/* í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨) í˜¸ì¶œë */ 					
 					
-					if("N".equals(szAPPLY_YN250)){ // ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ)
-						szMsg ="[JSP Session "+ szOperationName +"] - Å×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å ¾ÈÇÔ(¼­À± ¸Å´ÏÀú ¿äÃ»)";				
+					if("N".equals(szAPPLY_YN250)){ // í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨)
+						szMsg ="[JSP Session "+ szOperationName +"] - í…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹  ì•ˆí•¨(ì„œìœ¤ ë§¤ë‹ˆì € ìš”ì²­)";				
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);		
 					}else {
 						JDTORecord outRec1  = JDTORecordFactory.getInstance().create();
@@ -685,7 +685,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 //						}
 						
 						this.sndJMSInfo(outRec1);
-						szMsg ="[JSP Session "+ szOperationName +"] - Å×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å";				
+						szMsg ="[JSP Session "+ szOperationName +"] - í…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹ ";				
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						
 //PIDEV_QM						
@@ -696,7 +696,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 							outRec2.setField("STL_NO"       		, szSTL_NO);
 
 							this.sndJMSInfo(outRec2);
-							szMsg ="[JSP Session "+ szOperationName +"] - Ç°ÁúÅ×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å";				
+							szMsg ="[JSP Session "+ szOperationName +"] - í’ˆì§ˆí…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹ ";				
 							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 //						}
 					}	
@@ -704,26 +704,26 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				}
 			}
 			//--------------------------------------------------------------------------------------------------------
-			//	ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ Piling Code¿Í Book-OutÀ§Ä¡ ¼öÁ¤
+			//	í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— Piling Codeì™€ Book-Outìœ„ì¹˜ ìˆ˜ì •
 			//--------------------------------------------------------------------------------------------------------
 			String szRtnMsg = DaoManager.updPtPlateComm(recInTemp, 0);
 			
 			if( !szRtnMsg.equals(YdConstant.RETN_CD_SUCCESS) ) {
-				szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ½Ã ¿À·ù¹ß»ı - ¸Ş¼¼Áö : " + szRtnMsg;
+				szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì‹œ ì˜¤ë¥˜ë°œìƒ - ë©”ì„¸ì§€ : " + szRtnMsg;
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			}
 			
-			szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ¿Ï·á : " + szRtnMsg;
+			szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì™„ë£Œ : " + szRtnMsg;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);			
 			//--------------------------------------------------------------------------------------------------------
 			
 			
 			/*=====================================================================================
-			 * 2010.02.24 ÀÌ¿µ±Ù
-			 * PLATE°øÅë ¿©Àç±¸ºĞÀÌ ¿©ÀçÀÌ°í,Á¤»ó ¿Â¶óÀÎÀÔ°í ´ë»óÀÏ °æ¿ì SMS L2·Î Production Infomation2 Á¤º¸ Àç¼Û½Å
+			 * 2010.02.24 ì´ì˜ê·¼
+			 * PLATEê³µí†µ ì—¬ì¬êµ¬ë¶„ì´ ì—¬ì¬ì´ê³ ,ì •ìƒ ì˜¨ë¼ì¸ì…ê³  ëŒ€ìƒì¼ ê²½ìš° SMS L2ë¡œ Production Infomation2 ì •ë³´ ì¬ì†¡ì‹ 
 			 *            
-			 * ORD_YEOJAE_GP	: ÁÖ¹®¿©Àç±¸ºĞ
-			 * YD_PILING_CD		: ¿©Àç´Ù¿î½Ã º¯°æµÈ PILING CD
+			 * ORD_YEOJAE_GP	: ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+			 * YD_PILING_CD		: ì—¬ì¬ë‹¤ìš´ì‹œ ë³€ê²½ëœ PILING CD
 			 =====================================================================================*/	
 			String sOrdYeojaeGp = ydDaoUtils.paraRecChkNull(recGetVal,"ORD_YEOJAE_GP");
 			String sYdPilingCd	= ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD");
@@ -732,30 +732,30 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			   ("1O".equals(szPL_WRK_PROC)||"1N".equals(szPL_WRK_PROC)||"1M".equals(szPL_WRK_PROC))){
 				recUSRCTAEdit2     = JDTORecordFactory.getInstance().create();
 				
-				recUSRCTAEdit2.setField("YD_PILING_CD", sYdPilingCd);  // ¾ßµå PILING CD
+				recUSRCTAEdit2.setField("YD_PILING_CD", sYdPilingCd);  // ì•¼ë“œ PILING CD
 				recUSRCTAEdit2.setField("PL_PLATE_NO",  szSTL_NO);     // PLATE NO
 
-				szMsg = "[CT_ÈÄÆÇPI2ÀÛ¾÷Áö½Ã (USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO)  Update] YD_PILING_CD :: [" + sYdPilingCd + "]";
+				szMsg = "[CT_í›„íŒPI2ì‘ì—…ì§€ì‹œ (USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO)  Update] YD_PILING_CD :: [" + sYdPilingCd + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
-				szMsg = "[CT_ÈÄÆÇPI2ÀÛ¾÷Áö½Ã (USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO)  Update] szSTL_NO :: [" + szSTL_NO + "]";
+				szMsg = "[CT_í›„íŒPI2ì‘ì—…ì§€ì‹œ (USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO)  Update] szSTL_NO :: [" + szSTL_NO + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				
 				intRtnVal = ydStockDao.updateTBCTCOMMON(recUSRCTAEdit2	,1);
 				
 				if(intRtnVal <= 0){
-					szMsg = "CT_ÈÄÆÇPI2ÀÛ¾÷Áö½Ã USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO UPDATE Error :: [" + intRtnVal + "]";
+					szMsg = "CT_í›„íŒPI2ì‘ì—…ì§€ì‹œ USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO UPDATE Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}
 			
-				szMsg = "CT_ÈÄÆÇPI2ÀÛ¾÷Áö½Ã USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO UPDATE ¿Ï·á";
+				szMsg = "CT_í›„íŒPI2ì‘ì—…ì§€ì‹œ USRCTA.TB_CT_N_PLMILLDIVPLNGDSWO UPDATE ì™„ë£Œ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				//---------------------------------------------------------------
 				
-				//Routing Layout ÀçÀÛ¾÷Áö½Ã ¼Û½Å
+				//Routing Layout ì¬ì‘ì—…ì§€ì‹œ ì†¡ì‹ 
 				this.procSmsSend(szSTL_NO	,1);		
 				
-		    	szMsg = "CT_ÈÄÆÇPI2 ÀçÀÛ¾÷Áö½Ã ¼Û½Å :: [" + szSTL_NO + "]";
+		    	szMsg = "CT_í›„íŒPI2 ì¬ì‘ì—…ì§€ì‹œ ì†¡ì‹  :: [" + szSTL_NO + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);	
 				
 			}
@@ -764,7 +764,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			inRecord1 	= JDTORecordFactory.getInstance().create();
 			outRecord1  = JDTORecordFactory.getInstance().create();
 			
-			inRecord1.setField("REPR_CD_GP", "T00100");    //EFµ¿ °ü¸®
+			inRecord1.setField("REPR_CD_GP", "T00100");    //EFë™ ê´€ë¦¬
 			
 			/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 			intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -773,15 +773,15 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				outRecord1  = outResult.getRecord();
 				szAPPLY_YN = outRecord1.getFieldString("ITEM1");				
 			}
-			szMsg="EFµ¿ °ü¸® Àû¿ë :" + szAPPLY_YN ;
+			szMsg="EFë™ ê´€ë¦¬ ì ìš© :" + szAPPLY_YN ;
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			/*=====================================================================================
-			 * Louting Áö½Ã Àü¹® ÆíÁı 
-			 * 	- Áö½Ã ¾øÀ¸¸é INSERT
-			 *  - Áö½Ã ÀÖÀ¸¸é UPDATE            
-			 * Routing ÀçÀÛ¾÷Áö½Ã ¼Û½Å(procSmsSend)
-			 * ¸ğµâ¸í : PlateSpecRegSeEJBBean  procSmsSend(String sPlateNo)
+			 * Louting ì§€ì‹œ ì „ë¬¸ í¸ì§‘ 
+			 * 	- ì§€ì‹œ ì—†ìœ¼ë©´ INSERT
+			 *  - ì§€ì‹œ ìˆìœ¼ë©´ UPDATE            
+			 * Routing ì¬ì‘ì—…ì§€ì‹œ ì†¡ì‹ (procSmsSend)
+			 * ëª¨ë“ˆëª… : PlateSpecRegSeEJBBean  procSmsSend(String sPlateNo)
 			 =====================================================================================*/	
 			String sYdBookOutLoc = ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC");
 
@@ -789,7 +789,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			/*
-			 * °Ë»ç´ë Åë°ú½ÃÁ¡¿¡ ON-OFF LINE¿¡ µû¸¥ ÀúÀåÀ§Ä¡ °­Á¦ UPDATE
+			 * ê²€ì‚¬ëŒ€ í†µê³¼ì‹œì ì— ON-OFF LINEì— ë”°ë¥¸ ì €ì¥ìœ„ì¹˜ ê°•ì œ UPDATE
 			 */
 			if (szPL_WRK_PROC.equals("1O")||
 				szPL_WRK_PROC.equals("1N")||	
@@ -803,14 +803,14 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				recPara.setField("STL_NO",         szSTL_NO);
 				recPara.setField("YD_STK_LYR_MTL_STAT", "C");
 				
-				//ÀûÄ¡´ÜÁ¤º¸ Á¶È¸
+				//ì ì¹˜ë‹¨ì •ë³´ ì¡°íšŒ
 				YdStkLyrDao	ydStkLyrDao	= new YdStkLyrDao();
 				intRtnVal = ydStkLyrDao.getYdStklyr(recPara, rsTemp, 3);
 				
 				/*
-				 * 2011.10.16 À±Àç±¤
-				 * ¾ßµå¸Ê»óÀ¸·Î ÀúÀÚÀ§Ä¡°¡ ¾ø´Â ´ë»ó¸¸ ÃÊ±âÈ­ÇÑ´Ù.
-				 * - Á¤º¸¹İ³³,¹İ¼Û¶§¹®¿¡.
+				 * 2011.10.16 ìœ¤ì¬ê´‘
+				 * ì•¼ë“œë§µìƒìœ¼ë¡œ ì €ììœ„ì¹˜ê°€ ì—†ëŠ” ëŒ€ìƒë§Œ ì´ˆê¸°í™”í•œë‹¤.
+				 * - ì •ë³´ë°˜ë‚©,ë°˜ì†¡ë•Œë¬¸ì—.
 				 */
 				if(rsTemp.size() == 0){
 					
@@ -854,11 +854,11 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 			/*=====================================================================================
 			/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    		 * ¾÷¹«±âÁØ : AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å ½Ã ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µ º¯°æÁ¤º¸ ¼Û½Å±â´É
-    		 * ¼öÁ¤ÀÚ : À± Àç±¤
-    		 * ¼öÁ¤ÀÏÀÚ : 2010.04.27
-    		 * ÆÄ¶ó¹ÌÅÍ : Àç·á¹øÈ£,ÆÄÀÏ¸µÄÚµå,ºÏ¾Æ¿ôÄÚµå 
-    		 * 1:ÆÄÀÏ¸µ½ÇÀû, 2: 56000µµÂø, 3:°Ë»ç´ëÅë°ú[1O],4:°Ë»ç´ëÅë°ú[1N],5:°Ë»ç´ëÅë°ú[1M],6:D/S½ÇÀû,7:±âÅ¸ 
+    		 * ì—…ë¬´ê¸°ì¤€ : Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì‹œ ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ ë³€ê²½ì •ë³´ ì†¡ì‹ ê¸°ëŠ¥
+    		 * ìˆ˜ì •ì : ìœ¤ ì¬ê´‘
+    		 * ìˆ˜ì •ì¼ì : 2010.04.27
+    		 * íŒŒë¼ë¯¸í„° : ì¬ë£Œë²ˆí˜¸,íŒŒì¼ë§ì½”ë“œ,ë¶ì•„ì›ƒì½”ë“œ 
+    		 * 1:íŒŒì¼ë§ì‹¤ì , 2: 56000ë„ì°©, 3:ê²€ì‚¬ëŒ€í†µê³¼[1O],4:ê²€ì‚¬ëŒ€í†µê³¼[1N],5:ê²€ì‚¬ëŒ€í†µê³¼[1M],6:D/Sì‹¤ì ,7:ê¸°íƒ€ 
     		 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 			if (szPL_WRK_PROC.equals("1O")){
 			
@@ -867,11 +867,11 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			/*=====================================================================================
 			
 			/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    		 * ¾÷¹«±âÁØ : AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å ½Ã ÀúÀåÇ° Á¦¿ø ¾ßµåL2·Î Àü¼Û
-    		 * ¼öÁ¤ÀÚ : ÀÓÃá¼ö
-    		 * ¼öÁ¤ÀÏÀÚ : 2009.08.24
+    		 * ì—…ë¬´ê¸°ì¤€ : Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì‹œ ì €ì¥í’ˆ ì œì› ì•¼ë“œL2ë¡œ ì „ì†¡
+    		 * ìˆ˜ì •ì : ì„ì¶˜ìˆ˜
+    		 * ìˆ˜ì •ì¼ì : 2009.08.24
     		 *
-    		 * 1:µ¿,2:SPAN,3:¿­,4:BED,5:ÁöÁ¤ÀúÀåÇ°,A:»ı»ê½ÇÀû,B:Â÷·®ÀÔ°í,C:Çà¼±º¯°æ,D:»ı»êÁ¾·á(»èÁ¦)
+    		 * 1:ë™,2:SPAN,3:ì—´,4:BED,5:ì§€ì •ì €ì¥í’ˆ,A:ìƒì‚°ì‹¤ì ,B:ì°¨ëŸ‰ì…ê³ ,C:í–‰ì„ ë³€ê²½,D:ìƒì‚°ì¢…ë£Œ(ì‚­ì œ)
     		 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 			recInTemp  = JDTORecordFactory.getInstance().create();
 			recInTemp.setField("MSG_ID"         , "YDY8L002");
@@ -880,27 +880,27 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	    	recInTemp.setField("YD_STK_COL_GP"  , YdConstant.YD_GP_PLATE2_GDS_YARD);
 	    	ydDelegate.sendMsg(recInTemp);
 		    	
-	    	// Àü»ç¹°·ù°³¼± 2021. 4. 3 »ı»ê½ÇÀû ¹ß»ı½Ã µ¿ÀÏÇÏ°Ô Y9µµ Àü¼ÛÃ³¸®ÇÑ´Ù.
+	    	// ì „ì‚¬ë¬¼ë¥˜ê°œì„  2021. 4. 3 ìƒì‚°ì‹¤ì  ë°œìƒì‹œ ë™ì¼í•˜ê²Œ Y9ë„ ì „ì†¡ì²˜ë¦¬í•œë‹¤.
 	    	recInTemp.setField("MSG_ID"         , "YDY9L002");
 	    	ydDelegate.sendMsg(recInTemp);
 	    	
-	    	szMsg = "<procAPlGdsPrdWr> AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å ½Ã ÀúÀåÇ° Á¦¿ø ¾ßµåL2[YDY4L002]·Î Àü¼Û";
+	    	szMsg = "<procAPlGdsPrdWr> Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì‹œ ì €ì¥í’ˆ ì œì› ì•¼ë“œL2[YDY4L002]ë¡œ ì „ì†¡";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-			szMsg = "AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å Ã³¸®(" + szMethodName + ") ¿Ï·á";
+			szMsg = "Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}catch(Exception e){
-			szMsg = "[AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] Exception Error: " + e.getMessage();
+			szMsg = "[Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] Exception Error: " + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
 	}// end of procAPlGdsPrdWr()
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í :ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… :ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬.
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -908,17 +908,17 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	public void procChangePilingCd(	String sOrgPlateNo,
 									String sOrgYdPilingCd,
 									String sOrgYdBookOutLoc)throws JDTOException  {
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		String szMethodName       = "procChangePilingCd";
 		String szMsg              = "";
 		
 		YmEtcDao ydStockDao       = new YmEtcDao();
 		
 		try{
-			szMsg = "ÆÄÀÏ¸µº¯°æÁ¤º¸ ÆÄ¶ó¹ÌÅÍ :: STL_NO[" + sOrgPlateNo + "]PILINGCD[" + sOrgYdPilingCd + "]BOOKOUT[" + sOrgYdBookOutLoc + "]";
+			szMsg = "íŒŒì¼ë§ë³€ê²½ì •ë³´ íŒŒë¼ë¯¸í„° :: STL_NO[" + sOrgPlateNo + "]PILINGCD[" + sOrgYdPilingCd + "]BOOKOUT[" + sOrgYdBookOutLoc + "]";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
-			szMsg = "ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®   ÇÁ·Î½ÃÁ® È£Ãâ";
+			szMsg = "ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬   í”„ë¡œì‹œì ¸ í˜¸ì¶œ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			JDTORecord recOut = ydStockDao.callSpYmEtcDao_NEW(sOrgPlateNo);
@@ -926,7 +926,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			this.procSmsSend(sOrgPlateNo,1);
 			
 		}catch(Exception e){
-			szMsg = "ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®   Exception Error: " + e.getMessage();
+			szMsg = "ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬   Exception Error: " + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
@@ -934,9 +934,9 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2ÈÄÆÇ ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2í›„íŒ ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬.
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -945,7 +945,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 										String sOrgYdPilingCd,
 										String sOrgYdBookOutLoc,
 										String sPlWrkProc )throws JDTOException  {
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		String szMethodName       = "procChangePilingCd3G";
 		String szMsg              = "";
 		String szRtnCd			  = "";
@@ -956,13 +956,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		YdPlateCommDAO commDao = new YdPlateCommDAO();
 		
 		try{
-			szMsg = "ÆÄÀÏ¸µº¯°æÁ¤º¸ ÆÄ¶ó¹ÌÅÍ :: STL_NO[" + sOrgPlateNo + "] PILINGCD[" + sOrgYdPilingCd + "] BOOKOUT[" + sOrgYdBookOutLoc + "] PL_WRK_PROC["+sPlWrkProc+"]";
+			szMsg = "íŒŒì¼ë§ë³€ê²½ì •ë³´ íŒŒë¼ë¯¸í„° :: STL_NO[" + sOrgPlateNo + "] PILINGCD[" + sOrgYdPilingCd + "] BOOKOUT[" + sOrgYdBookOutLoc + "] PL_WRK_PROC["+sPlWrkProc+"]";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			/*
-			 * 1. ÆÄÀÏ¸µ º¯°æÁ¤º¸ Ã¼Å© Procedure È£Ãâ 
+			 * 1. íŒŒì¼ë§ ë³€ê²½ì •ë³´ ì²´í¬ Procedure í˜¸ì¶œ 
 			 */
-			szMsg = "2ÈÄÆÇ ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®   ÇÁ·Î½ÃÁ® È£Ãâ";
+			szMsg = "2í›„íŒ ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬   í”„ë¡œì‹œì ¸ í˜¸ì¶œ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				
 			Object[] inParam = { 
@@ -977,14 +977,14 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	
 			if(record == null || record.size() > 0){
 				/*
-				 * S : Auto ÆÄÀÏ¸µ SKIP  
-				 * 1 : ÆÄÀÏ¸µ ¸í·É (ÆÄÀÏ¸µÇÏ¿© Àâ°í ÀÖ¾î¶ó)
-				 * 0 : ÇØ´ç Á¦Ç° À§·Î AP °¡ °¡Áø Àç·á¸¦ ³»·Á ³õ¾Æ¶ó(ÆÄÀÏ¸µ END)
-				 * ±×¿Ü : ¿¡·¯ Ã³¸®·Î SKIP Ã³¸®
+				 * S : Auto íŒŒì¼ë§ SKIP  
+				 * 1 : íŒŒì¼ë§ ëª…ë ¹ (íŒŒì¼ë§í•˜ì—¬ ì¡ê³  ìˆì–´ë¼)
+				 * 0 : í•´ë‹¹ ì œí’ˆ ìœ„ë¡œ AP ê°€ ê°€ì§„ ì¬ë£Œë¥¼ ë‚´ë ¤ ë†“ì•„ë¼(íŒŒì¼ë§ END)
+				 * ê·¸ì™¸ : ì—ëŸ¬ ì²˜ë¦¬ë¡œ SKIP ì²˜ë¦¬
 				 */
 				szRtnCd = ydDaoUtils.paraRecChkNull(record, "OUT_RTN_CODE");
 				
-				szMsg = "ÆÄÀÏ¸µÇÁ·Î½ÃÁ®(SP_YD_PLATE_PILING_CHANGE_PB) È£Ãâ °á°ú  :: [" + szRtnCd + "] ";
+				szMsg = "íŒŒì¼ë§í”„ë¡œì‹œì ¸(SP_YD_PLATE_PILING_CHANGE_PB) í˜¸ì¶œ ê²°ê³¼  :: [" + szRtnCd + "] ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);				
 				
 				if("1".equals(szRtnCd)) {
@@ -1023,39 +1023,39 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			}					
 			
 		}catch(Exception e){
-			szMsg = "2ÈÄÆÇ ÀÔ°íÆ®·¡Å· ÆÄÀÏ¸µº¯°æÁ¤º¸ Ã³¸®   Exception Error: " + e.getMessage();
+			szMsg = "2í›„íŒ ì…ê³ íŠ¸ë˜í‚¹ íŒŒì¼ë§ë³€ê²½ì •ë³´ ì²˜ë¦¬   Exception Error: " + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
 	}// end of procChangePilingCd3G()	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í :Routing Layout ÀçÀÛ¾÷Áö½Ã ¼Û½Å
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… :Routing Layout ì¬ì‘ì—…ì§€ì‹œ ì†¡ì‹ 
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procSmsSend(String sPlateNo,int intGbn)throws JDTOException  {
 		
-		// DAO ¹× UTIL °´Ã¼ »ı¼º
+		// DAO ë° UTIL ê°ì²´ ìƒì„±
 		YmEtcDao ydStockDao     = new YmEtcDao();
 		
-		// ·¹ÄÚµå ¼±¾ğ
+		// ë ˆì½”ë“œ ì„ ì–¸
 		JDTORecordSet rsOutRecSet = null;
 		JDTORecord recIn          = null;
 		JDTORecord recGetVal      = null;
 		
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		String szMethodName       = "procSmsSend";
 		String szMsg              = "";
-		String szOperationName    = "SMS L2 ÀçÀÛ¾÷Áö½Ã";
+		String szOperationName    = "SMS L2 ì¬ì‘ì—…ì§€ì‹œ";
 		int intRtnVal             = 0;
 		
 		try{
 			
-			// ·¹ÄÚµå »ı¼º
+			// ë ˆì½”ë“œ ìƒì„±
 			rsOutRecSet = JDTORecordFactory.getInstance().createRecordSet("");
 
 			recIn = JDTORecordFactory.getInstance().create();
@@ -1063,11 +1063,11 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			intRtnVal = ydStockDao.getYmEtcDao(recIn, rsOutRecSet, intGbn);
 			
 			if(intRtnVal < 0){
-				szMsg = "PLATECOMM[PLATEÀÛ¾÷Áö½Ã] Error :: STL_NO(" + sPlateNo + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
+				szMsg = "PLATECOMM[PLATEì‘ì—…ì§€ì‹œ] Error :: STL_NO(" + sPlateNo + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			} else if(intRtnVal == 0){
-				szMsg = "PLATECOMM[PLATEÀÛ¾÷Áö½Ã] Error :: STL_NO(" + sPlateNo + ") [" + intRtnVal + "]" + "DO NOT EXIST";
+				szMsg = "PLATECOMM[PLATEì‘ì—…ì§€ì‹œ] Error :: STL_NO(" + sPlateNo + ") [" + intRtnVal + "]" + "DO NOT EXIST";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				return ;
 			}
@@ -1080,35 +1080,35 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				String sRetVal = ydDelegate.sndSms(sMessage,"PRP2L008");
 				
 				/*
-				 * L2Àü´Ü¼­¹ö ºĞ¸®¿¡ µû¸¥ ¶ó¿ìÆÃ ÀçÁö½Ã
+				 * L2ì „ë‹¨ì„œë²„ ë¶„ë¦¬ì— ë”°ë¥¸ ë¼ìš°íŒ… ì¬ì§€ì‹œ
 				 */
 				sMessage = "0035729108"+sMessage.substring(10);
 				sRetVal  = ydDelegate.sndSms(sMessage,"PRP2L008");
 				
-				szMsg = "ROUTING LAYOUT ÀçÀÛ¾÷Áö½Ã  Ã³¸®(" + szMethodName + ") ¿Ï·á["+sRetVal+"]";
+				szMsg = "ROUTING LAYOUT ì¬ì‘ì—…ì§€ì‹œ  ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ["+sRetVal+"]";
 			}else if(intGbn == 1){
 				String sMessage = recGetVal.getFieldString("TL3CP2");
 				String sRetVal = ydDelegate.sndSms(sMessage,"PRP2L010");
-				szMsg = "PRODUCTION INFOMATION 2 ÀçÀÛ¾÷Áö½Ã  Ã³¸®(" + szMethodName + ") ¿Ï·á["+sRetVal+"]";
+				szMsg = "PRODUCTION INFOMATION 2 ì¬ì‘ì—…ì§€ì‹œ  ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ["+sRetVal+"]";
 			}
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}catch(Exception e){
-			szMsg = "SMSD ÀçÀÛ¾÷Áö½Ã   Exception Error: " + e.getMessage();
+			szMsg = "SMSD ì¬ì‘ì—…ì§€ì‹œ   Exception Error: " + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
 	}// end of procSmsSend()
 	
 	/**
-	 * PLATECOMM[PLATE°øÅë] ÆíÁı - procPl2GdsPrdWr ¿¡¼­ È£Ãâ (2ÈÄÆÇ Àü¿ë => 1,2ÈÄÆÇ °øÅëÀ¸·Î ¼öÁ¤)
-	 * return  0: Ç×¸ñ ÆíÁı ¼º°ø
-	 * 		  -1: Ç×¸ñ ÆíÁı ½ÇÆĞ	
+	 * PLATECOMM[PLATEê³µí†µ] í¸ì§‘ - procPl2GdsPrdWr ì—ì„œ í˜¸ì¶œ (2í›„íŒ ì „ìš© => 1,2í›„íŒ ê³µí†µìœ¼ë¡œ ìˆ˜ì •)
+	 * return  0: í•­ëª© í¸ì§‘ ì„±ê³µ
+	 * 		  -1: í•­ëª© í¸ì§‘ ì‹¤íŒ¨	
 	 * @param inRecord
 	 * @param outRec
 	 * @throws JDTOException
 	 */
 	public int edtPlateComm3G(JDTORecord recIn, JDTORecord recSet,String szPTOP_PLNT_GP) throws JDTOException {
-		//ÀúÀåÇ°DAO
+		//ì €ì¥í’ˆDAO
 		YdStockDao ydStockDao     	= new YdStockDao();
 		YdStrCharDao ydStrCharDao 	= new YdStrCharDao();		
 		YdPlateCommDAO commDao 	  	= new YdPlateCommDAO();
@@ -1150,7 +1150,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	
 		try{
 			//-------------------------------------------------------------------------------------------------------------
-			//	ÈÄÆÇÁ¦Ç°ÀÇ ±æÀÌ±¸ºĞ/Æø±¸ºĞ ±¸ÇÏ±â
+			//	í›„íŒì œí’ˆì˜ ê¸¸ì´êµ¬ë¶„/í­êµ¬ë¶„ êµ¬í•˜ê¸°
 			//-------------------------------------------------------------------------------------------------------------
 			recTemp		= JDTORecordFactory.getInstance().create();
 			
@@ -1159,21 +1159,21 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			//-------------------------------------------------------------------------------------------------------------
 			
 			//-------------------------------------------------------------------------------------------------------------
-			//	¿©Àç±¸ºĞ¿¡ µû¸¥ Piling Code, Book-OutÀ§Ä¡ ¼³Á¤
+			//	ì—¬ì¬êµ¬ë¶„ì— ë”°ë¥¸ Piling Code, Book-Outìœ„ì¹˜ ì„¤ì •
 			//-------------------------------------------------------------------------------------------------------------
 			szORD_YEOJAE_GP = ydDaoUtils.paraRecChkNull(recIn,"ORD_YEOJAE_GP");
 			
 			if(szORD_YEOJAE_GP.equals("1")){
 				
 				//-------------------------------------------------------------------------------------------------------------
-				//	ÁÖ¹®ÀçÀÎ °æ¿ì OS°øÅëÅ×ÀÌºíÀÇ Á¤º¸¸¦ Á¶È¸ÇØ¼­  Piling Code, Book-OutÀ§Ä¡, ÀÔ°í¿¹Á¤À§Ä¡ ¼³Á¤
+				//	ì£¼ë¬¸ì¬ì¸ ê²½ìš° OSê³µí†µí…Œì´ë¸”ì˜ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  Piling Code, Book-Outìœ„ì¹˜, ì…ê³ ì˜ˆì •ìœ„ì¹˜ ì„¤ì •
 				//-------------------------------------------------------------------------------------------------------------
 				recEdit = JDTORecordFactory.getInstance().create();
 				recEdit.setField("ORD_NO",  ydDaoUtils.paraRecChkNull(recIn,"ORD_NO"));
 				recEdit.setField("ORD_DTL", ydDaoUtils.paraRecChkNull(recIn,"ORD_DTL"));
 				
 				rsOut = JDTORecordFactory.getInstance().createRecordSet("");
-				//OS°øÅëÁ¶È¸
+				//OSê³µí†µì¡°íšŒ
 				intRtnVal = ydStockDao.getYdStock(recEdit, rsOut, 88);
 				if(intRtnVal <= 0){
 					if(intRtnVal == 0){
@@ -1195,8 +1195,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					szYD_STRCHAR_GRP_CD = szYD_PILING_CD.substring(0, 4);
 				}
 
-				iORD_EA 			= ydDaoUtils.paraRecChkNullInt(recEdit,"ORD_EA");					//ÁÖ¹®¸Å¼ö
-				dblORD_CONV_T	  	= ydDaoUtils.paraRecChkNullDouble(recEdit,"ORD_CONV_T");			//ÁÖ¹®µÎ²²
+				iORD_EA 			= ydDaoUtils.paraRecChkNullInt(recEdit,"ORD_EA");					//ì£¼ë¬¸ë§¤ìˆ˜
+				dblORD_CONV_T	  	= ydDaoUtils.paraRecChkNullDouble(recEdit,"ORD_CONV_T");			//ì£¼ë¬¸ë‘ê»˜
 				
 				dblheight = dblORD_CONV_T * iORD_EA;
 				
@@ -1210,7 +1210,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				ydUtils.putLog(szMethodName, szMethodName, "dblORD_CONV_T" + dblORD_CONV_T, YdConstant.DEBUG);
 				ydUtils.putLog(szMethodName, szMethodName, "dblheight" + dblheight, YdConstant.DEBUG);					
 				
-		       	//ÀúÀå¼Ó¼º READ ´ëÇü°í°´»ç CHECK
+		       	//ì €ì¥ì†ì„± READ ëŒ€í˜•ê³ ê°ì‚¬ CHECK
 	        	rsResult 	= JDTORecordFactory.getInstance().createRecordSet("");
 	        	recInTemp 	= JDTORecordFactory.getInstance().create();
         		recInTemp.setField("YD_STRCHAR_GRP_CD" 	, szYD_STRCHAR_GRP_CD);
@@ -1235,28 +1235,28 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				szYD_MTL_L_GP			= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_L_GP");	
 				szYD_MTL_W_GP			= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_W_GP");
 				
-				szMsg = "[ °áÁ¤µÈ ±æÀÌ±¸ºĞ["+szYD_MTL_L_GP+"], Æø±¸ºĞ["+szYD_MTL_W_GP+"]s";
+				szMsg = "[ ê²°ì •ëœ ê¸¸ì´êµ¬ë¶„["+szYD_MTL_L_GP+"], í­êµ¬ë¶„["+szYD_MTL_W_GP+"]s";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
-				szCUST_CD 		  		= ydDaoUtils.paraRecChkNull(recEdit,"CUST_CD");						//°í°´»ç
+				szCUST_CD 		  		= ydDaoUtils.paraRecChkNull(recEdit,"CUST_CD");						//ê³ ê°ì‚¬
 				
 				//-------------------------------------------------------------------------------------
-				// ÀúÀåÇ° Á¶È¸
+				// ì €ì¥í’ˆ ì¡°íšŒ
 				rsGetStock = JDTORecordFactory.getInstance().createRecordSet("");
 				recEdit.setField("STL_NO",  ydDaoUtils.paraRecChkNull(recIn,"PLATE_NO"));
 				intRtnVal = ydStockDao.getYdStock(recEdit, rsGetStock, 0);
 				
 				if(intRtnVal < 0){
-					szMsg= "YD_STOCK[ÀúÀåÇ°] SELECT Error :: [" + intRtnVal + "]";
+					szMsg= "YD_STOCK[ì €ì¥í’ˆ] SELECT Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return -1;
 				}else if(intRtnVal == 0){
-					//stockÀÌ Á¸ÀçÇÏÁö ¾ÊÀº °æ¿ì
+					//stockì´ ì¡´ì¬í•˜ì§€ ì•Šì€ ê²½ìš°
 					szYD_BOOK_OUT_LOC 		= "";
 					szYD_RCPT_PLN_STR_LOC 	= "";
 					
 				}else{
-					//stockÀÌ Á¸ÀçÇÏ´Â °æ¿ì
+					//stockì´ ì¡´ì¬í•˜ëŠ” ê²½ìš°
 					rsGetStock.absolute(1);
 					outRec = JDTORecordFactory.getInstance().create();
 					outRec.setRecord(rsGetStock.getRecord());	
@@ -1266,8 +1266,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				}
 				
 				//------------------------------------------------------------------------------------
-				// ºÏ¾Æ¿ôÀ§Ä¡¿Í ÀÔ°í¿¹Á¤À§Ä¡°¡ ""(À×¿©ÆÇÀÌ ³ª¿À´Â°æ¿ì) ÀÌ°Å³ª
-				// ÇØ´ç°øÀå ÈÄÆÇ °ªÀÌ ¾Æ´Ï¸é ¿©±â¼­ ÇØ´ç°øÀåÈÄÆÇ ºÏ¾Æ¿ôÀ§Ä¡¿Í ÀÔ°í¿¹Á¤À§Ä¡¸¦ ±¸ÇÑ´Ù.
+				// ë¶ì•„ì›ƒìœ„ì¹˜ì™€ ì…ê³ ì˜ˆì •ìœ„ì¹˜ê°€ ""(ì‰ì—¬íŒì´ ë‚˜ì˜¤ëŠ”ê²½ìš°) ì´ê±°ë‚˜
+				// í•´ë‹¹ê³µì¥ í›„íŒ ê°’ì´ ì•„ë‹ˆë©´ ì—¬ê¸°ì„œ í•´ë‹¹ê³µì¥í›„íŒ ë¶ì•„ì›ƒìœ„ì¹˜ì™€ ì…ê³ ì˜ˆì •ìœ„ì¹˜ë¥¼ êµ¬í•œë‹¤.
 				String sRt1 = "";
 				String sRt2 = "";
 				String sRt3 = "";
@@ -1294,12 +1294,12 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					
 					recPara.setField("ORD_NO",    	ydDaoUtils.paraRecChkNull(recEdit,"ORD_NO"));			
 					recPara.setField("ORD_DTL",    	ydDaoUtils.paraRecChkNull(recEdit,"ORD_DTL"));				
-					//ÀúÀå°èÈ¹ ÄÚµå Read
+					//ì €ì¥ê³„íš ì½”ë“œ Read
 					/*com.inisteel.cim.yd.common.dao.ptOsCommDao.getPtOsCommLocPlanCd_PIDEV*/
 					intRtnVal = ptOsCommDao.getPtOsComm(recPara, outRecSet1, 300);
 					
 					if (intRtnVal <= 0) {
-						szMsg = "ÇØ´çÁÖ¹® :"+ ydDaoUtils.paraRecChkNull(recEdit,"ORD_NO") + "-" +ydDaoUtils.paraRecChkNull(recEdit,"ORD_DTL") + " ÀúÀå°èÈ¹ ÄÚµå Read error!!!, ErrorCode:" + intRtnVal;
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ ydDaoUtils.paraRecChkNull(recEdit,"ORD_NO") + "-" +ydDaoUtils.paraRecChkNull(recEdit,"ORD_DTL") + " ì €ì¥ê³„íš ì½”ë“œ Read error!!!, ErrorCode:" + intRtnVal;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					}				
 					
@@ -1321,7 +1321,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					/*com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0059*/
 					intRtnVal = commDao.select(recPara, outRecSet9, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0059");
 					if (intRtnVal <= 0) {
-						szMsg = "ÇØ´ç PilingÄÚµå  :"+ ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD") +") AccessÀúÀåµ¿  Read error!!!:" + intRtnVal;
+						szMsg = "í•´ë‹¹ Pilingì½”ë“œ  :"+ ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD") +") Accessì €ì¥ë™  Read error!!!:" + intRtnVal;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					} else {
 						outRecSet9.absolute(1);
@@ -1338,7 +1338,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 							String sRTN_BOOKOUT_LOC = null;						
 							
 							//-------------------------------------------------------
-							//µ¿ÀÌ Á¤ÇØÁ³À¸¸é ±× µ¿¿¡¼­ ÀûÄ¡°¡´ÉÇÑ LOC ¸¦ ±¸ÇÑ´Ù.
+							//ë™ì´ ì •í•´ì¡Œìœ¼ë©´ ê·¸ ë™ì—ì„œ ì ì¹˜ê°€ëŠ¥í•œ LOC ë¥¼ êµ¬í•œë‹¤.
 							recTemp.setField("YD_GP", 			YdConstant.YD_GP_PLATE2_GDS_YARD);
 							recTemp.setField("YD_BAY_GP", 		szPLAN_DONG);
 							recTemp.setField("YD_PILING_CD", 	szYD_PILING_CD2);
@@ -1347,8 +1347,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 							sRTN_LOC = YdToLocDcsnUtil.getYdBayLocPln3G(recTemp);
 							
 							/*
-							 * 2014.10.15 À±Àç±¤ - ÀÌ¸í¿î´ë¸® ¿äÃ»
-							 * Gµ¿ ÁßÃ´ÀçÀÌÇÏ´Â ¹«Á¶°Ç 2º£µå·Î ¼ÂÆÃ
+							 * 2014.10.15 ìœ¤ì¬ê´‘ - ì´ëª…ìš´ëŒ€ë¦¬ ìš”ì²­
+							 * Gë™ ì¤‘ì²™ì¬ì´í•˜ëŠ” ë¬´ì¡°ê±´ 2ë² ë“œë¡œ ì…‹íŒ…
 							 */
 							if("G".equals(szPLAN_DONG) && ("M".equals(szYD_PILING_CD2.substring(6,7))||
 									                       "S".equals(szYD_PILING_CD2.substring(6,7))||
@@ -1358,16 +1358,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 								recTemp.setField("YD_STK_BED_NO",   sRTN_LOC.substring(6,8));
 							}
 							
-							//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ) ¾ßµå±¸ºĞ°ª ¼ÂÆÃ
+							//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€) ì•¼ë“œêµ¬ë¶„ê°’ ì…‹íŒ…
 							if("PA".equals(szPTOP_PLNT_GP)){
 								recTemp.setField("YD_GP", 	"K");
 							}else{
 								recTemp.setField("YD_GP", 	"T");
 							}
 
-							//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ)
+							//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€)
 					    	if( GetBreRule6.getYDB674(recTemp) ) {
-					    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ¾÷¹«±âÁØ YDB674 ¹İÈ¯°ª#1 YD_BOOK_OUT_LOC
+					    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ì—…ë¬´ê¸°ì¤€ YDB674 ë°˜í™˜ê°’#1 YD_BOOK_OUT_LOC
 					    	} else {
 					    		sRTN_BOOKOUT_LOC ="00000";
 					    	}		
@@ -1387,21 +1387,21 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			}else{
 				
 				//-------------------------------------------------------------------------------------------------------------
-				//	¿©ÀçÀÎ °æ¿ì
+				//	ì—¬ì¬ì¸ ê²½ìš°
 				recTemp.setField("STRCHAR_ORD_YEOJAE_GP", "2");
 				recTemp.setField("STRCHAR_CUST_CD"		, "");
 				recTemp.setField("YD_STRCHAR_GRP_CD" 	, "M001");
 				
 				PlateGdsYdUtil.getWTLGp(recTemp);
 				
-				szYD_MTL_L_GP		= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_L_GP");						//±æÀÌ±¸ºĞ
-				szYD_MTL_W_GP		= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_W_GP");						//Æø ±¸ºĞ
+				szYD_MTL_L_GP		= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_L_GP");						//ê¸¸ì´êµ¬ë¶„
+				szYD_MTL_W_GP		= ydDaoUtils.paraRecChkNull(recTemp,	"YD_MTL_W_GP");						//í­ êµ¬ë¶„
 				
 				szYD_PILING_CD	  	= "M001" + szYD_MTL_W_GP + szYD_MTL_L_GP;
 				//-------------------------------------------------------------------------------------------------------------
 				
 				//-------------------------------------------------------------------------------------------------------------
-				//	Piling Code·Î µ¿º°ÀúÀå°èÈ¹¿¡ ÁÖ¹®¿Ü Á¤º¸ Á¶È¸ - Book-OutÀ§Ä¡, ÀÔ°í¿¹Á¤À§Ä¡
+				//	Piling Codeë¡œ ë™ë³„ì €ì¥ê³„íšì— ì£¼ë¬¸ì™¸ ì •ë³´ ì¡°íšŒ - Book-Outìœ„ì¹˜, ì…ê³ ì˜ˆì •ìœ„ì¹˜
 				//-------------------------------------------------------------------------------------------------------------
 				JDTORecordSet outRecSet9 = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 				JDTORecord 	  outRec9 	 = null;
@@ -1421,7 +1421,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				intRtnVal = commDao.select(recPara, outRecSet9, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0059");
 				
 				if (intRtnVal <= 0) {
-					szMsg = "ÇØ´ç PilingÄÚµå  :"+ ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD") +") AccessÀúÀåµ¿  Read error!!!:" + intRtnVal;
+					szMsg = "í•´ë‹¹ Pilingì½”ë“œ  :"+ ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD") +") Accessì €ì¥ë™  Read error!!!:" + intRtnVal;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				} else {
 					outRecSet9.first();
@@ -1438,7 +1438,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						String sRTN_BOOKOUT_LOC = null;						
 						
 						//-------------------------------------------------------
-						//µ¿ÀÌ Á¤ÇØÁ³À¸¸é ±× µ¿¿¡¼­ ÀûÄ¡°¡´ÉÇÑ LOC ¸¦ ±¸ÇÑ´Ù.
+						//ë™ì´ ì •í•´ì¡Œìœ¼ë©´ ê·¸ ë™ì—ì„œ ì ì¹˜ê°€ëŠ¥í•œ LOC ë¥¼ êµ¬í•œë‹¤.
 						recTemp.setField("YD_GP", 			YdConstant.YD_GP_PLATE2_GDS_YARD);
 						recTemp.setField("YD_BAY_GP", 		szPLAN_DONG);
 						recTemp.setField("YD_PILING_CD", 	szYD_PILING_CD);
@@ -1447,8 +1447,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						sRTN_LOC = YdToLocDcsnUtil.getYdBayLocPln3G(recTemp);
 						
 						/*
-						 * 2014.10.15 À±Àç±¤ - ÀÌ¸í¿î´ë¸® ¿äÃ»
-						 * Gµ¿ ÁßÃ´ÀçÀÌÇÏ´Â ¹«Á¶°Ç 2º£µå·Î ¼ÂÆÃ
+						 * 2014.10.15 ìœ¤ì¬ê´‘ - ì´ëª…ìš´ëŒ€ë¦¬ ìš”ì²­
+						 * Gë™ ì¤‘ì²™ì¬ì´í•˜ëŠ” ë¬´ì¡°ê±´ 2ë² ë“œë¡œ ì…‹íŒ…
 						 */
 						if("G".equals(szPLAN_DONG) && ("M".equals(szYD_PILING_CD.substring(6,7))||
 								                       "S".equals(szYD_PILING_CD.substring(6,7))||
@@ -1458,16 +1458,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 							recTemp.setField("YD_STK_BED_NO",   sRTN_LOC.substring(6,8));
 						}
 						
-						//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ) ¾ßµå±¸ºĞ°ª ¼ÂÆÃ
+						//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€) ì•¼ë“œêµ¬ë¶„ê°’ ì…‹íŒ…
 						if("PA".equals(szPTOP_PLNT_GP)){
 							recTemp.setField("YD_GP", 	"K");
 						}else{
 							recTemp.setField("YD_GP", 	"T");
 						}
 	
-						//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ)
+						//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€)
 				    	if( GetBreRule6.getYDB674(recTemp) ) {
-				    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ¾÷¹«±âÁØ YDB674 ¹İÈ¯°ª#1 YD_BOOK_OUT_LOC
+				    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ì—…ë¬´ê¸°ì¤€ YDB674 ë°˜í™˜ê°’#1 YD_BOOK_OUT_LOC
 				    	} else {
 				    		sRTN_BOOKOUT_LOC ="00000";
 				    	}		
@@ -1485,15 +1485,15 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			//-------------------------------------------------------------------------------------------------------------
 			
 			//=============================================================
-			// STL_APPEAR_GP °ªÀ» °¡Á®¿À´Â ºÎºĞÀÌ ¾ø¾úÀ½
-			// ÀÌ»óÈ²ÀÌ¸é °è¼Ó °ø¹é°ªÀÌ ÀúÀåÇ°¿¡ µé¾î°¡±â ¶§¹®¿¡ ÃßÃâÇÏ¿© Ã³¸®ÇÏ´Â ÄÚµå »ğÀÔ
+			// STL_APPEAR_GP ê°’ì„ ê°€ì ¸ì˜¤ëŠ” ë¶€ë¶„ì´ ì—†ì—ˆìŒ
+			// ì´ìƒí™©ì´ë©´ ê³„ì† ê³µë°±ê°’ì´ ì €ì¥í’ˆì— ë“¤ì–´ê°€ê¸° ë•Œë¬¸ì— ì¶”ì¶œí•˜ì—¬ ì²˜ë¦¬í•˜ëŠ” ì½”ë“œ ì‚½ì…
 			//=============================================================
 			szSTL_APPEAR_GP = ydDaoUtils.paraRecChkNull(recIn, "STL_APPEAR_GP");
 			recSet.setField("STL_APPEAR_GP" 	, szSTL_APPEAR_GP); 		
 			recSet.setField("STL_NO"        	, ydDaoUtils.paraRecChkNull(recIn,"PLATE_NO")); 
 			
 			//=====================================================================================
-			// PLATECOMM¿¡¼­ Á¶¾÷°øÀå±¸ºĞ Ç×¸ñÀ» ÀĞ¾î¿Í¼­ ÆíÁı (Ãß°¡) 
+			// PLATECOMMì—ì„œ ì¡°ì—…ê³µì¥êµ¬ë¶„ í•­ëª©ì„ ì½ì–´ì™€ì„œ í¸ì§‘ (ì¶”ê°€) 
 			//=====================================================================================
 			recSet.setField("PTOP_PLNT_GP"      , ydDaoUtils.paraRecChkNull(recIn,"PTOP_PLNT_GP"));
 			recSet.setField("STL_PROG_CD"   	, ydDaoUtils.paraRecChkNull(recIn,"CURR_PROG_CD"));
@@ -1504,7 +1504,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recSet.setField("YD_MTL_L"      	, ydDaoUtils.paraRecChkNull(recIn,"PL_MEA_GDS_L")); 			
 			recSet.setField("YD_MTL_WT"     	, ydDaoUtils.paraRecChkNull(recIn,"PL_MEA_GDS_WT")); 
 			//====================================================================================
-			// Á¶È¸ÇØ¿À´Â ·¹ÄÚµå¿¡ Ç×¸ñÀÌ ¾øÀ½
+			// ì¡°íšŒí•´ì˜¤ëŠ” ë ˆì½”ë“œì— í•­ëª©ì´ ì—†ìŒ
 			// recSet.setField("DEST_CD"     		, ydDaoUtils.paraRecChkNull(recIn,"DEST_CD")); 
 			//====================================================================================
 			recSet.setField("ITEMNAME_CD"     	, ydDaoUtils.paraRecChkNull(recIn,"ITEMNAME_CD")); 
@@ -1512,8 +1512,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recSet.setField("ORD_YEOJAE_GP" 	, szORD_YEOJAE_GP);
 			recSet.setField("CUST_CD"   		, szCUST_CD);		
 			/*
-			 * 20110128 YJK ÀÓ½Ã¼ÂÆÃ
-			 * ¾ßµå¸ÊÀº 'U' ±æÀÌ±×·ìÄÚ´Â »ç¿ëÇÏÁö ¾Ê´Â´Ù.
+			 * 20110128 YJK ì„ì‹œì…‹íŒ…
+			 * ì•¼ë“œë§µì€ 'U' ê¸¸ì´ê·¸ë£¹ì½”ëŠ” ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
 			 */
 			if(!szYD_RCPT_PLN_STR_LOC.equals("")){
 				if (!szYD_RCPT_PLN_STR_LOC.substring(1,2).equals("E")) {
@@ -1526,16 +1526,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					}
 				}	
 			}
-			recSet.setField("YD_MTL_L_GP"   	, szYD_MTL_L_GP);		//¾ßµåÀç·á±æÀÌ±¸ºĞ
-			recSet.setField("YD_MTL_W_GP"   	, szYD_MTL_W_GP);		//¾ßµåÀç·áÆø±¸ºĞ
-			recSet.setField("YD_PILING_CD"   	, szYD_PILING_CD);		//PilingÄÚµå
-			recSet.setField("YD_BOOK_OUT_LOC"   , szYD_BOOK_OUT_LOC);	//¾ßµåBook_outÀ§Ä¡
-			recSet.setField("YD_AIM_YD_GP"		, YdConstant.YD_GP_PLATE2_GDS_YARD);//¾ßµå±¸ºĞ	
-			recSet.setField("YD_AIM_RT_GP"		, "G3");				//¾ßµå¸ñÇ¥Çà¼±±¸ºĞ	
+			recSet.setField("YD_MTL_L_GP"   	, szYD_MTL_L_GP);		//ì•¼ë“œì¬ë£Œê¸¸ì´êµ¬ë¶„
+			recSet.setField("YD_MTL_W_GP"   	, szYD_MTL_W_GP);		//ì•¼ë“œì¬ë£Œí­êµ¬ë¶„
+			recSet.setField("YD_PILING_CD"   	, szYD_PILING_CD);		//Pilingì½”ë“œ
+			recSet.setField("YD_BOOK_OUT_LOC"   , szYD_BOOK_OUT_LOC);	//ì•¼ë“œBook_outìœ„ì¹˜
+			recSet.setField("YD_AIM_YD_GP"		, YdConstant.YD_GP_PLATE2_GDS_YARD);//ì•¼ë“œêµ¬ë¶„	
+			recSet.setField("YD_AIM_RT_GP"		, "G3");				//ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„	
 			recSet.setField("YD_MTL_ITEM"		, "PG");
 			recSet.setField("YD_MTL_STAT"		, "2");
-			recSet.setField("YD_AIM_BAY_GP"   	, szYD_AIM_BAY_GP);		//¸ñÇ¥µ¿
-			recSet.setField("ARR_WLOC_CD"     	, szARR_WLOC_CD);		//ÂøÁö°³¼ÒÄÚµå
+			recSet.setField("YD_AIM_BAY_GP"   	, szYD_AIM_BAY_GP);		//ëª©í‘œë™
+			recSet.setField("ARR_WLOC_CD"     	, szARR_WLOC_CD);		//ì°©ì§€ê°œì†Œì½”ë“œ
 			
 			recSet.setField("APPEAR_GRADE"      , ydDaoUtils.paraRecChkNull(recIn,"APPEAR_GRADE"));
 			recSet.setField("PL_RCPT_LN_GP"     , ydDaoUtils.paraRecChkNull(recIn,"PL_RCPT_LN_GP"));
@@ -1543,13 +1543,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recSet.setField("DEST_CD"           , ydDaoUtils.paraRecChkNull(recIn, "DEST_CD"));
 			
 			//-------------------------------------------------------------------------------------------------------------
-			//	¾ßµåÀÔ°í¿¹Á¤ÀúÀåÀ§Ä¡¸¦ ÀúÀåÇ°¿¡ ¾÷µ¥ÀÌÆ®
+			//	ì•¼ë“œì…ê³ ì˜ˆì •ì €ì¥ìœ„ì¹˜ë¥¼ ì €ì¥í’ˆì— ì—…ë°ì´íŠ¸
 			//-------------------------------------------------------------------------------------------------------------
-			recSet.setField("YD_RCPT_PLN_STR_LOC", szYD_RCPT_PLN_STR_LOC);	//¾ßµåÀÔ°í¿¹Á¤ÀúÀåÀ§Ä¡
+			recSet.setField("YD_RCPT_PLN_STR_LOC", szYD_RCPT_PLN_STR_LOC);	//ì•¼ë“œì…ê³ ì˜ˆì •ì €ì¥ìœ„ì¹˜
 			
 		} catch(Exception e){
 			
-			szMsg="PLATECOMM[PLATE°øÅë]Ç×¸ñ ÆíÁı Exception Error:" +e.getMessage();
+			szMsg="PLATECOMM[PLATEê³µí†µ]í•­ëª© í¸ì§‘ Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg); 
 		}
@@ -1558,16 +1558,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} //end of edtPlateComm3G()
 		
 	/**
-	 * ÈÄÆÇÁ¦Ç°¹İÇ°(DMYDR034)
+	 * í›„íŒì œí’ˆë°˜í’ˆ(DMYDR034)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @throws JDTOException
 	 */
 	public void procPlGdsRetngds(JDTORecord inRecord)throws JDTOException  {
 		String szMethodName = "procPlGdsRetngds";
 		String szMsg = "";
-		String szOperationName = "ÈÄÆÇÁ¦Ç°¹İÇ°";
+		String szOperationName = "í›„íŒì œí’ˆë°˜í’ˆ";
 		String szSTL_NO = "";
 		int intRtnVal = 0;
 		
@@ -1576,10 +1576,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		JDTORecord recStockColumn 		= JDTORecordFactory.getInstance().create();
 		YdStockDao ydStockDao 		= new YdStockDao();
 		
-		//Àü¹®¹Ş¾Æ¼­ szRcvTcCode¿¡ ÀúÀå
+		//ì „ë¬¸ë°›ì•„ì„œ szRcvTcCodeì— ì €ì¥
 		String szRcvTcCode=ydUtils.getTcCode(inRecord);
 
-		//¼ö½ÅÇÑ Àü¹®ÀÌ nullÀÌ¶ó¸é error
+		//ìˆ˜ì‹ í•œ ì „ë¬¸ì´ nullì´ë¼ë©´ error
 		if(szRcvTcCode==null){
 
 			szMsg="[ERROR] "+szSessionName+"::"+szMethodName+"() TC Code Error ("+szRcvTcCode+")";
@@ -1589,27 +1589,27 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		try{
 			//=============================================================
-			// Log Å×ÀÌºí µî·Ï 
+			// Log í…Œì´ë¸” ë“±ë¡ 
 			//=============================================================
-			szMsg = "[ÃâÇÏ] ÈÄÆÇÁ¦Ç°¹İÇ° ¼ö½Å";
+			szMsg = "[ì¶œí•˜] í›„íŒì œí’ˆë°˜í’ˆ ìˆ˜ì‹ ";
 			ydUtils.putLogMsg("X", YdConstant.YD_MONITORING_CHANNEL_K, szMsg, "", "", "", "I", "A", "I", szRcvTcCode, szSessionName, szMethodName);
 			
-			//¼ö½ÅÇÑ Àç·á¹øÈ£
+			//ìˆ˜ì‹ í•œ ì¬ë£Œë²ˆí˜¸
 			szSTL_NO  = ydDaoUtils.paraRecChkNull(inRecord,"STL_NO");
 
-			//¼ö½ÅÇÑ Àü¹®°ª******************************************************************************************
+			//ìˆ˜ì‹ í•œ ì „ë¬¸ê°’******************************************************************************************
 			/*
-			STL_APPEAR_GP		Àç·á¿ÜÇü±¸ºĞ
-			STL_NO				Àç·á¹øÈ£
-			CURR_PROG_CD		ÇöÀçÁøµµÄÚµå
-			ORD_YEOJAE_GP		ÁÖ¹®¿©Àç±¸ºĞ
-			ORD_NO				ÁÖ¹®¹øÈ£
-			ORD_DTL				ÁÖ¹®Çà¹ø
-			ORD_GP				¼öÁÖ±¸ºĞ
-			CUST_CD				°í°´ÄÚµå
-			DEST_CD				¸ñÀûÁöÄÚµå
-			DEST_TEL_NO			¸ñÀûÁöÀüÈ­¹øÈ£
-			DIST_SHIPASSIGN_GP	ÃâÇÏ¹è¼±Áö½Ã±¸ºĞ
+			STL_APPEAR_GP		ì¬ë£Œì™¸í˜•êµ¬ë¶„
+			STL_NO				ì¬ë£Œë²ˆí˜¸
+			CURR_PROG_CD		í˜„ì¬ì§„ë„ì½”ë“œ
+			ORD_YEOJAE_GP		ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+			ORD_NO				ì£¼ë¬¸ë²ˆí˜¸
+			ORD_DTL				ì£¼ë¬¸í–‰ë²ˆ
+			ORD_GP				ìˆ˜ì£¼êµ¬ë¶„
+			CUST_CD				ê³ ê°ì½”ë“œ
+			DEST_CD				ëª©ì ì§€ì½”ë“œ
+			DEST_TEL_NO			ëª©ì ì§€ì „í™”ë²ˆí˜¸
+			DIST_SHIPASSIGN_GP	ì¶œí•˜ë°°ì„ ì§€ì‹œêµ¬ë¶„
 			*/
 			
 			recStockColumn.setField("STL_APPEAR_GP", 		ydDaoUtils.paraRecChkNull(inRecord,"STL_APPEAR_GP"));
@@ -1631,50 +1631,50 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recStockColumn.setField("DEL_YN", 			    "N");
 			recStockColumn.setField("MODIFIER", 			"DMYDR034");
 
-			//¾ßµå¸ñÇ¥Çà¼±Áö±¸ºĞ(Á¦Ç°±¸ºĞ-S:SLAB, C:COIL ,P:ÈÄÆÇ)
+			//ì•¼ë“œëª©í‘œí–‰ì„ ì§€êµ¬ë¶„(ì œí’ˆêµ¬ë¶„-S:SLAB, C:COIL ,P:í›„íŒ)
 			rVal= YdCommonUtils.getYdAimRtGp("P",inRecord );		
 			recStockColumn.setField("YD_AIM_RT_GP", rVal[0]);
 			//****************************************************************************************************
 
 						
-			//ÀúÀåÇ°°»½Å******************************************************************************************** 
+			//ì €ì¥í’ˆê°±ì‹ ******************************************************************************************** 
 			intRtnVal = ydStockDao.updYdStock(recStockColumn, 0);
 			if(intRtnVal <= 0){
-				szMsg= "YD_STOCK[ÈÄÆÇÁ¦Ç°¹İÇ°] UPDATE Error :: [" + intRtnVal + "]";
+				szMsg= "YD_STOCK[í›„íŒì œí’ˆë°˜í’ˆ] UPDATE Error :: [" + intRtnVal + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}
-			ydUtils.putLog(szSessionName, szMethodName,"[2] YD_STOCK[ÈÄÆÇÁ¦Ç°¹İÇ°] UPDATE Success",3);
+			ydUtils.putLog(szSessionName, szMethodName,"[2] YD_STOCK[í›„íŒì œí’ˆë°˜í’ˆ] UPDATE Success",3);
 			//****************************************************************************************************
 			//======================================================
-			// ÀúÀåÇ°Á¦¿ø : ÈÄÆÇÁ¦Ç° L2 ·Î ¼Û½Å(YDY4L002,YDY8L002)
+			// ì €ì¥í’ˆì œì› : í›„íŒì œí’ˆ L2 ë¡œ ì†¡ì‹ (YDY4L002,YDY8L002)
 			//======================================================
 			JDTORecord recResult = null;
 			recResult = JDTORecordFactory.getInstance().create();
-			if(YdConstant.YD_GP_PLATE2_GDS_YARD.equals(ydDaoUtils.paraRecChkNull(inRecord,"YD_GP"))) { //- 2013.01.17 ¼öÁ¤ (3±â)
-				recResult.setField("MSG_ID"         , "YDY8L002"); //2ÈÄÆÇ Á¦Ç°Ã¢°í
+			if(YdConstant.YD_GP_PLATE2_GDS_YARD.equals(ydDaoUtils.paraRecChkNull(inRecord,"YD_GP"))) { //- 2013.01.17 ìˆ˜ì • (3ê¸°)
+				recResult.setField("MSG_ID"         , "YDY8L002"); //2í›„íŒ ì œí’ˆì°½ê³ 
 			} else {
-				recResult.setField("MSG_ID"         , "YDY4L002"); //1ÈÄÆÇ Á¦Ç°Ã¢°í
+				recResult.setField("MSG_ID"         , "YDY4L002"); //1í›„íŒ ì œí’ˆì°½ê³ 
 			}			
-			recResult.setField("YD_INFO_SYNC_CD", "5");    // 5:ÁöÁ¤ÀúÀåÇ°
+			recResult.setField("YD_INFO_SYNC_CD", "5");    // 5:ì§€ì •ì €ì¥í’ˆ
 			recResult.setField("STL_NO"         , ydDaoUtils.paraRecChkNull(recStockColumn, "STL_NO"));
 			recResult.setField("YD_STK_COL_GP"  , "");
 			recResult.setField("YD_STK_BED_NO"  , "");
 			
-			// 2021. 05. 17 Àü¹®»ı¼º ½ÃÁ¡¿¡ PT_PLATE_COMM¿¡ ÁøµµÄÚµå°¡ ¹Ù²îÁö ¾ÊÀº ¹®Á¦°¡ ÀÖ¾î
-			// ÁøµµÄÚµå¸¦ ÆÄ¶ó¸ŞÅÍ·Î ³Ñ°Ü Ã³¸®ÇÔ
+			// 2021. 05. 17 ì „ë¬¸ìƒì„± ì‹œì ì— PT_PLATE_COMMì— ì§„ë„ì½”ë“œê°€ ë°”ë€Œì§€ ì•Šì€ ë¬¸ì œê°€ ìˆì–´
+			// ì§„ë„ì½”ë“œë¥¼ íŒŒë¼ë©”í„°ë¡œ ë„˜ê²¨ ì²˜ë¦¬í•¨
 			recResult.setField("CURR_PROG_CD"  , ydDaoUtils.paraRecChkNull(inRecord,"CURR_PROG_CD"));
 			
 			ydDelegate.sendMsg(recResult);		
 			
-			// Àü»ç¹°·ù°³¼± 2021. 4. 3
+			// ì „ì‚¬ë¬¼ë¥˜ê°œì„  2021. 4. 3
 			if(PlateGdsYdUtil.isSendToEaiY9_stlNo( ydDaoUtils.paraRecChkNull(inRecord, "STL_NO")) ){
-				recResult.setField("MSG_ID"         , "YDY9L002"); //2ÈÄÆÇ Á¦Ç°Ã¢°í
+				recResult.setField("MSG_ID"         , "YDY9L002"); //2í›„íŒ ì œí’ˆì°½ê³ 
 				ydDelegate.sendMsg(recResult);
 			}
 		
 		}catch(Exception e){
-			szMsg="[ÈÄÆÇÁ¦Ç°¹İÇ°]Exception Error:" +e.getMessage();
+			szMsg="[í›„íŒì œí’ˆë°˜í’ˆ]Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg); 
 
@@ -1683,9 +1683,9 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} // end of procPlGdsRetngds()
 	
 	/**
-	 * ÈÄÆÇÁ¦Ç°¸ñÀûÁöº¯°æ(DMYDR044)
+	 * í›„íŒì œí’ˆëª©ì ì§€ë³€ê²½(DMYDR044)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @throws JDTOException
 	 */
@@ -1697,10 +1697,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		JDTORecord recPara 		= JDTORecordFactory.getInstance().create();
 		YdStockDao ydStockDao	= new YdStockDao();
 		
-		//Àü¹®¹Ş¾Æ¼­ szRcvTcCode¿¡ ÀúÀå
+		//ì „ë¬¸ë°›ì•„ì„œ szRcvTcCodeì— ì €ì¥
 		String szRcvTcCode=ydUtils.getTcCode(inRecord);
 
-		//¼ö½ÅÇÑ Àü¹®ÀÌ nullÀÌ¶ó¸é error
+		//ìˆ˜ì‹ í•œ ì „ë¬¸ì´ nullì´ë¼ë©´ error
 		if(szRcvTcCode==null){
 			szMsg="[ERROR] "+szSessionName+"::"+szMethodName+"() TC Code Error ("+szRcvTcCode+")";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
@@ -1712,12 +1712,12 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recPara.setField("STL_NO", 	       ydDaoUtils.paraRecChkNull(inRecord, "STL_NO")); 		
 			recPara.setField("URGENT_DIST_YN", ydDaoUtils.paraRecChkNull(inRecord, "URGENT_DIST_YN"));
 			/*
-			 * 1. ¾ßµå ÀúÀåÇ° ±ä±ŞÀç/º¸·ùÀç º¯°æ.
+			 * 1. ì•¼ë“œ ì €ì¥í’ˆ ê¸´ê¸‰ì¬/ë³´ë¥˜ì¬ ë³€ê²½.
 			 */			
 			ydStockDao.update_Dm_DestCd(recPara, 1);
 			
 		}catch(Exception e){
-			szMsg="[ÈÄÆÇÁ¦Ç°¸ñÀûÁöº¯°æ]Exception Error:" +e.getMessage();
+			szMsg="[í›„íŒì œí’ˆëª©ì ì§€ë³€ê²½]Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg); 
 
@@ -1726,9 +1726,9 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} // end of procPlGdsDestChgInfo()
 	
 	/**
-	 * ½½¶óºê°øÅë Ç×¸ñÀ» ¾ßµå ÀúÀåÇ° Ç×¸ñÀ¸·Î ÆíÁı
-	 * return  1: Ç×¸ñ ÆíÁı ¼º°ø
-	 * 		  -1: Ç×¸ñ ÆíÁı ½ÇÆĞ	
+	 * ìŠ¬ë¼ë¸Œê³µí†µ í•­ëª©ì„ ì•¼ë“œ ì €ì¥í’ˆ í•­ëª©ìœ¼ë¡œ í¸ì§‘
+	 * return  1: í•­ëª© í¸ì§‘ ì„±ê³µ
+	 * 		  -1: í•­ëª© í¸ì§‘ ì‹¤íŒ¨	
 	 * @param inRecord
 	 * @param outRec
 	 * @throws JDTOException
@@ -1757,7 +1757,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recEditRec.setField("YD_STK_LOT_CD"   , ydDaoUtils.paraRecChkNull(inRecord, "STACK_LOT_NO"));
 			
 		} catch(Exception e){
-			szMsg = "[Ç×¸ñÆíÁı]Exception Error:" + e.getMessage();
+			szMsg = "[í•­ëª©í¸ì§‘]Exception Error:" + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg); 
 		}
@@ -1765,9 +1765,9 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} //end of edtSlabCommYdstock()
 	
 	/**
-	 * Plate°øÅë Ç×¸ñÀ» ¾ßµå ÀúÀåÇ° Ç×¸ñÀ¸·Î ÆíÁı
-	 * return  1: Ç×¸ñ ÆíÁı ¼º°ø
-	 * 		  -1: Ç×¸ñ ÆíÁı ½ÇÆĞ	
+	 * Plateê³µí†µ í•­ëª©ì„ ì•¼ë“œ ì €ì¥í’ˆ í•­ëª©ìœ¼ë¡œ í¸ì§‘
+	 * return  1: í•­ëª© í¸ì§‘ ì„±ê³µ
+	 * 		  -1: í•­ëª© í¸ì§‘ ì‹¤íŒ¨	
 	 * @param inRecord
 	 * @param outRec
 	 * @throws JDTOException
@@ -1824,8 +1824,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			recEditRec.setField("ORD_DTL"			 , ydDaoUtils.paraRecChkNull(inRecord, "ORD_DTL"));
 			recEditRec.setField("ITEMNAME_CD"		 , ydDaoUtils.paraRecChkNull(inRecord, "ITEMNAME_CD"));
 			recEditRec.setField("OVERALL_STAMP_GRADE", ydDaoUtils.paraRecChkNull(inRecord, "OVERALL_STAMP_GRADE"));
-			recEditRec.setField("YD_MTL_W_GP"   	 , szYD_MTL_W_GP);	//¾ßµåÀç·áÆø±¸ºĞ
-			recEditRec.setField("YD_MTL_L_GP"   	 , szYD_MTL_L_GP);	//¾ßµåÀç·á±æÀÌ±¸ºĞ
+			recEditRec.setField("YD_MTL_W_GP"   	 , szYD_MTL_W_GP);	//ì•¼ë“œì¬ë£Œí­êµ¬ë¶„
+			recEditRec.setField("YD_MTL_L_GP"   	 , szYD_MTL_L_GP);	//ì•¼ë“œì¬ë£Œê¸¸ì´êµ¬ë¶„
 		} catch(Exception e){
 
 			throw new JDTOException(e.toString()); 
@@ -1835,16 +1835,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} //end of edtPlateYdstock()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : µ¿º°ÀúÀå°èÈ¹
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë™ë³„ì €ì¥ê³„íš
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procYdBayLocPln(JDTORecord msgRecord)throws JDTOException  {
 	
-        //ÀúÀåÇ°DAO
+        //ì €ì¥í’ˆDAO
 		PtOsCommDao ptOsCommDao = new PtOsCommDao();	
 		YDDataUtil yddatautil 	= new YDDataUtil();
 		YdStockDao ydStockDao 	= new YdStockDao();
@@ -1869,7 +1869,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		String szMsg		  	= "";
 		String szMethodName	  	= "procYdBayLocPln";
-		String szOperationName  = "µ¿º°ÀúÀå°èÈ¹";
+		String szOperationName  = "ë™ë³„ì €ì¥ê³„íš";
 		String szYD_PILING_CD 	= "";
 		String szPTOP_PLNT_GP 	= "";
 		String szORD_LOC_CNT    = "";
@@ -1888,22 +1888,22 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 
 		try{
 
-			// ¼ö½ÅÇ×¸ñ[PTOP_PLNT_GP: Á¶¾÷°øÀå±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[PTOP_PLNT_GP: ì¡°ì—…ê³µì¥êµ¬ë¶„]
 			szPTOP_PLNT_GP 				= ydDaoUtils.paraRecChkNull(msgRecord,"PTOP_PLNT_GP");
-			// ¼ö½ÅÇ×¸ñ[CT_MILL_SPEC_WRK_STAT_GP: »ı»êÅëÁ¦»ç¾çÀÛ¾÷»óÅÂ±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[CT_MILL_SPEC_WRK_STAT_GP: ìƒì‚°í†µì œì‚¬ì–‘ì‘ì—…ìƒíƒœêµ¬ë¶„]
 			szCT_MILL_SPEC_WRK_STAT_GP 	= ydDaoUtils.paraRecChkNull(msgRecord,"CT_MILL_SPEC_WRK_STAT_GP");
-			// ¼ö½ÅÇ×¸ñ[PRPL_MILL_WO_DT: °øÁ¤°èÈ¹¾Ğ¿¬Áö½ÃÀÏ½Ã]
+			// ìˆ˜ì‹ í•­ëª©[PRPL_MILL_WO_DT: ê³µì •ê³„íšì••ì—°ì§€ì‹œì¼ì‹œ]
 			szPRPL_MILL_WO_DT 			= ydDaoUtils.paraRecChkNull(msgRecord,"PRPL_MILL_WO_DT");
 
 			szMsg = "szPTOP_PLNT_GP:" + szPTOP_PLNT_GP + "/szCT_MILL_SPEC_WRK_STAT_GP:" + szCT_MILL_SPEC_WRK_STAT_GP + "/szPRPL_MILL_WO_DT:" + szPRPL_MILL_WO_DT;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);			
 			
 			
-			// ÈÄÆÇPlate»ç¾ç À» ÁÖ¹®Á¤º¸ read
+			// í›„íŒPlateì‚¬ì–‘ ì„ ì£¼ë¬¸ì •ë³´ read
 			/*com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getCtPlatspecOrdno*/
 			intRtnVal = ydStockDao.getYdStock(msgRecord, rsOut, 607);
 			if (intRtnVal <= 0){
-				szMsg = "µ¿º° ÀúÀå°èÈ¹ ÇÒ ´ë»ó ¾øÀ½";
+				szMsg = "ë™ë³„ ì €ì¥ê³„íš í•  ëŒ€ìƒ ì—†ìŒ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				return ;
 			}
@@ -1916,19 +1916,19 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				szORD_NO	= yddatautil.setDataDefault(outRec.getField("ORD_NO"),"");
 				szORD_DTL	= yddatautil.setDataDefault(outRec.getField("ORD_DTL"),"");
 	
-				szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL + " Ã³¸®½ÃÀÛ ";
+				szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL + " ì²˜ë¦¬ì‹œì‘ ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				
 				outRecSet1= JDTORecordFactory.getInstance().createRecordSet("retTmp");
 				recPara = JDTORecordFactory.getInstance().create();
 				recPara.setField("ORD_NO",    	szORD_NO);			
 				recPara.setField("ORD_DTL",    	szORD_DTL);			
-				//ÀúÀå°èÈ¹ ÄÚµå Read
+				//ì €ì¥ê³„íš ì½”ë“œ Read
 				/*com.inisteel.cim.yd.common.dao.ptOsCommDao.getPtOsCommLocPlanCd_PIDEV*/
 				intRtnVal = ptOsCommDao.getPtOsComm(recPara, outRecSet1, 300);
 				
 				if (intRtnVal <= 0) {
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL + " ÀúÀå°èÈ¹ ÄÚµå Read error!!!, ErrorCode:" + intRtnVal;
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL + " ì €ì¥ê³„íš ì½”ë“œ Read error!!!, ErrorCode:" + intRtnVal;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					continue ;
 				}
@@ -1941,7 +1941,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				szLOC_PLAN_CD	= yddatautil.setDataDefault(outRec1.getField("LOC_PLAN_CD"),"");
 				//D010S1S2
 				if(szYD_PILING_CD.equals("")){
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +" YD_PILING_CD error!!! ";
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +" YD_PILING_CD error!!! ";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					continue ;
 				}
@@ -1951,11 +1951,11 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				recPara.setField("YD_PILING_CD",   	szYD_PILING_CD);			
 				recPara.setField("LOC_PLAN_CD",    	szLOC_PLAN_CD);			
 				
-				//AccessÀúÀåµ¿ READ
+				//Accessì €ì¥ë™ READ
 				/*com.inisteel.cim.yd.common.dao.ptOsCommDao.getPtOsCommPriorLocPlanAcc*/
 				intRtnVal = ptOsCommDao.getPtOsComm(recPara, outRecSet9, 301);
 				if (intRtnVal <= 0) {
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") AccessÀúÀåµ¿  Read error!!!:" + intRtnVal;
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") Accessì €ì¥ë™  Read error!!!:" + intRtnVal;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					continue ;
 				}
@@ -1968,14 +1968,14 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				
 				szLenGp = szYD_PILING_CD.substring(4,5);
 				
-//±æÀÌ±¸ºĞ U,L,X,³»¼ö				
+//ê¸¸ì´êµ¬ë¶„ U,L,X,ë‚´ìˆ˜				
 				if((szLenGp.equals("U")) || 
 				   (szLenGp.equals("L")) || 
 				   (szLenGp.equals("X")) || (szLOC_PLAN_CD.substring(0, 1).equals("D")) ) {
 					
 					szPLAN_DONG = szPRIOR_1_ACC_DONG;
 					
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ³»¼ö/ÃÊ´ÜÃ´/ÀåÃ´/ÃÊÀåÃ´ °èÈ¹µ¿:" + szPLAN_DONG; 
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ë‚´ìˆ˜/ì´ˆë‹¨ì²™/ì¥ì²™/ì´ˆì¥ì²™ ê³„íšë™:" + szPLAN_DONG; 
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					
 				} else {
@@ -1987,13 +1987,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					/*com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getStklyrWithOrdLocCnt*/
 					intRtnVal = ydStockDao.getYdStock(recPara, outRecSet2, 609);
 					if (intRtnVal <= 0){
-						szMsg = "ÁÖ¹® ÀúÀåµ¿ ÄÚµå°¡ ¾øÀ½ ";
+						szMsg = "ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œê°€ ì—†ìŒ ";
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
-						//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+						//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 						szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 
-						szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						
 					} else {
@@ -2003,13 +2003,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						outRec2 = JDTORecordFactory.getInstance().create();
 						outRec2 = outRecSet2.getRecord();
 
-						szORD_LOC_CNT	= yddatautil.setDataDefault(outRec2.getField("CD_VAL"),"");  	// ÁÖ¹® ÀúÀåµ¿ ÄÚµå 
+						szORD_LOC_CNT	= yddatautil.setDataDefault(outRec2.getField("CD_VAL"),"");  	// ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ 
 						
-						szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÁÖ¹® ÀúÀåµ¿ ÄÚµå :" + szORD_LOC_CNT; 
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ :" + szORD_LOC_CNT; 
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					
 						
-// µ¿º° ÆÄÀÏ¸µ ÄÚµå À§Ä¡ Á¸Àç ¿©ºÎ
+// ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ìœ„ì¹˜ ì¡´ì¬ ì—¬ë¶€
 						outRecSet3= JDTORecordFactory.getInstance().createRecordSet("retTmp");
 						recPara = JDTORecordFactory.getInstance().create();
 						recPara.setField("YD_PILING_CD",   	szYD_PILING_CD);			
@@ -2017,20 +2017,20 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						/*com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getStklyrWithSamePilingCd*/
 						intRtnVal = ydStockDao.getYdStock(recPara, outRecSet3, 608);
 						if (intRtnVal <= 0){
-							szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå°¡  ¾ßµå¿¡ ¾øÀ½";
+							szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œê°€  ì•¼ë“œì— ì—†ìŒ";
 							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
-//ÁÖ¹® ÀúÀåµ¿ READ						
+//ì£¼ë¬¸ ì €ì¥ë™ READ						
 							if (szORD_LOC_CNT.equals("1")) {
-//ÁÖ¹®ÀúÀåµ¿ ¼ö·® = 1			
+//ì£¼ë¬¸ì €ì¥ë™ ìˆ˜ëŸ‰ = 1			
 								szPLAN_DONG = szPRIOR_1_ACC_DONG;
 								
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåµ¿ 1°³  °èÈ¹µ¿:" + szPLAN_DONG; 
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ë™ 1ê°œ  ê³„íšë™:" + szPLAN_DONG; 
 								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 							} else if (szORD_LOC_CNT.equals("2")) {
-//ÁÖ¹®ÀúÀåµ¿ ¼ö·® = 2			
+//ì£¼ë¬¸ì €ì¥ë™ ìˆ˜ëŸ‰ = 2			
 								szPLAN_DONG = "";
-								//ÀúÀåÀ²ÀÌ 80¹Ì¸¸ SEARCH
+								//ì €ì¥ìœ¨ì´ 80ë¯¸ë§Œ SEARCH
 								for(int j =1; j <= outRecSet9.size(); j++){
 									outRecSet9.absolute(j);
 									outRec9 = JDTORecordFactory.getInstance().create();
@@ -2044,69 +2044,69 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 									}
 								}
 								if(szPLAN_DONG.equals("")) {
-									//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+									//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 									szPLAN_DONG = this.ToLocLowRate(outRecSet9);
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
 									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								} else {
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåÀ² 80 ¹Ì¸¸ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ìœ¨ 80 ë¯¸ë§Œ ì„ íƒ ë™:" + szPLAN_DONG; 
 									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								}
 							} else {
 								
-								// ÁÖ¹®ÀúÀåµ¿ ÄÚµå NOT IN ('1','2')	
-								//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+								// ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ NOT IN ('1','2')	
+								//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 								szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 			
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
 								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							}	
 						} else {
 
-							szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå ¾ßµå¿¡ ÀÖÀ½";
+							szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ì•¼ë“œì— ìˆìŒ";
 							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							
 							outRecSet3.absolute(1);
 							outRec3 = JDTORecordFactory.getInstance().create();
 							outRec3 = outRecSet3.getRecord();
 	
-							szPILING_YD_BAY_GP	= yddatautil.setDataDefault(outRec3.getField("YD_BAY_GP"),"");       // µ¿ÀÏ  PIÀúÀåµ¿ 
-							szPILING_BAY_CNT	= yddatautil.setDataDefault(outRec3.getField("PILING_BAY_CNT"),"");  // µ¿ÀÏ  PIÀ§Ä¡ µ¿¼ö
+							szPILING_YD_BAY_GP	= yddatautil.setDataDefault(outRec3.getField("YD_BAY_GP"),"");       // ë™ì¼  PIì €ì¥ë™ 
+							szPILING_BAY_CNT	= yddatautil.setDataDefault(outRec3.getField("PILING_BAY_CNT"),"");  // ë™ì¼  PIìœ„ì¹˜ ë™ìˆ˜
 							
-							szMsg = "µ¿ÀÏ  PI ÀúÀåµ¿ :" + szPILING_YD_BAY_GP + "/µ¿ÀÏ PIÀ§Ä¡µ¿¼ö :" + szPILING_BAY_CNT; 
+							szMsg = "ë™ì¼  PI ì €ì¥ë™ :" + szPILING_YD_BAY_GP + "/ë™ì¼ PIìœ„ì¹˜ë™ìˆ˜ :" + szPILING_BAY_CNT; 
 							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 							
 							if (szORD_LOC_CNT.equals("1")) {
-//ÁÖ¹®ÀúÀåµ¿ ÄÚµå = 1								
-								// µ¿ÀÏPIÀúÀåµ¿ = ¼ö¼Ûº° ACCµ¿ AND ÁÖ¹®ÀúÀåÄÚµå= µ¿ÀÏPI À§Ä¡ µ¿¼ö
+//ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ = 1								
+								// ë™ì¼PIì €ì¥ë™ = ìˆ˜ì†¡ë³„ ACCë™ AND ì£¼ë¬¸ì €ì¥ì½”ë“œ= ë™ì¼PI ìœ„ì¹˜ ë™ìˆ˜
 //								if( (szPILING_YD_BAY_GP.equals(szPRIOR_1_ACC_DONG)) &&  
 								if( (szORD_LOC_CNT.equals(szPILING_BAY_CNT)) ) {
 									
 									szPLAN_DONG = szPILING_YD_BAY_GP;	
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ±âÁ¸ÆÄÀÏ¸µÀ§Ä¡ µ¿:" + szPILING_YD_BAY_GP; 
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê¸°ì¡´íŒŒì¼ë§ìœ„ì¹˜ ë™:" + szPILING_YD_BAY_GP; 
 									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								} else {
 									szPLAN_DONG = szPRIOR_1_ACC_DONG;
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") °èÈ¹µ¿:" + szPRIOR_1_ACC_DONG; 
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê³„íšë™:" + szPRIOR_1_ACC_DONG; 
 									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								}  
 							
 							} else if (szORD_LOC_CNT.equals("2")) {
-//ÁÖ¹®ÀúÀåµ¿ ÄÚµå = 2								
+//ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ = 2								
 								double dblORD_LOC_CNT 	= Integer.parseInt(szORD_LOC_CNT);
 								double dblPILING_BAY_CNT= Integer.parseInt(szPILING_BAY_CNT);
 								
-								// ÁÖ¹®ÀúÀåÄÚµå <= µ¿ÀÏPIÀ§Ä¡ µ¿¼ö
+								// ì£¼ë¬¸ì €ì¥ì½”ë“œ <= ë™ì¼PIìœ„ì¹˜ ë™ìˆ˜
 								if( dblORD_LOC_CNT <= dblPILING_BAY_CNT ) {
 									
 									szPLAN_DONG = szPRIOR_1_ACC_DONG;
 									
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") °èÈ¹µ¿:" + szPRIOR_1_ACC_DONG; 
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê³„íšë™:" + szPRIOR_1_ACC_DONG; 
 									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							
 								} else {
-//ÃÖ¿ì¼±¼øÀ§ ÀúÀåµ¿ ¼±ÅÃ
+//ìµœìš°ì„ ìˆœìœ„ ì €ì¥ë™ ì„ íƒ
 									szPLAN_DONG = "";
 									for(int j =1; j <= outRecSet9.size(); j++){
 										outRecSet9.absolute(j);
@@ -2122,27 +2122,27 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 										}
 									}
 									if(szPLAN_DONG.equals("")) {
-										// ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+										// ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 										szPLAN_DONG = this.ToLocLowRate(outRecSet9);
-										szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+										szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
 										ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 									} else {
-										szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåÀ² 80 ¹Ì¸¸ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+										szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ìœ¨ 80 ë¯¸ë§Œ ì„ íƒ ë™:" + szPLAN_DONG; 
 										ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									}
 								}  
 							} else {
-								// ÁÖ¹®ÀúÀåµ¿ ÄÚµå NOT IN ('1','2')	
-								//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+								// ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ NOT IN ('1','2')	
+								//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 								szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 			
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
 								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							}	
-						}	//szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå ¾ßµå¿¡ ÀÖÀ½";
-					}		//szMsg = "ÁÖ¹® ÀúÀåµ¿ ÄÚµå ÀÖÀ½";
-				}			//±æÀÌ±¸ºĞ U,L,X,³»¼ö	
+						}	//szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ì•¼ë“œì— ìˆìŒ";
+					}		//szMsg = "ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ ìˆìŒ";
+				}			//ê¸¸ì´êµ¬ë¶„ U,L,X,ë‚´ìˆ˜	
 			
 				if(!szPLAN_DONG.equals("")) {
 					szORD_NO	= yddatautil.setDataDefault(outRec.getField("ORD_NO"),"");
@@ -2161,7 +2161,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 					sRTN_CD		= StringHelper.evl(outRecord.getFieldString("RTN_CD"), "0");
 					
 					if(sRTN_CD.equals("0")){ 
-						szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"update error!!! ";
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"update error!!! ";
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						m_ctx.setRollbackOnly();
 						return ;
@@ -2170,26 +2170,26 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			}
 		}catch(Exception e){
 	
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹] Exception Error:" +e.getMessage();
+			szMsg = "[ë™ë³„ì €ì¥ê³„íš] Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 		}
 
-		szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	
 
 	} // end of procYdBayLocPln()
 		
 	/**
-	 * ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
-	 * return  0: Ç×¸ñ ÆíÁı ¼º°ø
-	 * 		  -1: Ç×¸ñ ÆíÁı ½ÇÆĞ	
+	 * ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
+	 * return  0: í•­ëª© í¸ì§‘ ì„±ê³µ
+	 * 		  -1: í•­ëª© í¸ì§‘ ì‹¤íŒ¨	
 	 * @param inRecord
 	 * @param outRec
 	 * @throws JDTOException
 	 */
 	public String ToLocLowRate (JDTORecordSet inRecordSet) throws JDTOException {
-		//ÀúÀåÇ°DAO
+		//ì €ì¥í’ˆDAO
 		YDDataUtil yddatautil 	= new YDDataUtil();
 		JDTORecord outRec   	= null;
 		String szMethodName	   	= "ToLocLowRate";
@@ -2214,13 +2214,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				}
 			}
 
-			szMsg = "°èÈ¹µ¿:" + szPLAN_DONG; 
+			szMsg = "ê³„íšë™:" + szPLAN_DONG; 
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			return szPLAN_DONG;
 			
 		} catch(Exception e){
 			
-			szMsg="ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿ Exception Error:" +e.getMessage();
+			szMsg="ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™ Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg); 
 		}
@@ -2228,8 +2228,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	} //end of ToLocLowRate()
 	
 	/**
-	 * OS ÀÔ°í¿¹Á¤À§Ä¡ UPDATA
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * OS ì…ê³ ì˜ˆì •ìœ„ì¹˜ UPDATA
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @ejb.transaction type="RequiresNew"
@@ -2239,12 +2239,12 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		int       intRtnVal    	= 0;
 		String    szMsg        	= "";
 		String    szMethodName 	= "ProcUpdPtOsComm";
-		String szOperationName 	= "OS ÀÔ°í¿¹Á¤À§Ä¡ UPDATA ";
+		String szOperationName 	= "OS ì…ê³ ì˜ˆì •ìœ„ì¹˜ UPDATA ";
 		
 		JDTORecord outRecord	= JDTORecordFactory.getInstance().create(); 
 		PtOsCommDao ptOsCommDao = new PtOsCommDao();	
 		
-		szMsg = "["+szOperationName+"] ¸Ş¼Òµå ½ÃÀÛ ";
+		szMsg = "["+szOperationName+"] ë©”ì†Œë“œ ì‹œì‘ ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		try {
@@ -2255,7 +2255,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	        
 			if (intRtnVal != 1) {
 				outRecord.setField("RTN_CD" 	, "0");	
-				outRecord.setField("RTN_MSG" 	, "OS ÀÔ°í¿¹Á¤À§Ä¡ UPDATA ¼öÁ¤½Ã ERROR ¹ß»ı");	
+				outRecord.setField("RTN_MSG" 	, "OS ì…ê³ ì˜ˆì •ìœ„ì¹˜ UPDATA ìˆ˜ì •ì‹œ ERROR ë°œìƒ");	
 				return outRecord;
 			} // end of if				
 
@@ -2263,7 +2263,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			return outRecord;
 		
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(getClass().getName() + e.getMessage(),e);
 		} finally {
 		}
@@ -2271,8 +2271,8 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	}	// end of ProcUpdPtOsComm    	
 
 	/**
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù. 
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : (JMS :JDTORecord ¼Û½ÅÃ³¸®)
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤. 
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : (JMS :JDTORecord ì†¡ì‹ ì²˜ë¦¬)
 	 * 
 	 */
 	public void sndJMSInfo (JDTORecord param) throws DAOException {	
@@ -2292,10 +2292,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			String szTcCode	    	 = ydUtils.getTcCode(param);		
 
 			//PIDEV
-			// Àü¼Û¿ë JDTORecord »ı¼º
+			// ì „ì†¡ìš© JDTORecord ìƒì„±
 			tcRecSet =JDTORecordFactory.getInstance().createRecordSet("YDDelegate");						
 			
-			// nRtc>0 : tcRecSetÀÇ Record Count
+			// nRtc>0 : tcRecSetì˜ Record Count
 			int nRtc = tcConstMgr.makeTc(param, tcRecSet);
 			
 			if( nRtc<=0){
@@ -2304,31 +2304,31 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				return ;
 			}
 			
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(szTcCode.startsWith("M10")) {
 				for(int i = 0; i < nRtc; i++){
 					tcRecord =tcRecSet.getRecord(i);
 					M10YdExLm21Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(tcRecord));
-					szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")";
+					szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")";
 					ydUtils.putLog(szSessionName, "sndJMSInfo", szMsg, YdConstant.DEBUG);
 				}
 				return ;
 			}			
-			//±îÁö			
+			//ê¹Œì§€			
 			
-			// ÇÁ·ÎÆÛÆ¼ ¼­ºñ½º ÀÎ½ºÅÏ½º¸¦ ÃëµæÇÕ´Ï´Ù.
+			// í”„ë¡œí¼í‹° ì„œë¹„ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì·¨ë“í•©ë‹ˆë‹¤.
 			propertyService = PropertyService.getInstance();
 			
-			ydUtils.displayRecord("¼Û½ÅÈ®ÀÎ", param);
+			ydUtils.displayRecord("ì†¡ì‹ í™•ì¸", param);
 			
-			// JDTORecordÀÎ½ºÅÏ½º °´Ã¼ Ãëµæ
+			// JDTORecordì¸ìŠ¤í„´ìŠ¤ ê°ì²´ ì·¨ë“
 			insRecord = JDTORecordFactory.getInstance().create();			
 					
-			String JMS_TC_CD	    	 = StringHelper.evl(param.getFieldString("JMS_TC_CD"), "");				//JMSÀü¹® ID		8
+			String JMS_TC_CD	    	 = StringHelper.evl(param.getFieldString("JMS_TC_CD"), "");				//JMSì „ë¬¸ ID		8
 			String Message = "";
 			String szWkGp  = JMS_TC_CD.substring(2,4);
-//			ÃâÇÏhttp ->jms 
-			// Å¥ ¸íÄªÀ» ÇÁ·ÎÆÛÆ¼·ÎºÎÅÍ ÃëµæÇÕ´Ï´Ù.
+//			ì¶œí•˜http ->jms 
+			// í ëª…ì¹­ì„ í”„ë¡œí¼í‹°ë¡œë¶€í„° ì·¨ë“í•©ë‹ˆë‹¤.
 			queueName = propertyService.getProperty("common.properties","jms.queue."+szWkGp+"_MDB_QUEUE");	
 
 			
@@ -2360,20 +2360,20 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2ÈÄÆÇ Á¦Ç°»ı»ê½ÇÀû (PPYDJ004)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2í›„íŒ ì œí’ˆìƒì‚°ì‹¤ì  (PPYDJ004)
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procPl2GdsPrdWr(JDTORecord msgRecord)throws JDTOException  {
 		
-		// DAO ¹× UTIL °´Ã¼ »ı¼º
+		// DAO ë° UTIL ê°ì²´ ìƒì„±
 		YdStockDao ydStockDao     = new YdStockDao();
 		YdPlateCommDAO commDao 	  = new YdPlateCommDAO();
 		
-		// ·¹ÄÚµå ¼±¾ğ
+		// ë ˆì½”ë“œ ì„ ì–¸
 		JDTORecordSet rsOutRecSet = null;
 		JDTORecordSet rsGetStock  = null;
 		JDTORecord outRec         = null;
@@ -2383,10 +2383,10 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		JDTORecord recInTemp      = null;
 		JDTORecord recGetVal      = null;
 		
-		// º¯¼ö ¼±¾ğ
+		// ë³€ìˆ˜ ì„ ì–¸
 		String szMethodName       = "procPl2GdsPrdWr";
 		String szMsg              = "";
-		String szOperationName    = "2ÈÄÆÇ Á¦Ç°»ı»ê½ÇÀû";
+		String szOperationName    = "2í›„íŒ ì œí’ˆìƒì‚°ì‹¤ì ";
 		String szSTL_NO           = "";
 		String szPL_RCPT_LN_GP    = "";
 		String szPL_WRK_PROC      = "";
@@ -2405,7 +2405,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		String szAPPLY_YN130			= "N";
 		int intRtnVal             		= 0;
-		String szAPPLY_YN250			= "N"; // ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ)
+		String szAPPLY_YN250			= "N"; // í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨)
 		
 		String szRcvTcCode = ydUtils.getTcCode(msgRecord);
 		
@@ -2416,40 +2416,40 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		}
 		
 		if(bDebugFlag){
-			szMsg = "Àü¹®¼ö½Å : TCCODE=" + szRcvTcCode;
+			szMsg = "ì „ë¬¸ìˆ˜ì‹  : TCCODE=" + szRcvTcCode;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}
 				
 		try{
 			
-			// ¼ö½Å¹ŞÀº Àü¹®¿¡¼­ Àç·á¹øÈ£ ÃßÃâ
+			// ìˆ˜ì‹ ë°›ì€ ì „ë¬¸ì—ì„œ ì¬ë£Œë²ˆí˜¸ ì¶”ì¶œ
 			szSTL_NO 		 = msgRecord.getFieldString("STL_NO");
-			szPL_RCPT_LN_GP  = msgRecord.getFieldString("PL_RCPT_LN_GP"); // ÈÄÆÇÀÔ°íLine±¸ºĞ
-			szPL_WRK_PROC    = msgRecord.getFieldString("PL_WRK_PROC");   // ÈÄÆÇ°øÁ¤ÄÚµå
+			szPL_RCPT_LN_GP  = msgRecord.getFieldString("PL_RCPT_LN_GP"); // í›„íŒì…ê³ Lineêµ¬ë¶„
+			szPL_WRK_PROC    = msgRecord.getFieldString("PL_WRK_PROC");   // í›„íŒê³µì •ì½”ë“œ
 			
-			// ·¹ÄÚµå »ı¼º
+			// ë ˆì½”ë“œ ìƒì„±
 			rsOutRecSet = JDTORecordFactory.getInstance().createRecordSet("");
 			rsGetStock  = JDTORecordFactory.getInstance().createRecordSet("");
 			recEdit     = JDTORecordFactory.getInstance().create();
 
-			// PLATE°øÅë Á¶È¸  Dao È£Ãâ - [GP : 4]
+			// PLATEê³µí†µ ì¡°íšŒ  Dao í˜¸ì¶œ - [GP : 4]
 			//==============================================================================================
-			// 2009.11.17 ±Ç¿ÀÃ¢  : Äõ¸®¼öÁ¤ (172)
+			// 2009.11.17 ê¶Œì˜¤ì°½  : ì¿¼ë¦¬ìˆ˜ì • (172)
 			//    com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getPLATECOMMOSCOMM
 			// 
-			//    Á¶È¸ ÈÄ ÀúÀåÇ°¿¡ ¾÷µ¥ÀÌÆ® ½Ã ORD_GP°ú DEST_CD°¡ ¾øÀ½ 
-			//    PLATECOMM °ú OSCOMMÀ» Á¶ÀÎ°É¾î¼­ °¡Á®¿È
+			//    ì¡°íšŒ í›„ ì €ì¥í’ˆì— ì—…ë°ì´íŠ¸ ì‹œ ORD_GPê³¼ DEST_CDê°€ ì—†ìŒ 
+			//    PLATECOMM ê³¼ OSCOMMì„ ì¡°ì¸ê±¸ì–´ì„œ ê°€ì ¸ì˜´
 			//==============================================================================================
 			recIn = JDTORecordFactory.getInstance().create();
 			recIn.setField("PLATE_NO", szSTL_NO);
 			/* com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getPLATECOMMOSCOMM */
 			intRtnVal = ydStockDao.getYdStock(recIn, rsOutRecSet, 172);
 			if(intRtnVal < 0){
-				szMsg = "PLATECOMM[PLATE°øÅë] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
+				szMsg = "PLATECOMM[PLATEê³µí†µ] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "PARAMETER ERROR";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			} else if(intRtnVal == 0){
-				szMsg = "PLATECOMM[PLATE°øÅë] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "DO NOT EXIST";
+				szMsg = "PLATECOMM[PLATEê³µí†µ] Error :: STL_NO(" + szSTL_NO + ") [" + intRtnVal + "]" + "DO NOT EXIST";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				return ;
 			}
@@ -2459,17 +2459,17 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 			recGetVal.setField("PL_RCPT_LN_GP", szPL_RCPT_LN_GP);
 			
-			// PLATE°øÅë Å×ÀÌºí¿¡¼­ ÀĞÀº Àü¹® Ç×¸ñÆíÁı (ÁÖ¹®Àç,¿©Àç¿¡ ÆÄÀÏ¸µÄÚµå, ºÏ¾Æ¿ôÀ§Ä¡, ÀÔ°í¿¹Á¤À§Ä¡ µî..)
+			// PLATEê³µí†µ í…Œì´ë¸”ì—ì„œ ì½ì€ ì „ë¬¸ í•­ëª©í¸ì§‘ (ì£¼ë¬¸ì¬,ì—¬ì¬ì— íŒŒì¼ë§ì½”ë“œ, ë¶ì•„ì›ƒìœ„ì¹˜, ì…ê³ ì˜ˆì •ìœ„ì¹˜ ë“±..)
 			intRtnVal = this.edtPlateComm3G(recGetVal, recEdit, "PB");
 			if(intRtnVal < 0){
-				szMsg= "PLATECOMM[PLATE°øÅë] Ç×¸ñ ÆíÁı Error :: [" + intRtnVal + "]";
+				szMsg= "PLATECOMM[PLATEê³µí†µ] í•­ëª© í¸ì§‘ Error :: [" + intRtnVal + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}
 			
 			//-------------------------------------------------------------------------------------------------------
-			//1ÈÄÆÇ ON-LINE ÀÌ 66, 67 ÀÏ ¼ö ÀÖ±â ¶§¹®¿¡
-			//edtPlateComm3G ¿¡¼­ BOOK-OUT LOC °¡  66ÀÌ´õ¶óµµ BO ÀÌ¸é 67 º¯°æÇÑ´Ù.
+			//1í›„íŒ ON-LINE ì´ 66, 67 ì¼ ìˆ˜ ìˆê¸° ë•Œë¬¸ì—
+			//edtPlateComm3G ì—ì„œ BOOK-OUT LOC ê°€  66ì´ë”ë¼ë„ BO ì´ë©´ 67 ë³€ê²½í•œë‹¤.
 			szYdBookOutLoc 			= ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC");
 			if(szYdBookOutLoc.startsWith("66")&&("BO".equals(szPL_WRK_PROC)||"BM".equals(szPL_WRK_PROC)||"BL".equals(szPL_WRK_PROC))) {
 				szYdBookOutLoc = "67" + szYdBookOutLoc.substring(2);
@@ -2478,56 +2478,56 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			//-------------------------------------------------------------------------------------------------------			
 			
 			/*
-			 * PLATE°øÅë¿¡ UPDATEÇÒ ·¹ÄÚµå.
-			 * »óÀ§ÀÇ ¸Ş¼Òµå¿¡¼­´Â ÁÖ¹®ÀçÀÏ °æ¿ì OS°øÅëÀÇ BOOK OUT ¹× ¿¹Á¤À§Ä¡¸¦ °¡Á®¿Â´Ù.
-			 * ½Å±ÔÀÏ°æ¿ì´Â OS°øÅëÁ¤º¸, ¼öÁ¤ÀÏ °æ¿ì´Â ÀúÀåÇ°Á¤º¸¸¦ PLATE°øÅë¿¡ UPDATEÇÑ´Ù.
+			 * PLATEê³µí†µì— UPDATEí•  ë ˆì½”ë“œ.
+			 * ìƒìœ„ì˜ ë©”ì†Œë“œì—ì„œëŠ” ì£¼ë¬¸ì¬ì¼ ê²½ìš° OSê³µí†µì˜ BOOK OUT ë° ì˜ˆì •ìœ„ì¹˜ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+			 * ì‹ ê·œì¼ê²½ìš°ëŠ” OSê³µí†µì •ë³´, ìˆ˜ì •ì¼ ê²½ìš°ëŠ” ì €ì¥í’ˆì •ë³´ë¥¼ PLATEê³µí†µì— UPDATEí•œë‹¤.
 			 */
 			recInTemp  = JDTORecordFactory.getInstance().create();
 			
-			// ÀúÀåÇ° Á¶È¸¸¦ ÇØ¼­ Á¸ÀçÇÏ¸é UPDATE ¾øÀ¸¸é INSERT Ã³¸®
+			// ì €ì¥í’ˆ ì¡°íšŒë¥¼ í•´ì„œ ì¡´ì¬í•˜ë©´ UPDATE ì—†ìœ¼ë©´ INSERT ì²˜ë¦¬
 			intRtnVal = ydStockDao.getYdStock(recEdit, rsGetStock, 0);
 			if(intRtnVal < 0){
-				szMsg= "YD_STOCK[ÀúÀåÇ°] SELECT Error :: [" + intRtnVal + "]";
+				szMsg= "YD_STOCK[ì €ì¥í’ˆ] SELECT Error :: [" + intRtnVal + "]";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}else if(intRtnVal == 0){
 				
-				szMsg = "YD_STOCK[ÀúÀåÇ°] INSERT :: ";
+				szMsg = "YD_STOCK[ì €ì¥í’ˆ] INSERT :: ";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				
 				// INSERT
 				recEdit.setField("REGISTER", "PPYDJ004");
 				
 				/*--------------------------------------------------------------
-				 * PLATE °øÅë UPDATE ·¹ÄÚµå
+				 * PLATE ê³µí†µ UPDATE ë ˆì½”ë“œ
 				 */
 				recInTemp.setField("PLATE_NO", 			szSTL_NO);
 				recInTemp.setField("YD_PILING_CD", 		ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD"));
 				recInTemp.setField("YD_BOOK_OUT_LOC", 	ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC"));
 				
 				/*--------------------------------------------------------------
-				 * 2010.03.02 ÀÌ¿µ±Ù
-				 * ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã, ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) Ç×¸ñ Ãß°¡ 
+				 * 2010.03.02 ì´ì˜ê·¼
+				 * í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ, í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) í•­ëª© ì¶”ê°€ 
 				 */
 				szPL_RCPT_DDTT   = YdUtils.getCurDate("yyyyMMddHHmmss");
 				szPL_RCPT_TRK_NO = szPL_WRK_PROC + YdUtils.getCurDate("yyyyMMddHHmmss");
 				
-				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã                                                  char(14) 'YYYYMMDDHHMMSS'
-				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) char(16) '1MYYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ                                                  char(14) 'YYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) char(16) '1MYYYYMMDDHHMMSS'
 				//--------------------------------------------------------------
 				
 				intRtnVal = ydStockDao.insYdStock(recEdit);
 				if(intRtnVal < 0){
-					szMsg = "YD_STOCK[ÀúÀåÇ°] INSERT Error :: [" + intRtnVal + "]";
+					szMsg = "YD_STOCK[ì €ì¥í’ˆ] INSERT Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}
 				
-				szMsg = "YD_STOCK[AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] INSERT SUCCESS";
+				szMsg = "YD_STOCK[Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] INSERT SUCCESS";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			}else{
 				
-				szMsg = "YD_STOCK[ÀúÀåÇ°] UPDATE ::";
+				szMsg = "YD_STOCK[ì €ì¥í’ˆ] UPDATE ::";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 				// UPDATE
@@ -2536,14 +2536,14 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				String sOrdYeojaeGp = ydDaoUtils.paraRecChkNull(recGetVal,"ORD_YEOJAE_GP");
 				
 				/*------------------------------------------------------------------------
-				 * 2010.03.05 ¼®Ã¢È­
-				 * Update Ç×¸ñ ÆíÁı ¼öÁ¤
+				 * 2010.03.05 ì„ì°½í™”
+				 * Update í•­ëª© í¸ì§‘ ìˆ˜ì •
 				 */
 				rsGetStock.absolute(1);
 				outRec = JDTORecordFactory.getInstance().create();
 				outRec.setRecord(rsGetStock.getRecord());
 				
-				//StockÀÇ Á¤º¸¸¦ ÀĞ¾î ¿Â´Ù.
+				//Stockì˜ ì •ë³´ë¥¼ ì½ì–´ ì˜¨ë‹¤.
 				szPilingCd 				= ydDaoUtils.paraRecChkNull(recEdit,"YD_PILING_CD");
 				szYdBookOutLoc 			= ydDaoUtils.paraRecChkNull(recEdit,"YD_BOOK_OUT_LOC");
 				szYdRcptPlnStrLoc 		= ydDaoUtils.paraRecChkNull(recEdit,"YD_RCPT_PLN_STR_LOC");
@@ -2558,43 +2558,43 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				//--------------------------------------------------------------
 						
 				/*--------------------------------------------------------------
-				 * PLATE °øÅë UPDATE ·¹ÄÚµå
+				 * PLATE ê³µí†µ UPDATE ë ˆì½”ë“œ
 				 */
 				recInTemp.setField("PLATE_NO", 			szSTL_NO);
 				recInTemp.setField("YD_PILING_CD", 		szPilingCd);
 				recInTemp.setField("YD_BOOK_OUT_LOC", 	szYdBookOutLoc);
 					
 				/*--------------------------------------------------------------
-				 * 2010.03.02 ÀÌ¿µ±Ù
-				 * ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã, ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) Ç×¸ñ Ãß°¡ 
+				 * 2010.03.02 ì´ì˜ê·¼
+				 * í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ, í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) í•­ëª© ì¶”ê°€ 
 				 */
 				szPL_RCPT_DDTT   = YdUtils.getCurDate("yyyyMMddHHmmss");
 				szPL_RCPT_TRK_NO = szPL_WRK_PROC + YdUtils.getCurDate("yyyyMMddHHmmss");
 				
-				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // ÈÄÆÇÃ¢°íÀÔ°íÀÏ½Ã                                                  char(14) 'YYYYMMDDHHMMSS'
-				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // ÈÄÆÇ»ı»ê½ÇÀû¹øÈ£(ÈÄÆÇ°øÁ¤ÄÚµå + ³â¿ùÀÏ½ÃºĞÃÊ) char(16) '1MYYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_DDTT",   szPL_RCPT_DDTT);    // í›„íŒì°½ê³ ì…ê³ ì¼ì‹œ                                                  char(14) 'YYYYMMDDHHMMSS'
+				recEdit.setField("PL_RCPT_TRK_NO", szPL_RCPT_TRK_NO);  // í›„íŒìƒì‚°ì‹¤ì ë²ˆí˜¸(í›„íŒê³µì •ì½”ë“œ + ë…„ì›”ì¼ì‹œë¶„ì´ˆ) char(16) '1MYYYYMMDDHHMMSS'
 				//--------------------------------------------------------------
 				
-				recEdit.setField("SNDBK_RSN_CD", "*"); //Auto-Piling À» ÇÏ±â À§ÇÑ ÁØºñÀÛ¾÷À¸·Î SNDBK_RSN_CD ¸¦ '*' ·Î ¼ÂÆÃÇÑ´Ù.
+				recEdit.setField("SNDBK_RSN_CD", "*"); //Auto-Piling ì„ í•˜ê¸° ìœ„í•œ ì¤€ë¹„ì‘ì—…ìœ¼ë¡œ SNDBK_RSN_CD ë¥¼ '*' ë¡œ ì…‹íŒ…í•œë‹¤.
 				
 				intRtnVal = ydStockDao.updYdStock(recEdit, 0);
 				if(intRtnVal <= 0){
-					szMsg = "YD_STOCK[ÀúÀåÇ°] UPDATE Error :: [" + intRtnVal + "]";
+					szMsg = "YD_STOCK[ì €ì¥í’ˆ] UPDATE Error :: [" + intRtnVal + "]";
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 					return ;
 				}
 				
-				szMsg = "YD_STOCK[AÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] UPDATE SUCCESS";
+				szMsg = "YD_STOCK[Aí›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] UPDATE SUCCESS";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			}
 			
 			//--------------------------------------------------------------------------------------------------------
-			//	ÈÄÆÇÁ¦Ç° »ı»ê½ÇÀû ½Ã°£ UPDATE
+			//	í›„íŒì œí’ˆ ìƒì‚°ì‹¤ì  ì‹œê°„ UPDATE
 			//--------------------------------------------------------------------------------------------------------
 			recPara = JDTORecordFactory.getInstance().create();
 			recPara.setField("STL_NO", szSTL_NO);
 			
-			szMsg = "[»ı»ê½ÇÀû ¼ö½Å ]["+szSTL_NO+"]";
+			szMsg = "[ìƒì‚°ì‹¤ì  ìˆ˜ì‹  ]["+szSTL_NO+"]";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			intRtnVal = ydStockDao.update_Dm_Time(recPara,1);
 
@@ -2602,7 +2602,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			inRecord1 	= JDTORecordFactory.getInstance().create();
 			outRecord1  = JDTORecordFactory.getInstance().create();
 
-			inRecord1.setField("REPR_CD_GP", "T00130");    //½ÃÇè ½ÃÆíÀç
+			inRecord1.setField("REPR_CD_GP", "T00130");    //ì‹œí—˜ ì‹œí¸ì¬
 			
 			/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 			intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -2611,7 +2611,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				outRecord1  	= outResult.getRecord();
 				szAPPLY_YN130 	= outRecord1.getFieldString("ITEM1");				
 			}
-			szMsg="½ÃÇè ½ÃÆíÀç Àû¿ë :" + szAPPLY_YN130 ;
+			szMsg="ì‹œí—˜ ì‹œí¸ì¬ ì ìš© :" + szAPPLY_YN130 ;
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 
 			if(szAPPLY_YN130.equals("Y")){
@@ -2628,23 +2628,23 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				   "2N".equals(szPL_WRK_PROC)) {
 					
 					//--------------------------------------------------------------------------------------------------------
-					//	ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ Piling Code¿Í Book-OutÀ§Ä¡ ¼öÁ¤
+					//	í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— Piling Codeì™€ Book-Outìœ„ì¹˜ ìˆ˜ì •
 					//--------------------------------------------------------------------------------------------------------
 					recInTemp.setField("YD_GP", 			YdConstant.YD_GP_PLATE2_GDS_YARD);
 					recInTemp.setField("MODIFIER", 			"PPYDJ004");
 					
 					intRtnVal = commDao.update(recInTemp, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.updateQueryId_0008");
 					
-					szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ¿Ï·á " ;
+					szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì™„ë£Œ " ;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);			
 					//--------------------------------------------------------------------------------------------------------
 					
-					/* ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ) È£Ãâ½ÃÀÛ */ 
+					/* í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨) í˜¸ì¶œì‹œì‘ */ 
 					outResult  	= JDTORecordFactory.getInstance().createRecordSet("");
 					inRecord1 	= JDTORecordFactory.getInstance().create();
 					outRecord1  = JDTORecordFactory.getInstance().create();
 
-					inRecord1.setField("REPR_CD_GP", "T00250");    //½ÃÇè ½ÃÆíÀç
+					inRecord1.setField("REPR_CD_GP", "T00250");    //ì‹œí—˜ ì‹œí¸ì¬
 					
 					/*com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getPlateYdRuleMgtYN*/
 					intRtnVal = ydEqpDao.getYdEqp(inRecord1, outResult, 999);
@@ -2653,12 +2653,12 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 						outRecord1  	= outResult.getRecord();
 						szAPPLY_YN250 	= outRecord1.getFieldString("ITEM1");				
 					}
-					szMsg="ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë :" + szAPPLY_YN250 ;
+					szMsg="í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš© :" + szAPPLY_YN250 ;
 					ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
-					/* ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ) È£Ãâ³¡ */ 					
+					/* í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨) í˜¸ì¶œë */ 					
 					
-					if("N".equals(szAPPLY_YN250)){ // ÈÄÆÇ ¹«»ó»ùÇÃÁ¦ T999999999 ÃâÇÏI/F Àû¿ë¿©ºÎ(Y: Àü¼Û, N:Àü¼Û¾ÈÇÔ)
-						szMsg ="[JSP Session "+ szOperationName +"] - Å×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å ¾ÈÇÔ(¼­À± ¸Å´ÏÀú ¿äÃ»)";				
+					if("N".equals(szAPPLY_YN250)){ // í›„íŒ ë¬´ìƒìƒ˜í”Œì œ T999999999 ì¶œí•˜I/F ì ìš©ì—¬ë¶€(Y: ì „ì†¡, N:ì „ì†¡ì•ˆí•¨)
+						szMsg ="[JSP Session "+ szOperationName +"] - í…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹  ì•ˆí•¨(ì„œìœ¤ ë§¤ë‹ˆì € ìš”ì²­)";				
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);	
 					}else {
 						outRec1  = JDTORecordFactory.getInstance().create();
@@ -2697,7 +2697,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 //						}
 						
 						this.sndJMSInfo(outRec1);
-						szMsg ="[JSP Session "+ szOperationName +"] - Å×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å";				
+						szMsg ="[JSP Session "+ szOperationName +"] - í…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹ ";				
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						
 //PIDEV_QM						
@@ -2708,26 +2708,26 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 							outRec3.setField("STL_NO"       		, szSTL_NO);
 
 							this.sndJMSInfo(outRec3);
-							szMsg ="[JSP Session "+ szOperationName +"] - Ç°ÁúÅ×½ºÆ®¿ë ½ÃÇèÀç"+szSTL_NO+"¿ë ÀÔ°íÀÛ¾÷½ÇÀû¼Û½Å";				
+							szMsg ="[JSP Session "+ szOperationName +"] - í’ˆì§ˆí…ŒìŠ¤íŠ¸ìš© ì‹œí—˜ì¬"+szSTL_NO+"ìš© ì…ê³ ì‘ì—…ì‹¤ì ì†¡ì‹ ";				
 							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 //						}						
 					}
 
-					//½ÃÇè ½ÃÆíÀç´Â ¿©±â¼­ Á¾·áÇÑ´Ù.
+					//ì‹œí—˜ ì‹œí¸ì¬ëŠ” ì—¬ê¸°ì„œ ì¢…ë£Œí•œë‹¤.
 					return ;
 				}
 			}
 			//--------------------------------------------------------------------------------------------------------
-			//	ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ Piling Code¿Í Book-OutÀ§Ä¡ ¼öÁ¤
+			//	í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— Piling Codeì™€ Book-Outìœ„ì¹˜ ìˆ˜ì •
 			//--------------------------------------------------------------------------------------------------------
 			String szRtnMsg = DaoManager.updPtPlateComm(recInTemp, 0);
 			
 			if( !szRtnMsg.equals(YdConstant.RETN_CD_SUCCESS) ) {
-				szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ½Ã ¿À·ù¹ß»ı - ¸Ş¼¼Áö : " + szRtnMsg;
+				szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì‹œ ì˜¤ë¥˜ë°œìƒ - ë©”ì„¸ì§€ : " + szRtnMsg;
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			}
 			
-			szMsg= "ÈÄÆÇÁ¦Ç°°øÅëÅ×ÀÌºí¿¡ YD_PILING_CD, YD_BOOK_OUT_LOC µî·Ï ¿Ï·á : " + szRtnMsg;
+			szMsg= "í›„íŒì œí’ˆê³µí†µí…Œì´ë¸”ì— YD_PILING_CD, YD_BOOK_OUT_LOC ë“±ë¡ ì™„ë£Œ : " + szRtnMsg;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);			
 			//--------------------------------------------------------------------------------------------------------
 			
@@ -2741,13 +2741,13 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			ydUtils.putLog(szOperationName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			/*
-			 * °Ë»ç´ë Åë°ú½ÃÁ¡¿¡ ON-OFF LINE¿¡ µû¸¥ ÀúÀåÀ§Ä¡ °­Á¦ UPDATE
+			 * ê²€ì‚¬ëŒ€ í†µê³¼ì‹œì ì— ON-OFF LINEì— ë”°ë¥¸ ì €ì¥ìœ„ì¹˜ ê°•ì œ UPDATE
 			 */
-			if (szPL_WRK_PROC.equals("2O")|| // B RTÀÔ°í
-				szPL_WRK_PROC.equals("2N")|| // C RTÀÔ°í	 
-				szPL_WRK_PROC.equals("BO")|| // A RTÀÔ°í
-				szPL_WRK_PROC.equals("2M")|| // Á¤Á¤ºĞ±â
-				szPL_WRK_PROC.equals("BM")){ // Á¤Á¤ºĞ±â
+			if (szPL_WRK_PROC.equals("2O")|| // B RTì…ê³ 
+				szPL_WRK_PROC.equals("2N")|| // C RTì…ê³ 	 
+				szPL_WRK_PROC.equals("BO")|| // A RTì…ê³ 
+				szPL_WRK_PROC.equals("2M")|| // ì •ì •ë¶„ê¸°
+				szPL_WRK_PROC.equals("BM")){ // ì •ì •ë¶„ê¸°
 				
 				JDTORecordSet rsTemp  	= null;
 				rsTemp  	= JDTORecordFactory.getInstance().createRecordSet("");
@@ -2756,14 +2756,14 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 				recPara.setField("STL_NO",         szSTL_NO);
 				recPara.setField("YD_STK_LYR_MTL_STAT", "C");
 				
-				//ÀûÄ¡´ÜÁ¤º¸ Á¶È¸
+				//ì ì¹˜ë‹¨ì •ë³´ ì¡°íšŒ
 				YdStkLyrDao	ydStkLyrDao	= new YdStkLyrDao();
 				intRtnVal = ydStkLyrDao.getYdStklyr(recPara, rsTemp, 3);
 				
 				/*
-				 * 2011.10.16 À±Àç±¤
-				 * ¾ßµå¸Ê»óÀ¸·Î ÀúÀÚÀ§Ä¡°¡ ¾ø´Â ´ë»ó¸¸ ÃÊ±âÈ­ÇÑ´Ù.
-				 * - Á¤º¸¹İ³³,¹İ¼Û¶§¹®¿¡.
+				 * 2011.10.16 ìœ¤ì¬ê´‘
+				 * ì•¼ë“œë§µìƒìœ¼ë¡œ ì €ììœ„ì¹˜ê°€ ì—†ëŠ” ëŒ€ìƒë§Œ ì´ˆê¸°í™”í•œë‹¤.
+				 * - ì •ë³´ë°˜ë‚©,ë°˜ì†¡ë•Œë¬¸ì—.
 				 */
 				if(rsTemp.size() == 0){
 					
@@ -2808,29 +2808,29 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 			
 			/*=====================================================================================
 			/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    		 * ¾÷¹«±âÁØ : 2ÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å ½Ã ÆÄÀÏ¸µÁö½Ã ¼Û½Å±â´É
-    		 * ¼öÁ¤ÀÚ : Á¶º´±â
-    		 * ¼öÁ¤ÀÏÀÚ : 2013.05.07
-    		 * ÆÄ¶ó¹ÌÅÍ : Àç·á¹øÈ£,ÆÄÀÏ¸µÄÚµå,ºÏ¾Æ¿ôÄÚµå 
+    		 * ì—…ë¬´ê¸°ì¤€ : 2í›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì‹œ íŒŒì¼ë§ì§€ì‹œ ì†¡ì‹ ê¸°ëŠ¥
+    		 * ìˆ˜ì •ì : ì¡°ë³‘ê¸°
+    		 * ìˆ˜ì •ì¼ì : 2013.05.07
+    		 * íŒŒë¼ë¯¸í„° : ì¬ë£Œë²ˆí˜¸,íŒŒì¼ë§ì½”ë“œ,ë¶ì•„ì›ƒì½”ë“œ 
     		 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 			if ("2O".equals(szPL_WRK_PROC) ) {
-				//2ÈÄÆÇ no1 On-line ÀÔ°í½Ã¸¸ Ã³¸® .. Â÷ÈÄ BO¿¡¼­µµ Ã³¸®ÇÒ ¼ö ÀÖµµ·Ï ¼öÁ¤ ¿¹Á¤
+				//2í›„íŒ no1 On-line ì…ê³ ì‹œë§Œ ì²˜ë¦¬ .. ì°¨í›„ BOì—ì„œë„ ì²˜ë¦¬í•  ìˆ˜ ìˆë„ë¡ ìˆ˜ì • ì˜ˆì •
 				this.procChangePilingCd3G(szSTL_NO, sYdPilingCd, sYdBookOutLoc, szPL_WRK_PROC);
 			}
 
-			szMsg = "2ÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å Ã³¸®(" + szMethodName + ") ¿Ï·á";
+			szMsg = "2í›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		}catch(Exception e){
-			szMsg = "[2ÈÄÆÇÁ¦Ç°»ı»ê½ÇÀû¼ö½Å] Exception Error: " + e.getMessage();
+			szMsg = "[2í›„íŒì œí’ˆìƒì‚°ì‹¤ì ìˆ˜ì‹ ] Exception Error: " + e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			throw new JDTOException(szMsg);
 		}
 	}// end of procPl2GdsPrdWr()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : µ¿º°ÀúÀå°èÈ¹ Ãë¼Ò 3±â
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë™ë³„ì €ì¥ê³„íš ì·¨ì†Œ 3ê¸°
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -2839,7 +2839,7 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		
 		String szMsg		  	= "";
 		String szMethodName	  	= "procYdBayLocPlnCncl3G";
-		String szOperationName  = "µ¿º°ÀúÀå°èÈ¹Ãë¼Ò3±â";	
+		String szOperationName  = "ë™ë³„ì €ì¥ê³„íšì·¨ì†Œ3ê¸°";	
 		
 		int intRtnVal 			= 0;		
 		
@@ -2848,16 +2848,16 @@ public class PlateSpecRegSeEJBBean extends BaseSessionBean {
 		YdPlateCommDAO commDao = new YdPlateCommDAO();	
 		
 ////////////////////////////////////////////////////////////////////////////////////////
-// 2024.09.?? ·Î±× °³¼±  START
-// ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
-// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + Àü¹®ÀÏ·Ã¹øÈ£) Çü½ÄÀ¸·Î  logId Get
-String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ¿¡¼­ logid get(1: JDTORecord.getResultCode(), Field¸í - 2:UNIQUE_ID, 3:LOG_ID, 4:»õ·Î¹ßº»)
+// 2024.09.?? ë¡œê·¸ ê°œì„   START
+// ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
+// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + ì „ë¬¸ì¼ë ¨ë²ˆí˜¸) í˜•ì‹ìœ¼ë¡œ  logId Get
+String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ì—ì„œ logid get(1: JDTORecord.getResultCode(), Fieldëª… - 2:UNIQUE_ID, 3:LOG_ID, 4:ìƒˆë¡œë°œë³¸)
 
-if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id °¡ ºñ¾îÀÖ´Â°æ¿ì »õ·Î ÈÄÆÇ Á¦Ç° log id »õ·Î ¹ß¹ø
+if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id ê°€ ë¹„ì–´ìˆëŠ”ê²½ìš° ìƒˆë¡œ í›„íŒ ì œí’ˆ log id ìƒˆë¡œ ë°œë²ˆ
 
-szMsg = "[µ¿º°ÀúÀå°èÈ¹Ãë¼Ò Ã³¸®] (" + szMethodName + ") ½ÃÀÛ";
+szMsg = "[ë™ë³„ì €ì¥ê³„íšì·¨ì†Œ ì²˜ë¦¬] (" + szMethodName + ") ì‹œì‘";
 ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
-// 2024.09.?? ·Î±× °³¼±  END
+// 2024.09.?? ë¡œê·¸ ê°œì„   END
 ////////////////////////////////////////////////////////////////////////////////////////
 		
 		try{
@@ -2868,14 +2868,14 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			
 		}catch(Exception e){
 			
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹Ãë¼Ò] Exception Error:" +e.getMessage();
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "[ë™ë³„ì €ì¥ê³„íšì·¨ì†Œ] Exception Error:" +e.getMessage();
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.ERROR, logId);
 		}
 
-		szMsg = "[µ¿º°ÀúÀå°èÈ¹Ãë¼Ò Ã³¸®] ("+szMethodName+") ¿Ï·á";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+		szMsg = "[ë™ë³„ì €ì¥ê³„íšì·¨ì†Œ ì²˜ë¦¬] ("+szMethodName+") ì™„ë£Œ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 		
@@ -2883,9 +2883,9 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í :  2ÈÄÆÇ ÀÌ»óÀç½ÇÀû¼ö½Å Ã³¸®
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… :  2í›„íŒ ì´ìƒì¬ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -2894,7 +2894,7 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		
 		String szMsg		  	= "";
 		String szMethodName	  	= "procPl2AbmtWr";
-		//String szOperationName  = " 2ÈÄÆÇ ÀÌ»óÀç½ÇÀû¼ö½Å Ã³¸®";	
+		//String szOperationName  = " 2í›„íŒ ì´ìƒì¬ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬";	
 		
 		int intRtnVal 			= 0;		
 		
@@ -2904,9 +2904,9 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		
 		try{
 			
-			// STL_APPEAR_GP : Àç·á¿ÜÇü±¸ºĞ (F:³¯ÆÇ, G:Plate)
+			// STL_APPEAR_GP : ì¬ë£Œì™¸í˜•êµ¬ë¶„ (F:ë‚ íŒ, G:Plate)
 			String szSTL_APPEAR_GP 	= ydDaoUtils.paraRecChkNull(msgRecord,"STL_APPEAR_GP");
-			// PL_MTL_NO : ÈÄÆÇÀç·á¹øÈ£ (Àç·á¿ÜÇü±¸ºĞ¿¡ µû¶ó ³¯ÆÇ¹øÈ£ ¶Ç´Â Plate¹øÈ£)
+			// PL_MTL_NO : í›„íŒì¬ë£Œë²ˆí˜¸ (ì¬ë£Œì™¸í˜•êµ¬ë¶„ì— ë”°ë¼ ë‚ íŒë²ˆí˜¸ ë˜ëŠ” Plateë²ˆí˜¸)
 			String szPL_MTL_NO 		= ydDaoUtils.paraRecChkNull(msgRecord,"PL_MTL_NO");	
 			
 			if("F".equals(szSTL_APPEAR_GP)) {
@@ -2925,19 +2925,19 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			
 		}catch(Exception e){
 			
-			szMsg = "[2ÈÄÆÇ ÀÌ»óÀç½ÇÀû¼ö½Å Ã³¸®] Exception Error:" +e.getMessage();
+			szMsg = "[2í›„íŒ ì´ìƒì¬ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬] Exception Error:" +e.getMessage();
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 		}
 
-		szMsg = "[ 2ÈÄÆÇ ÀÌ»óÀç½ÇÀû¼ö½Å Ã³¸®] ("+szMethodName+") ¿Ï·á";
+		szMsg = "[ 2í›„íŒ ì´ìƒì¬ì‹¤ì ìˆ˜ì‹  ì²˜ë¦¬] ("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // procPl2AbmtWr
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : µ¿º°ÀúÀå°èÈ¹ 3±â
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë™ë³„ì €ì¥ê³„íš 3ê¸°
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -2953,16 +2953,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		JDTORecordSet rsOut 		= JDTORecordFactory.getInstance().createRecordSet("retTmp");
 
 ////////////////////////////////////////////////////////////////////////////////////////
-//2024.09.?? ·Î±× °³¼±  START
-//±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
-// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + Àü¹®ÀÏ·Ã¹øÈ£) Çü½ÄÀ¸·Î  logId Get
-String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ¿¡¼­ logid get(1: JDTORecord.getResultCode(), Field¸í - 2:UNIQUE_ID, 3:LOG_ID, 4:»õ·Î¹ßº»)
+//2024.09.?? ë¡œê·¸ ê°œì„   START
+//ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
+// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + ì „ë¬¸ì¼ë ¨ë²ˆí˜¸) í˜•ì‹ìœ¼ë¡œ  logId Get
+String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ì—ì„œ logid get(1: JDTORecord.getResultCode(), Fieldëª… - 2:UNIQUE_ID, 3:LOG_ID, 4:ìƒˆë¡œë°œë³¸)
 
-if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id °¡ ºñ¾îÀÖ´Â°æ¿ì »õ·Î ÈÄÆÇ Á¦Ç° log id »õ·Î ¹ß¹ø
+if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id ê°€ ë¹„ì–´ìˆëŠ”ê²½ìš° ìƒˆë¡œ í›„íŒ ì œí’ˆ log id ìƒˆë¡œ ë°œë²ˆ
 
-szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®(" + szMethodName + ") ½ÃÀÛ";
+szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬(" + szMethodName + ") ì‹œì‘";
 ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
-//2024.09.?? ·Î±× °³¼±  END
+//2024.09.?? ë¡œê·¸ ê°œì„   END
 ////////////////////////////////////////////////////////////////////////////////////////
 		
 		try{
@@ -2970,7 +2970,7 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			ejbConn = new EJBConnector("default", "PlateSpecRegSeEJB", this);
 			rsOut 	= (JDTORecordSet)ejbConn.trx("procYdBayLocPln3GNewTx", new Class[] { JDTORecord.class}, new Object[] { msgRecord });
 			
-			// ¼ö½ÅÇ×¸ñ[PTOP_PLNT_GP: Á¶¾÷°øÀå±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[PTOP_PLNT_GP: ì¡°ì—…ê³µì¥êµ¬ë¶„]
 			szPTOP_PLNT_GP 	= ydDaoUtils.paraRecChkNull(msgRecord,"PTOP_PLNT_GP");
 			
 			for(int i =1; i <= rsOut.size(); i++){
@@ -2979,16 +2979,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 				outRec = rsOut.getRecord();
 				// JMS TC CODE
 				outRec.setField("JMS_TC_CD", "YDYDJ032");
-				// Àü¹® ¹ß»ı ÀÏ½Ã
+				// ì „ë¬¸ ë°œìƒ ì¼ì‹œ
 				outRec.setField("JMS_TC_CREATE_DDTT", ydUtils.getCurDate("yyyy/MM/dd HH:mm:ss"));
-				// ¼ö½ÅÇ×¸ñ[PTOP_PLNT_GP: Á¶¾÷°øÀå±¸ºĞ]
+				// ìˆ˜ì‹ í•­ëª©[PTOP_PLNT_GP: ì¡°ì—…ê³µì¥êµ¬ë¶„]
 				outRec.setField("PTOP_PLNT_GP", szPTOP_PLNT_GP);
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// 2024.09.?? ·Î±× °³¼±  START
-// YDYDJ032 Àü¹® Ã³¸® ÇÏ´Â procYdBayLocPln3GNewSub Method¿¡ °°Àº logId Ãâ·ÂµÇ°Ô ÇÏ±â À§ÇØ logId SET Ãß°¡ °³¼±
+// 2024.09.?? ë¡œê·¸ ê°œì„   START
+// YDYDJ032 ì „ë¬¸ ì²˜ë¦¬ í•˜ëŠ” procYdBayLocPln3GNewSub Methodì— ê°™ì€ logId ì¶œë ¥ë˜ê²Œ í•˜ê¸° ìœ„í•´ logId SET ì¶”ê°€ ê°œì„ 
 				outRec.setField("LOG_ID", logId);
-// 2024.09.?? ·Î±× °³¼±  END
+// 2024.09.?? ë¡œê·¸ ê°œì„   END
 ////////////////////////////////////////////////////////////////////////////////////////
 				
 				ydDelegate.sendMsg_NoMakeTc(outRec);
@@ -2996,23 +2996,23 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			
 		}catch(Exception e){
 	
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹] Exception Error:" +e.getMessage();
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "[ë™ë³„ì €ì¥ê³„íš] Exception Error:" +e.getMessage();
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.ERROR, logId);
 		}
 
-		szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®("+szMethodName+") ¿Ï·á";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+		szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 
 	} // end of procYdBayLocPln3GNew()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : µ¿º°ÀúÀå°èÈ¹ 3±â
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë™ë³„ì €ì¥ê³„íš 3ê¸°
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -3020,7 +3020,7 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 	 */
 	public JDTORecordSet procYdBayLocPln3GNewTx(JDTORecord msgRecord)throws JDTOException  {
 	
-        //ÀúÀåÇ°DAO
+        //ì €ì¥í’ˆDAO
 		JDTORecordSet rsOut 	= JDTORecordFactory.getInstance().createRecordSet("retTmp");
 		String szMsg		  	= "";
 		String szMethodName	  	= "procYdBayLocPln3GNewTx";
@@ -3033,64 +3033,64 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		YdPlateCommDAO commDao = new YdPlateCommDAO();		
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// 2024.09.?? ·Î±× °³¼±  START
-// ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
-// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + Àü¹®ÀÏ·Ã¹øÈ£) Çü½ÄÀ¸·Î  logId Get
+// 2024.09.?? ë¡œê·¸ ê°œì„   START
+// ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
+// String logId                            = msgRecord.getFieldString("LOG_ID");   		// [T] + ì „ë¬¸ì¼ë ¨ë²ˆí˜¸) í˜•ì‹ìœ¼ë¡œ  logId Get
 
-String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ¿¡¼­ logid get(1: JDTORecord.getResultCode(), Field¸í - 2:UNIQUE_ID, 3:LOG_ID, 4:»õ·Î¹ßº»)
+String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");			// JDTORecord ì—ì„œ logid get(1: JDTORecord.getResultCode(), Fieldëª… - 2:UNIQUE_ID, 3:LOG_ID, 4:ìƒˆë¡œë°œë³¸)
 
-if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id °¡ ºñ¾îÀÖ´Â°æ¿ì »õ·Î ÈÄÆÇ Á¦Ç° log id »õ·Î ¹ß¹ø
+if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 							// log id ê°€ ë¹„ì–´ìˆëŠ”ê²½ìš° ìƒˆë¡œ í›„íŒ ì œí’ˆ log id ìƒˆë¡œ ë°œë²ˆ
 
-szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®(" + szMethodName + ") ½ÃÀÛ";
+szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬(" + szMethodName + ") ì‹œì‘";
 ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
-// 2024.09.?? ·Î±× °³¼±  END
+// 2024.09.?? ë¡œê·¸ ê°œì„   END
 ////////////////////////////////////////////////////////////////////////////////////////
 		
 		try{
 
-			// ¼ö½ÅÇ×¸ñ[PTOP_PLNT_GP: Á¶¾÷°øÀå±¸ºĞ]
+			// ìˆ˜ì‹ í•­ëª©[PTOP_PLNT_GP: ì¡°ì—…ê³µì¥êµ¬ë¶„]
 			szPTOP_PLNT_GP 	= ydDaoUtils.paraRecChkNull(msgRecord,"PTOP_PLNT_GP");
 			
-			// ¼ö½ÅÇ×¸ñ[CHG_WO_FR_PNT: °¡¿­·ÎÀåÀÔ¿¹Á¤ÀÏ·Ã¹øÈ£-From Point]
+			// ìˆ˜ì‹ í•­ëª©[CHG_WO_FR_PNT: ê°€ì—´ë¡œì¥ì…ì˜ˆì •ì¼ë ¨ë²ˆí˜¸-From Point]
 			szCHG_WO_FR_PNT = ydDaoUtils.paraRecChkNull(msgRecord,"CHG_WO_FR_PNT");
 
-			// ¼ö½ÅÇ×¸ñ[CHG_WO_TO_PNT: °¡¿­·ÎÀåÀÔ¿¹Á¤ÀÏ·Ã¹øÈ£-To Point]
+			// ìˆ˜ì‹ í•­ëª©[CHG_WO_TO_PNT: ê°€ì—´ë¡œì¥ì…ì˜ˆì •ì¼ë ¨ë²ˆí˜¸-To Point]
 			szCHG_WO_TO_PNT = ydDaoUtils.paraRecChkNull(msgRecord,"CHG_WO_TO_PNT");
 
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹] szPTOP_PLNT_GP:" + szPTOP_PLNT_GP +", szCHG_WO_FR_PNT:" + szCHG_WO_FR_PNT + ", szCHG_WO_TO_PNT" + szCHG_WO_TO_PNT;
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "[ë™ë³„ì €ì¥ê³„íš] szPTOP_PLNT_GP:" + szPTOP_PLNT_GP +", szCHG_WO_FR_PNT:" + szCHG_WO_FR_PNT + ", szCHG_WO_TO_PNT" + szCHG_WO_TO_PNT;
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);	
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);	
 			
 			//-----------------------------------------------------------------------------------------------
 			
 			/*
-			 *	1. ¾Ğ¿¬Áö½Ã¿¡ ÇØ´çÇÏ´Â ´ë»óÀçµé¿¡ ´ëÇÑ ¿¹Á¤ PlateÁ¤º¸µéÀ» °¡Áö°í TB_YD_STOCK Å×ÀÌºí¿¡ Insert/Update ÇÑ´Ù. 
+			 *	1. ì••ì—°ì§€ì‹œì— í•´ë‹¹í•˜ëŠ” ëŒ€ìƒì¬ë“¤ì— ëŒ€í•œ ì˜ˆì • Plateì •ë³´ë“¤ì„ ê°€ì§€ê³  TB_YD_STOCK í…Œì´ë¸”ì— Insert/Update í•œë‹¤. 
 			 */
 			intRtnVal = commDao.update(msgRecord, "com.inisteel.cim.yd.common.dao.YdPlateCommDAO.updateQueryId_0053");
 			
 			//-----------------------------------------------------------------------------------------------
-			// 2. ÁÖ¹®º°·Î ÀúÀå°èÈ¹À» Àû¿ëÇÏ¿© ¿¹Á¤ ÀÔ°í µ¿À» ±¸ÇÏ°í ±× µ¿¿¡¼­ ¿¹Á¤ ÀÔ°íÀ§Ä¡À» ±¸ÇÏ¿© STOCK À» UPDATE ÇÑ´Ù.
+			// 2. ì£¼ë¬¸ë³„ë¡œ ì €ì¥ê³„íšì„ ì ìš©í•˜ì—¬ ì˜ˆì • ì…ê³  ë™ì„ êµ¬í•˜ê³  ê·¸ ë™ì—ì„œ ì˜ˆì • ì…ê³ ìœ„ì¹˜ì„ êµ¬í•˜ì—¬ STOCK ì„ UPDATE í•œë‹¤.
 			
-			// ÈÄÆÇ_PLATEÀÛ¾÷Áö½Ã·ÎºÎÅÍ ÁÖ¹®¹øÈ£ Çà¹øÈ£¸¦ ÃßÃâ
+			// í›„íŒ_PLATEì‘ì—…ì§€ì‹œë¡œë¶€í„° ì£¼ë¬¸ë²ˆí˜¸ í–‰ë²ˆí˜¸ë¥¼ ì¶”ì¶œ
 			intRtnVal = commDao.select(msgRecord, rsOut, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0058");
 			if (intRtnVal <= 0){
-				szMsg = "µ¿º° ÀúÀå°èÈ¹ ÇÒ ´ë»ó ¾øÀ½";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+				szMsg = "ë™ë³„ ì €ì¥ê³„íš í•  ëŒ€ìƒ ì—†ìŒ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 			}
 			
 		}catch(Exception e){
 	
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹] Exception Error:" +e.getMessage();
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "[ë™ë³„ì €ì¥ê³„íš] Exception Error:" +e.getMessage();
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.ERROR, logId);
 		}
 
-		szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®("+szMethodName+") ¿Ï·á";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+		szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 		
@@ -3099,16 +3099,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 	} // end of procYdBayLocPln3GNewTx()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : µ¿º°ÀúÀå°èÈ¹ 3±â
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë™ë³„ì €ì¥ê³„íš 3ê¸°
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void procYdBayLocPln3GNewSub(JDTORecord msgRecord)throws JDTOException  {
 	
-        //ÀúÀåÇ°DAO
+        //ì €ì¥í’ˆDAO
 		PtOsCommDao ptOsCommDao = new PtOsCommDao();	
 		YDDataUtil yddatautil 	= new YDDataUtil();
 		YdStockDao ydStockDao 	= new YdStockDao();
@@ -3127,7 +3127,7 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		
 		String szMsg		  	= "";
 		String szMethodName	  	= "procYdBayLocPln3GNewSub";
-		String szOperationName  = "µ¿º°ÀúÀå°èÈ¹3±â";
+		String szOperationName  = "ë™ë³„ì €ì¥ê³„íš3ê¸°";
 		String szYD_PILING_CD 	= null;
 		String szYD_PILING_CD2 	= null;
 		String szMAIN_TRANS_AREA = null;		
@@ -3152,21 +3152,21 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 		double dblDONG_CAPA     = 0;
 
 ////////////////////////////////////////////////////////////////////////////////////////
-//2024.09.?? ·Î±× °³¼±  START
-//±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
-//String logId                            = msgRecord.getResultCode(); 				// Àü¹®À¸·Î ºÎÅÍ logid get
-//String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");		// JDTORecord ¿¡¼­ logid get(1: JDTORecord.getResultCode(), Field¸í - 2:UNIQUE_ID, 3:LOG_ID, 4:»õ·Î¹ßº»)
+//2024.09.?? ë¡œê·¸ ê°œì„   START
+//ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
+//String logId                            = msgRecord.getResultCode(); 				// ì „ë¬¸ìœ¼ë¡œ ë¶€í„° logid get
+//String logId                    		= ydUtils.getJDTOLogId(msgRecord, "T");		// JDTORecord ì—ì„œ logid get(1: JDTORecord.getResultCode(), Fieldëª… - 2:UNIQUE_ID, 3:LOG_ID, 4:ìƒˆë¡œë°œë³¸)
 
-// YDYDJ031(µ¿º°ÀúÀå°èÈ¹)¿¡¼­ ¸¸µé¾îÁø YDYDJ032(µ¿º°ÀúÀå°èÈ¹sub)Àü¹®ÀÎ °æ¿ì °°Àº logid ·Î Ãâ·Â ÇÏ±â À§ÇØ 
-// msgRecord.getResultCode ½Ã "0000" return
+// YDYDJ031(ë™ë³„ì €ì¥ê³„íš)ì—ì„œ ë§Œë“¤ì–´ì§„ YDYDJ032(ë™ë³„ì €ì¥ê³„íšsub)ì „ë¬¸ì¸ ê²½ìš° ê°™ì€ logid ë¡œ ì¶œë ¥ í•˜ê¸° ìœ„í•´ 
+// msgRecord.getResultCode ì‹œ "0000" return
 String logId       						= msgRecord.getFieldString("LOG_ID");		 
 
-if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 						// log id °¡ ºñ¾îÀÖ´Â°æ¿ì »õ·Î ÈÄÆÇ Á¦Ç° log id »õ·Î ¹ß¹ø
+if(ydUtils.isEmpty(logId)) logId = ydUtils.getLogIdNew("T"); 						// log id ê°€ ë¹„ì–´ìˆëŠ”ê²½ìš° ìƒˆë¡œ í›„íŒ ì œí’ˆ log id ìƒˆë¡œ ë°œë²ˆ
 
-szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®(" + szMethodName + ") ½ÃÀÛ";
+szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬(" + szMethodName + ") ì‹œì‘";
 ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 
-//2024.09.?? ·Î±× °³¼±  END
+//2024.09.?? ë¡œê·¸ ê°œì„   END
 ////////////////////////////////////////////////////////////////////////////////////////
 		
 		YdPlateCommDAO commDao = new YdPlateCommDAO();		
@@ -3178,8 +3178,8 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			szORD_NO		= ydDaoUtils.paraRecChkNull(msgRecord,"ORD_NO"); 
 			szORD_DTL		= ydDaoUtils.paraRecChkNull(msgRecord,"ORD_DTL");
 			
-			szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL + " Ã³¸®½ÃÀÛ ";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL + " ì²˜ë¦¬ì‹œì‘ ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 			
@@ -3187,13 +3187,13 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			recPara = JDTORecordFactory.getInstance().create();
 			recPara.setField("ORD_NO",    	szORD_NO);			
 			recPara.setField("ORD_DTL",    	szORD_DTL);			
-			//ÀúÀå°èÈ¹ ÄÚµå Read
+			//ì €ì¥ê³„íš ì½”ë“œ Read
 			/*com.inisteel.cim.yd.common.dao.ptOsCommDao.getPtOsCommLocPlanCd_PIDEV*/
 			intRtnVal = ptOsCommDao.getPtOsComm(recPara, outRecSet1, 300);
 			
 			if (intRtnVal <= 0) {
-				szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL + " ÀúÀå°èÈ¹ ÄÚµå Read error!!!, ErrorCode:" + intRtnVal;
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+				szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL + " ì €ì¥ê³„íš ì½”ë“œ Read error!!!, ErrorCode:" + intRtnVal;
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 				return ;
@@ -3206,19 +3206,19 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			szYD_PILING_CD		= yddatautil.setDataDefault(outRec1.getField("ARG_YD_PILING_CD"),"");
 			szLOC_PLAN_CD		= yddatautil.setDataDefault(outRec1.getField("LOC_PLAN_CD"),"");
 			szMAIN_TRANS_AREA 	= yddatautil.setDataDefault(outRec1.getField("MAIN_TRANS_AREA"),"");
-			dbPLATE_WO_W		= ydDaoUtils.paraRecChkNullDouble(outRec1, "ORD_CONV_W"); //ÁÖ¹®Áö½ÃÆø
-			dbPLATE_WO_L		= ydDaoUtils.paraRecChkNullDouble(outRec1, "ORD_CONV_LEN"); //ÁÖ¹®Áö½Ã±æÀÌ
+			dbPLATE_WO_W		= ydDaoUtils.paraRecChkNullDouble(outRec1, "ORD_CONV_W"); //ì£¼ë¬¸ì§€ì‹œí­
+			dbPLATE_WO_L		= ydDaoUtils.paraRecChkNullDouble(outRec1, "ORD_CONV_LEN"); //ì£¼ë¬¸ì§€ì‹œê¸¸ì´
 			
 			/*
-			 * 2024.09.13 ÈÄÆÇµ¿º°ÀúÀå°èÈ¹ È­¸é °³¼±¿äÃ» ÀÓÁøÈÄ ±â»ç ¿äÃ» --REQ202408611796
-			 * ¼öÃâÀç ½Å±Ô°í°´»ç Ãß°¡. °í°´»çº° °³º°¼ÂÆÃÀ» ÇÏ±â¶§¹®¿¡ szLOC_PLAN_CD ´Â ¹ö¸®°í ÆÄÀÏ¸µÄÚµå ¾Õ 4ÀÚ¸® »ç¿ë
+			 * 2024.09.13 í›„íŒë™ë³„ì €ì¥ê³„íš í™”ë©´ ê°œì„ ìš”ì²­ ì„ì§„í›„ ê¸°ì‚¬ ìš”ì²­ --REQ202408611796
+			 * ìˆ˜ì¶œì¬ ì‹ ê·œê³ ê°ì‚¬ ì¶”ê°€. ê³ ê°ì‚¬ë³„ ê°œë³„ì…‹íŒ…ì„ í•˜ê¸°ë•Œë¬¸ì— szLOC_PLAN_CD ëŠ” ë²„ë¦¬ê³  íŒŒì¼ë§ì½”ë“œ ì• 4ìë¦¬ ì‚¬ìš©
 			 * 
 			 * */
 			YdPICommDAO	   ydPICommDAO   = new YdPICommDAO();
 			String szORD_GP = szORD_NO.substring(0,1);
 			String sApplyYnPI = ydPICommDAO.ApplyYnPI("", szOperationName, "APP060", "T", "002");
 			if ("Y".equals(sApplyYnPI) && ( (szORD_GP.equals("E")) || (szORD_GP.equals("F")) ) ){
-				szMsg = "½Å±Ô µ¿º°ÀúÀå°èÈ¹±âÁØ ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"±Ç¿ª±¸ºĞ["+szLOC_PLAN_CD+ "] ´ë½Å ["+szYD_PILING_CD.substring(0,4)+"]»ç¿ë";
+				szMsg = "ì‹ ê·œ ë™ë³„ì €ì¥ê³„íšê¸°ì¤€ í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"ê¶Œì—­êµ¬ë¶„["+szLOC_PLAN_CD+ "] ëŒ€ì‹  ["+szYD_PILING_CD.substring(0,4)+"]ì‚¬ìš©";
 				ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 				szLOC_PLAN_CD = szYD_PILING_CD.substring(0,4);
 			}
@@ -3226,8 +3226,8 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 			
 			//D010S1S2
 			if(szYD_PILING_CD.equals("")){
-				szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +" YD_PILING_CD error!!! ";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+				szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +" YD_PILING_CD error!!! ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 				ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 				return ;
@@ -3241,16 +3241,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 				recPara.setField("YD_GP", 			szYD_GP); 
 				recPara.setField("MAIN_TRANS_AREA", szMAIN_TRANS_AREA);
 				/* 
-				 * 2016.03.21 À±Àç±¤ 
-				 * - 1ÈÄÆÇ ÀúÀå°èÈ¹ Ãß°¡¿¡ µû¸¥ Àû¿ëÀ» À§ÇØ Ãß°¡ PARAM  
+				 * 2016.03.21 ìœ¤ì¬ê´‘ 
+				 * - 1í›„íŒ ì €ì¥ê³„íš ì¶”ê°€ì— ë”°ë¥¸ ì ìš©ì„ ìœ„í•´ ì¶”ê°€ PARAM  
 				 */
 				recPara.setField("PTOP_PLNT_GP",    szPTOP_PLNT_GP); 
 				
-				//AccessÀúÀåµ¿ READ
+				//Accessì €ì¥ë™ READ
 				intRtnVal = commDao.select(recPara, outRecSet9, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0059");
 				if (intRtnVal <= 0) {
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") AccessÀúÀåµ¿  Read error!!!:" + intRtnVal;
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") Accessì €ì¥ë™  Read error!!!:" + intRtnVal;
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 					return ;
@@ -3264,15 +3264,15 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 				
 				szLenGp = szYD_PILING_CD.substring(6,7);
 				
-				//±æÀÌ±¸ºĞ U,L,X,³»¼ö				
+				//ê¸¸ì´êµ¬ë¶„ U,L,X,ë‚´ìˆ˜				
 				if((szLenGp.equals("U")) || 
 				   (szLenGp.equals("L")) || 
 				   (szLenGp.equals("X")) || (szLOC_PLAN_CD.substring(0, 1).equals("D")) ) {
 					
 					szPLAN_DONG = szPRIOR_1_ACC_DONG;
 					
-					szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ³»¼ö/ÃÊ´ÜÃ´/ÀåÃ´/ÃÊÀåÃ´ °èÈ¹µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+					szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ë‚´ìˆ˜/ì´ˆë‹¨ì²™/ì¥ì²™/ì´ˆì¥ì²™ ê³„íšë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 					
@@ -3284,16 +3284,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 					/*com.inisteel.cim.yd.dao.ydstockdao.YdStockDao.getStklyrWithOrdLocCnt*/
 					intRtnVal = ydStockDao.getYdStock(recPara, outRecSet2, 609);
 					if (intRtnVal <= 0){
-						szMsg = "ÁÖ¹® ÀúÀåµ¿ ÄÚµå°¡ ¾øÀ½ ";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+						szMsg = "ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œê°€ ì—†ìŒ ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 
-						//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+						//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 						szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 
-						szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 						
@@ -3304,15 +3304,15 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 						outRec2 = JDTORecordFactory.getInstance().create();
 						outRec2 = outRecSet2.getRecord();
 
-						szORD_LOC_CNT	= yddatautil.setDataDefault(outRec2.getField("CD_VAL"),"");  	// ÁÖ¹® ÀúÀåµ¿ ÄÚµå 
+						szORD_LOC_CNT	= yddatautil.setDataDefault(outRec2.getField("CD_VAL"),"");  	// ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ 
 						
-						szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÁÖ¹® ÀúÀåµ¿ ÄÚµå :" + szORD_LOC_CNT; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+						szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ :" + szORD_LOC_CNT; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 						ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 					
 						
-						// µ¿º° ÆÄÀÏ¸µ ÄÚµå À§Ä¡ Á¸Àç ¿©ºÎ
+						// ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ìœ„ì¹˜ ì¡´ì¬ ì—¬ë¶€
 						outRecSet3= JDTORecordFactory.getInstance().createRecordSet("retTmp");
 						recPara.setField("YD_PILING_CD",   	szYD_PILING_CD);			
 						
@@ -3320,24 +3320,24 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 						intRtnVal = commDao.select(recPara, outRecSet3, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.selectQueryId_0060");
 						
 						if (intRtnVal <= 0){
-							szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå°¡  ¾ßµå¿¡ ¾øÀ½";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+							szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œê°€  ì•¼ë“œì— ì—†ìŒ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
-							//ÁÖ¹® ÀúÀåµ¿ READ						
+							//ì£¼ë¬¸ ì €ì¥ë™ READ						
 							if (szORD_LOC_CNT.equals("1")) {
-								//ÁÖ¹®ÀúÀåµ¿ ¼ö·® = 1			
+								//ì£¼ë¬¸ì €ì¥ë™ ìˆ˜ëŸ‰ = 1			
 								szPLAN_DONG = szPRIOR_1_ACC_DONG;
 								
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåµ¿ 1°³  °èÈ¹µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ë™ 1ê°œ  ê³„íšë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 
 							} else if (szORD_LOC_CNT.equals("2")) {
-								//ÁÖ¹®ÀúÀåµ¿ ¼ö·® = 2			
+								//ì£¼ë¬¸ì €ì¥ë™ ìˆ˜ëŸ‰ = 2			
 								szPLAN_DONG = "";
-								//ÀúÀåÀ²ÀÌ 80¹Ì¸¸ SEARCH
+								//ì €ì¥ìœ¨ì´ 80ë¯¸ë§Œ SEARCH
 								for(int j =1; j <= outRecSet9.size(); j++){
 									outRecSet9.absolute(j);
 									outRec9 = JDTORecordFactory.getInstance().create();
@@ -3351,33 +3351,33 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 									}
 								}
 								if(szPLAN_DONG.equals("")) {
-									//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+									//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 									szPLAN_DONG = this.ToLocLowRate(outRecSet9);
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 								} else {
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåÀ² 80 ¹Ì¸¸ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ìœ¨ 80 ë¯¸ë§Œ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 								}
 							} else {
 								
-								// ÁÖ¹®ÀúÀåµ¿ ÄÚµå NOT IN ('1','2')	
-								//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+								// ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ NOT IN ('1','2')	
+								//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 								szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 			
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 							}	
 						} else {
 
-							szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå ¾ßµå¿¡ ÀÖÀ½";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+							szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ì•¼ë“œì— ìˆìŒ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 							
@@ -3385,51 +3385,51 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 							outRec3 = JDTORecordFactory.getInstance().create();
 							outRec3 = outRecSet3.getRecord();
 	
-							szPILING_YD_BAY_GP	= yddatautil.setDataDefault(outRec3.getField("YD_BAY_GP"),"");       // µ¿ÀÏ  PIÀúÀåµ¿ 
-							szPILING_BAY_CNT	= yddatautil.setDataDefault(outRec3.getField("PILING_BAY_CNT"),"");  // µ¿ÀÏ  PIÀ§Ä¡ µ¿¼ö
+							szPILING_YD_BAY_GP	= yddatautil.setDataDefault(outRec3.getField("YD_BAY_GP"),"");       // ë™ì¼  PIì €ì¥ë™ 
+							szPILING_BAY_CNT	= yddatautil.setDataDefault(outRec3.getField("PILING_BAY_CNT"),"");  // ë™ì¼  PIìœ„ì¹˜ ë™ìˆ˜
 							
-							szMsg = "µ¿ÀÏ  PI ÀúÀåµ¿ :" + szPILING_YD_BAY_GP + "/µ¿ÀÏ PIÀ§Ä¡µ¿¼ö :" + szPILING_BAY_CNT; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+							szMsg = "ë™ì¼  PI ì €ì¥ë™ :" + szPILING_YD_BAY_GP + "/ë™ì¼ PIìœ„ì¹˜ë™ìˆ˜ :" + szPILING_BAY_CNT; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //							ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 							ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 
 							
 							if (szORD_LOC_CNT.equals("1")) {
-								//ÁÖ¹®ÀúÀåµ¿ ÄÚµå = 1								
-								// µ¿ÀÏPIÀúÀåµ¿ = ¼ö¼Ûº° ACCµ¿ AND ÁÖ¹®ÀúÀåÄÚµå= µ¿ÀÏPI À§Ä¡ µ¿¼ö
+								//ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ = 1								
+								// ë™ì¼PIì €ì¥ë™ = ìˆ˜ì†¡ë³„ ACCë™ AND ì£¼ë¬¸ì €ì¥ì½”ë“œ= ë™ì¼PI ìœ„ì¹˜ ë™ìˆ˜
 								// if( (szPILING_YD_BAY_GP.equals(szPRIOR_1_ACC_DONG)) &&  
 								if( (szORD_LOC_CNT.equals(szPILING_BAY_CNT)) ) {
 									
 									szPLAN_DONG = szPILING_YD_BAY_GP;	
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ±âÁ¸ÆÄÀÏ¸µÀ§Ä¡ µ¿:" + szPILING_YD_BAY_GP; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê¸°ì¡´íŒŒì¼ë§ìœ„ì¹˜ ë™:" + szPILING_YD_BAY_GP; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 								} else {
 									szPLAN_DONG = szPRIOR_1_ACC_DONG;
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") °èÈ¹µ¿:" + szPRIOR_1_ACC_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê³„íšë™:" + szPRIOR_1_ACC_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 								}  
 							
 							} else if (szORD_LOC_CNT.equals("2")) {
-								//ÁÖ¹®ÀúÀåµ¿ ÄÚµå = 2								
+								//ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ = 2								
 								double dblORD_LOC_CNT 	= Integer.parseInt(szORD_LOC_CNT);
 								double dblPILING_BAY_CNT= Integer.parseInt(szPILING_BAY_CNT);
 								
-								// ÁÖ¹®ÀúÀåÄÚµå <= µ¿ÀÏPIÀ§Ä¡ µ¿¼ö
+								// ì£¼ë¬¸ì €ì¥ì½”ë“œ <= ë™ì¼PIìœ„ì¹˜ ë™ìˆ˜
 								if( dblORD_LOC_CNT <= dblPILING_BAY_CNT ) {
 									
 									szPLAN_DONG = szPRIOR_1_ACC_DONG;
 									
-									szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") °èÈ¹µ¿:" + szPRIOR_1_ACC_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+									szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ê³„íšë™:" + szPRIOR_1_ACC_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //									ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 									ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 							
 								} else {
-									//ÃÖ¿ì¼±¼øÀ§ ÀúÀåµ¿ ¼±ÅÃ
+									//ìµœìš°ì„ ìˆœìœ„ ì €ì¥ë™ ì„ íƒ
 									szPLAN_DONG = "";
 									for(int j =1; j <= outRecSet9.size(); j++){
 										outRecSet9.absolute(j);
@@ -3445,38 +3445,38 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 										}
 									}
 									if(szPLAN_DONG.equals("")) {
-										// ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+										// ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 										szPLAN_DONG = this.ToLocLowRate(outRecSet9);
-										szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+										szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //										ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 										ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 
 									} else {
-										szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀåÀ² 80 ¹Ì¸¸ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+										szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ìœ¨ 80 ë¯¸ë§Œ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //										ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 										ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 									}
 								}  
 							} else {
-								// ÁÖ¹®ÀúÀåµ¿ ÄÚµå NOT IN ('1','2')	
-								//ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àº µ¿
+								// ì£¼ë¬¸ì €ì¥ë™ ì½”ë“œ NOT IN ('1','2')	
+								//ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ ë™
 								szPLAN_DONG = this.ToLocLowRate(outRecSet9);
 			
-								szMsg = "ÇØ´çÁÖ¹® :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ÀúÀå°èÈ¹ ÀúÀåÀ²ÀÌ ³·Àºµ¿ ¼±ÅÃ µ¿:" + szPLAN_DONG; 
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+								szMsg = "í•´ë‹¹ì£¼ë¬¸ :"+ szORD_NO + "-" +szORD_DTL +"("+szYD_PILING_CD+") ì €ì¥ê³„íš ì €ì¥ìœ¨ì´ ë‚®ì€ë™ ì„ íƒ ë™:" + szPLAN_DONG; 
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //								ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 								ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 							}	
-						}	//szMsg = "µ¿º° ÆÄÀÏ¸µ ÄÚµå ¾ßµå¿¡ ÀÖÀ½";
-					}		//szMsg = "ÁÖ¹® ÀúÀåµ¿ ÄÚµå ÀÖÀ½";
-				}			//±æÀÌ±¸ºĞ U,L,X,³»¼ö	
+						}	//szMsg = "ë™ë³„ íŒŒì¼ë§ ì½”ë“œ ì•¼ë“œì— ìˆìŒ";
+					}		//szMsg = "ì£¼ë¬¸ ì €ì¥ë™ ì½”ë“œ ìˆìŒ";
+				}			//ê¸¸ì´êµ¬ë¶„ U,L,X,ë‚´ìˆ˜	
 				
 				if(!szPLAN_DONG.equals("")) {
 					
 					//-------------------------------------------------------
-					//µ¿ÀÌ Á¤ÇØÁ³À¸¸é ±× µ¿¿¡¼­ ÀûÄ¡°¡´ÉÇÑ LOC ¸¦ ±¸ÇÑ´Ù.
+					//ë™ì´ ì •í•´ì¡Œìœ¼ë©´ ê·¸ ë™ì—ì„œ ì ì¹˜ê°€ëŠ¥í•œ LOC ë¥¼ êµ¬í•œë‹¤.
 					recTemp.setField("YD_GP", 			szYD_GP);
 					recTemp.setField("YD_BAY_GP", 		szPLAN_DONG);
 					recTemp.setField("YD_PILING_CD", 	szYD_PILING_CD);
@@ -3485,8 +3485,8 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 					sRTN_LOC = YdToLocDcsnUtil.getYdBayLocPln3G(recTemp);
 					
 					/*
-					 * 2014.10.15 À±Àç±¤ - ÀÌ¸í¿î´ë¸® ¿äÃ»
-					 * Gµ¿ ÁßÃ´ÀçÀÌÇÏ´Â ¹«Á¶°Ç 2º£µå·Î ¼ÂÆÃ
+					 * 2014.10.15 ìœ¤ì¬ê´‘ - ì´ëª…ìš´ëŒ€ë¦¬ ìš”ì²­
+					 * Gë™ ì¤‘ì²™ì¬ì´í•˜ëŠ” ë¬´ì¡°ê±´ 2ë² ë“œë¡œ ì…‹íŒ…
 					 */
 					if("G".equals(szPLAN_DONG) && ("M".equals(szYD_PILING_CD.substring(6,7))||
 							                       "S".equals(szYD_PILING_CD.substring(6,7))||
@@ -3496,16 +3496,16 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 						recTemp.setField("YD_STK_BED_NO",   sRTN_LOC.substring(6,8));
 					}
 					
-					//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ) ¾ßµå±¸ºĞ°ª ¼ÂÆÃ
+					//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€) ì•¼ë“œêµ¬ë¶„ê°’ ì…‹íŒ…
 					if("PA".equals(szPTOP_PLNT_GP)){
 						recTemp.setField("YD_GP", 	"K");
 					}else{
 						recTemp.setField("YD_GP", 	"T");
 					}
 					
-					//¾÷¹«±âÁØ : YDB674 (ÈÄÆÇÁ¦Ç°Ã¢°í BOOKOUT_LOC °áÁ¤ ±âÁØ)
+					//ì—…ë¬´ê¸°ì¤€ : YDB674 (í›„íŒì œí’ˆì°½ê³  BOOKOUT_LOC ê²°ì • ê¸°ì¤€)
 			    	if( GetBreRule6.getYDB674(recTemp) ) {
-			    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ¾÷¹«±âÁØ YDB674 ¹İÈ¯°ª#1 YD_BOOK_OUT_LOC
+			    		sRTN_BOOKOUT_LOC = StringHelper.evl(recTemp.getFieldString("YDB674_RV01_YD_BOOK_OUT_LOC"), "00000"); // ì—…ë¬´ê¸°ì¤€ YDB674 ë°˜í™˜ê°’#1 YD_BOOK_OUT_LOC
 			    	} else {
 			    		sRTN_BOOKOUT_LOC ="";
 			    	}							
@@ -3517,27 +3517,27 @@ ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.INFO, logId);
 					recPara.setField("YD_RCPT_PLN_STR_LOC"	, sRTN_LOC);
 					recPara.setField("YD_BOOK_OUT_LOC"		, sRTN_BOOKOUT_LOC);
 					recPara.setField("MODIFIER"				, "YDYDJ031");
-					recPara.setField("PTOP_PLNT_GP"			, szPTOP_PLNT_GP); // ´ë»óÀçÁß °°Àº ÁÖ¹®¿¡ 1,2ÈÄÆÇ ´ë»óÀç ºĞ¸®ÇØ¼­ Àû¿ë (½ÇÁ¦·Î Äõ¸®¿¡¼­ Àç·á¹øÈ£·Î ±¸ºĞ)
+					recPara.setField("PTOP_PLNT_GP"			, szPTOP_PLNT_GP); // ëŒ€ìƒì¬ì¤‘ ê°™ì€ ì£¼ë¬¸ì— 1,2í›„íŒ ëŒ€ìƒì¬ ë¶„ë¦¬í•´ì„œ ì ìš© (ì‹¤ì œë¡œ ì¿¼ë¦¬ì—ì„œ ì¬ë£Œë²ˆí˜¸ë¡œ êµ¬ë¶„)
 					
-					//YDÀúÀåÇ° ¼öÁ¤
+					//YDì €ì¥í’ˆ ìˆ˜ì •
 					intRtnVal = commDao.update(recPara, "com.inisteel.cim.yd.common.dao.YdPlateCommDao.updateQueryId_0010");
 					
 					recPara.setField("YD_PILING_CD", 	szYD_PILING_CD);
-					//24.08.27 ÈÄÆÇ2ÆÀ ÃÖ¼ºÀ± ¸Å´ÏÀú ¿äÃ». µ¿º°ÀúÀå°èÈ¹ Å½»ö½Ã, ÈÄÆÇÁ¦Ç°°øÅë¿¡µµ piling_cd ¹× book-out-loc ¾÷µ¥ÀÌÆ® --REQ202408611413
+					//24.08.27 í›„íŒ2íŒ€ ìµœì„±ìœ¤ ë§¤ë‹ˆì € ìš”ì²­. ë™ë³„ì €ì¥ê³„íš íƒìƒ‰ì‹œ, í›„íŒì œí’ˆê³µí†µì—ë„ piling_cd ë° book-out-loc ì—…ë°ì´íŠ¸ --REQ202408611413
 					intRtnVal = commDao.update(recPara, "com.inisteel.cim.yd.jsp.common.Dao.updPtPlateCommForPilingBYOrdNo");
 				}  
 			}
 			
 		}catch(Exception e){
 	
-			szMsg = "[µ¿º°ÀúÀå°èÈ¹] Exception Error:" +e.getMessage();
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+			szMsg = "[ë™ë³„ì €ì¥ê³„íš] Exception Error:" +e.getMessage();
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.ERROR, logId);
 		}
 
-		szMsg = "µ¿º°ÀúÀå°èÈ¹ Ã³¸®("+szMethodName+") ¿Ï·á";
-// 2024.09.?? ±âÁ¸ putLog -> putLogNew logId Ãâ·Â µÇ°Ô °³¼±
+		szMsg = "ë™ë³„ì €ì¥ê³„íš ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
+// 2024.09.?? ê¸°ì¡´ putLog -> putLogNew logId ì¶œë ¥ ë˜ê²Œ ê°œì„ 
 //		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		ydUtils.putLogNew(szSessionName, szMethodName, szMsg, YdConstant.DEBUG, logId);
 

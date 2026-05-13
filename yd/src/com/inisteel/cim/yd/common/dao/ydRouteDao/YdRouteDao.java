@@ -11,7 +11,7 @@ import com.inisteel.cim.yd.common.util.YdDaoUtils;
 import com.inisteel.cim.yd.common.util.YdUtils;
 
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµåÇà¼± DAO
+ *      [A] í´ëž˜ìŠ¤ëª… : ì•¼ë“œí–‰ì„  DAO
  * 
 */
 
@@ -37,12 +37,12 @@ public class YdRouteDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  SELECT
 	 *      
 	 * @param  JDTORecord inRec         parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
-	 *         int intGp                ±¸ºÐ(0:YD_ROUTE_GP)
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 *         int intGp                êµ¬ë¶„(0:YD_ROUTE_GP)
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -55,7 +55,7 @@ public class YdRouteDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -82,7 +82,7 @@ public class YdRouteDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
@@ -93,11 +93,11 @@ public class YdRouteDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec  parameter record
-	 *         int        intGp  ±¸ºÐ(0:YD_ROUTE_GP)
-	 * @return boolean           true(¼º°ø), false(½ÇÆÐ)
+	 *         int        intGp  êµ¬ë¶„(0:YD_ROUTE_GP)
+	 * @return boolean           true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkPara_getYdRoute(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -110,7 +110,7 @@ public class YdRouteDao {
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 2, 1, 'S', 0, 0);
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -121,7 +121,7 @@ public class YdRouteDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -134,7 +134,7 @@ public class YdRouteDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -150,7 +150,7 @@ public class YdRouteDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -162,11 +162,11 @@ public class YdRouteDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºÐ(0:YD_ROUTE_GP)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 *         int        intGp êµ¬ë¶„(0:YD_ROUTE_GP)
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -181,11 +181,11 @@ public class YdRouteDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -215,7 +215,7 @@ public class YdRouteDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 		
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 			
 			//data mapping
@@ -236,7 +236,7 @@ public class YdRouteDao {
 			//execution error return
 			if (intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -247,10 +247,10 @@ public class YdRouteDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -290,7 +290,7 @@ public class YdRouteDao {
 			blnErr = ydDaoUtils.chkField(inRec, szFieldName, 100, 2, 'S', 0, 0);
 			
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -303,7 +303,7 @@ public class YdRouteDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÇà¼± UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œí–‰ì„  UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -377,7 +377,7 @@ public class YdRouteDao {
 			szFieldName = "V_CD_CONTENTS";
 			ydDaoUtils.mappingData(inRec, outRec, szFieldName);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 	} // end of dataMapping

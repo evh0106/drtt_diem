@@ -11,7 +11,7 @@ import com.inisteel.cim.yd.common.util.YdDaoUtils;
 import com.inisteel.cim.yd.common.util.YdUtils;
 
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµå¼³ºñÈŞÁö DAO
+ *      [A] í´ë˜ìŠ¤ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ DAO
  * 
 */
 
@@ -30,20 +30,20 @@ public class YdEqpPauseDao {
 	private String szQueryIdGet1 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.getYdEqppause";
 	private String szQueryIdGet2 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.getYdEqppauseSEQ";
 
-	// ±Ç¿ÀÃ¢ 2009.11.10
+	// ê¶Œì˜¤ì°½ 2009.11.10
 	private String szQueryIdGet3 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.getYdEqppauseHist";
 	
-//	 ¼³ºñ Á¤ºñÀÌ·Â Á¶È¸ - 2010.04.20
+//	 ì„¤ë¹„ ì •ë¹„ì´ë ¥ ì¡°íšŒ - 2010.04.20
 	private String szQueryIdGet300 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.getEqpMaintHist";
 	
 	//insert query id
-	// ±Ç¿ÀÃ¢ MODIFIERµµ ÀÔ·Â 2009.11.13
+	// ê¶Œì˜¤ì°½ MODIFIERë„ ì…ë ¥ 2009.11.13
 	private String szQueryIdIns1 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.insYdEqppause";
 
 	//update query id
 	private String szQueryIdUpd1 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.updYdEqppause";
 
-	// ±Ç¿ÀÃ¢ 2009.11.06 - C¿¬ÁÖÁ¤Á¤L2 °íÀåº¹±¸½ÇÀû ¼ö½Å ¼³ºñÈŞÁöÅ×ÀÌºí ¾÷µ¥ÀÌÆ® Ã³¸® 
+	// ê¶Œì˜¤ì°½ 2009.11.06 - Cì—°ì£¼ì •ì •L2 ê³ ì¥ë³µêµ¬ì‹¤ì  ìˆ˜ì‹  ì„¤ë¹„íœ´ì§€í…Œì´ë¸” ì—…ë°ì´íŠ¸ ì²˜ë¦¬ 
 	private String szQueryIdUpd2 = "com.inisteel.cim.yd.dao.ydeqppausedao.YdEqppauseDao.updYdEqppauseRepair";
 
 	
@@ -51,14 +51,14 @@ public class YdEqpPauseDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ SELECT
 	 *      
 	 * @param  JDTORecord inRec         parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
-	 *         int intGp                ±¸ºĞ(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID,
+	 *         int intGp                êµ¬ë¶„(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID,
 	 *                                      1:YD_EQP_PAUSE_OCCR_SEQ)
 	 *                                      2:YD_EQP_ID
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -71,7 +71,7 @@ public class YdEqpPauseDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -105,7 +105,7 @@ public class YdEqpPauseDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
@@ -116,13 +116,13 @@ public class YdEqpPauseDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec  parameter record
-	 *         int        intGp  ±¸ºĞ(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID,
+	 *         int        intGp  êµ¬ë¶„(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID,
 	 *                               1:YD_EQP_PAUSE_OCCR_SEQ)
 	 *                               2:YD_EQP_ID
-	 * @return boolean           true(¼º°ø), false(½ÇÆĞ)
+	 * @return boolean           true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkPara_getYdEqppause(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -146,7 +146,7 @@ public class YdEqpPauseDao {
 				blnErr = ydDaoUtils.chkField(inRec, szFieldName, 6, 3, 'S', 0, 0);
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -157,7 +157,7 @@ public class YdEqpPauseDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -170,7 +170,7 @@ public class YdEqpPauseDao {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -186,7 +186,7 @@ public class YdEqpPauseDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -198,11 +198,11 @@ public class YdEqpPauseDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ UPDATE
 	 * 
 	 * @param  JDTORecord inRec parameter record
-	 *         int        intGp ±¸ºĞ(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID)
-	 * @return int              execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 *         int        intGp êµ¬ë¶„(0:YD_EQP_PAUSE_OCCR_SEQ,YD_EQP_ID)
+	 * @return int              execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -217,11 +217,11 @@ public class YdEqpPauseDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 	
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ydDaoUtils.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -251,8 +251,8 @@ public class YdEqpPauseDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 			
-			//¼öÁ¤
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//ìˆ˜ì •
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ydDaoUtils.conversionFieldname(outRec, 0);
 	
 			//data mapping
@@ -274,7 +274,7 @@ public class YdEqpPauseDao {
 			//execution error return
 			if(intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -286,10 +286,10 @@ public class YdEqpPauseDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆĞ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -365,7 +365,7 @@ public class YdEqpPauseDao {
 			blnErr = ydDaoUtils.chkField(inRec, szFieldName, 100, 2, 'S', 0, 0);
 		
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -376,7 +376,7 @@ public class YdEqpPauseDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµå¼³ºñÈŞÁö UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì„¤ë¹„íœ´ì§€ UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -438,7 +438,7 @@ public class YdEqpPauseDao {
 			szFieldName = "V_YD_EQP_PAUSE_RCVR_CNTS";
 			ydDaoUtils.mappingData(inRec, outRec, szFieldName);
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 
@@ -449,12 +449,12 @@ public class YdEqpPauseDao {
 	
 	
 	/**
-	 * ±Ç¿ÀÃ¢
+	 * ê¶Œì˜¤ì°½
 	 * 2009.11.04
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñ ÈŞÁöÅ×ÀÌºí ¾÷µ¥ÀÌÆ®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ íœ´ì§€í…Œì´ë¸” ì—…ë°ì´íŠ¸
 	 *      
 	 * @param  JDTORecord inRec 
-	 * @return int              execution count(¼º°ø),    -2:parameter error,    -3:execution failed
+	 * @return int              execution count(ì„±ê³µ),    -2:parameter error,    -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -465,7 +465,7 @@ public class YdEqpPauseDao {
 
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ydDaoUtils.conversionFieldname(inRec, 0);
 	
 			
@@ -476,7 +476,7 @@ public class YdEqpPauseDao {
 //			if(!blnChk_Field)
 //				return intRtnVal = -2;
 			
-			//Äõ¸® ¾ÆÀÌµğ ¼¼ÆÃ
+			//ì¿¼ë¦¬ ì•„ì´ë”” ì„¸íŒ…
 			recPara.setField("JSPEED_QUERY_ID", szQueryIdUpd2);
 	
 			//query execute
@@ -487,7 +487,7 @@ public class YdEqpPauseDao {
 				intRtnVal = -3;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;

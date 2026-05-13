@@ -41,9 +41,9 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Test1
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Test1
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return: 
 	 * @throws JDTOException
@@ -52,7 +52,7 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 		// 
 		// YD-UC-????
 		// TC : ????????
-		// C¿¬ÁÖÁ¤Á¤L2½Ã½ºÅÛÀ¸·ÎºÎÅÍ ¼öºÒ±¸¿ëµµº¯°æ¿ä±¸ ¼ö½Å
+		// Cì—°ì£¼ì •ì •L2ì‹œìŠ¤í…œìœ¼ë¡œë¶€í„° ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ìš”êµ¬ ìˆ˜ì‹ 
 		//
 		
 		String szMsg="";
@@ -60,7 +60,7 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){
 			
-			szMsg=szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg=szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -70,10 +70,10 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 		
 //		try {
 //		
-//		// Slab Spec Ã³¸® EJB.Áö½ÃÁ¤º¸ µî·Ï ¿äÃ» 
+//		// Slab Spec ì²˜ë¦¬ EJB.ì§€ì‹œì •ë³´ ë“±ë¡ ìš”ì²­ 
 //		ejbCon.trx("SlabSpecRegSeEJB", "woInfoRegReq", inRecord);
 //		
-//		// Slab Spec Ã³¸® EJB.ÀúÀåÇ°Á¦¿øµî·Ï¿äÃ»
+//		// Slab Spec ì²˜ë¦¬ EJB.ì €ì¥í’ˆì œì›ë“±ë¡ìš”ì²­
 //		ejbCon.trx( "SlabSpecRegSeEJB", "reqStockSpecReg", inRecord);
 //		
 //		} catch (Exception e) {	
@@ -83,15 +83,15 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 //		} // end of try catch
 
 		
-		szMsg="Test1¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Test1ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvTest1()
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ·Î±×¸Ş¼¼ÁöÃ³¸®
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë¡œê·¸ë©”ì„¸ì§€ì²˜ë¦¬
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return: 
 	 * @throws JDTOException
@@ -101,11 +101,11 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 		
 		String szMsg					= "";
 		String szMethodName				= "rcvLogMsg";
-		String szOperationName			= "·Î±×¸Ş¼¼ÁöÃ³¸®";
+		String szOperationName			= "ë¡œê·¸ë©”ì„¸ì§€ì²˜ë¦¬";
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){
 			
-			szMsg=szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg=szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -114,7 +114,7 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 		
 		
 		try {
-			szMsg="["+szOperationName+"] --------------------- ¸Ş¼Òµå ½ÃÀÛ --------------------";
+			szMsg="["+szOperationName+"] --------------------- ë©”ì†Œë“œ ì‹œì‘ --------------------";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 			ydEjbCon.trx("MonitoringSeEJB", "procLogMsg", inRecord);
@@ -126,7 +126,7 @@ public class MonitoringFaEJBBean extends BaseSessionBean {
 		} // end of try catch
 
 		
-		szMsg="["+szOperationName+"] --------------------- ¸Ş¼Òµå ³¡ --------------------";
+		szMsg="["+szOperationName+"] --------------------- ë©”ì†Œë“œ ë --------------------";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvTest1()

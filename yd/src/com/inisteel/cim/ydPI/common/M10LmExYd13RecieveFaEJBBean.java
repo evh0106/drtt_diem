@@ -24,7 +24,7 @@ import com.inisteel.cim.ydPI.common.util.PIYdUtils;
 import com.inisteel.cim.common.rabbitmq.Alimtalk.Util.AlimtalkSendUtil;
 
 /**
- *      [A] Å¬·¡½º¸í : RabbitMQ Yd
+ *      [A] í´ë˜ìŠ¤ëª… : RabbitMQ Yd
  * 
  * @ejb.bean name="M10LmExYd13RecieveFaEJB" jndi-name="M10LmExYd13RecieveFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description="RabbitMQ Yd"
@@ -45,65 +45,65 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 	private PIYdUtils piYdUtils = new PIYdUtils();       
 	
 	/**
-	 *  EJB »ı¼º½ÃÁ¡¿¡ WEBLOGIC ÄÁÅ×ÀÌ³Ê°¡ È£ÃâÇÏ´Â ¸Ş¼Òµå
+	 *  EJB ìƒì„±ì‹œì ì— WEBLOGIC ì»¨í…Œì´ë„ˆê°€ í˜¸ì¶œí•˜ëŠ” ë©”ì†Œë“œ
 	 * 
 	 * @throws javax.ejb.CreateException
 	 */
 	public void ejbCreate() throws javax.ejb.CreateException {
     	
 //		try {			
-//			//¿¬°áÇÏ°í ¼ö½Å½ÃÀÛ
+//			//ì—°ê²°í•˜ê³  ìˆ˜ì‹ ì‹œì‘
 //			RabbitConnect();
 //			StartReceive();
 //		} 
 		
-		try {//HS(Á¶¾÷¼­¹ö), TM(¹°·ù¼­¹ö), PM(ÁøÇà¼­¹ö)Áß ¼±ÅÃ
+		try {//HS(ì¡°ì—…ì„œë²„), TM(ë¬¼ë¥˜ì„œë²„), PM(ì§„í–‰ì„œë²„)ì¤‘ ì„ íƒ
 			if(Util.isRabbitmqServiceDomain("TM")) {
-				//¿¬°áÇÏ°í ¼ö½Å½ÃÀÛ
+				//ì—°ê²°í•˜ê³  ìˆ˜ì‹ ì‹œì‘
 				RabbitConnect();
 				StartReceive();			
 			}
 		} 		
 		catch (IOException e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbCreate IOException error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbCreate IOException error :" + e.getMessage());
 		}
 		catch (TimeoutException e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbCreate TimeoutException error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbCreate TimeoutException error :" + e.getMessage());
 		}		
 		catch (Exception e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbCreate Exception error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbCreate Exception error :" + e.getMessage());
 		}
 	}
 	  	  
 	/**
-	 *  EJB Á¾·á½ÃÁ¡¿¡ WEBLOGIC ÄÁÅ×ÀÌ³Ê°¡ È£ÃâÇÏ´Â ¸Ş¼Òµå
+	 *  EJB ì¢…ë£Œì‹œì ì— WEBLOGIC ì»¨í…Œì´ë„ˆê°€ í˜¸ì¶œí•˜ëŠ” ë©”ì†Œë“œ
 	 * 
 	 * @throws javax.ejb.CreateException
 	 */
 	public void ejbRemove() {
 		
-    	piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove called");
+    	piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove called");
     	
     	try {
-    		//WAS(Weblogic) Á¾·á½Ã ¸®¼Ò½º ÇØÁ¦
+    		//WAS(Weblogic) ì¢…ë£Œì‹œ ë¦¬ì†ŒìŠ¤ í•´ì œ
 			RabbitDisConnect();
 		} 
 		catch (IOException e1) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e1.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e1.getMessage());
 		}
 		catch (TimeoutException e2) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e2.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e2.getMessage());
 		}		
 		catch (Exception e3) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e3.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e3.getMessage());
 		}
 	
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : RabbitConnect
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : RabbitConnect
 	 * 
-	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param void
 	 * @return void
 	 * @throws Exception 
@@ -113,7 +113,7 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 
 
 			this.propertyService = PropertyService.getInstance();
-			//Á¢¼ÓÁ¤º¸´Â jspeed ÄÜ¼Ö property service¿¡ µî·Ï
+			//ì ‘ì†ì •ë³´ëŠ” jspeed ì½˜ì†” property serviceì— ë“±ë¡
 			this.EXCHANGENAME = propertyService.getProperty("common.properties","rabbitmq.YD.M10LM-EX-YD-13"); 
 			this.QNAME        = propertyService.getProperty("common.properties","rabbitmq.YD.M10LM-Q-YD-13");
 			this.ROUTINGKEY   = propertyService.getProperty("common.properties","rabbitmq.YD.m10lm.yd.13");
@@ -124,25 +124,25 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 			
 		} 
 		catch (IOException e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e.getMessage());
 		}
 		catch (TimeoutException e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e.getMessage());
 		}		
 		catch (Exception e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) ejbRemove error :" + e.getMessage());
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) ejbRemove error :" + e.getMessage());
 		}
 		
 
-		piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å)     RabbitConnected OK");
+		piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ )     RabbitConnected OK");
     	
 	}
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : RabbitDisConnect
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : RabbitDisConnect
 	 * 
-	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param void
 	 * @return void
 	 * @throws IOException,TimeoutException
@@ -151,18 +151,18 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 		if(this.rabbitReceiver != null)
 			this.rabbitReceiver.RabbitClose();
 		
-		piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) RabbitDisConnect called");
+		piYdUtils.printLog("MES_PI_RABBIT_MQ", "", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) RabbitDisConnect called");
 	}
 	
-	//¸Ş¼¼Áö ¼ö½ÅµÈ ½Ã°£
+	//ë©”ì„¸ì§€ ìˆ˜ì‹ ëœ ì‹œê°„
 	String recvTime  = null;
-	//·ÎÁ÷Ã³¸®µÈ ½Ã°£
+	//ë¡œì§ì²˜ë¦¬ëœ ì‹œê°„
 	String endTime = null;
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : StartRecieve
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : StartRecieve
 	 * 
-	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param void
 	 * @return void
 	 * @throws IOException,UnsupportedEncodingException
@@ -172,22 +172,22 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 		Consumer consumer = new DefaultConsumer(this.channel)
 		{
 			String recievedMessage;
-			//¸Ş¼¼Áö ¼ö½Å CALLBACK ÇÔ¼ö(ÀÚµ¿À¸·Î ¼ö½ÅµÈ´Ù)
+			//ë©”ì„¸ì§€ ìˆ˜ì‹  CALLBACK í•¨ìˆ˜(ìë™ìœ¼ë¡œ ìˆ˜ì‹ ëœë‹¤)
 	    	public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties basicproperties, byte[] message) throws IOException{
 	    		long deliveryTag = envelope.getDeliveryTag();
 	    		
     			try {
-		    		//¼ö½Å ¸Ş¼¼Áö...byte[] -> Stringº¯È¯
+		    		//ìˆ˜ì‹  ë©”ì„¸ì§€...byte[] -> Stringë³€í™˜
     				recievedMessage = new String(message,"UTF-8"); 
-    				//¼ö½Å½Ã°£
+    				//ìˆ˜ì‹ ì‹œê°„
 					recvTime = Util.Date_YYYYMMddHHmmss(new Date());
 					
-					piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13Recieve(2¿­¿¬¾ßµå)¼ö½ÅMessage Àü¹®: <<<<<<<<<< : " + recievedMessage);
+					piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13Recieve(2ì—´ì—°ì•¼ë“œ)ìˆ˜ì‹ Message ì „ë¬¸: <<<<<<<<<< : " + recievedMessage);
 
-					//¹ŞÀº ¸Ş¼¼Áö¸¦ Ã³¸®ÇÏ´Â ÇÔ¼ö È£Ãâ
+					//ë°›ì€ ë©”ì„¸ì§€ë¥¼ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜ í˜¸ì¶œ
 					MessageProcessYd13(recievedMessage);
 
-		            //¼ö½ÅÇÏ°í, queue¿¡¼­ ¸Ş¼¼Áö »èÁ¦.
+		            //ìˆ˜ì‹ í•˜ê³ , queueì—ì„œ ë©”ì„¸ì§€ ì‚­ì œ.
 		            channel.basicAck(deliveryTag, false);
 		            
 				} 
@@ -197,23 +197,23 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
-					piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) StartReceive handleErrorMessage error " + e.getMessage());
+					piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) StartReceive handleErrorMessage error " + e.getMessage());
 				}//end of catch
     			
 	    	};//end of handleDelivery
 		};//end of consumer
 
 		final boolean autoAck = false;
-		//¼ö½Å Callback È£Ãâ : consumer->handleDelivery
+		//ìˆ˜ì‹  Callback í˜¸ì¶œ : consumer->handleDelivery
 		channel.basicConsume(this.QNAME, autoAck, consumer);		
 	}
 	
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ProcessMessageExam
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ProcessMessageExam
 	 * 
-	 * @ejb.interface-method view-type="remote" EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method view-type="remote" EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param String
 	 * @return HashMap
 	 * @throws Exception
@@ -241,23 +241,23 @@ public class M10LmExYd13RecieveFaEJBBean extends BaseSessionBean{
 			ejbConn = new EJBConnector("default", "CCommSeEJB", this);
 			ejbConn.trx("rcvInterface",  new Class[]{JDTORecord.class}, new Object[]{paramRecord});
 			
-			//¼º°ø½Ã log±â·Ï
+			//ì„±ê³µì‹œ logê¸°ë¡
 			endTime = Util.Date_YYYYMMddHHmmss(new Date());
 			httpRaggitMqlog.postReceiveLog(trId, recvTime, endTime, "S", "Success");			
 
 		} catch (JSONException e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) MessageProcessYd13 JSONException " + e.getMessage());
-			AlimtalkSendUtil.SendAlimTalk(this.QNAME, "M10LmExYd13RecieveFaEJB", e.getMessage());//¾Ë¸²ÅåÀü¼Û
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) MessageProcessYd13 JSONException " + e.getMessage());
+			AlimtalkSendUtil.SendAlimTalk(this.QNAME, "M10LmExYd13RecieveFaEJB", e.getMessage());//ì•Œë¦¼í†¡ì „ì†¡
 			httpRaggitMqlog.postReceiveLog(trId, recvTime, Util.Now_YYYYMMddHHmmss(), "E", "MessageProcessExam Exception:" +e.getMessage());
 
 		} catch (Exception e) {
-			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2¿­¿¬¾ßµå¼ö½Å) MessageProcessYd13 Exception " + e.getMessage());
-			AlimtalkSendUtil.SendAlimTalk(this.QNAME, "M10LmExYd13RecieveFaEJB", e.getMessage());//¾Ë¸²ÅåÀü¼Û
+			piYdUtils.printLog("MES_PI_RABBIT_MQ","", "===== M10LmExYd13RecieveFaEJB(2ì—´ì—°ì•¼ë“œìˆ˜ì‹ ) MessageProcessYd13 Exception " + e.getMessage());
+			AlimtalkSendUtil.SendAlimTalk(this.QNAME, "M10LmExYd13RecieveFaEJB", e.getMessage());//ì•Œë¦¼í†¡ì „ì†¡
 			httpRaggitMqlog.postReceiveLog(trId, recvTime, Util.Now_YYYYMMddHHmmss(), "E", "MessageProcessExam Exception:" +e.getMessage());
 
 		}
 		
-		// just return¿ë ¼º°ø½Ã 200¸®ÅÏ.
+		// just returnìš© ì„±ê³µì‹œ 200ë¦¬í„´.
 		mapResult.put("STATUSCODE", "200");
 		return mapResult;
 	}

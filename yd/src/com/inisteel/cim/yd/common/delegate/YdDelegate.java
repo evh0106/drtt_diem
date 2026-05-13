@@ -18,7 +18,7 @@ import com.inisteel.cim.yd.common.util.YdTcConst;
 import com.inisteel.cim.yd.common.util.tcconst.TcConstMgr;
 import com.inisteel.cim.yd.jplateyd.util.JPlateYdConst;
 import com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO;
-import com.inisteel.cim.ydPI.common.M10YdExLm21SenderFaEJBBean; //ÈÄÆÇÁ¦Ç° 
+import com.inisteel.cim.ydPI.common.M10YdExLm21SenderFaEJBBean; //í›„íŒì œí’ˆ 
 import com.inisteel.cim.ydPI.common.M10YdExLm31SenderFaEJBBean; //SLAB 
 import com.inisteel.cim.ydPI.common.util.PIYdUtils;
 import com.inisteel.cim.ydPI.dao.YdPICommDAO;
@@ -43,28 +43,28 @@ public class YdDelegate{
 	private SlabYdCommDAO slabYdCommDao = new SlabYdCommDAO();
 	private YmCommUtils commUtils = new YmCommUtils();
 
-	private String szIPDevSys1="10.216.133.61";	// °³¹ß°è
-	private String szIPDevSys2="10.216.133.59";	// °³¹ß°èTM
-	private String szIPDevSys3="10.216.133.204"; // °³¹ß°èTMNEW
-	private String szIPDevSys4="10.216.133.207"; // °³¹ß°èTMNEW
-	private String szIPDevSys5="10.216.132.204"; // °³¹ß°èTMNEW
-	private String szIPDevSys6="10.216.132.207"; // °³¹ß°èTMNEW
-	private String szIPTstSys1="10.216.133.15";	// ¿î¿µ°è1
-	private String szIPTstSys2="10.216.133.25";	// ¿î¿µ°è2
-	private String szIPTstSys3="10.216.133.163";	// ¿î¿µ°è1TM
-	private String szIPTstSys4="10.216.133.164";	// ¿î¿µ°è2TM
+	private String szIPDevSys1="10.216.133.61";	// ê°œë°œê³„
+	private String szIPDevSys2="10.216.133.59";	// ê°œë°œê³„TM
+	private String szIPDevSys3="10.216.133.204"; // ê°œë°œê³„TMNEW
+	private String szIPDevSys4="10.216.133.207"; // ê°œë°œê³„TMNEW
+	private String szIPDevSys5="10.216.132.204"; // ê°œë°œê³„TMNEW
+	private String szIPDevSys6="10.216.132.207"; // ê°œë°œê³„TMNEW
+	private String szIPTstSys1="10.216.133.15";	// ìš´ì˜ê³„1
+	private String szIPTstSys2="10.216.133.25";	// ìš´ì˜ê³„2
+	private String szIPTstSys3="10.216.133.163";	// ìš´ì˜ê³„1TM
+	private String szIPTstSys4="10.216.133.164";	// ìš´ì˜ê³„2TM
 	
-	private String szIPDevSys7="10.216.132.104"; // PI°ËÁõ±â
-	private String szIPDevSys8="10.216.132.107"; // PI°ËÁõ±â
-	private String szIPDevSys9="10.216.132.108"; // PI°ËÁõ±â
+	private String szIPDevSys7="10.216.132.104"; // PIê²€ì¦ê¸°
+	private String szIPDevSys8="10.216.132.107"; // PIê²€ì¦ê¸°
+	private String szIPDevSys9="10.216.132.108"; // PIê²€ì¦ê¸°
 	
-	//Á¶¾÷¼­¹ö¿¡¼­ Â÷·®ÀÛ¾÷°ü¸® ¿¬°áÇØ¼­ »ç¿ëÇÏ´Â°æ¿ì¸¦ À§ÇÑ ¿¹¿ÜÃ³¸® Ãß°¡ 2022.08.09
-	private String szIPTstSys5="10.216.133.116";	// ¿î¿µ°è2TM
-	private String szIPTstSys6="10.216.133.117";	// ¿î¿µ°è2TM
+	//ì¡°ì—…ì„œë²„ì—ì„œ ì°¨ëŸ‰ì‘ì—…ê´€ë¦¬ ì—°ê²°í•´ì„œ ì‚¬ìš©í•˜ëŠ”ê²½ìš°ë¥¼ ìœ„í•œ ì˜ˆì™¸ì²˜ë¦¬ ì¶”ê°€ 2022.08.09
+	private String szIPTstSys5="10.216.133.116";	// ìš´ì˜ê³„2TM
+	private String szIPTstSys6="10.216.133.117";	// ìš´ì˜ê³„2TM
 
 	private PIYdUtils     commPiUtils = new PIYdUtils();
 	private YdPICommDAO	   ydPICommDAO   = new YdPICommDAO();
-	private M10YdExLm21SenderFaEJBBean      M10YdExLm21Sender   = new M10YdExLm21SenderFaEJBBean();  //ÈÄÆÇÁ¦Ç° 
+	private M10YdExLm21SenderFaEJBBean      M10YdExLm21Sender   = new M10YdExLm21SenderFaEJBBean();  //í›„íŒì œí’ˆ 
 	private M10YdExLm31SenderFaEJBBean      M10YdExLm31Sender   = new M10YdExLm31SenderFaEJBBean();  //slab 
 	
 	/**
@@ -75,10 +75,10 @@ public class YdDelegate{
 	public void sendMsg(JDTORecord msgRecord){
 		
 		//
-		// YD Delegate ¼Û½Å Main
-		// ¼ö½Å ÇÑ msgRecordÀÇ TCCode¸¦ ºĞ¼®ÇÏ¿©
-		// ³»ºÎ(J), RemoteEAI(R), L2EAI(L)¸¦ ÆÇ´Ü ÇÑ ÈÄ 
-		// ´ë»ó ¸Ş¼Òµå¸¦ ÅëÇØ¼­ ¼Û½ÅÇÑ´Ù.
+		// YD Delegate ì†¡ì‹  Main
+		// ìˆ˜ì‹  í•œ msgRecordì˜ TCCodeë¥¼ ë¶„ì„í•˜ì—¬
+		// ë‚´ë¶€(J), RemoteEAI(R), L2EAI(L)ë¥¼ íŒë‹¨ í•œ í›„ 
+		// ëŒ€ìƒ ë©”ì†Œë“œë¥¼ í†µí•´ì„œ ì†¡ì‹ í•œë‹¤.
 		//
 	
 		String szMsg		= "";
@@ -96,7 +96,7 @@ public class YdDelegate{
 		int nRtc			= 0;
 		int nTcKind			= 0;
 		
-		// ¼Û½Å ¿ë TC (Maked TC)
+		// ì†¡ì‹  ìš© TC (Maked TC)
 		JDTORecord tcRecord 	= null;	
 		JDTORecordSet tcRecSet 	= null;
 		
@@ -111,7 +111,7 @@ public class YdDelegate{
 
 			szBUFFER_TC =  StringHelper.evl(msgRecord.getFieldString(YdConstant.BUFFER_TC_CD),"");
 			
-			szMsg = "Delegate ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+			szMsg = "Delegate ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			
@@ -131,17 +131,17 @@ public class YdDelegate{
 			// 1:JMS, 2:Remote EAI, 3:L2 EAI, 9:Facade
 			nTcKind = ydTcConst.chkTcType(szTcCode);	
 		
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(nTcKind <=0) {
 				szMsg = "Unknown TC Code("+szTcCode+") Error (ErrCode="+nTcKind+")";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}
 
-			// Àü¼Û¿ë JDTORecord »ı¼º
+			// ì „ì†¡ìš© JDTORecord ìƒì„±
 			tcRecSet =JDTORecordFactory.getInstance().createRecordSet("YDDelegate");
 						
-			// nRtc>0 : tcRecSetÀÇ Record Count
+			// nRtc>0 : tcRecSetì˜ Record Count
 			nRtc = tcConstMgr.makeTc(msgRecord, tcRecSet);
 			
 			if( nRtc<=0){
@@ -152,15 +152,15 @@ public class YdDelegate{
 
 			
 			//PIDEV
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
-			//ÀÓ°¡°ø
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
+			//ì„ê°€ê³µ
 			if(szTcCode.startsWith("M10")) {
 			
 				if (szTcCode.endsWith("3")) {
 					for(int i = 0; i < nRtc; i++){
 						tcRecord =tcRecSet.getRecord(i);
 						M10YdExLm31Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(tcRecord));
-						szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+						szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					}	
 					return ;
@@ -169,7 +169,7 @@ public class YdDelegate{
 					for(int i = 0; i < nRtc; i++){
 						tcRecord =tcRecSet.getRecord(i);
 						M10YdExLm21Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(tcRecord));
-						szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+						szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					}
 					return ;
@@ -186,13 +186,13 @@ public class YdDelegate{
 			// YD_EAI(WEB METHOD)_QUEUE
 			szYdWMEAIQName =propertyService.getProperty("common.properties", "jms.queue.YD_WM_EAI_QUEUE");
 			
-			// YD_EAI(YD QUEUE ºĞ¸®)_QUEUE
+			// YD_EAI(YD QUEUE ë¶„ë¦¬)_QUEUE
 			szYdaEAIQName = propertyService.getProperty("common.properties", "jms.queue.YDA_EAI_QUEUE");
 			
 			InetAddress ipAddr=InetAddress.getLocalHost();
 			// 
 			// DEBUG MSG
-//			szMsg="[DEBUG] ´ë»óQueue  : ["+szYdJMSQName+"] "+ipAddr.getHostAddress();
+//			szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szYdJMSQName+"] "+ipAddr.getHostAddress();
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			szMsg=szMethodName+" SERVER IP PRINT21 : "+ipAddr.getHostAddress();
@@ -200,7 +200,7 @@ public class YdDelegate{
 			
 	 
 			
-			//°³¹ßÀÚ ·ÎÄÃÀÎ °æ¿ì¿¡¸¸ ³»ºÎ ÀÎÅÍÆäÀÌ½º¸¦ ·ÎÄÃÃ³¸® ÇÑ´Ù.
+			//ê°œë°œì ë¡œì»¬ì¸ ê²½ìš°ì—ë§Œ ë‚´ë¶€ ì¸í„°í˜ì´ìŠ¤ë¥¼ ë¡œì»¬ì²˜ë¦¬ í•œë‹¤.
 			if(szTcCode.substring(0, 4).equals("YDYD") && 
 				((!ipAddr.getHostAddress().equals(szIPDevSys1)) &&
 				 (!ipAddr.getHostAddress().equals(szIPDevSys2)) &&
@@ -230,39 +230,39 @@ public class YdDelegate{
 				switch(nTcKind){
 			
 				// EnQueue
-				case 1:		// JMS Queue ¼Û½Å
+				case 1:		// JMS Queue ì†¡ì‹ 
 					
 					
 					if(szTcCode.substring(0, 4).equals("YDYD")){
 			    		
-						//YDYDÀü¹®À¸·Î ¾ßµå±¸ºĞ ÃßÃâ
+						//YDYDì „ë¬¸ìœ¼ë¡œ ì•¼ë“œêµ¬ë¶„ ì¶”ì¶œ
 						szYdName=(String)ydTcConst.rcvTcYdMap.get(szTcCode);
-						ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCÇØ´ç¾ßµå:"+szYdName, YdConstant.DEBUG);
+						ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCí•´ë‹¹ì•¼ë“œ:"+szYdName, YdConstant.DEBUG);
 						
 						szBUFFER_TC =  StringHelper.evl(msgRecord.getFieldString(YdConstant.BUFFER_TC_CD),"");
 						
 						
 						if(!szBUFFER_TC.equals("")){//BUFFER
 							szWkGp 		= "YDG";
-						}else if(szYdName.equals("A")){//C¿¬ÁÖ½½¶óºê
+						}else if(szYdName.equals("A")){//Cì—°ì£¼ìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDB";
-						}else if(szYdName.equals("D")){//AÈÄÆÇ½½¶óºê
+						}else if(szYdName.equals("D")){//Aí›„íŒìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDD";
-						}else if(szYdName.equals("K")){//ÈÄÆÇÁ¦Ç°
+						}else if(szYdName.equals("K")){//í›„íŒì œí’ˆ
 							szWkGp 		= "YDE";
 							//szWkGp 		= "YD";
-						}else if(szYdName.equals("H")){//C¿­¿¬ÄÚÀÏ
+						}else if(szYdName.equals("H")){//Cì—´ì—°ì½”ì¼
 							if(szTcCode.equals("YDYDJ633")
 							 ||szTcCode.equals("YDYDJ653")
 							 ||szTcCode.equals("YDYDJ282")
 							 ||szTcCode.equals("YDYDJ292")){
-								szWkGp 		= "YDF";  //ÃâÇÏ ÀÔµ¿Áö½Ã¿ä±¸
+								szWkGp 		= "YDF";  //ì¶œí•˜ ì…ë™ì§€ì‹œìš”êµ¬
 							}else{
 								szWkGp 		= "YDC";
 							}
-						}else if(szYdName.equals("S")){//ÅëÇÕ½½¶óºê
+						}else if(szYdName.equals("S")){//í†µí•©ìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDF";
-						}else if(szYdName.equals("T")){//ÈÄÆÇÀúÀå°èÈ¹ Àü¿ë
+						}else if(szYdName.equals("T")){//í›„íŒì €ì¥ê³„íš ì „ìš©
 							szWkGp 		= "YDH";	
 						}else{
 							szWkGp 		= szTcCode.substring(2, 4);
@@ -273,7 +273,7 @@ public class YdDelegate{
 					}
 					
 					/**
-					 * YDDMR001, YDDMR004 queue º¯°æ 20200407
+					 * YDDMR001, YDDMR004 queue ë³€ê²½ 20200407
 					 */
 					if ("YDDMR001".equals(szTcCode) || "YDDMR004".equals(szTcCode)) {
 						szWkGp = "DMA";
@@ -281,11 +281,11 @@ public class YdDelegate{
 					
 					szQueueName = propertyService.getProperty("common.properties", "jms.queue."+szWkGp+"_MDB_QUEUE");
 //					 DEBUG MSG
-					szMsg="[DEBUG] ´ë»óQueue  : ["+szQueueName+"] "+ipAddr.getHostAddress();
+					szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szQueueName+"] "+ipAddr.getHostAddress();
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					/*
 					 * 2010.07.15 YJK
-					 * Send Class For¹® ¹ÛÀ¸·Î »©³¿.
+					 * Send Class Forë¬¸ ë°–ìœ¼ë¡œ ë¹¼ëƒ„.
 					 */
 					jmsQSnder = new JmsQueueSender();
 					jmsQSnder.initQueueService(szQueueName);
@@ -297,7 +297,7 @@ public class YdDelegate{
 						tcRecord =tcRecSet.getRecord(i);
 						// JMS : JMS_TC_CD, L2 EAI : MSG_ID
 						szTcCode =ydUtils.getTcCode(tcRecord);
-						//ÃâÇÏhttp ->jms 
+						//ì¶œí•˜http ->jms 
 						if(szTcCode.substring(2,4).equals("DM")){
 							tcRecord.setField("JMS_TC_CD", szTcCode);
 						}
@@ -307,7 +307,7 @@ public class YdDelegate{
 					jmsQSnder.send(sndMsgs1);
 					break;	// end of case 1
 					
-				case 2:		// ¸®¸ğÆ® EAI ¼Û½Å
+				case 2:		// ë¦¬ëª¨íŠ¸ EAI ì†¡ì‹ 
 			
 					// Remote EAI Send
 					for(int i=0; i<nRtc;i++){
@@ -320,17 +320,17 @@ public class YdDelegate{
 					
 					break; // end of case 2
 					
-				case 3:		// L2 EAI ¼Û½Å
+				case 3:		// L2 EAI ì†¡ì‹ 
 					
 					JDTORecord targetId = null;
 					JDTORecordSet targetIdSet = null;
 					String chkYN = "";
 					
-					//YDA·Î Àü¼ÛÇØ¾ßÇÏ´Â Queue ID Á¶È¸ (19.04.29)
+					//YDAë¡œ ì „ì†¡í•´ì•¼í•˜ëŠ” Queue ID ì¡°íšŒ (19.04.29)
 					targetId = JDTORecordFactory.getInstance().create();
 					targetId.setField("JMS_TC_CD", szTcCode);
 					targetId.setField("CD_GP", "YDA");
-					targetIdSet = slabYdCommDao.select(targetId , "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDao.getTargetTCcodeId" , "SYSTEM" , "sndToEAI" , "EAIÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸®");
+					targetIdSet = slabYdCommDao.select(targetId , "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDao.getTargetTCcodeId" , "SYSTEM" , "sndToEAI" , "EAIì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬");
 					
 					if(targetIdSet.size() > 0) {
 						chkYN = commUtils.trim(targetIdSet.getRecord(0).getFieldString("ITEM1"));
@@ -345,13 +345,13 @@ public class YdDelegate{
 					//szQueueName = szYdEAIQName;
 					/*
 					 * 2010.07.15 YJK
-					 * Send Class For¹® ¹ÛÀ¸·Î »©³¿.
+					 * Send Class Forë¬¸ ë°–ìœ¼ë¡œ ë¹¼ëƒ„.
 					 */
 					jmsQSnder = new JmsQueueSender();
 					 
 					if("Y".equals(commDao.getWebMothodYn())) {
 						//---------------------------------------------------------------------------------------------
-						//WebMethod EAI ¹æ½Ä º¯°æ¿¡ µû¸¥ BRE¿¡¼­ Å¥¸í È£Ãâ 2019.08.20
+						//WebMethod EAI ë°©ì‹ ë³€ê²½ì— ë”°ë¥¸ BREì—ì„œ íëª… í˜¸ì¶œ 2019.08.20
 						//---------------------------------------------------------------------------------------------
 						szQueueName = jmsQSnder.getQueueName("YD", szTcCode);
 						
@@ -409,7 +409,7 @@ public class YdDelegate{
 				// Facade Call
 				case 9:
 					//
-					// Facade CallÀÇ °æ¿ì¿¡´Â ¼ö½Å ÇÑ Record¿¡¼­ FacadeName, MethodNameÀ» ¹ßÃéÇÏ¿© ¼Û½Å
+					// Facade Callì˜ ê²½ìš°ì—ëŠ” ìˆ˜ì‹  í•œ Recordì—ì„œ FacadeName, MethodNameì„ ë°œì·Œí•˜ì—¬ ì†¡ì‹ 
 					nRtc =deleComm.facadeSender(msgRecord);
 					if(nRtc<0) {
 	
@@ -444,10 +444,10 @@ public class YdDelegate{
 	public void sendMsg_NoMakeTc(JDTORecord msgRecord){
 		
 		//
-		// YD Delegate ¼Û½Å Main
-		// ¼ö½Å ÇÑ msgRecordÀÇ TCCode¸¦ ºĞ¼®ÇÏ¿©
-		// ³»ºÎ(J), RemoteEAI(R), L2EAI(L)¸¦ ÆÇ´Ü ÇÑ ÈÄ 
-		// ´ë»ó ¸Ş¼Òµå¸¦ ÅëÇØ¼­ ¼Û½ÅÇÑ´Ù.
+		// YD Delegate ì†¡ì‹  Main
+		// ìˆ˜ì‹  í•œ msgRecordì˜ TCCodeë¥¼ ë¶„ì„í•˜ì—¬
+		// ë‚´ë¶€(J), RemoteEAI(R), L2EAI(L)ë¥¼ íŒë‹¨ í•œ í›„ 
+		// ëŒ€ìƒ ë©”ì†Œë“œë¥¼ í†µí•´ì„œ ì†¡ì‹ í•œë‹¤.
 		//
 	
 		String szMsg="";
@@ -464,7 +464,7 @@ public class YdDelegate{
 		int nTcKind=0;
 		
 		//
-		// ¼Û½Å ¿ë TC (Maked TC)
+		// ì†¡ì‹  ìš© TC (Maked TC)
 		JDTORecord tcRecord =null;	
 		JDTORecordSet tcRecSet =null;
 		
@@ -474,13 +474,13 @@ public class YdDelegate{
 			
 			szTcCode = ydUtils.getTcCode(msgRecord);
 			
-			szMsg = "Delegate ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")";
+			szMsg = "Delegate ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	
 			// 1:JMS, 2:Remote EAI, 3:L2 EAI, 9:Facade
 			nTcKind = ydTcConst.chkTcType(szTcCode);	
 		
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(nTcKind <=0) {
 
 				szMsg = "Unknown TC Code("+szTcCode+") Error (ErrCode="+nTcKind+")";
@@ -488,28 +488,28 @@ public class YdDelegate{
 				return ;
 			}
 
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(szTcCode.startsWith("M10")) {
 //				M10YdExLm21Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(msgRecord));
-//				szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+//				szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 //				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 //				return ;
 				
 				if (szTcCode.endsWith("3")) {
 					M10YdExLm31Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(msgRecord));
-					szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+					szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					return ;
 					
 				} else {
 					
 					M10YdExLm21Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(msgRecord));
-					szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+					szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					return ;
 				}
 			}			
-			//±îÁö						
+			//ê¹Œì§€						
 			
 			propertyService = PropertyService.getInstance();
 			
@@ -519,7 +519,7 @@ public class YdDelegate{
 			szYdEAIQName =propertyService.getProperty("common.properties", "jms.queue.YD_EAI_QUEUE");
 			 
 			// DEBUG MSG
-			szMsg="[DEBUG] ´ë»óQueue  : ["+szYdJMSQName+"] ";
+			szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szYdJMSQName+"] ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			propertyService = PropertyService.getInstance();
@@ -530,44 +530,44 @@ public class YdDelegate{
 			szYdEAIQName =propertyService.getProperty("common.properties", "jms.queue.YD_EAI_QUEUE");
 			 
 			// DEBUG MSG
-			szMsg="[DEBUG] ´ë»óQueue  : ["+szYdJMSQName+"] ";
+			szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szYdJMSQName+"] ";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			switch(nTcKind){
 		
 			//
 			// EnQueue
-			case 1:		// JMS Queue ¼Û½Å
+			case 1:		// JMS Queue ì†¡ì‹ 
 				
 				if(szTcCode.substring(0, 4).equals("YDYD")){
 		    		
-					//YDYDÀü¹®À¸·Î ¾ßµå±¸ºĞ ÃßÃâ
+					//YDYDì „ë¬¸ìœ¼ë¡œ ì•¼ë“œêµ¬ë¶„ ì¶”ì¶œ
 					szYdName=(String)ydTcConst.rcvTcYdMap.get(szTcCode);
-					ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCÇØ´ç¾ßµå:"+szYdName, YdConstant.DEBUG);
+					ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCí•´ë‹¹ì•¼ë“œ:"+szYdName, YdConstant.DEBUG);
 					
 					szBUFFER_TC =  StringHelper.evl(msgRecord.getFieldString(YdConstant.BUFFER_TC_CD),"");
 					
 					if(!szBUFFER_TC.equals("")){//BUFFER
 						szWkGp 		= "YDG";
-					}else if(szYdName.equals("A")){//C¿¬ÁÖ½½¶óºê
+					}else if(szYdName.equals("A")){//Cì—°ì£¼ìŠ¬ë¼ë¸Œ
 						szWkGp 		= "YDB";
-					}else if(szYdName.equals("D")){//AÈÄÆÇ½½¶óºê
+					}else if(szYdName.equals("D")){//Aí›„íŒìŠ¬ë¼ë¸Œ
 						szWkGp 		= "YDD";
-					}else if(szYdName.equals("K")){//ÈÄÆÇÁ¦Ç°
+					}else if(szYdName.equals("K")){//í›„íŒì œí’ˆ
 						szWkGp 		= "YDE";
 						//szWkGp 		= "YD";
-					}else if(szYdName.equals("H")){//C¿­¿¬ÄÚÀÏ
+					}else if(szYdName.equals("H")){//Cì—´ì—°ì½”ì¼
 						if(szTcCode.equals("YDYDJ633")
 						 ||szTcCode.equals("YDYDJ653")
 						 ||szTcCode.equals("YDYDJ282")
 						 ||szTcCode.equals("YDYDJ292")){
-							szWkGp 		= "YDF";  //ÃâÇÏ ÀÔµ¿Áö½Ã¿ä±¸
+							szWkGp 		= "YDF";  //ì¶œí•˜ ì…ë™ì§€ì‹œìš”êµ¬
 						}else{
 							szWkGp 		= "YDC";
 						}
-					}else if(szYdName.equals("S")){//ÅëÇÕ½½¶óºê
+					}else if(szYdName.equals("S")){//í†µí•©ìŠ¬ë¼ë¸Œ
 						szWkGp 		= "YDF";
-					}else if(szYdName.equals("T")){//ÈÄÆÇÀúÀå°èÈ¹ Àü¿ë
+					}else if(szYdName.equals("T")){//í›„íŒì €ì¥ê³„íš ì „ìš©
 						szWkGp 		= "YDH";	
 					}else{
 						szWkGp 		= szTcCode.substring(2, 4);
@@ -584,7 +584,7 @@ public class YdDelegate{
 				break;	// end of case 1
 				
 				
-			case 2:		// ¸®¸ğÆ® EAI ¼Û½Å
+			case 2:		// ë¦¬ëª¨íŠ¸ EAI ì†¡ì‹ 
 			
 				
 				deleComm.remoteEaiSnder(msgRecord);
@@ -592,7 +592,7 @@ public class YdDelegate{
 				break; // end of case 2
 				
 				
-			case 3:		// L2 EAI ¼Û½Å
+			case 3:		// L2 EAI ì†¡ì‹ 
 			
 				// 
 				// EAI Queue Send
@@ -605,7 +605,7 @@ public class YdDelegate{
 				
 			case 9:	// Facade Call
 				//
-				// Facade CallÀÇ °æ¿ì¿¡´Â ¼ö½Å ÇÑ Record¿¡¼­ FacadeName, MethodNameÀ» ¹ßÃéÇÏ¿© ¼Û½Å
+				// Facade Callì˜ ê²½ìš°ì—ëŠ” ìˆ˜ì‹  í•œ Recordì—ì„œ FacadeName, MethodNameì„ ë°œì·Œí•˜ì—¬ ì†¡ì‹ 
 				nRtc =deleComm.facadeSender(msgRecord);
 				if(nRtc<0) {
 
@@ -640,8 +640,8 @@ public class YdDelegate{
 	
 	
 	/**
-	 * Application È¯°æÀÌ ¼­¹ö(°³¹ß°è/Å×½ºÆ®°è)ÀÎÁö¸¦ ÆÇ´ÜÇÏ¿©
-	 * ¼­¹öÀÎ °æ¿ì¿¡´Â ¼­¹ö·Î, ·ÎÄÃÀÎ °æ¿ì¿¡´Â ·ÎÄÃ·Î ¸Ş½ÃÁö Àü¼Û 
+	 * Application í™˜ê²½ì´ ì„œë²„(ê°œë°œê³„/í…ŒìŠ¤íŠ¸ê³„)ì¸ì§€ë¥¼ íŒë‹¨í•˜ì—¬
+	 * ì„œë²„ì¸ ê²½ìš°ì—ëŠ” ì„œë²„ë¡œ, ë¡œì»¬ì¸ ê²½ìš°ì—ëŠ” ë¡œì»¬ë¡œ ë©”ì‹œì§€ ì „ì†¡ 
 	 */
 	public void msgSend(JDTORecord msgRecord){
 		
@@ -665,12 +665,12 @@ public class YdDelegate{
 				(ipAddr.getHostAddress().equals(szIPTstSys3)) ||
 				(ipAddr.getHostAddress().equals(szIPTstSys4))  ){
 				
-				// °³¹ß°è/Å×½ºÆ®1,2 ¼­¹ö
+				// ê°œë°œê³„/í…ŒìŠ¤íŠ¸1,2 ì„œë²„
 				this.sendMsg(msgRecord);
 			}
 			else{
 				
-				// °³¹ß°è°¡ ¾Æ´Ñ °æ¿ì (·ÎÄÃ)
+				// ê°œë°œê³„ê°€ ì•„ë‹Œ ê²½ìš° (ë¡œì»¬)
 				this.lclSndMsg(msgRecord);
 			}
 			
@@ -692,7 +692,7 @@ public class YdDelegate{
 	
 	
 	/**
-	 * local JMS Q¼Û½ÅÀ» À§ÇÑ ³»ºÎ(Local) Queue ¼Û½Å
+	 * local JMS Qì†¡ì‹ ì„ ìœ„í•œ ë‚´ë¶€(Local) Queue ì†¡ì‹ 
 	 * 
 	 */
 	public void lclSndMsg(JDTORecord msgRecord){
@@ -707,7 +707,7 @@ public class YdDelegate{
 			
 			szTcCode = ydUtils.getTcCode(msgRecord);
 			
-			szMsg = "Delegate(Local) ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")";
+			szMsg = "Delegate(Local) ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 			
@@ -719,7 +719,7 @@ public class YdDelegate{
 			nTcKind = ydTcConst.chkTcType(szTcCode);	
 		
 		
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(nTcKind < 0) {
 
 				szMsg = "Unknown TC Code("+szTcCode+") Error (ErrCode="+nTcKind+")";
@@ -730,8 +730,8 @@ public class YdDelegate{
 		
 		
 			//
-			// Simulator Msg ¼Û½Å
-			// ¸ğµç TC Type¿¡ ´ëÇØ¼­ ³»ºÎ JMs Queue¿¡ ¼Û½ÅÇÑ´Ù.
+			// Simulator Msg ì†¡ì‹ 
+			// ëª¨ë“  TC Typeì— ëŒ€í•´ì„œ ë‚´ë¶€ JMs Queueì— ì†¡ì‹ í•œë‹¤.
 			//			
 			deleComm.jmsTargetQSnder(msgRecord, 1);
 			
@@ -750,7 +750,7 @@ public class YdDelegate{
 	
 	
 	/**
-	 *  remote JMS Q¸¦ À§ÇÑ ¿ø°İ(°³¹ß°è) Queue ¼Û½Å
+	 *  remote JMS Që¥¼ ìœ„í•œ ì›ê²©(ê°œë°œê³„) Queue ì†¡ì‹ 
 	 * 
 	 */
 	public void rmtSndMsg(JDTORecord msgRecord){
@@ -765,15 +765,15 @@ public class YdDelegate{
 			
 			szTcCode = ydUtils.getTcCode(msgRecord);
 			
-			szMsg = "Delegate(Remote:°³¹ß°è) ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")";
+			szMsg = "Delegate(Remote:ê°œë°œê³„) ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 			
 			
 			
 			//
-			// Simulator Msg ¼Û½Å
-			// ¸ğµç TC Type¿¡ ´ëÇØ¼­ ¼­¹ö JMs Queue¿¡ ¼Û½ÅÇÑ´Ù.
+			// Simulator Msg ì†¡ì‹ 
+			// ëª¨ë“  TC Typeì— ëŒ€í•´ì„œ ì„œë²„ JMs Queueì— ì†¡ì‹ í•œë‹¤.
 			//	
 			deleComm.jmsTargetQSnder(msgRecord, 2);
 			
@@ -792,7 +792,7 @@ public class YdDelegate{
 	
 	
 	/**
-	 *  remote JMS Q¸¦ À§ÇÑ ¿ø°İ(Å×½ºÆ®°è) Queue ¼Û½Å
+	 *  remote JMS Që¥¼ ìœ„í•œ ì›ê²©(í…ŒìŠ¤íŠ¸ê³„) Queue ì†¡ì‹ 
 	 * 
 	 */
 	public void tstSndMsg(JDTORecord msgRecord){
@@ -807,15 +807,15 @@ public class YdDelegate{
 			
 			szTcCode = ydUtils.getTcCode(msgRecord);
 			
-			szMsg = "Delegate(Remote:Å×½ºÆ®°è) ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")";
+			szMsg = "Delegate(Remote:í…ŒìŠ¤íŠ¸ê³„) ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 			
 			
 			
 			//
-			// Simulator Msg ¼Û½Å
-			// ¸ğµç TC Type¿¡ ´ëÇØ¼­ ¼­¹ö JMs Queue¿¡ ¼Û½ÅÇÑ´Ù.
+			// Simulator Msg ì†¡ì‹ 
+			// ëª¨ë“  TC Typeì— ëŒ€í•´ì„œ ì„œë²„ JMs Queueì— ì†¡ì‹ í•œë‹¤.
 			//	
 			
 			deleComm.jmsTargetQSnder(msgRecord, 3);
@@ -830,9 +830,9 @@ public class YdDelegate{
 	} // end of tstSndMsg()
 
 	
-	/** sndSms  EAI (SMS) SEND °øÅë 
-	 * @param   1. Message ³»¿ë, 2. TCÄÚµå 
-	 * @return  String  Á¤»óÀÏ¶§ "Y"
+	/** sndSms  EAI (SMS) SEND ê³µí†µ 
+	 * @param   1. Message ë‚´ìš©, 2. TCì½”ë“œ 
+	 * @return  String  ì •ìƒì¼ë•Œ "Y"
 	 * @throws DAOException
 	 */	
 	public String sndSms(String  message, String tccode) throws com.inisteel.cim.common.exception.DAOException { 
@@ -845,25 +845,25 @@ public class YdDelegate{
 		PropertyService propertyService=null;
 		String   flag = "N";
 		try {
-	    // ÇÁ·ÎÆÛÆ¼ ¼­ºñ½º ÀÎ½ºÅÏ½º¸¦ ÃëµæÇÕ´Ï´Ù.
+	    // í”„ë¡œí¼í‹° ì„œë¹„ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì·¨ë“í•©ë‹ˆë‹¤.
 		propertyService = PropertyService.getInstance();
 
-		// Å¥ ¸íÄªÀ» ÇÁ·ÎÆÛÆ¼·ÎºÎÅÍ ÃëµæÇÕ´Ï´Ù. [[ EAI = jms.queue.SMS_EAI_QUEUE ]]
+		// í ëª…ì¹­ì„ í”„ë¡œí¼í‹°ë¡œë¶€í„° ì·¨ë“í•©ë‹ˆë‹¤. [[ EAI = jms.queue.SMS_EAI_QUEUE ]]
 		queueName = propertyService.getProperty("common.properties","jms.queue.SMS_EAI_QUEUE");
  
 		sender = new com.inisteel.cim.common.jms.JmsQueueSender();
 		
 		String msgID = tccode;
 		/*
-		 	PRP2L008/TL3CRL/1ÈÄÆÇ¾Ğ¿¬L2[29008]/ÈÄÆÇ¶ó¿ìÆÃÀÛ¾÷Áö½Ã
-			PRP2L008/TL3CRL/1ÈÄÆÇÀü´ÜL2[29108]/ÈÄÆÇ¶ó¿ìÆÃÀÛ¾÷Áö½Ã
-			PRP2L010/TL3CP2/1ÈÄÆÇÀü´ÜL2[29010]/ÈÄÆÇ¾Ğ¿¬ºĞÇÒÆÇÁ¦Ç°ÀÛ¾÷Áö½Ã[¿ÀÅäÆÄÀÏ·¯Á¤º¸]
+		 	PRP2L008/TL3CRL/1í›„íŒì••ì—°L2[29008]/í›„íŒë¼ìš°íŒ…ì‘ì—…ì§€ì‹œ
+			PRP2L008/TL3CRL/1í›„íŒì „ë‹¨L2[29108]/í›„íŒë¼ìš°íŒ…ì‘ì—…ì§€ì‹œ
+			PRP2L010/TL3CP2/1í›„íŒì „ë‹¨L2[29010]/í›„íŒì••ì—°ë¶„í• íŒì œí’ˆì‘ì—…ì§€ì‹œ[ì˜¤í† íŒŒì¼ëŸ¬ì •ë³´]
 		 */
 		//---------------------------------------------------------------------------------------------
-		//WebMethod EAI ¹æ½Ä º¯°æ¿¡ µû¸¥ BRE¿¡¼­ Å¥¸í È£Ãâ 2019.12.17 
+		//WebMethod EAI ë°©ì‹ ë³€ê²½ì— ë”°ë¥¸ BREì—ì„œ íëª… í˜¸ì¶œ 2019.12.17 
 		//---------------------------------------------------------------------------------------------
 		{
-		    ydUtils.putLog(szSessionName, szMethodName, "¢Æ¢Æ¢Æ¢Æ sndQueue º¯°æÀü Å¥³×ÀÓ : " +	queueName, JPlateYdConst.DEBUG);
+		    ydUtils.putLog(szSessionName, szMethodName, "â–’â–’â–’â–’ sndQueue ë³€ê²½ì „ íë„¤ì„ : " +	queueName, JPlateYdConst.DEBUG);
 		    
 		    String szQueueName 	= StringHelper.evl(sender.getQueueName("YD", msgID), "");
 		    
@@ -872,16 +872,16 @@ public class YdDelegate{
 		    	queueName = propertyService.getProperty("common.properties", "jms.queue."+szQueueName);
 		    }
 		    
-		    ydUtils.putLog(szSessionName,szMethodName, "¢Æ¢Æ¢Æ¢Æ sndQueue JMS_TC_CD : " +	msgID, JPlateYdConst.DEBUG);
-		    ydUtils.putLog(szSessionName,szMethodName, "¢Æ¢Æ¢Æ¢Æ sndQueue º¯°æÈÄ Å¥³×ÀÓ        : " +	queueName, JPlateYdConst.DEBUG);
+		    ydUtils.putLog(szSessionName,szMethodName, "â–’â–’â–’â–’ sndQueue JMS_TC_CD : " +	msgID, JPlateYdConst.DEBUG);
+		    ydUtils.putLog(szSessionName,szMethodName, "â–’â–’â–’â–’ sndQueue ë³€ê²½í›„ íë„¤ì„        : " +	queueName, JPlateYdConst.DEBUG);
 		}
 		//---------------------------------------------------------------------------------------------
 		
-		// Å¥¿¡ ¿¬°áÇÒ ¸®¼Ò½º¸¦ »ı¼ºÇÕ´Ï´Ù.
+		// íì— ì—°ê²°í•  ë¦¬ì†ŒìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 		sender.initQueueService(queueName); 
 		/*
-		 * Å¥¿¡ ³ÖÀ» µ¥ÀÌÅÍ¸¦ »ı¼ºÇÕ´Ï´Ù.
-		 * 1. LABEL2 ¿¡¼­ EAI ¼ö½Å Á¤º¸¸¦ »ı»ê Åëµ¥·Î ByPass ÇÑ´Ù.
+		 * íì— ë„£ì„ ë°ì´í„°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
+		 * 1. LABEL2 ì—ì„œ EAI ìˆ˜ì‹  ì •ë³´ë¥¼ ìƒì‚° í†µë°ë¡œ ByPass í•œë‹¤.
 		 */  
 		inRecord = JDTORecordFactory.getInstance().create();
 		//inRecord.setRecord(indo);		
@@ -891,7 +891,7 @@ public class YdDelegate{
 				"yyyyMMddHHmmss")); 		
 		inRecord.setField("JMS_TC_MESSAGE", new String (message) );
  		
-		// Å¥¿¡ µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÕ´Ï´Ù.
+		// íì— ë°ì´í„°ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.
 		sender.send(inRecord);  
 
 		szMsg= "[ " + queueName + " ]  JMS_TC_CD:<" + tccode  + ">   SEND FINISH ";
@@ -911,13 +911,13 @@ public class YdDelegate{
 	    return flag;
 	} 
 
-	//¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯
+	//â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“
 	//                                                
-	//                      ÀÏ°üÁ¦Ã¶¼ÒÁ¤º¸°ü¸®½Ã½ºÅÛ-¾ßµå°ü¸®
+	//                      ì¼ê´€ì œì² ì†Œì •ë³´ê´€ë¦¬ì‹œìŠ¤í…œ-ì•¼ë“œê´€ë¦¬
 	//              			YD Delegate Class
 	//                          2008.09.30 YHWHman
 	//                                                      
-	//¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°
+	//â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›
 	
 	public static void main(String[] args){
 		YdDelegate im =new YdDelegate();
@@ -959,10 +959,10 @@ public class YdDelegate{
 	public void sendMsgPI(JDTORecord msgRecord){
 		
 		//
-		// YD Delegate ¼Û½Å Main
-		// ¼ö½Å ÇÑ msgRecordÀÇ TCCode¸¦ ºĞ¼®ÇÏ¿©
-		// ³»ºÎ(J), RemoteEAI(R), L2EAI(L)¸¦ ÆÇ´Ü ÇÑ ÈÄ 
-		// ´ë»ó ¸Ş¼Òµå¸¦ ÅëÇØ¼­ ¼Û½ÅÇÑ´Ù.
+		// YD Delegate ì†¡ì‹  Main
+		// ìˆ˜ì‹  í•œ msgRecordì˜ TCCodeë¥¼ ë¶„ì„í•˜ì—¬
+		// ë‚´ë¶€(J), RemoteEAI(R), L2EAI(L)ë¥¼ íŒë‹¨ í•œ í›„ 
+		// ëŒ€ìƒ ë©”ì†Œë“œë¥¼ í†µí•´ì„œ ì†¡ì‹ í•œë‹¤.
 		//
 	
 		String szMsg		= "";
@@ -980,7 +980,7 @@ public class YdDelegate{
 		int nRtc			= 0;
 		int nTcKind			= 0;
 		
-		// ¼Û½Å ¿ë TC (Maked TC)
+		// ì†¡ì‹  ìš© TC (Maked TC)
 		JDTORecord tcRecord 	= null;	
 		JDTORecordSet tcRecSet 	= null;
 		
@@ -996,7 +996,7 @@ public class YdDelegate{
 			szBUFFER_TC =  StringHelper.evl(msgRecord.getFieldString(YdConstant.BUFFER_TC_CD),"");
 			
 			
-			szMsg = "Delegate ¼Û½Å ¿äÃ» ¼ö½Å (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+			szMsg = "Delegate ì†¡ì‹  ìš”ì²­ ìˆ˜ì‹  (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			
@@ -1016,17 +1016,17 @@ public class YdDelegate{
 			// 1:JMS, 2:Remote EAI, 3:L2 EAI, 9:Facade
 			nTcKind = ydTcConst.chkTcType(szTcCode);	
 		
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
 			if(nTcKind <=0) {
 				szMsg = "Unknown TC Code("+szTcCode+") Error (ErrCode="+nTcKind+")";
 				ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 				return ;
 			}
 
-			// Àü¼Û¿ë JDTORecord »ı¼º
+			// ì „ì†¡ìš© JDTORecord ìƒì„±
 			tcRecSet =JDTORecordFactory.getInstance().createRecordSet("YDDelegate");
 						
-			// nRtc>0 : tcRecSetÀÇ Record Count
+			// nRtc>0 : tcRecSetì˜ Record Count
 			nRtc = tcConstMgr.makeTc(msgRecord, tcRecSet);
 			
 			if( nRtc<=0){
@@ -1036,15 +1036,15 @@ public class YdDelegate{
 			}
 
 //PIDEV
-			// TCÄÚµå°¡ ¸ÂÁö ¾ÊÀ»¶§
-			//ÀÓ°¡°ø
+			// TCì½”ë“œê°€ ë§ì§€ ì•Šì„ë•Œ
+			//ì„ê°€ê³µ
 			if(szTcCode.startsWith("M10")) {
 			
 				if (szTcCode.endsWith("3")) {
 					for(int i = 0; i < nRtc; i++){
 						tcRecord =tcRecSet.getRecord(i);
 						M10YdExLm31Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(tcRecord));
-						szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+						szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					}	
 					return ;
@@ -1053,13 +1053,13 @@ public class YdDelegate{
 					for(int i = 0; i < nRtc; i++){
 						tcRecord =tcRecSet.getRecord(i);
 						M10YdExLm21Sender.SendMessage(commPiUtils.jdtoRecordToLinkedHashMap(tcRecord));
-						szMsg = "rabbit mq ¼Û½Å ¿Ï·á (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
+						szMsg = "rabbit mq ì†¡ì‹  ì™„ë£Œ (TC Code="+szTcCode+")"+"BUFFER_TC="+ szBUFFER_TC;
 						ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					}
 					return ;
 				}
 			}	
-//±îÁö			
+//ê¹Œì§€			
 			propertyService = PropertyService.getInstance();
 			
 			// YD_MDB_QUEUE
@@ -1070,13 +1070,13 @@ public class YdDelegate{
 			// YD_EAI(WEB METHOD)_QUEUE
 			szYdWMEAIQName =propertyService.getProperty("common.properties", "jms.queue.YD_WM_EAI_QUEUE");
 			
-			// YD_EAI(YD QUEUE ºĞ¸®)_QUEUE
+			// YD_EAI(YD QUEUE ë¶„ë¦¬)_QUEUE
 			szYdaEAIQName = propertyService.getProperty("common.properties", "jms.queue.YDA_EAI_QUEUE");
 			
 			InetAddress ipAddr=InetAddress.getLocalHost();
 			// 
 			// DEBUG MSG
-//			szMsg="[DEBUG] ´ë»óQueue  : ["+szYdJMSQName+"] "+ipAddr.getHostAddress();
+//			szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szYdJMSQName+"] "+ipAddr.getHostAddress();
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 			
 			szMsg=szMethodName+" SERVER IP PRINT2 : "+ipAddr.getHostAddress();
@@ -1084,7 +1084,7 @@ public class YdDelegate{
 			
 	 
 			
-			//°³¹ßÀÚ ·ÎÄÃÀÎ °æ¿ì¿¡¸¸ ³»ºÎ ÀÎÅÍÆäÀÌ½º¸¦ ·ÎÄÃÃ³¸® ÇÑ´Ù.
+			//ê°œë°œì ë¡œì»¬ì¸ ê²½ìš°ì—ë§Œ ë‚´ë¶€ ì¸í„°í˜ì´ìŠ¤ë¥¼ ë¡œì»¬ì²˜ë¦¬ í•œë‹¤.
 			if(szTcCode.substring(0, 4).equals("YDYD") && 
 				((!ipAddr.getHostAddress().equals(szIPDevSys1)) &&
 				 (!ipAddr.getHostAddress().equals(szIPDevSys2)) &&
@@ -1097,7 +1097,7 @@ public class YdDelegate{
 				 (!"10.216.143.57".equals(ipAddr.getHostAddress())) &&
 				 (!"10.216.143.49".equals(ipAddr.getHostAddress())) &&
 //PIDEV          
-//PI°ËÁõ±â
+//PIê²€ì¦ê¸°
 				 (!"10.216.132.104".equals(ipAddr.getHostAddress())) &&
 //				 
 				 (!ipAddr.getHostAddress().equals(szIPTstSys4)) &&
@@ -1112,39 +1112,39 @@ public class YdDelegate{
 				switch(nTcKind){
 			
 				// EnQueue
-				case 1:		// JMS Queue ¼Û½Å
+				case 1:		// JMS Queue ì†¡ì‹ 
 					
 					
 					if(szTcCode.substring(0, 4).equals("YDYD")){
 			    		
-						//YDYDÀü¹®À¸·Î ¾ßµå±¸ºĞ ÃßÃâ
+						//YDYDì „ë¬¸ìœ¼ë¡œ ì•¼ë“œêµ¬ë¶„ ì¶”ì¶œ
 						szYdName=(String)ydTcConst.rcvTcYdMap.get(szTcCode);
-						ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCÇØ´ç¾ßµå:"+szYdName, YdConstant.DEBUG);
+						ydUtils.putLog(szSessionName, szMethodName, "["+szTcCode+"]TCí•´ë‹¹ì•¼ë“œ:"+szYdName, YdConstant.DEBUG);
 						
 						szBUFFER_TC =  StringHelper.evl(msgRecord.getFieldString(YdConstant.BUFFER_TC_CD),"");
 						
 						
 						if(!szBUFFER_TC.equals("")){//BUFFER
 							szWkGp 		= "YDG";
-						}else if(szYdName.equals("A")){//C¿¬ÁÖ½½¶óºê
+						}else if(szYdName.equals("A")){//Cì—°ì£¼ìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDB";
-						}else if(szYdName.equals("D")){//AÈÄÆÇ½½¶óºê
+						}else if(szYdName.equals("D")){//Aí›„íŒìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDD";
-						}else if(szYdName.equals("K")){//ÈÄÆÇÁ¦Ç°
+						}else if(szYdName.equals("K")){//í›„íŒì œí’ˆ
 							szWkGp 		= "YDE";
 							//szWkGp 		= "YD";
-						}else if(szYdName.equals("H")){//C¿­¿¬ÄÚÀÏ
+						}else if(szYdName.equals("H")){//Cì—´ì—°ì½”ì¼
 							if(szTcCode.equals("YDYDJ633")
 							 ||szTcCode.equals("YDYDJ653")
 							 ||szTcCode.equals("YDYDJ282")
 							 ||szTcCode.equals("YDYDJ292")){
-								szWkGp 		= "YDF";  //ÃâÇÏ ÀÔµ¿Áö½Ã¿ä±¸
+								szWkGp 		= "YDF";  //ì¶œí•˜ ì…ë™ì§€ì‹œìš”êµ¬
 							}else{
 								szWkGp 		= "YDC";
 							}
-						}else if(szYdName.equals("S")){//ÅëÇÕ½½¶óºê
+						}else if(szYdName.equals("S")){//í†µí•©ìŠ¬ë¼ë¸Œ
 							szWkGp 		= "YDF";
-						}else if(szYdName.equals("T")){//ÈÄÆÇÀúÀå°èÈ¹ Àü¿ë
+						}else if(szYdName.equals("T")){//í›„íŒì €ì¥ê³„íš ì „ìš©
 							szWkGp 		= "YDH";	
 						}else{
 							szWkGp 		= szTcCode.substring(2, 4);
@@ -1155,7 +1155,7 @@ public class YdDelegate{
 					}
 					
 					/**
-					 * YDDMR001, YDDMR004 queue º¯°æ 20200407
+					 * YDDMR001, YDDMR004 queue ë³€ê²½ 20200407
 					 */
 					if ("YDDMR001".equals(szTcCode) || "YDDMR004".equals(szTcCode)) {
 						szWkGp = "DMA";
@@ -1163,11 +1163,11 @@ public class YdDelegate{
 					
 					szQueueName = propertyService.getProperty("common.properties", "jms.queue."+szWkGp+"_MDB_QUEUE");
 //					 DEBUG MSG
-					szMsg="[DEBUG] ´ë»óQueue  : ["+szQueueName+"] "+ipAddr.getHostAddress();
+					szMsg="[DEBUG] ëŒ€ìƒQueue  : ["+szQueueName+"] "+ipAddr.getHostAddress();
 					ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 					/*
 					 * 2010.07.15 YJK
-					 * Send Class For¹® ¹ÛÀ¸·Î »©³¿.
+					 * Send Class Forë¬¸ ë°–ìœ¼ë¡œ ë¹¼ëƒ„.
 					 */
 					jmsQSnder = new JmsQueueSender();
 					jmsQSnder.initQueueService(szQueueName);
@@ -1179,7 +1179,7 @@ public class YdDelegate{
 						tcRecord =tcRecSet.getRecord(i);
 						// JMS : JMS_TC_CD, L2 EAI : MSG_ID
 						szTcCode =ydUtils.getTcCode(tcRecord);
-						//ÃâÇÏhttp ->jms 
+						//ì¶œí•˜http ->jms 
 						if(szTcCode.substring(2,4).equals("DM")){
 							tcRecord.setField("JMS_TC_CD", szTcCode);
 						}
@@ -1189,7 +1189,7 @@ public class YdDelegate{
 					jmsQSnder.send(sndMsgs1);
 					break;	// end of case 1
 					
-				case 2:		// ¸®¸ğÆ® EAI ¼Û½Å
+				case 2:		// ë¦¬ëª¨íŠ¸ EAI ì†¡ì‹ 
 			
 					// Remote EAI Send
 					for(int i=0; i<nRtc;i++){
@@ -1202,17 +1202,17 @@ public class YdDelegate{
 					
 					break; // end of case 2
 					
-				case 3:		// L2 EAI ¼Û½Å
+				case 3:		// L2 EAI ì†¡ì‹ 
 					
 					JDTORecord targetId = null;
 					JDTORecordSet targetIdSet = null;
 					String chkYN = "";
 					
-					//YDA·Î Àü¼ÛÇØ¾ßÇÏ´Â Queue ID Á¶È¸ (19.04.29)
+					//YDAë¡œ ì „ì†¡í•´ì•¼í•˜ëŠ” Queue ID ì¡°íšŒ (19.04.29)
 					targetId = JDTORecordFactory.getInstance().create();
 					targetId.setField("JMS_TC_CD", szTcCode);
 					targetId.setField("CD_GP", "YDA");
-					targetIdSet = slabYdCommDao.select(targetId , "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDao.getTargetTCcodeId" , "SYSTEM" , "sndToEAI" , "EAIÀÎÅÍÆäÀÌ½º ¼Û½Å Ã³¸®");
+					targetIdSet = slabYdCommDao.select(targetId , "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDao.getTargetTCcodeId" , "SYSTEM" , "sndToEAI" , "EAIì¸í„°í˜ì´ìŠ¤ ì†¡ì‹  ì²˜ë¦¬");
 					
 					if(targetIdSet.size() > 0) {
 						chkYN = commUtils.trim(targetIdSet.getRecord(0).getFieldString("ITEM1"));
@@ -1227,13 +1227,13 @@ public class YdDelegate{
 					//szQueueName = szYdEAIQName;
 					/*
 					 * 2010.07.15 YJK
-					 * Send Class For¹® ¹ÛÀ¸·Î »©³¿.
+					 * Send Class Forë¬¸ ë°–ìœ¼ë¡œ ë¹¼ëƒ„.
 					 */
 					jmsQSnder = new JmsQueueSender();
 					 
 					if("Y".equals(commDao.getWebMothodYn())) {
 						//---------------------------------------------------------------------------------------------
-						//WebMethod EAI ¹æ½Ä º¯°æ¿¡ µû¸¥ BRE¿¡¼­ Å¥¸í È£Ãâ 2019.08.20
+						//WebMethod EAI ë°©ì‹ ë³€ê²½ì— ë”°ë¥¸ BREì—ì„œ íëª… í˜¸ì¶œ 2019.08.20
 						//---------------------------------------------------------------------------------------------
 						szQueueName = jmsQSnder.getQueueName("YD", szTcCode);
 						
@@ -1291,7 +1291,7 @@ public class YdDelegate{
 				// Facade Call
 				case 9:
 					//
-					// Facade CallÀÇ °æ¿ì¿¡´Â ¼ö½Å ÇÑ Record¿¡¼­ FacadeName, MethodNameÀ» ¹ßÃéÇÏ¿© ¼Û½Å
+					// Facade Callì˜ ê²½ìš°ì—ëŠ” ìˆ˜ì‹  í•œ Recordì—ì„œ FacadeName, MethodNameì„ ë°œì·Œí•˜ì—¬ ì†¡ì‹ 
 					nRtc =deleComm.facadeSender(msgRecord);
 					if(nRtc<0) {
 	

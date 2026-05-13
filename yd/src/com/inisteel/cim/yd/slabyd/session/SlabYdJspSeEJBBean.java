@@ -2,14 +2,14 @@
  * @(#)SlabYdJspSeEJBBean
  *
  * @version          V1.00
- * @author           ÇãÃ¶È£
+ * @author           í—ˆì² í˜¸
  * @date             2013/03/04
  *
- * @description      Slab¾ßµå È­¸é Ã³¸®
+ * @description      Slabì•¼ë“œ í™”ë©´ ì²˜ë¦¬
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2013/03/04   ÇãÃ¶È£      ÇãÃ¶È£      ÃÖÃÊ µî·Ï
+ * V1.00  2013/03/04   í—ˆì² í˜¸      í—ˆì² í˜¸      ìµœì´ˆ ë“±ë¡
  */
 package com.inisteel.cim.yd.slabyd.session;
    
@@ -44,7 +44,7 @@ import com.inisteel.cim.yd.slabyd.dao.SlabYdSchDAO;
 import com.inisteel.cim.ydPI.dao.YdPICommDAO;
 
 /**
- *      [A] Å¬·¡½º¸í : Slab¾ßµå È­¸é Ã³¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Slabì•¼ë“œ í™”ë©´ ì²˜ë¦¬
  *
  * @ejb.bean name="SlabYdJspSeEJB" jndi-name="SlabYdJspSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -77,19 +77,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/***************************************************************************
-	 * Å©·¹ÀÎÀÛ¾÷°ü¸®
+	 * í¬ë ˆì¸ì‘ì—…ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCrnWrkMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® Á¶È¸[SlabYdJspSeEJB.getCrnWrkMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getCrnWrkMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -105,15 +105,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® Å©·¹ÀÎº¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í¬ë ˆì¸ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtCM(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® Å©·¹ÀÎº¯°æ[SlabYdJspSeEJB.trtCrnWrkMgtCM] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í¬ë ˆì¸ë³€ê²½[SlabYdJspSeEJB.trtCrnWrkMgtCM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -122,21 +122,21 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCrnSchId      = ""; //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId       = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydWrkProgStat   = ""; //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			String ydSchCd         = ""; //¾ßµå½ºÄÉÁìÄÚµå
-			String ydEqpId         = ""; //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String chgYdEqpId      = ""; //º¯°æ ¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String chgYdSchPrior   = ""; //º¯°æ ¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			String chgYdEqpStat    = ""; //º¯°æ ¾ßµå¼³ºñ»óÅÂ
-			String chgYdEqpWrkMode = ""; //º¯°æ ¾ßµå¼³ºñÀÛ¾÷Mode
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String ydCrnSchId      = ""; //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId       = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydWrkProgStat   = ""; //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			String ydSchCd         = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydEqpId         = ""; //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String chgYdEqpId      = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String chgYdSchPrior   = ""; //ë³€ê²½ ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			String chgYdEqpStat    = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+			String chgYdEqpWrkMode = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 			
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
@@ -144,88 +144,88 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				ydWbookId  = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"  ).getValue(ii));
 				ydCrnSchId = slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID").getValue(ii));
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (slabUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
 				/**********************************************************
-				* 1. Å©·¹ÀÎ½ºÄÉÁÙ, ½ºÄÉÁÙ±âÁØ, ¼³ºñÁ¤º¸ Check
-				* 1.1 Å©·¹ÀÎ½ºÄÉÁÙÀÇ ½ºÄÉÁÙID ¹× ¼³ºñ»óÅÂ Check
-				* 1.2 Å©·¹ÀÎ½ºÄÉÁÙ ¼³ºñID·Î ½ºÄÉÁÙ±âÁØÀÇ ÁÖ ¹× ´ëÃ¼ Å©·¹ÀÎ¼³ºñID¿Í ºñ±³ÇÏ¿© º¯°æ Å©·¹ÀÎ¼³ºñID¿Í ¼øÀ§¸¦ Set
-				* 1.3 º¯°æ ÇÒ Å©·¹ÀÎ Á¤º¸¸¦ Check
+				* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„, ìŠ¤ì¼€ì¤„ê¸°ì¤€, ì„¤ë¹„ì •ë³´ Check
+				* 1.1 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì˜ ìŠ¤ì¼€ì¤„ID ë° ì„¤ë¹„ìƒíƒœ Check
+				* 1.2 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì„¤ë¹„IDë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€ì˜ ì£¼ ë° ëŒ€ì²´ í¬ë ˆì¸ì„¤ë¹„IDì™€ ë¹„êµí•˜ì—¬ ë³€ê²½ í¬ë ˆì¸ì„¤ë¹„IDì™€ ìˆœìœ„ë¥¼ Set
+				* 1.3 ë³€ê²½ í•  í¬ë ˆì¸ ì •ë³´ë¥¼ Check
 				**********************************************************/
 				jrParam.setField("V_YD_WBOOK_ID"  , ydWbookId );
 				jrParam.setField("V_YD_CRN_SCH_ID", ydCrnSchId);
 				
-				//±âº»Á¤º¸Á¶È¸
+				//ê¸°ë³¸ì •ë³´ì¡°íšŒ
 				JDTORecordSet jsCrn = jspDao.getCrnWrkMgt("CMSch", jrParam);
 
 			    if (jsCrn == null || jsCrn.size() <= 0) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID[" + ydCrnSchId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´ID[" + ydCrnSchId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			    }
 				
 			    JDTORecord jrCrn = jsCrn.getRecord(0);
 				
-			    ydWrkProgStat   = slabUtils.trim(jrCrn.getFieldString("YD_WRK_PROG_STAT"   )); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				ydSchCd         = slabUtils.trim(jrCrn.getFieldString("YD_SCH_CD"          )); //¾ßµå½ºÄÉÁìÄÚµå
-				ydEqpId         = slabUtils.trim(jrCrn.getFieldString("YD_EQP_ID"          )); //¾ßµå¼³ºñID
-				chgYdEqpId      = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_ID"      )); //º¯°æ ¾ßµå¼³ºñID
-				chgYdSchPrior   = slabUtils.trim(jrCrn.getFieldString("CHG_YD_SCH_PRIOR"   )); //º¯°æ ¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				chgYdEqpStat    = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_STAT"    )); //º¯°æ ¾ßµå¼³ºñ»óÅÂ
-				chgYdEqpWrkMode = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_WRK_MODE")); //º¯°æ ¾ßµå¼³ºñÀÛ¾÷Mode
+			    ydWrkProgStat   = slabUtils.trim(jrCrn.getFieldString("YD_WRK_PROG_STAT"   )); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				ydSchCd         = slabUtils.trim(jrCrn.getFieldString("YD_SCH_CD"          )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				ydEqpId         = slabUtils.trim(jrCrn.getFieldString("YD_EQP_ID"          )); //ì•¼ë“œì„¤ë¹„ID
+				chgYdEqpId      = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_ID"      )); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ID
+				chgYdSchPrior   = slabUtils.trim(jrCrn.getFieldString("CHG_YD_SCH_PRIOR"   )); //ë³€ê²½ ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				chgYdEqpStat    = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_STAT"    )); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				chgYdEqpWrkMode = slabUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_WRK_MODE")); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 
 				if ("2".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [2:±Ç»ó¿Ï·á]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [2:ê¶Œìƒì™„ë£Œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("3".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [3:±ÇÇÏÁö½Ã]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [3:ê¶Œí•˜ì§€ì‹œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("4".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [4:±ÇÇÏ¿Ï·á]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [4:ê¶Œí•˜ì™„ë£Œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("".equals(chgYdEqpId)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				} else if ("B".equals(chgYdEqpStat)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ¼³ºñ»óÅÂ°¡ [B:°íÀå]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì„¤ë¹„ìƒíƒœê°€ [B:ê³ ì¥]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if (!"1".equals(chgYdEqpWrkMode)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ¼³ºñÀÛ¾÷Mode°¡ [Off-Line]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì„¤ë¹„ì‘ì—…Modeê°€ [Off-Line]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("1".equals(chgYdEqpStat) || "2".equals(chgYdEqpStat) || "3".equals(chgYdEqpStat)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ÀÛ¾÷Áö½Ã°¡ ÀÌ¹Ì ³»·ÁÁø »óÅÂÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì‘ì—…ì§€ì‹œê°€ ì´ë¯¸ ë‚´ë ¤ì§„ ìƒíƒœì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
 
-				slabUtils.printLog(logId, "Å©·¹ÀÎº¯°æ [ " + ydWbookId + " : " + ydEqpId + " >> " + chgYdEqpId + " ]", "SL");
+				slabUtils.printLog(logId, "í¬ë ˆì¸ë³€ê²½ [ " + ydWbookId + " : " + ydEqpId + " >> " + chgYdEqpId + " ]", "SL");
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à ¹× Å©·¹ÀÎ½ºÄÉÁÙ Table¿¡  ´ëÃ¼ Å©·¹ÀÎID¿Í ¿ì¼±¼øÀ§¸¦ Update
+				* 2. ì‘ì—…ì˜ˆì•½ ë° í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Tableì—  ëŒ€ì²´ í¬ë ˆì¸IDì™€ ìš°ì„ ìˆœìœ„ë¥¼ Update
 				**********************************************************/
 				jrParam.setField("V_YD_SCH_PRIOR", chgYdSchPrior);
 				jrParam.setField("V_YD_EQP_ID"   , chgYdEqpId   );
 				
-				//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+				//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 				commDao.updSlabYd("WbPrior", jrParam);
 			
-				//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update
 				jspDao.updCrnWrkMgt("CMCrnSch", jrParam);
 			
 				/**********************************************************
-				* 3. Çö ÀÛ¾÷»óÅÂ°¡ ±Ç»óÁö½Ã[1]ÀÎ °æ¿ì
+				* 3. í˜„ ì‘ì—…ìƒíƒœê°€ ê¶Œìƒì§€ì‹œ[1]ì¸ ê²½ìš°
 				**********************************************************/
 				if ("1".equals(ydWrkProgStat)) {
 					/**********************************************************
-					* 3.1 º¯°æ Å©·¹ÀÎÀÇ ¼³ºñ Table »óÅÂÁ¤º¸¸¦ Update
+					* 3.1 ë³€ê²½ í¬ë ˆì¸ì˜ ì„¤ë¹„ Table ìƒíƒœì •ë³´ë¥¼ Update
 					**********************************************************/
-					jrParam.setField("V_YD_EQP_STAT", "1"); //¾ßµå¼³ºñ»óÅÂ : ±Ç»óÀÛ¾÷Áö½Ã
+					jrParam.setField("V_YD_EQP_STAT", "1"); //ì•¼ë“œì„¤ë¹„ìƒíƒœ : ê¶Œìƒì‘ì—…ì§€ì‹œ
 
 					commDao.updStat("Eqp", jrParam);
 
 					/**********************************************************
-					* 3.2 º¯°æ Å©·¹ÀÎÀÇ Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Ã³¸®
+					* 3.2 ë³€ê²½ í¬ë ˆì¸ì˜ í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì²˜ë¦¬
 					**********************************************************/
-					//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, modifier);
 
-					jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007");	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-					jrYdMsg.setField("YD_EQP_ID"       , chgYdEqpId);	//¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_WRK_PROG_STAT", "1"       );	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±Ç»óÀÛ¾÷Áö½Ã)
-					jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//¾ßµå½ºÄÉÁìÄÚµå
-					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+					jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007");	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+					jrYdMsg.setField("YD_EQP_ID"       , chgYdEqpId);	//ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_WRK_PROG_STAT", "1"       );	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œìƒì‘ì—…ì§€ì‹œ)
+					jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 					EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 					JDTORecord jrSnd = (JDTORecord)sndConn.trx("rcvY1YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -233,24 +233,24 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					jrRtn = slabUtils.addSndData(jrRtn, jrSnd);
 
 					/**********************************************************
-					* 3.3 ÀÌÀü Å©·¹ÀÎÀÇ ¼³ºñ Table »óÅÂÁ¤º¸¸¦ Update
+					* 3.3 ì´ì „ í¬ë ˆì¸ì˜ ì„¤ë¹„ Table ìƒíƒœì •ë³´ë¥¼ Update
 					**********************************************************/
 					jrParam.setField("V_YD_EQP_ID"  , ydEqpId);
-					jrParam.setField("V_YD_EQP_STAT", "W"    ); //¾ßµå¼³ºñ»óÅÂ : ±Ç»óÀÛ¾÷Áö½Ã
+					jrParam.setField("V_YD_EQP_STAT", "W"    ); //ì•¼ë“œì„¤ë¹„ìƒíƒœ : ê¶Œìƒì‘ì—…ì§€ì‹œ
 
 					commDao.updStat("Eqp", jrParam);
 
 					/**********************************************************
-					* 3.4 ÀÌÀü Å©·¹ÀÎÀÇ ÀÛ¾÷½ÇÀûÀÀ´ä Àü¹®À» Àü¼Û
+					* 3.4 ì´ì „ í¬ë ˆì¸ì˜ ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ì„ ì „ì†¡
 					**********************************************************/
-					JDTORecord resMsg = JDTORecordFactory.getInstance().create(); //Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º¿ë
+					JDTORecord resMsg = JDTORecordFactory.getInstance().create(); //í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±ìš©
 
 					resMsg.setResultCode(logId);	//Log ID
 					resMsg.setResultMsg(methodNm);	//Log Method Name
-					resMsg.setField("YD_EQP_ID"     , ydEqpId); //¾ßµå¼³ºñID
-					resMsg.setField("YD_L2_WR_GP"   , "J"    ); //¾ßµåL2½ÇÀû±¸ºĞ(Áö½Ã¿ä±¸)
-					resMsg.setField("YD_L3_HD_RS_CD", "9999" ); //¾ßµåL3Ã³¸®°á°úÄÚµå(Error)
-					resMsg.setField("YD_L3_MSG"     , "Å©·¹ÀÎº¯°æ[" + chgYdEqpId + "]" ); //¾ßµåL3MESSAGE
+					resMsg.setField("YD_EQP_ID"     , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
+					resMsg.setField("YD_L2_WR_GP"   , "J"    ); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„(ì§€ì‹œìš”êµ¬)
+					resMsg.setField("YD_L3_HD_RS_CD", "9999" ); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ(Error)
+					resMsg.setField("YD_L3_MSG"     , "í¬ë ˆì¸ë³€ê²½[" + chgYdEqpId + "]" ); //ì•¼ë“œL3MESSAGE
 
 					jrRtn = slabUtils.addSndData(jrRtn, slabComm.getYDY1L005(resMsg));
 				}
@@ -268,53 +268,53 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® ¼øÀ§º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ìˆœìœ„ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtPM(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ¼øÀ§º¯°æ[SlabYdJspSeEJB.trtCrnWrkMgtPM] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ìˆœìœ„ë³€ê²½[SlabYdJspSeEJB.trtCrnWrkMgtPM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydSchPrior = ""; //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydSchPrior = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				/**********************************************************
-				* 1. ÀÛ¾÷¿¹¾àID Check
+				* 1. ì‘ì—…ì˜ˆì•½ID Check
 				**********************************************************/
-			    ydWbookId  = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //¾ßµåÀÛ¾÷¿¹¾àID
-			    ydSchPrior = slabUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii)); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+			    ydWbookId  = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			    ydSchPrior = slabUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii)); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (slabUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				slabUtils.printLog(logId, "¿ì¼±¼øÀ§º¯°æ [ " + ydWbookId + " >> " + ydSchPrior + " ]", "SL");
+				slabUtils.printLog(logId, "ìš°ì„ ìˆœìœ„ë³€ê²½ [ " + ydWbookId + " >> " + ydSchPrior + " ]", "SL");
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à ¹× Å©·¹ÀÎ½ºÄÉÁÙ Table¿¡  ¿ì¼±¼øÀ§¸¦ Update
+				* 2. ì‘ì—…ì˜ˆì•½ ë° í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Tableì—  ìš°ì„ ìˆœìœ„ë¥¼ Update
 				**********************************************************/
 				jrParam.setField("V_YD_WBOOK_ID" , ydWbookId );
 				jrParam.setField("V_YD_SCH_PRIOR", ydSchPrior);
 				
-				//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+				//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 				commDao.updSlabYd("WbPrior", jrParam);
 			
-				//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update
 				jspDao.updCrnWrkMgt("CMCrnSch", jrParam);
 			}
 
@@ -330,15 +330,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® ±ÇÇÏÀ§Ä¡º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ê¶Œí•˜ìœ„ì¹˜ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtDM(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ±ÇÇÏÀ§Ä¡º¯°æ[SlabYdJspSeEJB.trtCrnWrkMgtDM] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ê¶Œí•˜ìœ„ì¹˜ë³€ê²½[SlabYdJspSeEJB.trtCrnWrkMgtDM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		String crnSchId = "";
 		try {
@@ -347,18 +347,18 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//EJB CallÀ» À§ÇÑ Message »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//EJB Callì„ ìœ„í•œ Message ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 			
-			//±ÇÇÏÀ§Ä¡º¯°æ ´ë»ó ½ºÄÉÁÙ
+			//ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ ëŒ€ìƒ ìŠ¤ì¼€ì¤„
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			for (int ii = 0; ii < rowCnt; ii++) {
 				crnSchId = slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(ii));				
-				//È­¸é´Ü º¯¼ö°¡ ¾Æ´Ñ Å©·¹ÀÎ ½ºÄÉÁÙ·Î ½ºÄÉÁÙ Á¶È¸ÇÏ¿© Á¤º¸ get
+				//í™”ë©´ë‹¨ ë³€ìˆ˜ê°€ ì•„ë‹Œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ë¡œ ìŠ¤ì¼€ì¤„ ì¡°íšŒí•˜ì—¬ ì •ë³´ get
 				if("".equals(crnSchId))	continue;		
 				else {
-					slabUtils.printLog(logId, methodNm, crnSchId+"¿¡ ´ëÇØ Å©·¹ÀÎ ½ºÄÉÁÙ Á¶È¸ ½ÃÀÛ", gdReq);
+					slabUtils.printLog(logId, methodNm, crnSchId+"ì— ëŒ€í•´ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ì¡°íšŒ ì‹œì‘", gdReq);
 					JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 					jrParam.setField("V_YD_CRN_SCH_ID"       , crnSchId);
 					JDTORecordSet jsCrnSch = jspDao.getCrnWrkMgt("SI", jrParam);
@@ -366,37 +366,37 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					if (jsCrnSch != null && jsCrnSch.size() > 0) {
 						JDTORecord jrCrnSch = jsCrnSch.getRecord(0);
 						
-						String szMsg = "Àåºñ: "+slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"))+
-									   "|½ºÄÉÁÙID: "+slabUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"))+
-									   "|½Å±Ô±ÇÇÏÀ§Ä¡: "+slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))+
-									   "|ÀÌÀü±ÇÇÏÀ§Ä¡: "+slabUtils.trim(jrCrnSch.getFieldString("YD_DN_WO_LOC"  ))+
-									   " ¿¡ ´ëÇØ ±ÇÇÏÀ§Ä¡ º¯°æ\n";
+						String szMsg = "ì¥ë¹„: "+slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"))+
+									   "|ìŠ¤ì¼€ì¤„ID: "+slabUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"))+
+									   "|ì‹ ê·œê¶Œí•˜ìœ„ì¹˜: "+slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))+
+									   "|ì´ì „ê¶Œí•˜ìœ„ì¹˜: "+slabUtils.trim(jrCrnSch.getFieldString("YD_DN_WO_LOC"  ))+
+									   " ì— ëŒ€í•´ ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½\n";
 						slabUtils.printLog(logId, methodNm, szMsg, gdReq);
 						
-				    	jrYdMsg.setField("YD_EQP_ID"       , slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"  ))); //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-						jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(jrCrnSch.getFieldString("YD_SCH_CD"  ))); //¾ßµå½ºÄÉÁìÄÚµå
-						jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"  )));  //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-						jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(jrCrnSch.getFieldString("YD_WBOOK_ID"  )));  //¾ßµåÀÛ¾÷¿¹¾àID
-						jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
-						jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT"  ))); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-						jrYdMsg.setField("YD_UP_WO_LOC"	   , slabUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"  ))); //¾ßµå±Ç»óÀ§Ä¡
-						jrYdMsg.setField("YD_DN_WO_LOC_ORG", slabUtils.trim(jrCrnSch.getFieldString("YD_DN_WO_LOC"  ))); //¾ßµåÀÌÀü±ÇÇÏÀ§Ä¡
+				    	jrYdMsg.setField("YD_EQP_ID"       , slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"  ))); //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+						jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(jrCrnSch.getFieldString("YD_SCH_CD"  ))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"  )));  //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+						jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(jrCrnSch.getFieldString("YD_WBOOK_ID"  )));  //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+						jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
+						jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT"  ))); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+						jrYdMsg.setField("YD_UP_WO_LOC"	   , slabUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"  ))); //ì•¼ë“œê¶Œìƒìœ„ì¹˜
+						jrYdMsg.setField("YD_DN_WO_LOC_ORG", slabUtils.trim(jrCrnSch.getFieldString("YD_DN_WO_LOC"  ))); //ì•¼ë“œì´ì „ê¶Œí•˜ìœ„ì¹˜
 					
-						//±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ
+						//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½
 						jrRtn = slabUtils.addSndData(jrRtn, this.updCrnSchDnWoLoc(jrYdMsg));
 					}
 				}
 				
-				/*jrYdMsg.setField("YD_EQP_ID"       , slabUtils.trim(gdReq.getHeader("YD_EQP_ID"       ).getValue(ii))); //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(ii))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(ii))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(ii))); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
-				jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(ii))); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				jrYdMsg.setField("YD_UP_WO_LOC"	   , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"    ).getValue(ii))); //¾ßµå±Ç»óÀ§Ä¡
-				jrYdMsg.setField("YD_DN_WO_LOC_ORG", slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ORG").getValue(ii))); //¾ßµåÀÌÀü±ÇÇÏÀ§Ä¡
+				/*jrYdMsg.setField("YD_EQP_ID"       , slabUtils.trim(gdReq.getHeader("YD_EQP_ID"       ).getValue(ii))); //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(ii))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(ii))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(ii))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
+				jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(ii))); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				jrYdMsg.setField("YD_UP_WO_LOC"	   , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"    ).getValue(ii))); //ì•¼ë“œê¶Œìƒìœ„ì¹˜
+				jrYdMsg.setField("YD_DN_WO_LOC_ORG", slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ORG").getValue(ii))); //ì•¼ë“œì´ì „ê¶Œí•˜ìœ„ì¹˜
 */
-				//±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ
+				//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½
 				//jrRtn = slabUtils.addSndData(jrRtn, this.updCrnSchDnWoLoc(jrYdMsg));
 			}
 
@@ -412,58 +412,58 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙ ±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updCrnSchDnWoLoc(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙ ±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ[SlabYdJspSeEJB.updCrnSchDnWoLoc] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½[SlabYdJspSeEJB.updCrnSchDnWoLoc] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			String ydEqpId       = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"       )); //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String ydSchCd       = slabUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )); //¾ßµå½ºÄÉÁìÄÚµå
-			String ydCrnSchId    = slabUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId     = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"     )); //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydDnWoLoc     = slabUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC"    )); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
-			String ydWrkProgStat = slabUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			String modifier      = slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER"      )); //¼öÁ¤ÀÚ
-			String ydUpWoLoc	 = slabUtils.trim(rcvMsg.getFieldString("YD_UP_WO_LOC"    )); //¾ßµå±Ç»óÀ§Ä¡
+			String ydEqpId       = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"       )); //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String ydSchCd       = slabUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydCrnSchId    = slabUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId     = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"     )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydDnWoLoc     = slabUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC"    )); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
+			String ydWrkProgStat = slabUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			String modifier      = slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER"      )); //ìˆ˜ì •ì
+			String ydUpWoLoc	 = slabUtils.trim(rcvMsg.getFieldString("YD_UP_WO_LOC"    )); //ì•¼ë“œê¶Œìƒìœ„ì¹˜
 			
 			if ("".equals(ydCrnSchId)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydDnWoLoc)) {
-				throw new Exception("º¯°æÇÒ ±ÇÇÏÁö½ÃÀ§Ä¡°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if (ydDnWoLoc.length() != 8) {
-				throw new Exception("Àß¸øµÈ ±ÇÇÏÁö½ÃÀ§Ä¡[" + ydDnWoLoc + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì˜ëª»ëœ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜[" + ydDnWoLoc + "] ì…ë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydStkColGp     = ydDnWoLoc.substring(0, 6); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String ydStkBedNo     = ydDnWoLoc.substring(6, 8); //¾ßµåÀûÄ¡Bed¹øÈ£
-			String ydDnWoLocOld   = ""; //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(±âÁ¸)
-			String ydDnWoLayer    = ""; //¾ßµå±ÇÇÏÁö½Ã´Ü(½Å±Ô)
-			String ydDnWoLocXaxis = ""; //¾ßµå±ÇÇÏÁö½ÃXÃà(½Å±Ô)
-			String ydDnWoLocYaxis = ""; //¾ßµå±ÇÇÏÁö½ÃYÃà(½Å±Ô)
-			String ydDnWoLocZaxis = ""; //¾ßµå±ÇÇÏÁö½ÃZÃà(½Å±Ô)
+			String ydStkColGp     = ydDnWoLoc.substring(0, 6); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String ydStkBedNo     = ydDnWoLoc.substring(6, 8); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String ydDnWoLocOld   = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ê¸°ì¡´)
+			String ydDnWoLayer    = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨(ì‹ ê·œ)
+			String ydDnWoLocXaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•(ì‹ ê·œ)
+			String ydDnWoLocYaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•(ì‹ ê·œ)
+			String ydDnWoLocZaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•(ì‹ ê·œ)
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
 			jrParam.setField("V_YD_CRN_SCH_ID"       , ydCrnSchId);
-			jrParam.setField("V_YD_CARLD_WRK_BOOK_ID", ydWbookId );	//¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID
+			jrParam.setField("V_YD_CARLD_WRK_BOOK_ID", ydWbookId );	//ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID
 			jrParam.setField("V_YD_STK_COL_GP"       , ydStkColGp);
 			jrParam.setField("V_YD_STK_BED_NO"       , ydStkBedNo);
 			
 			/**********************************************************
-			* 1. ½Å±Ô ±ÇÇÏÁö½ÃÀ§Ä¡ BedÁ¤º¸ Á¶È¸
+			* 1. ì‹ ê·œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ Bedì •ë³´ ì¡°íšŒ
 			**********************************************************/
 			JDTORecordSet jsCrnSch = jspDao.getCrnWrkMgt("DMBed", jrParam);
 
@@ -478,30 +478,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			    String dlLocChkRst = slabUtils.trim(jrCrnSch.getFieldString("DL_LOC_CHK_RST"));
 
 			    if ("UP".equals(dlLocChkRst)) {
-					throw new Exception("±Ç»ó´ë±â(U) Àç·á°¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ê¶ŒìƒëŒ€ê¸°(U) ì¬ë£Œê°€ ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				} else if ("BW".equals(dlLocChkRst)) {
-					throw new Exception("ÀÔÃâ°í°¡´É(E) Bed°¡ ¾Æ´Õ´Ï´Ù.");
+					throw new Exception("ì…ì¶œê³ ê°€ëŠ¥(E) Bedê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				} else if ("SH".equals(dlLocChkRst)) {
-					throw new Exception("ÀûÄ¡´Ü ¸Å¼ö¸¦ ÃÊ°ú ÇÕ´Ï´Ù.");
+					throw new Exception("ì ì¹˜ë‹¨ ë§¤ìˆ˜ë¥¼ ì´ˆê³¼ í•©ë‹ˆë‹¤.");
 				} else if ("WT".equals(dlLocChkRst)) {
-					throw new Exception("ÀûÄ¡´Ü Áß·®À» ÃÊ°ú ÇÕ´Ï´Ù.");
+					throw new Exception("ì ì¹˜ë‹¨ ì¤‘ëŸ‰ì„ ì´ˆê³¼ í•©ë‹ˆë‹¤.");
 				} else if ("HT".equals(dlLocChkRst)) {
-					throw new Exception("ÀûÄ¡´Ü ³ôÀÌ¸¦ ÃÊ°ú ÇÕ´Ï´Ù.");
+					throw new Exception("ì ì¹˜ë‹¨ ë†’ì´ë¥¼ ì´ˆê³¼ í•©ë‹ˆë‹¤.");
 				} else if ("RS".equals(dlLocChkRst)) {
-					throw new Exception("Áö½ÃÀ§Ä¡ ¼öÁ¤ ºÒ°¡´É ½ºÄÉÁÙÀÌ Á¸ÀçÇÕ´Ï´Ù.");
+					throw new Exception("ì§€ì‹œìœ„ì¹˜ ìˆ˜ì • ë¶ˆê°€ëŠ¥ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 				}
 
-			    //È¤½Ã ±ÇÇÏÁö½ÃÀ§Ä¡°¡ Àß¸ø µî·ÏµÇ¾î ÀÖÀ¸¸é
+			    //í˜¹ì‹œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ê°€ ì˜ëª» ë“±ë¡ë˜ì–´ ìˆìœ¼ë©´
 			    if (ydDnWoLocOld.length() != 8) {
 			    	ydDnWoLocOld = "XX010101";
 				}
 		    } else {
-				throw new Exception("½Å±Ô ±ÇÇÏÁö½ÃÀ§Ä¡[" + ydDnWoLoc + "] Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì‹ ê·œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜[" + ydDnWoLoc + "] ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		    }
 			
 			/**********************************************************
-			* 2. ±ÇÇÏÁö½ÃÀ§Ä¡ ¼öÁ¤
-			*  - °°Àº ÀÛ¾÷¿¹¾àIDÀÇ ÀÌÈÄ ½ºÄÉÁÙ ±Ç»ó ¹× ±ÇÇÏÁö½ÃÀ§Ä¡ ¸ğµÎ ¼öÁ¤
+			* 2. ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ìˆ˜ì •
+			*  - ê°™ì€ ì‘ì—…ì˜ˆì•½IDì˜ ì´í›„ ìŠ¤ì¼€ì¤„ ê¶Œìƒ ë° ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ëª¨ë‘ ìˆ˜ì •
 			**********************************************************/
 			jrParam.setField("V_YD_STK_COL_GP_OLD" , ydDnWoLocOld.substring(0, 6));
 			jrParam.setField("V_YD_STK_BED_NO_OLD" , ydDnWoLocOld.substring(6, 8));
@@ -513,13 +513,13 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			jrParam.setField("V_YD_DN_WO_LOC_YAXIS", ydDnWoLocYaxis);
 			jrParam.setField("V_YD_DN_WO_LOC_ZAXIS", ydDnWoLocZaxis);
 
-			//ÀûÄ¡´Ü ¼öÁ¤ - ±âÁ¸ ¹× ½Å±Ô ±ÇÇÏÁö½ÃÀ§Ä¡
+			//ì ì¹˜ë‹¨ ìˆ˜ì • - ê¸°ì¡´ ë° ì‹ ê·œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			jspDao.updCrnWrkMgt("DMStkLyr", jrParam);
 
-			//ÀûÄ¡Bed ¼öÁ¤ - ¿Ï»êBed ÇØÁ¦
+			//ì ì¹˜Bed ìˆ˜ì • - ì™„ì‚°Bed í•´ì œ
 			jspDao.updCrnWrkMgt("DMStkBed", jrParam);
 
-			//Å©·¹ÀÎ½ºÄÉÁÙ ¼öÁ¤ - ±Ç»ó, ±ÇÇÏÁö½ÃÀ§Ä¡
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ê¶Œìƒ, ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			String ydGp = ydStkColGp.substring(0 , 1);
 			if(ydUpWoLoc.equals(ydDnWoLocOld) && "A".equals(ydGp)) {
 				jspDao.updCrnWrkMgt("DMCrnSch2", jrParam);
@@ -527,33 +527,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				jspDao.updCrnWrkMgt("DMCrnSch", jrParam);
 			}
 
-			//±âÁ¸ ´ëÂ÷, Â÷·® ±ÇÇÏÀ§Ä¡¿¡¼­ ÀÏ¹İ¾ßµå·Î º¯°æ ½Ã ´ëÂ÷ or Â÷·®½ºÄÉÁÙ ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ê¸°ì¡´ ëŒ€ì°¨, ì°¨ëŸ‰ ê¶Œí•˜ìœ„ì¹˜ì—ì„œ ì¼ë°˜ì•¼ë“œë¡œ ë³€ê²½ ì‹œ ëŒ€ì°¨ or ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			ydDnWoLocOld = ydDnWoLocOld.substring(2, 4);
 			if (("TC".equals(ydDnWoLocOld) || "PT".equals(ydDnWoLocOld)) && !ydDnWoLocOld.equals(ydDnWoLoc.substring(2, 4))) {
 				if ("TC".equals(ydDnWoLocOld)) {
-					//´ëÂ÷½ºÄÉÁÙ ¼öÁ¤ - »óÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+					//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ìƒì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 					jspDao.updCrnWrkMgt("DMTcarSch", jrParam);
 				} else {
-					//Â÷·®½ºÄÉÁÙ ¼öÁ¤ - »óÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+					//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ìƒì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 					jspDao.updCrnWrkMgt("DMCarSch", jrParam);
 
-					//ÀûÄ¡¿­ ¼öÁ¤ - ¾ßµåÀûÄ¡´ë¿ëµµÄÚµå »èÁ¦
+					//ì ì¹˜ì—´ ìˆ˜ì • - ì•¼ë“œì ì¹˜ëŒ€ìš©ë„ì½”ë“œ ì‚­ì œ
 					jspDao.updCrnWrkMgt("DMStkCol", jrParam);
 				}
 			}
 			
 			/**********************************************************
-			* 3. Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸
+			* 3. í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
-			//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, modifier);
 
-			jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007"   );	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      );	//¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_WRK_PROG_STAT", ydWrkProgStat);	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      );	//¾ßµå½ºÄÉÁìÄÚµå
-			jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId   );	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			jrYdMsg.setField("V_MODIFIER"      , modifier     );	//¼öÁ¤ÀÚ
+			jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007"   );	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      );	//ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_WRK_PROG_STAT", ydWrkProgStat);	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId   );	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			jrYdMsg.setField("V_MODIFIER"      , modifier     );	//ìˆ˜ì •ì
 
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 			jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -570,59 +570,59 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® º¸·ù/ÇØÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ë³´ë¥˜/í•´ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtHR(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® º¸·ù/ÇØÁ¦[SlabYdJspSeEJB.trtCrnWrkMgtHR] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ë³´ë¥˜/í•´ì œ[SlabYdJspSeEJB.trtCrnWrkMgtHR] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydWbookId        = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydWrkProgStatOld = ""; //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±âÁ¸)
-			String ydWrkProgStatNew = ""; //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(½Å±Ô)
-			String trtGp            = slabUtils.trim(gdReq.getParam("V_TRT_GP")); //Ã³¸®±¸ºĞ
+			String ydWbookId        = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydWrkProgStatOld = ""; //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¸°ì¡´)
+			String ydWrkProgStatNew = ""; //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ì‹ ê·œ)
+			String trtGp            = slabUtils.trim(gdReq.getParam("V_TRT_GP")); //ì²˜ë¦¬êµ¬ë¶„
 			
 			if ("HD".equals(trtGp)) {
-				trtGp = "º¸·ù";
-				ydWrkProgStatOld = "W"; //¸í·É¼±ÅÃ´ë±â
-				ydWrkProgStatNew = "C"; //½ºÄÉÁì¸í·ÉÃë¼Ò
+				trtGp = "ë³´ë¥˜";
+				ydWrkProgStatOld = "W"; //ëª…ë ¹ì„ íƒëŒ€ê¸°
+				ydWrkProgStatNew = "C"; //ìŠ¤ì¼€ì¥´ëª…ë ¹ì·¨ì†Œ
 			} else if ("HR".equals(trtGp)) {
-				trtGp = "º¸·ùÇØÁ¦";
-				ydWrkProgStatOld = "C"; //½ºÄÉÁì¸í·ÉÃë¼Ò
-				ydWrkProgStatNew = "W"; //¸í·É¼±ÅÃ´ë±â
+				trtGp = "ë³´ë¥˜í•´ì œ";
+				ydWrkProgStatOld = "C"; //ìŠ¤ì¼€ì¥´ëª…ë ¹ì·¨ì†Œ
+				ydWrkProgStatNew = "W"; //ëª…ë ¹ì„ íƒëŒ€ê¸°
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_WRK_PROG_STAT_OLD", ydWrkProgStatOld); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±âÁ¸)
-			jrParam.setField("V_YD_WRK_PROG_STAT_NEW", ydWrkProgStatNew); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(½Å±Ô)
+			jrParam.setField("V_YD_WRK_PROG_STAT_OLD", ydWrkProgStatOld); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¸°ì¡´)
+			jrParam.setField("V_YD_WRK_PROG_STAT_NEW", ydWrkProgStatNew); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ì‹ ê·œ)
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				/**********************************************************
-				* 1. ÀÛ¾÷¿¹¾àID Check
+				* 1. ì‘ì—…ì˜ˆì•½ID Check
 				**********************************************************/
-			    ydWbookId = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii)); //¾ßµåÀÛ¾÷¿¹¾àID
+			    ydWbookId = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii)); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (slabUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				slabUtils.printLog(logId, "º¸·ù/ÇØÁ¦ [ " + ydWbookId + " >> " + trtGp + " ]", "SL");
+				slabUtils.printLog(logId, "ë³´ë¥˜/í•´ì œ [ " + ydWbookId + " >> " + trtGp + " ]", "SL");
 
 				/**********************************************************
-				* 2. Å©·¹ÀÎ½ºÄÉÁÙ TableÀÇ ¾ßµåÀÛ¾÷ÁøÇà»óÅÂ¸¦ Update
+				* 2. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Tableì˜ ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœë¥¼ Update
 				**********************************************************/
 				jrParam.setField("V_YD_WBOOK_ID", ydWbookId);
 				
@@ -641,15 +641,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® ÀÛ¾÷Ãë¼Ò
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ì‘ì—…ì·¨ì†Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtWC(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ÀÛ¾÷Ãë¼Ò[SlabYdJspSeEJB.trtCrnWrkMgtWC] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ì‘ì—…ì·¨ì†Œ[SlabYdJspSeEJB.trtCrnWrkMgtWC] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -658,15 +658,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCrnSchId = ""; //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-		    String ydEqpId    = ""; //¾ßµå¼³ºñID
-		    String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
+			String ydCrnSchId = ""; //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+		    String ydEqpId    = ""; //ì•¼ë“œì„¤ë¹„ID
+		    String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
@@ -675,22 +675,22 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			    ydEqpId   = slabUtils.trim(gdReq.getHeader("YD_EQP_ID"  ).getValue(ii));
 			    ydSchCd   = slabUtils.trim(gdReq.getHeader("YD_SCH_CD"  ).getValue(ii));
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (slabUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				//±âº»Á¤º¸Á¶È¸
+				//ê¸°ë³¸ì •ë³´ì¡°íšŒ
 				jrParam.setField("V_YD_WBOOK_ID", ydWbookId);
 
 				JDTORecordSet jsCrn = jspDao.getCrnWrkMgt("WCSch", jrParam);
 
 			    if (jsCrn == null || jsCrn.size() <= 0) {
-					throw new Exception("ÀÛ¾÷¿¹¾àID[" + ydWbookId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			    }
 
-				ydCrnSchId = slabUtils.trim(jsCrn.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+				ydCrnSchId = slabUtils.trim(jsCrn.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 				
-				slabUtils.printLog(logId, "ÀÛ¾÷Ãë¼Ò [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
+				slabUtils.printLog(logId, "ì‘ì—…ì·¨ì†Œ [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
 
 				jrParam.setField("YD_WBOOK_ID"  , ydWbookId );
 				jrParam.setField("YD_CRN_SCH_ID", ydCrnSchId);
@@ -698,12 +698,12 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				jrParam.setField("YD_SCH_CD"    , ydSchCd   );
 				
 				/**********************************************************
-				* 1. Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼Ò
+				* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = slabUtils.addSndData(jrRtn, this.trtCrnSchCncl(jrParam));
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à Ãë¼Ò
+				* 2. ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = slabUtils.addSndData(jrRtn, this.trtWrkBookCncl(jrParam));
 			}
@@ -720,15 +720,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® ½ºÄÉÁÙÃë¼Ò
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ìŠ¤ì¼€ì¤„ì·¨ì†Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkMgtSC(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ½ºÄÉÁÙÃë¼Ò[SlabYdJspSeEJB.trtCrnWrkMgtSC] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ìŠ¤ì¼€ì¤„ì·¨ì†Œ[SlabYdJspSeEJB.trtCrnWrkMgtSC] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -737,13 +737,13 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCrnSchId = ""; //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
+			String ydCrnSchId = ""; //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
@@ -751,17 +751,17 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				ydWbookId  = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"  ).getValue(ii));
 				ydCrnSchId = slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID").getValue(ii));
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (slabUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				slabUtils.printLog(logId, "½ºÄÉÁÙÃë¼Ò [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
+				slabUtils.printLog(logId, "ìŠ¤ì¼€ì¤„ì·¨ì†Œ [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
 
 				jrParam.setField("YD_WBOOK_ID"  , ydWbookId );
 				jrParam.setField("YD_CRN_SCH_ID", ydCrnSchId);
 
 				/**********************************************************
-				* 1. Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼Ò
+				* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = slabUtils.addSndData(jrRtn, this.trtCrnSchCncl(jrParam));
 			}
@@ -778,98 +778,98 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼ÒÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnSchCncl(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼ÒÃ³¸®[SlabYdJspSeEJB.trtCrnSchCncl] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œì²˜ë¦¬[SlabYdJspSeEJB.trtCrnSchCncl] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			String ydCrnSchId = slabUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId  = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )); //¾ßµåÀÛ¾÷¿¹¾àID
+			String ydCrnSchId = slabUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId  = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			
 			if ("".equals(ydCrnSchId)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydWbookId)) {
-				throw new Exception("ÀÛ¾÷¿¹¾àID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER")));
 
 			jrParam.setField("V_YD_CRN_SCH_ID", ydCrnSchId);
 			jrParam.setField("V_YD_WBOOK_ID"  , ydWbookId );
 			
 			/**********************************************************
-			* 1. Å©·¹ÀÎ½ºÄÉÁì Á¤º¸ Check
+			* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ì •ë³´ Check
 			**********************************************************/
 			JDTORecordSet jsCrnSch = jspDao.getCrnWrkMgt("SCSch", jrParam);
 
 			if (jsCrnSch == null || jsCrnSch.size() <= 0) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID[" + ydCrnSchId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´ID[" + ydCrnSchId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		    }
 
 			JDTORecord jrCrnSch = jsCrnSch.getRecord(0);
 			
-		    String ydWrkProgStat = slabUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-		    String eqpUpdYn      = slabUtils.trim(jrCrnSch.getFieldString("EQP_UPD_YN"      )); //¼³ºñ»óÅÂ¼öÁ¤¿©ºÎ
-		    String ydEqpId       = slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"       )); //¾ßµå¼³ºñID
-		    String ydEqpStat     = slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_STAT"     )); //¾ßµå¼³ºñ»óÅÂ
-		    String ydToLocGuide  = slabUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_GUIDE" )); //¾ßµåtoÀ§Ä¡guide
+		    String ydWrkProgStat = slabUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+		    String eqpUpdYn      = slabUtils.trim(jrCrnSch.getFieldString("EQP_UPD_YN"      )); //ì„¤ë¹„ìƒíƒœìˆ˜ì •ì—¬ë¶€
+		    String ydEqpId       = slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"       )); //ì•¼ë“œì„¤ë¹„ID
+		    String ydEqpStat     = slabUtils.trim(jrCrnSch.getFieldString("YD_EQP_STAT"     )); //ì•¼ë“œì„¤ë¹„ìƒíƒœ
+		    String ydToLocGuide  = slabUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_GUIDE" )); //ì•¼ë“œtoìœ„ì¹˜guide
 		    
-		    String InterlockWrkYn = slabUtils.trim(jrCrnSch.getFieldString("INTERLOCK_WRK_YN" )); //ÀÎÅÍ¶ô ±¸°£ ¿©ºÎ
+		    String InterlockWrkYn = slabUtils.trim(jrCrnSch.getFieldString("INTERLOCK_WRK_YN" )); //ì¸í„°ë½ êµ¬ê°„ ì—¬ë¶€
 			if ("2".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [2:±Ç»ó¿Ï·á]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [2:ê¶Œìƒì™„ë£Œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("3".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [3:±ÇÇÏÁö½Ã]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [3:ê¶Œí•˜ì§€ì‹œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("4".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [4:±ÇÇÏ¿Ï·á]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [4:ê¶Œí•˜ì™„ë£Œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//20240529 ora- ¿¡·¯ ±³Âø»óÅÂ ¹ß»ıÀ¸·Î ÀÎÇÑ ¼öÁ¤
-			//Å©·¹ÀÎ ±ÇÇÏ½ÇÀûÀº eqp->stklyr->crnwrkmtl->crnsch ¼øÀÎµ¥, ½ºÄÉÁÙÃë¼Ò´Â stklyr->crnwrkmtl->crnsch->eqp ¼øÀ¸·Î ¼öÁ¤. ¼öÁ¤ ¼ø¼­ ¸ÂÃß±âÀ§ÇØ ¿Ã¸².
+			//20240529 ora- ì—ëŸ¬ êµì°©ìƒíƒœ ë°œìƒìœ¼ë¡œ ì¸í•œ ìˆ˜ì •
+			//í¬ë ˆì¸ ê¶Œí•˜ì‹¤ì ì€ eqp->stklyr->crnwrkmtl->crnsch ìˆœì¸ë°, ìŠ¤ì¼€ì¤„ì·¨ì†ŒëŠ” stklyr->crnwrkmtl->crnsch->eqp ìˆœìœ¼ë¡œ ìˆ˜ì •. ìˆ˜ì • ìˆœì„œ ë§ì¶”ê¸°ìœ„í•´ ì˜¬ë¦¼.
 			/**********************************************************
-			* 5-> 1.5. ¼³ºñ»óÅÂ ¼öÁ¤ - Å©·¹ÀÎÀÌ °íÀå ¶Ç´Â Off-LineÀÌ ¾Æ´Ï°í »óÅÂ°¡ ´Ù¸£¸é
+			* 5-> 1.5. ì„¤ë¹„ìƒíƒœ ìˆ˜ì • - í¬ë ˆì¸ì´ ê³ ì¥ ë˜ëŠ” Off-Lineì´ ì•„ë‹ˆê³  ìƒíƒœê°€ ë‹¤ë¥´ë©´
 			**********************************************************/
 			if ("Y".equals(eqpUpdYn)) {
-				jrParam.setField("V_YD_EQP_ID"  , ydEqpId  ); //¾ßµå¼³ºñID
-				jrParam.setField("V_YD_EQP_STAT", ydEqpStat); //¾ßµå¼³ºñ»óÅÂ
+				jrParam.setField("V_YD_EQP_ID"  , ydEqpId  ); //ì•¼ë“œì„¤ë¹„ID
+				jrParam.setField("V_YD_EQP_STAT", ydEqpStat); //ì•¼ë“œì„¤ë¹„ìƒíƒœ
 
 				commDao.updStat("Eqp", jrParam);
 			}
 			
 			/**********************************************************
-			* 2. ÀÛ¾÷ÁøÇà»óÅÂ°¡ [1:±Ç»óÁö½Ã] ÀÌ¸é ÀÛ¾÷Áö½ÃÃë¼Ò Àü¹® Àü¼Û
+			* 2. ì‘ì—…ì§„í–‰ìƒíƒœê°€ [1:ê¶Œìƒì§€ì‹œ] ì´ë©´ ì‘ì—…ì§€ì‹œì·¨ì†Œ ì „ë¬¸ ì „ì†¡
 			**********************************************************/
 			if ("1".equals(ydWrkProgStat)) {
-				jrParam.setField("V_YD_CRN_SCH_ID", ydCrnSchId); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrParam.setField("V_MSG_GP"       , "D"       ); //Àü¹®±¸ºĞ(Ãë¼Ò)
+				jrParam.setField("V_YD_CRN_SCH_ID", ydCrnSchId); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_MSG_GP"       , "D"       ); //ì „ë¬¸êµ¬ë¶„(ì·¨ì†Œ)
 
-				//Å©·¹ÀÎÀÛ¾÷Áö½Ã(YDY1L004, YDY3L004) Àü¹® Á¶È¸
+				//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ(YDY1L004, YDY3L004) ì „ë¬¸ ì¡°íšŒ
 				jrRtn = slabUtils.addSndData(commDao.getMsgL2("YDY1L004", jrParam));
 			}
 
 			/**********************************************************
-			* 3. ±Ç»ó, ±ÇÇÏÀ§Ä¡ ¿øº¹ - ÀûÄ¡´Ü, ÀûÄ¡Bed
+			* 3. ê¶Œìƒ, ê¶Œí•˜ìœ„ì¹˜ ì›ë³µ - ì ì¹˜ë‹¨, ì ì¹˜Bed
 			**********************************************************/
-			//ÀûÄ¡´Ü ¼öÁ¤ - ±Ç»óÀ§Ä¡(U -> C), ±ÇÇÏÀ§Ä¡(D -> E)
+			//ì ì¹˜ë‹¨ ìˆ˜ì • - ê¶Œìƒìœ„ì¹˜(U -> C), ê¶Œí•˜ìœ„ì¹˜(D -> E)
 			jspDao.updCrnWrkMgt("SCStkLyr", jrParam);
 
-			//ÀûÄ¡Bed ¼öÁ¤ - ¿Ï»êBed ÇØÁ¦
+			//ì ì¹˜Bed ìˆ˜ì • - ì™„ì‚°Bed í•´ì œ
 			jspDao.updCrnWrkMgt("SCStkBed", jrParam);
 			
 			/**********************************************************
-			 * 3-1. ÀÛ¾÷¿¹¾à¿¡ Å©·¹ÀÎ½ºÄÉÁìÀÇ toÀ§Ä¡ Guide ÀúÀå (ÈÄÆÇ½½¶óºê¾ßµå) 
+			 * 3-1. ì‘ì—…ì˜ˆì•½ì— í¬ë ˆì¸ìŠ¤ì¼€ì¥´ì˜ toìœ„ì¹˜ Guide ì €ì¥ (í›„íŒìŠ¬ë¼ë¸Œì•¼ë“œ) 
 			**********************************************************/
 //////////////////////////////////////////
 			 String APPLY_YN34   = PcommDao.PSlabApplyYn("APPLY_YN34");
@@ -885,21 +885,21 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			}
 	     }
 			/**********************************************************
-			* 4. Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦
+			* 4. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			**********************************************************/
-			//Å©·¹ÀÎÀÛ¾÷Àç·á »èÁ¦
+			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì‚­ì œ
 			jspDao.updCrnWrkMgt("SCCrnMtl", jrParam);
 			
-			//Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			jspDao.updCrnWrkMgt("SCCrnSch", jrParam);
 
 			
 
 			/**********************************************************
-			* 6. Å©·¹ÀÎ ÀÎÅÍ¶ô ±¸°£ ÀÛ¾÷ Ãë¼Ò½Ã ÀÎÅÍ¶ô Àü¹® l2·Î Àü¼Û
-			* 	 ÀÎÅÍ¶ô ON½Ã, ÀÎÅÍ¶ô±¸°£ ÀÛ¾÷ ÇÏ°íÀÖ´Ù¸é ±× ÀÛ¾÷ ³¡³ª°í º¸³»±â·Î(L2¿¡¼­ ÀÎÅÍ¶ô Àü¹® ¹ŞÀ¸¸é ¹Ù·Î ÁÂÇ¥ Á¦ÇÑ ¼³Á¤)
+			* 6. í¬ë ˆì¸ ì¸í„°ë½ êµ¬ê°„ ì‘ì—… ì·¨ì†Œì‹œ ì¸í„°ë½ ì „ë¬¸ l2ë¡œ ì „ì†¡
+			* 	 ì¸í„°ë½ ONì‹œ, ì¸í„°ë½êµ¬ê°„ ì‘ì—… í•˜ê³ ìˆë‹¤ë©´ ê·¸ ì‘ì—… ëë‚˜ê³  ë³´ë‚´ê¸°ë¡œ(L2ì—ì„œ ì¸í„°ë½ ì „ë¬¸ ë°›ìœ¼ë©´ ë°”ë¡œ ì¢Œí‘œ ì œí•œ ì„¤ì •)
 			**********************************************************/
-			slabUtils.printLog(logId, "Àåºñ ["+ydEqpId+"] ÀÎÅÍ¶ô ±¸°£ ÀÛ¾÷ ¿©ºÎ ["+InterlockWrkYn+"]", "SL");
+			slabUtils.printLog(logId, "ì¥ë¹„ ["+ydEqpId+"] ì¸í„°ë½ êµ¬ê°„ ì‘ì—… ì—¬ë¶€ ["+InterlockWrkYn+"]", "SL");
 			
 			if("Y".equals(InterlockWrkYn)){
 				jrParam.setField("V_YD_EQP_ID", ydEqpId);
@@ -908,12 +908,12 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			* 7. ÀÛ¾÷¿¹¾à¿¡ ½ºÄÉÁÙ Ãë¼Ò ¿©ºÎ ¾÷µ¥ÀÌÆ®
+			* 7. ì‘ì—…ì˜ˆì•½ì— ìŠ¤ì¼€ì¤„ ì·¨ì†Œ ì—¬ë¶€ ì—…ë°ì´íŠ¸
 			**********************************************************/
 			jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER")));
 			jrParam.setField("MODIFIER", slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER")));
 			jrParam.setField("YD_WBOOK_ID"  , ydWbookId );
-			commDao.update(jrParam, "com.inisteel.cim.yd.slabyd.session.SlabYdJspSeEJB.updSchCNCLYn", logId, methodNm, "½ºÄÉÁÙÃë¼Ò¿©ºÎ ¾÷µ¥ÀÌÆ®");
+			commDao.update(jrParam, "com.inisteel.cim.yd.slabyd.session.SlabYdJspSeEJB.updSchCNCLYn", logId, methodNm, "ìŠ¤ì¼€ì¤„ì·¨ì†Œì—¬ë¶€ ì—…ë°ì´íŠ¸");
 			
 			slabUtils.printLog(logId, methodNm, "S-");
 
@@ -927,83 +927,83 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à Ãë¼ÒÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ ì·¨ì†Œì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtWrkBookCncl(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à Ãë¼ÒÃ³¸®[SlabYdJspSeEJB.trtWrkBookCncl] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ ì·¨ì†Œì²˜ë¦¬[SlabYdJspSeEJB.trtWrkBookCncl] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			String ydWbookId = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID")); //¾ßµåÀÛ¾÷¿¹¾àID
-		    String ydEqpId   = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"  )); //¾ßµå¼³ºñID
-		    String ydSchCd   = slabUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"  )); //¾ßµå½ºÄÉÁìÄÚµå
-			String modifier  = slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER" )); //¼öÁ¤ÀÚ
+			String ydWbookId = slabUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID")); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+		    String ydEqpId   = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"  )); //ì•¼ë“œì„¤ë¹„ID
+		    String ydSchCd   = slabUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"  )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String modifier  = slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER" )); //ìˆ˜ì •ì
 			
 			if ("".equals(ydWbookId)) {
-				throw new Exception("ÀÛ¾÷¿¹¾àID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
 			jrParam.setField("V_YD_WBOOK_ID", ydWbookId);
 			
 			/**********************************************************
-			* 1. Å©·¹ÀÎ½ºÄÉÁÙ Á¸Àç¿©ºÎ Check
+			* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡´ì¬ì—¬ë¶€ Check
 			**********************************************************/
 			JDTORecordSet jsCrnSch = jspDao.getComm("WbCrnSch", jrParam);
 
 			if (jsCrnSch != null && jsCrnSch.size() > 0) {
-				throw new Exception("ÀÛ¾÷¿¹¾àID[" + ydWbookId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ " + jsCrnSch.size() + " °Ç Á¸ÀçÇÕ´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ " + jsCrnSch.size() + " ê±´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 		    }
 
 			/**********************************************************
-			* 2. ÁØºñ½ºÄÉÁÙ º¹¿ø
+			* 2. ì¤€ë¹„ìŠ¤ì¼€ì¤„ ë³µì›
 			**********************************************************/
-			//ÁØºñÀç·á º¹¿ø
+			//ì¤€ë¹„ì¬ë£Œ ë³µì›
 		    jspDao.updComm("PrepMtlRcvr", jrParam);
 			
-			//ÁØºñ½ºÄÉÁÙ º¹¿ø
+			//ì¤€ë¹„ìŠ¤ì¼€ì¤„ ë³µì›
 		    jspDao.updComm("PrepSchRcvr", jrParam);
 
 			/**********************************************************
-			* 3. Â÷·®/´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			* 3. ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			**********************************************************/
-			//Â÷·®½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 		    jspDao.updComm("CarSchWbDel", jrParam);
 		
-			//´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			jspDao.updComm("TcarSchWbDel", jrParam);
 
 		    /**********************************************************
-			* 4. ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦
+			* 4. ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ
 			**********************************************************/
-			//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 			commDao.updDelYn("WrkBookMtl", jrParam);
 
-			//ÀÛ¾÷¿¹¾à »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 			commDao.updDelYn("WrkBook", jrParam);
 			
 			/**********************************************************
-			* 5. Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸
+			* 5. í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
-			//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, modifier);
 
-			jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007");	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId   );	//¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       );	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏ¿Ï·á)
-			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//¾ßµå½ºÄÉÁìÄÚµå
+			jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007");	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId   );	//ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       );	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ì™„ë£Œ)
+			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 			jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -1020,19 +1020,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * Å©·¹ÀÎ»óÅÂ¼³Á¤
+	 * í¬ë ˆì¸ìƒíƒœì„¤ì •
 	 **************************************************************************/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ»óÅÂ¼³Á¤ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìƒíƒœì„¤ì • ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCrnStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ»óÅÂ¼³Á¤ Á¶È¸[SlabYdJspSeEJB.getCrnStatSet] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ìƒíƒœì„¤ì • ì¡°íšŒ[SlabYdJspSeEJB.getCrnStatSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1047,102 +1047,102 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ»óÅÂ¼³Á¤ µî·ÏÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ»óÅÂ¼³Á¤ µî·ÏÃ³¸®[SlabYdJspSeEJB.trtCrnStatSet] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬[SlabYdJspSeEJB.trtCrnStatSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String trtDtlGp = slabUtils.trim(gdReq.getParam("V_TRT_DTL_GP"));	//Ã³¸®»ó¼¼±¸ºĞ
-			String ydEqpId  = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID" ));	//¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String currDate = slabUtils.getDateTime14();						//ÇöÀç½Ã°¢
+			String trtDtlGp = slabUtils.trim(gdReq.getParam("V_TRT_DTL_GP"));	//ì²˜ë¦¬ìƒì„¸êµ¬ë¶„
+			String ydEqpId  = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID" ));	//ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String currDate = slabUtils.getDateTime14();						//í˜„ì¬ì‹œê°
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("Å©·¹ÀÎ¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//EJB CallÀ» À§ÇÑ Message »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//EJB Callì„ ìœ„í•œ Message ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //¾ßµå¼³ºñID
+			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 
 			if ("ST".equals(trtDtlGp)) {
-				//¼³ºñ»óÅÂ º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"          , "C3YDL008"); //¼³ºñ°íÀåº¹±¸½ÇÀû
-				jrYdMsg.setField("YD_EQP_STAT"        , slabUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //¾ßµå¼³ºñ»óÅÂ(B:°íÀå, N:Á¤»ó)
-				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //¾ßµå¼³ºñÈŞÁöÄÚµå
-				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //¾ßµå¼³ºñ°íÀåº¹±¸ÀÏ½Ã
+				//ì„¤ë¹„ìƒíƒœ ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"          , "C3YDL008"); //ì„¤ë¹„ê³ ì¥ë³µêµ¬ì‹¤ì 
+				jrYdMsg.setField("YD_EQP_STAT"        , slabUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //ì•¼ë“œì„¤ë¹„ìƒíƒœ(B:ê³ ì¥, N:ì •ìƒ)
+				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //ì•¼ë“œì„¤ë¹„íœ´ì§€ì½”ë“œ
+				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //ì•¼ë“œì„¤ë¹„ê³ ì¥ë³µêµ¬ì¼ì‹œ
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL004", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("MD".equals(trtDtlGp)) {
-				//ÀÛ¾÷Mode º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL009"); //¼³ºñ¿îÀü¸ğµåÀüÈ¯
-				jrYdMsg.setField("YD_EQP_WRK_MODE", slabUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //¾ßµå¼³ºñÀÛ¾÷Mode(1:On-Line, 0:Off-Line)
+				//ì‘ì—…Mode ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL009"); //ì„¤ë¹„ìš´ì „ëª¨ë“œì „í™˜
+				jrYdMsg.setField("YD_EQP_WRK_MODE", slabUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(1:On-Line, 0:Off-Line)
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL003", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("WO".equals(trtDtlGp)) {
-				//¸í·É¼±ÅÃ±âµ¿
-				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007"); //Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-				jrYdMsg.setField("YD_WRK_PROG_STAT", "W"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(¸í·É¼±ÅÃ´ë±â)
-				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"     ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID" ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+				//ëª…ë ¹ì„ íƒê¸°ë™
+				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL007"); //í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+				jrYdMsg.setField("YD_WRK_PROG_STAT", "W"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ëª…ë ¹ì„ íƒëŒ€ê¸°)
+				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"     ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID" ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("WU".equals(trtDtlGp)) {
-				//±Ç»ó½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL008"); //Å©·¹ÀÎ±Ç»ó½ÇÀû
-				jrYdMsg.setField("YD_EQP_WRK_MODE" , "9"       ); //¾ßµå¼³ºñÀÛ¾÷Mode(Backup)
-				jrYdMsg.setField("YD_WRK_PROG_STAT", "2"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±Ç»ó¿Ï·á)
-				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("YD_UP_WR_LOC"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"      ).getValue(0))); //¾ßµå±Ç»ó½ÇÀûÀ§Ä¡
-				jrYdMsg.setField("YD_UP_WR_LAYER"  , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LAYER"    ).getValue(0))); //¾ßµå±Ç»ó½ÇÀû´Ü
-				jrYdMsg.setField("YD_CRN_XAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_XAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎXÃà
-				jrYdMsg.setField("YD_CRN_YAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_YAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎYÃà
-				jrYdMsg.setField("YD_CRN_ZAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_ZAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎZÃà
+				//ê¶Œìƒì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL008"); //í¬ë ˆì¸ê¶Œìƒì‹¤ì 
+				jrYdMsg.setField("YD_EQP_WRK_MODE" , "9"       ); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(Backup)
+				jrYdMsg.setField("YD_WRK_PROG_STAT", "2"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œìƒì™„ë£Œ)
+				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("YD_UP_WR_LOC"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"      ).getValue(0))); //ì•¼ë“œê¶Œìƒì‹¤ì ìœ„ì¹˜
+				jrYdMsg.setField("YD_UP_WR_LAYER"  , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LAYER"    ).getValue(0))); //ì•¼ë“œê¶Œìƒì‹¤ì ë‹¨
+				jrYdMsg.setField("YD_CRN_XAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_XAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Xì¶•
+				jrYdMsg.setField("YD_CRN_YAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_YAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Yì¶•
+				jrYdMsg.setField("YD_CRN_ZAXIS"    , slabUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_ZAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Zì¶•
 				
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL008", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("WD".equals(trtDtlGp)) {
-				//±ÇÇÏ½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL009"); //Å©·¹ÀÎ±ÇÇÏ½ÇÀû
-				jrYdMsg.setField("YD_EQP_WRK_MODE" , "9"       ); //¾ßµå¼³ºñÀÛ¾÷Mode(Backup)
-				jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏ¿Ï·á)
-				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("YD_DN_WR_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"      ).getValue(0))); //¾ßµå±ÇÇÏ½ÇÀûÀ§Ä¡
-				jrYdMsg.setField("YD_DN_WR_LAYER"  , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LAYER"    ).getValue(0))); //¾ßµå±ÇÇÏ½ÇÀû´Ü
-				jrYdMsg.setField("YD_CRN_XAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_XAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎXÃà
-				jrYdMsg.setField("YD_CRN_YAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_YAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎYÃà
-				jrYdMsg.setField("YD_CRN_ZAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ZAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎZÃà
+				//ê¶Œí•˜ì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"       , "Y1YDL009"); //í¬ë ˆì¸ê¶Œí•˜ì‹¤ì 
+				jrYdMsg.setField("YD_EQP_WRK_MODE" , "9"       ); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(Backup)
+				jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ì™„ë£Œ)
+				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("YD_DN_WR_LOC"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"      ).getValue(0))); //ì•¼ë“œê¶Œí•˜ì‹¤ì ìœ„ì¹˜
+				jrYdMsg.setField("YD_DN_WR_LAYER"  , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LAYER"    ).getValue(0))); //ì•¼ë“œê¶Œí•˜ì‹¤ì ë‹¨
+				jrYdMsg.setField("YD_CRN_XAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_XAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Xì¶•
+				jrYdMsg.setField("YD_CRN_YAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_YAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Yì¶•
+				jrYdMsg.setField("YD_CRN_ZAXIS"    , slabUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ZAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Zì¶•
 				
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL009", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("DL".equals(trtDtlGp)) {
-				//±ÇÇÏÀ§Ä¡º¯°æ
-				jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(0))); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(0))); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getParam("YD_DN_WO_LOC"))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
+				//ê¶Œí•˜ìœ„ì¹˜ë³€ê²½
+				jrYdMsg.setField("YD_WRK_PROG_STAT", slabUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(0))); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				jrYdMsg.setField("YD_SCH_CD"       , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , slabUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("YD_WBOOK_ID"     , slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(0))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrYdMsg.setField("YD_DN_WO_LOC"    , slabUtils.trim(gdReq.getParam("YD_DN_WO_LOC"))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
 
 				jrRtn = this.updCrnSchDnWoLoc(jrYdMsg);
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtDtlGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtDtlGp + "] ì…ë‹ˆë‹¤.");
 			}
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -1157,15 +1157,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀåÈŞÁö°èÈ¹ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥íœ´ì§€ê³„íš ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCrnFixPlan(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀåÈŞÁö°èÈ¹ Á¶È¸[SlabYdJspSeEJB.getCrnFixPlan] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³µì¥íœ´ì§€ê³„íš ì¡°íšŒ[SlabYdJspSeEJB.getCrnFixPlan] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1187,15 +1187,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎº¸¼ö°èÈ¹°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ë³´ìˆ˜ê³„íšê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCcCrnFixPlanMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎº¸¼ö°èÈ¹°ü¸® Á¶È¸[SlabYdJspSeEJB.getCcCrnFixPlanMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ë³´ìˆ˜ê³„íšê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getCcCrnFixPlanMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1218,15 +1218,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ º¸¼ö°èÈ¹ ¼öÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ìˆ˜ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtCcCrnFixPlanUpd(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ º¸¼ö°èÈ¹ ¼öÁ¤[SlabYdJspSeEJB.trtCcCrnFixPlanUpd] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ìˆ˜ì •[SlabYdJspSeEJB.trtCcCrnFixPlanUpd] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1248,15 +1248,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ º¸¼ö°èÈ¹ »èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtCcCrnFixPlanDel(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ º¸¼ö°èÈ¹ »èÁ¦[SlabYdJspSeEJB.trtCcCrnFixPlanDel] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ì‚­ì œ[SlabYdJspSeEJB.trtCcCrnFixPlanDel] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1278,15 +1278,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå º° º¸¼ö¸í Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ ë³„ ë³´ìˆ˜ëª… ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtMaintName(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå º° º¸¼ö¸í Á¶È¸[SlabYdJspSeEJB.trtMaintName] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³µì¥ ë³„ ë³´ìˆ˜ëª… ì¡°íšŒ[SlabYdJspSeEJB.trtMaintName] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1309,15 +1309,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData insPausePlan(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ µî·Ï[SlabYdJspSeEJB.insPausePlan] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ë“±ë¡[SlabYdJspSeEJB.insPausePlan] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1338,15 +1338,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ »èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData delPausePlan(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ »èÁ¦[SlabYdJspSeEJB.delPausePlan] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ì‚­ì œ[SlabYdJspSeEJB.delPausePlan] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1367,27 +1367,27 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ ¿Ï·á µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ì™„ë£Œ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updPausePlan(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ ¿Ï·á µî·Ï[SlabYdJspSeEJB.updPausePlan] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ì™„ë£Œ ë“±ë¡[SlabYdJspSeEJB.updPausePlan] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//ÈŞÁö°èÈ¹ ¿¬ÁÖ½ÇÀû¿©ºÎ,½ÇÀûÀÏÀÚ µî·Ï
+			//íœ´ì§€ê³„íš ì—°ì£¼ì‹¤ì ì—¬ë¶€,ì‹¤ì ì¼ì ë“±ë¡
 			jspDao.updPausePlan(gdReq);
 			
-			//¿ÍÀÌ¾îº¸¼öÀÌ·Â ±âÁ¸ ½ÇÀû »èÁ¦
+			//ì™€ì´ì–´ë³´ìˆ˜ì´ë ¥ ê¸°ì¡´ ì‹¤ì  ì‚­ì œ
 			jspDao.updWireMaintHist(gdReq);
-			//¿ÍÀÌ¾îº¸¼öÀÌ·Â µî·Ï
+			//ì™€ì´ì–´ë³´ìˆ˜ì´ë ¥ ë“±ë¡
 			jspDao.insWireMaintHist(gdReq);
 			
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -1403,15 +1403,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎº° ÈŞÁöÄÚµå Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ë³„ íœ´ì§€ì½”ë“œ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtPauseCode(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎº° ÈŞÁöÄÚµå Á¶È¸[SlabYdJspSeEJB.trtPauseCode] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ë³„ íœ´ì§€ì½”ë“œ ì¡°íšŒ[SlabYdJspSeEJB.trtPauseCode] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1433,19 +1433,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * ¾Ğ¿¬Áö½ÃÁ¶È¸
+	 * ì••ì—°ì§€ì‹œì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÁ¶È¸ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¡°íšŒ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInq(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÁ¶È¸[SlabYdJspSeEJB.getMillWoInq] < " + gdReq.getNavigateValue();
+		String methodNm = "ì••ì—°ì§€ì‹œì¡°íšŒ[SlabYdJspSeEJB.getMillWoInq] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1461,15 +1461,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÁ¶È¸ Á¶È¸2
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¡°íšŒ ì¡°íšŒ2
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInq2(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÁ¶È¸[SlabYdJspSeEJB.getMillWoInq2] < " + gdReq.getNavigateValue();
+		String methodNm = "ì••ì—°ì§€ì‹œì¡°íšŒ[SlabYdJspSeEJB.getMillWoInq2] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1485,15 +1485,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÀÏº°Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¼ë³„ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInq3(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÀÏº°Á¶È¸[SlabYdJspSeEJB.getMillWoInq3] < " + gdReq.getNavigateValue();
+		String methodNm = "ì••ì—°ì§€ì‹œì¼ë³„ì¡°íšŒ[SlabYdJspSeEJB.getMillWoInq3] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1508,15 +1508,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ¿¹Á¤¾Ğ¿¬Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì˜ˆì •ì••ì—°ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInqSCH(GridData gdReq) throws DAOException {
-		String methodNm = "ÈÄÆÇ¿¹Á¤¾Ğ¿¬Á¶È¸[SlabYdJspSeEJB.getMillWoInqSCH] < " + gdReq.getNavigateValue();
+		String methodNm = "í›„íŒì˜ˆì •ì••ì—°ì¡°íšŒ[SlabYdJspSeEJB.getMillWoInqSCH] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1531,15 +1531,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInqMsg(GridData gdReq) throws DAOException {
-		String methodNm = "ÈÄÆÇ¾Ğ¿¬Áö½Ã¸Ş¼¼ÁöÁ¶È¸[SlabYdJspSeEJB.getMillWoInqMsg] < " + gdReq.getNavigateValue();
+		String methodNm = "í›„íŒì••ì—°ì§€ì‹œë©”ì„¸ì§€ì¡°íšŒ[SlabYdJspSeEJB.getMillWoInqMsg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1553,15 +1553,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 		}
 	}
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö Á¶È¸ by SEQNO
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ ì¡°íšŒ by SEQNO
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInqMsgBySeqNo(GridData gdReq) throws DAOException {
-		String methodNm = "ÈÄÆÇ¾Ğ¿¬Áö½Ã¸Ş¼¼ÁöÁ¶È¸[SlabYdJspSeEJB.getMillWoInqMsgBySeqNo] < " + gdReq.getNavigateValue();
+		String methodNm = "í›„íŒì••ì—°ì§€ì‹œë©”ì„¸ì§€ì¡°íšŒ[SlabYdJspSeEJB.getMillWoInqMsgBySeqNo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1575,15 +1575,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 		}
 	}
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMillWoInqMsgAll(GridData gdReq) throws DAOException {
-		String methodNm = "ÈÄÆÇ¾Ğ¿¬Áö½Ã¸Ş¼¼ÁöÀÌ·ÂÁ¶È¸[SlabYdJspSeEJB.getMillWoInqMsgAll] < " + gdReq.getNavigateValue();
+		String methodNm = "í›„íŒì••ì—°ì§€ì‹œë©”ì„¸ì§€ì´ë ¥ì¡°íšŒ[SlabYdJspSeEJB.getMillWoInqMsgAll] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1598,15 +1598,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö È®ÀÎ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ í™•ì¸
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData updMillWoInqMsg(GridData gdReq) throws DAOException {
-		String methodNm = "ÈÄÆÇ¾Ğ¿¬Áö½Ã¸Ş¼¼ÁöÈ®ÀÎ[SlabYdJspSeEJB.updMillWoInqMsg] < " + gdReq.getNavigateValue();
+		String methodNm = "í›„íŒì••ì—°ì§€ì‹œë©”ì„¸ì§€í™•ì¸[SlabYdJspSeEJB.updMillWoInqMsg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1623,52 +1623,52 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÁ¶È¸ DummyÀÌÀûÁö½Ã
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¡°íšŒ Dummyì´ì ì§€ì‹œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtMillWoInqDM(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÁ¶È¸ DummyÀÌÀûÁö½Ã[SlabYdJspSeEJB.trtMillWoInqDM] < " + gdReq.getNavigateValue();
+		String methodNm = "ì••ì—°ì§€ì‹œì¡°íšŒ Dummyì´ì ì§€ì‹œ[SlabYdJspSeEJB.trtMillWoInqDM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStrLoc   = ""; //¾ßµåÀúÀåÀ§Ä¡
-			String ydStkLyrNo = ""; //¾ßµåÀûÄ¡´Ü¹øÈ£
-			String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
+			String ydStrLoc   = ""; //ì•¼ë“œì €ì¥ìœ„ì¹˜
+			String ydStkLyrNo = ""; //ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+			String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
-			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//Å©·¹ÀÎ½ºÄÉÁÙ Á¤¸®¸¦ À§ÇÔ
+			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë¦¬ë¥¼ ìœ„í•¨
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//DummyÀÌÀûÁö½Ã ´ë»ó
+			//Dummyì´ì ì§€ì‹œ ëŒ€ìƒ
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			for (int ii = 0; ii < rowCnt; ii++) {
-				ydStrLoc   = slabUtils.trim(gdReq.getHeader("YD_STR_LOC"   ).getValue(ii));		//¾ßµåÀúÀåÀ§Ä¡
-				ydStkLyrNo = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));		//¾ßµåÀûÄ¡´Ü¹øÈ£
-				ydSchCd    = ydStrLoc.substring(0, 2) + "YD" + ydStrLoc.substring(2, 4) + "MM";	//¾ßµå½ºÄÉÁìÄÚµå
+				ydStrLoc   = slabUtils.trim(gdReq.getHeader("YD_STR_LOC"   ).getValue(ii));		//ì•¼ë“œì €ì¥ìœ„ì¹˜
+				ydStkLyrNo = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));		//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+				ydSchCd    = ydStrLoc.substring(0, 2) + "YD" + ydStrLoc.substring(2, 4) + "MM";	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 				
-				jrParam.setField("V_YD_SCH_CD"    , ydSchCd                 ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("V_YD_STK_COL_GP", ydStrLoc.substring(0, 6)); //¾ßµåÀûÄ¡¿­±¸ºĞ
-				jrParam.setField("V_YD_STK_BED_NO", ydStrLoc.substring(6, 8)); //¾ßµåÀûÄ¡Bed¹øÈ£
-				jrParam.setField("V_YD_STK_LYR_NO", ydStkLyrNo              ); //¾ßµåÀûÄ¡´Ü¹øÈ£
+				jrParam.setField("V_YD_SCH_CD"    , ydSchCd                 ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("V_YD_STK_COL_GP", ydStrLoc.substring(0, 6)); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+				jrParam.setField("V_YD_STK_BED_NO", ydStrLoc.substring(6, 8)); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+				jrParam.setField("V_YD_STK_LYR_NO", ydStkLyrNo              ); //ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
 
-				//ÀÛ¾÷¿¹¾à ´ë»óÀç·á Á¶È¸
+				//ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ë£Œ ì¡°íšŒ
 				JDTORecordSet jsWbMtl = jspDao.getMvStkWrkBookReg("DmMtl", jrParam);
 				
 				if (jsWbMtl.size() > 0) {
-					//ÀÛ¾÷¿¹¾àµî·Ï
+					//ì‘ì—…ì˜ˆì•½ë“±ë¡
 					jsMsg.addRecord(this.insMvstkWrkBook(jrParam, jsWbMtl));
 				}
 			}
 			
-			//Å©·¹ÀÎ »óÅÂ¿¡ µû¶ó Å©·¹ÀÎº° 1°³ÀÇ ½ºÄÉÁÙ¸¸ Àü¼Û
+			//í¬ë ˆì¸ ìƒíƒœì— ë”°ë¼ í¬ë ˆì¸ë³„ 1ê°œì˜ ìŠ¤ì¼€ì¤„ë§Œ ì „ì†¡
 			JDTORecord jrRtn = this.setCrnSchMsg(jsMsg, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -1683,78 +1683,78 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÁ¶È¸ º¸±ŞLotµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¡°íšŒ ë³´ê¸‰Lotë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtMillWoInqCL(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÁ¶È¸ º¸±ŞLotµî·Ï[SlabYdJspSeEJB.trtMillWoInqCL] < " + gdReq.getNavigateValue();
+		String methodNm = "ì••ì—°ì§€ì‹œì¡°íšŒ ë³´ê¸‰Lotë“±ë¡[SlabYdJspSeEJB.trtMillWoInqCL] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydSchCd  = slabUtils.trim(gdReq.getParam("V_YD_SCH_CD"));	//¾ßµå½ºÄÉÁìÄÚµå
-			String modifier = slabUtils.trim(gdReq.getParam("userid"     ));	//¼öÁ¤ÀÚ
+			String ydSchCd  = slabUtils.trim(gdReq.getParam("V_YD_SCH_CD"));	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String modifier = slabUtils.trim(gdReq.getParam("userid"     ));	//ìˆ˜ì •ì
 
 			if ("".equals(ydSchCd)) {
-				throw new Exception("½ºÄÉÁìÄÚµå°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			//¾ßµå½ºÄÉÁìÄÚµå Check
-			jrParam.setField("V_YD_SCH_CD", ydSchCd); //¾ßµå½ºÄÉÁìÄÚµå
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ Check
+			jrParam.setField("V_YD_SCH_CD", ydSchCd); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
-			//¾ßµå½ºÄÉÁì±İÁöÀ¯¹« Á¶È¸
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´ ì¡°íšŒ
 			JDTORecordSet jsChk = commDao.getStat("SchCd", jrParam);
 
 			if (jsChk.size() > 0) {
-				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
+				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
 
-				//½ºÄÉÁÙ ±İÁö¿©ºÎ Check
+				//ìŠ¤ì¼€ì¤„ ê¸ˆì§€ì—¬ë¶€ Check
 				if ("Y".equals(ydSchProhExn)) {
-					throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]´Â ±âµ¿±İÁö »óÅÂÀÔ´Ï´Ù.");
+					throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ëŠ” ê¸°ë™ê¸ˆì§€ ìƒíƒœì…ë‹ˆë‹¤.");
 				}
 			} else {
-				throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]ÀÇ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ì˜ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//¾ßµåÁØºñ½ºÄÉÁìID »ı¼º
+			//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID ìƒì„±
 			String ydPrepSchId = commDao.getSeqId(logId, methodNm, "PrepSch");
 
-			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //¾ßµåÁØºñ½ºÄÉÁìID
+			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
-			//¼±ÅÃµÈ ´ë»óÀç·Î LotÆí¼º
+			//ì„ íƒëœ ëŒ€ìƒì¬ë¡œ Lotí¸ì„±
 			if (rowCnt > 0) {
-				String ydStrLoc = "";	//¾ßµåÀúÀåÀ§Ä¡
+				String ydStrLoc = "";	//ì•¼ë“œì €ì¥ìœ„ì¹˜
 				String[][] arrMtl = new String[rowCnt][7];
 				
 				for (int ii = 0; ii < rowCnt; ii++) {
-					ydStrLoc = slabUtils.trim(gdReq.getHeader("YD_STR_LOC").getValue(ii));	//¾ßµåÀúÀåÀ§Ä¡
+					ydStrLoc = slabUtils.trim(gdReq.getHeader("YD_STR_LOC").getValue(ii));	//ì•¼ë“œì €ì¥ìœ„ì¹˜
 					
-					arrMtl[ii][0] = ydPrepSchId;													//¾ßµåÁØºñ½ºÄÉÁìID
-					arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii));			//Àç·á¹øÈ£
-					arrMtl[ii][2] = modifier;														//¼öÁ¤ÀÚ
-					arrMtl[ii][3] = modifier;														//¼öÁ¤ÀÚ
-					arrMtl[ii][4] = ydStrLoc.substring(0, 6);										//¾ßµåÀûÄ¡¿­±¸ºĞ
-					arrMtl[ii][5] = ydStrLoc.substring(6, 8);										//¾ßµåÀûÄ¡Bed¹øÈ£
-					arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//¾ßµåÀûÄ¡´Ü¹øÈ£
+					arrMtl[ii][0] = ydPrepSchId;													//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+					arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii));			//ì¬ë£Œë²ˆí˜¸
+					arrMtl[ii][2] = modifier;														//ìˆ˜ì •ì
+					arrMtl[ii][3] = modifier;														//ìˆ˜ì •ì
+					arrMtl[ii][4] = ydStrLoc.substring(0, 6);										//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					arrMtl[ii][5] = ydStrLoc.substring(6, 8);										//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+					arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
 				}
 				
-				//ÁØºñÀç·á µî·Ï
+				//ì¤€ë¹„ì¬ë£Œ ë“±ë¡
 				commDao.upsBatch("PrepMtl", arrMtl, logId, methodNm);
 
-				//ÁØºñ½ºÄÉÁì µî·Ï
+				//ì¤€ë¹„ìŠ¤ì¼€ì¥´ ë“±ë¡
 				commDao.insSlabYd("PrepSch", jrParam);
 			} else {
-				throw new Exception("º¸±ŞLotµî·ÏÇÒ Àç·á°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³´ê¸‰Lotë“±ë¡í•  ì¬ë£Œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -1769,19 +1769,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸®
+	 * í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCrnWrkBookMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸®[SlabYdJspSeEJB.getCrnWrkBookMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬[SlabYdJspSeEJB.getCrnWrkBookMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1797,255 +1797,255 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙÁ¡°Ë
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ì ê²€
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return String
 	 *      @throws DAOException
 	*/
 	public String chkCrnWrkBookMgtSC(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙÁ¡°Ë[SlabYdJspSeEJB.trtCrnWrkBookMgtSC] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ì ê²€[SlabYdJspSeEJB.trtCrnWrkBookMgtSC] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			
-//			String sApplyYnPI = ydPICommDAO.ApplyYnPI("", "chkCrnWrkBookMgtSC => Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙÁ¡°Ë", "APPPI0", "S", "*");			
+//			String sApplyYnPI = ydPICommDAO.ApplyYnPI("", "chkCrnWrkBookMgtSC => í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ì ê²€", "APPPI0", "S", "*");			
 			
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			//Á¡°Ë¿ë º¯¼ö
-			String ydWbookId       = "";	//¾ßµåÀÛ¾÷¿¹¾àID
-			String ydSchCd         = "";	//¾ßµå½ºÄÉÁìÄÚµå
-			String ydToLocGuide    = "";	//¾ßµåToÀ§Ä¡Guide
-			String toLocChkGp      = "";	//ToÀ§Ä¡ Á¡°ËÀ» À§ÇÑ ±¸ºĞ(G:ToÀ§Ä¡Guide, C:Â÷·®»óÂ÷, T:´ëÂ÷»óÂ÷, E:¼³ºñºÒÃâ, Z:±âÅ¸)
-			String toLocChkRst     = "";	//ToÀ§Ä¡Á¡°Ë°á°ú
-			String ydAimRtGp       = "";	//¾ßµå¸ñÇ¥Çà¼±±¸ºĞ
-			String ydCarUseGp      = "";	//¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-			String trnEqpCd        = "";	//¿î¼ÛÀåºñÄÚµå
-			String carNo           = "";	//Â÷·®¹øÈ£
-			String cardNo          = "";	//Ä«µå¹øÈ£
-			String ydSchProhExn    = "";	//¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
-			String ydWrkPlanCrn    = "";	//¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-			String ydEqpStatPln    = "";	//¾ßµå¼³ºñ»óÅÂ(ÀÛ¾÷°èÈ¹Å©·¹ÀÎ)
-			String ydEqpWrkModePln = "";	//¾ßµå¼³ºñÀÛ¾÷Mode(ÀÛ¾÷°èÈ¹Å©·¹ÀÎ)
-			String ydWrkCrn        = "";	//¾ßµåÀÛ¾÷Å©·¹ÀÎ
-			String ydEqpStatWrk    = "";	//¾ßµå¼³ºñ»óÅÂ(ÀÛ¾÷Å©·¹ÀÎ)
-			String ydEqpWrkModeWrk = "";	//¾ßµå¼³ºñÀÛ¾÷Mode(ÀÛ¾÷Å©·¹ÀÎ)
-			String ydAltCrn        = "";	//¾ßµå´ëÃ¼Å©·¹ÀÎ
-			String ydEqpStatAlt    = "";	//¾ßµå¼³ºñ»óÅÂ(´ëÃ¼Å©·¹ÀÎ)
-			String ydEqpWrkModeAlt = "";	//¾ßµå¼³ºñÀÛ¾÷Mode(´ëÃ¼Å©·¹ÀÎ)
-			String ydCurrBayGp     = "";	//¾ßµåÇöÀçµ¿±¸ºĞ(´ëÂ÷)
-			String cmDupYn         = "";	//Å©·¹ÀÎ½ºÄÉÁÙ Àç·áÁßº¹¿©ºÎ
-			String clDupGp         = "";	//Å©·¹ÀÎ½ºÄÉÁÙ ÀúÀåÀ§Ä¡Áßº¹¿©ºÎ
-			int ttMtlSh            = 0;		//ÀüÃ¼ Àç·á¸Å¼ö
-			int wmMtlSh            = 0;		//ÀÛ¾÷¿¹¾à Àç·á¸Å¼ö
-			int stMtlSh            = 0;		//ÀúÀåÇ° Àç·á¸Å¼ö
-			int slMtlSh            = 0;		//ÀûÄ¡´Ü Àç·á¸Å¼ö
-			int statCSh            = 0;		//ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö(¾ßµåÀûÄ¡´ÜÀç·á»óÅÂ°¡ ÀûÄ¡ Áß[C] ÀÎ Àç·á¼ö)
-			int abLocSh            = 0;		//ÀúÀåÀ§Ä¡ÀÌ»ó Àç·á¸Å¼ö
+			//ì ê²€ìš© ë³€ìˆ˜
+			String ydWbookId       = "";	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydSchCd         = "";	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydToLocGuide    = "";	//ì•¼ë“œToìœ„ì¹˜Guide
+			String toLocChkGp      = "";	//Toìœ„ì¹˜ ì ê²€ì„ ìœ„í•œ êµ¬ë¶„(G:Toìœ„ì¹˜Guide, C:ì°¨ëŸ‰ìƒì°¨, T:ëŒ€ì°¨ìƒì°¨, E:ì„¤ë¹„ë¶ˆì¶œ, Z:ê¸°íƒ€)
+			String toLocChkRst     = "";	//Toìœ„ì¹˜ì ê²€ê²°ê³¼
+			String ydAimRtGp       = "";	//ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„
+			String ydCarUseGp      = "";	//ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+			String trnEqpCd        = "";	//ìš´ì†¡ì¥ë¹„ì½”ë“œ
+			String carNo           = "";	//ì°¨ëŸ‰ë²ˆí˜¸
+			String cardNo          = "";	//ì¹´ë“œë²ˆí˜¸
+			String ydSchProhExn    = "";	//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
+			String ydWrkPlanCrn    = "";	//ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+			String ydEqpStatPln    = "";	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ì‘ì—…ê³„íší¬ë ˆì¸)
+			String ydEqpWrkModePln = "";	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ì‘ì—…ê³„íší¬ë ˆì¸)
+			String ydWrkCrn        = "";	//ì•¼ë“œì‘ì—…í¬ë ˆì¸
+			String ydEqpStatWrk    = "";	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ì‘ì—…í¬ë ˆì¸)
+			String ydEqpWrkModeWrk = "";	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ì‘ì—…í¬ë ˆì¸)
+			String ydAltCrn        = "";	//ì•¼ë“œëŒ€ì²´í¬ë ˆì¸
+			String ydEqpStatAlt    = "";	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ëŒ€ì²´í¬ë ˆì¸)
+			String ydEqpWrkModeAlt = "";	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ëŒ€ì²´í¬ë ˆì¸)
+			String ydCurrBayGp     = "";	//ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ëŒ€ì°¨)
+			String cmDupYn         = "";	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ë£Œì¤‘ë³µì—¬ë¶€
+			String clDupGp         = "";	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì €ì¥ìœ„ì¹˜ì¤‘ë³µì—¬ë¶€
+			int ttMtlSh            = 0;		//ì „ì²´ ì¬ë£Œë§¤ìˆ˜
+			int wmMtlSh            = 0;		//ì‘ì—…ì˜ˆì•½ ì¬ë£Œë§¤ìˆ˜
+			int stMtlSh            = 0;		//ì €ì¥í’ˆ ì¬ë£Œë§¤ìˆ˜
+			int slMtlSh            = 0;		//ì ì¹˜ë‹¨ ì¬ë£Œë§¤ìˆ˜
+			int statCSh            = 0;		//ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜(ì•¼ë“œì ì¹˜ë‹¨ì¬ë£Œìƒíƒœê°€ ì ì¹˜ ì¤‘[C] ì¸ ì¬ë£Œìˆ˜)
+			int abLocSh            = 0;		//ì €ì¥ìœ„ì¹˜ì´ìƒ ì¬ë£Œë§¤ìˆ˜
 			
-			String trtGp           = "";	//Ã³¸®±¸ºĞ
-			String trtMsg          = "";	//Ã³¸®¸Ş¼¼Áö
-			boolean chkRst         = false;	//Á¡°Ë°á°ú
-			StringBuffer sbMsg     = new StringBuffer();	//Á¡°ËMessage
+			String trtGp           = "";	//ì²˜ë¦¬êµ¬ë¶„
+			String trtMsg          = "";	//ì²˜ë¦¬ë©”ì„¸ì§€
+			boolean chkRst         = false;	//ì ê²€ê²°ê³¼
+			StringBuffer sbMsg     = new StringBuffer();	//ì ê²€Message
 			
-			String interlockWrkYn = "N";    //ÀÎÅÍ¶ô ±¸°£ ÀÛ¾÷ ¿©ºÎ
-			String upperWrkYn = "N"; //»ó´ÜÀç·á ÀÛ¾÷ ¿©ºÎ
-			String narrowSlabYn = "N"; //ÇùÆø½½¶óºê 2ÈÄÆÇ 4,5ÇÈ¾÷ º¸±Ş ¿©ºÎ
+			String interlockWrkYn = "N";    //ì¸í„°ë½ êµ¬ê°„ ì‘ì—… ì—¬ë¶€
+			String upperWrkYn = "N"; //ìƒë‹¨ì¬ë£Œ ì‘ì—… ì—¬ë¶€
+			String narrowSlabYn = "N"; //í˜‘í­ìŠ¬ë¼ë¸Œ 2í›„íŒ 4,5í”½ì—… ë³´ê¸‰ ì—¬ë¶€
 			
 			String planCrnWrkAbleYn = "N";
 			String wrkCrnWrkAbleYn = "N";
 			String artCrnWrkAbleYn = "N";
 			
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			JDTORecordSet jsChk = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, "");
 			
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			for (int ii = 0; ii < rowCnt; ii++) {
 				ydWbookId = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));
 
-				chkRst = true;	//Á¡°Ë°á°ú
-				sbMsg  = sbMsg.append((ii + 1) + ". ÀÛ¾÷¿¹¾àID - " + ydWbookId + "\n");
+				chkRst = true;	//ì ê²€ê²°ê³¼
+				sbMsg  = sbMsg.append((ii + 1) + ". ì‘ì—…ì˜ˆì•½ID - " + ydWbookId + "\n");
 
-				//Å©·¹ÀÎ½ºÄÉÁÙ »óÅÂÁ¤º¸ Á¶È¸
-				jrParam.setField("V_YD_WBOOK_ID", ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìƒíƒœì •ë³´ ì¡°íšŒ
+				jrParam.setField("V_YD_WBOOK_ID", ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 				jsChk = schDao.getYDYDJ400("Stat", jrParam);
 
 				if (jsChk.size() <= 0) {
 					chkRst = false;
-					sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾à Á¤º¸ ¾øÀ½\n\n");
+					sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ ì •ë³´ ì—†ìŒ\n\n");
 					continue;
 				} else {
 					JDTORecord jrChk = jsChk.getRecord(0);
 
-					ydSchCd         = slabUtils.trim(jrChk.getFieldString("YD_SCH_CD"          ));	//¾ßµå½ºÄÉÁìÄÚµå
-					ydToLocGuide    = slabUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE"    ));	//¾ßµåToÀ§Ä¡Guide
-					toLocChkGp      = slabUtils.trim(jrChk.getFieldString("TO_LOC_CHK_GP"      ));	//ToÀ§Ä¡Á¡°Ë±¸ºĞ
-					ydAimRtGp       = slabUtils.trim(jrChk.getFieldString("YD_AIM_RT_GP"       ));	//¾ßµå¸ñÇ¥Çà¼±±¸ºĞ
-					ydCarUseGp      = slabUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP"      ));	//¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-				    trnEqpCd        = slabUtils.trim(jrChk.getFieldString("TRN_EQP_CD"         ));	//¿î¼ÛÀåºñÄÚµå
-					carNo           = slabUtils.trim(jrChk.getFieldString("CAR_NO"             ));	//Â÷·®¹øÈ£
-					cardNo          = slabUtils.trim(jrChk.getFieldString("CARD_NO"            ));	//Ä«µå¹øÈ£
-					ydSchProhExn    = slabUtils.trim(jrChk.getFieldString("YD_SCH_PROH_EXN"    ));	//¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
-					ydWrkPlanCrn    = slabUtils.trim(jrChk.getFieldString("YD_WRK_PLAN_CRN"    ));	//¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-					ydEqpStatPln    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_PLN"    ));	//¾ßµå¼³ºñ»óÅÂ(ÀÛ¾÷°èÈ¹Å©·¹ÀÎ)
-					ydEqpWrkModePln = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_PLN"));	//¾ßµå¼³ºñÀÛ¾÷Mode(ÀÛ¾÷°èÈ¹Å©·¹ÀÎ)
-					ydWrkCrn        = slabUtils.trim(jrChk.getFieldString("YD_WRK_CRN"         ));	//¾ßµåÀÛ¾÷Å©·¹ÀÎ
-					ydEqpStatWrk    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_WRK"    ));	//¾ßµå¼³ºñ»óÅÂ(ÀÛ¾÷Å©·¹ÀÎ)
-					ydEqpWrkModeWrk = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_WRK"));	//¾ßµå¼³ºñÀÛ¾÷Mode(ÀÛ¾÷Å©·¹ÀÎ)
-					ydAltCrn        = slabUtils.trim(jrChk.getFieldString("YD_ALT_CRN"         ));	//¾ßµå´ëÃ¼Å©·¹ÀÎ
-					ydEqpStatAlt    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//¾ßµå¼³ºñ»óÅÂ(´ëÃ¼Å©·¹ÀÎ)
-					ydEqpWrkModeAlt = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//¾ßµå¼³ºñÀÛ¾÷Mode(´ëÃ¼Å©·¹ÀÎ)
-					ydCurrBayGp     = slabUtils.trim(jrChk.getFieldString("YD_CURR_BAY_GP"     ));	//¾ßµåÇöÀçµ¿±¸ºĞ(´ëÂ÷)
-					cmDupYn         = slabUtils.trim(jrChk.getFieldString("CM_DUP_YN"          ));	//Å©·¹ÀÎ½ºÄÉÁÙ Àç·áÁßº¹¿©ºÎ
-					clDupGp         = slabUtils.trim(jrChk.getFieldString("CL_DUP_GP"          ));	//Å©·¹ÀÎ½ºÄÉÁÙ ÀúÀåÀ§Ä¡Áßº¹¿©ºÎ
-					ttMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("TT_MTL_SH"),"0"));	//ÀüÃ¼ Àç·á¸Å¼ö
-					wmMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("WM_MTL_SH"),"0"));	//ÀÛ¾÷¿¹¾à Àç·á¸Å¼ö
-					stMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("ST_MTL_SH"),"0"));	//ÀúÀåÇ° Àç·á¸Å¼ö
-					slMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("SL_MTL_SH"),"0"));	//ÀûÄ¡´Ü Àç·á¸Å¼ö
-					statCSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("STAT_C_SH"),"0"));	//ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö(¾ßµåÀûÄ¡´ÜÀç·á»óÅÂ°¡ ÀûÄ¡ Áß[C] ÀÎ Àç·á¼ö)
-					abLocSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("AB_LOC_SH"),"0"));	//ÀúÀåÀ§Ä¡ÀÌ»ó Àç·á¸Å¼ö
+					ydSchCd         = slabUtils.trim(jrChk.getFieldString("YD_SCH_CD"          ));	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					ydToLocGuide    = slabUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE"    ));	//ì•¼ë“œToìœ„ì¹˜Guide
+					toLocChkGp      = slabUtils.trim(jrChk.getFieldString("TO_LOC_CHK_GP"      ));	//Toìœ„ì¹˜ì ê²€êµ¬ë¶„
+					ydAimRtGp       = slabUtils.trim(jrChk.getFieldString("YD_AIM_RT_GP"       ));	//ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„
+					ydCarUseGp      = slabUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP"      ));	//ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+				    trnEqpCd        = slabUtils.trim(jrChk.getFieldString("TRN_EQP_CD"         ));	//ìš´ì†¡ì¥ë¹„ì½”ë“œ
+					carNo           = slabUtils.trim(jrChk.getFieldString("CAR_NO"             ));	//ì°¨ëŸ‰ë²ˆí˜¸
+					cardNo          = slabUtils.trim(jrChk.getFieldString("CARD_NO"            ));	//ì¹´ë“œë²ˆí˜¸
+					ydSchProhExn    = slabUtils.trim(jrChk.getFieldString("YD_SCH_PROH_EXN"    ));	//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
+					ydWrkPlanCrn    = slabUtils.trim(jrChk.getFieldString("YD_WRK_PLAN_CRN"    ));	//ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+					ydEqpStatPln    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_PLN"    ));	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ì‘ì—…ê³„íší¬ë ˆì¸)
+					ydEqpWrkModePln = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_PLN"));	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ì‘ì—…ê³„íší¬ë ˆì¸)
+					ydWrkCrn        = slabUtils.trim(jrChk.getFieldString("YD_WRK_CRN"         ));	//ì•¼ë“œì‘ì—…í¬ë ˆì¸
+					ydEqpStatWrk    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_WRK"    ));	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ì‘ì—…í¬ë ˆì¸)
+					ydEqpWrkModeWrk = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_WRK"));	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ì‘ì—…í¬ë ˆì¸)
+					ydAltCrn        = slabUtils.trim(jrChk.getFieldString("YD_ALT_CRN"         ));	//ì•¼ë“œëŒ€ì²´í¬ë ˆì¸
+					ydEqpStatAlt    = slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//ì•¼ë“œì„¤ë¹„ìƒíƒœ(ëŒ€ì²´í¬ë ˆì¸)
+					ydEqpWrkModeAlt = slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ëŒ€ì²´í¬ë ˆì¸)
+					ydCurrBayGp     = slabUtils.trim(jrChk.getFieldString("YD_CURR_BAY_GP"     ));	//ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ëŒ€ì°¨)
+					cmDupYn         = slabUtils.trim(jrChk.getFieldString("CM_DUP_YN"          ));	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ë£Œì¤‘ë³µì—¬ë¶€
+					clDupGp         = slabUtils.trim(jrChk.getFieldString("CL_DUP_GP"          ));	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì €ì¥ìœ„ì¹˜ì¤‘ë³µì—¬ë¶€
+					ttMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("TT_MTL_SH"),"0"));	//ì „ì²´ ì¬ë£Œë§¤ìˆ˜
+					wmMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("WM_MTL_SH"),"0"));	//ì‘ì—…ì˜ˆì•½ ì¬ë£Œë§¤ìˆ˜
+					stMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("ST_MTL_SH"),"0"));	//ì €ì¥í’ˆ ì¬ë£Œë§¤ìˆ˜
+					slMtlSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("SL_MTL_SH"),"0"));	//ì ì¹˜ë‹¨ ì¬ë£Œë§¤ìˆ˜
+					statCSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("STAT_C_SH"),"0"));	//ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜(ì•¼ë“œì ì¹˜ë‹¨ì¬ë£Œìƒíƒœê°€ ì ì¹˜ ì¤‘[C] ì¸ ì¬ë£Œìˆ˜)
+					abLocSh         = Integer.parseInt(slabUtils.nvl(jrChk.getFieldString("AB_LOC_SH"),"0"));	//ì €ì¥ìœ„ì¹˜ì´ìƒ ì¬ë£Œë§¤ìˆ˜
 					
-					interlockWrkYn         = slabUtils.nvl(jrChk.getFieldString("INTERLOCK_WRK_YN"),"N");	//ÀÎÅÍ¶ô ±¸°£ ÀÛ¾÷ ¿©ºÎ
-					upperWrkYn             = slabUtils.nvl(jrChk.getFieldString("UPPER_WRK_YN"),"N");//»ó´ÜÀç·á ÀÛ¾÷¿¹¾à ¿©ºÎ
-					narrowSlabYn           = slabUtils.nvl(jrChk.getFieldString("NARROW_SLAB_YN"),"N");//ÇùÆø½½¶óºê 2ÈÄÆÇ 4,5ÇÈ¾÷ º¸±Ş ¿©ºÎ
+					interlockWrkYn         = slabUtils.nvl(jrChk.getFieldString("INTERLOCK_WRK_YN"),"N");	//ì¸í„°ë½ êµ¬ê°„ ì‘ì—… ì—¬ë¶€
+					upperWrkYn             = slabUtils.nvl(jrChk.getFieldString("UPPER_WRK_YN"),"N");//ìƒë‹¨ì¬ë£Œ ì‘ì—…ì˜ˆì•½ ì—¬ë¶€
+					narrowSlabYn           = slabUtils.nvl(jrChk.getFieldString("NARROW_SLAB_YN"),"N");//í˜‘í­ìŠ¬ë¼ë¸Œ 2í›„íŒ 4,5í”½ì—… ë³´ê¸‰ ì—¬ë¶€
 					
-					planCrnWrkAbleYn	    = slabUtils.nvl(jrChk.getFieldString("PLAN_CRN_WRK_ABLE_YN"),"N");//ÀÛ¾÷°èÈ¹Å©·¹ÀÎ ÀÛ¾÷¿¹¾àÀç·á ÀÛ¾÷ °¡´É ¿©ºÎ
-					wrkCrnWrkAbleYn	   		= slabUtils.nvl(jrChk.getFieldString("WRK_CRN_WRK_ABLE_YN"),"N");//ÀÛ¾÷Å©·¹ÀÎ ÀÛ¾÷¿¹¾àÀç·á ÀÛ¾÷ °¡´É ¿©ºÎ
-					artCrnWrkAbleYn	   		= slabUtils.nvl(jrChk.getFieldString("ALT_CRN_WRK_ABLE_YN"),"N");//´ëÃ¼Å©·¹ÀÎ ÀÛ¾÷¿¹¾àÀç·á ÀÛ¾÷ °¡´É ¿©ºÎ
+					planCrnWrkAbleYn	    = slabUtils.nvl(jrChk.getFieldString("PLAN_CRN_WRK_ABLE_YN"),"N");//ì‘ì—…ê³„íší¬ë ˆì¸ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‘ì—… ê°€ëŠ¥ ì—¬ë¶€
+					wrkCrnWrkAbleYn	   		= slabUtils.nvl(jrChk.getFieldString("WRK_CRN_WRK_ABLE_YN"),"N");//ì‘ì—…í¬ë ˆì¸ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‘ì—… ê°€ëŠ¥ ì—¬ë¶€
+					artCrnWrkAbleYn	   		= slabUtils.nvl(jrChk.getFieldString("ALT_CRN_WRK_ABLE_YN"),"N");//ëŒ€ì²´í¬ë ˆì¸ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‘ì—… ê°€ëŠ¥ ì—¬ë¶€
 					
-					slabUtils.printLog(logId, trtMsg + "ÀÎÅÍ¶ô±¸¿ªÀÛ¾÷¿©ºÎ[" + interlockWrkYn + "], »ó´ÜÀç·á ÀÛ¾÷¿¹¾à ¿©ºÎ [" + upperWrkYn + "]", "SL");
+					slabUtils.printLog(logId, trtMsg + "ì¸í„°ë½êµ¬ì—­ì‘ì—…ì—¬ë¶€[" + interlockWrkYn + "], ìƒë‹¨ì¬ë£Œ ì‘ì—…ì˜ˆì•½ ì—¬ë¶€ [" + upperWrkYn + "]", "SL");
 					
 					
-					//½ºÄÉÁìÄÚµå Check
+					//ìŠ¤ì¼€ì¥´ì½”ë“œ Check
 					if ("".equals(ydSchProhExn)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ½ºÄÉÁìÄÚµå[" + ydSchCd + "] Á¤º¸ ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "] ì •ë³´ ì—†ìŒ\n");
 					} else if ("Y".equals(ydSchProhExn)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ½ºÄÉÁìÄÚµå[" + ydSchCd + "] ±âµ¿±İÁö\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "] ê¸°ë™ê¸ˆì§€\n");
 					} else {
-						sbMsg  = sbMsg.append("   ¢¹ ½ºÄÉÁìÄÚµå[" + ydSchCd + "] ±âµ¿°¡´É\n");
+						sbMsg  = sbMsg.append("   â–· ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "] ê¸°ë™ê°€ëŠ¥\n");
 					}
 					
-					//Å©·¹ÀÎ Check
+					//í¬ë ˆì¸ Check
 					if (!"".equals(ydWrkPlanCrn) && !"B".equals(ydEqpStatPln) && "1".equals(ydEqpWrkModePln) && "Y".equals(planCrnWrkAbleYn) ) {
-						//ÀÛ¾÷¿¹¾à ÁöÁ¤Å©·¹ÀÎ : ÃÖ¿ì¼± ÁöÁ¤
-						sbMsg  = sbMsg.append("   ¢¹ ÀÛ¾÷¿¹¾à ÁöÁ¤Å©·¹ÀÎ[" + ydWrkPlanCrn + ", " + ydEqpStatPln + "] Á¤»ó\n");
+						//ì‘ì—…ì˜ˆì•½ ì§€ì •í¬ë ˆì¸ : ìµœìš°ì„  ì§€ì •
+						sbMsg  = sbMsg.append("   â–· ì‘ì—…ì˜ˆì•½ ì§€ì •í¬ë ˆì¸[" + ydWrkPlanCrn + ", " + ydEqpStatPln + "] ì •ìƒ\n");
 					} else if (!"".equals(ydWrkCrn) && !"B".equals(ydEqpStatWrk) && "1".equals(ydEqpWrkModeWrk) && "Y".equals(wrkCrnWrkAbleYn)) {
-						//ÁÖÀÛ¾÷Å©·¹ÀÎ
-						sbMsg  = sbMsg.append("   ¢¹ ÁÖÀÛ¾÷ Å©·¹ÀÎ[" + ydWrkCrn + ", " + ydEqpStatWrk + "] Á¤»ó\n");
+						//ì£¼ì‘ì—…í¬ë ˆì¸
+						sbMsg  = sbMsg.append("   â–· ì£¼ì‘ì—… í¬ë ˆì¸[" + ydWrkCrn + ", " + ydEqpStatWrk + "] ì •ìƒ\n");
 					} else {
-						//º¸Á¶ÀÛ¾÷Å©·¹ÀÎ : ÁÖÀÛ¾÷Å©·¹ÀÎÀÌ °íÀåÀÌ°Å³ª Off-Line ÀÌ¸é
-						trtMsg = "ÁÖÀÛ¾÷ Å©·¹ÀÎ[" + ydWrkCrn + "] ";
+						//ë³´ì¡°ì‘ì—…í¬ë ˆì¸ : ì£¼ì‘ì—…í¬ë ˆì¸ì´ ê³ ì¥ì´ê±°ë‚˜ Off-Line ì´ë©´
+						trtMsg = "ì£¼ì‘ì—… í¬ë ˆì¸[" + ydWrkCrn + "] ";
 						
 						if ("".equals(ydWrkCrn)) {
-							trtMsg = trtMsg + "Á¤º¸ ¾øÀ½";
+							trtMsg = trtMsg + "ì •ë³´ ì—†ìŒ";
 						} else if ("B".equals(ydEqpStatWrk)) {
-							trtMsg = trtMsg + "°íÀå";
+							trtMsg = trtMsg + "ê³ ì¥";
 						} else if (!"1".equals(ydEqpWrkModeWrk)) {
 							trtMsg = trtMsg + "Off-Line";
 						} else if ("N".equals(wrkCrnWrkAbleYn)){
-							trtMsg = trtMsg + "ÀÛ¾÷¿¹¾à Àç·á ÀÛ¾÷ ºÒ°¡";
+							trtMsg = trtMsg + "ì‘ì—…ì˜ˆì•½ ì¬ë£Œ ì‘ì—… ë¶ˆê°€";
 						}
 						
 						if ("".equals(ydAltCrn)) {
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + ", º¸Á¶ÀÛ¾÷ Å©·¹ÀÎ Á¤º¸ ¾øÀ½\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + ", ë³´ì¡°ì‘ì—… í¬ë ˆì¸ ì •ë³´ ì—†ìŒ\n");
 						} else if ("B".equals(ydEqpStatAlt)) {
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + ", º¸Á¶ÀÛ¾÷ Å©·¹ÀÎ[" + ydAltCrn + "] °íÀå\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + ", ë³´ì¡°ì‘ì—… í¬ë ˆì¸[" + ydAltCrn + "] ê³ ì¥\n");
 						} else if (!"1".equals(ydEqpWrkModeAlt)) {
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + ", º¸Á¶ÀÛ¾÷ Å©·¹ÀÎ[" + ydAltCrn + "] Off-Line\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + ", ë³´ì¡°ì‘ì—… í¬ë ˆì¸[" + ydAltCrn + "] Off-Line\n");
 						} else if ("N".equals(artCrnWrkAbleYn)){
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + ", º¸Á¶ÀÛ¾÷ Å©·¹ÀÎ[" + ydAltCrn + "] ÀÛ¾÷¿¹¾à Àç·á ÀÛ¾÷ ºÒ°¡\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + ", ë³´ì¡°ì‘ì—… í¬ë ˆì¸[" + ydAltCrn + "] ì‘ì—…ì˜ˆì•½ ì¬ë£Œ ì‘ì—… ë¶ˆê°€\n");
 						}
 						else {
 						
-							sbMsg  = sbMsg.append("   ¢¹ " + trtMsg + "ÀÌ¹Ç·Î º¸Á¶ÀÛ¾÷ Å©·¹ÀÎ[" + ydAltCrn + ", " + ydEqpStatAlt + "]À¸·Î ´ëÃ¼\n");
+							sbMsg  = sbMsg.append("   â–· " + trtMsg + "ì´ë¯€ë¡œ ë³´ì¡°ì‘ì—… í¬ë ˆì¸[" + ydAltCrn + ", " + ydEqpStatAlt + "]ìœ¼ë¡œ ëŒ€ì²´\n");
 						}
 					}
 
-					//ÀÛ¾÷¿¹¾àÀç·á Check
+					//ì‘ì—…ì˜ˆì•½ì¬ë£Œ Check
 					if (wmMtlSh == 0) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á Á¤º¸ ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì •ë³´ ì—†ìŒ\n");
 					} else if (wmMtlSh != ttMtlSh) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á ÀûÄ¡´Ü Áßº¹ µî·Ï [ÀÛ¾÷¿¹¾à:" + wmMtlSh + ", ÀûÄ¡´Ü:" + ttMtlSh + "]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì ì¹˜ë‹¨ ì¤‘ë³µ ë“±ë¡ [ì‘ì—…ì˜ˆì•½:" + wmMtlSh + ", ì ì¹˜ë‹¨:" + ttMtlSh + "]\n");
 					} else if (wmMtlSh != slMtlSh) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á ÀûÄ¡´Ü Á¤º¸ ÀÌ»ó [" + (wmMtlSh - slMtlSh) + "¸Å]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì ì¹˜ë‹¨ ì •ë³´ ì´ìƒ [" + (wmMtlSh - slMtlSh) + "ë§¤]\n");
 					} else if (wmMtlSh != statCSh) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á ÀûÄ¡Áß[C]ÀÌ ¾Æ´Ô [" + (wmMtlSh - statCSh) + "¸Å]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì ì¹˜ì¤‘[C]ì´ ì•„ë‹˜ [" + (wmMtlSh - statCSh) + "ë§¤]\n");
 					} else if (wmMtlSh != stMtlSh) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á ÀúÀåÇ° Á¤º¸ ÀÌ»ó [" + (wmMtlSh - stMtlSh) + "¸Å]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì €ì¥í’ˆ ì •ë³´ ì´ìƒ [" + (wmMtlSh - stMtlSh) + "ë§¤]\n");
 					} else if (abLocSh > 0) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á ÇöÀçÀ§Ä¡ ÀÌ»ó [" + abLocSh + "¸Å]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ í˜„ì¬ìœ„ì¹˜ ì´ìƒ [" + abLocSh + "ë§¤]\n");
 					} else {
-						sbMsg  = sbMsg.append("   ¢¹ ÀÛ¾÷¿¹¾àÀç·á[" + wmMtlSh + "¸Å] ÀûÄ¡´Ü ¹× ÀúÀåÇ° Á¤º¸ Á¤»ó\n");
+						sbMsg  = sbMsg.append("   â–· ì‘ì—…ì˜ˆì•½ì¬ë£Œ[" + wmMtlSh + "ë§¤] ì ì¹˜ë‹¨ ë° ì €ì¥í’ˆ ì •ë³´ ì •ìƒ\n");
 					}
 					
-					//±â µî·Ï Å©·¹ÀÎ½ºÄÉÁÙ Check
+					//ê¸° ë“±ë¡ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Check
 					if ("Y".equals(cmDupYn)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á°¡ ±â µî·ÏµÈ Å©·¹ÀÎÀÛ¾÷Àç·á¿Í Áßº¹\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ì‘ì—…ì¬ë£Œì™€ ì¤‘ë³µ\n");
 					} else if ("1".equals(clDupGp)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±ÇÇÏÀ§Ä¡¿Í Áßº¹\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œí•˜ìœ„ì¹˜ì™€ ì¤‘ë³µ\n");
 					} else if ("2".equals(clDupGp)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±Ç»óÀ§Ä¡¿Í Áßº¹\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œìƒìœ„ì¹˜ì™€ ì¤‘ë³µ\n");
 					} else {
-						sbMsg = sbMsg.append("   ¢¹ ÀÛ¾÷¿¹¾àÀç·á[" + wmMtlSh + "¸Å] Å©·¹ÀÎ½ºÄÉÁì µî·Ï¿©ºÎ ¹× ÇöÀçÀ§Ä¡ Á¡°Ë Á¤»ó\n");
+						sbMsg = sbMsg.append("   â–· ì‘ì—…ì˜ˆì•½ì¬ë£Œ[" + wmMtlSh + "ë§¤] í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ë“±ë¡ì—¬ë¶€ ë° í˜„ì¬ìœ„ì¹˜ ì ê²€ ì •ìƒ\n");
 					}
 					
 					if ("Y".equals(interlockWrkYn)) {
 						chkRst = false;
-						sbMsg = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·áÀÇ ±Ç»óÀ§Ä¡ È¤Àº ToÀ§Ä¡°¡ Å©·¹ÀÎ Interlock ±¸°£\n");
+						sbMsg = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ ê¶Œìƒìœ„ì¹˜ í˜¹ì€ Toìœ„ì¹˜ê°€ í¬ë ˆì¸ Interlock êµ¬ê°„\n");
 					}
 					
 					if("Y".equals(upperWrkYn)){
 						chkRst = false;
-						sbMsg = sbMsg.append("   ¢º ¿À·ù > ÀÛ¾÷¿¹¾àÀç·á »ó´Ü¿¡ ´Ù¸¥ ÀÛ¾÷¿¹¾à °É·ÁÀÖ´Â Àç·á Á¸Àç\n");
+						sbMsg = sbMsg.append("   â–¶ ì˜¤ë¥˜ > ì‘ì—…ì˜ˆì•½ì¬ë£Œ ìƒë‹¨ì— ë‹¤ë¥¸ ì‘ì—…ì˜ˆì•½ ê±¸ë ¤ìˆëŠ” ì¬ë£Œ ì¡´ì¬\n");
 					}
 					
 					if("Y".equals(narrowSlabYn)){
 						chkRst = false;
-						sbMsg = sbMsg.append("   ¢º ¿À·ù > : ÇùÆø ½½¶óºê 2ÈÄÆÇ 4,5¹ø ÇÈ¾÷ Bed »ç¿ë ºÒ°¡\n");
+						sbMsg = sbMsg.append("   â–¶ ì˜¤ë¥˜ > : í˜‘í­ ìŠ¬ë¼ë¸Œ 2í›„íŒ 4,5ë²ˆ í”½ì—… Bed ì‚¬ìš© ë¶ˆê°€\n");
 					}
 				}
 
-				//ToÀ§Ä¡ Check
+				//Toìœ„ì¹˜ Check
 				trtGp = "";
 				if ("G".equals(toLocChkGp)) {
-					//¾ßµåToÀ§Ä¡Guide °ªÀÌ ÀÖ°í ÀÛ¾÷ ¾ßµåµ¿ÀÌ °°À» °æ¿ì ¾ßµåToÀ§Ä¡Guide·Î 
-					//PU, DP, PI ºÒÃâÀ§Ä¡¿¡ Àç·á°¡ ÀÖ°Å³ª, ´Ü¼ö, Áß·® ÃÊ°úÀÌ¸é ºÒ°¡
+					//ì•¼ë“œToìœ„ì¹˜Guide ê°’ì´ ìˆê³  ì‘ì—… ì•¼ë“œë™ì´ ê°™ì„ ê²½ìš° ì•¼ë“œToìœ„ì¹˜Guideë¡œ 
+					//PU, DP, PI ë¶ˆì¶œìœ„ì¹˜ì— ì¬ë£Œê°€ ìˆê±°ë‚˜, ë‹¨ìˆ˜, ì¤‘ëŸ‰ ì´ˆê³¼ì´ë©´ ë¶ˆê°€
 					trtGp  = "ToLocGuide";
-					trtMsg = "ToÀ§Ä¡Á¡°Ë[ToÀ§Ä¡ÁöÁ¤ : " + ydToLocGuide + "]";
+					trtMsg = "Toìœ„ì¹˜ì ê²€[Toìœ„ì¹˜ì§€ì • : " + ydToLocGuide + "]";
 				} else if ("C".equals(toLocChkGp)) {
-					//Â÷·®»óÂ÷(__PT__UM)ÀÏ °æ¿ì ÀûÄ¡°¡´É Â÷·®ÀÌ ¾øÀ¸¸é ºÒ°¡
+					//ì°¨ëŸ‰ìƒì°¨(__PT__UM)ì¼ ê²½ìš° ì ì¹˜ê°€ëŠ¥ ì°¨ëŸ‰ì´ ì—†ìœ¼ë©´ ë¶ˆê°€
 					if ("".equals(ydCarUseGp)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[Â÷·®»óÂ÷ : " + ydSchCd + "] ¾ßµåÂ÷·®»ç¿ë±¸ºĞ ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + "] ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ ì—†ìŒ\n");
 					} else if ("L".equals(ydCarUseGp)) {
 						if ("".equals(trnEqpCd)) {
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[±¸³»¿î¼Û Â÷·®»óÂ÷ : " + ydSchCd + "] ¿î¼ÛÀåºñÄÚµå ¾øÀ½\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[êµ¬ë‚´ìš´ì†¡ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + "] ìš´ì†¡ì¥ë¹„ì½”ë“œ ì—†ìŒ\n");
 						} else {
 							trtGp  = "ToLocCar";
-							trtMsg = "ToÀ§Ä¡Á¡°Ë[±¸³»¿î¼Û Â÷·®»óÂ÷ : " + ydSchCd + ", " + trnEqpCd + "]";
+							trtMsg = "Toìœ„ì¹˜ì ê²€[êµ¬ë‚´ìš´ì†¡ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + ", " + trnEqpCd + "]";
 						}
 					} else if ("G".equals(ydCarUseGp)) {
 
@@ -2054,20 +2054,20 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 						
 							if ("".equals(carNo)) {
 								chkRst = false;
-								sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[ÃâÇÏ Â÷·®»óÂ÷ : " + ydSchCd + "] Â÷·®¹øÈ£ \n");
+								sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ì¶œí•˜ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + "] ì°¨ëŸ‰ë²ˆí˜¸ \n");
 							} else {
 								trtGp  = "ToLocCar";
-								trtMsg = "ToÀ§Ä¡Á¡°Ë[ÃâÇÏ Â÷·®»óÂ÷ : " + ydSchCd + ", " + carNo + "-" + cardNo + "]";
+								trtMsg = "Toìœ„ì¹˜ì ê²€[ì¶œí•˜ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + ", " + carNo + "-" + cardNo + "]";
 							}
 							
 //						} else {
 //							
 //							if ("".equals(carNo) || "".equals(cardNo)) {
 //								chkRst = false;
-//								sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[ÃâÇÏ Â÷·®»óÂ÷ : " + ydSchCd + "] Â÷·®¹øÈ£ \n");
+//								sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ì¶œí•˜ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + "] ì°¨ëŸ‰ë²ˆí˜¸ \n");
 //							} else {
 //								trtGp  = "ToLocCar";
-//								trtMsg = "ToÀ§Ä¡Á¡°Ë[ÃâÇÏ Â÷·®»óÂ÷ : " + ydSchCd + ", " + carNo + "-" + cardNo + "]";
+//								trtMsg = "Toìœ„ì¹˜ì ê²€[ì¶œí•˜ ì°¨ëŸ‰ìƒì°¨ : " + ydSchCd + ", " + carNo + "-" + cardNo + "]";
 //							}		
 //							
 //						}
@@ -2075,34 +2075,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 					}
 				} else if ("T".equals(toLocChkGp)) {
-					//´ëÂ÷»óÂ÷ÀÛ¾÷
+					//ëŒ€ì°¨ìƒì°¨ì‘ì—…
 					if (!ydCurrBayGp.equals(ydSchCd.substring(1, 2))) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[´ëÂ÷»óÂ÷ : " + ydSchCd + "] ÇöÀçµ¿ ÀÌ»ó [" + ydSchCd.substring(0, 1) + "XTC" + ydSchCd.substring(4, 6) + " : " + ydCurrBayGp + "]\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ëŒ€ì°¨ìƒì°¨ : " + ydSchCd + "] í˜„ì¬ë™ ì´ìƒ [" + ydSchCd.substring(0, 1) + "XTC" + ydSchCd.substring(4, 6) + " : " + ydCurrBayGp + "]\n");
 					}
 				} else if ("E".equals(toLocChkGp)) {
-					//½ºÄÉÁÙÄÚµå ¹× Çà¼±±¸ºĞÀ¸·Î ToÀ§Ä¡ Á¡°Ë
-					//ºÒÃâ(__PU__U_, __DP__U_)ÀÌ°í À§Ä¡°Ë»ö¹üÀ§¿¡ ÀûÄ¡¸Å¼ö 0ÀÎ Bed°¡ ¾øÀ¸¸é ºÒ°¡
+					//ìŠ¤ì¼€ì¤„ì½”ë“œ ë° í–‰ì„ êµ¬ë¶„ìœ¼ë¡œ Toìœ„ì¹˜ ì ê²€
+					//ë¶ˆì¶œ(__PU__U_, __DP__U_)ì´ê³  ìœ„ì¹˜ê²€ìƒ‰ë²”ìœ„ì— ì ì¹˜ë§¤ìˆ˜ 0ì¸ Bedê°€ ì—†ìœ¼ë©´ ë¶ˆê°€
 					if ("".equals(ydAimRtGp)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[¼³ºñº¸±Ş : " + ydSchCd + "] ¾ßµå¸ñÇ¥Çà¼±±¸ºĞ ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ì„¤ë¹„ë³´ê¸‰ : " + ydSchCd + "] ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„ ì—†ìŒ\n");
 					} else {
 						trtGp  = "ToLocExt";
-						trtMsg = "ToÀ§Ä¡Á¡°Ë[¼³ºñº¸±Ş : " + ydSchCd + ", " + ydAimRtGp + "]";
+						trtMsg = "Toìœ„ì¹˜ì ê²€[ì„¤ë¹„ë³´ê¸‰ : " + ydSchCd + ", " + ydAimRtGp + "]";
 					}
 				} else if ("Z".equals(toLocChkGp)) {
-					//½ºÄÉÁÙÄÚµå ¹× Çà¼±±¸ºĞÀ¸·Î ToÀ§Ä¡ Á¡°Ë
+					//ìŠ¤ì¼€ì¤„ì½”ë“œ ë° í–‰ì„ êµ¬ë¶„ìœ¼ë¡œ Toìœ„ì¹˜ ì ê²€
 					if ("".equals(ydAimRtGp)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > ToÀ§Ä¡Á¡°Ë[±âÅ¸ : " + ydSchCd + "] ¾ßµå¸ñÇ¥Çà¼±±¸ºĞ ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > Toìœ„ì¹˜ì ê²€[ê¸°íƒ€ : " + ydSchCd + "] ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„ ì—†ìŒ\n");
 					} else {
 						trtGp  = "ToLocEtc";
-						trtMsg = "ToÀ§Ä¡Á¡°Ë[±âÅ¸ : " + ydSchCd + ", " + ydAimRtGp + "]";
+						trtMsg = "Toìœ„ì¹˜ì ê²€[ê¸°íƒ€ : " + ydSchCd + ", " + ydAimRtGp + "]";
 					}
 				}
 				
 				if (!"".equals(trtGp)) {
-					toLocChkRst = ""; //ToÀ§Ä¡Á¡°Ë°á°ú
+					toLocChkRst = ""; //Toìœ„ì¹˜ì ê²€ê²°ê³¼
 
 					jsChk = schDao.getYDYDJ400(trtGp, jrParam);
 					
@@ -2113,49 +2113,49 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					}
 		
 					if ("G1".equals(toLocChkRst)) {
-						//TakeInBed1¸Å¼±º¸±Ş¿ä±¸¿©ºÎ°¡ 'Y'ÀÌ¸é ÀåÀÔº¸±Ş  °øBed°¡ ¾ø´õ¶óµµ ½ºÄÉÁÙ »ı¼º °¡´É
+						//TakeInBed1ë§¤ì„ ë³´ê¸‰ìš”êµ¬ì—¬ë¶€ê°€ 'Y'ì´ë©´ ì¥ì…ë³´ê¸‰  ê³µBedê°€ ì—†ë”ë¼ë„ ìŠ¤ì¼€ì¤„ ìƒì„± ê°€ëŠ¥
 						if ("Y".equals(slabUtils.trim(jsChk.getRecord(0).getFieldString("TI_PRE_SUP_YN")))) {
-							sbMsg = sbMsg.append("   ¢¹ " + trtMsg + " ¼±º¸±Ş¿ä±¸\n");
+							sbMsg = sbMsg.append("   â–· " + trtMsg + " ì„ ë³´ê¸‰ìš”êµ¬\n");
 						} else {
 							chkRst = false;
-							sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡ ÀûÄ¡°¡´É Bed ¾øÀ½\n");
+							sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ ì ì¹˜ê°€ëŠ¥ Bed ì—†ìŒ\n");
 						}
 					} else if ("G2".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡ Max´Ü ÃÊ°ú\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ Maxë‹¨ ì´ˆê³¼\n");
 					} else if ("G3".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡ MaxÁß·® ÃÊ°ú\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ Maxì¤‘ëŸ‰ ì´ˆê³¼\n");
 					} else if ("G4".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡ Max³ôÀÌ ÃÊ°ú\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ Maxë†’ì´ ì´ˆê³¼\n");
 					} else if ("G5".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡¿¡ ÀûÄ¡µÈ Àç·á ÀÖÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ì— ì ì¹˜ëœ ì¬ë£Œ ìˆìŒ\n");
 					} else if ("G6".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " 2Â÷Àı´Ü #1,#3 ÇùÆøÀç ÀåÀÔ ºÒ°¡\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " 2ì°¨ì ˆë‹¨ #1,#3 í˜‘í­ì¬ ì¥ì… ë¶ˆê°€\n");
 					} else if ("G7".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ToÀ§Ä¡ ±æÀÌ ±âÁØ ¸¸Á· ¸øÇÔ\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " Toìœ„ì¹˜ ê¸¸ì´ ê¸°ì¤€ ë§Œì¡± ëª»í•¨\n");
 					} else if ("C1".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " »óÂ÷°¡´É Â÷·® ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " ìƒì°¨ê°€ëŠ¥ ì°¨ëŸ‰ ì—†ìŒ\n");
 					} else if ("E1".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ÀûÄ¡°¡´É ¼³ºñ °øBed ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " ì ì¹˜ê°€ëŠ¥ ì„¤ë¹„ ê³µBed ì—†ìŒ\n");
 					} else if ("Z1".equals(toLocChkRst)) {
 						chkRst = false;
-						sbMsg  = sbMsg.append("   ¢º ¿À·ù > " + trtMsg + " ÀûÄ¡°¡´É À§Ä¡°Ë»öBed ¾øÀ½\n");
+						sbMsg  = sbMsg.append("   â–¶ ì˜¤ë¥˜ > " + trtMsg + " ì ì¹˜ê°€ëŠ¥ ìœ„ì¹˜ê²€ìƒ‰Bed ì—†ìŒ\n");
 					} else {
-						sbMsg = sbMsg.append("   ¢¹ " + trtMsg + " Á¤»ó\n");
+						sbMsg = sbMsg.append("   â–· " + trtMsg + " ì •ìƒ\n");
 					}
 				}
 
 				if (chkRst) {
-					sbMsg = sbMsg.append("   ¢Â Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿ÀÌ °¡´É ÇÕ´Ï´Ù.\n");
+					sbMsg = sbMsg.append("   â—ˆ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ì´ ê°€ëŠ¥ í•©ë‹ˆë‹¤.\n");
 				} else {
-					sbMsg = sbMsg.append("   ¡ß Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿ÀÌ ºÒ°¡´É ÇÕ´Ï´Ù.\n");
+					sbMsg = sbMsg.append("   â—† í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ì´ ë¶ˆê°€ëŠ¥ í•©ë‹ˆë‹¤.\n");
 				}
 
 				sbMsg = sbMsg.append("\n");
@@ -2163,7 +2163,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			
 			slabUtils.printLog(logId, methodNm, "S-");
 
-			//Á¡°Ë°á°úMessage Return
+			//ì ê²€ê²°ê³¼Message Return
 			return sbMsg.toString();
 		} catch(DAOException e) {
 			throw e;
@@ -2174,15 +2174,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙ±âµ¿
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ê¸°ë™
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnWrkBookMgtSS(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙ±âµ¿[SlabYdJspSeEJB.trtCrnWrkBookMgtSS] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ê¸°ë™[SlabYdJspSeEJB.trtCrnWrkBookMgtSS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -2191,23 +2191,23 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("YD_GP"        , slabUtils.trim(gdReq.getParam("V_YD_GP"))); //¾ßµå±¸ºĞ
-			jrParam.setField("YD_SCH_ST_GP" , "M"                                      ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-			jrParam.setField("YD_SCH_REQ_GP", "W"                                      ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÛ¾÷¿¹¾àÁ¶È¸È­¸é)
+			jrParam.setField("YD_GP"        , slabUtils.trim(gdReq.getParam("V_YD_GP"))); //ì•¼ë“œêµ¬ë¶„
+			jrParam.setField("YD_SCH_ST_GP" , "M"                                      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+			jrParam.setField("YD_SCH_REQ_GP", "W"                                      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì‘ì—…ì˜ˆì•½ì¡°íšŒí™”ë©´)
 			
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("YD_WBOOK_ID", slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii))); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_SCH_CD"  , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"  ).getValue(ii))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_EQP_ID"  , slabUtils.trim(gdReq.getHeader("YD_WRK_CRN" ).getValue(ii))); //¾ßµå¼³ºñID
-				jrParam.setField("EJB_CALL_YN", "Y"); //EJBCall¿©ºÎ(½Å Å©·¹ÀÎ½ºÄÉÁÙ)
+				jrParam.setField("YD_WBOOK_ID", slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_SCH_CD"  , slabUtils.trim(gdReq.getHeader("YD_SCH_CD"  ).getValue(ii))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_EQP_ID"  , slabUtils.trim(gdReq.getHeader("YD_WRK_CRN" ).getValue(ii))); //ì•¼ë“œì„¤ë¹„ID
+				jrParam.setField("EJB_CALL_YN", "Y"); //EJBCallì—¬ë¶€(ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„)
 
-				//Å©·¹ÀÎ½ºÄÉÁÙ Àü¹®(½Å Å©·¹ÀÎ½ºÄÉÁÙ : EJB Call, ±¸ Å©·¹ÀÎ½ºÄÉÁÙ : JMS Àü¼Û)
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ë¬¸(ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ : EJB Call, êµ¬ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ : JMS ì „ì†¡)
 				jrRtn = slabUtils.addSndData(jrRtn, slabComm.getCrnSchMsg(jrParam));
 			}
 
@@ -2225,33 +2225,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ToÀ§Ä¡º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ Toìœ„ì¹˜ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updWrkBookToGuide(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à ToÀ§Ä¡º¯°æ[SlabYdJspSeEJB.updWrkBookToGuide] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ Toìœ„ì¹˜ë³€ê²½[SlabYdJspSeEJB.updWrkBookToGuide] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrWkr = new String[rowCnt][3];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrWkr[ii][0] = modifier;	//¼öÁ¤ÀÚ
-				arrWkr[ii][1] = slabUtils.trim(gdReq.getHeader("YD_TO_LOC_GUIDE").getValue(ii));	//¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-				arrWkr[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));	//¾ßµåÀÛ¾÷¿¹¾àID
+				arrWkr[ii][0] = modifier;	//ìˆ˜ì •ì
+				arrWkr[ii][1] = slabUtils.trim(gdReq.getHeader("YD_TO_LOC_GUIDE").getValue(ii));	//ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+				arrWkr[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			}
 
-			//ÀÛ¾÷¿¹¾à Table ToÀ§Ä¡ Guide Update
+			//ì‘ì—…ì˜ˆì•½ Table Toìœ„ì¹˜ Guide Update
 			commDao.upsBatch("WrkBookToGuide", arrWkr, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -2267,19 +2267,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * ¼³ºñÀÎÃâº¸±Ş
+	 * ì„¤ë¹„ì¸ì¶œë³´ê¸‰
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getEqpPulloutSup(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş Á¶È¸[SlabYdJspSeEJB.getEqpPulloutSup] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ì¡°íšŒ[SlabYdJspSeEJB.getEqpPulloutSup] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -2295,52 +2295,52 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş º¸±Ş¿ä±¸(Carry-In)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ë³´ê¸‰ìš”êµ¬(Carry-In)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtEqpPulloutSupCI(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş º¸±Ş¿ä±¸(Carry-In)[SlabYdJspSeEJB.trtEqpPulloutSupCI] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ë³´ê¸‰ìš”êµ¬(Carry-In)[SlabYdJspSeEJB.trtEqpPulloutSupCI] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydEqpId    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//¾ßµå¼³ºñID
-			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"));	//¾ßµåÀûÄ¡Bed¹øÈ£
-			String strList 	  = slabUtils.trim(gdReq.getParam("V_STR_LIST"));		//¾ßµå¼±ÅÃÀç·á¹øÈ£
-			String locList 	  = slabUtils.trim(gdReq.getParam("V_LOC_LIST"));		//¾ßµå¼±ÅÃÀç·áÀ§Ä¡
-			String sYD_WRK_PLAN_CRN = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"));//ÀÛ¾÷Å©·¹ÀÎ
+			String ydEqpId    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//ì•¼ë“œì„¤ë¹„ID
+			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String strList 	  = slabUtils.trim(gdReq.getParam("V_STR_LIST"));		//ì•¼ë“œì„ íƒì¬ë£Œë²ˆí˜¸
+			String locList 	  = slabUtils.trim(gdReq.getParam("V_LOC_LIST"));		//ì•¼ë“œì„ íƒì¬ë£Œìœ„ì¹˜
+			String sYD_WRK_PLAN_CRN = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"));//ì‘ì—…í¬ë ˆì¸
 			
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//¼³ºñº¸±Ş¿ä±¸ Àü¹® »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//ì„¤ë¹„ë³´ê¸‰ìš”êµ¬ ì „ë¬¸ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrYdMsg.setField("JMS_TC_CD"    , "YDYDJ420"); //JMSTCÄÚµå
-			jrYdMsg.setField("YD_EQP_ID"    , ydEqpId   ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_STK_BED_NO", ydStkBedNo); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrYdMsg.setField("YD_SCH_ST_GP" , "M"       ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-			jrYdMsg.setField("STR_LIST" 	, strList   ); //¾ßµå¼±ÅÃÀç·á¹øÈ£
-			jrYdMsg.setField("LOC_LIST" 	, locList   ); //¾ßµå¼±ÅÃÀç·áÀ§Ä¡
-			jrYdMsg.setField("YD_WRK_PLAN_CRN" , sYD_WRK_PLAN_CRN ); //ÀÛ¾÷Å©·¹ÀÎ
+			jrYdMsg.setField("JMS_TC_CD"    , "YDYDJ420"); //JMSTCì½”ë“œ
+			jrYdMsg.setField("YD_EQP_ID"    , ydEqpId   ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_STK_BED_NO", ydStkBedNo); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrYdMsg.setField("YD_SCH_ST_GP" , "M"       ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+			jrYdMsg.setField("STR_LIST" 	, strList   ); //ì•¼ë“œì„ íƒì¬ë£Œë²ˆí˜¸
+			jrYdMsg.setField("LOC_LIST" 	, locList   ); //ì•¼ë“œì„ íƒì¬ë£Œìœ„ì¹˜
+			jrYdMsg.setField("YD_WRK_PLAN_CRN" , sYD_WRK_PLAN_CRN ); //ì‘ì—…í¬ë ˆì¸
 			
-			//¼³ºñº¸±Ş¿ä±¸ Ã³¸®
+			//ì„¤ë¹„ë³´ê¸‰ìš”êµ¬ ì²˜ë¦¬
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdSchSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)sndConn.trx("rcvYDYDJ420", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 
-			//¼³ºñº¸±Ş¿ä±¸ °á°ú°¡ ÀÖÀ¸¸é Å©·¹ÀÎ½ºÄÉÁÙ È£Ãâ ÀÓ : ½Å Å©·¹ÀÎ½ºÄÉÁÙÀÌ¸é EJB Call ¾Æ´Ï¸é JSM Àü¼Û
+			//ì„¤ë¹„ë³´ê¸‰ìš”êµ¬ ê²°ê³¼ê°€ ìˆìœ¼ë©´ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ í˜¸ì¶œ ì„ : ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë©´ EJB Call ì•„ë‹ˆë©´ JSM ì „ì†¡
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);		//Log ID
 				jrRst.setResultMsg(methodNm);	//Log Method Name
-				jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallÀü¹®ID
+				jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallì „ë¬¸ID
 				jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 			}
 
@@ -2356,50 +2356,50 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş ÀÎÃâ¿ä±¸(Carry-Out)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ì¸ì¶œìš”êµ¬(Carry-Out)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtEqpPulloutSupCO(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş ÀÎÃâ¿ä±¸(Carry-Out)[SlabYdJspSeEJB.trtEqpPulloutSupCO] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ì¸ì¶œìš”êµ¬(Carry-Out)[SlabYdJspSeEJB.trtEqpPulloutSupCO] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydEqpId    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//¾ßµå¼³ºñID
-			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"));	//¾ßµåÀûÄ¡Bed¹øÈ£
-			String sYD_WRK_PLAN_CRN = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"));//ÀÛ¾÷Å©·¹ÀÎ
+			String ydEqpId    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//ì•¼ë“œì„¤ë¹„ID
+			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String sYD_WRK_PLAN_CRN = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"));//ì‘ì—…í¬ë ˆì¸
 			String sSTL_NOS = slabUtils.trim(gdReq.getParam("V_STL_NOS"));
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//¼³ºñÀÎÃâ¿ä±¸ Àü¹® »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//ì„¤ë¹„ì¸ì¶œìš”êµ¬ ì „ë¬¸ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrYdMsg.setField("JMS_TC_CD"    , "YDYDJ410"); //JMSTCÄÚµå
-			jrYdMsg.setField("YD_EQP_ID"    , ydEqpId   ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_STK_BED_NO", ydStkBedNo); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrYdMsg.setField("YD_SCH_ST_GP" , "M"       ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-			jrYdMsg.setField("YD_WRK_PLAN_CRN" , sYD_WRK_PLAN_CRN ); //ÀÛ¾÷Å©·¹ÀÎ
-			jrYdMsg.setField("STL_NOS" , sSTL_NOS); //Àç·á¹øÈ£
+			jrYdMsg.setField("JMS_TC_CD"    , "YDYDJ410"); //JMSTCì½”ë“œ
+			jrYdMsg.setField("YD_EQP_ID"    , ydEqpId   ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_STK_BED_NO", ydStkBedNo); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrYdMsg.setField("YD_SCH_ST_GP" , "M"       ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+			jrYdMsg.setField("YD_WRK_PLAN_CRN" , sYD_WRK_PLAN_CRN ); //ì‘ì—…í¬ë ˆì¸
+			jrYdMsg.setField("STL_NOS" , sSTL_NOS); //ì¬ë£Œë²ˆí˜¸
 			
-			//¼³ºñÀÎÃâ¿ä±¸
+			//ì„¤ë¹„ì¸ì¶œìš”êµ¬
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdSchSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)sndConn.trx("rcvYDYDJ410", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 
-			//¼³ºñÀÎÃâ¿ä±¸ °á°ú°¡ ÀÖÀ¸¸é Å©·¹ÀÎ½ºÄÉÁÙ È£Ãâ ÀÓ : ½Å Å©·¹ÀÎ½ºÄÉÁÙÀÌ¸é EJB Call ¾Æ´Ï¸é JSM Àü¼Û
+			//ì„¤ë¹„ì¸ì¶œìš”êµ¬ ê²°ê³¼ê°€ ìˆìœ¼ë©´ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ í˜¸ì¶œ ì„ : ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë©´ EJB Call ì•„ë‹ˆë©´ JSM ì „ì†¡
 			if (jrRst != null) {
 				jrRst.setResultCode(logId);		//Log ID
 				jrRst.setResultMsg(methodNm);	//Log Method Name
-				jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallÀü¹®ID
+				jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallì „ë¬¸ID
 				jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 			}
 
@@ -2415,68 +2415,68 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş Take-In¿Ï·á
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Take-Inì™„ë£Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtEqpPulloutSupTI(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş Take-In¿Ï·á[SlabYdJspSeEJB.trtEqpPulloutSupTI] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Take-Inì™„ë£Œ[SlabYdJspSeEJB.trtEqpPulloutSupTI] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydGp          = slabUtils.trim(gdReq.getParam("V_YD_GP"            ));	//¾ßµå±¸ºĞ
-			String ydEqpId       = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    ));	//¾ßµå¼³ºñID
-			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    ));	//¾ßµåÀûÄ¡Bed¹øÈ£
-			String ydStkBedStlSh = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_STL_SH"));	//¾ßµåÀûÄ¡BedÀç·á¸Å¼ö
-			String takeInStlNo   = slabUtils.trim(gdReq.getParam("V_STL_NO"           ));	//Àç·á¹øÈ£(Take-In)
+			String ydGp          = slabUtils.trim(gdReq.getParam("V_YD_GP"            ));	//ì•¼ë“œêµ¬ë¶„
+			String ydEqpId       = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    ));	//ì•¼ë“œì„¤ë¹„ID
+			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    ));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String ydStkBedStlSh = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_STL_SH"));	//ì•¼ë“œì ì¹˜Bedì¬ë£Œë§¤ìˆ˜
+			String takeInStlNo   = slabUtils.trim(gdReq.getParam("V_STL_NO"           ));	//ì¬ë£Œë²ˆí˜¸(Take-In)
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedStlSh)) {
-				throw new Exception("ÀûÄ¡BedÀç·á¸Å¼ö°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedì¬ë£Œë§¤ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(takeInStlNo)) {
-				throw new Exception("Take-In Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("Take-In ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//Take-In¿Ï·á Àü¹® »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//Take-Inì™„ë£Œ ì „ë¬¸ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 		
 			if ("A".equals(ydGp)) {
-				jrYdMsg.setField("JMS_TC_CD", "C3YDL005"); //JMSTCÄÚµå(C3Take-In¿Ï·á)
+				jrYdMsg.setField("JMS_TC_CD", "C3YDL005"); //JMSTCì½”ë“œ(C3Take-Inì™„ë£Œ)
 			} else {
-				jrYdMsg.setField("JMS_TC_CD", "Y3YDL013"); //JMSTCÄÚµå(Y3Take-In¿Ï·á)
+				jrYdMsg.setField("JMS_TC_CD", "Y3YDL013"); //JMSTCì½”ë“œ(Y3Take-Inì™„ë£Œ)
                
 			}
-			jrYdMsg.setField("YD_EQP_ID"        , ydEqpId      ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_STK_BED_NO"    , ydStkBedNo   ); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrYdMsg.setField("YD_STK_BED_STL_SH", ydStkBedStlSh); //¾ßµåÀûÄ¡BedÀç·á¸Å¼ö
-			jrYdMsg.setField("STL_NO"           , takeInStlNo  ); //Àç·á¹øÈ£(Take-In)
+			jrYdMsg.setField("YD_EQP_ID"        , ydEqpId      ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_STK_BED_NO"    , ydStkBedNo   ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrYdMsg.setField("YD_STK_BED_STL_SH", ydStkBedStlSh); //ì•¼ë“œì ì¹˜Bedì¬ë£Œë§¤ìˆ˜
+			jrYdMsg.setField("STL_NO"           , takeInStlNo  ); //ì¬ë£Œë²ˆí˜¸(Take-In)
 			
-			//Take-In¿Ï·á Ã³¸®
+			//Take-Inì™„ë£Œ ì²˜ë¦¬
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)sndConn.trx("rcvC3YDL005", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 
-			//º¸±Ş¿ä±¸(Carry-In)[YDYDJ420] Àü¹®ÀÌ ÀÖÀ¸¸é È£Ãâ  : Carry-In¿ä±¸´Â Take-In¿Ï·á ÈÄ Bed°¡ ºñ¾úÀ¸¸é ÀÚµ¿À¸·Î ¿äÃ» µÊ
+			//ë³´ê¸‰ìš”êµ¬(Carry-In)[YDYDJ420] ì „ë¬¸ì´ ìˆìœ¼ë©´ í˜¸ì¶œ  : Carry-Inìš”êµ¬ëŠ” Take-Inì™„ë£Œ í›„ Bedê°€ ë¹„ì—ˆìœ¼ë©´ ìë™ìœ¼ë¡œ ìš”ì²­ ë¨
 			if (jrRst != null) {
-				//º¸±Ş¿ä±¸(Carry-In)[YDYDJ420] Àü¹® EJB Call
+				//ë³´ê¸‰ìš”êµ¬(Carry-In)[YDYDJ420] ì „ë¬¸ EJB Call
 				jrRst.setResultCode(logId);		//Log ID
 				jrRst.setResultMsg(methodNm);	//Log Method Name
-				jrRst.setField("EJB_MSG_ID", "YDYDJ420"); //EJBCallÀü¹®ID
+				jrRst.setField("EJB_MSG_ID", "YDYDJ420"); //EJBCallì „ë¬¸ID
 				jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 				
-				//½Å Å©·¹ÀÎ½ºÄÉÁÙÀÌ ÀÖÀ¸¸é È£Ãâ
+				//ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ìˆìœ¼ë©´ í˜¸ì¶œ
 				if (jrRst != null) {
-					//Å©·¹ÀÎ½ºÄÉÁÙ[YDYDJ400] Àü¹® EJB Call
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„[YDYDJ400] ì „ë¬¸ EJB Call
 					jrRst.setResultCode(logId);		//Log ID
 					jrRst.setResultMsg(methodNm);	//Log Method Name
-					jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallÀü¹®ID
+					jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallì „ë¬¸ID
 					jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 				}
 			}
@@ -2493,80 +2493,80 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş Take-Out¿Ï·á
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Take-Outì™„ë£Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtEqpPulloutSupTO(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş Take-Out¿Ï·á[SlabYdJspSeEJB.trtEqpPulloutSupTO] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Take-Outì™„ë£Œ[SlabYdJspSeEJB.trtEqpPulloutSupTO] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydGp          = slabUtils.trim(gdReq.getParam("V_YD_GP"            ));	//¾ßµå±¸ºĞ
-			String ydEqpId       = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    ));	//¾ßµå¼³ºñID
-			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    ));	//¾ßµåÀûÄ¡Bed¹øÈ£
-			String ydStkBedStlSh = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_STL_SH"));	//¾ßµåÀûÄ¡BedÀç·á¸Å¼ö
-			String takeOutStlNo  = slabUtils.trim(gdReq.getParam("V_STL_NO"           ));	//Àç·á¹øÈ£(Take-Out)
+			String ydGp          = slabUtils.trim(gdReq.getParam("V_YD_GP"            ));	//ì•¼ë“œêµ¬ë¶„
+			String ydEqpId       = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    ));	//ì•¼ë“œì„¤ë¹„ID
+			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    ));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String ydStkBedStlSh = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_STL_SH"));	//ì•¼ë“œì ì¹˜Bedì¬ë£Œë§¤ìˆ˜
+			String takeOutStlNo  = slabUtils.trim(gdReq.getParam("V_STL_NO"           ));	//ì¬ë£Œë²ˆí˜¸(Take-Out)
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedStlSh)) {
-				throw new Exception("ÀûÄ¡BedÀç·á¸Å¼ö°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedì¬ë£Œë§¤ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(takeOutStlNo)) {
-				throw new Exception("Take-Out Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("Take-Out ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//Take-Out¿Ï·á Àü¹® »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//Take-Outì™„ë£Œ ì „ë¬¸ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 	
 	    
 
 			if ("A".equals(ydGp)) {
-				//½ÇÁ¦ JMSTCÄÚµå´Â ÀÇ¹Ì ¾øÁö¸¸ Ãß°¡
+				//ì‹¤ì œ JMSTCì½”ë“œëŠ” ì˜ë¯¸ ì—†ì§€ë§Œ ì¶”ê°€
 				if ("ACPUP7".equals(ydEqpId) || "ADPUP8".equals(ydEqpId) || "ADPI04".equals(ydEqpId) || "ACPI05".equals(ydEqpId)) {
-					jrYdMsg.setField("JMS_TC_CD", "C7YDL004"); //JMSTCÄÚµå(C7Take-Out¿Ï·á)
+					jrYdMsg.setField("JMS_TC_CD", "C7YDL004"); //JMSTCì½”ë“œ(C7Take-Outì™„ë£Œ)
 				} else {
-					jrYdMsg.setField("JMS_TC_CD", "C3YDL004"); //JMSTCÄÚµå(C3Take-Out¿Ï·á)
+					jrYdMsg.setField("JMS_TC_CD", "C3YDL004"); //JMSTCì½”ë“œ(C3Take-Outì™„ë£Œ)
 				}
 			} else {
-				jrYdMsg.setField("JMS_TC_CD", "Y3YDL012"); //JMSTCÄÚµå(Y3Take-Out¿Ï·á)	           
+				jrYdMsg.setField("JMS_TC_CD", "Y3YDL012"); //JMSTCì½”ë“œ(Y3Take-Outì™„ë£Œ)	           
 			}
-			jrYdMsg.setField("YD_EQP_ID"        , ydEqpId                                    ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_STK_BED_NO"    , ydStkBedNo                                 ); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrYdMsg.setField("YD_STK_BED_STL_SH", ydStkBedStlSh                              ); //¾ßµåÀûÄ¡BedÀç·á¸Å¼ö
-			jrYdMsg.setField("CARRY_OUT_REQ_GP" , "N"                                        ); //Carry-Out¿ä±¸±¸ºĞ
-			jrYdMsg.setField("STL_NO"           , takeOutStlNo                               ); //Àç·á¹øÈ£(Take-Out)
-			jrYdMsg.setField("STL_NO1"          , slabUtils.trim(gdReq.getParam("V_STL_NO1")));	//Àç·á¹øÈ£(ÀûÄ¡Bed)
-			jrYdMsg.setField("STL_NO2"          , slabUtils.trim(gdReq.getParam("V_STL_NO2")));	//Àç·á¹øÈ£(ÀûÄ¡Bed)
-			jrYdMsg.setField("STL_NO3"          , slabUtils.trim(gdReq.getParam("V_STL_NO3")));	//Àç·á¹øÈ£(ÀûÄ¡Bed)
-			jrYdMsg.setField("STL_NO4"          , slabUtils.trim(gdReq.getParam("V_STL_NO4")));	//Àç·á¹øÈ£(ÀûÄ¡Bed)
-			jrYdMsg.setField("STL_NO5"          , slabUtils.trim(gdReq.getParam("V_STL_NO5")));	//Àç·á¹øÈ£(ÀûÄ¡Bed)
+			jrYdMsg.setField("YD_EQP_ID"        , ydEqpId                                    ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_STK_BED_NO"    , ydStkBedNo                                 ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrYdMsg.setField("YD_STK_BED_STL_SH", ydStkBedStlSh                              ); //ì•¼ë“œì ì¹˜Bedì¬ë£Œë§¤ìˆ˜
+			jrYdMsg.setField("CARRY_OUT_REQ_GP" , "N"                                        ); //Carry-Outìš”êµ¬êµ¬ë¶„
+			jrYdMsg.setField("STL_NO"           , takeOutStlNo                               ); //ì¬ë£Œë²ˆí˜¸(Take-Out)
+			jrYdMsg.setField("STL_NO1"          , slabUtils.trim(gdReq.getParam("V_STL_NO1")));	//ì¬ë£Œë²ˆí˜¸(ì ì¹˜Bed)
+			jrYdMsg.setField("STL_NO2"          , slabUtils.trim(gdReq.getParam("V_STL_NO2")));	//ì¬ë£Œë²ˆí˜¸(ì ì¹˜Bed)
+			jrYdMsg.setField("STL_NO3"          , slabUtils.trim(gdReq.getParam("V_STL_NO3")));	//ì¬ë£Œë²ˆí˜¸(ì ì¹˜Bed)
+			jrYdMsg.setField("STL_NO4"          , slabUtils.trim(gdReq.getParam("V_STL_NO4")));	//ì¬ë£Œë²ˆí˜¸(ì ì¹˜Bed)
+			jrYdMsg.setField("STL_NO5"          , slabUtils.trim(gdReq.getParam("V_STL_NO5")));	//ì¬ë£Œë²ˆí˜¸(ì ì¹˜Bed)
 			
-			//Take-Out¿Ï·á Ã³¸®
+			//Take-Outì™„ë£Œ ì²˜ë¦¬
 			EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 			JDTORecord jrRst = (JDTORecord)sndConn.trx("rcvC3YDL004", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 
-			//ÀÎÃâ¿ä±¸(Carry-Out)[YDYDJ410] Àü¹®ÀÌ ÀÖÀ¸¸é È£Ãâ : Carry-Out¿ä±¸±¸ºĞÀÌ 'N' ÀÌ¶ó ½ÇÁ¦ ½ÇÇàµÇÁö´Â ¾ÊÁö¸¸ Ãß°¡
+			//ì¸ì¶œìš”êµ¬(Carry-Out)[YDYDJ410] ì „ë¬¸ì´ ìˆìœ¼ë©´ í˜¸ì¶œ : Carry-Outìš”êµ¬êµ¬ë¶„ì´ 'N' ì´ë¼ ì‹¤ì œ ì‹¤í–‰ë˜ì§€ëŠ” ì•Šì§€ë§Œ ì¶”ê°€
 			if (jrRst != null) {
-				//ÀÎÃâ¿ä±¸(Carry-Out)[YDYDJ410] Àü¹® EJB Call
+				//ì¸ì¶œìš”êµ¬(Carry-Out)[YDYDJ410] ì „ë¬¸ EJB Call
 				jrRst.setResultCode(logId);		//Log ID
 				jrRst.setResultMsg(methodNm);	//Log Method Name
-				jrRst.setField("EJB_MSG_ID", "YDYDJ410"); //EJBCallÀü¹®ID
+				jrRst.setField("EJB_MSG_ID", "YDYDJ410"); //EJBCallì „ë¬¸ID
 				jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 				
-				//½Å Å©·¹ÀÎ½ºÄÉÁÙÀÌ ÀÖÀ¸¸é È£Ãâ
+				//ì‹  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ìˆìœ¼ë©´ í˜¸ì¶œ
 				if (jrRst != null) {
-					//Å©·¹ÀÎ½ºÄÉÁÙ[YDYDJ400] Àü¹® EJB Call
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„[YDYDJ400] ì „ë¬¸ EJB Call
 					jrRst.setResultCode(logId);		//Log ID
 					jrRst.setResultMsg(methodNm);	//Log Method Name
-					jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallÀü¹®ID
+					jrRst.setField("EJB_MSG_ID", "YDYDJ400"); //EJBCallì „ë¬¸ID
 					jrRst = slabComm.rcvMsgToEjbCall(jrRst);
 				}
 			}
@@ -2583,39 +2583,39 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş Çà¼±º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ í–‰ì„ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public GridData updEqpPulloutSupRt(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş Çà¼±º¯°æ[SlabYdJspSeEJB.updEqpPulloutSupRt] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ í–‰ì„ ë³€ê²½[SlabYdJspSeEJB.updEqpPulloutSupRt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
-			//BedÀç·á
+			//Bedì¬ë£Œ
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrMtl = new String[rowCnt][4];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrMtl[ii][0] = modifier;	//¼öÁ¤ÀÚ
-				arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("YD_AIM_RT_GP" ).getValue(ii));	//¾ßµå¸ñÇ¥Çà¼±±¸ºĞ
-				arrMtl[ii][2] = slabUtils.trim(gdReq.getHeader("YD_AIM_BAY_GP").getValue(ii));	//¾ßµå¸ñÇ¥µ¿±¸ºĞ
-				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//Àç·á¹øÈ£
+				arrMtl[ii][0] = modifier;	//ìˆ˜ì •ì
+				arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("YD_AIM_RT_GP" ).getValue(ii));	//ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„
+				arrMtl[ii][2] = slabUtils.trim(gdReq.getHeader("YD_AIM_BAY_GP").getValue(ii));	//ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//ì¬ë£Œë²ˆí˜¸
 			}
 
-			//ÀúÀåÇ° Table Update
+			//ì €ì¥í’ˆ Table Update
 			jspDao.updEqpPulloutSup("Stock", arrMtl, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
 
-			//BedÀç·á Á¶È¸
+			//Bedì¬ë£Œ ì¡°íšŒ
 			return this.getEqpPulloutSup(gdReq);
 		} catch(DAOException e) {
 			throw e;
@@ -2626,48 +2626,48 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş BedÀç·á»èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Bedì¬ë£Œì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public GridData delEqpPulloutSupMtl(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş BedÀç·á»èÁ¦[SlabYdJspSeEJB.delEqpPulloutSupMtl] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ Bedì¬ë£Œì‚­ì œ[SlabYdJspSeEJB.delEqpPulloutSupMtl] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
-			//BedÀç·á
+			//Bedì¬ë£Œ
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrMtl = new String[rowCnt][4];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrMtl[ii][0] = modifier;	//¼öÁ¤ÀÚ
-				arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-				arrMtl[ii][2] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//¾ßµåÀûÄ¡Bed¹øÈ£
-				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//¾ßµåÀûÄ¡´Ü¹øÈ£
+				arrMtl[ii][0] = modifier;	//ìˆ˜ì •ì
+				arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+				arrMtl[ii][2] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
 			}
 
-			//ÀûÄ¡´Ü Table Àç·á»èÁ¦
+			//ì ì¹˜ë‹¨ Table ì¬ë£Œì‚­ì œ
 			jspDao.updEqpPulloutSup("StkLyr", arrMtl, logId, methodNm);
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			jrParam.setField("V_YD_STK_COL_GP", gdReq.getHeader("YD_STK_COL_GP").getValue(0));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_STK_BED_NO", gdReq.getHeader("YD_STK_BED_NO").getValue(0));	//¾ßµåÀûÄ¡Bed¹øÈ£
+			jrParam.setField("V_YD_STK_COL_GP", gdReq.getHeader("YD_STK_COL_GP").getValue(0));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_STK_BED_NO", gdReq.getHeader("YD_STK_BED_NO").getValue(0));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
-			//ÀûÄ¡´Ü Á¤¸®ÀÛ¾÷
+			//ì ì¹˜ë‹¨ ì •ë¦¬ì‘ì—…
 			jspDao.updEqpPulloutSup("StkLyrFix", jrParam);
 			
 			slabUtils.printLog(logId, methodNm, "S-");
 
-			//BedÀç·á Á¶È¸
+			//Bedì¬ë£Œ ì¡°íšŒ
 			return this.getEqpPulloutSup(gdReq);
 		} catch(DAOException e) {
 			throw e;
@@ -2678,34 +2678,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş º¸±ŞÆí¼º±âÁØº¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ë³´ê¸‰í¸ì„±ê¸°ì¤€ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public GridData updEqpPulloutSupRule(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş º¸±ŞÆí¼º±âÁØº¯°æ[SlabYdJspSeEJB.updEqpPulloutSupRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ë³´ê¸‰í¸ì„±ê¸°ì¤€ë³€ê²½[SlabYdJspSeEJB.updEqpPulloutSupRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String tiSupYn    = slabUtils.trim(gdReq.getParam("V_TI_SUP_YN"    )); //TakeIn°øBedº¸±Ş¿ä±¸¿©ºÎ(Y:ÀÚµ¿º¸±Ş, N:¼öµ¿º¸±Ş)
+			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String tiSupYn    = slabUtils.trim(gdReq.getParam("V_TI_SUP_YN"    )); //TakeInê³µBedë³´ê¸‰ìš”êµ¬ì—¬ë¶€(Y:ìë™ë³´ê¸‰, N:ìˆ˜ë™ë³´ê¸‰)
 
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_TI_SUP_YN"    , tiSupYn   );	//TakeIn°øBedº¸±Ş¿ä±¸¿©ºÎ
+			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_TI_SUP_YN"    , tiSupYn   );	//TakeInê³µBedë³´ê¸‰ìš”êµ¬ì—¬ë¶€
 
-			//¾ßµå±âÁØ Table Update
+			//ì•¼ë“œê¸°ì¤€ Table Update
 			jspDao.updComm("ChgSupRule", jrParam);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -2719,34 +2719,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ º¸±ŞÆí¼º±âÁØº¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ë³´ê¸‰í¸ì„±ê¸°ì¤€ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public GridData updCrnPulloutSupRule(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ º¸±ŞÆí¼º±âÁØº¯°æ[SlabYdJspSeEJB.updCrnPulloutSupRule] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ ë³´ê¸‰í¸ì„±ê¸°ì¤€ë³€ê²½[SlabYdJspSeEJB.updCrnPulloutSupRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String wrkCrn     = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN"   )); //TakeIn°øBedº¸±Ş¿ä±¸¿©ºÎ(Y:ÀÚµ¿º¸±Ş, N:¼öµ¿º¸±Ş)
+			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String wrkCrn     = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN"   )); //TakeInê³µBedë³´ê¸‰ìš”êµ¬ì—¬ë¶€(Y:ìë™ë³´ê¸‰, N:ìˆ˜ë™ë³´ê¸‰)
 
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_WRK_CRN"   , wrkCrn    );	//TakeIn°øBedº¸±Ş¿ä±¸¿©ºÎ
+			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_WRK_CRN"   , wrkCrn    );	//TakeInê³µBedë³´ê¸‰ìš”êµ¬ì—¬ë¶€
 
-			//¾ßµå±âÁØ Table Update
+			//ì•¼ë“œê¸°ì¤€ Table Update
 			jspDao.updComm("ChgCrnRule", jrParam);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -2764,36 +2764,36 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş ¼ø¹ø º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ìˆœë²ˆ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public GridData updStockSeqNo(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş ¼ø¹ø º¯°æ[SlabYdJspSeEJB.updStockSeqNo] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰ ìˆœë²ˆ ë³€ê²½[SlabYdJspSeEJB.updStockSeqNo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			String stl_nos = slabUtils.trim(gdReq.getParam("V_STR_LIST")); //Àç·á¹øÈ£
-			String seq_nos = slabUtils.trim(gdReq.getParam("V_SEQNO_LIST")); //Àç·á ¼ø¹ø
+			String stl_nos = slabUtils.trim(gdReq.getParam("V_STR_LIST")); //ì¬ë£Œë²ˆí˜¸
+			String seq_nos = slabUtils.trim(gdReq.getParam("V_SEQNO_LIST")); //ì¬ë£Œ ìˆœë²ˆ
 
 			if ("".equals(stl_nos)) {
-				throw new Exception("Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 			
 			String[] stl_no = stl_nos.split(",");
 			String[] seq_no = seq_nos.split(",");
 			
 			for(int ii = 0; ii < stl_no.length; ii++) {
-				jrParam.setField("V_STL_NO", stl_no[ii]);	//½½¶óºê¹øÈ£
-				jrParam.setField("V_SEQ_NO", seq_no[ii]);	//¼ø¹ø
+				jrParam.setField("V_STL_NO", stl_no[ii]);	//ìŠ¬ë¼ë¸Œë²ˆí˜¸
+				jrParam.setField("V_SEQ_NO", seq_no[ii]);	//ìˆœë²ˆ
 
 				//stock Table Update
 				jspDao.updComm("ChgSeqNo", jrParam);
@@ -2817,19 +2817,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * ÀåÀÔº¸±Ş±âÁØ
+	 * ì¥ì…ë³´ê¸‰ê¸°ì¤€
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀåÀÔº¸±Ş±âÁØ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¥ì…ë³´ê¸‰ê¸°ì¤€ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getChgSupRule(GridData gdReq) throws DAOException {
-		String methodNm = "ÀåÀÔº¸±Ş±âÁØ Á¶È¸[SlabYdJspSeEJB.getEqpPulloutSup] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¥ì…ë³´ê¸‰ê¸°ì¤€ ì¡°íšŒ[SlabYdJspSeEJB.getEqpPulloutSup] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -2845,33 +2845,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀåÀÔº¸±Ş±âÁØ µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¥ì…ë³´ê¸‰ê¸°ì¤€ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtChgSupRule(GridData gdReq) throws DAOException {
-		String methodNm = "ÀåÀÔº¸±Ş±âÁØ µî·Ï[SlabYdJspSeEJB.trtChgSupRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¥ì…ë³´ê¸‰ê¸°ì¤€ ë“±ë¡[SlabYdJspSeEJB.trtChgSupRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_STK_COL_GP" , slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP" )));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_TI_SUP_YN"     , slabUtils.trim(gdReq.getParam("V_TI_SUP_YN"     )));	//TakeIn°øBedº¸±Ş¿ä±¸¿©ºÎ
-			jrParam.setField("V_TI_PRE_SUP_YN" , slabUtils.trim(gdReq.getParam("V_TI_PRE_SUP_YN" )));	//TakeInBed1¸Å¼±º¸±Ş¿ä±¸¿©ºÎ
-			jrParam.setField("V_CI_AUTO_GP_YN" , slabUtils.trim(gdReq.getParam("V_CI_AUTO_GP_YN" )));	//º¸±Ş¿ä±¸´ë»óÀçÀÚµ¿Æí¼º¿©ºÎ
-			jrParam.setField("V_CI_CHG_EXT_YN" , slabUtils.trim(gdReq.getParam("V_CI_CHG_EXT_YN" )));	//º¸±Ş¿ä±¸ÀÚµ¿Æí¼ºÀåÀÔÈ®Àå¿©ºÎ
-			jrParam.setField("V_CI_CHG_MTL_CNT", slabUtils.trim(gdReq.getParam("V_CI_CHG_MTL_CNT")));	//º¸±Ş¿ä±¸ÀÚµ¿Æí¼ºÀåÀÔÀç·á¼ö
-			jrParam.setField("V_CI_CHG_LOT_CNT", slabUtils.trim(gdReq.getParam("V_CI_CHG_LOT_CNT")));	//º¸±Ş¿ä±¸ÀÚµ¿Æí¼ºÀåÀÔLot¼ö
-			jrParam.setField("V_CI_CHG_NO_SORT", slabUtils.trim(gdReq.getParam("V_CI_CHG_NO_SORT")));	//º¸±Ş¿ä±¸ÀÚµ¿Æí¼ºÀåÀÔ¼øÀ§Á¤·Ä¿©ºÎ
+			jrParam.setField("V_YD_STK_COL_GP" , slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP" )));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_TI_SUP_YN"     , slabUtils.trim(gdReq.getParam("V_TI_SUP_YN"     )));	//TakeInê³µBedë³´ê¸‰ìš”êµ¬ì—¬ë¶€
+			jrParam.setField("V_TI_PRE_SUP_YN" , slabUtils.trim(gdReq.getParam("V_TI_PRE_SUP_YN" )));	//TakeInBed1ë§¤ì„ ë³´ê¸‰ìš”êµ¬ì—¬ë¶€
+			jrParam.setField("V_CI_AUTO_GP_YN" , slabUtils.trim(gdReq.getParam("V_CI_AUTO_GP_YN" )));	//ë³´ê¸‰ìš”êµ¬ëŒ€ìƒì¬ìë™í¸ì„±ì—¬ë¶€
+			jrParam.setField("V_CI_CHG_EXT_YN" , slabUtils.trim(gdReq.getParam("V_CI_CHG_EXT_YN" )));	//ë³´ê¸‰ìš”êµ¬ìë™í¸ì„±ì¥ì…í™•ì¥ì—¬ë¶€
+			jrParam.setField("V_CI_CHG_MTL_CNT", slabUtils.trim(gdReq.getParam("V_CI_CHG_MTL_CNT")));	//ë³´ê¸‰ìš”êµ¬ìë™í¸ì„±ì¥ì…ì¬ë£Œìˆ˜
+			jrParam.setField("V_CI_CHG_LOT_CNT", slabUtils.trim(gdReq.getParam("V_CI_CHG_LOT_CNT")));	//ë³´ê¸‰ìš”êµ¬ìë™í¸ì„±ì¥ì…Lotìˆ˜
+			jrParam.setField("V_CI_CHG_NO_SORT", slabUtils.trim(gdReq.getParam("V_CI_CHG_NO_SORT")));	//ë³´ê¸‰ìš”êµ¬ìë™í¸ì„±ì¥ì…ìˆœìœ„ì •ë ¬ì—¬ë¶€
 
-			//¾ßµå±âÁØ Table Update
+			//ì•¼ë“œê¸°ì¤€ Table Update
 			jspDao.updChgSupRule("Rule", jrParam);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -2886,36 +2886,36 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * ¼öºÒ±¸¿ëµµº¯°æ
+	 * ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½
 	 **************************************************************************/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼öºÒ±¸¿ëµµº¯°æ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getBedUsgGpSet(GridData gdReq) throws DAOException {
-		String methodNm = "¼öºÒ±¸¿ëµµº¯°æ Á¶È¸[SlabYdJspSeEJB.getBedUsgGpSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ ì¡°íšŒ[SlabYdJspSeEJB.getBedUsgGpSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
-			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO")); //¾ßµåÀûÄ¡Bed¹øÈ£
+			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP")); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String ydStkBedNo = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO")); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("ÀûÄ¡¿­±¸ºĞÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜ì—´êµ¬ë¶„ì´ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, "");
 
-			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_STK_BED_NO", ydStkBedNo);	//¾ßµåÀûÄ¡Bed¹øÈ£
+			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp);	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_STK_BED_NO", ydStkBedNo);	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
 			JDTORecordSet jrRst = commDao.getStat("Bed", jrParam);
 			
@@ -2930,52 +2930,52 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼öºÒ±¸¿ëµµº¯°æ µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtBedUsgGpSet(GridData gdReq) throws DAOException {
-		String methodNm = "¼öºÒ±¸¿ëµµº¯°æ µî·Ï[SlabYdJspSeEJB.trtBedUsgGpSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ ë“±ë¡[SlabYdJspSeEJB.trtBedUsgGpSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStkColGp    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    )); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    )); //¾ßµåÀûÄ¡Bed¹øÈ£
-			String ydStkBedUsgGp = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_USG_GP")); //¾ßµåÀûÄ¡Bed¿ëµµ±¸ºĞ
+			String ydStkColGp    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"    )); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String ydStkBedNo    = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_NO"    )); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			String ydStkBedUsgGp = slabUtils.trim(gdReq.getParam("V_YD_STK_BED_USG_GP")); //ì•¼ë“œì ì¹˜Bedìš©ë„êµ¬ë¶„
 
 			/**********************************************************
-			* 1. ¼ö½Å Ç×¸ñ °ª Check
+			* 1. ìˆ˜ì‹  í•­ëª© ê°’ Check
 			**********************************************************/
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("ÀûÄ¡¿­±¸ºĞÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜ì—´êµ¬ë¶„ì´ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedNo)) {
-				throw new Exception("ÀûÄ¡Bed¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkBedUsgGp)) {
-				throw new Exception("ÀûÄ¡Bed¿ëµµ±¸ºĞÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì ì¹˜Bedìš©ë„êµ¬ë¶„ì´ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			/**********************************************************
-			* 2. Bed¿ëµµ±¸ºĞ¼³Á¤
+			* 2. Bedìš©ë„êµ¬ë¶„ì„¤ì •
 			**********************************************************/
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_STK_COL_GP"    , ydStkColGp   );	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_STK_BED_NO"    , ydStkBedNo   );	//¾ßµåÀûÄ¡Bed¹øÈ£
-			jrParam.setField("V_YD_STK_BED_USG_GP", ydStkBedUsgGp);	//¾ßµåÀûÄ¡Bed¿ëµµ±¸ºĞ
+			jrParam.setField("V_YD_STK_COL_GP"    , ydStkColGp   );	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_STK_BED_NO"    , ydStkBedNo   );	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrParam.setField("V_YD_STK_BED_USG_GP", ydStkBedUsgGp);	//ì•¼ë“œì ì¹˜Bedìš©ë„êµ¬ë¶„
 
-			//Bed¿ëµµ±¸ºĞ¼³Á¤
+			//Bedìš©ë„êµ¬ë¶„ì„¤ì •
 			if (slabComm.setBedUsgGp(jrParam) <= 0) {
-				throw new Exception("º¯°æµÈ ÀûÄ¡Bed¿ëµµ±¸ºĞÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½ëœ ì ì¹˜Bedìš©ë„êµ¬ë¶„ì´ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			/**********************************************************
-			* 3. ¼öºÒ±¸º¯°æÀÀ´ä(YDC3L001, YDC7L001) Àü¹® Á¶È¸ : ÈÄÆÇ ¾øÀ½
+			* 3. ìˆ˜ë¶ˆêµ¬ë³€ê²½ì‘ë‹µ(YDC3L001, YDC7L001) ì „ë¬¸ ì¡°íšŒ : í›„íŒ ì—†ìŒ
 			**********************************************************/
 			JDTORecord jrRtn = null;
 
@@ -2986,9 +2986,9 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					msgId = "YDC7L001";
 				}
 	
-				jrParam.setField("V_JMS_TC_CD", msgId); //JMSTCÄÚµå
+				jrParam.setField("V_JMS_TC_CD", msgId); //JMSTCì½”ë“œ
 				
-				//Àü¼ÛData Á¶È¸
+				//ì „ì†¡Data ì¡°íšŒ
 				jrRtn = slabUtils.addSndData(commDao.getMsgL2(msgId, jrParam));
 			}
 
@@ -3004,19 +3004,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * °í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ¿©ºÎ µî·Ï
+	 * ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘ì—¬ë¶€ ë“±ë¡
 	 **************************************************************************/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getHsmAllSfSet(GridData gdReq) throws DAOException {
-		String methodNm = "°í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ Á¶È¸[SlabYdJspSeEJB.getHsmAllSfSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ì¡°íšŒ[SlabYdJspSeEJB.getHsmAllSfSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3032,34 +3032,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtHsmAllSfSet(GridData gdReq) throws DAOException {
-		String methodNm = "°í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ µî·Ï[SlabYdJspSeEJB.trtHsmAllSfSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ë“±ë¡[SlabYdJspSeEJB.trtHsmAllSfSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String stlNo = slabUtils.trim(gdReq.getParam("V_STL_NO"));	//Àç·á¹øÈ£
-			String jsfGp = slabUtils.trim(gdReq.getParam("V_JSF_GP"));	//»óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ
+			String stlNo = slabUtils.trim(gdReq.getParam("V_STL_NO"));	//ì¬ë£Œë²ˆí˜¸
+			String jsfGp = slabUtils.trim(gdReq.getParam("V_JSF_GP"));	//ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„
 
 			if ("".equals(stlNo)) {
-				throw new Exception("Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			jrParam.setField("V_STL_NO", stlNo);
 			jrParam.setField("V_JSF_GP", jsfGp);
 
-			//ÀúÀåÇ° Table »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ(SNDBK_GP:¹İ¼Û¿äÃ»±¸ºĞ) Update
+			//ì €ì¥í’ˆ Table ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„(SNDBK_GP:ë°˜ì†¡ìš”ì²­êµ¬ë¶„) Update
 			jspDao.updHsmAllSfSet("Stock", jrParam);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -3074,19 +3074,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * ½ºÄ«ÇÎº¸±Ş°ü¸®
+	 * ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎº¸±Ş°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSfSupMgt(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎº¸±Ş°ü¸® Á¶È¸[SlabYdJspSeEJB.getSfSupMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getSfSupMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3102,97 +3102,97 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎº¸±Ş°ü¸® º¸±ŞLotµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ë³´ê¸‰Lotë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtSfSupMgtCL(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎº¸±Ş°ü¸® º¸±ŞLotµî·Ï[SlabYdJspSeEJB.trtSfSupMgtCL] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ë³´ê¸‰Lotë“±ë¡[SlabYdJspSeEJB.trtSfSupMgtCL] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			String lotRegGp   = slabUtils.trim(gdReq.getParam("V_LOT_REG_GP"   ));	//Lotµî·Ï±¸ºĞ
-			String modifier   = slabUtils.trim(gdReq.getParam("userid"         ));	//¼öÁ¤ÀÚ
+			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String lotRegGp   = slabUtils.trim(gdReq.getParam("V_LOT_REG_GP"   ));	//Lotë“±ë¡êµ¬ë¶„
+			String modifier   = slabUtils.trim(gdReq.getParam("userid"         ));	//ìˆ˜ì •ì
 
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//¾ßµå½ºÄÉÁìÄÚµå ¼³Á¤
-			String ydSchCd = "";	//¾ßµå½ºÄÉÁìÄÚµå
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ ì„¤ì •
+			String ydSchCd = "";	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
 			if ("ACDP01".equals(ydStkColGp) || "ABDP03".equals(ydStkColGp) 
-					|| "MADP01".equals(ydStkColGp) || "MART01".equals(ydStkColGp)) {  // Ç×¸¸¾ßµå ±â´ÉÀû¿ë º¸¿Ï : 2015.12.21 by LeeJY
+					|| "MADP01".equals(ydStkColGp) || "MART01".equals(ydStkColGp)) {  // í•­ë§Œì•¼ë“œ ê¸°ëŠ¥ì ìš© ë³´ì™„ : 2015.12.21 by LeeJY
 				ydSchCd = ydStkColGp + "UM";
 			} else {
-				throw new Exception("Ã³¸®ÇÒ ¼ö ¾ø´Â ¼³ºñ[" + ydStkColGp + "] ÀÔ´Ï´Ù...");
+				throw new Exception("ì²˜ë¦¬í•  ìˆ˜ ì—†ëŠ” ì„¤ë¹„[" + ydStkColGp + "] ì…ë‹ˆë‹¤...");
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			//¾ßµå½ºÄÉÁìÄÚµå Check
-			jrParam.setField("V_YD_SCH_CD", ydSchCd); //¾ßµå½ºÄÉÁìÄÚµå
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ Check
+			jrParam.setField("V_YD_SCH_CD", ydSchCd); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
-			//¾ßµå½ºÄÉÁì±İÁöÀ¯¹« Á¶È¸
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´ ì¡°íšŒ
 			JDTORecordSet jsChk = commDao.getStat("SchCd", jrParam);
 
 			if (jsChk.size() > 0) {
-				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
+				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
 
-				//½ºÄÉÁÙ ±İÁö¿©ºÎ Check
+				//ìŠ¤ì¼€ì¤„ ê¸ˆì§€ì—¬ë¶€ Check
 				if ("Y".equals(ydSchProhExn)) {
-					throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]´Â ±âµ¿±İÁö »óÅÂÀÔ´Ï´Ù.");
+					throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ëŠ” ê¸°ë™ê¸ˆì§€ ìƒíƒœì…ë‹ˆë‹¤.");
 				}
 			} else {
-				throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]ÀÇ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ì˜ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//¾ßµåÁØºñ½ºÄÉÁìID »ı¼º
+			//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID ìƒì„±
 			String ydPrepSchId = commDao.getSeqId(logId, methodNm, "PrepSch");
 
-			jrParam.setField("V_YD_STK_COL_GP" , ydStkColGp ); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //¾ßµåÁØºñ½ºÄÉÁìID
+			jrParam.setField("V_YD_STK_COL_GP" , ydStkColGp ); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
 
 			int rowCnt = 0;
 			
-			//Lotµî·Ï±¸ºĞ¿¡ µû¶ó ºĞ¸®
+			//Lotë“±ë¡êµ¬ë¶„ì— ë”°ë¼ ë¶„ë¦¬
 			if ("A".equals(lotRegGp)) {
-				//ÀÚµ¿À¸·Î LotÆí¼ºÇÏ¿© ÁØºñÀç·á µî·Ï
+				//ìë™ìœ¼ë¡œ Lotí¸ì„±í•˜ì—¬ ì¤€ë¹„ì¬ë£Œ ë“±ë¡
 				rowCnt = jspDao.insSfSupMgt("PrepMtl", jrParam);
 			} else {
-				//¼±ÅÃµÈ ´ë»óÀç·Î LotÆí¼º
+				//ì„ íƒëœ ëŒ€ìƒì¬ë¡œ Lotí¸ì„±
 				rowCnt = gdReq.getHeader("CHECK").getRowCount();
 				
-				//ÁØºñÀç·á µî·Ï
+				//ì¤€ë¹„ì¬ë£Œ ë“±ë¡
 				if (rowCnt > 0) {
 					String[][] arrMtl = new String[rowCnt][7];
 					
 					for (int ii = 0; ii < rowCnt; ii++) {
-						arrMtl[ii][0] = ydPrepSchId;													//¾ßµåÁØºñ½ºÄÉÁìID
-						arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//Àç·á¹øÈ£
-						arrMtl[ii][2] = modifier;														//¼öÁ¤ÀÚ
-						arrMtl[ii][3] = modifier;														//¼öÁ¤ÀÚ
-						arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-						arrMtl[ii][5] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//¾ßµåÀûÄ¡Bed¹øÈ£
-						arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//¾ßµåÀûÄ¡´Ü¹øÈ£
+						arrMtl[ii][0] = ydPrepSchId;													//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+						arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//ì¬ë£Œë²ˆí˜¸
+						arrMtl[ii][2] = modifier;														//ìˆ˜ì •ì
+						arrMtl[ii][3] = modifier;														//ìˆ˜ì •ì
+						arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+						arrMtl[ii][5] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+						arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
 					}
 
 					commDao.upsBatch("PrepMtl", arrMtl, logId, methodNm);
 				}
 			}
 
-			//ÁØºñ½ºÄÉÁì µî·Ï
+			//ì¤€ë¹„ìŠ¤ì¼€ì¥´ ë“±ë¡
 			if (rowCnt > 0) {
 				commDao.insSlabYd("PrepSch", jrParam);
 			} else {
-				throw new Exception("µî·ÏµÈ º¸±ŞLot Àç·á°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë“±ë¡ëœ ë³´ê¸‰Lot ì¬ë£Œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -3207,34 +3207,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎº¸±Ş°ü¸® Áö¿¬»çÀ¯µî·Ï(±ä±ŞÀç)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì§€ì—°ì‚¬ìœ ë“±ë¡(ê¸´ê¸‰ì¬)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtSfSupMgtMD(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎº¸±Ş°ü¸® Áö¿¬»çÀ¯µî·Ï[SlabYdJspSeEJB.trtSfSupMgtMD] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì§€ì—°ì‚¬ìœ ë“±ë¡[SlabYdJspSeEJB.trtSfSupMgtMD] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String scarfDelyRegister = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_REGISTER")); //ScarfingÁö¿¬µî·ÏÀÚ
-			String scarfDelyCnts     = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_CNTS"    )); //ScarfingÁö¿¬³»¿ë
-			String modifier          = slabUtils.trim(gdReq.getParam("userid"               )); //¼öÁ¤ÀÚ
+			String scarfDelyRegister = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_REGISTER")); //Scarfingì§€ì—°ë“±ë¡ì
+			String scarfDelyCnts     = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_CNTS"    )); //Scarfingì§€ì—°ë‚´ìš©
+			String modifier          = slabUtils.trim(gdReq.getParam("userid"               )); //ìˆ˜ì •ì
 
-			//BedÀç·á
+			//Bedì¬ë£Œ
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrMtl = new String[rowCnt][5];
 			String stlNos = "";
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrMtl[ii][0] = scarfDelyRegister;	//ScarfingÁö¿¬µî·ÏÀÚ
-				arrMtl[ii][1] = scarfDelyCnts;		//ScarfingÁö¿¬³»¿ë
-				arrMtl[ii][2] = modifier;			//¼öÁ¤ÀÚ
-				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));	//Àç·á¹øÈ£
-				arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("STEP_NO").getValue(ii));	//Â÷¼ö
+				arrMtl[ii][0] = scarfDelyRegister;	//Scarfingì§€ì—°ë“±ë¡ì
+				arrMtl[ii][1] = scarfDelyCnts;		//Scarfingì§€ì—°ë‚´ìš©
+				arrMtl[ii][2] = modifier;			//ìˆ˜ì •ì
+				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));	//ì¬ë£Œë²ˆí˜¸
+				arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("STEP_NO").getValue(ii));	//ì°¨ìˆ˜
 				
 				if("".equals(stlNos)){
 					stlNos += slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));
@@ -3244,14 +3244,14 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				}
 			}
 
-			//PM_SLAB½ºÄ«ÇÎ±ä±Ş´ë»óÁöÁ¤ Table Update
+			//PM_SLABìŠ¤ì¹´í•‘ê¸´ê¸‰ëŒ€ìƒì§€ì • Table Update
 			jspDao.updSfSupMgt("Dely", arrMtl, logId, methodNm);
 			
-			//PM_SLAB½ºÄ«ÇÎ±ä±Ş´ë»óÁöÁ¤ Table Update
+			//PM_SLABìŠ¤ì¹´í•‘ê¸´ê¸‰ëŒ€ìƒì§€ì • Table Update
 			jspDao.updSfSupMgt("DelyMs", arrMtl, logId, methodNm);
 			
-			//23.02.15 ¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» ½ºÄ«ÇÎ Áö¿¬»çÀ¯ º¥µù Æ÷ÇÔ½Ã ÀÚµ¿º¥µùµî·Ï REQ202301442577
-			if(scarfDelyCnts.contains("¹êµù") || scarfDelyCnts.contains("º¥µù")){
+			//23.02.15 ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ ìŠ¤ì¹´í•‘ ì§€ì—°ì‚¬ìœ  ë²¤ë”© í¬í•¨ì‹œ ìë™ë²¤ë”©ë“±ë¡ REQ202301442577
+			if(scarfDelyCnts.contains("ë°´ë”©") || scarfDelyCnts.contains("ë²¤ë”©")){
 				GridData gridParam = new GridData();
 				gridParam.addParam("V_STL_NOS", stlNos);
 				gridParam.addParam("V_BENDING_YN", "Y");
@@ -3259,10 +3259,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				gridParam.addParam("V_MODIFIER", modifier);
 				gridParam.addParam("action_code", "update");
 				
-				//Àç·á¿¡ º¥µù Ç¥½Ã
+				//ì¬ë£Œì— ë²¤ë”© í‘œì‹œ
 				ydStockDao.updStockBendReg(gridParam);
 				
-				//bending ÀÌ·Â µî·Ï
+				//bending ì´ë ¥ ë“±ë¡
 				ydStockDao.inStockBendReg(gridParam);
 
 			}
@@ -3279,33 +3279,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎº¸±Ş°ü¸® Áö¿¬»çÀ¯µî·Ï(°øÁ¤¿ä±¸)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì§€ì—°ì‚¬ìœ ë“±ë¡(ê³µì •ìš”êµ¬)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtSfSupMgtMS(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎº¸±Ş°ü¸® Áö¿¬»çÀ¯µî·Ï(°øÁ¤¿ä±¸)[SlabYdJspSeEJB.trtSfSupMgtMS] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬ ì§€ì—°ì‚¬ìœ ë“±ë¡(ê³µì •ìš”êµ¬)[SlabYdJspSeEJB.trtSfSupMgtMS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String scarfDelyRegister = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_REGISTER")); //ScarfingÁö¿¬µî·ÏÀÚ
-			String scarfDelyCnts     = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_CNTS"    )); //ScarfingÁö¿¬³»¿ë
-			String modifier          = slabUtils.trim(gdReq.getParam("userid"               )); //¼öÁ¤ÀÚ
+			String scarfDelyRegister = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_REGISTER")); //Scarfingì§€ì—°ë“±ë¡ì
+			String scarfDelyCnts     = slabUtils.trim(gdReq.getParam("V_SCARF_DELY_CNTS"    )); //Scarfingì§€ì—°ë‚´ìš©
+			String modifier          = slabUtils.trim(gdReq.getParam("userid"               )); //ìˆ˜ì •ì
 
-			//BedÀç·á
+			//Bedì¬ë£Œ
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrMtl = new String[rowCnt][4];
 			String stlNos = "";
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrMtl[ii][0] = scarfDelyRegister;	//ScarfingÁö¿¬µî·ÏÀÚ
-				arrMtl[ii][1] = scarfDelyCnts;		//ScarfingÁö¿¬³»¿ë
-				arrMtl[ii][2] = modifier;			//¼öÁ¤ÀÚ
-				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));	//Àç·á¹øÈ£
+				arrMtl[ii][0] = scarfDelyRegister;	//Scarfingì§€ì—°ë“±ë¡ì
+				arrMtl[ii][1] = scarfDelyCnts;		//Scarfingì§€ì—°ë‚´ìš©
+				arrMtl[ii][2] = modifier;			//ìˆ˜ì •ì
+				arrMtl[ii][3] = slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));	//ì¬ë£Œë²ˆí˜¸
 
 				if("".equals(stlNos)){
 					stlNos += slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(ii));
@@ -3315,11 +3315,11 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				}
 			}
 			
-			//PM_SLAB½ºÄ«ÇÎ±ä±Ş´ë»óÁöÁ¤ Table Update
+			//PM_SLABìŠ¤ì¹´í•‘ê¸´ê¸‰ëŒ€ìƒì§€ì • Table Update
 			jspDao.updSfSupMgt("DelyMs", arrMtl, logId, methodNm);
 			
-			//23.02.15 ¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» ½ºÄ«ÇÎ Áö¿¬»çÀ¯ º¥µù Æ÷ÇÔ½Ã ÀÚµ¿º¥µùµî·Ï REQ202301442577
-			if(scarfDelyCnts.contains("¹êµù") || scarfDelyCnts.contains("º¥µù")){
+			//23.02.15 ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ ìŠ¤ì¹´í•‘ ì§€ì—°ì‚¬ìœ  ë²¤ë”© í¬í•¨ì‹œ ìë™ë²¤ë”©ë“±ë¡ REQ202301442577
+			if(scarfDelyCnts.contains("ë°´ë”©") || scarfDelyCnts.contains("ë²¤ë”©")){
 				GridData gridParam = new GridData();
 				gridParam.addParam("V_STL_NOS", stlNos);
 				gridParam.addParam("V_BENDING_YN", "Y");
@@ -3327,10 +3327,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				gridParam.addParam("V_MODIFIER", modifier);
 				gridParam.addParam("action_code", "update");
 				
-				//Àç·á¿¡ º¥µù Ç¥½Ã
+				//ì¬ë£Œì— ë²¤ë”© í‘œì‹œ
 				ydStockDao.updStockBendReg(gridParam);
 				
-				//bending ÀÌ·Â µî·Ï
+				//bending ì´ë ¥ ë“±ë¡
 				ydStockDao.inStockBendReg(gridParam);
 			}
 
@@ -3345,19 +3345,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/***************************************************************************
-	 * 2Â÷Àı´Üº¸±Ş°ü¸®
+	 * 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getStcmSupMgt(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸[SlabYdJspSeEJB.getStcmSupMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getStcmSupMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3372,15 +3372,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸(½Å)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ(ì‹ )
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getStcmSupMgtNew(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸[SlabYdJspSeEJB.getStcmSupMgtNew] < " + gdReq.getNavigateValue();
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getStcmSupMgtNew] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3395,15 +3395,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸(½Å)ÆË¾÷
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ(ì‹ )íŒì—…
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getStcmSupMgtNewpp(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸® Á¶È¸[SlabYdJspSeEJB.getStcmSupMgtNewpp] < " + gdReq.getNavigateValue();
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getStcmSupMgtNewpp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3418,100 +3418,100 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸® º¸±ŞLotµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ë³´ê¸‰Lotë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtStcmSupMgtCL(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸® º¸±ŞLotµî·Ï[SlabYdJspSeEJB.trtStcmSupMgtCL] < " + gdReq.getNavigateValue();
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ë³´ê¸‰Lotë“±ë¡[SlabYdJspSeEJB.trtStcmSupMgtCL] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-			String lotRegGp   = slabUtils.trim(gdReq.getParam("V_LOT_REG_GP"   ));	//Lotµî·Ï±¸ºĞ
-			String modifier   = slabUtils.trim(gdReq.getParam("userid"         ));	//¼öÁ¤ÀÚ
+			String ydStkColGp = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String lotRegGp   = slabUtils.trim(gdReq.getParam("V_LOT_REG_GP"   ));	//Lotë“±ë¡êµ¬ë¶„
+			String modifier   = slabUtils.trim(gdReq.getParam("userid"         ));	//ìˆ˜ì •ì
 
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			String ydSchCd = "";	//¾ßµå½ºÄÉÁìÄÚµå
+			String ydSchCd = "";	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
-			//¾ßµå½ºÄÉÁìÄÚµå ¼³Á¤
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ ì„¤ì •
 			if ("AADP02".equals(ydStkColGp)) {
-				ydSchCd = "AADP02UM";	//#1 2Â÷Àı´Ü
+				ydSchCd = "AADP02UM";	//#1 2ì°¨ì ˆë‹¨
 			} else if ("AAPUP9".equals(ydStkColGp)) {
-				ydSchCd = "AAPU09UM";	//#2 2Â÷Àı´Ü
+				ydSchCd = "AAPU09UM";	//#2 2ì°¨ì ˆë‹¨
 			} else if ("AAPUPA".equals(ydStkColGp)) {
-				ydSchCd = "AAPU10UM";	//#3 2Â÷Àı´Ü
+				ydSchCd = "AAPU10UM";	//#3 2ì°¨ì ˆë‹¨
 			} else {
-				throw new Exception("Ã³¸®ÇÒ ¼ö ¾ø´Â ¼³ºñ[" + ydStkColGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì²˜ë¦¬í•  ìˆ˜ ì—†ëŠ” ì„¤ë¹„[" + ydStkColGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			//¾ßµå½ºÄÉÁìÄÚµå Check
-			jrParam.setField("V_YD_SCH_CD", ydSchCd); //¾ßµå½ºÄÉÁìÄÚµå
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ Check
+			jrParam.setField("V_YD_SCH_CD", ydSchCd); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 
-			//¾ßµå½ºÄÉÁì±İÁöÀ¯¹« Á¶È¸
+			//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´ ì¡°íšŒ
 			JDTORecordSet jsChk = commDao.getStat("SchCd", jrParam);
 
 			if (jsChk.size() > 0) {
-				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
+				String ydSchProhExn = slabUtils.trim(jsChk.getRecord(0).getFieldString("YD_SCH_PROH_EXN"));	//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
 
-				//½ºÄÉÁÙ ±İÁö¿©ºÎ Check
+				//ìŠ¤ì¼€ì¤„ ê¸ˆì§€ì—¬ë¶€ Check
 				if ("Y".equals(ydSchProhExn)) {
-					throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]´Â ±âµ¿±İÁö »óÅÂÀÔ´Ï´Ù.");
+					throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ëŠ” ê¸°ë™ê¸ˆì§€ ìƒíƒœì…ë‹ˆë‹¤.");
 				}
 			} else {
-				throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "]ÀÇ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "]ì˜ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
-			//¾ßµåÁØºñ½ºÄÉÁìID »ı¼º
+			//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID ìƒì„±
 			String ydPrepSchId = commDao.getSeqId(logId, methodNm, "PrepSch");
 
-			jrParam.setField("V_YD_STK_COL_GP" , ydStkColGp ); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //¾ßµåÁØºñ½ºÄÉÁìID
+			jrParam.setField("V_YD_STK_COL_GP" , ydStkColGp ); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_PREP_SCH_ID", ydPrepSchId); //ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
 
 			int rowCnt = 0;
 
-			//Lotµî·Ï±¸ºĞ¿¡ µû¶ó ºĞ¸®
+			//Lotë“±ë¡êµ¬ë¶„ì— ë”°ë¼ ë¶„ë¦¬
 			if ("A".equals(lotRegGp)) {
-				//ÀÚµ¿À¸·Î LotÆí¼ºÇÏ¿© ÁØºñÀç·á µî·Ï
+				//ìë™ìœ¼ë¡œ Lotí¸ì„±í•˜ì—¬ ì¤€ë¹„ì¬ë£Œ ë“±ë¡
 				rowCnt = jspDao.insStcmSupMgt("PrepMtl", jrParam);
 			} else {
-				//¼±ÅÃµÈ ´ë»óÀç·Î LotÆí¼º
+				//ì„ íƒëœ ëŒ€ìƒì¬ë¡œ Lotí¸ì„±
 				rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
-				//ÁØºñÀç·á µî·Ï
+				//ì¤€ë¹„ì¬ë£Œ ë“±ë¡
 				if (rowCnt > 0) {
 					String[][] arrMtl = new String[rowCnt][7];
 					
 					for (int ii = 0; ii < rowCnt; ii++) {
-						arrMtl[ii][0] = ydPrepSchId;													//¾ßµåÁØºñ½ºÄÉÁìID
-						arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//Àç·á¹øÈ£
-						arrMtl[ii][2] = modifier;														//¼öÁ¤ÀÚ
-						arrMtl[ii][3] = modifier;														//¼öÁ¤ÀÚ
-						arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-						arrMtl[ii][5] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//¾ßµåÀûÄ¡Bed¹øÈ£
-						arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//¾ßµåÀûÄ¡´Ü¹øÈ£
+						arrMtl[ii][0] = ydPrepSchId;													//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+						arrMtl[ii][1] = slabUtils.trim(gdReq.getHeader("STL_NO"       ).getValue(ii));	//ì¬ë£Œë²ˆí˜¸
+						arrMtl[ii][2] = modifier;														//ìˆ˜ì •ì
+						arrMtl[ii][3] = modifier;														//ìˆ˜ì •ì
+						arrMtl[ii][4] = slabUtils.trim(gdReq.getHeader("YD_STK_COL_GP").getValue(ii));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+						arrMtl[ii][5] = slabUtils.trim(gdReq.getHeader("YD_STK_BED_NO").getValue(ii));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+						arrMtl[ii][6] = slabUtils.trim(gdReq.getHeader("YD_STK_LYR_NO").getValue(ii));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
 					}
 					
 					commDao.upsBatch("PrepMtl", arrMtl, logId, methodNm);
 				}
 			}
 
-			//ÁØºñ½ºÄÉÁì µî·Ï
+			//ì¤€ë¹„ìŠ¤ì¼€ì¥´ ë“±ë¡
 			if (rowCnt > 0) {
 				commDao.insSlabYd("PrepSch", jrParam);
 			} else {
-				throw new Exception("µî·ÏµÈ º¸±ŞLot Àç·á°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë“±ë¡ëœ ë³´ê¸‰Lot ì¬ë£Œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -3525,15 +3525,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸® ±ä±Ş/º¸·ù µî·Ï ÆË¾÷
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ê¸´ê¸‰/ë³´ë¥˜ ë“±ë¡ íŒì—…
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtStcmSupMgtCLpp(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸® º¸±ŞLotµî·Ï[SlabYdJspSeEJB.trtStcmSupMgtCLpp] < " + gdReq.getNavigateValue();
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬ ë³´ê¸‰Lotë“±ë¡[SlabYdJspSeEJB.trtStcmSupMgtCLpp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		JDTORecord jrRtn = null; 
@@ -3546,23 +3546,23 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			String sEtc 	= slabUtils.trim(gdReq.getParam("V_ETC"));
 			String sUserId 	= slabUtils.trim(gdReq.getParam("userid"));
 			String sStlList = "|";
-			//¼±ÅÃµÈ ´ë»óÀç·Î LotÆí¼º
+			//ì„ íƒëœ ëŒ€ìƒì¬ë¡œ Lotí¸ì„±
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			if (rowCnt > 0) {
 				
 				for (int ii = 0; ii < rowCnt; ii++) {
-					sStlList = sStlList + slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)) + "|";	//Àç·á¹øÈ£
+					sStlList = sStlList + slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)) + "|";	//ì¬ë£Œë²ˆí˜¸
 				}
 			}
 			
 			JDTORecord recPara = JDTORecordFactory.getInstance().create();
 			recPara.setField("JMS_TC_CD"           	, "YDCTJ036" ); //YDCTJ036
 			recPara.setField("JMS_TC_CREATE_DDTT"   , slabUtils.getDateTime14()); //YYYYMMDDHH24MISS
-			recPara.setField("PROCESS_GP"			, sWorkGp ); //1:±ä±Şµî·Ï,2:±ä±ŞÇØÁ¦,3:º¸·ùµî·Ï,4:º¸·ùÇØÁ¦
-			recPara.setField("MSLAB_NO"				, sStlList ); //ÁÖÆí¹øÈ£ (¿¹:  |M00001 01|M00001 02|M00001 03|  )
-			recPara.setField("RSN"					, sEtc ); //»çÀ¯
-			recPara.setField("REGISTER"				, sUserId); //µî·ÏÀÚ
+			recPara.setField("PROCESS_GP"			, sWorkGp ); //1:ê¸´ê¸‰ë“±ë¡,2:ê¸´ê¸‰í•´ì œ,3:ë³´ë¥˜ë“±ë¡,4:ë³´ë¥˜í•´ì œ
+			recPara.setField("MSLAB_NO"				, sStlList ); //ì£¼í¸ë²ˆí˜¸ (ì˜ˆ:  |M00001 01|M00001 02|M00001 03|  )
+			recPara.setField("RSN"					, sEtc ); //ì‚¬ìœ 
+			recPara.setField("REGISTER"				, sUserId); //ë“±ë¡ì
 			
 			jrRtn = slabUtils.addSndData(recPara);
 			
@@ -3578,19 +3578,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * º¸±ŞLot°ü¸® (ÀåÀÔ/½ºÄ«ÇÎ/2Â÷Àı´Ü)
+	 * ë³´ê¸‰Lotê´€ë¦¬ (ì¥ì…/ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨)
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSupLotMgt(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸® Á¶È¸[SlabYdJspSeEJB.getSupLotMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getSupLotMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3606,30 +3606,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® º¸±Ş¼ø¼­ ¼öÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ ë³´ê¸‰ìˆœì„œ ìˆ˜ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSupLotMgtMS(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸® º¸±Ş¼ø¼­ ¼öÁ¤[SlabYdJspSeEJB.trtSupLotMgtMS] < " + gdReq.getNavigateValue();
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬ ë³´ê¸‰ìˆœì„œ ìˆ˜ì •[SlabYdJspSeEJB.trtSupLotMgtMS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
-				jrParam.setField("V_YD_CARASGN_SEQ", slabUtils.trim(gdReq.getHeader("YD_CARASGN_SEQ").getValue(ii)));	//º¸±Ş¼ø¼­(¾ßµå¹èÂ÷¼ø¼­)
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_YD_CARASGN_SEQ", slabUtils.trim(gdReq.getHeader("YD_CARASGN_SEQ").getValue(ii)));	//ë³´ê¸‰ìˆœì„œ(ì•¼ë“œë°°ì°¨ìˆœì„œ)
 				
-				//º¸±Ş¼ø¼­(¾ßµå¹èÂ÷¼ø¼­) ¼öÁ¤
+				//ë³´ê¸‰ìˆœì„œ(ì•¼ë“œë°°ì°¨ìˆœì„œ) ìˆ˜ì •
 				commDao.updSlabYd("PsPrior", jrParam);
 			}
 
@@ -3645,33 +3645,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® »èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSupLotMgtDS(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸® »èÁ¦[SlabYdJspSeEJB.trtSupLotMgtDS] < " + gdReq.getNavigateValue();
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬ ì‚­ì œ[SlabYdJspSeEJB.trtSupLotMgtDS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
-			jrParam.setField("V_STL_NO", "");	//Àç·á¹øÈ£
+			jrParam.setField("V_STL_NO", "");	//ì¬ë£Œë²ˆí˜¸
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
 
-				//ÁØºñÀç·á(TB_YD_PREPMTL) »èÁ¦
+				//ì¤€ë¹„ì¬ë£Œ(TB_YD_PREPMTL) ì‚­ì œ
 				commDao.updDelYn("PrepMtl", jrParam);
 				
-				//ÁØºñ½ºÄÉÁÙ(TB_YD_PREPSCH) »èÁ¦
+				//ì¤€ë¹„ìŠ¤ì¼€ì¤„(TB_YD_PREPSCH) ì‚­ì œ
 				commDao.updDelYn("PrepSch", jrParam);
 			}
 
@@ -3687,30 +3687,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® Àç·á»èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ ì¬ë£Œì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSupLotMgtDM(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸® Àç·á»èÁ¦[SlabYdJspSeEJB.trtSupLotMgtDM] < " + gdReq.getNavigateValue();
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬ ì¬ë£Œì‚­ì œ[SlabYdJspSeEJB.trtSupLotMgtDM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
-				jrParam.setField("V_STL_NO"        , slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)        ));	//Àç·á¹øÈ£
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_STL_NO"        , slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)        ));	//ì¬ë£Œë²ˆí˜¸
 				
-				//ÁØºñÀç·á(TB_YD_PREPMTL) »èÁ¦
+				//ì¤€ë¹„ì¬ë£Œ(TB_YD_PREPMTL) ì‚­ì œ
 				commDao.updDelYn("PrepMtl", jrParam);
 			}
 
@@ -3725,30 +3725,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® Å©·¹ÀÎ ÁöÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ í¬ë ˆì¸ ì§€ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSupLotMgtCM(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸® Å©·¹ÀÎ ÁöÁ¤[SlabYdJspSeEJB.trtSupLotMgtCM] < " + gdReq.getNavigateValue();
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬ í¬ë ˆì¸ ì§€ì •[SlabYdJspSeEJB.trtSupLotMgtCM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		YdPrepSchDao ydPrepSchDao = new YdPrepSchDao();
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("YD_PREP_SCH_ID"		, slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
-				jrParam.setField("YD_WRK_PLAN_CRN"      , slabUtils.trim(gdReq.getHeader("YD_WRK_PLAN_CRN").getComboHiddenValues()[gdReq.getHeader("YD_WRK_PLAN_CRN").getSelectedIndex(ii)]));	//Àç·á¹øÈ£
+				jrParam.setField("YD_PREP_SCH_ID"		, slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("YD_WRK_PLAN_CRN"      , slabUtils.trim(gdReq.getHeader("YD_WRK_PLAN_CRN").getComboHiddenValues()[gdReq.getHeader("YD_WRK_PLAN_CRN").getSelectedIndex(ii)]));	//ì¬ë£Œë²ˆí˜¸
 				jrParam.setField("MODIFIER"				, slabUtils.trim(gdReq.getParam("userid")));
-				//ÁöÁ¤Å©·¹ÀÎ ¼öÁ¤
+				//ì§€ì •í¬ë ˆì¸ ìˆ˜ì •
 				ydPrepSchDao.updYdPrepsch(jrParam,0);
 			}
 
@@ -3764,19 +3764,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/***************************************************************************
-	 * ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot
+	 * ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSfStcmSupLot(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot Á¶È¸[SlabYdJspSeEJB.getSfStcmSupLot] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì¡°íšŒ[SlabYdJspSeEJB.getSfStcmSupLot] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3792,30 +3792,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot º¸±Ş¼ø¼­ ¼öÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ë³´ê¸‰ìˆœì„œ ìˆ˜ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSfStcmSupLotMS(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot º¸±Ş¼ø¼­ ¼öÁ¤[SlabYdJspSeEJB.trtSfStcmSupLotMS] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ë³´ê¸‰ìˆœì„œ ìˆ˜ì •[SlabYdJspSeEJB.trtSfStcmSupLotMS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
-				jrParam.setField("V_YD_CARASGN_SEQ", slabUtils.trim(gdReq.getHeader("YD_CARASGN_SEQ").getValue(ii)));	//º¸±Ş¼ø¼­(¾ßµå¹èÂ÷¼ø¼­)
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_YD_CARASGN_SEQ", slabUtils.trim(gdReq.getHeader("YD_CARASGN_SEQ").getValue(ii)));	//ë³´ê¸‰ìˆœì„œ(ì•¼ë“œë°°ì°¨ìˆœì„œ)
 				
-				//º¸±Ş¼ø¼­(¾ßµå¹èÂ÷¼ø¼­) ¼öÁ¤
+				//ë³´ê¸‰ìˆœì„œ(ì•¼ë“œë°°ì°¨ìˆœì„œ) ìˆ˜ì •
 				commDao.updSlabYd("PsPrior", jrParam);
 			}
 
@@ -3831,33 +3831,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot »èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSfStcmSupLotDS(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot »èÁ¦[SlabYdJspSeEJB.trtSfStcmSupLotDS] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì‚­ì œ[SlabYdJspSeEJB.trtSfStcmSupLotDS] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
-			jrParam.setField("V_STL_NO", "");	//Àç·á¹øÈ£
+			jrParam.setField("V_STL_NO", "");	//ì¬ë£Œë²ˆí˜¸
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
 
-				//ÁØºñÀç·á(TB_YD_PREPMTL) »èÁ¦
+				//ì¤€ë¹„ì¬ë£Œ(TB_YD_PREPMTL) ì‚­ì œ
 				commDao.updDelYn("PrepMtl", jrParam);
 				
-				//ÁØºñ½ºÄÉÁÙ(TB_YD_PREPSCH) »èÁ¦
+				//ì¤€ë¹„ìŠ¤ì¼€ì¤„(TB_YD_PREPSCH) ì‚­ì œ
 				commDao.updDelYn("PrepSch", jrParam);
 			}
 
@@ -3873,30 +3873,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot Àç·á»èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì¬ë£Œì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtSfStcmSupLotDM(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot Àç·á»èÁ¦[SlabYdJspSeEJB.trtSfStcmSupLotDM] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot ì¬ë£Œì‚­ì œ[SlabYdJspSeEJB.trtSfStcmSupLotDM] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//¾ßµåÁØºñ½ºÄÉÁìID
-				jrParam.setField("V_STL_NO"        , slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)        ));	//Àç·á¹øÈ£
+				jrParam.setField("V_YD_PREP_SCH_ID", slabUtils.trim(gdReq.getHeader("YD_PREP_SCH_ID").getValue(ii)));	//ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_STL_NO"        , slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)        ));	//ì¬ë£Œë²ˆí˜¸
 				
-				//ÁØºñÀç·á(TB_YD_PREPMTL) »èÁ¦
+				//ì¤€ë¹„ì¬ë£Œ(TB_YD_PREPMTL) ì‚­ì œ
 				commDao.updDelYn("PrepMtl", jrParam);
 			}
 
@@ -3912,19 +3912,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * ´ëÂ÷½ºÄÉÁÙ°ü¸®
+	 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getTcarSchMgt(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ°ü¸® Á¶È¸[SlabYdJspSeEJB.getTcarSchMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getTcarSchMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3940,15 +3940,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ°ü¸® ´ëÂ÷ÃÊ±âÈ­
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ëŒ€ì°¨ì´ˆê¸°í™”
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtTcarSchMgtTI(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ°ü¸® ´ëÂ÷ÃÊ±âÈ­[SlabYdJspSeEJB.trtTcarSchMgtTI] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ëŒ€ì°¨ì´ˆê¸°í™”[SlabYdJspSeEJB.trtTcarSchMgtTI] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3957,18 +3957,18 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydEqpId     = ""; //¾ßµå¼³ºñID(´ëÂ÷)
-			String ydCurrBayGp = ""; //¾ßµåÇöÀçµ¿±¸ºĞ(½Å±Ô)
+			String ydEqpId     = ""; //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String ydCurrBayGp = ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ì‹ ê·œ)
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_YD_EQP_WRK_STAT"    , "U"); //¾ßµå¼³ºñÀÛ¾÷»óÅÂ(°øÂ÷)
-			jrParam.setField("V_YD_CARLD_SCH_REQ_GP", "6"); //¾ßµå»óÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(°ø´ëÂ÷µµÂø)
-			jrParam.setField("V_YD_CARUD_SCH_REQ_GP", "3"); //¾ßµåÇÏÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(¿µ´ëÂ÷µµÂø)
-			jrParam.setField("V_YD_CAR_PROG_STAT"   , "0"); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
+			jrParam.setField("V_YD_EQP_WRK_STAT"    , "U"); //ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ(ê³µì°¨)
+			jrParam.setField("V_YD_CARLD_SCH_REQ_GP", "6"); //ì•¼ë“œìƒì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ê³µëŒ€ì°¨ë„ì°©)
+			jrParam.setField("V_YD_CARUD_SCH_REQ_GP", "3"); //ì•¼ë“œí•˜ì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì˜ëŒ€ì°¨ë„ì°©)
+			jrParam.setField("V_YD_CAR_PROG_STAT"   , "0"); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
 
-			//´ëÂ÷Á¤º¸
+			//ëŒ€ì°¨ì •ë³´
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -3976,41 +3976,41 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				ydCurrBayGp = slabUtils.trim(gdReq.getHeader("YD_CURR_BAY_GP").getComboHiddenValues()[gdReq.getHeader("YD_CURR_BAY_GP").getSelectedIndex(ii)]);
 
 				if ("".equals(ydEqpId)) {
-					throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("".equals(ydCurrBayGp)) {
-					throw new Exception("º¯°æÇÒ ÇöÀçµ¿ÀÌ ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½í•  í˜„ì¬ë™ì´ ì—†ìŠµë‹ˆë‹¤.");
 				}
 				
 				/**********************************************************
-				* 2. ±âÁ¸ ´ëÂ÷½ºÄÉÁÙ/Àç·á »èÁ¦
+				* 2. ê¸°ì¡´ ëŒ€ì°¨ìŠ¤ì¼€ì¤„/ì¬ë£Œ ì‚­ì œ
 				**********************************************************/
 				jrParam.setField("V_YD_EQP_ID", ydEqpId);
 
-				//´ëÂ÷ÀÌ¼ÛÀç·á ÃÊ±âÈ­
+				//ëŒ€ì°¨ì´ì†¡ì¬ë£Œ ì´ˆê¸°í™”
 				commDao.updTcarSch("InitMtl", jrParam);
 
-				//´ëÂ÷½ºÄÉÁÙ ÃÊ±âÈ­
+				//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì´ˆê¸°í™”
 				commDao.updTcarSch("InitSch", jrParam);
 				
 				/**********************************************************
-				* 3. ½Å±Ô ´ëÂ÷½ºÄÉÁÙ µî·Ï
+				* 3. ì‹ ê·œ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
 				**********************************************************/
-				//¾ßµå´ëÂ÷½ºÄÉÁìID »ı¼º
+				//ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID ìƒì„±
 				String ydTcarSchId = commDao.getSeqId(logId, methodNm, "TcarSch");
 
 				if ("".equals(ydTcarSchId)) {
-					throw new Exception( "´ëÂ÷½ºÄÉÁÙID »ı¼º Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.");
+					throw new Exception( "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ID ìƒì„± ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
 				}
 				
-				//´ëÂ÷½ºÄÉÁÙ µî·Ï
-				jrParam.setField("V_YD_TCAR_SCH_ID"   , ydTcarSchId); //¾ßµå´ëÂ÷½ºÄÉÁìID
-				jrParam.setField("V_YD_CAR_PROG_STAT" , "0"        ); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
-				jrParam.setField("V_YD_CARLD_STOP_LOC", ydEqpId.substring(0, 1) + ydCurrBayGp + ydEqpId.substring(2)); //¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
+				//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
+				jrParam.setField("V_YD_TCAR_SCH_ID"   , ydTcarSchId); //ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("V_YD_CAR_PROG_STAT" , "0"        ); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
+				jrParam.setField("V_YD_CARLD_STOP_LOC", ydEqpId.substring(0, 1) + ydCurrBayGp + ydEqpId.substring(2)); //ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
 
 				commDao.updTcarSch("InsSch", jrParam);
 				
 				/**********************************************************
-				* 4. ´ëÂ÷ ÇöÀçµ¿ º¯°æ
+				* 4. ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½
 				**********************************************************/
 				jrParam.setField("YD_EQP_ID"     , ydEqpId    );
 				jrParam.setField("YD_CURR_BAY_GP", ydCurrBayGp);
@@ -4030,102 +4030,102 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷»óÅÂ¼³Á¤ µî·ÏÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtTcarStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷»óÅÂ¼³Á¤ µî·ÏÃ³¸®[SlabYdJspSeEJB.trtTcarStatSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬[SlabYdJspSeEJB.trtTcarStatSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String trtDtlGp = slabUtils.trim(gdReq.getParam("V_TRT_DTL_GP"));	//Ã³¸®»ó¼¼±¸ºĞ
-			String ydEqpId  = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID" ));	//¾ßµå¼³ºñID(´ëÂ÷)
-			String modifier = slabUtils.trim(gdReq.getParam("userid"      ));	//¼öÁ¤ÀÚ
-			String currDate = slabUtils.getDateTime14();						//ÇöÀç½Ã°¢
+			String trtDtlGp = slabUtils.trim(gdReq.getParam("V_TRT_DTL_GP"));	//ì²˜ë¦¬ìƒì„¸êµ¬ë¶„
+			String ydEqpId  = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID" ));	//ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String modifier = slabUtils.trim(gdReq.getParam("userid"      ));	//ìˆ˜ì •ì
+			String currDate = slabUtils.getDateTime14();						//í˜„ì¬ì‹œê°
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("´ëÂ÷¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//EJB CallÀ» À§ÇÑ Message »ı¼º¿ë - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//EJB Callì„ ìœ„í•œ Message ìƒì„±ìš© - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, modifier);
 			
-			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //¾ßµå¼³ºñID
+			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 
 			if ("ST".equals(trtDtlGp)) {
-				//¼³ºñ»óÅÂ º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"          , "C3YDL008"); //¼³ºñ°íÀåº¹±¸½ÇÀû
-				jrYdMsg.setField("YD_EQP_STAT"        , slabUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //¾ßµå¼³ºñ»óÅÂ(B:°íÀå, N:Á¤»ó)
-				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //¾ßµå¼³ºñÈŞÁöÄÚµå
-				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //¾ßµå¼³ºñ°íÀåº¹±¸ÀÏ½Ã
+				//ì„¤ë¹„ìƒíƒœ ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"          , "C3YDL008"); //ì„¤ë¹„ê³ ì¥ë³µêµ¬ì‹¤ì 
+				jrYdMsg.setField("YD_EQP_STAT"        , slabUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //ì•¼ë“œì„¤ë¹„ìƒíƒœ(B:ê³ ì¥, N:ì •ìƒ)
+				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //ì•¼ë“œì„¤ë¹„íœ´ì§€ì½”ë“œ
+				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //ì•¼ë“œì„¤ë¹„ê³ ì¥ë³µêµ¬ì¼ì‹œ
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL004", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("MD".equals(trtDtlGp)) {
-				//ÀÛ¾÷Mode º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL009"); //¼³ºñ¿îÀü¸ğµåÀüÈ¯
-				jrYdMsg.setField("YD_EQP_WRK_MODE", slabUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //¾ßµå¼³ºñÀÛ¾÷Mode(1:On-Line, 0:Off-Line)
+				//ì‘ì—…Mode ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL009"); //ì„¤ë¹„ìš´ì „ëª¨ë“œì „í™˜
+				jrYdMsg.setField("YD_EQP_WRK_MODE", slabUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(1:On-Line, 0:Off-Line)
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvY1YDL003", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("HB".equals(trtDtlGp)) {
-				//Homeµ¿ º¯°æ - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//Homeë™ ë³€ê²½ - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-				jrParam.setField("V_YD_EQP_ID"     , ydEqpId); //¾ßµå¼³ºñID
+				jrParam.setField("V_YD_EQP_ID"     , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 				jrParam.setField("V_YD_HOME_BAY_GP", slabUtils.trim(gdReq.getParam("YD_HOME_BAY_GP")));
 				
 				commDao.updSlabYd("EqpHomeBay", jrParam);
 			} else if ("CB".equals(trtDtlGp)) {
-				//ÇöÀçµ¿ º¯°æ
+				//í˜„ì¬ë™ ë³€ê²½
 				jrYdMsg.setField("YD_CURR_BAY_GP", slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP")));
 
 				jrRtn = this.updTcarCurrBay(jrYdMsg);
 			} else if ("TS".equals(trtDtlGp)) {
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã µî·Ï
-				jrYdMsg.setField("YD_BAY_GP", slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TS"))); //¾ßµåµ¿±¸ºĞ(»óÂ÷µ¿)
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ë“±ë¡
+				jrYdMsg.setField("YD_BAY_GP", slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TS"))); //ì•¼ë“œë™êµ¬ë¶„(ìƒì°¨ë™)
 
 				jrRtn = slabComm.trtTcarSchLevWo(jrYdMsg);
 			} else if ("TL".equals(trtDtlGp)) {
-				//Ãâ¹ß½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL007"); //´ëÂ÷ÀÌµ¿½ÇÀû
-				jrYdMsg.setField("YD_TCAR_MOVE_GP", "S"       ); //¾ßµå´ëÂ÷ÀÌµ¿±¸ºĞ(Ãâ¹ß)
-				jrYdMsg.setField("YD_BAY_GP1"     , slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TL"))); //¾ßµåµ¿±¸ºĞ1(ÇöÀçµ¿)
+				//ì¶œë°œì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL007"); //ëŒ€ì°¨ì´ë™ì‹¤ì 
+				jrYdMsg.setField("YD_TCAR_MOVE_GP", "S"       ); //ì•¼ë“œëŒ€ì°¨ì´ë™êµ¬ë¶„(ì¶œë°œ)
+				jrYdMsg.setField("YD_BAY_GP1"     , slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TL"))); //ì•¼ë“œë™êµ¬ë¶„1(í˜„ì¬ë™)
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvC3YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("TA".equals(trtDtlGp)) {
-				//µµÂø½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL007"); //´ëÂ÷ÀÌµ¿½ÇÀû
-				jrYdMsg.setField("YD_TCAR_MOVE_GP", "E"       ); //¾ßµå´ëÂ÷ÀÌµ¿±¸ºĞ(µµÂø)
-				jrYdMsg.setField("YD_BAY_GP1"     , slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TA"))); //¾ßµåµ¿±¸ºĞ1(ÇöÀçµ¿)
+				//ë„ì°©ì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"      , "C3YDL007"); //ëŒ€ì°¨ì´ë™ì‹¤ì 
+				jrYdMsg.setField("YD_TCAR_MOVE_GP", "E"       ); //ì•¼ë“œëŒ€ì°¨ì´ë™êµ¬ë¶„(ë„ì°©)
+				jrYdMsg.setField("YD_BAY_GP1"     , slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TA"))); //ì•¼ë“œë™êµ¬ë¶„1(í˜„ì¬ë™)
 
 				EJBConnector sndConn = new EJBConnector("default", "SlabYdL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvC3YDL007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("TC".equals(trtDtlGp)) {
-				//¿Ï·á½ÇÀûÃ³¸®
-				String ydCarProgStat = slabUtils.trim(gdReq.getHeader("YD_CAR_PROG_STAT").getValue(0));	//¾ßµåÂ÷·®ÁøÇà»óÅÂ
+				//ì™„ë£Œì‹¤ì ì²˜ë¦¬
+				String ydCarProgStat = slabUtils.trim(gdReq.getHeader("YD_CAR_PROG_STAT").getValue(0));	//ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ
 				
 				if ("4".equals(ydCarProgStat)) {
-					//»óÂ÷°³½Ã -> »óÂ÷¿Ï·á(¿µ´ëÂ÷Ãâ¹ßÁö½Ã)
+					//ìƒì°¨ê°œì‹œ -> ìƒì°¨ì™„ë£Œ(ì˜ëŒ€ì°¨ì¶œë°œì§€ì‹œ)
 					jrRtn = slabComm.trtTcarSchLdCmpl(jrYdMsg);
 				} else if ("D".equals(ydCarProgStat)) {
-					//ÇÏÂ÷°³½Ã -> ÇÏÂ÷¿Ï·á(°ø´ëÂ÷Ãâ¹ßÁö½Ã)
-					jrYdMsg.setField("YD_BAY_GP", slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TC"))); //¾ßµåµ¿±¸ºĞ(°ø´ëÂ÷Ãâ¹ßÁö½Ã »óÂ÷µ¿)
+					//í•˜ì°¨ê°œì‹œ -> í•˜ì°¨ì™„ë£Œ(ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ)
+					jrYdMsg.setField("YD_BAY_GP", slabUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TC"))); //ì•¼ë“œë™êµ¬ë¶„(ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ìƒì°¨ë™)
 
 					jrRtn = slabComm.trtTcarSchUdCmpl(jrYdMsg);
 				}
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtDtlGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtDtlGp + "] ì…ë‹ˆë‹¤.");
 			}
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -4140,46 +4140,46 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷ ÇöÀçµ¿ º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updTcarCurrBay(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "´ëÂ÷ ÇöÀçµ¿ º¯°æ[SlabYdJspSeEJB.updTcarCurrBay] < " + rcvMsg.getResultMsg();
+		String methodNm = "ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½[SlabYdJspSeEJB.updTcarCurrBay] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			String ydEqpId        = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //¾ßµå¼³ºñID(´ëÂ÷)
-			String ydCurrBayGpNew = slabUtils.trim(rcvMsg.getFieldString("YD_CURR_BAY_GP")); //¾ßµåÇöÀçµ¿±¸ºĞ(½Å±Ô)
+			String ydEqpId        = slabUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String ydCurrBayGpNew = slabUtils.trim(rcvMsg.getFieldString("YD_CURR_BAY_GP")); //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ì‹ ê·œ)
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydCurrBayGpNew)) {
-				throw new Exception("º¯°æÇÒ ÇöÀçµ¿ÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  í˜„ì¬ë™ì´ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCurrBayGpCur     = ""; //¾ßµåÇöÀçµ¿±¸ºĞ(ÇöÀç)
-			String ydStkColGpCur      = ""; //¾ßµåÀûÄ¡¿­±¸ºĞ(ÇöÀç)
-			String ydStkColGpNew      = ""; //¾ßµåÀûÄ¡¿­±¸ºĞ(½Å±Ô)
-			String ydStkBedActStatCur = ""; //¾ßµåÀûÄ¡BedÈ°¼º»óÅÂ(ÇöÀçBed)
-			String ydStkBedActStatNew = ""; //¾ßµåÀûÄ¡BedÈ°¼º»óÅÂ(½Å±ÔBed)
+			String ydCurrBayGpCur     = ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(í˜„ì¬)
+			String ydStkColGpCur      = ""; //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(í˜„ì¬)
+			String ydStkColGpNew      = ""; //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(ì‹ ê·œ)
+			String ydStkBedActStatCur = ""; //ì•¼ë“œì ì¹˜Bedí™œì„±ìƒíƒœ(í˜„ì¬Bed)
+			String ydStkBedActStatNew = ""; //ì•¼ë“œì ì¹˜Bedí™œì„±ìƒíƒœ(ì‹ ê·œBed)
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(rcvMsg.getFieldString("V_MODIFIER")));
 
 			jrParam.setField("V_YD_EQP_ID"         , ydEqpId       );
 			jrParam.setField("V_YD_CURR_BAY_GP_NEW", ydCurrBayGpNew);
 			
 			/**********************************************************
-			* 1. ´ëÂ÷Bed»óÅÂ Á¶È¸
+			* 1. ëŒ€ì°¨Bedìƒíƒœ ì¡°íšŒ
 			**********************************************************/
 			JDTORecordSet jsTcar = commDao.getStat("TcarBed", jrParam);
 
@@ -4193,63 +4193,63 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			    ydStkBedActStatNew = slabUtils.trim(jrTcar.getFieldString("YD_STK_BED_ACT_STAT_NEW"));
 
 			    if ("".equals(ydStkColGpNew)) {
-					throw new Exception("º¯°æÇÒ ÀûÄ¡¿­ÀÌ ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½í•  ì ì¹˜ì—´ì´ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("".equals(ydStkBedActStatNew)) {
-					throw new Exception("º¯°æÇÒ Bed[" + ydStkColGpNew + "] È°¼º»óÅÂ°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½í•  Bed[" + ydStkColGpNew + "] í™œì„±ìƒíƒœê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 		    } else {
-				throw new Exception("´ëÂ÷ Bed»óÅÂ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ Bedìƒíƒœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		    }
 			
 			/**********************************************************
-			* 2. ´ëÂ÷ ÀúÀåÀ§Ä¡ ÀüÃ¼ ºñ È°¼ºÈ­
+			* 2. ëŒ€ì°¨ ì €ì¥ìœ„ì¹˜ ì „ì²´ ë¹„ í™œì„±í™”
 			**********************************************************/
-			jrParam.setField("V_YD_STK_COL_GP", ydEqpId.substring(0, 1) + "_" + ydEqpId.substring(2)); //¾ßµåÀûÄ¡¿­±¸ºĞ(´ëÂ÷ÀüÃ¼Bed)
+			jrParam.setField("V_YD_STK_COL_GP", ydEqpId.substring(0, 1) + "_" + ydEqpId.substring(2)); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(ëŒ€ì°¨ì „ì²´Bed)
 
-			//ÀûÄ¡Bed(ÀüÃ¼) ºñÈ°¼ºÈ­
+			//ì ì¹˜Bed(ì „ì²´) ë¹„í™œì„±í™”
 			commDao.updStat("StkBedActCA", jrParam);
 
-			//ÀûÄ¡´Ü Àç·á »èÁ¦
+			//ì ì¹˜ë‹¨ ì¬ë£Œ ì‚­ì œ
 			commDao.updSlabYd("StkLyrClr", jrParam);
 
 			/**********************************************************
-			* 3. ÇöÀçµ¿ º¯°æ ¹× ÀúÀåÀ§Ä¡Á¦¿ø Àü¹® Á¶È¸
+			* 3. í˜„ì¬ë™ ë³€ê²½ ë° ì €ì¥ìœ„ì¹˜ì œì› ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
 			if (!ydCurrBayGpCur.equals(ydCurrBayGpNew)) {
-				//¼³ºñ ÇöÀçµ¿ ¼öÁ¤
+				//ì„¤ë¹„ í˜„ì¬ë™ ìˆ˜ì •
 				jrParam.setField("V_YD_CURR_BAY_GP", ydCurrBayGpNew);
 
 				commDao.updSlabYd("EqpCurrBay", jrParam);
 
-				//±âÁ¸ BedÀÇ »óÅÂ°¡ º¯°æµÇ¾úÀ¸¸é ÀúÀåÀ§Ä¡Á¦¿ø(YDY1L001, YDY3L001) Àü¹® Á¶È¸
+				//ê¸°ì¡´ Bedì˜ ìƒíƒœê°€ ë³€ê²½ë˜ì—ˆìœ¼ë©´ ì €ì¥ìœ„ì¹˜ì œì›(YDY1L001, YDY3L001) ì „ë¬¸ ì¡°íšŒ
 				if ("L".equals(ydStkBedActStatCur)) {
-					jrParam.setField("V_YD_INFO_SYNC_CD", "4"          ); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(Bed)
-					jrParam.setField("V_YD_STK_COL_GP"  , ydStkColGpCur); //¾ßµåÀûÄ¡¿­±¸ºĞ
-					jrParam.setField("V_YD_STK_BED_NO"  , "01"         ); //¾ßµåÀûÄ¡Bed¹øÈ£
+					jrParam.setField("V_YD_INFO_SYNC_CD", "4"          ); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(Bed)
+					jrParam.setField("V_YD_STK_COL_GP"  , ydStkColGpCur); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					jrParam.setField("V_YD_STK_BED_NO"  , "01"         ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
-					//Àü¼ÛData Á¶È¸
+					//ì „ì†¡Data ì¡°íšŒ
 					jrRtn = slabUtils.addSndData(jrRtn, commDao.getMsgL2("YDY1L001", jrParam));
 				}
 			}
 			
 			/**********************************************************
-			* 4. ½Å±Ô ÀúÀåÀ§Ä¡  È°¼ºÈ­ ¹× ÀúÀåÀ§Ä¡Á¦¿ø Àü¹® Á¶È¸
+			* 4. ì‹ ê·œ ì €ì¥ìœ„ì¹˜  í™œì„±í™” ë° ì €ì¥ìœ„ì¹˜ì œì› ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
-			//½Å±Ô ÀûÄ¡Bed Close »óÅÂÀÌ¸é È°¼ºÈ­
-			jrParam.setField("V_YD_STK_COL_GP"      , ydStkColGpNew); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_YD_STK_BED_NO"      , "01"         ); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrParam.setField("V_YD_STK_BED_ACT_STAT", "L"          ); //¾ßµåÀûÄ¡BedÈ°¼º»óÅÂ(ÀûÄ¡°¡´É)
+			//ì‹ ê·œ ì ì¹˜Bed Close ìƒíƒœì´ë©´ í™œì„±í™”
+			jrParam.setField("V_YD_STK_COL_GP"      , ydStkColGpNew); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_YD_STK_BED_NO"      , "01"         ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrParam.setField("V_YD_STK_BED_ACT_STAT", "L"          ); //ì•¼ë“œì ì¹˜Bedí™œì„±ìƒíƒœ(ì ì¹˜ê°€ëŠ¥)
 
 			commDao.updStat("StkBedAct", jrParam);
 
-			//ÀûÄ¡´Ü Àç·á »èÁ¦
+			//ì ì¹˜ë‹¨ ì¬ë£Œ ì‚­ì œ
 			commDao.updSlabYd("StkLyrClr", jrParam);
 
-			//½Å±Ô BedÀÇ »óÅÂ°¡ º¯°æµÇ¾úÀ¸¸é ÀúÀåÀ§Ä¡Á¦¿ø(YDY1L001, YDY3L001) Àü¹® Àü¼Û
+			//ì‹ ê·œ Bedì˜ ìƒíƒœê°€ ë³€ê²½ë˜ì—ˆìœ¼ë©´ ì €ì¥ìœ„ì¹˜ì œì›(YDY1L001, YDY3L001) ì „ë¬¸ ì „ì†¡
 			if ("C".equals(ydStkBedActStatNew)) {
-				jrParam.setField("V_YD_INFO_SYNC_CD", "4"); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(Bed)
+				jrParam.setField("V_YD_INFO_SYNC_CD", "4"); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(Bed)
 
-				//Àü¼ÛData Á¶È¸
+				//ì „ì†¡Data ì¡°íšŒ
 				jrRtn = slabUtils.addSndData(jrRtn, commDao.getMsgL2("YDY1L001", jrParam));
 			}
 
@@ -4265,15 +4265,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ±âÁØ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getTcarSchRule(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ±âÁØ Á¶È¸[SlabYdJspSeEJB.getTcarSchRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€ ì¡°íšŒ[SlabYdJspSeEJB.getTcarSchRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4289,65 +4289,65 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ±âÁØ µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€ ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData trtTcarSchRule(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ±âÁØ µî·Ï[SlabYdJspSeEJB.trtTcarSchRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€ ë“±ë¡[SlabYdJspSeEJB.trtTcarSchRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydEqpId          = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"         ));	//¾ßµå¼³ºñID(´ëÂ÷)
-			String autoTcarSchYn    = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_YN"    ));	//ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¿©ºÎ
-			String autoTcarSchShMin = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_SH_MIN"));	//ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¸Å¼öÃÖ¼Ò
-			String autoTcarSchShMax = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_SH_MAX"));	//ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¸Å¼öÃÖ´ë
-			String modifier         = slabUtils.trim(gdReq.getParam("userid"              ));	//¼öÁ¤ÀÚ
+			String ydEqpId          = slabUtils.trim(gdReq.getParam("V_YD_EQP_ID"         ));	//ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String autoTcarSchYn    = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_YN"    ));	//ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì—¬ë¶€
+			String autoTcarSchShMin = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_SH_MIN"));	//ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ë§¤ìˆ˜ìµœì†Œ
+			String autoTcarSchShMax = slabUtils.trim(gdReq.getParam("AUTO_TCAR_SCH_SH_MAX"));	//ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ë§¤ìˆ˜ìµœëŒ€
+			String modifier         = slabUtils.trim(gdReq.getParam("userid"              ));	//ìˆ˜ì •ì
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("´ëÂ÷¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			if (!"Y".equals(autoTcarSchYn)) {
 				autoTcarSchYn = "N";
 			}
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			jrParam.setField("V_YD_EQP_ID"           , ydEqpId         ); //¾ßµå¼³ºñID(´ëÂ÷)
-			jrParam.setField("V_AUTO_TCAR_SCH_YN"    , autoTcarSchYn   ); //ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¿©ºÎ
-			jrParam.setField("V_AUTO_TCAR_SCH_SH_MIN", autoTcarSchShMin); //ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¸Å¼öÃÖ¼Ò
-			jrParam.setField("V_AUTO_TCAR_SCH_SH_MAX", autoTcarSchShMax); //ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¸Å¼öÃÖ´ë
+			jrParam.setField("V_YD_EQP_ID"           , ydEqpId         ); //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			jrParam.setField("V_AUTO_TCAR_SCH_YN"    , autoTcarSchYn   ); //ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì—¬ë¶€
+			jrParam.setField("V_AUTO_TCAR_SCH_SH_MIN", autoTcarSchShMin); //ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ë§¤ìˆ˜ìµœì†Œ
+			jrParam.setField("V_AUTO_TCAR_SCH_SH_MAX", autoTcarSchShMax); //ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ë§¤ìˆ˜ìµœëŒ€
 
-			//¼³ºñ±âÁØ ¼öÁ¤
+			//ì„¤ë¹„ê¸°ì¤€ ìˆ˜ì •
 			jspDao.updTcarSchRule("ER", jrParam);
 
-			//°Ë»ö±âÁØ »èÁ¦
+			//ê²€ìƒ‰ê¸°ì¤€ ì‚­ì œ
 			jspDao.updTcarSchRule("SR", jrParam);
 			
-			//°Ë»ö±âÁØ µî·Ï
+			//ê²€ìƒ‰ê¸°ì¤€ ë“±ë¡
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			if (rowCnt > 0) {
 				String[][] arrRule = new String[rowCnt][7];
 				
 				for (int ii = 0; ii < rowCnt; ii++) {
-					arrRule[ii][0] = ydEqpId;					//¾ßµå¼³ºñID
-					arrRule[ii][1] = String.valueOf(ii + 1);	//¼ø¹ø
-					arrRule[ii][2] = modifier;					//µî·ÏÀÚ
-					arrRule[ii][3] = modifier;					//¼öÁ¤ÀÚ
-					arrRule[ii][4] = slabUtils.trim(gdReq.getHeader("YD_AIM_RT_GP").getComboHiddenValues()[gdReq.getHeader("YD_AIM_RT_GP").getSelectedIndex(ii)]);	//¾ßµå¸ñÇ¥Çà¼±±¸ºĞ
-					arrRule[ii][5] = slabUtils.trim(gdReq.getHeader("YD_LD_COL_GP").getValue(ii));	//¾ßµå»óÂ÷¿­±¸ºĞ
-					arrRule[ii][6] = slabUtils.trim(gdReq.getHeader("YD_UD_BAY_GP").getComboHiddenValues()[gdReq.getHeader("YD_UD_BAY_GP").getSelectedIndex(ii)]);	//¾ßµåÇÏÂ÷µ¿±¸ºĞ
+					arrRule[ii][0] = ydEqpId;					//ì•¼ë“œì„¤ë¹„ID
+					arrRule[ii][1] = String.valueOf(ii + 1);	//ìˆœë²ˆ
+					arrRule[ii][2] = modifier;					//ë“±ë¡ì
+					arrRule[ii][3] = modifier;					//ìˆ˜ì •ì
+					arrRule[ii][4] = slabUtils.trim(gdReq.getHeader("YD_AIM_RT_GP").getComboHiddenValues()[gdReq.getHeader("YD_AIM_RT_GP").getSelectedIndex(ii)]);	//ì•¼ë“œëª©í‘œí–‰ì„ êµ¬ë¶„
+					arrRule[ii][5] = slabUtils.trim(gdReq.getHeader("YD_LD_COL_GP").getValue(ii));	//ì•¼ë“œìƒì°¨ì—´êµ¬ë¶„
+					arrRule[ii][6] = slabUtils.trim(gdReq.getHeader("YD_UD_BAY_GP").getComboHiddenValues()[gdReq.getHeader("YD_UD_BAY_GP").getSelectedIndex(ii)]);	//ì•¼ë“œí•˜ì°¨ë™êµ¬ë¶„
 				}
 	
-				//¾ßµå±âÁØ(TB_YD_RULE) °Ë»ö±âÁØ Insert
+				//ì•¼ë“œê¸°ì¤€(TB_YD_RULE) ê²€ìƒ‰ê¸°ì¤€ Insert
 				jspDao.insTcarSchRule("SR", arrRule, logId, methodNm);
 			}
 
@@ -4363,19 +4363,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï
+	 * ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMvStkWrkBookReg(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï Á¶È¸[SlabYdJspSeEJB.getMvStkWrkBookReg] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡ ì¡°íšŒ[SlabYdJspSeEJB.getMvStkWrkBookReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4391,15 +4391,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtMvStkWrkBookReg(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï[SlabYdJspSeEJB.trtMvStkWrkBookReg] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡[SlabYdJspSeEJB.trtMvStkWrkBookReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4408,28 +4408,28 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			JDTORecord jrRow = null;
-			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//Å©·¹ÀÎ½ºÄÉÁÙ Á¤¸®¸¦ À§ÇÔ
+			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë¦¬ë¥¼ ìœ„í•¨
 
-			String stlNos        = slabUtils.trim(gdReq.getParam("V_STL_NOS"         )); //Àç·á¹øÈ£µé
-			String ydStkColGp    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"   )); //¾ßµåÀûÄ¡¿­±¸ºĞ(4ÀÚ¸® ÀÌ»ó)
-			String ydToLocGuide  = slabUtils.trim(gdReq.getParam("V_YD_TO_LOC_GUIDE" )); //¾ßµåToÀ§Ä¡Guide
-			String ydWrkPlanTcar = slabUtils.trim(gdReq.getParam("V_YD_WRK_PLAN_TCAR")); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			String ydWrkCrn		 = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN"));       //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-			String chkGp		 = slabUtils.trim(gdReq.getParam("V_CHK_GP"));          //B¿­¿¬ÀÌ¼Û¿©ºÎ  Y
-			String chkGp2		 = slabUtils.trim(gdReq.getParam("V_CHK_GP2"));			//C¿­¿¬ÀÌ¼Û¿©ºÎ Y
-			String schPrior 	 = slabUtils.trim(gdReq.getParam("V_YD_SCH_PRIOR"));     //¾ßµå½ºÄÉÁÙ¿ì¼±¼øÀ§
-			//2023.01.04 ¿¬ÁÖ µ¿°£´ëÂ÷ ÇÏÂ÷Å©·¹ÀÎ ÁöÁ¤±â´É Ãß°¡.--¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» 
-			String ydWrkCrnUd		 = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN_UD"));       //¾ßµå´ëÂ÷ÇÏÂ÷ÀÛ¾÷Å©·¹ÀÎ
-			//2024.06.10 ÀúÀåÀ§Ä¡º° Á¤º¸Á¶È¸ ÇÏ¸é¿¡ Å©·¹ÀÎ ÀÌÀûÀÛ¾÷ µî·Ï½Ã ¿ì¼±±âµ¿ °¡´ÉÇÏµµ·Ï ±â´É°³¼± --¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ» --//REQ202405572888
-			String chkInstant		 = slabUtils.trim(gdReq.getParam("V_CHK_INSTANT"));       //¿ì¼±±âµ¿ Ã¼Å©¿©ºÎ
+			String stlNos        = slabUtils.trim(gdReq.getParam("V_STL_NOS"         )); //ì¬ë£Œë²ˆí˜¸ë“¤
+			String ydStkColGp    = slabUtils.trim(gdReq.getParam("V_YD_STK_COL_GP"   )); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(4ìë¦¬ ì´ìƒ)
+			String ydToLocGuide  = slabUtils.trim(gdReq.getParam("V_YD_TO_LOC_GUIDE" )); //ì•¼ë“œToìœ„ì¹˜Guide
+			String ydWrkPlanTcar = slabUtils.trim(gdReq.getParam("V_YD_WRK_PLAN_TCAR")); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			String ydWrkCrn		 = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN"));       //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+			String chkGp		 = slabUtils.trim(gdReq.getParam("V_CHK_GP"));          //Bì—´ì—°ì´ì†¡ì—¬ë¶€  Y
+			String chkGp2		 = slabUtils.trim(gdReq.getParam("V_CHK_GP2"));			//Cì—´ì—°ì´ì†¡ì—¬ë¶€ Y
+			String schPrior 	 = slabUtils.trim(gdReq.getParam("V_YD_SCH_PRIOR"));     //ì•¼ë“œìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
+			//2023.01.04 ì—°ì£¼ ë™ê°„ëŒ€ì°¨ í•˜ì°¨í¬ë ˆì¸ ì§€ì •ê¸°ëŠ¥ ì¶”ê°€.--ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ 
+			String ydWrkCrnUd		 = slabUtils.trim(gdReq.getParam("V_YD_WRK_CRN_UD"));       //ì•¼ë“œëŒ€ì°¨í•˜ì°¨ì‘ì—…í¬ë ˆì¸
+			//2024.06.10 ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ì¡°íšŒ í•˜ë©´ì— í¬ë ˆì¸ ì´ì ì‘ì—… ë“±ë¡ì‹œ ìš°ì„ ê¸°ë™ ê°€ëŠ¥í•˜ë„ë¡ ê¸°ëŠ¥ê°œì„  --ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­ --//REQ202405572888
+			String chkInstant		 = slabUtils.trim(gdReq.getParam("V_CHK_INSTANT"));       //ìš°ì„ ê¸°ë™ ì²´í¬ì—¬ë¶€
 			
-			String strStrLoc	= slabUtils.trim(gdReq.getParam("V_STL_STR_LOC")); // Àç·á ´ëÇ¥ ÀúÀåÀ§Ä¡ ÃßÃâ
+			String strStrLoc	= slabUtils.trim(gdReq.getParam("V_STL_STR_LOC")); // ì¬ë£Œ ëŒ€í‘œ ì €ì¥ìœ„ì¹˜ ì¶”ì¶œ
 			
-			slabUtils.printLog(logId, "trtMvStkWrkBookReg Àç·áÀúÀåÀ§Ä¡ [" + strStrLoc + "]", "SL");
+			slabUtils.printLog(logId, "trtMvStkWrkBookReg ì¬ë£Œì €ì¥ìœ„ì¹˜ [" + strStrLoc + "]", "SL");
 			
-			slabUtils.printLog(logId, "trtMvStkWrkBookReg¿ì¼±±âµ¿ Ã¼Å©¿©ºÎ[" + chkInstant + "]", "SL");
+			slabUtils.printLog(logId, "trtMvStkWrkBookRegìš°ì„ ê¸°ë™ ì²´í¬ì—¬ë¶€[" + chkInstant + "]", "SL");
 			if (ydStkColGp.length() < 4) {
-				//È¤½Ã ÀÌÀû ÀûÄ¡¿­±¸ºĞ °ªÀÌ Àß¸øµÇ¾î ÀÖÀ¸¸é ¹«Á¶°Ç 01 Span À¸·Î Ã³¸®
+				//í˜¹ì‹œ ì´ì  ì ì¹˜ì—´êµ¬ë¶„ ê°’ì´ ì˜ëª»ë˜ì–´ ìˆìœ¼ë©´ ë¬´ì¡°ê±´ 01 Span ìœ¼ë¡œ ì²˜ë¦¬
 				if(ydStkColGp.startsWith("DB")) {
 					ydStkColGp = ydStkColGp.substring(0, 2) + "03";
 				}
@@ -4441,9 +4441,9 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			}
  
 			if ("".equals(stlNos)) {
-				throw new Exception("ÀÌÀû Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì´ì  ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydStkColGp) || ydStkColGp.length() < 4) {
-				throw new Exception("Span[" + ydStkColGp + "] Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("Span[" + ydStkColGp + "] ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if (  !"0".equals(ydStkColGp.substring(2, 3)) && 
 						!"PU".equals(ydStkColGp.substring(2, 4)) && 
 						!"PI".equals(ydStkColGp.substring(2, 4)) && 
@@ -4457,18 +4457,18 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 						!"GM".equals(ydStkColGp.substring(2, 4)) &&
 						!"SH".equals(ydStkColGp.substring(2, 4)) &&						
 						!"PT".equals(ydStkColGp.substring(2, 4))) {
-				throw new Exception("ÀûÄ¡¿­[" + ydStkColGp + "]¿¡¼­´Â ÀÌÀû ÀÛ¾÷¿¹¾àµî·ÏÀÌ ºÒ°¡´ÉÇÕ´Ï´Ù.");
+				throw new Exception("ì ì¹˜ì—´[" + ydStkColGp + "]ì—ì„œëŠ” ì´ì  ì‘ì—…ì˜ˆì•½ë“±ë¡ì´ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.");
 			}
 			
 			/**********************************************************
-			* 1. ½ºÄÉÁÙÄÚµå ¼³Á¤
+			* 1. ìŠ¤ì¼€ì¤„ì½”ë“œ ì„¤ì •
 			**********************************************************/
-			String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
-			String ydBayGp    = ydStkColGp.substring(1, 2); //¾ßµåµ¿±¸ºĞ
-			String ydAimBayGp = ""; //¾ßµå¸ñÇ¥µ¿±¸ºĞ
+			String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydBayGp    = ydStkColGp.substring(1, 2); //ì•¼ë“œë™êµ¬ë¶„
+			String ydAimBayGp = ""; //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
 
 			if ("".equals(ydToLocGuide)) {
-				//À§Ä¡°Ë»öBed±âÁØ Àû¿ë
+				//ìœ„ì¹˜ê²€ìƒ‰Bedê¸°ì¤€ ì ìš©
 				ydAimBayGp = ydStkColGp.substring(1, 2);
 			} else if (ydToLocGuide.startsWith("MBHD01")) {
 				JDTORecord jrParam = JDTORecordFactory.getInstance().create();
@@ -4499,77 +4499,77 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				
 				if (jsChk != null && jsChk.size() > 0) {
 					JDTORecord jrChk = jsChk.getRecord(0);
-					ydCoilOutdiaGrpGp = slabUtils.trim(jrChk.getFieldString("YD_COIL_OUTDIA_GRP_GP")); //ÇÈ¾÷Å©·¹ÀÎÀÛ¾÷À¯¹«
+					ydCoilOutdiaGrpGp = slabUtils.trim(jrChk.getFieldString("YD_COIL_OUTDIA_GRP_GP")); //í”½ì—…í¬ë ˆì¸ì‘ì—…ìœ ë¬´
 				} 
 				
-				slabUtils.printLog(logId, "º¸±ŞBed[" + ydToLocGuide + "] ÇÈ¾÷ Å©·¹ÀÎÀÌ ÇöÀç ÀÛ¾÷ ¿©ºÎ : " + ydCoilOutdiaGrpGp, "SL");
+				slabUtils.printLog(logId, "ë³´ê¸‰Bed[" + ydToLocGuide + "] í”½ì—… í¬ë ˆì¸ì´ í˜„ì¬ ì‘ì—… ì—¬ë¶€ : " + ydCoilOutdiaGrpGp, "SL");
 				
 //				if("Y".equals(ydCoilOutdiaGrpGp)) {
-//					throw new Exception("º¸±ŞBed[" + ydToLocGuide + "] ÇÈ¾÷ Å©·¹ÀÎÀÌ ÇöÀç ÀÛ¾÷ÁßÀÔ´Ï´Ù.");
+//					throw new Exception("ë³´ê¸‰Bed[" + ydToLocGuide + "] í”½ì—… í¬ë ˆì¸ì´ í˜„ì¬ ì‘ì—…ì¤‘ì…ë‹ˆë‹¤.");
 //				}else {
-//					//ToÀ§Ä¡ÁöÁ¤
+//					//Toìœ„ì¹˜ì§€ì •
 //					ydAimBayGp = ydToLocGuide.substring(1, 2);
-//					//ToÀ§Ä¡°¡ µ¿±îÁö¸¸ ÀÖÀ¸¸é À§Ä¡°Ë»öBed ±âÁØ Àû¿ë
+//					//Toìœ„ì¹˜ê°€ ë™ê¹Œì§€ë§Œ ìˆìœ¼ë©´ ìœ„ì¹˜ê²€ìƒ‰Bed ê¸°ì¤€ ì ìš©
 //					if (ydToLocGuide.length() < 4) {
 //						ydToLocGuide = "";
 //					}
 //				}
 				
-				//ToÀ§Ä¡ÁöÁ¤
+				//Toìœ„ì¹˜ì§€ì •
 				ydAimBayGp = ydToLocGuide.substring(1, 2);
-				//ToÀ§Ä¡°¡ µ¿±îÁö¸¸ ÀÖÀ¸¸é À§Ä¡°Ë»öBed ±âÁØ Àû¿ë
+				//Toìœ„ì¹˜ê°€ ë™ê¹Œì§€ë§Œ ìˆìœ¼ë©´ ìœ„ì¹˜ê²€ìƒ‰Bed ê¸°ì¤€ ì ìš©
 				if (ydToLocGuide.length() < 4) {
 					ydToLocGuide = "";
 				}
 				
 			} else {
-				//ToÀ§Ä¡ÁöÁ¤
+				//Toìœ„ì¹˜ì§€ì •
 				ydAimBayGp = ydToLocGuide.substring(1, 2);
-				//ToÀ§Ä¡°¡ µ¿±îÁö¸¸ ÀÖÀ¸¸é À§Ä¡°Ë»öBed ±âÁØ Àû¿ë
+				//Toìœ„ì¹˜ê°€ ë™ê¹Œì§€ë§Œ ìˆìœ¼ë©´ ìœ„ì¹˜ê²€ìƒ‰Bed ê¸°ì¤€ ì ìš©
 				if (ydToLocGuide.length() < 4) {
 					ydToLocGuide = "";
 				}
 			}
 
-			//½ºÄÉÁìÄÚµå, ´ëÂ÷
+			//ìŠ¤ì¼€ì¥´ì½”ë“œ, ëŒ€ì°¨
 			if (ydBayGp.equals(ydAimBayGp)) {
-				String ydEqpGp = ydStkColGp.substring(2, 4); //¾ßµå¼³ºñ±¸ºĞ(ÀÌÀû ½ºÄÉÁÙÄÚµå »ı¼º¿ë)
+				String ydEqpGp = ydStkColGp.substring(2, 4); //ì•¼ë“œì„¤ë¹„êµ¬ë¶„(ì´ì  ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±ìš©)
 
-				//ToÀ§Ä¡Guide°¡ ÀÖÀ¸¸é ±× °ªÀ¸·Î ½ºÄÉÁÙÄÚµå »ı¼º
+				//Toìœ„ì¹˜Guideê°€ ìˆìœ¼ë©´ ê·¸ ê°’ìœ¼ë¡œ ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±
 				if ("".equals(ydToLocGuide)) {
-					//Pickup Bed ÀÌÀûÀÏ °æ¿ì
+					//Pickup Bed ì´ì ì¼ ê²½ìš°
 					if ("PU".equals(ydEqpGp)) {
 						if (ydStkColGp.startsWith("A")) {
 							if ("AAPUP9".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//º¸±Ş - #2 2Â÷Àı´Ü Aµ¿ Pickup
+								ydEqpGp = "04";	//ë³´ê¸‰ - #2 2ì°¨ì ˆë‹¨ Aë™ Pickup
 							} else if ("AAPUPA".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//º¸±Ş - #3 2Â÷Àı´Ü Aµ¿ Pickup
+								ydEqpGp = "04";	//ë³´ê¸‰ - #3 2ì°¨ì ˆë‹¨ Aë™ Pickup
 							} else if ("AAPUPB".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #2 Scarfer Aµ¿ Pickup
+								ydEqpGp = "01";	//ì¸ì¶œ - #2 Scarfer Aë™ Pickup
 							} else if ("ABPUP5".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #1 Scarfer Bµ¿ Pickup
+								ydEqpGp = "04";	//ì¸ì¶œ - #1 Scarfer Bë™ Pickup
 							} else if ("ACPUP7".equals(ydStkColGp)) {
-								ydEqpGp = "05";	//ÀÎÃâ - #4 M/C Cµ¿ Pickup
+								ydEqpGp = "05";	//ì¸ì¶œ - #4 M/C Cë™ Pickup
 							} else if ("ADPUP1".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #1 M/C Dµ¿ Pickup
+								ydEqpGp = "01";	//ì¸ì¶œ - #1 M/C Dë™ Pickup
 							} else if ("ADPUP3".equals(ydStkColGp)) {
-								ydEqpGp = "03";	//ÀÎÃâ - #3 M/C Dµ¿ Pickup
+								ydEqpGp = "03";	//ì¸ì¶œ - #3 M/C Dë™ Pickup
 							} else if ("ADPUP8".equals(ydStkColGp)) {
-								ydEqpGp = "06";	//ÀÎÃâ - #5 M/C Dµ¿ Pickup
+								ydEqpGp = "06";	//ì¸ì¶œ - #5 M/C Dë™ Pickup
 							} else {
 								ydEqpGp = "02";
 							}
 						} else if (ydStkColGp.startsWith("DA")) {
 							if ("DAPU02".equals(ydStkColGp)) {
-								ydEqpGp = "03";	//ÀÎÃâ - #1 2Â÷Àı´Ü Aµ¿ Piler
+								ydEqpGp = "03";	//ì¸ì¶œ - #1 2ì°¨ì ˆë‹¨ Aë™ Piler
 							} else if ("DAPU04".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #3 2Â÷Àı´Ü Aµ¿ Piler
+								ydEqpGp = "04";	//ì¸ì¶œ - #3 2ì°¨ì ˆë‹¨ Aë™ Piler
 							} else {
 								ydEqpGp = "01";
 							}
 						} else if (ydStkColGp.startsWith("DB")) {
 							if ("DBPU06".equals(ydStkColGp)) {
-								ydEqpGp = "03";	//ÀÎÃâ - #2 2Â÷Àı´Ü Bµ¿ Piler
+								ydEqpGp = "03";	//ì¸ì¶œ - #2 2ì°¨ì ˆë‹¨ Bë™ Piler
 							} else {
 								ydEqpGp = "04";
 							}
@@ -4577,13 +4577,13 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					}else if ("PI".equals(ydEqpGp)) {
 						if (ydStkColGp.startsWith("A")) {
 							if ("ACPI01".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #1 M/C     Cµ¿ Piler
+								ydEqpGp = "01";	//ì¸ì¶œ - #1 M/C     Cë™ Piler
 							} else if ("ACPI03".equals(ydStkColGp)) {
-								ydEqpGp = "02";	//ÀÎÃâ - #3 M/C     Cµ¿ Piler
+								ydEqpGp = "02";	//ì¸ì¶œ - #3 M/C     Cë™ Piler
 							} else if ("ADPI04".equals(ydStkColGp)) {
-								ydEqpGp = "05";	//ÀÎÃâ - #4 M/C     Dµ¿ Piler
+								ydEqpGp = "05";	//ì¸ì¶œ - #4 M/C     Dë™ Piler
 							} else if ("ACPI05".equals(ydStkColGp)) {
-								ydEqpGp = "06";	//ÀÎÃâ - #5 M/C     Cµ¿ Piler
+								ydEqpGp = "06";	//ì¸ì¶œ - #5 M/C     Cë™ Piler
 							} else {
 								ydEqpGp = "03";
 							}
@@ -4591,15 +4591,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					}else if ("DP".equals(ydEqpGp)) {
 						if (ydStkColGp.startsWith("A")) {
 							if ("ACDP01".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #1 Scarfer Cµ¿ Depiler
+								ydEqpGp = "04";	//ì¸ì¶œ - #1 Scarfer Cë™ Depiler
 							} else if ("ABDP03".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #2 Scarfer Bµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - #2 Scarfer Bë™ Depiler
 							} else if ("AADP02".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #1 2Â÷Àı´Ü Aµ¿ Depiler
+								ydEqpGp = "04";	//ì¸ì¶œ - #1 2ì°¨ì ˆë‹¨ Aë™ Depiler
 							} else if ("AADP04".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - ±×¶óÀÎµù   Aµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - ê·¸ë¼ì¸ë”©   Aë™ Depiler
 							} else if ("ABDP04".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - ±×¶óÀÎµù   Bµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - ê·¸ë¼ì¸ë”©   Bë™ Depiler
 							} else {
 								ydEqpGp = "01";
 							}
@@ -4612,14 +4612,14 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					} else if("SB".equals(ydEqpGp)){
 						if (ydStkColGp.startsWith("A")) {
 							if("A".equals(ydBayGp)){
-								ydEqpGp = "01";	//C#2 ÇÚµåÀå
+								ydEqpGp = "01";	//C#2 í•¸ë“œì¥
 							}
 							else if("B".equals(ydBayGp)){
 								if("ABSB04".equals(ydStkColGp)){
-									ydEqpGp = "04";	//C#1 ÇÚµåÀå ¿À¸¥ÂÊ
+									ydEqpGp = "04";	//C#1 í•¸ë“œì¥ ì˜¤ë¥¸ìª½
 								}								
 								else if (!"ABSB01".equals(ydStkColGp)){
-									ydEqpGp = "03";	//C#1 ÇÚµåÀå ¿ŞÂÊ
+									ydEqpGp = "03";	//C#1 í•¸ë“œì¥ ì™¼ìª½
 								}
 								else {
 									ydEqpGp = "03";	
@@ -4632,20 +4632,20 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 							ydEqpGp = "01";	
 						}
 					} else if("SH".equals(ydEqpGp)){
-						//DEFAULT´Â 1ºÎ ÄÚµåÀÌ³ª, ¾Æ·¡¼­ 2ºÎ Àç·á ÀÛ¾÷ °É °æ¿ì 2ºÎ·Î º¯°æµÇµµ·Ï ¼³Á¤.
+						//DEFAULTëŠ” 1ë¶€ ì½”ë“œì´ë‚˜, ì•„ë˜ì„œ 2ë¶€ ì¬ë£Œ ì‘ì—… ê±¸ ê²½ìš° 2ë¶€ë¡œ ë³€ê²½ë˜ë„ë¡ ì„¤ì •.
 						if (ydStkColGp.startsWith("A")) {
 							if("ACSH25".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if("ACSH26".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if("ACSH27".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if ("ACSH2".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if ("ACSH0".equals(ydStkColGp)){
-								ydEqpGp = "02";	//1ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "02";	//1ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else {
-								ydEqpGp = "02";	//1ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "02";	//1ë¶€ì§€ìƒì ˆë‹¨ì¥
 							}
 						
 						}
@@ -4654,13 +4654,13 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					if ("PI".equals(ydEqpGp)) {
 						if (ydStkColGp.startsWith("A")) {
 							if ("ACPI01".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #1 M/C     Cµ¿ Piler
+								ydEqpGp = "01";	//ì¸ì¶œ - #1 M/C     Cë™ Piler
 							} else if ("ACPI03".equals(ydStkColGp)) {
-								ydEqpGp = "02";	//ÀÎÃâ - #3 M/C     Cµ¿ Piler
+								ydEqpGp = "02";	//ì¸ì¶œ - #3 M/C     Cë™ Piler
 							} else if ("ADPI04".equals(ydStkColGp)) {
-								ydEqpGp = "05";	//ÀÎÃâ - #4 M/C     Dµ¿ Piler
+								ydEqpGp = "05";	//ì¸ì¶œ - #4 M/C     Dë™ Piler
 							} else if ("ACPI05".equals(ydStkColGp)) {
-								ydEqpGp = "06";	//ÀÎÃâ - #5 M/C     Cµ¿ Piler
+								ydEqpGp = "06";	//ì¸ì¶œ - #5 M/C     Cë™ Piler
 							} else {
 								ydEqpGp = "03";
 							}
@@ -4668,15 +4668,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					}else if ("DP".equals(ydEqpGp)) {
 						if (ydStkColGp.startsWith("A")) {
 							if ("ACDP01".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #1 Scarfer Cµ¿ Depiler
+								ydEqpGp = "04";	//ì¸ì¶œ - #1 Scarfer Cë™ Depiler
 							} else if ("ABDP03".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - #2 Scarfer Bµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - #2 Scarfer Bë™ Depiler
 							} else if ("AADP02".equals(ydStkColGp)) {
-								ydEqpGp = "04";	//ÀÎÃâ - #1 2Â÷Àı´Ü Aµ¿ Depiler
+								ydEqpGp = "04";	//ì¸ì¶œ - #1 2ì°¨ì ˆë‹¨ Aë™ Depiler
 							} else if ("AADP04".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - ±×¶óÀÎµù   Aµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - ê·¸ë¼ì¸ë”©   Aë™ Depiler
 							} else if ("ABDP04".equals(ydStkColGp)) {
-								ydEqpGp = "01";	//ÀÎÃâ - ±×¶óÀÎµù   Bµ¿ Depiler
+								ydEqpGp = "01";	//ì¸ì¶œ - ê·¸ë¼ì¸ë”©   Bë™ Depiler
 							} else {
 								ydEqpGp = "01";
 							}
@@ -4692,11 +4692,11 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					}else if("SB".equals(ydEqpGp)){
 						if (ydStkColGp.startsWith("A")) {
 							if("A".equals(ydBayGp)){
-								ydEqpGp = "01";	//C#2 ÇÚµåÀå
+								ydEqpGp = "01";	//C#2 í•¸ë“œì¥
 							}
 							else if("B".equals(ydBayGp)){
 								if("ABSB04".equals(ydStkColGp)){
-									ydEqpGp = "04";	//C#1 ÇÚµåÀå ¿À¸¥ÂÊ
+									ydEqpGp = "04";	//C#1 í•¸ë“œì¥ ì˜¤ë¥¸ìª½
 								}								
 								else {
 									ydEqpGp = "03";	
@@ -4709,20 +4709,20 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 							ydEqpGp = "01";	
 						}
 					} else if("SH".equals(ydEqpGp)){
-						//DEFAULT´Â 1ºÎ ÄÚµåÀÌ³ª, ¾Æ·¡¼­ 2ºÎ Àç·á ÀÛ¾÷ °É °æ¿ì 2ºÎ·Î º¯°æµÇµµ·Ï ¼³Á¤.
+						//DEFAULTëŠ” 1ë¶€ ì½”ë“œì´ë‚˜, ì•„ë˜ì„œ 2ë¶€ ì¬ë£Œ ì‘ì—… ê±¸ ê²½ìš° 2ë¶€ë¡œ ë³€ê²½ë˜ë„ë¡ ì„¤ì •.
 						if (ydStkColGp.startsWith("A")) {
 							if("ACSH25".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if("ACSH26".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if("ACSH27".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if ("ACSH2".equals(ydStkColGp)){
-								ydEqpGp = "06";	//2ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "06";	//2ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else if ("ACSH0".equals(ydStkColGp)){
-								ydEqpGp = "02";	//1ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "02";	//1ë¶€ì§€ìƒì ˆë‹¨ì¥
 							} else {
-								ydEqpGp = "02";	//1ºÎÁö»óÀı´ÜÀå
+								ydEqpGp = "02";	//1ë¶€ì§€ìƒì ˆë‹¨ì¥
 							}
 						
 						}
@@ -4789,76 +4789,76 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					ydSchCd = ydStkColGp.substring(0, 4) + "01LM";
 				}
 				
-				//2025.03.11 ¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ». 
-				//ÇÈ¾÷º£µå->¾ßµå TOÀ§Ä¡ ÁöÁ¤ ÈÄ ÀÌÀûÀÛ¾÷¿¹¾à¿Ã¸± ½Ã, ½ºÄÉÁÙÄÚµå°¡ ADYDPUMM À¸·Î °íÁ¤µÇ¾î
-				//Dµ¿ #1,#3,#5 ¸Ó½Å ÇÈ¾÷¿¡¼­ ºÒÃâ½Ã ¸ğµÎ °°Àº ½ºÄÉÁÙÄÚµå°¡ ºÎ¿©µÇ¾î, Å©·¹ÀÎ ÁöÁ¤¿¡ ºÒÆí.
-				//PU º° ½ºÄÉÁÙ ºĞ¸® ¿äÃ» 
+				//2025.03.11 ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­. 
+				//í”½ì—…ë² ë“œ->ì•¼ë“œ TOìœ„ì¹˜ ì§€ì • í›„ ì´ì ì‘ì—…ì˜ˆì•½ì˜¬ë¦´ ì‹œ, ìŠ¤ì¼€ì¤„ì½”ë“œê°€ ADYDPUMM ìœ¼ë¡œ ê³ ì •ë˜ì–´
+				//Dë™ #1,#3,#5 ë¨¸ì‹  í”½ì—…ì—ì„œ ë¶ˆì¶œì‹œ ëª¨ë‘ ê°™ì€ ìŠ¤ì¼€ì¤„ì½”ë“œê°€ ë¶€ì—¬ë˜ì–´, í¬ë ˆì¸ ì§€ì •ì— ë¶ˆí¸.
+				//PU ë³„ ìŠ¤ì¼€ì¤„ ë¶„ë¦¬ ìš”ì²­ 
 				if("A".equals(ydStkColGp.substring(0, 1)) && "PU".equals(ydEqpGp)){
 					if(ydStkColGp.length() == 6){
-						//ÀÔ°í ÇÈ¾÷
+						//ì…ê³  í”½ì—…
 						if ("ADPUP1".equals(ydStkColGp)) {
-							ydSchCd = "ADPU01LM";	//Dµ¿ #1 M/C ÀÔ°í PU01
+							ydSchCd = "ADPU01LM";	//Dë™ #1 M/C ì…ê³  PU01
 						}
 						else if ("ACPUP2".equals(ydStkColGp)) {
-							ydSchCd = "ACPU02LM";	//Cµ¿ #2 M/C ÀÔ°í PU02
+							ydSchCd = "ACPU02LM";	//Cë™ #2 M/C ì…ê³  PU02
 						}
 						else if ("ADPUP3".equals(ydStkColGp)) {
-							ydSchCd = "ADPU03LM";	//Dµ¿ #3 M/C ÀÔ°í PU03
+							ydSchCd = "ADPU03LM";	//Dë™ #3 M/C ì…ê³  PU03
 						}
 						else if ("ACPUP7".equals(ydStkColGp)) {
-							ydSchCd = "ACPU07LM";	//Cµ¿ #4 M/C ÀÔ°í PU07
+							ydSchCd = "ACPU07LM";	//Cë™ #4 M/C ì…ê³  PU07
 						}
 						else if ("ADPUP8".equals(ydStkColGp)) {
-							ydSchCd = "ADPU08LM";	//Dµ¿ #5 M/C ÀÔ°í PU08
+							ydSchCd = "ADPU08LM";	//Dë™ #5 M/C ì…ê³  PU08
 						}
 						
-						//ÀåÀÔ, ½ºÄ«ÆÛ, 2Â÷Àı´Ü ÀÔ°í ÇÈ¾÷¿¡¼­ »¬ °æ¿ì (Àç·á ÀÌ»ó, Å×½ºÆ® µî)
+						//ì¥ì…, ìŠ¤ì¹´í¼, 2ì°¨ì ˆë‹¨ ì…ê³  í”½ì—…ì—ì„œ ëº„ ê²½ìš° (ì¬ë£Œ ì´ìƒ, í…ŒìŠ¤íŠ¸ ë“±)
 						if ("AAPUP4".equals(ydStkColGp)) {
-							ydSchCd = "AAPU04LM";	//Aµ¿ C¿­¿¬ ÀåÀÔ ÀÔ°í 
+							ydSchCd = "AAPU04LM";	//Aë™ Cì—´ì—° ì¥ì… ì…ê³  
 						} else if ("ABPUP6".equals(ydStkColGp)) {
-							ydSchCd = "ABPU06LM";	//Bµ¿ C¿­¿¬ ÀåÀÔ ÀÔ°í
+							ydSchCd = "ABPU06LM";	//Bë™ Cì—´ì—° ì¥ì… ì…ê³ 
 						} else if ("ABPUP5".equals(ydStkColGp)) {
-							ydSchCd = "ABPU05LM";	//Bµ¿ #1 Scarfer ÀÔ°í
+							ydSchCd = "ABPU05LM";	//Bë™ #1 Scarfer ì…ê³ 
 						} else if ("AAPUP9".equals(ydStkColGp)) {
-							ydSchCd = "AAPU09LM";	//Aµ¿ #2 2Â÷Àı´Ü ÀÔ°í
+							ydSchCd = "AAPU09LM";	//Aë™ #2 2ì°¨ì ˆë‹¨ ì…ê³ 
 						} else if ("AAPUPA".equals(ydStkColGp)) {
-							ydSchCd = "AAPU10LM";	//Aµ¿ #3 2Â÷Àı´Ü ÀÔ°í
+							ydSchCd = "AAPU10LM";	//Aë™ #3 2ì°¨ì ˆë‹¨ ì…ê³ 
 						} else if ("AAPUPB".equals(ydStkColGp)) {
-							ydSchCd = "AAPU11LM";	//Aµ¿ #2 Scarfer ÀÔ°íPU11
+							ydSchCd = "AAPU11LM";	//Aë™ #2 Scarfer ì…ê³ PU11
 						}
 					}
 					else{
 						if(!"".equals(strStrLoc)){
-							//ÀÔ°í ÇÈ¾÷
+							//ì…ê³  í”½ì—…
 							if (strStrLoc.startsWith("ADPUP1")) {
-								ydSchCd = "ADPU01LM";	//Dµ¿ #1 M/C ÀÔ°í PU01
+								ydSchCd = "ADPU01LM";	//Dë™ #1 M/C ì…ê³  PU01
 							}
 							else if (strStrLoc.startsWith("ACPUP2")) {
-								ydSchCd = "ACPU02LM";	//Cµ¿ #2 M/C ÀÔ°í PU02
+								ydSchCd = "ACPU02LM";	//Cë™ #2 M/C ì…ê³  PU02
 							}
 							else if (strStrLoc.startsWith("ADPUP3")) {
-								ydSchCd = "ADPU03LM";	//Dµ¿ #3 M/C ÀÔ°í PU03
+								ydSchCd = "ADPU03LM";	//Dë™ #3 M/C ì…ê³  PU03
 							}
 							else if (strStrLoc.startsWith("ACPUP7")) {
-								ydSchCd = "ACPU07LM";	//Cµ¿ #4 M/C ÀÔ°í PU07
+								ydSchCd = "ACPU07LM";	//Cë™ #4 M/C ì…ê³  PU07
 							}
 							else if (strStrLoc.equals("ADPUP8")) {
-								ydSchCd = "ADPU08LM";	//Dµ¿ #5 M/C ÀÔ°í PU08
+								ydSchCd = "ADPU08LM";	//Dë™ #5 M/C ì…ê³  PU08
 							}
 							
-							//ÀåÀÔ, ½ºÄ«ÆÛ, 2Â÷Àı´Ü ÀÔ°í ÇÈ¾÷¿¡¼­ »¬ °æ¿ì (Àç·á ÀÌ»ó, Å×½ºÆ® µî)
+							//ì¥ì…, ìŠ¤ì¹´í¼, 2ì°¨ì ˆë‹¨ ì…ê³  í”½ì—…ì—ì„œ ëº„ ê²½ìš° (ì¬ë£Œ ì´ìƒ, í…ŒìŠ¤íŠ¸ ë“±)
 							if (strStrLoc.startsWith("AAPUP4")) {
-								ydSchCd = "AAPU04LM";	//Aµ¿ C¿­¿¬ ÀåÀÔ ÀÔ°í 
+								ydSchCd = "AAPU04LM";	//Aë™ Cì—´ì—° ì¥ì… ì…ê³  
 							} else if (strStrLoc.startsWith("ABPUP6")) {
-								ydSchCd = "ABPU06LM";	//Bµ¿ C¿­¿¬ ÀåÀÔ ÀÔ°í
+								ydSchCd = "ABPU06LM";	//Bë™ Cì—´ì—° ì¥ì… ì…ê³ 
 							} else if (strStrLoc.startsWith("ABPUP5")) {
-								ydSchCd = "ABPU05LM";	//Bµ¿ #1 Scarfer ÀÔ°í
+								ydSchCd = "ABPU05LM";	//Bë™ #1 Scarfer ì…ê³ 
 							} else if (strStrLoc.startsWith("AAPUP9")) {
-								ydSchCd = "AAPU09LM";	//Aµ¿ #2 2Â÷Àı´Ü ÀÔ°í
+								ydSchCd = "AAPU09LM";	//Aë™ #2 2ì°¨ì ˆë‹¨ ì…ê³ 
 							} else if (strStrLoc.startsWith("AAPUPA")) {
-								ydSchCd = "AAPU10LM";	//Aµ¿ #3 2Â÷Àı´Ü ÀÔ°í
+								ydSchCd = "AAPU10LM";	//Aë™ #3 2ì°¨ì ˆë‹¨ ì…ê³ 
 							} else if (strStrLoc.startsWith("AAPUPB")) {
-								ydSchCd = "AAPU11LM";	//Aµ¿ #2 Scarfer ÀÔ°í
+								ydSchCd = "AAPU11LM";	//Aë™ #2 Scarfer ì…ê³ 
 							}
 						}
 						
@@ -4867,52 +4867,52 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 		
 			} else {
 				if ("".equals(ydWrkPlanTcar)) {
-					throw new Exception("ToÀ§Ä¡ÁöÁ¤ µ¿°£ÀÌÀû ´ëÂ÷ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("Toìœ„ì¹˜ì§€ì • ë™ê°„ì´ì  ëŒ€ì°¨ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 				ydSchCd = ydStkColGp.substring(0, 2) + ydWrkPlanTcar.substring(2) + "UM";
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			jrParam.setField("V_STL_NOS"      , stlNos    ); //Àç·á¹øÈ£µé
-			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_CHK_GP", chkGp); 			 // B¿­¿¬ÀÌ¼Û¿©ºÎ  Y
-			jrParam.setField("V_YD_TO_LOC_GUIDE", ydToLocGuide); //toÀ§Ä¡°¡ÀÌµå  18.10.30 Ãß°¡
+			jrParam.setField("V_STL_NOS"      , stlNos    ); //ì¬ë£Œë²ˆí˜¸ë“¤
+			jrParam.setField("V_YD_STK_COL_GP", ydStkColGp); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_CHK_GP", chkGp); 			 // Bì—´ì—°ì´ì†¡ì—¬ë¶€  Y
+			jrParam.setField("V_YD_TO_LOC_GUIDE", ydToLocGuide); //toìœ„ì¹˜ê°€ì´ë“œ  18.10.30 ì¶”ê°€
 
 
 
-			//ÀÛ¾÷¿¹¾à ´ë»óÀç·á Á¶È¸
-			//ÈÄÆÇ½½¶óºê¾ßµåÀÇ °æ¿ì Ã¼Å©ÇÑ ½½¶óºê ¼ø¼­´ë·Î ÀÛ¾÷¿¹¾à ´ë»óÀç Á¶È¸
+			//ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ë£Œ ì¡°íšŒ
+			//í›„íŒìŠ¬ë¼ë¸Œì•¼ë“œì˜ ê²½ìš° ì²´í¬í•œ ìŠ¬ë¼ë¸Œ ìˆœì„œëŒ€ë¡œ ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ ì¡°íšŒ
 			JDTORecordSet jsWbMtl = JDTORecordFactory.getInstance().createRecordSet("");
 
-			// 2022.09.27 ¼öÁ¤ ½ÃÀÛ -------------------------------------	          
-			//¿¬ÁÖ½½¶óºê¾ßµåÀÇ °æ¿ì Ã¼Å©ÇÑ ½½¶óºê  Ã¼Å© ¼ø¼­´ë·Î ÀÛ¾÷¿¹¾à ´ë»óÀç Á¶È¸
+			// 2022.09.27 ìˆ˜ì • ì‹œì‘ -------------------------------------	          
+			//ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œì˜ ê²½ìš° ì²´í¬í•œ ìŠ¬ë¼ë¸Œ  ì²´í¬ ìˆœì„œëŒ€ë¡œ ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ ì¡°íšŒ
 			if("A".equals(ydStkColGp.substring(0,1))) {
 			    jsWbMtl = jspDao.getMvStkWrkBookReg("MvMtl2", jrParam);
 
 			} else {
 				jsWbMtl = jspDao.getMvStkWrkBookReg("MvMtl", jrParam);
 			}
-			// 2022.09.27 ¼öÁ¤ Á¾·á --------------------------------------  
+			// 2022.09.27 ìˆ˜ì • ì¢…ë£Œ --------------------------------------  
 
 			int rowCnt = jsWbMtl.size();
 
 			if (rowCnt <= 0) {
-				throw new Exception("ÀÌÀû Àç·á Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì´ì  ì¬ë£Œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
 
 
 			//---REQ20211036362020 
-			//21.12.01 ¿¬ÁÖ1ºÎ ÃÖ±¤¼®°èÀå´ÔÀÌÀûÀÛ¾÷¿¹¾à µî·Ï ½Ã, ÁöÁ¤Å©·¹ÀÎ¿¡ ´ëÇÑ ÀÛ¾÷Àç·á ÀÛ¾÷ °¡´É¿©ºÎ È®ÀÎ
+			//21.12.01 ì—°ì£¼1ë¶€ ìµœê´‘ì„ê³„ì¥ë‹˜ì´ì ì‘ì—…ì˜ˆì•½ ë“±ë¡ ì‹œ, ì§€ì •í¬ë ˆì¸ì— ëŒ€í•œ ì‘ì—…ì¬ë£Œ ì‘ì—… ê°€ëŠ¥ì—¬ë¶€ í™•ì¸
 			if(!"".equals(ydWrkCrn)){
-				slabUtils.printLog(logId, "ÁöÁ¤Å©·¹ÀÎ[" + ydWrkCrn + "]¿¡ ´ëÇÏ¿© ÀÛ¾÷Àç·á ÀÛ¾÷°¡´É¿©ºÎ È®ÀÎ", "SL");
+				slabUtils.printLog(logId, "ì§€ì •í¬ë ˆì¸[" + ydWrkCrn + "]ì— ëŒ€í•˜ì—¬ ì‘ì—…ì¬ë£Œ ì‘ì—…ê°€ëŠ¥ì—¬ë¶€ í™•ì¸", "SL");
 				jrParam.setField("YD_EQP_ID", ydWrkCrn);
-				JDTORecordSet jrResultSet = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydcrnspecdao.YdCrnspecDao.getYdCrnspec", logId, methodNm, "Å©·¹ÀÎ »ç¾ç Ã¼Å©");
+				JDTORecordSet jrResultSet = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydcrnspecdao.YdCrnspecDao.getYdCrnspec", logId, methodNm, "í¬ë ˆì¸ ì‚¬ì–‘ ì²´í¬");
 			
 				if(jrResultSet == null || jrResultSet.size() <=0){
-					throw new Exception("ÁöÁ¤Å©·¹ÀÎ¿¡ ´ëÇÑ »ç¾çÁ¤º¸°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("ì§€ì •í¬ë ˆì¸ì— ëŒ€í•œ ì‚¬ì–‘ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}	
 				/*,YD_WRK_ABLE_L  AS YD_WRK_ABLE_L
 			      ,YD_WRK_ABLE_W  AS YD_WRK_ABLE_W
@@ -4923,24 +4923,24 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				int ydWrkCrnAbleW  =  Integer.parseInt(slabUtils.nvl(jrResultSet.getRecord(0).getFieldString("YD_WRK_ABLE_W"),"0"));
 				int ydWrkCrnAbleWt = Integer.parseInt(slabUtils.nvl(jrResultSet.getRecord(0).getFieldString("YD_WRK_ABLE_WT"),"0"));
 				String szRtnMsg    = "";
-				slabUtils.printLog(logId, "ÁöÁ¤Å©·¹ÀÎ[" + ydWrkCrn + "] ÀÛ¾÷°¡´É ±æÀÌ ["+Integer.toString(ydWrkCrnAbleL)+"] " +
-						"ÀÛ¾÷°¡´É Æø ["+Integer.toString(ydWrkCrnAbleW)+"] ÀÛ¾÷°¡´É Áß·® ["+Integer.toString(ydWrkCrnAbleWt)+"]", "SL");
+				slabUtils.printLog(logId, "ì§€ì •í¬ë ˆì¸[" + ydWrkCrn + "] ì‘ì—…ê°€ëŠ¥ ê¸¸ì´ ["+Integer.toString(ydWrkCrnAbleL)+"] " +
+						"ì‘ì—…ê°€ëŠ¥ í­ ["+Integer.toString(ydWrkCrnAbleW)+"] ì‘ì—…ê°€ëŠ¥ ì¤‘ëŸ‰ ["+Integer.toString(ydWrkCrnAbleWt)+"]", "SL");
 				
 				//Integer.parseInt(arg0)
 				for(int i=0; i< rowCnt ; i++){
 					jrRow = jsWbMtl.getRecord(i);
 					
 					String stlNo = slabUtils.nvl(jrRow.getFieldString("STL_NO"),"");
-					int ydMtlWt  = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_WT"),"0")); //Àç·á Áß·®
-					int ydMtlW   = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_W"),"0")); //Àç·á Æø
-					int ydMtlL   = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_L"),"0")); //Àç·á ±æÀÌ
+					int ydMtlWt  = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_WT"),"0")); //ì¬ë£Œ ì¤‘ëŸ‰
+					int ydMtlW   = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_W"),"0")); //ì¬ë£Œ í­
+					int ydMtlL   = Integer.parseInt(slabUtils.nvl(jrRow.getFieldString("YD_MTL_L"),"0")); //ì¬ë£Œ ê¸¸ì´
 					
-					if(ydMtlWt > ydWrkCrnAbleWt) szRtnMsg = Integer.toString(i+1)+"¹øÂ° ÀÛ¾÷Àç·á ["+stlNo+"] Àç·á Áß·®ÀÌ ÁöÁ¤Å©·¹ÀÎ["+ydWrkCrn+"] ÀÇ ÀÛ¾÷°¡´É Áß·® ["+ydWrkCrnAbleWt+"] º¸´Ù Å­";
-					else if(ydMtlW > ydWrkCrnAbleW) szRtnMsg = Integer.toString(i+1)+"¹øÂ° ÀÛ¾÷Àç·á ["+stlNo+"] Àç·á ÆøÀÌ ÁöÁ¤Å©·¹ÀÎ["+ydWrkCrn+"] ÀÇ ÀÛ¾÷°¡´É Æø ["+ydWrkCrnAbleW+"] º¸´Ù Å­";
-					else if(ydMtlL > ydWrkCrnAbleL) szRtnMsg = Integer.toString(i+1)+"¹øÂ° ÀÛ¾÷Àç·á ["+stlNo+"] Àç·á ±æÀÌ°¡ ÁöÁ¤Å©·¹ÀÎ["+ydWrkCrn+"] ÀÇ ÀÛ¾÷°¡´É ±æÀÌ ["+ydWrkCrnAbleL+"] º¸´Ù Å­";
+					if(ydMtlWt > ydWrkCrnAbleWt) szRtnMsg = Integer.toString(i+1)+"ë²ˆì§¸ ì‘ì—…ì¬ë£Œ ["+stlNo+"] ì¬ë£Œ ì¤‘ëŸ‰ì´ ì§€ì •í¬ë ˆì¸["+ydWrkCrn+"] ì˜ ì‘ì—…ê°€ëŠ¥ ì¤‘ëŸ‰ ["+ydWrkCrnAbleWt+"] ë³´ë‹¤ í¼";
+					else if(ydMtlW > ydWrkCrnAbleW) szRtnMsg = Integer.toString(i+1)+"ë²ˆì§¸ ì‘ì—…ì¬ë£Œ ["+stlNo+"] ì¬ë£Œ í­ì´ ì§€ì •í¬ë ˆì¸["+ydWrkCrn+"] ì˜ ì‘ì—…ê°€ëŠ¥ í­ ["+ydWrkCrnAbleW+"] ë³´ë‹¤ í¼";
+					else if(ydMtlL > ydWrkCrnAbleL) szRtnMsg = Integer.toString(i+1)+"ë²ˆì§¸ ì‘ì—…ì¬ë£Œ ["+stlNo+"] ì¬ë£Œ ê¸¸ì´ê°€ ì§€ì •í¬ë ˆì¸["+ydWrkCrn+"] ì˜ ì‘ì—…ê°€ëŠ¥ ê¸¸ì´ ["+ydWrkCrnAbleL+"] ë³´ë‹¤ í¼";
 					
 					if(!"".equals(szRtnMsg)) {
-						slabUtils.printLog(logId, "ÁöÁ¤Å©·¹ÀÎ[" + ydWrkCrn + "] ÀÛ¾÷ºÒ°¡ »çÀ¯: "+szRtnMsg, "SL");
+						slabUtils.printLog(logId, "ì§€ì •í¬ë ˆì¸[" + ydWrkCrn + "] ì‘ì—…ë¶ˆê°€ ì‚¬ìœ : "+szRtnMsg, "SL");
 						jrRtn = JDTORecordFactory.getInstance().create();
 						jrRtn.setResultMsg(szRtnMsg);
 						return jrRtn;
@@ -4951,39 +4951,39 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			
 			//---END REQ202110363620
 			
-			//¿¬ÁÖ Áö»óÀı´ÜÀå. ½ºÄÉÁÙÄÚµå Àç¼³Á¤ --¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ».
-			//ÀúÀåÀ§Ä¡¸¦ ACSH ¸¸ ÀÔ·ÂÇÏ°í ÀÌÀû ÀÛ¾÷À» °É °æ¿ì, DEFAULT ·Î ACYD02MM À¸·Î ¼³Á¤µÇ´Âµ¥, ACSH2 Àç·á ÀÖÀ»¶§ ½ºÄÉÁÙÄÚµå Àç¼³Á¤
+			//ì—°ì£¼ ì§€ìƒì ˆë‹¨ì¥. ìŠ¤ì¼€ì¤„ì½”ë“œ ì¬ì„¤ì • --ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­.
+			//ì €ì¥ìœ„ì¹˜ë¥¼ ACSH ë§Œ ì…ë ¥í•˜ê³  ì´ì  ì‘ì—…ì„ ê±¸ ê²½ìš°, DEFAULT ë¡œ ACYD02MM ìœ¼ë¡œ ì„¤ì •ë˜ëŠ”ë°, ACSH2 ì¬ë£Œ ìˆì„ë•Œ ìŠ¤ì¼€ì¤„ì½”ë“œ ì¬ì„¤ì •
 			String tempStk = jsWbMtl.getRecord(0).getFieldString("YD_STK_COL_GP");
 			if(ydSchCd.startsWith("ACYD") && tempStk.startsWith("ACSH2")) {
 				ydSchCd = "ACYD06MM";
 			}
 			
 			/**********************************************************
-			* 2. ÀÌÀû ÀÛ¾÷¿¹¾à µî·Ï
+			* 2. ì´ì  ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			**********************************************************/
-			jrParam.setField("V_YD_SCH_CD"       	, ydSchCd      ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("V_YD_AIM_BAY_GP"   	, ydAimBayGp   ); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-			jrParam.setField("V_YD_TO_LOC_GUIDE" 	, ydToLocGuide ); //¾ßµåToÀ§Ä¡Guide
-			jrParam.setField("V_YD_WRK_PLAN_TCAR"	, ydWrkPlanTcar); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			jrParam.setField("V_YD_WRK_PLAN_CRN" 	, ydWrkCrn);      //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-			jrParam.setField("V_YD_SCH_PRIOR"	 	, schPrior);      //¾ßµåÅ©·¹ÀÎÀÛ¾÷¼øÀ§
-			//2023.01.04 ¿¬ÁÖ µ¿°£´ëÂ÷ ÇÏÂ÷Å©·¹ÀÎ ÁöÁ¤±â´É Ãß°¡.--CAR_NO¸¦ ÇÏÂ÷Å©·¹ÀÎÀ¸·Î --¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» 
-			jrParam.setField("V_YD_WRK_PLAN_CRN_UD" , ydWrkCrnUd);     //¾ßµå´ëÂ÷ÇÏÂ÷ÀÛ¾÷Å©·¹ÀÎ
-			//2024.06.10 ÀúÀåÀ§Ä¡º° Á¤º¸Á¶È¸ ÇÏ¸é¿¡ Å©·¹ÀÎ ÀÌÀûÀÛ¾÷ µî·Ï½Ã ¿ì¼±±âµ¿ °¡´ÉÇÏµµ·Ï ±â´É°³¼± --¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ» --//REQ202405572888
-			jrParam.setField("V_CHK_INSTANT" , chkInstant);     //¿ì¼±±âµ¿ Ã¼Å© ¿©ºÎ
+			jrParam.setField("V_YD_SCH_CD"       	, ydSchCd      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("V_YD_AIM_BAY_GP"   	, ydAimBayGp   ); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+			jrParam.setField("V_YD_TO_LOC_GUIDE" 	, ydToLocGuide ); //ì•¼ë“œToìœ„ì¹˜Guide
+			jrParam.setField("V_YD_WRK_PLAN_TCAR"	, ydWrkPlanTcar); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			jrParam.setField("V_YD_WRK_PLAN_CRN" 	, ydWrkCrn);      //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+			jrParam.setField("V_YD_SCH_PRIOR"	 	, schPrior);      //ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìˆœìœ„
+			//2023.01.04 ì—°ì£¼ ë™ê°„ëŒ€ì°¨ í•˜ì°¨í¬ë ˆì¸ ì§€ì •ê¸°ëŠ¥ ì¶”ê°€.--CAR_NOë¥¼ í•˜ì°¨í¬ë ˆì¸ìœ¼ë¡œ --ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ 
+			jrParam.setField("V_YD_WRK_PLAN_CRN_UD" , ydWrkCrnUd);     //ì•¼ë“œëŒ€ì°¨í•˜ì°¨ì‘ì—…í¬ë ˆì¸
+			//2024.06.10 ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ì¡°íšŒ í•˜ë©´ì— í¬ë ˆì¸ ì´ì ì‘ì—… ë“±ë¡ì‹œ ìš°ì„ ê¸°ë™ ê°€ëŠ¥í•˜ë„ë¡ ê¸°ëŠ¥ê°œì„  --ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­ --//REQ202405572888
+			jrParam.setField("V_CHK_INSTANT" , chkInstant);     //ìš°ì„ ê¸°ë™ ì²´í¬ ì—¬ë¶€
 
-			//ÀÛ¾÷¿¹¾àµî·Ï
+			//ì‘ì—…ì˜ˆì•½ë“±ë¡
 			jsMsg.addRecord(this.insMvstkWrkBook(jrParam, jsWbMtl));
 			
 			/**********************************************************
-			* 3. ´ëÂ÷ÀÛ¾÷ÀÌ ÀÖÀ¸¸é °ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®
+			* 3. ëŒ€ì°¨ì‘ì—…ì´ ìˆìœ¼ë©´ ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬
 			**********************************************************/
 			if (!"".equals(ydWrkPlanTcar)) {
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®½Ã ExceptionÀ» ¹ß»ı½ÃÅ°Áö ¾Ê±âÀ§ÇØ ¹Ì¸® Check
-				String msgTcar = ""; //°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸® ¸Ş¼¼Áö
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬ì‹œ Exceptionì„ ë°œìƒì‹œí‚¤ì§€ ì•Šê¸°ìœ„í•´ ë¯¸ë¦¬ Check
+				String msgTcar = ""; //ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬ ë©”ì„¸ì§€
 			 			
-				//´ëÂ÷½ºÄÉÁìÁ¤º¸(°ø´ëÂ÷Ãâ¹ßÁö½Ã) Á¶È¸
-				jrParam.setField("V_YD_EQP_ID", ydWrkPlanTcar);	//¾ßµå¼³ºñID(´ëÂ÷)
+				//ëŒ€ì°¨ìŠ¤ì¼€ì¥´ì •ë³´(ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ) ì¡°íšŒ
+				jrParam.setField("V_YD_EQP_ID", ydWrkPlanTcar);	//ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
 
 				JDTORecordSet jsChk = commDao.getTcarSch("LevWo", jrParam);
 
@@ -4994,31 +4994,31 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					String ydWbookIdCurr = slabUtils.trim(jrChk.getFieldString("YD_WBOOK_ID_CURR"));
 
 					if ("B".equals(slabUtils.trim(jrChk.getFieldString("YD_EQP_STAT")))) {
-						msgTcar = "°íÀå";
+						msgTcar = "ê³ ì¥";
 					} else if (!"1".equals(slabUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE")))) {
 						msgTcar = "Off-Line";
 					} else if ("Y".equals(slabUtils.trim(jrChk.getFieldString("TC_MTL_YN")))) {
-						msgTcar = "´ëÂ÷½ºÄÉÁÙ[" + ydTcarSchId + "] ÀÌ¼ÛÀç·á Á¸Àç";
+						msgTcar = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„[" + ydTcarSchId + "] ì´ì†¡ì¬ë£Œ ì¡´ì¬";
 					} else if (!"".equals(ydWbookIdCurr)) {
-						msgTcar = "´ëÂ÷½ºÄÉÁÙ[" + ydTcarSchId + "] »óÂ÷ÀÛ¾÷¿¹¾à[" + ydWbookIdCurr + "] Á¸Àç";
+						msgTcar = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„[" + ydTcarSchId + "] ìƒì°¨ì‘ì—…ì˜ˆì•½[" + ydWbookIdCurr + "] ì¡´ì¬";
 					}
 				} else {
-					msgTcar = "Á¤º¸ ¾øÀ½";
+					msgTcar = "ì •ë³´ ì—†ìŒ";
 			    }
 				
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬
 				if ("".equals(msgTcar)) {
-					jrParam.setField("YD_EQP_ID", ydWrkPlanTcar); //¾ßµå¼³ºñID(´ëÂ÷)
-					jrParam.setField("YD_BAY_GP", ydBayGp      ); //¾ßµåµ¿±¸ºĞ(»óÂ÷µ¿)
+					jrParam.setField("YD_EQP_ID", ydWrkPlanTcar); //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+					jrParam.setField("YD_BAY_GP", ydBayGp      ); //ì•¼ë“œë™êµ¬ë¶„(ìƒì°¨ë™)
 
 					jrRtn = slabComm.trtTcarSchLevWo(jrParam);
 				} else {
-					slabUtils.printLog(logId, "´ëÂ÷[" + ydWrkPlanTcar + "] °ø´ëÂ÷Ãâ¹ßÁö½Ã ºÒ°¡ : " + msgTcar, "SL");
+					slabUtils.printLog(logId, "ëŒ€ì°¨[" + ydWrkPlanTcar + "] ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ë¶ˆê°€ : " + msgTcar, "SL");
 				}
 			}
 
 			/**********************************************************
-			* 4. µ¿³»ÀÌÀû(´ëÂ÷ÀÛ¾÷ÀÌ ¾øÀ½)ÀÛ¾÷ Å©·¹ÀÎº° Ã¹¹øÂ° ½ºÄÉÁÙ Àü¼Û
+			* 4. ë™ë‚´ì´ì (ëŒ€ì°¨ì‘ì—…ì´ ì—†ìŒ)ì‘ì—… í¬ë ˆì¸ë³„ ì²«ë²ˆì§¸ ìŠ¤ì¼€ì¤„ ì „ì†¡
 			**********************************************************/
 			jrRtn = slabUtils.addSndData(jrRtn, this.setCrnSchMsg(jsMsg, logId, methodNm));
 			
@@ -5034,56 +5034,56 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord insMvstkWrkBook(JDTORecord jrParam, JDTORecordSet jsWbMtl) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï[SlabYdJspSeEJB.insMvstkWrkBook] < " + jrParam.getResultMsg();
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡[SlabYdJspSeEJB.insMvstkWrkBook] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 		JDTORecord       recPara         = JDTORecordFactory.getInstance().create();
 		YdDelegate ydDelegate = new YdDelegate();
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			String ydSchCd       = slabUtils.trim(jrParam.getFieldString("V_YD_SCH_CD"       )); //¾ßµå½ºÄÉÁìÄÚµå
-			String ydAimBayGp    = slabUtils.trim(jrParam.getFieldString("V_YD_AIM_BAY_GP"   )); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-			String ydToLocGuide  = slabUtils.trim(jrParam.getFieldString("V_YD_TO_LOC_GUIDE" )); //¾ßµåToÀ§Ä¡Guide
-			String ydWrkPlanTcar = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_TCAR")); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			String ydWrkPlanCrn  = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_CRN"));  //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-			String modifier      = slabUtils.trim(jrParam.getFieldString("V_MODIFIER"        )); //¼öÁ¤ÀÚ
-			String chkGp		 = slabUtils.trim(jrParam.getFieldString("V_CHK_GP"));          //B,C¿­¿¬ÀÌ¼Û¿©ºÎ  Y
-			String ydSchPrior	 = slabUtils.trim(jrParam.getFieldString("V_YD_SCH_PRIOR"));	//¾ßµåÅ©·¹ÀÎÀÛ¾÷¼øÀ§
-			//2023.01.04 ¿¬ÁÖ µ¿°£´ëÂ÷ ÇÏÂ÷Å©·¹ÀÎ ÁöÁ¤±â´É Ãß°¡.--CAR_NO¸¦ ÇÏÂ÷Å©·¹ÀÎÀ¸·Î --¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» 
-			String ydWrkPlanCrnUd = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_CRN_UD"));  //¾ßµå´ëÂ÷ÇÏÂ÷ÀÛ¾÷Å©·¹ÀÎ
-			//2024.06.10 ÀúÀåÀ§Ä¡º° Á¤º¸Á¶È¸ ÇÏ¸é¿¡ Å©·¹ÀÎ ÀÌÀûÀÛ¾÷ µî·Ï½Ã ¿ì¼±±âµ¿ °¡´ÉÇÏµµ·Ï ±â´É°³¼± --¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ» --//REQ202405572888
-			String chkInstant		 = slabUtils.trim(jrParam.getFieldString("V_CHK_INSTANT"));       //¿ì¼±±âµ¿ Ã¼Å©¿©ºÎ
+			String ydSchCd       = slabUtils.trim(jrParam.getFieldString("V_YD_SCH_CD"       )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydAimBayGp    = slabUtils.trim(jrParam.getFieldString("V_YD_AIM_BAY_GP"   )); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+			String ydToLocGuide  = slabUtils.trim(jrParam.getFieldString("V_YD_TO_LOC_GUIDE" )); //ì•¼ë“œToìœ„ì¹˜Guide
+			String ydWrkPlanTcar = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_TCAR")); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			String ydWrkPlanCrn  = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_CRN"));  //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+			String modifier      = slabUtils.trim(jrParam.getFieldString("V_MODIFIER"        )); //ìˆ˜ì •ì
+			String chkGp		 = slabUtils.trim(jrParam.getFieldString("V_CHK_GP"));          //B,Cì—´ì—°ì´ì†¡ì—¬ë¶€  Y
+			String ydSchPrior	 = slabUtils.trim(jrParam.getFieldString("V_YD_SCH_PRIOR"));	//ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìˆœìœ„
+			//2023.01.04 ì—°ì£¼ ë™ê°„ëŒ€ì°¨ í•˜ì°¨í¬ë ˆì¸ ì§€ì •ê¸°ëŠ¥ ì¶”ê°€.--CAR_NOë¥¼ í•˜ì°¨í¬ë ˆì¸ìœ¼ë¡œ --ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ 
+			String ydWrkPlanCrnUd = slabUtils.trim(jrParam.getFieldString("V_YD_WRK_PLAN_CRN_UD"));  //ì•¼ë“œëŒ€ì°¨í•˜ì°¨ì‘ì—…í¬ë ˆì¸
+			//2024.06.10 ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ì¡°íšŒ í•˜ë©´ì— í¬ë ˆì¸ ì´ì ì‘ì—… ë“±ë¡ì‹œ ìš°ì„ ê¸°ë™ ê°€ëŠ¥í•˜ë„ë¡ ê¸°ëŠ¥ê°œì„  --ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­ --//REQ202405572888
+			String chkInstant		 = slabUtils.trim(jrParam.getFieldString("V_CHK_INSTANT"));       //ìš°ì„ ê¸°ë™ ì²´í¬ì—¬ë¶€
 			/**********************************************************
-			* 1. ¾ßµå½ºÄÉÁìÄÚµå Check
+			* 1. ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ Check
 			**********************************************************/
-			jrParam.setField("CALL_METHOD_NM", "insMvstkWrkBook"); //±âµ¿±İÁö ½ºÄÉÁÙ ¿¹¾àÀÌ °¡´ÉÇÏµµ·Ï Á÷Àü È£Ãâ ¸Ş¼Òµå¸í Ãß°¡ 2024.02.15
+			jrParam.setField("CALL_METHOD_NM", "insMvstkWrkBook"); //ê¸°ë™ê¸ˆì§€ ìŠ¤ì¼€ì¤„ ì˜ˆì•½ì´ ê°€ëŠ¥í•˜ë„ë¡ ì§ì „ í˜¸ì¶œ ë©”ì†Œë“œëª… ì¶”ê°€ 2024.02.15
 			JDTORecord jrCrnSpec = slabComm.chkSchCdEqp(jrParam);
 			
-			String ydGp       = ydSchCd.substring(0, 1);	//¾ßµå±¸ºĞ
-			String ydBayGp    = ydSchCd.substring(1, 2);	//¾ßµåµ¿±¸ºĞ
-			String ydEqpId    = slabUtils.trim(jrCrnSpec.getFieldString("YD_EQP_ID"   ));	//¾ßµå¼³ºñID(Å©·¹ÀÎ)
+			String ydGp       = ydSchCd.substring(0, 1);	//ì•¼ë“œêµ¬ë¶„
+			String ydBayGp    = ydSchCd.substring(1, 2);	//ì•¼ë“œë™êµ¬ë¶„
+			String ydEqpId    = slabUtils.trim(jrCrnSpec.getFieldString("YD_EQP_ID"   ));	//ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
 			
 			/*
-			 * 2016.01.20 À±Àç±¤ 
-			 * - Å©·¹ÀÎ ÁöÁ¤±â´É Ãß°¡ 
+			 * 2016.01.20 ìœ¤ì¬ê´‘ 
+			 * - í¬ë ˆì¸ ì§€ì •ê¸°ëŠ¥ ì¶”ê°€ 
 			 */
 			if(!"".equals(ydWrkPlanCrn)){
 				ydEqpId = ydWrkPlanCrn;
 			}
 			
 			if("".equals(ydSchPrior)) {
-				ydSchPrior = slabUtils.trim(jrCrnSpec.getFieldString("YD_SCH_PRIOR"));	//¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+				ydSchPrior = slabUtils.trim(jrCrnSpec.getFieldString("YD_SCH_PRIOR"));	//ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			}
 			
-			String ydToLocDcsnMtd = "S"; //¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı(½ºÄÉÁÙÁöÁ¤)
+			String ydToLocDcsnMtd = "S"; //ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•(ìŠ¤ì¼€ì¤„ì§€ì •)
 
 			if ("".equals(ydAimBayGp)) {
 				ydAimBayGp = ydBayGp;
@@ -5094,26 +5094,26 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			}
 
 			if (!"".equals(ydToLocGuide)) {
-				ydToLocDcsnMtd = "F";	//¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı(ÁöÁ¤À§Ä¡)
+				ydToLocDcsnMtd = "F";	//ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•(ì§€ì •ìœ„ì¹˜)
 			}
 			
 			/**********************************************************
-			* 2. Å©·¹ÀÎ»ç¾ç ºĞ¸®
+			* 2. í¬ë ˆì¸ì‚¬ì–‘ ë¶„ë¦¬
 			**********************************************************/
 			Vector vcLot = this.setCrnSpecSpr(jrCrnSpec, jsWbMtl);
 
 			JDTORecordSet jsLotMtl = null;
-			int lotCnt   = vcLot.size();	//Å©·¹ÀÎ»ç¾ç ºĞ¸® ÀÛ¾÷¿¹¾à¼ö
-			int lotMtlSh = 0;				//ÀÛ¾÷¿¹¾àÀç·á¸Å¼ö
-			String ydWbookId = "";			//¾ßµåÀÛ¾÷¿¹¾àID
-			String ydWbookIdFst = "";		//¾ßµåÀÛ¾÷¿¹¾àID(Ã¹¹øÂ°)
+			int lotCnt   = vcLot.size();	//í¬ë ˆì¸ì‚¬ì–‘ ë¶„ë¦¬ ì‘ì—…ì˜ˆì•½ìˆ˜
+			int lotMtlSh = 0;				//ì‘ì—…ì˜ˆì•½ì¬ë£Œë§¤ìˆ˜
+			String ydWbookId = "";			//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydWbookIdFst = "";		//ì•¼ë“œì‘ì—…ì˜ˆì•½ID(ì²«ë²ˆì§¸)
 			JDTORecord jrRow = null;
 
 			/**********************************************************
-			* 3. ÀÛ¾÷¿¹¾à µî·Ï
+			* 3. ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			**********************************************************/
 			for (int ii = 0; ii < lotCnt; ii++) {
-				//ÀÛ¾÷¿¹¾àÀç·á
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ
 				jsLotMtl = (JDTORecordSet)vcLot.get(ii);
 				lotMtlSh = jsLotMtl.size();
 
@@ -5121,19 +5121,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					continue;
 				}
 
-				//ÀÛ¾÷¿¹¾àID Á¶È¸
+				//ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ
 				ydWbookId = commDao.getSeqId(logId, methodNm, "WrkBook");
 
 				if ("".equals(ydWbookId)) {
-					throw new Exception("ÀÛ¾÷¿¹¾àID »ı¼º ½ÇÆĞ");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ID ìƒì„± ì‹¤íŒ¨");
 				}
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿¿ë
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ìš©
 				if (ii == 0) {
 					ydWbookIdFst = ydWbookId;
 				}
 				
-				//toÀ§Ä¡°¡ MBHD01ÀÌ¸é¼­ Ã¹¹øÂ° ÀÛ¾÷¿¹¾à µî·ÏÀÌ ¾Æ´Ñ °æ¿ì toÀ§Ä¡ ÁöÁ¤ ´Ù½ÃÇÔ
+				//toìœ„ì¹˜ê°€ MBHD01ì´ë©´ì„œ ì²«ë²ˆì§¸ ì‘ì—…ì˜ˆì•½ ë“±ë¡ì´ ì•„ë‹Œ ê²½ìš° toìœ„ì¹˜ ì§€ì • ë‹¤ì‹œí•¨
 				if (ii != 0 && ydToLocGuide.startsWith("MBHD01")) {
 //					JDTORecord jrParam2 = JDTORecordFactory.getInstance().create();
 //					JDTORecord jrChk = null;
@@ -5153,45 +5153,45 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					ydToLocGuide = "MBHD01";
 				}
 				
-				//ÀÛ¾÷¿¹¾à µî·Ï
-				jrParam.setField("V_YD_WBOOK_ID"       , ydWbookId     ); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("V_MODIFIER"          , modifier      ); //¼öÁ¤ÀÚ
-				jrParam.setField("V_YD_GP"             , ydGp          ); //¾ßµå±¸ºĞ
-				jrParam.setField("V_YD_BAY_GP"         , ydBayGp       ); //¾ßµåµ¿±¸ºĞ
-				jrParam.setField("V_YD_SCH_CD"         , ydSchCd       ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("V_YD_SCH_PRIOR"      , ydSchPrior    ); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				jrParam.setField("V_YD_SCH_PROG_STAT"  , "W"           ); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(½ºÄÉÁÙ¼öÇà´ë±â)
-				jrParam.setField("V_YD_SCH_ST_GP"      , "M"           ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-				jrParam.setField("V_YD_SCH_REQ_GP"     , "M"           ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
-				jrParam.setField("V_YD_AIM_YD_GP"      , ydGp          ); //¾ßµå¸ñÇ¥¾ßµå±¸ºĞ
-				jrParam.setField("V_YD_AIM_BAY_GP"     , ydAimBayGp    ); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-				jrParam.setField("V_YD_TO_LOC_DCSN_MTD", ydToLocDcsnMtd); //¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı
-				jrParam.setField("V_YD_TO_LOC_GUIDE"   , ydToLocGuide  ); //¾ßµåToÀ§Ä¡Guide
-				jrParam.setField("V_YD_WRK_PLAN_TCAR"  , ydWrkPlanTcar ); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-				jrParam.setField("V_YD_WRK_PLAN_CRN"   , ydWrkPlanCrn ); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-				//2023.01.04 ¿¬ÁÖ µ¿°£´ëÂ÷ ÇÏÂ÷Å©·¹ÀÎ ÁöÁ¤±â´É Ãß°¡.--CAR_NO¸¦ ÇÏÂ÷Å©·¹ÀÎÀ¸·Î --¿¬ÁÖ ±èÃæ¸¸°èÀå ¿äÃ» 
-				jrParam.setField("V_CAR_NO"   , ydWrkPlanCrnUd ); //¾ßµå´ëÂ÷ÇÏÂ÷ÀÛ¾÷Å©·¹ÀÎ
+				//ì‘ì—…ì˜ˆì•½ ë“±ë¡
+				jrParam.setField("V_YD_WBOOK_ID"       , ydWbookId     ); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("V_MODIFIER"          , modifier      ); //ìˆ˜ì •ì
+				jrParam.setField("V_YD_GP"             , ydGp          ); //ì•¼ë“œêµ¬ë¶„
+				jrParam.setField("V_YD_BAY_GP"         , ydBayGp       ); //ì•¼ë“œë™êµ¬ë¶„
+				jrParam.setField("V_YD_SCH_CD"         , ydSchCd       ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("V_YD_SCH_PRIOR"      , ydSchPrior    ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				jrParam.setField("V_YD_SCH_PROG_STAT"  , "W"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+				jrParam.setField("V_YD_SCH_ST_GP"      , "M"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+				jrParam.setField("V_YD_SCH_REQ_GP"     , "M"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
+				jrParam.setField("V_YD_AIM_YD_GP"      , ydGp          ); //ì•¼ë“œëª©í‘œì•¼ë“œêµ¬ë¶„
+				jrParam.setField("V_YD_AIM_BAY_GP"     , ydAimBayGp    ); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+				jrParam.setField("V_YD_TO_LOC_DCSN_MTD", ydToLocDcsnMtd); //ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•
+				jrParam.setField("V_YD_TO_LOC_GUIDE"   , ydToLocGuide  ); //ì•¼ë“œToìœ„ì¹˜Guide
+				jrParam.setField("V_YD_WRK_PLAN_TCAR"  , ydWrkPlanTcar ); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+				jrParam.setField("V_YD_WRK_PLAN_CRN"   , ydWrkPlanCrn ); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+				//2023.01.04 ì—°ì£¼ ë™ê°„ëŒ€ì°¨ í•˜ì°¨í¬ë ˆì¸ ì§€ì •ê¸°ëŠ¥ ì¶”ê°€.--CAR_NOë¥¼ í•˜ì°¨í¬ë ˆì¸ìœ¼ë¡œ --ì—°ì£¼ ê¹€ì¶©ë§Œê³„ì¥ ìš”ì²­ 
+				jrParam.setField("V_CAR_NO"   , ydWrkPlanCrnUd ); //ì•¼ë“œëŒ€ì°¨í•˜ì°¨ì‘ì—…í¬ë ˆì¸
 				
 				
 				commDao.insSlabYd("WrkBook", jrParam);
 
-				//ÀÛ¾÷¿¹¾àÀç·á µî·Ï
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë“±ë¡
 				String[][] wmParam = new String[lotMtlSh][8];
 				
 				for (int jj = 0; jj < lotMtlSh; jj++) {
 					jrRow = jsLotMtl.getRecord(jj);
 					
-					wmParam[jj][0] = ydWbookId;												//¾ßµåÀÛ¾÷¿¹¾àID
-					wmParam[jj][1] = slabUtils.trim(jrRow.getFieldString("STL_NO"       ));	//Àç·á¹øÈ£
-					wmParam[jj][2] = modifier;												//µî·ÏÀÚ
-					wmParam[jj][3] = modifier;												//¼öÁ¤ÀÚ
-					wmParam[jj][4] = slabUtils.trim(jrRow.getFieldString("YD_STK_COL_GP"));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-					wmParam[jj][5] = slabUtils.trim(jrRow.getFieldString("YD_STK_BED_NO"));	//¾ßµåÀûÄ¡Bed¹øÈ£
-					wmParam[jj][6] = slabUtils.trim(jrRow.getFieldString("YD_STK_LYR_NO"));	//¾ßµåÀûÄ¡´Ü¹øÈ£
-					wmParam[jj][7] = String.valueOf(jj + 1);								//¾ßµå±Ç»ó¸ğÀ½¼ø¼­
+					wmParam[jj][0] = ydWbookId;												//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					wmParam[jj][1] = slabUtils.trim(jrRow.getFieldString("STL_NO"       ));	//ì¬ë£Œë²ˆí˜¸
+					wmParam[jj][2] = modifier;												//ë“±ë¡ì
+					wmParam[jj][3] = modifier;												//ìˆ˜ì •ì
+					wmParam[jj][4] = slabUtils.trim(jrRow.getFieldString("YD_STK_COL_GP"));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					wmParam[jj][5] = slabUtils.trim(jrRow.getFieldString("YD_STK_BED_NO"));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+					wmParam[jj][6] = slabUtils.trim(jrRow.getFieldString("YD_STK_LYR_NO"));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+					wmParam[jj][7] = String.valueOf(jj + 1);								//ì•¼ë“œê¶Œìƒëª¨ìŒìˆœì„œ
 					
 					
-					//B¿­¿¬ÀÌ¼Û¿©ºÎ  Y ÀÎ °æ¿ì YDCSJ002 
+					//Bì—´ì—°ì´ì†¡ì—¬ë¶€  Y ì¸ ê²½ìš° YDCSJ002 
 					if("M".equals(ydGp) && !"".equals(chkGp)) {
 						recPara  = JDTORecordFactory.getInstance().create();
 						recPara.setField("MSG_ID",        "YDCSJ002");
@@ -5206,18 +5206,18 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			}
 
 			/**********************************************************
-			* 4. Å©·¹ÀÎ½ºÄÉÁÙ(YDYDJ400) Àü¼Û¿ë ±âÃÊ Àü¹® »ı¼º
+			* 4. í¬ë ˆì¸ìŠ¤ì¼€ì¤„(YDYDJ400) ì „ì†¡ìš© ê¸°ì´ˆ ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//Å©·¹ÀÎ½ºÄÉÁÙ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = slabUtils.getParam(logId, methodNm, modifier);
 
-			jrYdMsg.setField("YD_WBOOK_ID"     , ydWbookIdFst ); //¾ßµåÀÛ¾÷¿¹¾àID(Ã¹¹øÂ°²¨¸¸)
-			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_SCH_ST_GP"    , "M"          ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-			jrYdMsg.setField("YD_SCH_REQ_GP"   , "M"          ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
-			jrYdMsg.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷(´ëÂ÷»óÂ÷ Å©·¹ÀÎ½ºÄÉÁÙÀ» Àü¼ÛÇÏÁö ¾Ê±â À§ÇØ Ãß°¡)
-			jrYdMsg.setField("V_CHK_INSTANT", chkInstant); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷(´ëÂ÷»óÂ÷ Å©·¹ÀÎ½ºÄÉÁÙÀ» Àü¼ÛÇÏÁö ¾Ê±â À§ÇØ Ãß°¡)
+			jrYdMsg.setField("YD_WBOOK_ID"     , ydWbookIdFst ); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID(ì²«ë²ˆì§¸êº¼ë§Œ)
+			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_SCH_ST_GP"    , "M"          ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+			jrYdMsg.setField("YD_SCH_REQ_GP"   , "M"          ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
+			jrYdMsg.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨(ëŒ€ì°¨ìƒì°¨ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì„ ì „ì†¡í•˜ì§€ ì•Šê¸° ìœ„í•´ ì¶”ê°€)
+			jrYdMsg.setField("V_CHK_INSTANT", chkInstant); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨(ëŒ€ì°¨ìƒì°¨ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì„ ì „ì†¡í•˜ì§€ ì•Šê¸° ìœ„í•´ ì¶”ê°€)
 
 			slabUtils.printLog(logId, methodNm, "S-");
 
@@ -5231,34 +5231,34 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ»ç¾çºĞ¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord jrCrnSpec
 	 *      @param JDTORecordSet jsWrkMtl
 	 *      @return Vector
 	 *      @throws DAOException
 	*/
 	public Vector setCrnSpecSpr(JDTORecord jrCrnSpec, JDTORecordSet jsWrkMtl) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ»ç¾çºĞ¸®[SlabYdJspSeEJB.setSlabYdHdLotSprCs] < " + jrCrnSpec.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬[SlabYdJspSeEJB.setSlabYdHdLotSprCs] < " + jrCrnSpec.getResultMsg();
 		String logId = jrCrnSpec.getResultCode();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
 
-			Vector vcLot = new Vector();	//Å©·¹ÀÎ»ç¾çºĞ¸®°á°ú
-			JDTORecord    jrRow = null;		//ÇöÀç Row
+			Vector vcLot = new Vector();	//í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬ê²°ê³¼
+			JDTORecord    jrRow = null;		//í˜„ì¬ Row
 			JDTORecordSet jsLot = JDTORecordFactory.getInstance().createRecordSet("");	//Lot
-			String crnSpecOvGp  = "";		//Å©·¹ÀÎ»ç¾çÃÊ°ú±¸ºĞ
+			String crnSpecOvGp  = "";		//í¬ë ˆì¸ì‚¬ì–‘ì´ˆê³¼êµ¬ë¶„
 
-			//Å©·¹ÀÎ»ç¾çºĞ¸®
-			int   mtlSh    = 0;		//Àç·á¸Å¼ö
-			int   mtlWt    = 0;		//Àç·áÁß·®
-			float mtlT     = 0;		//Àç·áµÎ²²
-			float mtlW     = 0;		//Àç·áÆø
-			int   mtlWtSum = 0;		//Àç·áÁß·®ÇÕ
-			float mtlTSum  = 0;		//Àç·áµÎ²²ÇÕ
-			float mtlWMax  = 0;		//Àç·áÆøÃÖ´ë
+			//í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬
+			int   mtlSh    = 0;		//ì¬ë£Œë§¤ìˆ˜
+			int   mtlWt    = 0;		//ì¬ë£Œì¤‘ëŸ‰
+			float mtlT     = 0;		//ì¬ë£Œë‘ê»˜
+			float mtlW     = 0;		//ì¬ë£Œí­
+			int   mtlWtSum = 0;		//ì¬ë£Œì¤‘ëŸ‰í•©
+			float mtlTSum  = 0;		//ì¬ë£Œë‘ê»˜í•©
+			float mtlWMax  = 0;		//ì¬ë£Œí­ìµœëŒ€
 
 			String Is_plate_StoA_Scarfing = "N"; 
 			int rowCnt = jsWrkMtl.size();
@@ -5275,18 +5275,18 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					mtlWtSum += mtlWt;
 					mtlTSum  += mtlT;
 					
-					jrCrnSpec.setField("MTL_SH_SUM", String.valueOf(mtlSh   ));	//Àç·á¸Å¼ö
-					jrCrnSpec.setField("MTL_WT_SUM", String.valueOf(mtlWtSum));	//Àç·áÁß·®ÇÕ
-					jrCrnSpec.setField("MTL_T_SUM" , String.valueOf(mtlTSum ));	//Àç·áµÎ²²ÇÕ
-					jrCrnSpec.setField("MTL_W"     , String.valueOf(mtlW    ));	//Àç·áÆø
-					jrCrnSpec.setField("MTL_W_MAX" , String.valueOf(mtlWMax ));	//Àç·áÆøÃÖ´ë
+					jrCrnSpec.setField("MTL_SH_SUM", String.valueOf(mtlSh   ));	//ì¬ë£Œë§¤ìˆ˜
+					jrCrnSpec.setField("MTL_WT_SUM", String.valueOf(mtlWtSum));	//ì¬ë£Œì¤‘ëŸ‰í•©
+					jrCrnSpec.setField("MTL_T_SUM" , String.valueOf(mtlTSum ));	//ì¬ë£Œë‘ê»˜í•©
+					jrCrnSpec.setField("MTL_W"     , String.valueOf(mtlW    ));	//ì¬ë£Œí­
+					jrCrnSpec.setField("MTL_W_MAX" , String.valueOf(mtlWMax ));	//ì¬ë£Œí­ìµœëŒ€
 					
-					jrCrnSpec.setField("PLATE_SIDE_SCARFING_YN" , Is_plate_StoA_Scarfing);	//ÅëÇÕÀûÄ¡ÀÌ·Â ÀÖ´Â ÈÄÆÇÀç »çÀÌµå½ºÄ«ÇÎ ¿©ºÎ
-					//Å©·¹ÀÎ»ç¾ç ÃÊ°ú Check
+					jrCrnSpec.setField("PLATE_SIDE_SCARFING_YN" , Is_plate_StoA_Scarfing);	//í†µí•©ì ì¹˜ì´ë ¥ ìˆëŠ” í›„íŒì¬ ì‚¬ì´ë“œìŠ¤ì¹´í•‘ ì—¬ë¶€
+					//í¬ë ˆì¸ì‚¬ì–‘ ì´ˆê³¼ Check
 					crnSpecOvGp = slabComm.chkCrnSpec(jrCrnSpec);
 
 					if (!"".equals(crnSpecOvGp)) {
-						//ÀÌÀü Lot Ãß°¡
+						//ì´ì „ Lot ì¶”ê°€
 						vcLot.add(jsLot);
 
 						jsLot = JDTORecordFactory.getInstance().createRecordSet("");
@@ -5306,7 +5306,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				jsLot.addRecord(jrRow);
 			}
 			
-			//¸¶Áö¸· Lot Ãß°¡
+			//ë§ˆì§€ë§‰ Lot ì¶”ê°€
 			vcLot.add(jsLot);
 			
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -5321,9 +5321,9 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙÀü¹®Á¤¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì „ë¬¸ì •ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecordSet jsMsg
 	 *      @param String logId
 	 *      @param String mthdNm
@@ -5331,7 +5331,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	 *      @throws DAOException
 	*/
 	public JDTORecord setCrnSchMsg(JDTORecordSet jsMsg, String logId, String mthdNm) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙÀü¹®Á¤¸®[SlabYdJspSeEJB.setCrnSchMsg] < " + mthdNm;
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì „ë¬¸ì •ë¦¬[SlabYdJspSeEJB.setCrnSchMsg] < " + mthdNm;
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+");
@@ -5340,10 +5340,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			JDTORecord jrRtn = null;
 
 			if (!slabUtils.isEmpty(jsMsg)) {
-				String ydEqpId   = ""; //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-				String ydEqpStat = ""; //¾ßµå¼³ºñ»óÅÂ
-				boolean fstYn = false; //µ¿ÀÏÅ©·¹ÀÎ¿¡¼­ Ã¹¹øÂ° ¿©ºÎ
-				//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+				String ydEqpId   = ""; //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+				String ydEqpStat = ""; //ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				boolean fstYn = false; //ë™ì¼í¬ë ˆì¸ì—ì„œ ì²«ë²ˆì§¸ ì—¬ë¶€
+				//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = slabUtils.getParam(logId, methodNm, "");
 				JDTORecord jrRow = null;
 				JDTORecordSet jsChk = null;
@@ -5356,7 +5356,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					jrRow = jsMsg.getRecord(ii);
 					
 					if ("".equals(slabUtils.trim(jrRow.getFieldString("YD_WRK_PLAN_TCAR")))) {
-						//¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷°¡ ÀÖÀ¸¸é ´ëÂ÷»óÂ÷ Å©·¹ÀÎ½ºÄÉÁÙÀÌ¹Ç·Î Àü¼ÛÇÏÁö ¾ÊÀ½ -> °ø´ëÂ÷Ãâ¹ßÁö½Ã·Î Ã³¸®
+						//ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨ê°€ ìˆìœ¼ë©´ ëŒ€ì°¨ìƒì°¨ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë¯€ë¡œ ì „ì†¡í•˜ì§€ ì•ŠìŒ -> ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œë¡œ ì²˜ë¦¬
 						fstYn = true;
 						ydEqpId = slabUtils.trim(jrRow.getFieldString("YD_EQP_ID"));
 						chkInstant = slabUtils.trim(jrRow.getFieldString("V_CHK_INSTANT"));
@@ -5368,10 +5368,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 							}
 						}
 						
-						//µ¿ÀÏÅ©·¹ÀÎ¿¡¼­ Ã¹¹øÂ° ÀÌ¸é
+						//ë™ì¼í¬ë ˆì¸ì—ì„œ ì²«ë²ˆì§¸ ì´ë©´
 						if (fstYn) {
-							//Å©·¹ÀÎ »óÅÂ È®ÀÎ
-							jrParam.setField("V_YD_EQP_ID", ydEqpId); //¾ßµå¼³ºñID
+							//í¬ë ˆì¸ ìƒíƒœ í™•ì¸
+							jrParam.setField("V_YD_EQP_ID", ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 
 							jsChk = commDao.getStat("Eqp", jrParam);
 
@@ -5382,30 +5382,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 							}
 
 							if ("W".equals(ydEqpStat)) {
-								slabUtils.printLog(logId, "setCrnSchMsg¿ì¼±±âµ¿ Ã¼Å©¿©ºÎ[" + chkInstant + "]", "SL");
+								slabUtils.printLog(logId, "setCrnSchMsgìš°ì„ ê¸°ë™ ì²´í¬ì—¬ë¶€[" + chkInstant + "]", "SL");
 								
-								//20240610 ¿¬ÁÖ ±èÃæ¸¸ °èÀå ¿äÃ» ÀúÀåÀ§Ä¡º° Á¤º¸Á¶È¸ ÇÏ¸é¿¡ Å©·¹ÀÎ ÀÌÀûÀÛ¾÷ µî·Ï½Ã ¿ì¼±±âµ¿ °¡´ÉÇÏµµ·Ï ±â´É°³¼± --//REQ202405572888
-								//Æ®·¹ÀÏ·¯ ÇÏÂ÷°°Àº °æ¿ì ÀÛ¾÷ Ãë¼Ò ÈÄ ¹Ù·Î ´Ù½Ã±âµ¿ (ÇÑ¸Å¾¿ ³ª´²¼­) ÁÖ´Â °æ¿ì°¡ ÀÖ´Âµ¥ 0¼øÀ§±âµ¿¸¸À¸·Î´Â ´Ù¸¥ 0¼øÀ§¿¡ °É·Á ¸øÇÏ´Â °æ¿ì »ı±è
-								//¿¹Àü ±âÁØÃ³·³ ¼³ºñ°¡ ÀÛ¾÷´ë±â»óÅÂÀÎ°æ¿ì ¹Ù·Î ±âµ¿ÇÏ´Â ±â´Éµµ ÇÊ¿ä.
+								//20240610 ì—°ì£¼ ê¹€ì¶©ë§Œ ê³„ì¥ ìš”ì²­ ì €ì¥ìœ„ì¹˜ë³„ ì •ë³´ì¡°íšŒ í•˜ë©´ì— í¬ë ˆì¸ ì´ì ì‘ì—… ë“±ë¡ì‹œ ìš°ì„ ê¸°ë™ ê°€ëŠ¥í•˜ë„ë¡ ê¸°ëŠ¥ê°œì„  --//REQ202405572888
+								//íŠ¸ë ˆì¼ëŸ¬ í•˜ì°¨ê°™ì€ ê²½ìš° ì‘ì—… ì·¨ì†Œ í›„ ë°”ë¡œ ë‹¤ì‹œê¸°ë™ (í•œë§¤ì”© ë‚˜ëˆ ì„œ) ì£¼ëŠ” ê²½ìš°ê°€ ìˆëŠ”ë° 0ìˆœìœ„ê¸°ë™ë§Œìœ¼ë¡œëŠ” ë‹¤ë¥¸ 0ìˆœìœ„ì— ê±¸ë ¤ ëª»í•˜ëŠ” ê²½ìš° ìƒê¹€
+								//ì˜ˆì „ ê¸°ì¤€ì²˜ëŸ¼ ì„¤ë¹„ê°€ ì‘ì—…ëŒ€ê¸°ìƒíƒœì¸ê²½ìš° ë°”ë¡œ ê¸°ë™í•˜ëŠ” ê¸°ëŠ¥ë„ í•„ìš”.
 								if("Y".equals(chkInstant)){
 									jrRtn = slabUtils.addSndData(jrRtn, slabComm.getCrnSchMsg(jrRow));
 								}
 								
 								else {
-									//Å©·¹ÀÎÀÌ ÀÛ¾÷´ë±â »óÅÂÀÌ¸é Å©·¹ÀÎ½ºÄÉÁÙ Àü¼Û
-									//20240314 Å©·¹ÀÎÀÌ ÀÛ¾÷´ë±â »óÅÂÀÌ¸é, ÀÛ¾÷Áö½Ã ¿ä±¸ È£ÃâÇØ¾ß
-									//ÀÛ¾÷´ë±â¸¸ È®ÀÎÇÏ¸é, ¸ÕÀú ÀÛ¾÷¿¹¾à °Ç°Ô ÀÖ¾îµµ ÇöÀç µî·ÏÇÑ°Ô ¸ÕÀú È£ÃâµÇ¸ç,
-									//±ÇÇÏ ÈÄ ´ÙÀ½ ÀÛ¾÷ ¸¸µé°íÀÕ´Âµ¥ ºÒ·ÁÁö¸é ±ÇÇÏÈÄ ´ÙÀ½ÀÛ¾÷, ÇöÀç µî·ÏÇÑ°Í µÎ°³ Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿µÈ´Ù.
+									//í¬ë ˆì¸ì´ ì‘ì—…ëŒ€ê¸° ìƒíƒœì´ë©´ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ì†¡
+									//20240314 í¬ë ˆì¸ì´ ì‘ì—…ëŒ€ê¸° ìƒíƒœì´ë©´, ì‘ì—…ì§€ì‹œ ìš”êµ¬ í˜¸ì¶œí•´ì•¼
+									//ì‘ì—…ëŒ€ê¸°ë§Œ í™•ì¸í•˜ë©´, ë¨¼ì € ì‘ì—…ì˜ˆì•½ ê±´ê²Œ ìˆì–´ë„ í˜„ì¬ ë“±ë¡í•œê²Œ ë¨¼ì € í˜¸ì¶œë˜ë©°,
+									//ê¶Œí•˜ í›„ ë‹¤ìŒ ì‘ì—… ë§Œë“¤ê³ ì‡ëŠ”ë° ë¶ˆë ¤ì§€ë©´ ê¶Œí•˜í›„ ë‹¤ìŒì‘ì—…, í˜„ì¬ ë“±ë¡í•œê²ƒ ë‘ê°œ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ëœë‹¤.
 									//jrRtn = slabUtils.addSndData(jrRtn, slabComm.getCrnSchMsg(jrRow));
 									
 									JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 									jrYdMsg.setResultCode(logId);	//Log ID
 									jrYdMsg.setResultMsg(methodNm);	//Log Method Name
 	
-									jrYdMsg.setField("JMS_TC_CD"         , "YDYDJ440"               ); //JMSTCÄÚµå
-									jrYdMsg.setField("JMS_TC_CREATE_DDTT", slabUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
-									jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //¾ßµå¼³ºñID
-									jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
+									jrYdMsg.setField("JMS_TC_CD"         , "YDYDJ440"               ); //JMSTCì½”ë“œ
+									jrYdMsg.setField("JMS_TC_CREATE_DDTT", slabUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
+									jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //ì•¼ë“œì„¤ë¹„ID
+									jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
 									
 									jrRtn = slabUtils.addSndData(jrRtn, jrYdMsg);
 								}
@@ -5427,19 +5427,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸
+	 * ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getStrLocInfo(GridData gdReq) throws DAOException {
-		String methodNm = "ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸[SlabYdJspSeEJB.getStrLocInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ[SlabYdJspSeEJB.getStrLocInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -5455,19 +5455,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * ÀÛ¾÷Àç·áList
+	 * ì‘ì—…ì¬ë£ŒList
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷Àç·áList
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì¬ë£ŒList
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getWrkMtlList(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷Àç·áList[SlabYdJspSeEJB.getWrkMtlList] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì¬ë£ŒList[SlabYdJspSeEJB.getWrkMtlList] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -5483,19 +5483,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * È­¸é°øÅë Ã³¸®
+	 * í™”ë©´ê³µí†µ ì²˜ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñº¸±ŞÁ¦ÇÑ±âÁØ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ë³´ê¸‰ì œí•œê¸°ì¤€ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSupRuleMax(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñº¸±ŞÁ¦ÇÑ±âÁØ Á¶È¸[SlabYdJspSeEJB.getSupRuleMax] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ë³´ê¸‰ì œí•œê¸°ì¤€ ì¡°íšŒ[SlabYdJspSeEJB.getSupRuleMax] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
@@ -5511,33 +5511,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à ¿ì¼±¼øÀ§º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ ìš°ì„ ìˆœìœ„ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updWrkBookPrior(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à ¿ì¼±¼øÀ§º¯°æ[SlabYdJspSeEJB.updWrkBookPrior] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ ìš°ì„ ìˆœìœ„ë³€ê²½[SlabYdJspSeEJB.updWrkBookPrior] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrPrior = new String[rowCnt][3];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrPrior[ii][0] = modifier;	//¼öÁ¤ÀÚ
-				arrPrior[ii][1] = slabUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii));	//¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				arrPrior[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii));	//¾ßµåÀÛ¾÷¿¹¾àID
+				arrPrior[ii][0] = modifier;	//ìˆ˜ì •ì
+				arrPrior[ii][1] = slabUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii));	//ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				arrPrior[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii));	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			}
 
-			//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+			//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 			commDao.upsBatch("WbPrior", arrPrior, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -5552,33 +5552,33 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à Å©·¹ÀÎÁöÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ì§€ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updWrkBookCrn(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à Å©·¹ÀÎÁöÁ¤[SlabYdJspSeEJB.updWrkBookCrn] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ì§€ì •[SlabYdJspSeEJB.updWrkBookCrn] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String modifier = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String modifier = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrCrn = new String[rowCnt][3];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				arrCrn[ii][0] = modifier;	//¼öÁ¤ÀÚ
-				arrCrn[ii][1] = slabUtils.trim(gdReq.getHeader("YD_WRK_PLAN_CRN").getComboHiddenValues()[gdReq.getHeader("YD_WRK_PLAN_CRN").getSelectedIndex(ii)]);	//¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-				arrCrn[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));	//¾ßµåÀÛ¾÷¿¹¾àID
+				arrCrn[ii][0] = modifier;	//ìˆ˜ì •ì
+				arrCrn[ii][1] = slabUtils.trim(gdReq.getHeader("YD_WRK_PLAN_CRN").getComboHiddenValues()[gdReq.getHeader("YD_WRK_PLAN_CRN").getSelectedIndex(ii)]);	//ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+				arrCrn[ii][2] = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			}
 
-			//ÀÛ¾÷¿¹¾à Table ¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ Update
+			//ì‘ì—…ì˜ˆì•½ Table ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸ Update
 			commDao.upsBatch("WbCrn", arrCrn, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -5593,78 +5593,78 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à»èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord delWrkBook(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à»èÁ¦[SlabYdJspSeEJB.delWrkBook] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ì‚­ì œ[SlabYdJspSeEJB.delWrkBook] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydWbookId = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String modifier  = slabUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String ydWbookId = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String modifier  = slabUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, modifier);
 
-			//ÀÛ¾÷¿¹¾à
+			//ì‘ì—…ì˜ˆì•½
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[][] arrCar     = new String[rowCnt][5];
 			String[][] arrWrkBook = new String[rowCnt][2];
 			
 			/**********************************************************
-			* 1. Å©·¹ÀÎ½ºÄÉÁÙ Á¸Àç¿©ºÎ Check
+			* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡´ì¬ì—¬ë¶€ Check
 			**********************************************************/
 			for (int ii = 0; ii < rowCnt; ii++) {
 				ydWbookId = slabUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii));
 				jrParam.setField("V_YD_WBOOK_ID", ydWbookId);
 				
-				//ÀÛ¾÷¿¹¾à Å©·¹ÀÎ½ºÄÉÁÙÁ¤º¸ Á¶È¸
+				//ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì •ë³´ ì¡°íšŒ
 				JDTORecordSet jsCrn = jspDao.getComm("WbCrnSch", jrParam);
 
 			    if (jsCrn != null && jsCrn.size() > 0) {
 					StringBuffer sbMsg = new StringBuffer();
-					sbMsg = sbMsg.append("ÀÛ¾÷¿¹¾àID[" + ydWbookId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ " + jsCrn.size() + " °Ç Á¸ÀçÇÕ´Ï´Ù.");
+					sbMsg = sbMsg.append("ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ " + jsCrn.size() + " ê±´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 					for (int mm = 0; mm < jsCrn.size(); mm++) {
-						sbMsg = sbMsg.append("\n" + mm + " : " + jsCrn.getRecord(mm).getFieldString("YD_CRN_SCH_ID"));	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+						sbMsg = sbMsg.append("\n" + mm + " : " + jsCrn.getRecord(mm).getFieldString("YD_CRN_SCH_ID"));	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 					}
 					throw new Exception(sbMsg.toString());
 			    }
 
-				//Â÷·®/´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
-			    arrCar[ii][0] = modifier;	//¼öÁ¤ÀÚ
-			    arrCar[ii][1] = ydWbookId;	//¾ßµåÀÛ¾÷¿¹¾àID
-			    arrCar[ii][2] = ydWbookId;	//¾ßµåÀÛ¾÷¿¹¾àID
-			    arrCar[ii][3] = ydWbookId;	//¾ßµåÀÛ¾÷¿¹¾àID
-			    arrCar[ii][4] = ydWbookId;	//¾ßµåÀÛ¾÷¿¹¾àID
+				//ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
+			    arrCar[ii][0] = modifier;	//ìˆ˜ì •ì
+			    arrCar[ii][1] = ydWbookId;	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			    arrCar[ii][2] = ydWbookId;	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			    arrCar[ii][3] = ydWbookId;	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			    arrCar[ii][4] = ydWbookId;	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			
-				//ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦
-			    arrWrkBook[ii][0] = modifier;	//¼öÁ¤ÀÚ
-			    arrWrkBook[ii][1] = ydWbookId;	//¾ßµåÀÛ¾÷¿¹¾àID
+				//ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ
+			    arrWrkBook[ii][0] = modifier;	//ìˆ˜ì •ì
+			    arrWrkBook[ii][1] = ydWbookId;	//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			}
 
 			/**********************************************************
-			* 2. Â÷·®/´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			* 2. ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			**********************************************************/
-			//Â÷·®½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 		    jspDao.updComm("CarSchWbDel", arrCar, logId, methodNm);
 		
-			//´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			jspDao.updComm("TcarSchWbDel", arrCar, logId, methodNm);
 		
 			/**********************************************************
-			* 3. ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦
+			* 3. ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ
 			**********************************************************/
-			//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 			commDao.upsBatch("WrkBookMtlDel", arrWrkBook, logId, methodNm);
 
-			//ÀÛ¾÷¿¹¾à »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 			commDao.upsBatch("WrkBookDel", arrWrkBook, logId, methodNm);
 
 			slabUtils.printLog(logId, methodNm, "S-");
@@ -5679,23 +5679,23 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * Monitoring È­¸é - Flex
+	 * Monitoring í™”ë©´ - Flex
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Slab¾ßµåMonitoring Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Slabì•¼ë“œMonitoring ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  JDTORecord jrParam
 	 *      @return List
 	 *      @throws DAOException
 	*/
 	public List getSlabYdMonitor(JDTORecord jrParam) throws DAOException {
-		String methodNm = "Slab¾ßµåMonitoringÁ¶È¸[SlabYdJspSeEJB.getSlabYdMonitor] < " + jrParam.getResultMsg();
+		String methodNm = "Slabì•¼ë“œMonitoringì¡°íšŒ[SlabYdJspSeEJB.getSlabYdMonitor] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 
 		try {
-			String trtGp = slabUtils.trim(jrParam.getFieldString("V_TRT_GP")); //Ã³¸®±¸ºĞ
+			String trtGp = slabUtils.trim(jrParam.getFieldString("V_TRT_GP")); //ì²˜ë¦¬êµ¬ë¶„
 			JDTORecordSet jrRst = commDao.getFlex(trtGp, jrParam);
 			return slabUtils.listJdtoRecordTohashMap(jrRst.toList());
 		} catch(DAOException e) {
@@ -5707,19 +5707,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 
 	/***************************************************************************
-	 * ÀÎÅÍÆäÀÌ½ºTest
+	 * ì¸í„°í˜ì´ìŠ¤Test
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½ºTest Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤Test ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getIfTest(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½ºTest Á¶È¸[SlabYdJspSeEJB.getIfTest] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤Test ì¡°íšŒ[SlabYdJspSeEJB.getIfTest] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
@@ -5735,43 +5735,43 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½ºTest Àü¼ÛData ÀúÀå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤Test ì „ì†¡Data ì €ì¥
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public GridData updIfTestData(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½ºTest Àü¼ÛData ÀúÀå[SlabYdJspSeEJB.updIfTestData] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤Test ì „ì†¡Data ì €ì¥[SlabYdJspSeEJB.updIfTestData] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //Ã³¸®°Ç¼ö
+			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //ì²˜ë¦¬ê±´ìˆ˜
 
 			if (trtCnt <= 0) {
-				throw new Exception("ÀúÀåÇÒ Data°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("ì €ì¥í•  Dataê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			}
 
 			String ifID = slabUtils.trim(gdReq.getParam("IF_ID")); //IFID
 			String[][] param = new String[trtCnt][3];
 
-			//Row¼ö ¸¸Å­ Set
+			//Rowìˆ˜ ë§Œí¼ Set
 			for (int ii = 0; ii < trtCnt; ii++) {
 				param[ii][0] = gdReq.getHeader("ITM_VAL").getValue(ii);
 				param[ii][1] = ifID;
 				param[ii][2] = gdReq.getHeader("ITM_SEQ").getValue(ii);
 			}
 
-			//Test Data ÀúÀå
+			//Test Data ì €ì¥
 			jspDao.updIfTestData(param, logId, methodNm);
 
-			slabUtils.printLog(logId, "ÀÎÅÍÆäÀÌ½ºLayout(TB_YD_Z_IFLAYOUT) ¼öÁ¤ : " + trtCnt + " °Ç", "DB");
+			slabUtils.printLog(logId, "ì¸í„°í˜ì´ìŠ¤Layout(TB_YD_Z_IFLAYOUT) ìˆ˜ì • : " + trtCnt + " ê±´", "DB");
 			slabUtils.printLog(logId, methodNm, "S-");
 
-			//Layout ´Ù½Ã Á¶È¸
+			//Layout ë‹¤ì‹œ ì¡°íšŒ
 			return this.getIfTest(gdReq);
 		} catch(DAOException e) {
 			throw e;
@@ -5782,15 +5782,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½ºTest Àü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤Test ì „ì†¡
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public GridData sndIfTest(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½ºTest Àü¼Û[SlabYdJspSeEJB.sndIfTest] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤Test ì „ì†¡[SlabYdJspSeEJB.sndIfTest] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
@@ -5799,22 +5799,22 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			String msgId = slabUtils.trim(gdReq.getParam("IF_ID")); //IFID
 
 			if ("".equals(msgId) || msgId.length() != 8) {
-				throw new Exception("Àß¸øµÈ ÀÎÅÍÆäÀÌ½ºID ÀÔ´Ï´Ù.");
+				throw new Exception("ì˜ëª»ëœ ì¸í„°í˜ì´ìŠ¤ID ì…ë‹ˆë‹¤.");
 			}
 
-			//Àü¼Ûµ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í Á¶È¸
+			//ì „ì†¡ë°ì´í„°ë¥¼ ì €ì¥í•˜ê³  ì¡°íšŒ
 			GridData gdRst = this.updIfTestData(gdReq);
 
-			int itmCnt = gdRst.getHeader("ITM_ID").getRowCount(); //Ç×¸ñ°Ç¼ö
+			int itmCnt = gdRst.getHeader("ITM_ID").getRowCount(); //í•­ëª©ê±´ìˆ˜
 
 			if (itmCnt <= 0) {
-				throw new Exception("ÀÎÅÍÆäÀÌ½ºTest Data°¡ ¾ø¾î Àü¼ÛÇÒ ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("ì¸í„°í˜ì´ìŠ¤Test Dataê°€ ì—†ì–´ ì „ì†¡í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			String ifMthGp    = msgId.substring(4, 5); //IF¹æ¹ı±¸ºĞ(L:EAI, ±âÅ¸:JMS)
-			String ifSndRcvGp = "YD".equals(msgId.substring(0, 2)) ? "S" : "R"; //IF¼Û¼ö½Å±¸ºĞ(¼Û½Å, ¼ö½Å)
+			String ifMthGp    = msgId.substring(4, 5); //IFë°©ë²•êµ¬ë¶„(L:EAI, ê¸°íƒ€:JMS)
+			String ifSndRcvGp = "YD".equals(msgId.substring(0, 2)) ? "S" : "R"; //IFì†¡ìˆ˜ì‹ êµ¬ë¶„(ì†¡ì‹ , ìˆ˜ì‹ )
 
-			//Å¥¿¡ ³ÖÀ» µ¥ÀÌÅÍ¸¦ »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//íì— ë„£ì„ ë°ì´í„°ë¥¼ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			//JDTORecord sndData = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 			JDTORecord sndData = slabUtils.getParam(logId, methodNm, "");
 			
@@ -5822,35 +5822,35 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			sndData.setField("JMS_TC_CREATE_DDTT", slabUtils.getDateTime14());
 
 			if ("L".equals(ifMthGp) && "S".equals(ifSndRcvGp)) {
-				//EAI¼Û½ÅÃ³¸® ÀÏ °æ¿ì
+				//EAIì†¡ì‹ ì²˜ë¦¬ ì¼ ê²½ìš°
 				ifMthGp = "sndToEAI";
 
-				//EAIÀü¹® Message
+				//EAIì „ë¬¸ Message
 				/*StringBuffer sbMsg = new StringBuffer();
 
 				for (int ii = 0; ii < itmCnt; ii++) {
 					sbMsg = sbMsg.append(gdRst.getHeader("ITM_VAL").getValue(ii));
 				}*/
 				
-				/*****Ãß°¡*****/
+				/*****ì¶”ê°€*****/
 				String sbMsg = gdReq.getParam("TC_LIST");
 
 				sndData.setField("JMS_TC_MESSAGE", sbMsg.toString());
 			} else {
-				//¼ö½Å Ã³¸®¹æ¹ı(Q:JMS Queue, E:EJB Call)ÀÌ 'E'ÀÌ°í ¼ö½ÅÃ³°¡ ¾ßµåÀÌ¸é
+				//ìˆ˜ì‹  ì²˜ë¦¬ë°©ë²•(Q:JMS Queue, E:EJB Call)ì´ 'E'ì´ê³  ìˆ˜ì‹ ì²˜ê°€ ì•¼ë“œì´ë©´
 				if ("E".equals(gdReq.getParam("TRT_MTH")) && "YD".equals(msgId.substring(2, 4))) {
 					ifMthGp = "rcvInterface";	//EJB Call
 				} else {
-					ifMthGp = "sndToJMS";		//JMS¼Û½Å
+					ifMthGp = "sndToJMS";		//JMSì†¡ì‹ 
 				}
 
-				//EAI¼Û½Å ¿Ü Ã³¸® ÀÏ °æ¿ì
+				//EAIì†¡ì‹  ì™¸ ì²˜ë¦¬ ì¼ ê²½ìš°
 				for (int ii = 0; ii < itmCnt; ii++) {
 					sndData.setField(slabUtils.trim(gdRst.getHeader("ITM_ID" ).getValue(ii)), slabUtils.trim(gdRst.getHeader("ITM_VAL").getValue(ii)));
 				}
 			}
 		
-			//¼Û½Å °øÅë EJB¸¦ ÀÌ¿ëÇÏ¿© Àü¼Û
+			//ì†¡ì‹  ê³µí†µ EJBë¥¼ ì´ìš©í•˜ì—¬ ì „ì†¡
 			EJBConnector ejbConn = new EJBConnector("default", "YdCommEJB", this);
 			ejbConn.trx(ifMthGp, new Class[] { JDTORecord.class }, new Object[] { sndData });
 			
@@ -5866,23 +5866,23 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½ºTest EAIÀü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤Test EAIì „ì†¡
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public GridData sndIfTestEAI(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½ºTest EAIÀü¼Û[SlabYdJspSeEJB.sndIfTestEAI] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤Test EAIì „ì†¡[SlabYdJspSeEJB.sndIfTestEAI] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String tcList = gdReq.getParam("TC_LIST"); //Àü¼ÛList
-			String tcMsg  = ""; //Àü¼ÛData
-			int sndCnt = 0; //Àü¼Û°Ç¼ö
+			String tcList = gdReq.getParam("TC_LIST"); //ì „ì†¡List
+			String tcMsg  = ""; //ì „ì†¡Data
+			int sndCnt = 0; //ì „ì†¡ê±´ìˆ˜
 
 			while (tcList.length() > 0) {
 				int idx = tcList.indexOf("\r\n");
@@ -5895,17 +5895,17 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					tcList = "";
 				}
 
-				//ÇÑ°Ç Àü¼Û
+				//í•œê±´ ì „ì†¡
 				if (!"".equals(tcMsg) && tcMsg.length() > 60) {
-					//Å¥¿¡ ³ÖÀ» µ¥ÀÌÅÍ¸¦ »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//íì— ë„£ì„ ë°ì´í„°ë¥¼ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord sndData = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-					//EAI¼Û½ÅÃ³¸® ÀÏ °æ¿ì
+					//EAIì†¡ì‹ ì²˜ë¦¬ ì¼ ê²½ìš°
 					sndData.setField("JMS_TC_CD"         , tcMsg.substring(0, 8));
 					sndData.setField("JMS_TC_CREATE_DDTT", slabUtils.getDateTime14());
 					sndData.setField("JMS_TC_MESSAGE"    , tcMsg);
 
-					//¼Û½Å °øÅë EJB¸¦ ÀÌ¿ëÇÏ¿© L2·Î Àü¼Û
+					//ì†¡ì‹  ê³µí†µ EJBë¥¼ ì´ìš©í•˜ì—¬ L2ë¡œ ì „ì†¡
 					EJBConnector ejbConn = new EJBConnector("default", "YdCommEJB", this);
 					ejbConn.trx("sndToEAI", new Class[] { JDTORecord.class }, new Object[] { sndData });
 
@@ -5927,19 +5927,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * ÀÎÅÍÆäÀÌ½º°ü¸®
+	 * ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º°ü¸® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getIfMgt(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½º°ü¸® Á¶È¸[SlabYdJspSeEJB.getIfMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ì¡°íšŒ[SlabYdJspSeEJB.getIfMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
@@ -5955,67 +5955,67 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º°ü¸® µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ë“±ë¡
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public GridData upsIfMgt(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½º°ü¸® µî·Ï[SlabYdJspSeEJB.upsIfMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ë“±ë¡[SlabYdJspSeEJB.upsIfMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //Ã³¸®°Ç¼ö
+			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //ì²˜ë¦¬ê±´ìˆ˜
 
 			if (trtCnt <= 0) {
-				throw new Exception("µî·ÏÇÒ ÀÎÅÍÆäÀÌ½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("ë“±ë¡í•  ì¸í„°í˜ì´ìŠ¤ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			}
 
 			String ifID = ""; //IFID
-			String crud = ""; //µî·Ï/¼öÁ¤±¸ºĞ
+			String crud = ""; //ë“±ë¡/ìˆ˜ì •êµ¬ë¶„
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//Row¼ö ¸¸Å­ Set
+			//Rowìˆ˜ ë§Œí¼ Set
 			for (int ii = 0; ii < trtCnt; ii++) {
 				ifID = slabUtils.trim(gdReq.getHeader("IF_ID").getValue(ii));
 				crud = slabUtils.trim(gdReq.getHeader("CRUD" ).getValue(ii));
 				
 				if ("".equals(ifID)) {
-					throw new Exception("µî·ÏÇÒ ÀÎÅÍÆäÀÌ½ºID°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ë“±ë¡í•  ì¸í„°í˜ì´ìŠ¤IDê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				}
 				
-				//½Å±Ô µî·ÏÀÌ°í I/F ID°¡ ÀÌ¹Ì Á¸ÀçÇÏ¸é
+				//ì‹ ê·œ ë“±ë¡ì´ê³  I/F IDê°€ ì´ë¯¸ ì¡´ì¬í•˜ë©´
 				if ("I".equals(crud) && jspDao.getIfMgtId(ifID, logId, methodNm)) {
-					throw new Exception("ÀÎÅÍÆäÀÌ½ºID[ " + ifID + " ]´Â ÀÌ¹Ì µî·ÏµÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ì¸í„°í˜ì´ìŠ¤ID[ " + ifID + " ]ëŠ” ì´ë¯¸ ë“±ë¡ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				}
 				
-				//ÀÎÅÍÆäÀÌ½º µî·Ï¿ë
+				//ì¸í„°í˜ì´ìŠ¤ ë“±ë¡ìš©
 				jrParam.setField("V_IF_ID"      , ifID                                                      ); //I/F ID
-				jrParam.setField("V_IF_NM"      , slabUtils.trim(gdReq.getHeader("IF_NM"     ).getValue(ii))); //I/F ¸í
-				jrParam.setField("V_PGM_NM1"    , slabUtils.trim(gdReq.getHeader("RCV_CLASS" ).getValue(ii))); //¼ö½ÅClass
-				jrParam.setField("V_PGM_NM2"    , slabUtils.trim(gdReq.getHeader("RCV_METHOD").getValue(ii))); //¼ö½ÅMethod
-				jrParam.setField("V_PGM_NM3"    , slabUtils.trim(gdReq.getHeader("SND_QUEUE" ).getValue(ii))); //¼Û½ÅQueue
-				jrParam.setField("V_OPRN_SYS_GP", slabUtils.trim(gdReq.getHeader("YD_GP"     ).getValue(ii))); //¾ßµå±¸ºĞ
-				jrParam.setField("V_REMARKS"    , slabUtils.trim(gdReq.getHeader("REMARKS"   ).getValue(ii))); //ºñ°í
-				//ÀÎÅÍÆäÀÌ½ºLayout µî·Ï¿ë
-				jrParam.setField("V_ITM_VAL1"   , slabUtils.trim(gdReq.getHeader("OLD_CLASS" ).getValue(ii))); //±âÁ¸Class
-				jrParam.setField("V_ITM_VAL2"   , slabUtils.trim(gdReq.getHeader("OLD_METHOD").getValue(ii))); //±âÁ¸Method
-				jrParam.setField("V_ITM_VAL3"   , slabUtils.trim(gdReq.getHeader("NEW_CLASS" ).getValue(ii))); //½Å±ÔClass
-				jrParam.setField("V_ITM_VAL4"   , slabUtils.trim(gdReq.getHeader("NEW_METHOD").getValue(ii))); //½Å±ÔMethod
+				jrParam.setField("V_IF_NM"      , slabUtils.trim(gdReq.getHeader("IF_NM"     ).getValue(ii))); //I/F ëª…
+				jrParam.setField("V_PGM_NM1"    , slabUtils.trim(gdReq.getHeader("RCV_CLASS" ).getValue(ii))); //ìˆ˜ì‹ Class
+				jrParam.setField("V_PGM_NM2"    , slabUtils.trim(gdReq.getHeader("RCV_METHOD").getValue(ii))); //ìˆ˜ì‹ Method
+				jrParam.setField("V_PGM_NM3"    , slabUtils.trim(gdReq.getHeader("SND_QUEUE" ).getValue(ii))); //ì†¡ì‹ Queue
+				jrParam.setField("V_OPRN_SYS_GP", slabUtils.trim(gdReq.getHeader("YD_GP"     ).getValue(ii))); //ì•¼ë“œêµ¬ë¶„
+				jrParam.setField("V_REMARKS"    , slabUtils.trim(gdReq.getHeader("REMARKS"   ).getValue(ii))); //ë¹„ê³ 
+				//ì¸í„°í˜ì´ìŠ¤Layout ë“±ë¡ìš©
+				jrParam.setField("V_ITM_VAL1"   , slabUtils.trim(gdReq.getHeader("OLD_CLASS" ).getValue(ii))); //ê¸°ì¡´Class
+				jrParam.setField("V_ITM_VAL2"   , slabUtils.trim(gdReq.getHeader("OLD_METHOD").getValue(ii))); //ê¸°ì¡´Method
+				jrParam.setField("V_ITM_VAL3"   , slabUtils.trim(gdReq.getHeader("NEW_CLASS" ).getValue(ii))); //ì‹ ê·œClass
+				jrParam.setField("V_ITM_VAL4"   , slabUtils.trim(gdReq.getHeader("NEW_METHOD").getValue(ii))); //ì‹ ê·œMethod
 
-				//ÀÎÅÍÆäÀÌ½º µî·Ï
+				//ì¸í„°í˜ì´ìŠ¤ ë“±ë¡
 				jspDao.upsIfMgt("MstUps", jrParam);
-				//ÀÎÅÍÆäÀÌ½ºLayout µî·Ï
+				//ì¸í„°í˜ì´ìŠ¤Layout ë“±ë¡
 				jspDao.upsIfMgt("DtlUps", jrParam);
 			}
 
-			slabUtils.printLog(logId, "ÀÎÅÍÆäÀÌ½º ¹× Layout µî·Ï : " + trtCnt + " °Ç", "DB");
+			slabUtils.printLog(logId, "ì¸í„°í˜ì´ìŠ¤ ë° Layout ë“±ë¡ : " + trtCnt + " ê±´", "DB");
 			slabUtils.printLog(logId, methodNm, "S-");
 
 			return this.getIfMgt(gdReq);
@@ -6028,49 +6028,49 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º°ü¸® »èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ì‚­ì œ
 	 * 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public GridData delIfMgt(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½º°ü¸® »èÁ¦[SlabYdJspSeEJB.delIfMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬ ì‚­ì œ[SlabYdJspSeEJB.delIfMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			slabUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //Ã³¸®°Ç¼ö
+			int trtCnt = gdReq.getHeader("CHECK").getRowCount(); //ì²˜ë¦¬ê±´ìˆ˜
 
 			if (trtCnt <= 0) {
-				throw new Exception("»èÁ¦ÇÒ ÀÎÅÍÆäÀÌ½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("ì‚­ì œí•  ì¸í„°í˜ì´ìŠ¤ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			}
 
 			String ifID = ""; //IFID
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 
-			//Row¼ö ¸¸Å­ Set
+			//Rowìˆ˜ ë§Œí¼ Set
 			for (int ii = 0; ii < trtCnt; ii++) {
 				ifID = slabUtils.trim(gdReq.getHeader("IF_ID").getValue(ii));
 				
 				if ("".equals(ifID)) {
-					throw new Exception("»èÁ¦ÇÒ ÀÎÅÍÆäÀÌ½ºID°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ì‚­ì œí•  ì¸í„°í˜ì´ìŠ¤IDê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				}
 				
-				//ÀÎÅÍÆäÀÌ½º ¹× Layout »èÁ¦¿ë
+				//ì¸í„°í˜ì´ìŠ¤ ë° Layout ì‚­ì œìš©
 				jrParam.setField("V_IF_ID", ifID); //I/F ID
 
-				//ÀÎÅÍÆäÀÌ½º »èÁ¦
+				//ì¸í„°í˜ì´ìŠ¤ ì‚­ì œ
 				jspDao.upsIfMgt("MstDel", jrParam);
-				//ÀÎÅÍÆäÀÌ½ºLayout »èÁ¦
+				//ì¸í„°í˜ì´ìŠ¤Layout ì‚­ì œ
 				jspDao.upsIfMgt("DtlDel", jrParam);
 			}
 
-			slabUtils.printLog(logId, "ÀÎÅÍÆäÀÌ½º ¹× Layout »èÁ¦ : " + trtCnt + " °Ç", "DB");
+			slabUtils.printLog(logId, "ì¸í„°í˜ì´ìŠ¤ ë° Layout ì‚­ì œ : " + trtCnt + " ê±´", "DB");
 			slabUtils.printLog(logId, methodNm, "S-");
 
 			return this.getIfMgt(gdReq);
@@ -6083,19 +6083,19 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * CodeÁ¶È¸
+	 * Codeì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Slab¾ßµå ÄÚµå Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Slabì•¼ë“œ ì½”ë“œ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSlabYdCode(GridData gdReq) throws DAOException {
-		String methodNm = "ÄÚµåÁ¶È¸[SlabYdJspSeEJB.getSlabYdCode] < " + gdReq.getNavigateValue();
+		String methodNm = "ì½”ë“œì¡°íšŒ[SlabYdJspSeEJB.getSlabYdCode] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
@@ -6110,14 +6110,14 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í: ÈÄÆÇ¾Ğ¿¬Áö½Ã ¸Ş½ÃÁöµî·Ï
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª…: í›„íŒì••ì—°ì§€ì‹œ ë©”ì‹œì§€ë“±ë¡
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inParam
 	 * @return
 	 * @throws DAOException
 	 */
   public JDTORecord updateStlMessagePa(GridData gdReq) throws DAOException {
-			String methodNm = "ÈÄÆÇ¾Ğ¿¬Áö½Ã ¸Ş½ÃÁöµî·Ï[SlabYdJspSeEJB.updateStlMessagePa] < " + gdReq.getNavigateValue();
+			String methodNm = "í›„íŒì••ì—°ì§€ì‹œ ë©”ì‹œì§€ë“±ë¡[SlabYdJspSeEJB.updateStlMessagePa] < " + gdReq.getNavigateValue();
 			String logId = gdReq.getIPAddress(); 
 			try { 
 				slabUtils.printLog(logId, methodNm, "S+", gdReq);
@@ -6125,10 +6125,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				String lv_Sndbk_gp_etc  = "";  
 				String lv_stl_no = "";  
 				
-				//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = slabUtils.getParam(logId, methodNm, slabUtils.trim(gdReq.getParam("userid")));
 				
-				//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+				//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 				int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 				String[] arrYdWbookId = new String[rowCnt];
 				
@@ -6136,20 +6136,20 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					/**********************************************************
 					* 1.Check
 					**********************************************************/
-					lv_Sndbk_gp_etc  = slabUtils.trim(gdReq.getHeader("SNDBK_GP_ETC" ).getValue(ii)); //¾ßµåÀÛ¾÷¿¹¾àID
-					lv_stl_no = slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+					lv_Sndbk_gp_etc  = slabUtils.trim(gdReq.getHeader("SNDBK_GP_ETC" ).getValue(ii)); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					lv_stl_no = slabUtils.trim(gdReq.getHeader("STL_NO").getValue(ii)); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 
 				
 
-					slabUtils.printLog(logId, "¸Ş½ÃÁö [ " + lv_stl_no + " >> " + lv_Sndbk_gp_etc + " ]", "SL");
+					slabUtils.printLog(logId, "ë©”ì‹œì§€ [ " + lv_stl_no + " >> " + lv_Sndbk_gp_etc + " ]", "SL");
 
 					/**********************************************************
-					* 2. ¸Ş½ÃÁö Table¿¡  ¿ì¼±¼øÀ§¸¦ Update
+					* 2. ë©”ì‹œì§€ Tableì—  ìš°ì„ ìˆœìœ„ë¥¼ Update
 					**********************************************************/
 					jrParam.setField("SNDBK_GP_ETC" , lv_Sndbk_gp_etc );
 					jrParam.setField("STL_NO", lv_stl_no);
 					
-					//¸Ş½ÃÁö  Update
+					//ë©”ì‹œì§€  Update
 					commDao2.update(jrParam, "com.inisteel.cim.ys.common.dao.YsCommDAO.updMessage");				
 	
 				}
@@ -6167,10 +6167,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
   
   
   	/**
-	 *  º¥µùÀç ÀÌ·Â Á¶È¸
+	 *  ë²¤ë”©ì¬ ì´ë ¥ ì¡°íšŒ
 	 * 
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
@@ -6178,23 +6178,23 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	 */
 	public JDTORecordSet getBendingSlabHist(JDTORecord inDto) throws JDTOException {
 		
-		String methodNm = "º¥µùÀçÀÌ·ÂÁ¶È¸[SlabYdJspFaEJB.getBendingSlabHist]";
+		String methodNm = "ë²¤ë”©ì¬ì´ë ¥ì¡°íšŒ[SlabYdJspFaEJB.getBendingSlabHist]";
 		String logId = slabUtils.getLogId();
 		
-		Object[] sObj = null;			//Á¶È¸ ÆÄ¶ó¹ÌÅÍ º¸°ü ¿ÀºêÁ§Æ® ¹è¿­		
-		//¸®ÅÏ ÇÒ °ªµéÀ» °¡Áö°í ÀÖ´Â JDTORecordSet
+		Object[] sObj = null;			//ì¡°íšŒ íŒŒë¼ë¯¸í„° ë³´ê´€ ì˜¤ë¸Œì íŠ¸ ë°°ì—´		
+		//ë¦¬í„´ í•  ê°’ë“¤ì„ ê°€ì§€ê³  ìˆëŠ” JDTORecordSet
 		String jspeed_query_id = "";
 		
 		try {
 			
 			slabUtils.printLog(logId, methodNm, "S+");
 			
-			//±âº»Á¤º¸Á¶È¸
+			//ê¸°ë³¸ì •ë³´ì¡°íšŒ
 			JDTORecordSet jsCrn = jspDao.getBendingSlabHist(inDto);
 			return jsCrn;
 			
 		} catch (Exception e) {
-			// Exception¹ß»ı½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ë˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(getClass().getName() + e.getMessage());
 		} finally {
 
@@ -6204,15 +6204,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Sizing Slab ÀÌ¼Û Àç·á List [2ÈÄÆÇÁ¤Á¤¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Sizing Slab ì´ì†¡ ì¬ë£Œ List [2í›„íŒì •ì •ì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getWrkMtlListFromPlate(GridData gdReq) throws DAOException {
-		String methodNm = "Sizing Slab ÀÌ¼Û Àç·á List[SlabYdJspSeEJB.getWrkMtlListFromPlate] < " + gdReq.getNavigateValue();
+		String methodNm = "Sizing Slab ì´ì†¡ ì¬ë£Œ List[SlabYdJspSeEJB.getWrkMtlListFromPlate] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6229,15 +6229,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ ½½¶óºê ÀÌ¼Û½ÇÀû
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ ìŠ¬ë¼ë¸Œ ì´ì†¡ì‹¤ì 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getScarfSlabMvList(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ ½½¶óºê ÀÌ¼Û½ÇÀû[SlabYdJspSeEJB.getScarfSlabMvList] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ ìŠ¬ë¼ë¸Œ ì´ì†¡ì‹¤ì [SlabYdJspSeEJB.getScarfSlabMvList] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6255,15 +6255,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÇöÀç ÀûÄ¡¼ö·®,Áß·® Á¶È¸(C1,C2)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í˜„ì¬ ì ì¹˜ìˆ˜ëŸ‰,ì¤‘ëŸ‰ ì¡°íšŒ(C1,C2)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getCurCntWt(GridData gdReq) throws DAOException {
-		String methodNm = "ÇöÀç ÀûÄ¡¼ö·®,Áß·® Á¶È¸(C1,C2)[SlabYdJspSeEJB.getCurCntWt] < " + gdReq.getNavigateValue();
+		String methodNm = "í˜„ì¬ ì ì¹˜ìˆ˜ëŸ‰,ì¤‘ëŸ‰ ì¡°íšŒ(C1,C2)[SlabYdJspSeEJB.getCurCntWt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6278,16 +6278,16 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµå°ü¸® > Ç×¸¸½½¶óºê¾ßµå > monitoring > Â÷·®µ¿°£ÀÌÀû
-	 *  ÇãÁ¤¿í
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì°¨ëŸ‰ë™ê°„ì´ì 
+	 *  í—ˆì •ìš±
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public JDTORecord updSyCarMvStkReg(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®µ¿°£ÀÌÀûµî·Ï[SlabYdJspSeEJB.updSyCarMvStkReg] < " + gdReq.getNavigateValue();
+		String mthdNm = "ì°¨ëŸ‰ë™ê°„ì´ì ë“±ë¡[SlabYdJspSeEJB.updSyCarMvStkReg] < " + gdReq.getNavigateValue();
 		String logId  = gdReq.getIPAddress();		
 		JDTORecord jrRtn   = JDTORecordFactory.getInstance().create();
 			
@@ -6299,7 +6299,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			String toBayGp		= slabUtils.trim(gdReq.getParam("TO_YD_BAY_GP")); 
 			String carNo   		= slabUtils.trim(gdReq.getParam("CAR_NO"));
 			String ydGp			= slabUtils.trim(gdReq.getParam("YD_GP"));
-			String stlNos   	= slabUtils.trim(gdReq.getParam("STL_NOS")); //Àç·á¹øÈ£µé
+			String stlNos   	= slabUtils.trim(gdReq.getParam("STL_NOS")); //ì¬ë£Œë²ˆí˜¸ë“¤
 			String fromBayGp	= ydSchCd.substring(1, 2);	
 
 			String msg             	= "";
@@ -6312,10 +6312,10 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			String ydStkColGp		= "";
 			
 			/********************************
-			 * Â÷·®µ¿°£ÀÌÀû(MT) Àü¿ë Ã¼Å©
+			 * ì°¨ëŸ‰ë™ê°„ì´ì (MT) ì „ìš© ì²´í¬
 			 ********************************/
 			///////////////////
-			// FROM µ¿ Ã¼Å©
+			// FROM ë™ ì²´í¬
 			///////////////////
 			JDTORecord jrParam = slabUtils.getParam(logId, mthdNm, modifier);
 			jrParam.setField("YD_GP"	, ydGp);
@@ -6327,9 +6327,9 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			   AND DEL_YN = 'N'
 			 ORDER BY YD_STK_COL_GP
 			*/
-			JDTORecordSet jsCarPoint = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.getCarFrtoMovePoint", logId, mthdNm, "Â÷·®µ¿°£ÀÌÀûÆ÷ÀÎÆ® Á¶È¸");
+			JDTORecordSet jsCarPoint = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.getCarFrtoMovePoint", logId, mthdNm, "ì°¨ëŸ‰ë™ê°„ì´ì í¬ì¸íŠ¸ ì¡°íšŒ");
 			if( jsCarPoint.size() < 1 ) {
-				msg = fromBayGp + "µ¿ÀÇ Â÷·®µ¿°£ÀÌÀû(MT) À§Ä¡°¡ ¾ø½À´Ï´Ù.";
+				msg = fromBayGp + "ë™ì˜ ì°¨ëŸ‰ë™ê°„ì´ì (MT) ìœ„ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.";
 				slabUtils.printLog(logId, msg, "SL"); 
 				jrRtn.setField("RTN_MSG", msg);
 	    		jrRtn.setField("RTN_CD" , "0");
@@ -6338,30 +6338,30 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			ydStkColGp	= jsCarPoint.getRecord(0).getFieldString("YD_STK_COL_GP");
 			
 			///////////////////
-			// TO µ¿ Ã¼Å©
+			// TO ë™ ì²´í¬
 			///////////////////
 			jrParam.setField("YD_GP"	, ydGp);
 			jrParam.setField("YD_BAY_GP", toBayGp);
 			
-			jsCarPoint = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.getCarFrtoMovePoint", logId, mthdNm, "Â÷·®µ¿°£ÀÌÀûÆ÷ÀÎÆ® Á¶È¸");
+			jsCarPoint = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdCommDAO.getCarFrtoMovePoint", logId, mthdNm, "ì°¨ëŸ‰ë™ê°„ì´ì í¬ì¸íŠ¸ ì¡°íšŒ");
 			if( jsCarPoint.size() < 1 ) {	
-				msg = fromBayGp + "µ¿ÀÇ Â÷·®µ¿°£ÀÌÀû(MT) À§Ä¡°¡ ¾ø½À´Ï´Ù.";
+				msg = fromBayGp + "ë™ì˜ ì°¨ëŸ‰ë™ê°„ì´ì (MT) ìœ„ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.";
 				slabUtils.printLog(logId, msg, "SL"); 
 				jrRtn.setField("RTN_MSG", msg);
 	    		jrRtn.setField("RTN_CD" , "0");
 				return jrRtn;
 			}
-			//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØ Table Á¶È¸ÇØ¼­ ÀÛ¾÷ Å©·¹ÀÎID SELECT
+			//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€ Table ì¡°íšŒí•´ì„œ ì‘ì—… í¬ë ˆì¸ID SELECT
 			jrParam = slabUtils.getParam(logId, mthdNm, modifier);	
-			//jrParam.setField("CARD_NO"		, carNo);		//Â÷·®¹øÈ£
-			jrParam.setField("YD_SCH_CD"	, ydSchCd);		//½ºÄÉÁÙÄÚµå
-			//jrParam.setField("YD_AIM_BAY_GP", toBayGp);	//¸ñÀûµ¿
+			//jrParam.setField("CARD_NO"		, carNo);		//ì°¨ëŸ‰ë²ˆí˜¸
+			jrParam.setField("YD_SCH_CD"	, ydSchCd);		//ìŠ¤ì¼€ì¤„ì½”ë“œ
+			//jrParam.setField("YD_AIM_BAY_GP", toBayGp);	//ëª©ì ë™
 			
-			//½ºÄÉÁÙCD Ã¼Å©
-			JDTORecordSet jsSchRule = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydschruledao.YdSchruleDao.getYdSchrule", logId, mthdNm, "½ºÄÉÁÙ±âÁØ Á¶È¸");
-			//¸®ÅÏ°ª ¸Ş¼¼ÁöÃ³¸®
+			//ìŠ¤ì¼€ì¤„CD ì²´í¬
+			JDTORecordSet jsSchRule = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydschruledao.YdSchruleDao.getYdSchrule", logId, mthdNm, "ìŠ¤ì¼€ì¤„ê¸°ì¤€ ì¡°íšŒ");
+			//ë¦¬í„´ê°’ ë©”ì„¸ì§€ì²˜ë¦¬
 			if(jsSchRule.size() < 1) {
-				msg = "½ºÄÉÁÙÄÚµå(" + ydSchCd + ")¿¡ ´ëÇÑ ½ºÄÉÁÙ±âÁØ µ¥ÀÌÅÍ°¡ ÀÌ»óÇÕ´Ï´Ù.";
+				msg = "ìŠ¤ì¼€ì¤„ì½”ë“œ(" + ydSchCd + ")ì— ëŒ€í•œ ìŠ¤ì¼€ì¤„ê¸°ì¤€ ë°ì´í„°ê°€ ì´ìƒí•©ë‹ˆë‹¤.";
 				slabUtils.printLog(logId, msg, "SL");
 				jrRtn.setField("RTN_CD" 			, "0");	
 				jrRtn.setField("RTN_MSG"			, msg);	
@@ -6369,17 +6369,17 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				return jrRtn;
 			}	
 			
-			ydWrkCrn      = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_WRK_CRN"));   	//ÀÛ¾÷Å©·¹ÀÎ
-			ydWrkAltCrn   = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_ALT_CRN"));   //ÀÛ¾÷´ëÃ¼Å©·¹ÀÎ
-			ydWrkAltCrnYn = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_ALT_CRN_YN"));   //ÀÛ¾÷´ëÃ¼Å©·¹ÀÎ À¯¹«
-			//ÀÛ¾÷Å©·¹ÀÎ »ç¿ë °¡´ÉÀÏ½Ã ÀÛ¾÷Å©·¹ÀÎ ¼³Á¤
-			//ÀÛ¾÷Å©·¹ÀÎ °íÀåÀÌ°í, ´ëÃ¼Å©·¹ÀÎ ÀÖ°í ´ëÃ¼Å©·¹ÀÎ °íÀå ¾Æ´Ò½Ã ´ëÃ¼Å©·¹ÀÎ ¼³Á¤
-			//µÑ´Ù °íÀåÀÏ½Ã default Å©·¹ÀÎÀ¸·Î ÀÛ¾÷Å©·¹ÀÎ ¼³Á¤.
+			ydWrkCrn      = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_WRK_CRN"));   	//ì‘ì—…í¬ë ˆì¸
+			ydWrkAltCrn   = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_ALT_CRN"));   //ì‘ì—…ëŒ€ì²´í¬ë ˆì¸
+			ydWrkAltCrnYn = slabUtils.trim(jsSchRule.getRecord(0).getFieldString("YD_ALT_CRN_YN"));   //ì‘ì—…ëŒ€ì²´í¬ë ˆì¸ ìœ ë¬´
+			//ì‘ì—…í¬ë ˆì¸ ì‚¬ìš© ê°€ëŠ¥ì¼ì‹œ ì‘ì—…í¬ë ˆì¸ ì„¤ì •
+			//ì‘ì—…í¬ë ˆì¸ ê³ ì¥ì´ê³ , ëŒ€ì²´í¬ë ˆì¸ ìˆê³  ëŒ€ì²´í¬ë ˆì¸ ê³ ì¥ ì•„ë‹ì‹œ ëŒ€ì²´í¬ë ˆì¸ ì„¤ì •
+			//ë‘˜ë‹¤ ê³ ì¥ì¼ì‹œ default í¬ë ˆì¸ìœ¼ë¡œ ì‘ì—…í¬ë ˆì¸ ì„¤ì •.
 			jrParam.setField("YD_EQP_ID" , ydWrkCrn);
-			JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydeqpdao.YdEqpDao.getYdEqp", logId, mthdNm, "Å©·¹ÀÎ »óÅÂ CHECK");
+			JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydeqpdao.YdEqpDao.getYdEqp", logId, mthdNm, "í¬ë ˆì¸ ìƒíƒœ CHECK");
 				
 			if(jsCrn.size() < 1) {
-				msg = "ÀÛ¾÷Å©·¹ÀÎ(" + ydWrkCrn + ")¿¡ ´ëÇÑ Å©·¹ÀÎ»óÅÂ µ¥ÀÌÅÍ°¡ ÀÌ»óÇÕ´Ï´Ù.";
+				msg = "ì‘ì—…í¬ë ˆì¸(" + ydWrkCrn + ")ì— ëŒ€í•œ í¬ë ˆì¸ìƒíƒœ ë°ì´í„°ê°€ ì´ìƒí•©ë‹ˆë‹¤.";
 				slabUtils.printLog(logId, msg, "SL");
 				jrRtn.setField("RTN_CD" 			, "0");	
 				jrRtn.setField("RTN_MSG"			, msg);	
@@ -6391,16 +6391,16 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			String ydEqpStat  = slabUtils.trim(jrCrn.getFieldString("YD_EQP_STAT"));
 			
 			if (YdConstant.YD_EQP_STAT_BREAK.equals(ydEqpStat)) {
-				msg = "ÀÛ¾÷Å©·¹ÀÎ(" + ydWrkCrn + ") °íÀå(" + ydEqpStat + ") ÀÔ´Ï´Ù.";
+				msg = "ì‘ì—…í¬ë ˆì¸(" + ydWrkCrn + ") ê³ ì¥(" + ydEqpStat + ") ì…ë‹ˆë‹¤.";
 				slabUtils.printLog(logId, msg, "SL");
 				
-				//ÀÛ¾÷Å©·¹ÀÎ°ú ´Ù¸¥ ´ëÃ¼Å©·¹ÀÎÀÌ Á¸ÀçÇÏ¸é ´ëÃ¼ Å©·¹ÀÎ °Ë»ç
+				//ì‘ì—…í¬ë ˆì¸ê³¼ ë‹¤ë¥¸ ëŒ€ì²´í¬ë ˆì¸ì´ ì¡´ì¬í•˜ë©´ ëŒ€ì²´ í¬ë ˆì¸ ê²€ì‚¬
 				if("Y".equals(ydWrkAltCrnYn) && !ydWrkCrn.equals(ydWrkAltCrn)){
 					jrParam.setField("YD_EQP_ID" , ydWrkAltCrn);
-					jsCrn = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydeqpdao.YdEqpDao.getYdEqp", logId, mthdNm, "Å©·¹ÀÎ »óÅÂ CHECK");
+					jsCrn = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydeqpdao.YdEqpDao.getYdEqp", logId, mthdNm, "í¬ë ˆì¸ ìƒíƒœ CHECK");
 						
 					if(jsCrn.size() < 1) {
-						msg = "ÀÛ¾÷´ëÃ¼Å©·¹ÀÎ(" + ydWrkAltCrn + ")¿¡ ´ëÇÑ Å©·¹ÀÎ»óÅÂ µ¥ÀÌÅÍ°¡ ÀÌ»óÇÕ´Ï´Ù.";
+						msg = "ì‘ì—…ëŒ€ì²´í¬ë ˆì¸(" + ydWrkAltCrn + ")ì— ëŒ€í•œ í¬ë ˆì¸ìƒíƒœ ë°ì´í„°ê°€ ì´ìƒí•©ë‹ˆë‹¤.";
 						slabUtils.printLog(logId, msg, "SL");
 						jrRtn.setField("RTN_CD" 			, "0");	
 						jrRtn.setField("RTN_MSG"			, msg);	
@@ -6412,11 +6412,11 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					ydEqpStat  = slabUtils.trim(jrCrn.getFieldString("YD_EQP_STAT"));
 					
 					if (ydEqpStat.equals(YdConstant.YD_EQP_STAT_BREAK)) {
-						msg = "ÀÛ¾÷´ëÃ¼Å©·¹ÀÎ(" + ydWrkAltCrn + ") °íÀå(" + ydEqpStat + ") ÀÔ´Ï´Ù. --> ÀÛ¾÷Å©·¹ÀÎ(" + ydWrkCrn + ")À» default Å©·¹ÀÎÀ¸·Î ¼³Á¤";
+						msg = "ì‘ì—…ëŒ€ì²´í¬ë ˆì¸(" + ydWrkAltCrn + ") ê³ ì¥(" + ydEqpStat + ") ì…ë‹ˆë‹¤. --> ì‘ì—…í¬ë ˆì¸(" + ydWrkCrn + ")ì„ default í¬ë ˆì¸ìœ¼ë¡œ ì„¤ì •";
 						slabUtils.printLog(logId, msg, "SL");
 					}
 					else{
-						msg = "ÀÛ¾÷´ëÃ¼Å©·¹ÀÎ(" + ydWrkAltCrn + ") »ç¿ë°¡´É(" + ydEqpStat + ") ÀÌ¹Ç·Î, ÀÛ¾÷Å©·¹ÀÎ ¼³Á¤";
+						msg = "ì‘ì—…ëŒ€ì²´í¬ë ˆì¸(" + ydWrkAltCrn + ") ì‚¬ìš©ê°€ëŠ¥(" + ydEqpStat + ") ì´ë¯€ë¡œ, ì‘ì—…í¬ë ˆì¸ ì„¤ì •";
 						slabUtils.printLog(logId, msg, "SL");
 						
 						ydWrkCrn = ydWrkAltCrn;
@@ -6426,17 +6426,17 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				
 			} 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
-			//Àç·á¸Å¼ö¸¸Å­ ·çÇÁ¸¦ µ¹¾Æ¼­ Å©·¹ÀÎ»ç¾ç°ú Àç·á »ç¾çÀ» Ã¼Å©ÇÑ´Ù.
-			//ÀÛ¾÷¿¹¾àÀç·á µî·Ï ¿©ºÎ¸¦ Ã¼Å©ÇÑ´Ù.
+			//ì¬ë£Œë§¤ìˆ˜ë§Œí¼ ë£¨í”„ë¥¼ ëŒì•„ì„œ í¬ë ˆì¸ì‚¬ì–‘ê³¼ ì¬ë£Œ ì‚¬ì–‘ì„ ì²´í¬í•œë‹¤.
+			//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë“±ë¡ ì—¬ë¶€ë¥¼ ì²´í¬í•œë‹¤.
 			
 			for (int i = 1; i <= rowCnt; i++) {
-				//´Ù¸¥ ÀÛ¾÷¿¹¾à¿¡ Àç·á°¡ µî·ÏµÇ¾îÀÖ´ÂÁö Ã¼Å©ÇÑ´Ù.
+				//ë‹¤ë¥¸ ì‘ì—…ì˜ˆì•½ì— ì¬ë£Œê°€ ë“±ë¡ë˜ì–´ìˆëŠ”ì§€ ì²´í¬í•œë‹¤.
 				String stlNo   = slabUtils.trim(gdReq.getHeader("STL_NO" ).getValue(i));
 				
-				JDTORecordSet jsWrkBook = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydwrkbookmtldao.YdWrkbookmtlDao.getYdWrkbookmtlSTLNO", logId, mthdNm, "Àç·á¹øÈ£·Î ÀÛ¾÷¿¹¾àselect");
+				JDTORecordSet jsWrkBook = commDao.select(jrParam, "com.inisteel.cim.yd.dao.ydwrkbookmtldao.YdWrkbookmtlDao.getYdWrkbookmtlSTLNO", logId, mthdNm, "ì¬ë£Œë²ˆí˜¸ë¡œ ì‘ì—…ì˜ˆì•½select");
 				
 				if(jsWrkBook.size() > 0) {
-					msg = "Àç·á¹øÈ£(" + stlNo + ") ·Î µî·ÏµÈ ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÕ´Ï´Ù.";
+					msg = "ì¬ë£Œë²ˆí˜¸(" + stlNo + ") ë¡œ ë“±ë¡ëœ ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•©ë‹ˆë‹¤.";
 					slabUtils.printLog(logId, msg, "SL");
 					jrRtn.setField("RTN_CD" 			, "0");	
 					jrRtn.setField("RTN_MSG"			, msg);	
@@ -6446,36 +6446,36 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 				
 			}
 					
-			//¼±ÅÃÇÑ Àç·á -->ÃÖ´ë ¸îÅæ±îÁö ÀÛ¾÷ÇÏ°Ô ÇØ..? ½ºÆå È®ÀÎ
+			//ì„ íƒí•œ ì¬ë£Œ -->ìµœëŒ€ ëª‡í†¤ê¹Œì§€ ì‘ì—…í•˜ê²Œ í•´..? ìŠ¤í™ í™•ì¸
 			
-			//ÀÛ¾÷¿¹¾à µî·Ï
+			//ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			
-			jrParam.setField("V_YD_SCH_CD"       , ydSchCd      ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("V_YD_AIM_BAY_GP"   , toBayGp   	); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-			jrParam.setField("V_YD_WRK_PLAN_CRN" , ydWrkCrn		); //¾ßµåÀÛ¾÷Å©·¹ÀÎ	
+			jrParam.setField("V_YD_SCH_CD"       , ydSchCd      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("V_YD_AIM_BAY_GP"   , toBayGp   	); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+			jrParam.setField("V_YD_WRK_PLAN_CRN" , ydWrkCrn		); //ì•¼ë“œì‘ì—…í¬ë ˆì¸	
 			
-			jrParam.setField("V_YD_STK_COL_GP" 	 , ydStkColGp.substring(0,2) ); //ÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("V_STL_NOS" 		 , stlNos		  ); //Àç·á¹øÈ£
+			jrParam.setField("V_YD_STK_COL_GP" 	 , ydStkColGp.substring(0,2) ); //ì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("V_STL_NOS" 		 , stlNos		  ); //ì¬ë£Œë²ˆí˜¸
 			
-			//ÀÛ¾÷¿¹¾à ´ë»óÀç·á Á¶È¸
+			//ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ë£Œ ì¡°íšŒ
 			JDTORecordSet jsWbMtl = JDTORecordFactory.getInstance().createRecordSet("");
 			jsWbMtl = jspDao.getMvStkWrkBookReg("MvMtl", jrParam);
 
 			if (jsWbMtl.size() <= 0) {
-				throw new Exception("ÀÌÀû Àç·á Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì´ì  ì¬ë£Œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 						
-			this.insMvstkWrkBook(jrParam, jsWbMtl);//ÀÛ¾÷¿¹¾à µî·Ï
+			this.insMvstkWrkBook(jrParam, jsWbMtl);//ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			
 			
 			
 			jrParam = slabUtils.getParam(logId, mthdNm, modifier);
 			jrParam.setField("PT_LOAD_LOC"	    , ydStkColGp);
 			jrParam.setField("CAR_NO"			, carNo/*sCarCardNo*/ );
-			jrParam.setField("CAR_UPDN_GP"		, "1");  //»óÂ÷
+			jrParam.setField("CAR_UPDN_GP"		, "1");  //ìƒì°¨
 			
 				
-			JDTORecord jrRtn1  = slabUtils.getParam(logId, mthdNm, modifier);//this.updSyCarMvArr(jrParam);//Â÷·®µµÂø¹é¾÷Ã³¸®.
+			JDTORecord jrRtn1  = slabUtils.getParam(logId, mthdNm, modifier);//this.updSyCarMvArr(jrParam);//ì°¨ëŸ‰ë„ì°©ë°±ì—…ì²˜ë¦¬.
 			rtnCd		= slabUtils.nvl(jrRtn1.getFieldString("RTN_CD"), "0");
 			rtnMsg	    = slabUtils.nvl(jrRtn1.getFieldString("RTN_MSG"), "");
 
@@ -6490,7 +6490,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 			
 
 			jrRtn.setField("RTN_CD" 	, "1");	
-			jrRtn.setField("RTN_MSG"	, "Á¤»óÀûÀ¸·Î ½ºÄÉÁì±îÁö µî·ÏÇß½À´Ï´Ù.");	
+			jrRtn.setField("RTN_MSG"	, "ì •ìƒì ìœ¼ë¡œ ìŠ¤ì¼€ì¥´ê¹Œì§€ ë“±ë¡í–ˆìŠµë‹ˆë‹¤.");	
 
 			slabUtils.printLog(logId, mthdNm, "S-");	
 			return jrRtn;				
@@ -6502,26 +6502,26 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¾ßµå°ü¸® > ¿¬ÁÖ½½¶óºê¾ßµå > monitoring > ¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ ¸Ş¼¼Áö Àü¼Û
+	 * ì•¼ë“œê´€ë¦¬ > ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ë©”ì„¸ì§€ ì „ì†¡
 	 * @ejb.interface-method
 	 */
 	public void sendMsg(HashMap paramMap, ArrayList paramList) throws DAOException {
-		String methodNm = "½½¶óºê¾ßµå ¸Ş¼¼Áö Àü¼Û[SlabYdJspSeEJB.sendMsg] < ";
+		String methodNm = "ìŠ¬ë¼ë¸Œì•¼ë“œ ë©”ì„¸ì§€ ì „ì†¡[SlabYdJspSeEJB.sendMsg] < ";
 		String logId = slabUtils.getLogId();
 		Object[] returnObj    = null;	
 		
 		try{
-			String sSENDER_NAME="¿¬ÁÖ ¾ßµå¿îÀü½Ç";
+			String sSENDER_NAME="ì—°ì£¼ ì•¼ë“œìš´ì „ì‹¤";
 			String sSENDER_ADDR="slabYardNoReply@hyundai-steel.com";
-			String sTitle="[ÀÚµ¿¸ŞÀÏ] ¿¬ÁÖ½½¶óºê¾ßµå ÀÌ¼Û¾Ë¸² ¸Ş¼¼Áö";
+			String sTitle="[ìë™ë©”ì¼] ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œ ì´ì†¡ì•Œë¦¼ ë©”ì„¸ì§€";
 			
 			slabUtils.printLog(logId, methodNm, "S+"); 
 			
 			JDTORecord		jrParam	= JDTORecordFactory.getInstance().create();
-			JDTORecordSet jrResultSet = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdJspDAO.getCSlabYdInOutStatMsgRcver", logId, methodNm, "¼ö½ÅÀÎ SELECT");
+			JDTORecordSet jrResultSet = commDao.select(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdJspDAO.getCSlabYdInOutStatMsgRcver", logId, methodNm, "ìˆ˜ì‹ ì¸ SELECT");
 			
 			if(jrResultSet ==null || jrResultSet.size()<=0){
-				slabUtils.printLog(logId, "¾Ë¶÷¸ŞÀÏ ´ë»ó ¸®½ºÆ® Á¶È¸ ½ÇÆĞ 0°Ç", "SL");
+				slabUtils.printLog(logId, "ì•ŒëŒë©”ì¼ ëŒ€ìƒ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ ì‹¤íŒ¨ 0ê±´", "SL");
 				
 			}
 			else{
@@ -6553,7 +6553,7 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	    			ydUtils.sendMail(recParam);
 				}catch (Exception e) {
 					
-					slabUtils.printLog(logId, "¾Ë¶÷¸ŞÀÏ ´ë»ó Àü¼Û ½ÇÆĞ", "SL");
+					slabUtils.printLog(logId, "ì•ŒëŒë©”ì¼ ëŒ€ìƒ ì „ì†¡ ì‹¤íŒ¨", "SL");
 					
 				}
 			}
@@ -6570,15 +6570,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      ¾ßµå°ü¸® > ¿¬ÁÖ½½¶óºê¾ßµå > monitoring > ¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ °èÈ¹·® ¼öÁ¤
+	 *      ì•¼ë“œê´€ë¦¬ > ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ê³„íšëŸ‰ ìˆ˜ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public JDTORecord cSlabYdInOutStatPlanModify(GridData gdReq) throws DAOException {
-		String methodNm = "¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ °èÈ¹·® ¼öÁ¤[SlabYdJspSeEJB.cSlabYdInOutStatPlanModify] < " + gdReq.getNavigateValue();
+		String methodNm = "ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ê³„íšëŸ‰ ìˆ˜ì •[SlabYdJspSeEJB.cSlabYdInOutStatPlanModify] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6608,15 +6608,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 					jrParam.setField("REGISTER",userId);
 					
 		    		
-					slabUtils.printLog(logId, "³¯Â¥["+fromMonth+day+"] stkGp["+stkGp+"] stlWt["+planWt+"] ÀÔ·Â", "SL");
+					slabUtils.printLog(logId, "ë‚ ì§œ["+fromMonth+day+"] stkGp["+stkGp+"] stlWt["+planWt+"] ì…ë ¥", "SL");
 					
-		    		commDao.update(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdJspDAO.updCSlabYdInOutStatTransPlan", logId, methodNm, "°èÈ¹·® ¼öÁ¤");
+		    		commDao.update(jrParam, "com.inisteel.cim.yd.slabyd.dao.SlabYdJspDAO.updCSlabYdInOutStatTransPlan", logId, methodNm, "ê³„íšëŸ‰ ìˆ˜ì •");
 				}
 			}
 			
 			JDTORecord jrRtn   = JDTORecordFactory.getInstance().create();
 			jrRtn.setField("RTN_CD" 	, "1");	
-			jrRtn.setField("RTN_MSG"	, "Á¤»óÀûÀ¸·Î °èÈ¹·® ¼öÁ¤Çß½À´Ï´Ù.");	
+			jrRtn.setField("RTN_MSG"	, "ì •ìƒì ìœ¼ë¡œ ê³„íšëŸ‰ ìˆ˜ì •í–ˆìŠµë‹ˆë‹¤.");	
 			slabUtils.printLog(logId, methodNm, "S-"); 
 			
 			return jrRtn;
@@ -6628,15 +6628,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±ÇÇÏºÒ°¡À§Ä¡ Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getYdDnWoLocNotAllowedInfo(GridData gdReq) throws DAOException {
-		String methodNm = "±ÇÇÏºÒ°¡À§Ä¡ Á¶È¸[SlabYdJspSeEJB.getYdDnWoLocNotAllowedInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ ì¡°íšŒ[SlabYdJspSeEJB.getYdDnWoLocNotAllowedInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6655,15 +6655,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±ÇÇÏºÒ°¡Àç·á Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê¶Œí•˜ë¶ˆê°€ì¬ë£Œ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSlabDnNotAllowedInfo(GridData gdReq) throws DAOException {
-		String methodNm = "±ÇÇÏºÒ°¡Àç·á Á¶È¸[SlabYdJspSeEJB.getSlabDnNotAllowedInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "ê¶Œí•˜ë¶ˆê°€ì¬ë£Œ ì¡°íšŒ[SlabYdJspSeEJB.getSlabDnNotAllowedInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6682,15 +6682,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Áßº¹ÀûÄ¡Àç·á Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¤‘ë³µì ì¹˜ì¬ë£Œ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getMvStkWrkBookRegDup(GridData gdReq) throws DAOException {
-		String methodNm = "Áßº¹ÀûÄ¡Àç·á Á¶È¸[SlabYdJspSeEJB.getMvStkWrkBookRegDup] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¤‘ë³µì ì¹˜ì¬ë£Œ ì¡°íšŒ[SlabYdJspSeEJB.getMvStkWrkBookRegDup] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6709,15 +6709,15 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÇÚµå½ºÄ«ÇÎº¸·ùÀç Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í•¸ë“œìŠ¤ì¹´í•‘ë³´ë¥˜ì¬ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getHandScarfingHoldYn(GridData gdReq) throws DAOException {
-		String methodNm = "ÇÚµå½ºÄ«ÇÎº¸·ùÀç Á¶È¸[SlabYdJspSeEJB.getHandScarfingHoldYn] < " + gdReq.getNavigateValue();
+		String methodNm = "í•¸ë“œìŠ¤ì¹´í•‘ë³´ë¥˜ì¬ ì¡°íšŒ[SlabYdJspSeEJB.getHandScarfingHoldYn] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6736,14 +6736,14 @@ public class SlabYdJspSeEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÆÈ·¿Æ® ÀÚµ¿ »óÂ÷¿Ï·á Ã³¸® ¿©ºÎ º¯°æ
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : íŒ”ë ›íŠ¸ ìë™ ìƒì°¨ì™„ë£Œ ì²˜ë¦¬ ì—¬ë¶€ ë³€ê²½
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param inDto
 	 *      @return 
 	*/
 	public void updPtAutoComplete(JDTORecord [] inDto) throws DAOException {
-		String methodNm = "ÆÈ·¿Æ® ÀÚµ¿ »óÂ÷¿Ï·á Ã³¸® ¿©ºÎ º¯°æ[SlabYdJspSeEJB.updPtAutoComplete] < ";
+		String methodNm = "íŒ”ë ›íŠ¸ ìë™ ìƒì°¨ì™„ë£Œ ì²˜ë¦¬ ì—¬ë¶€ ë³€ê²½[SlabYdJspSeEJB.updPtAutoComplete] < ";
 		String logId = slabUtils.getLogId();
 		JDTORecord    recPara  			= null;
 		JDTORecordSet	rsResult		= null;

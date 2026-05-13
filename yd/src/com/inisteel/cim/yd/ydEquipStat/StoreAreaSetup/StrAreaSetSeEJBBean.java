@@ -11,7 +11,7 @@ import com.inisteel.cim.yd.common.util.YdUtils;
 
 
 /**
- * ÀúÀå¿µ¿ª ¼³Á¤ Session EJB
+ * ì €ì¥ì˜ì—­ ì„¤ì • Session EJB
  *
  * @ejb.bean name="StrAreaSetSeEJB" jndi-name="StrAreaSetSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -43,9 +43,9 @@ public class StrAreaSetSeEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param msgRecord
 	 * @return
 	 * @throws JDTOException
@@ -66,7 +66,7 @@ public class StrAreaSetSeEJBBean extends BaseSessionBean {
 			return;
 		}
 		if(bDebugFlag){
-			szMsg="Àü¹®¼ö½Å : TCCODE=" +szRcvTcCode ;
+			szMsg="ì „ë¬¸ìˆ˜ì‹  : TCCODE=" +szRcvTcCode ;
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		} 
 		
@@ -83,7 +83,7 @@ public class StrAreaSetSeEJBBean extends BaseSessionBean {
 		//
 
 		
-		szMsg="TestÁ¤º¸¼ö½Å Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Testì •ë³´ìˆ˜ì‹  ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	

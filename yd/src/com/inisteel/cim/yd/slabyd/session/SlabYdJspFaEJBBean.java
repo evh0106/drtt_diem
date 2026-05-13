@@ -2,14 +2,14 @@
  * @(#)SlabYdJspFaEJBBean
  *
  * @version          V1.00
- * @author           ÇãÃ¶È£
+ * @author           í—ˆì² í˜¸
  * @date             2013/03/04
  *
- * @description      Slab¾ßµå È­¸é °ü¸®
+ * @description      Slabì•¼ë“œ í™”ë©´ ê´€ë¦¬
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2013/03/04   ÇãÃ¶È£      ÇãÃ¶È£      ÃÖÃÊ µî·Ï
+ * V1.00  2013/03/04   í—ˆì² í˜¸      í—ˆì² í˜¸      ìµœì´ˆ ë“±ë¡
  */
 package com.inisteel.cim.yd.slabyd.session;
 
@@ -31,7 +31,7 @@ import com.inisteel.cim.yd.common.util.YdSlabUtils;
 import com.inisteel.cim.yd.jsp.common.YDComUtil;
 
 /**
- *      [A] Å¬·¡½º¸í : Slab¾ßµå È­¸é°ü¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Slabì•¼ë“œ í™”ë©´ê´€ë¦¬
  *
  * @ejb.bean name="SlabYdJspFaEJB" jndi-name="SlabYdJspFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -55,19 +55,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/***************************************************************************
-	 * Slab¾ßµå È­¸é
+	 * Slabì•¼ë“œ í™”ë©´
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷°ü¸® [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCrnWrkMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸®[SlabYdJspFaEJB.scrCrnWrkMgt]";
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬[SlabYdJspFaEJB.scrCrnWrkMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -76,43 +76,43 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CM".equals(trtGp)) {
-				methodNm += " Å©·¹ÀÎº¯°æ";
+				methodNm += " í¬ë ˆì¸ë³€ê²½";
 				ejbMethod = "trtCrnWrkMgtCM";
 			} else if ("PM".equals(trtGp)) {
-				methodNm += " ¼øÀ§º¯°æ";
+				methodNm += " ìˆœìœ„ë³€ê²½";
 				ejbMethod = "trtCrnWrkMgtPM";
 			} else if ("DM".equals(trtGp)) {
-				methodNm += " ±ÇÇÏÀ§Ä¡º¯°æ";
+				methodNm += " ê¶Œí•˜ìœ„ì¹˜ë³€ê²½";
 				ejbMethod = "trtCrnWrkMgtDM";
 			} else if ("HD".equals(trtGp)) {
-				methodNm += " º¸·ù";
+				methodNm += " ë³´ë¥˜";
 				ejbMethod = "trtCrnWrkMgtHR";
 			} else if ("HR".equals(trtGp)) {
-				methodNm += " º¸·ùÇØÁ¦";
+				methodNm += " ë³´ë¥˜í•´ì œ";
 				ejbMethod = "trtCrnWrkMgtHR";
 			} else if ("WC".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷Ãë¼Ò";
+				methodNm += " ì‘ì—…ì·¨ì†Œ";
 				ejbMethod = "trtCrnWrkMgtWC";
 			} else if ("SC".equals(trtGp)) {
-				methodNm += " ½ºÄÉÁÙÃë¼Ò";
+				methodNm += " ìŠ¤ì¼€ì¤„ì·¨ì†Œ";
 				ejbMethod = "trtCrnWrkMgtSC";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ½ºÄÉÁÙÀç·áÁ¶È¸";
+				methodNm += " ìŠ¤ì¼€ì¤„ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getCrnWrkMgt";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += " ½ºÄÉÁÙÁ¤º¸Á¶È¸";
+				methodNm += " ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ";
 				ejbMethod = "getCrnWrkMgt";
 			} else if ("SL".equals(trtGp)) {
-				methodNm += " ±ÇÇÏºÒ°¡À§Ä¡Á¶È¸";
+				methodNm += " ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ì¡°íšŒ";
 				ejbMethod = "getYdDnWoLocNotAllowedInfo";				
 			} else if ("SN".equals(trtGp)) {
-				methodNm += " ±ÇÇÏºÒ°¡Àç·áÁ¶È¸";
+				methodNm += " ê¶Œí•˜ë¶ˆê°€ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getSlabDnNotAllowedInfo";				
 			} else if ("SD".equals(trtGp)) {
-				methodNm += "Áßº¹ÀûÄ¡Àç·áÁ¶È¸";
+				methodNm += "ì¤‘ë³µì ì¹˜ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getMvStkWrkBookRegDup";	
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -120,10 +120,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®      
+				//ë“±ë¡ì²˜ë¦¬      
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -132,16 +132,16 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 
-				//½ºÄÉÁÙÁ¤º¸Á¶È¸
+				//ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ
 				ejbMethod = "getCrnWrkMgt";
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -152,15 +152,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ»óÅÂ¼³Á¤ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìƒíƒœì„¤ì • [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCrnStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ»óÅÂ¼³Á¤[SlabYdJspFaEJB.scrCrnStatSet]";
+		String methodNm = "í¬ë ˆì¸ìƒíƒœì„¤ì •[SlabYdJspFaEJB.scrCrnStatSet]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -169,13 +169,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CS".equals(trtGp)) {
-				methodNm += " µî·ÏÃ³¸®";
+				methodNm += " ë“±ë¡ì²˜ë¦¬";
 				ejbMethod = "trtCrnStatSet";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " »óÅÂÁ¤º¸Á¶È¸";
+				methodNm += " ìƒíƒœì •ë³´ì¡°íšŒ";
 				ejbMethod = "getCrnStatSet";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -183,10 +183,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if ("CS".equals(trtGp)) {
-				//Å©·¹ÀÎ»óÅÂ¼³Á¤
+				//í¬ë ˆì¸ìƒíƒœì„¤ì •
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -196,12 +196,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				}
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx("getCrnStatSet", new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -212,15 +212,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCrnWrkBookMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸®[SlabYdJspFaEJB.scrCrnWrkBookMgt]";
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬[SlabYdJspFaEJB.scrCrnWrkBookMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -229,31 +229,31 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("SC".equals(trtGp)) {
-				methodNm += " ½ºÄÉÁÙÁ¡°Ë";
+				methodNm += " ìŠ¤ì¼€ì¤„ì ê²€";
 				ejbMethod = "chkCrnWrkBookMgtSC";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += " ½ºÄÉÁÙ±âµ¿";
+				methodNm += " ìŠ¤ì¼€ì¤„ê¸°ë™";
 				ejbMethod = "trtCrnWrkBookMgtSS";
 			} else if ("PM".equals(trtGp)) {
-				methodNm += " ¿ì¼±¼øÀ§º¯°æ";
+				methodNm += " ìš°ì„ ìˆœìœ„ë³€ê²½";
 				ejbMethod = "updWrkBookPrior";
 			} else if ("CM".equals(trtGp)) {
-				methodNm += " Å©·¹ÀÎÁöÁ¤";
+				methodNm += " í¬ë ˆì¸ì§€ì •";
 				ejbMethod = "updWrkBookCrn";
 			} else if ("WD".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾à»èÁ¦";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì‚­ì œ";
 				ejbMethod = "delWrkBook";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾àÀç·áÁ¶È¸";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getCrnWrkBookMgt";
 			} else if ("SW".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾àÁ¤º¸Á¶È¸";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì •ë³´ì¡°íšŒ";
 				ejbMethod = "getCrnWrkBookMgt";
 			} else if ("TM".equals(trtGp)) {
-				methodNm += " ToÀ§Ä¡º¯°æ";
+				methodNm += " Toìœ„ì¹˜ë³€ê²½";
 				ejbMethod = "updWrkBookToGuide";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -261,20 +261,20 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if (ejbMethod.startsWith("get")) {
-				//Á¶È¸
+				//ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			} else if ("SC".equals(trtGp)) {
-				//½ºÄÉÁÙÁ¡°Ë
+				//ìŠ¤ì¼€ì¤„ì ê²€
 				String rstMsg = (String)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//½ºÄÉÁÙÁ¤º¸Á¶È¸
+				//ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx("getCrnWrkBookMgt", new Class[] { GridData.class }, new Object[] { gdReq });
 				gdRtn.addParam("RST_MSG", rstMsg);
 			} else {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -283,13 +283,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 
-				//½ºÄÉÁÙÁ¤º¸Á¶È¸
+				//ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx("getCrnWrkBookMgt", new Class[] { GridData.class }, new Object[] { gdReq });
 			}
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -300,31 +300,31 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀåÈŞÁö°èÈ¹ Á¶È¸[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥íœ´ì§€ê³„íš ì¡°íšŒ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCrnFixPlanMgt(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀåÈŞÁö°èÈ¹ Á¶È¸[SlabYdJspFaEJB.scrCrnFixPlanMgt]";
+		String methodNm = "ê³µì¥íœ´ì§€ê³„íš ì¡°íšŒ[SlabYdJspFaEJB.scrCrnFixPlanMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
 			GridData gdRtn = OperateGridData.cloneResponseGridData(gdReq);
 			String ejbMethod = "getCrnFixPlan";
-			methodNm += " Á¶È¸";
+			methodNm += " ì¡°íšŒ";
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -336,32 +336,32 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎº¸¼ö°èÈ¹°ü¸® Á¶È¸[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ë³´ìˆ˜ê³„íšê´€ë¦¬ ì¡°íšŒ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCcCrnFixPlanMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎº¸¼ö°èÈ¹°ü¸® Á¶È¸[SlabYdJspFaEJB.scrCcCrnFixPlanMgt]";
+		String methodNm = "í¬ë ˆì¸ë³´ìˆ˜ê³„íšê´€ë¦¬ ì¡°íšŒ[SlabYdJspFaEJB.scrCcCrnFixPlanMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
 			GridData gdRtn = OperateGridData.cloneResponseGridData(gdReq);
 			String ejbMethod = "getCcCrnFixPlanMgt";
-			methodNm += " Á¶È¸";
+			methodNm += " ì¡°íšŒ";
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -372,15 +372,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ º¸¼ö°èÈ¹ ¼öÁ¤[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ìˆ˜ì •[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCcCrnFixPlanUpd(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ º¸¼ö°èÈ¹ ¼öÁ¤[SlabYdJspFaEJB.scrCcCrnFixPlanUpd]";
+		String methodNm = "í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ìˆ˜ì •[SlabYdJspFaEJB.scrCcCrnFixPlanUpd]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -391,12 +391,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -407,15 +407,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ º¸¼ö°èÈ¹ »èÁ¦[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ì‚­ì œ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrCcCrnFixPlanDel(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ º¸¼ö°èÈ¹ »èÁ¦[SlabYdJspFaEJB.scrCcCrnFixPlanDel]";
+		String methodNm = "í¬ë ˆì¸ ë³´ìˆ˜ê³„íš ì‚­ì œ[SlabYdJspFaEJB.scrCcCrnFixPlanDel]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -426,12 +426,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -444,15 +444,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå º° º¸¼ö¸í Á¶È¸[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ ë³„ ë³´ìˆ˜ëª… ì¡°íšŒ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrMaintName(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå º° º¸¼ö¸í Á¶È¸[SlabYdJspFaEJB.scrMaintName]";
+		String methodNm = "ê³µì¥ ë³„ ë³´ìˆ˜ëª… ì¡°íšŒ[SlabYdJspFaEJB.scrMaintName]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -463,12 +463,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -480,15 +480,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ µî·Ï[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ë“±ë¡[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrPausePlan(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ µî·Ï[SlabYdJspFaEJB.scrPausePlan]";
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ë“±ë¡[SlabYdJspFaEJB.scrPausePlan]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -499,12 +499,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -516,15 +516,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ »èÁ¦[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ì‚­ì œ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrPausePlanDel(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ »èÁ¦[SlabYdJspFaEJB.scrPausePlanDel]";
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ì‚­ì œ[SlabYdJspFaEJB.scrPausePlanDel]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -535,12 +535,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -551,15 +551,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÀå ÈŞÁö°èÈ¹ ¿Ï·á µî·Ï[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µì¥ íœ´ì§€ê³„íš ì™„ë£Œ ë“±ë¡[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrPausePlanConf(GridData gdReq) throws DAOException {
-		String methodNm = "°øÀå ÈŞÁö°èÈ¹ ¿Ï·á µî·Ï[SlabYdJspFaEJB.scrPausePlanConf]";
+		String methodNm = "ê³µì¥ íœ´ì§€ê³„íš ì™„ë£Œ ë“±ë¡[SlabYdJspFaEJB.scrPausePlanConf]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -570,12 +570,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -586,15 +586,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎº° ÈŞÁöÄÚµå Á¶È¸[C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ë³„ íœ´ì§€ì½”ë“œ ì¡°íšŒ[Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrPauseCode(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎº° ÈŞÁöÄÚµå Á¶È¸[SlabYdJspFaEJB.scrPauseCode]";
+		String methodNm = "í¬ë ˆì¸ë³„ íœ´ì§€ì½”ë“œ ì¡°íšŒ[SlabYdJspFaEJB.scrPauseCode]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -605,12 +605,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -622,15 +622,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾Ğ¿¬Áö½ÃÁ¶È¸ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì••ì—°ì§€ì‹œì¡°íšŒ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrMillWoInq(GridData gdReq) throws DAOException {
-		String methodNm = "¾Ğ¿¬Áö½ÃÁ¶È¸[SlabYdJspFaEJB.scrMillWoInq]";
+		String methodNm = "ì••ì—°ì§€ì‹œì¡°íšŒ[SlabYdJspFaEJB.scrMillWoInq]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -639,29 +639,29 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("DM".equals(trtGp)) {
-				methodNm += " DummyÀÌÀûÁö½Ã";
+				methodNm += " Dummyì´ì ì§€ì‹œ";
 				ejbMethod = "trtMillWoInqDM";
 			} else if ("CL".equals(trtGp)) {
-				methodNm += " º¸±ŞLotµî·Ï";
+				methodNm += " ë³´ê¸‰Lotë“±ë¡";
 				ejbMethod = "trtMillWoInqCL";
 			} else if ("SH".equals(trtGp)) {
-				methodNm = "C¿­¿¬ " + methodNm;
+				methodNm = "Cì—´ì—° " + methodNm;
 				ejbMethod = "getMillWoInq";
 			} else if ("SP".equals(trtGp)) {
-				methodNm = "ÈÄÆÇ " + methodNm;
+				methodNm = "í›„íŒ " + methodNm;
 				ejbMethod = "getMillWoInq";
 			} else if ("SP2".equals(trtGp)) {
-				methodNm = "ÈÄÆÇ " + methodNm;
+				methodNm = "í›„íŒ " + methodNm;
 				ejbMethod = "getMillWoInq2";
 			} else if ("SP3".equals(trtGp)) {
-				methodNm = "ÈÄÆÇ ÀÏº°Á¶È¸" + methodNm;
+				methodNm = "í›„íŒ ì¼ë³„ì¡°íšŒ" + methodNm;
 				ejbMethod = "getMillWoInq3";
 			} else if ("SPSCH".equals(trtGp)){
-				methodNm = "ÈÄÆÇ ¿¹Á¤¾Ğ¿¬Á¶È¸" + methodNm;
+				methodNm = "í›„íŒ ì˜ˆì •ì••ì—°ì¡°íšŒ" + methodNm;
 				ejbMethod = "getMillWoInqSCH";
 			}
 			else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -669,10 +669,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®      
+				//ë“±ë¡ì²˜ë¦¬      
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -681,16 +681,16 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 				
-				//µî·ÏÃ³¸®ÈÄ Á¶È¸      
+				//ë“±ë¡ì²˜ë¦¬í›„ ì¡°íšŒ      
 				ejbMethod = "getMillWoInq";
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -701,15 +701,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼³ºñÀÎÃâº¸±Ş, ÈÄÆÇPilerÀÎÃâ, ÈÄÆÇDepilerº¸±Ş [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì„¤ë¹„ì¸ì¶œë³´ê¸‰, í›„íŒPilerì¸ì¶œ, í›„íŒDepilerë³´ê¸‰ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrEqpPulloutSup(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñÀÎÃâº¸±Ş[SlabYdJspFaEJB.scrEqpPulloutSup]";
+		String methodNm = "ì„¤ë¹„ì¸ì¶œë³´ê¸‰[SlabYdJspFaEJB.scrEqpPulloutSup]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -718,64 +718,64 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CI".equals(trtGp)) {
-				methodNm += " º¸±Ş¿ä±¸(Carry-In)";
+				methodNm += " ë³´ê¸‰ìš”êµ¬(Carry-In)";
 				ejbMethod = "trtEqpPulloutSupCI";
 			} else if ("CO".equals(trtGp)) {
-				methodNm += " ÀÎÃâ¿ä±¸(Carry-Out)";
+				methodNm += " ì¸ì¶œìš”êµ¬(Carry-Out)";
 				ejbMethod = "trtEqpPulloutSupCO";
 			} else if ("TI".equals(trtGp)) {
-				methodNm += " Take-In¿Ï·á";
+				methodNm += " Take-Inì™„ë£Œ";
 				ejbMethod = "trtEqpPulloutSupTI";
 			} else if ("TO".equals(trtGp)) {
-				methodNm += " Take-Out¿Ï·á";
+				methodNm += " Take-Outì™„ë£Œ";
 				ejbMethod = "trtEqpPulloutSupTO";
 			} else if ("RM".equals(trtGp)) {
-				methodNm += " Çà¼±º¯°æ";
+				methodNm += " í–‰ì„ ë³€ê²½";
 				ejbMethod = "updEqpPulloutSupRt";
 			} else if ("MD".equals(trtGp)) {
-				methodNm += " BedÀç·á»èÁ¦";
+				methodNm += " Bedì¬ë£Œì‚­ì œ";
 				ejbMethod = "delEqpPulloutSupMtl";
 			} else if ("SR".equals(trtGp)) {
-				methodNm += " º¸±ŞÆí¼º±âÁØº¯°æ";
+				methodNm += " ë³´ê¸‰í¸ì„±ê¸°ì¤€ë³€ê²½";
 				ejbMethod = "updEqpPulloutSupRule";
 			} else if ("CR".equals(trtGp)) {
-				methodNm += " Å©·¹ÀÎÆí¼º±âÁØº¯°æ";
+				methodNm += " í¬ë ˆì¸í¸ì„±ê¸°ì¤€ë³€ê²½";
 				ejbMethod = "updCrnPulloutSupRule";	
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " BedÀç·áÁ¶È¸";
+				methodNm += " Bedì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getEqpPulloutSup";
 			} else if ("SP".equals(trtGp)) {
-				methodNm += " ÈÄÆÇ¾Ğ¿¬Áö½ÃÁ¶È¸";
+				methodNm += " í›„íŒì••ì—°ì§€ì‹œì¡°íšŒ";
 				ejbMethod = "getMillWoInq";
 			} else if ("SPSCH".equals(trtGp)) {
-				methodNm += "ÈÄÆÇ¿¹Á¤¾Ğ¿¬Áö½ÃÁ¶È¸";
+				methodNm += "í›„íŒì˜ˆì •ì••ì—°ì§€ì‹œì¡°íšŒ";
 				ejbMethod = "getMillWoInqSCH";
 			} 
 			else if ("TM".equals(trtGp)) {
-				methodNm += " Take-OutÀç·áÁ¶È¸";
+				methodNm += " Take-Outì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getEqpPulloutSup";
 			} else if ("SB".equals(trtGp)) {
-				methodNm += " BedÁ¤º¸Á¶È¸";
+				methodNm += " Bedì •ë³´ì¡°íšŒ";
 				ejbMethod = "getEqpPulloutSup";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += "¼ø¹øº¯°æ";
+				methodNm += "ìˆœë²ˆë³€ê²½";
 				ejbMethod = "updStockSeqNo";
 			} else if ("CT".equals(trtGp)){
-				methodNm += "»ı»êÅëÁ¦ÈÄÆÇ¸Ş¼¼ÁöÁ¶È¸";
+				methodNm += "ìƒì‚°í†µì œí›„íŒë©”ì„¸ì§€ì¡°íšŒ";
 				ejbMethod = "getMillWoInqMsg";
 			} else if ("CA".equals(trtGp)){
-				methodNm += "»ı»êÅëÁ¦ÈÄÆÇ¸Ş¼¼ÁöÀÌ·ÂÁ¶È¸";
+				methodNm += "ìƒì‚°í†µì œí›„íŒë©”ì„¸ì§€ì´ë ¥ì¡°íšŒ";
 				ejbMethod = "getMillWoInqMsgAll";
 			} else if ("CS".equals(trtGp)){
-				methodNm += "»ı»êÅëÁ¦ÈÄÆÇ¸Ş¼¼ÁöÁ¶È¸bySeq";
+				methodNm += "ìƒì‚°í†µì œí›„íŒë©”ì„¸ì§€ì¡°íšŒbySeq";
 				ejbMethod = "getMillWoInqMsgBySeqNo";
 			} 
 			else if ("CC".equals(trtGp)){
-				methodNm += "»ı»êÅëÁ¦ÈÄÆÇ¸Ş¼¼ÁöÈ®ÀÎ";
+				methodNm += "ìƒì‚°í†µì œí›„íŒë©”ì„¸ì§€í™•ì¸";
 				ejbMethod = "updMillWoInqMsg";
 			} else {
 			
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -783,10 +783,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -795,13 +795,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 			} else {
-				//Á¶È¸
+				//ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			}
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -812,15 +812,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀåÀÔº¸±Ş±âÁØ [C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¥ì…ë³´ê¸‰ê¸°ì¤€ [Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrChgSupRule(GridData gdReq) throws DAOException {
-		String methodNm = "ÀåÀÔº¸±Ş±âÁØ[SlabYdJspFaEJB.scrChgSupRule]";
+		String methodNm = "ì¥ì…ë³´ê¸‰ê¸°ì¤€[SlabYdJspFaEJB.scrChgSupRule]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -829,13 +829,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CR".equals(trtGp)) {
-				methodNm += " µî·Ï";
+				methodNm += " ë“±ë¡";
 				ejbMethod = "trtChgSupRule";
 			} else if ("SR".equals(trtGp)) {
-				methodNm += " Á¶È¸";
+				methodNm += " ì¡°íšŒ";
 				ejbMethod = "getChgSupRule";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -845,7 +845,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -856,15 +856,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼öºÒ±¸¿ëµµº¯°æ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrBedUsgGpSet(GridData gdReq) throws DAOException {
-		String methodNm = "¼öºÒ±¸¿ëµµº¯°æ[SlabYdJspFaEJB.scrBedUsgGpSet]";
+		String methodNm = "ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½[SlabYdJspFaEJB.scrBedUsgGpSet]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -873,13 +873,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("M".equals(trtGp)) {
-				methodNm += " ¼öÁ¤";
+				methodNm += " ìˆ˜ì •";
 				ejbMethod = "trtBedUsgGpSet";
 			} else if ("S".equals(trtGp)) {
-				methodNm += " Á¶È¸";
+				methodNm += " ì¡°íšŒ";
 				ejbMethod = "getBedUsgGpSet";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -887,10 +887,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if ("M".equals(trtGp)) {
-				//¼öºÒ±¸¿ëµµº¯°æ
+				//ìˆ˜ë¶ˆêµ¬ìš©ë„ë³€ê²½
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -900,12 +900,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				}
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx("getBedUsgGpSet", new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -916,15 +916,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ µî·Ï [C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ë“±ë¡ [Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrHsmAllSfSet(GridData gdReq) throws DAOException {
-		String methodNm = "°í°­µµÀç »óÇÏ¸é½ºÄ«ÇÎ±¸ºĞ µî·Ï[SlabYdJspFaEJB.scrHsmAllSfSet]";
+		String methodNm = "ê³ ê°•ë„ì¬ ìƒí•˜ë©´ìŠ¤ì¹´í•‘êµ¬ë¶„ ë“±ë¡[SlabYdJspFaEJB.scrHsmAllSfSet]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -933,13 +933,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("C".equals(trtGp)) {
-				methodNm += " µî·Ï";
+				methodNm += " ë“±ë¡";
 				ejbMethod = "trtHsmAllSfSet";
 			} else if ("S".equals(trtGp)) {
-				methodNm += " Á¶È¸";
+				methodNm += " ì¡°íšŒ";
 				ejbMethod = "getHsmAllSfSet";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -949,7 +949,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -960,15 +960,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎº¸±Ş°ü¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrSfSupMgt(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎº¸±Ş°ü¸®[SlabYdJspFaEJB.scrSfSupMgt]";
+		String methodNm = "ìŠ¤ì¹´í•‘ë³´ê¸‰ê´€ë¦¬[SlabYdJspFaEJB.scrSfSupMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -977,31 +977,31 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CL".equals(trtGp)) {
-				methodNm += " º¸±ŞLotµî·Ï";
+				methodNm += " ë³´ê¸‰Lotë“±ë¡";
 				ejbMethod = "trtSfSupMgtCL";
 			} else if ("MD".equals(trtGp)) {
-				methodNm += " Áö¿¬»çÀ¯µî·Ï(±ä±ŞÀç)";
+				methodNm += " ì§€ì—°ì‚¬ìœ ë“±ë¡(ê¸´ê¸‰ì¬)";
 				ejbMethod = "trtSfSupMgtMD";
 			}  else if ("MS".equals(trtGp)) {
-				methodNm += " Áö¿¬»çÀ¯µî·Ï(°øÁ¤¿ä±¸)";
+				methodNm += " ì§€ì—°ì‚¬ìœ ë“±ë¡(ê³µì •ìš”êµ¬)";
 				ejbMethod = "trtSfSupMgtMS";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += " ´ë»óÁ¶È¸";
+				methodNm += " ëŒ€ìƒì¡°íšŒ";
 				ejbMethod = "getSfSupMgt";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " ±ä±ŞÀçÁ¶È¸";
+				methodNm += " ê¸´ê¸‰ì¬ì¡°íšŒ";
 				ejbMethod = "getSfSupMgt";
 			} else if ("SC".equals(trtGp)) {
-				methodNm += " °øÁ¤¿ä±¸´ë»óÁ¶È¸";
+				methodNm += " ê³µì •ìš”êµ¬ëŒ€ìƒì¡°íšŒ";
 				ejbMethod = "getSfSupMgt";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ¿Ï·áÁ¶È¸";
+				methodNm += " ì™„ë£Œì¡°íšŒ";
 				ejbMethod = "getSfSupMgt";
 			} else if ("BR".equals(trtGp)) {
-				methodNm += " º¸±ŞÁ¦ÇÑ±âÁØÁ¶È¸";
+				methodNm += " ë³´ê¸‰ì œí•œê¸°ì¤€ì¡°íšŒ";
 				ejbMethod = "getSupRuleMax";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1009,10 +1009,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1024,12 +1024,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				ejbMethod = "getSfSupMgt"; 
 				
 			}else{ 
-				//Á¶È¸
+				//ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 				 
 			}
 			slabUtils.printLog(logId, methodNm, "F-");
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 			
 		} catch(DAOException e) {
@@ -1041,15 +1041,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrStcmSupMgt(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸®[SlabYdJspFaEJB.scrStcmSupMgt]";
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬[SlabYdJspFaEJB.scrStcmSupMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1058,19 +1058,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CL".equals(trtGp)) {
-				methodNm += " º¸±ŞLotµî·Ï";
+				methodNm += " ë³´ê¸‰Lotë“±ë¡";
 				ejbMethod = "trtStcmSupMgtCL";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " ´ë»óÁ¶È¸";
+				methodNm += " ëŒ€ìƒì¡°íšŒ";
 				ejbMethod = "getStcmSupMgt";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ¿Ï·áÁ¶È¸";
+				methodNm += " ì™„ë£Œì¡°íšŒ";
 				ejbMethod = "getStcmSupMgt";
 			} else if ("BR".equals(trtGp)) {
-				methodNm += " º¸±ŞÁ¦ÇÑ±âÁØÁ¶È¸";
+				methodNm += " ë³´ê¸‰ì œí•œê¸°ì¤€ì¡°íšŒ";
 				ejbMethod = "getSupRuleMax";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1078,10 +1078,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1093,12 +1093,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				ejbMethod = "getStcmSupMgt";
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1108,15 +1108,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸®(½Å)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬(ì‹ )
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrStcmSupMgtNew(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸®[scrStcmSupMgtNew]";
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬[scrStcmSupMgtNew]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1125,19 +1125,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CL".equals(trtGp)) {
-				methodNm += " º¸±ŞLotµî·Ï";
+				methodNm += " ë³´ê¸‰Lotë“±ë¡";
 				ejbMethod = "trtStcmSupMgtCL";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " ´ë»óÁ¶È¸";
+				methodNm += " ëŒ€ìƒì¡°íšŒ";
 				ejbMethod = "getStcmSupMgtNew";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ¿Ï·áÁ¶È¸";
+				methodNm += " ì™„ë£Œì¡°íšŒ";
 				ejbMethod = "getStcmSupMgtNew";
 			} else if ("BR".equals(trtGp)) {
-				methodNm += " º¸±ŞÁ¦ÇÑ±âÁØÁ¶È¸";
+				methodNm += " ë³´ê¸‰ì œí•œê¸°ì¤€ì¡°íšŒ";
 				ejbMethod = "getSupRuleMax";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1145,10 +1145,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1160,12 +1160,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				ejbMethod = "getStcmSupMgtNew";
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1175,15 +1175,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2Â÷Àı´Üº¸±Ş°ü¸®(½Å)ÆË¾÷
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬(ì‹ )íŒì—…
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrStcmSupMgtNewpp(GridData gdReq) throws DAOException {
-		String methodNm = "2Â÷Àı´Üº¸±Ş°ü¸®[scrStcmSupMgtNewpp]";
+		String methodNm = "2ì°¨ì ˆë‹¨ë³´ê¸‰ê´€ë¦¬[scrStcmSupMgtNewpp]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1192,13 +1192,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("C".equals(trtGp)) {
-				methodNm += " º¸±ŞLotµî·Ï";
+				methodNm += " ë³´ê¸‰Lotë“±ë¡";
 				ejbMethod = "trtStcmSupMgtCLpp";
 			} else if ("S".equals(trtGp)) {
-				methodNm += " ´ë»óÁ¶È¸";
+				methodNm += " ëŒ€ìƒì¡°íšŒ";
 				ejbMethod = "getStcmSupMgtNewpp";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1206,10 +1206,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			
 			if (ejbMethod.startsWith("trt")) {
-				//µî·ÏÃ³¸®
+				//ë“±ë¡ì²˜ë¦¬
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1221,12 +1221,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				ejbMethod = "getStcmSupMgtNewpp";
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1236,15 +1236,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¸±ŞLot°ü¸® (ÀåÀÔ/½ºÄ«ÇÎ/2Â÷Àı´Ü)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë³´ê¸‰Lotê´€ë¦¬ (ì¥ì…/ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrSupLotMgt(GridData gdReq) throws DAOException {
-		String methodNm = "º¸±ŞLot°ü¸®[SlabYdJspFaEJB.scrSupLotMgt]";
+		String methodNm = "ë³´ê¸‰Lotê´€ë¦¬[SlabYdJspFaEJB.scrSupLotMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1253,25 +1253,25 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("MS".equals(trtGp)) {
-				methodNm += " º¸±Ş¼ø¼­ ¼öÁ¤";
+				methodNm += " ë³´ê¸‰ìˆœì„œ ìˆ˜ì •";
 				ejbMethod = "trtSupLotMgtMS";
 			} else if ("DS".equals(trtGp)) {
-				methodNm += " »èÁ¦";
+				methodNm += " ì‚­ì œ";
 				ejbMethod = "trtSupLotMgtDS";
 			} else if ("DM".equals(trtGp)) {
-				methodNm += " Àç·á»èÁ¦";
+				methodNm += " ì¬ë£Œì‚­ì œ";
 				ejbMethod = "trtSupLotMgtDM";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += " Á¶È¸";
+				methodNm += " ì¡°íšŒ";
 				ejbMethod = "getSupLotMgt";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " Àç·áÁ¶È¸";
+				methodNm += " ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getSupLotMgt";
 			} else if ("CM".equals(trtGp)){
-				methodNm += " Å©·¹ÀÎÁöÁ¤";
+				methodNm += " í¬ë ˆì¸ì§€ì •";
 				ejbMethod = "trtSupLotMgtCM";
 			}else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1281,7 +1281,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1292,15 +1292,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrSfStcmSupLot(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ/2Â÷Àı´Üº¸±ŞLot[SlabYdJspFaEJB.scrSfStcmSupLot]";
+		String methodNm = "ìŠ¤ì¹´í•‘/2ì°¨ì ˆë‹¨ë³´ê¸‰Lot[SlabYdJspFaEJB.scrSfStcmSupLot]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1309,22 +1309,22 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("MS".equals(trtGp)) {
-				methodNm += " º¸±Ş¼ø¼­ ¼öÁ¤";
+				methodNm += " ë³´ê¸‰ìˆœì„œ ìˆ˜ì •";
 				ejbMethod = "trtSfStcmSupLotMS";
 			} else if ("DS".equals(trtGp)) {
-				methodNm += " »èÁ¦";
+				methodNm += " ì‚­ì œ";
 				ejbMethod = "trtSfStcmSupLotDS";
 			} else if ("DM".equals(trtGp)) {
-				methodNm += " Àç·á»èÁ¦";
+				methodNm += " ì¬ë£Œì‚­ì œ";
 				ejbMethod = "trtSfStcmSupLotDM";
 			} else if ("SS".equals(trtGp)) {
-				methodNm += " Á¶È¸";
+				methodNm += " ì¡°íšŒ";
 				ejbMethod = "getSfStcmSupLot";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " Àç·áÁ¶È¸";
+				methodNm += " ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getSfStcmSupLot";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1334,7 +1334,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1345,15 +1345,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ°ü¸® [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrTcarSchMgt(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ°ü¸®[SlabYdJspFaEJB.scrTcarSchMgt]";
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬[SlabYdJspFaEJB.scrTcarSchMgt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1362,25 +1362,25 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("TI".equals(trtGp)) {
-				methodNm += " ´ëÂ÷ÃÊ±âÈ­";
+				methodNm += " ëŒ€ì°¨ì´ˆê¸°í™”";
 				ejbMethod = "trtTcarSchMgtTI";
 			} else if ("PM".equals(trtGp)) {
-				methodNm += " ¿ì¼±¼øÀ§º¯°æ";
+				methodNm += " ìš°ì„ ìˆœìœ„ë³€ê²½";
 				ejbMethod = "updWrkBookPrior";
 			} else if ("WD".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾à»èÁ¦";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì‚­ì œ";
 				ejbMethod = "delWrkBook";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " ´ëÂ÷Á¤º¸Á¶È¸";
+				methodNm += " ëŒ€ì°¨ì •ë³´ì¡°íšŒ";
 				ejbMethod = "getTcarSchMgt";
 			} else if ("SW".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾àÁ¤º¸Á¶È¸";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì •ë³´ì¡°íšŒ";
 				ejbMethod = "getTcarSchMgt";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " ÀÛ¾÷¿¹¾àÀç·áÁ¶È¸";
+				methodNm += " ì‘ì—…ì˜ˆì•½ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getTcarSchMgt";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1388,10 +1388,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if ("TI".equals(trtGp)) {
-				//´ëÂ÷ÃÊ±âÈ­
+				//ëŒ€ì°¨ì´ˆê¸°í™”
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1400,19 +1400,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 			} else if ("PM".equals(trtGp)) {
-				//¿ì¼±¼øÀ§º¯°æ
+				//ìš°ì„ ìˆœìœ„ë³€ê²½
 				ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			} else if ("WD".equals(trtGp)) {
-				//ÀÛ¾÷¿¹¾à»èÁ¦
+				//ì‘ì—…ì˜ˆì•½ì‚­ì œ
 				ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx("getTcarSchMgt", new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1423,15 +1423,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷»óÅÂ¼³Á¤ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìƒíƒœì„¤ì • [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrTcarStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷»óÅÂ¼³Á¤[SlabYdJspFaEJB.scrTcarStatSet]";
+		String methodNm = "ëŒ€ì°¨ìƒíƒœì„¤ì •[SlabYdJspFaEJB.scrTcarStatSet]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1440,13 +1440,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CS".equals(trtGp)) {
-				methodNm += " µî·ÏÃ³¸®";
+				methodNm += " ë“±ë¡ì²˜ë¦¬";
 				ejbMethod = "trtTcarStatSet";
 			} else if ("ST".equals(trtGp)) {
-				methodNm += " »óÅÂÁ¤º¸Á¶È¸";
+				methodNm += " ìƒíƒœì •ë³´ì¡°íšŒ";
 				ejbMethod = "getTcarSchMgt";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1454,10 +1454,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if ("CS".equals(trtGp)) {
-				//´ëÂ÷»óÅÂ¼³Á¤
+				//ëŒ€ì°¨ìƒíƒœì„¤ì •
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1467,12 +1467,12 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				}
 			}
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			gdRtn = (GridData)ejbConn.trx("getTcarSchMgt", new Class[] { GridData.class }, new Object[] { gdReq });
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1483,15 +1483,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷½ºÄÉÁÙ±âÁØ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrTcarSchRule(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ±âÁØ[SlabYdJspFaEJB.scrTcarSchRule]";
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê¸°ì¤€[SlabYdJspFaEJB.scrTcarSchRule]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1500,16 +1500,16 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CR".equals(trtGp)) {
-				methodNm += " µî·ÏÃ³¸®";
+				methodNm += " ë“±ë¡ì²˜ë¦¬";
 				ejbMethod = "trtTcarSchRule";
 			} else if ("ER".equals(trtGp)) {
-				methodNm += " ¼³ºñ±âÁØÁ¶È¸";
+				methodNm += " ì„¤ë¹„ê¸°ì¤€ì¡°íšŒ";
 				ejbMethod = "getTcarSchRule";
 			} else if ("SR".equals(trtGp)) {
-				methodNm += " °Ë»ö±âÁØÁ¶È¸";
+				methodNm += " ê²€ìƒ‰ê¸°ì¤€ì¡°íšŒ";
 				ejbMethod = "getTcarSchRule";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1519,7 +1519,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1530,15 +1530,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrMvStkWrkBookReg(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï[SlabYdJspFaEJB.scrMvStkWrkBookReg]";
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡[SlabYdJspFaEJB.scrMvStkWrkBookReg]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1547,28 +1547,28 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("CW".equals(trtGp)) {
-				methodNm += " µî·ÏÃ³¸®";
+				methodNm += " ë“±ë¡ì²˜ë¦¬";
 				ejbMethod = "trtMvStkWrkBookReg";
 			} else if ("SB".equals(trtGp)) {
-				methodNm += " BedÁ¤º¸Á¶È¸";
+				methodNm += " Bedì •ë³´ì¡°íšŒ";
 				ejbMethod = "getMvStkWrkBookReg";
 			} else if ("SM".equals(trtGp)) {
-				methodNm += " Àç·áÁ¤º¸Á¶È¸";
+				methodNm += " ì¬ë£Œì •ë³´ì¡°íšŒ";
 				ejbMethod = "getMvStkWrkBookReg";
 			} else if ("SL".equals(trtGp)) {
-				methodNm += "±ÇÇÏºÒ°¡À§Ä¡Á¶È¸";
+				methodNm += "ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ì¡°íšŒ";
 				ejbMethod = "getYdDnWoLocNotAllowedInfo";
 			} else if ("SN".equals(trtGp)) {
-				methodNm += "±ÇÇÏºÒ°¡Àç·áÁ¶È¸";
+				methodNm += "ê¶Œí•˜ë¶ˆê°€ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getSlabDnNotAllowedInfo";
 			} else if ("SD".equals(trtGp)) {
-				methodNm += "Áßº¹ÀûÄ¡Àç·áÁ¶È¸";
+				methodNm += "ì¤‘ë³µì ì¹˜ì¬ë£Œì¡°íšŒ";
 				ejbMethod = "getMvStkWrkBookRegDup";				
 			} else if ("SH".equals(trtGp)) {
-				methodNm += "ÇÚµå½ºÄ«ÇÎº¸·ùÀç¿©ºÎÁ¶È¸";
+				methodNm += "í•¸ë“œìŠ¤ì¹´í•‘ë³´ë¥˜ì¬ì—¬ë¶€ì¡°íšŒ";
 				ejbMethod = "getHandScarfingHoldYn";							
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			slabUtils.printLog(logId, methodNm, "F+", gdReq);
@@ -1576,7 +1576,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 
 			if ("CW".equals(trtGp)) {
-				//ÀÛ¾÷¿¹¾àµî·Ï
+				//ì‘ì—…ì˜ˆì•½ë“±ë¡
 				JDTORecord jrRst = (JDTORecord)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 
 				String resultMessage = "";
@@ -1586,7 +1586,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					return gdRtn;
 				}
 				
-				//Àü¼ÛÇÒ Data°¡ ÀÖÀ¸¸é Àü¼Û Ã³¸®
+				//ì „ì†¡í•  Dataê°€ ìˆìœ¼ë©´ ì „ì†¡ ì²˜ë¦¬
 				if (jrRst != null) {
 					jrRst.setResultCode(logId);
 					jrRst.setResultMsg(methodNm);
@@ -1595,13 +1595,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 					sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRst });
 				}
 			} else {
-				//Á¶È¸
+				//ì¡°íšŒ
 				gdRtn = (GridData)ejbConn.trx(ejbMethod, new Class[] { GridData.class }, new Object[] { gdReq });
 			}
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1612,15 +1612,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸ [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrStrLocInfo(GridData gdReq) throws DAOException {
-		String methodNm = "ÀúÀåÀ§Ä¡º°Á¤º¸Á¶È¸[SlabYdJspFaEJB.scrStrLocInfo]";
+		String methodNm = "ì €ì¥ìœ„ì¹˜ë³„ì •ë³´ì¡°íšŒ[SlabYdJspFaEJB.scrStrLocInfo]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1633,7 +1633,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1644,15 +1644,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷Àç·áList [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì¬ë£ŒList [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrWrkMtlList(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷Àç·áList[SlabYdJspFaEJB.scrWrkMtlList]";
+		String methodNm = "ì‘ì—…ì¬ë£ŒList[SlabYdJspFaEJB.scrWrkMtlList]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1665,7 +1665,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1676,19 +1676,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * Monitoring È­¸é - Flex
+	 * Monitoring í™”ë©´ - Flex
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Slab¾ßµåMonitoring [C¿¬ÁÖSlab¾ßµå, ÈÄÆÇSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Slabì•¼ë“œMonitoring [Cì—°ì£¼Slabì•¼ë“œ, í›„íŒSlabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  HashMap hmReq
 	 *      @return List
 	 *      @throws DAOException
 	*/
 	public List scrSlabYdMonitor(HashMap hmReq) throws DAOException {
-		String methodNm = "Slab¾ßµåMonitoring[SlabYdJspFaEJB.scrSlabYdMonitor]";
+		String methodNm = "Slabì•¼ë“œMonitoring[SlabYdJspFaEJB.scrSlabYdMonitor]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1699,7 +1699,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return lsRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1710,19 +1710,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * ÀÎÅÍÆäÀÌ½º °ü·Ã È­¸é
+	 * ì¸í„°í˜ì´ìŠ¤ ê´€ë ¨ í™”ë©´
 	 **************************************************************************/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½ºTest
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤Test
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrIfTest(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½ºTest[SlabYdJspFaEJB.scrIfTest]";
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤Test[SlabYdJspFaEJB.scrIfTest]";
 		String logId = slabUtils.getLogId();
 		
 		try {
@@ -1730,19 +1730,19 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("DI".equals(trtGp)) {
-				methodNm += " Àü¼ÛData ÀúÀå";
+				methodNm += " ì „ì†¡Data ì €ì¥";
 				ejbMethod = "updIfTestData";
 			} else if ("DS".equals(trtGp)) {
-				methodNm += " Àü¼Û";
+				methodNm += " ì „ì†¡";
 				ejbMethod = "sndIfTest";
 			} else if ("ES".equals(trtGp)) {
-				methodNm += " EAI Àü¼Û";
+				methodNm += " EAI ì „ì†¡";
 				ejbMethod = "sndIfTestEAI";
 			} else if ("SL".equals(trtGp)) {
-				methodNm += " I/F Layout Á¶È¸";
+				methodNm += " I/F Layout ì¡°íšŒ";
 				ejbMethod = "getIfTest";
 			} else {
-				methodNm += " I/F List Á¶È¸";
+				methodNm += " I/F List ì¡°íšŒ";
 				ejbMethod = "getIfTest";
 			}
 			
@@ -1762,15 +1762,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÎÅÍÆäÀÌ½º°ü¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrIfMgt(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÎÅÍÆäÀÌ½º°ü¸®[SlabYdJspFaEJB.scrIfMgt]";
+		String methodNm = "ì¸í„°í˜ì´ìŠ¤ê´€ë¦¬[SlabYdJspFaEJB.scrIfMgt]";
 		String logId = slabUtils.getLogId();
 		
 		try {
@@ -1778,13 +1778,13 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String ejbMethod = "";
 
 			if ("TU".equals(trtGp)) {
-				methodNm += " µî·Ï";
+				methodNm += " ë“±ë¡";
 				ejbMethod = "upsIfMgt";
 			} else if ("TD".equals(trtGp)) {
-				methodNm += " »èÁ¦";
+				methodNm += " ì‚­ì œ";
 				ejbMethod = "delIfMgt";
 			} else {
-				methodNm += " I/F List Á¶È¸";
+				methodNm += " I/F List ì¡°íšŒ";
 				ejbMethod = "getIfMgt";
 			}
 			
@@ -1805,27 +1805,27 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 	
 	/***************************************************************************
-	 * CodeÁ¶È¸
+	 * Codeì¡°íšŒ
 	 **************************************************************************/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Slab¾ßµå ÄÚµå Á¶È¸(WiseGrid)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Slabì•¼ë“œ ì½”ë“œ ì¡°íšŒ(WiseGrid)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSlabYdCode(GridData gdReq) throws DAOException {
-		String methodNm = "Slab¾ßµåÄÚµåÁ¶È¸[SlabYdJspFaEJB.getSlabYdCode]";
+		String methodNm = "Slabì•¼ë“œì½”ë“œì¡°íšŒ[SlabYdJspFaEJB.getSlabYdCode]";
 		String logId = slabUtils.getLogId();
 
 		try {
-			gdReq.setNavigateValue(methodNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(methodNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 			
 			
-			//ÄÚµåÁ¶È¸
+			//ì½”ë“œì¡°íšŒ
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			return (GridData)ejbConn.trx("getSlabYdCode", new Class[] { GridData.class }, new Object[] { gdReq });
 		} catch(DAOException e) {
@@ -1836,7 +1836,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í: ÈÄÆÇ¾Ğ¿¬Áö½Ã ¸Ş½ÃÁöµî·Ï
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª…: í›„íŒì••ì—°ì§€ì‹œ ë©”ì‹œì§€ë“±ë¡
 	 * 
 	 * @ejb.interface-method
 	 * @param inParam
@@ -1861,10 +1861,10 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *  º¥µùÀç ÀÌ·Â Á¶È¸
+	 *  ë²¤ë”©ì¬ ì´ë ¥ ì¡°íšŒ
 	 * 
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return
 	 * @throws JDTOException
@@ -1872,8 +1872,8 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	 */
 	public JDTORecordSet getBendingSlabHist(JDTORecord inDto) throws JDTOException {
 		//LOG
-		String szOperationName	= "º¥µùÀç ÀÌ·Â Á¶È¸";
-		String methodNm = "º¥µùÀçÀÌ·ÂÁ¶È¸[SlabYdJspFaEJB.getBendingSlabHist]";
+		String szOperationName	= "ë²¤ë”©ì¬ ì´ë ¥ ì¡°íšŒ";
+		String methodNm = "ë²¤ë”©ì¬ì´ë ¥ì¡°íšŒ[SlabYdJspFaEJB.getBendingSlabHist]";
 		String logId = slabUtils.getLogId();
 		
 		EJBConnector ejbConn = null;
@@ -1896,15 +1896,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Sizing Slab ÀÌ¼Û Àç·á List [2ÈÄÆÇÁ¤Á¤¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Sizing Slab ì´ì†¡ ì¬ë£Œ List [2í›„íŒì •ì •ì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrWrkMtlListFromPlate(GridData gdReq) throws DAOException {
-		String methodNm = "Sizing Slab ÀÌ¼Û Àç·á List[SlabYdJspFaEJB.scrWrkMtlListFromPlate]";
+		String methodNm = "Sizing Slab ì´ì†¡ ì¬ë£Œ List[SlabYdJspFaEJB.scrWrkMtlListFromPlate]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1917,7 +1917,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1929,15 +1929,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄ«ÇÎ ½½¶óºê ÀÌ¼Û½ÇÀû [C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¹´í•‘ ìŠ¬ë¼ë¸Œ ì´ì†¡ì‹¤ì  [Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData scrScarfSlabMvList(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ ½½¶óºê ÀÌ¼Û½ÇÀû[SlabYdJspFaEJB.scrScarfSlabMvList]";
+		String methodNm = "ìŠ¤ì¹´í•‘ ìŠ¬ë¼ë¸Œ ì´ì†¡ì‹¤ì [SlabYdJspFaEJB.scrScarfSlabMvList]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1950,7 +1950,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1962,15 +1962,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÇöÀç ÀûÄ¡¼ö·®,Áß·® Á¶È¸(C1,C2) [C¿¬ÁÖSlab¾ßµå]
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í˜„ì¬ ì ì¹˜ìˆ˜ëŸ‰,ì¤‘ëŸ‰ ì¡°íšŒ(C1,C2) [Cì—°ì£¼Slabì•¼ë“œ]
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param  GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData srcCurCntWt(GridData gdReq) throws DAOException {
-		String methodNm = "ÇöÀç ÀûÄ¡¼ö·®,Áß·® Á¶È¸(C1,C2)[SlabYdJspFaEJB.srcCurCntWt]";
+		String methodNm = "í˜„ì¬ ì ì¹˜ìˆ˜ëŸ‰,ì¤‘ëŸ‰ ì¡°íšŒ(C1,C2)[SlabYdJspFaEJB.srcCurCntWt]";
 		String logId = slabUtils.getLogId();
 
 		try {
@@ -1983,7 +1983,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 
 			slabUtils.printLog(logId, methodNm, "F-");
 
-			//Á¶È¸°á°ú
+			//ì¡°íšŒê²°ê³¼
 			return gdRtn;
 		} catch(DAOException e) {
 			throw e;
@@ -1993,24 +1993,24 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµå°ü¸® > Ç×¸¸½½¶óºê¾ßµå > monitoring > Â÷·®µ¿°£ÀÌÀû
-	 *  ÇãÁ¤¿í
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > í•­ë§ŒìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì°¨ëŸ‰ë™ê°„ì´ì 
+	 *  í—ˆì •ìš±
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData updSyCarMvStkReg(GridData gdReq) throws DAOException {
-		String mthdNm = "Â÷·®µ¿°£ÀÌÀûµî·Ï[SlabYdJspFaEJB.updSyCarMvStkReg]";
+		String mthdNm = "ì°¨ëŸ‰ë™ê°„ì´ì ë“±ë¡[SlabYdJspFaEJB.updSyCarMvStkReg]";
 		String logId  = slabUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + slabUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + slabUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			slabUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("updSyCarMvStkReg", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2018,7 +2018,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String rtnCd	 		= slabUtils.nvl(jrRtn.getFieldString("RTN_CD"), "0");
 			String rtnMsg	 		= slabUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			slabUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
-			//ROLLBACK ½Ã Àü¹® ¹ß»ı
+			//ROLLBACK ì‹œ ì „ë¬¸ ë°œìƒ
 			if (!"0".equals(rtnCd)) {
 				
 				jrRtn.setResultCode(logId);
@@ -2028,14 +2028,14 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 				sndConn.trx("sndInterface", new Class[] { JDTORecord.class }, new Object[] { jrRtn });
 
 			}
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("Â÷·®µ¿°£ÀÌÀû Ã³¸®°¡ ¿Ï·á µÆ½À´Ï´Ù.");
+				gdRet.setMessage("ì°¨ëŸ‰ë™ê°„ì´ì  ì²˜ë¦¬ê°€ ì™„ë£Œ ëìŠµë‹ˆë‹¤.");
 			} 			
 			slabUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2048,9 +2048,9 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµå°ü¸® > ¿¬ÁÖ½½¶óºê¾ßµå > monitoring > ¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ ¸Ş¼¼Áö Àü¼Û
-	 *  ÇãÁ¤¿í
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ë©”ì„¸ì§€ ì „ì†¡
+	 *  í—ˆì •ìš±
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @throws DAOException
 	 */
 	public List sendMsg(HashMap paramMap, ArrayList paramList) throws DAOException {
@@ -2061,7 +2061,7 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 		List  returnList = new ArrayList();
 		
 		String logId  = slabUtils.getLogId();
-		String methodNm = "½½¶óºê¾ßµå ¸Ş¼¼Áö Àü¼Û[SlabYdJspFaEJB.sendMsg]";
+		String methodNm = "ìŠ¬ë¼ë¸Œì•¼ë“œ ë©”ì„¸ì§€ ì „ì†¡[SlabYdJspFaEJB.sendMsg]";
 
 		try {
 			slabUtils.printLog(logId, methodNm, "F+");
@@ -2085,24 +2085,24 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *  ¾ßµå°ü¸® > ¿¬ÁÖ½½¶óºê¾ßµå > monitoring > ¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ °èÈ¹·® ¼öÁ¤
-	 *  ÇãÁ¤¿í
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *  ì•¼ë“œê´€ë¦¬ > ì—°ì£¼ìŠ¬ë¼ë¸Œì•¼ë“œ > monitoring > ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ê³„íšëŸ‰ ìˆ˜ì •
+	 *  í—ˆì •ìš±
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param gdReq
 	 * @return
 	 * @throws DAOException
 	 * @throws JDTOException
 	 */
 	public GridData cSlabYdInOutStatPlanModify(GridData gdReq) throws DAOException {
-		String mthdNm = "¿¬ÁÖ¾ßµå ÇöÈ²ÆÇ °èÈ¹·® ¼öÁ¤[SlabYdJspFaEJB.cSlabYdInOutStatPlanModify]";
+		String mthdNm = "ì—°ì£¼ì•¼ë“œ í˜„í™©íŒ ê³„íšëŸ‰ ìˆ˜ì •[SlabYdJspFaEJB.cSlabYdInOutStatPlanModify]";
 		String logId  = slabUtils.getLogId();
 
 		try{
 			mthdNm = mthdNm + " < " + slabUtils.trim(gdReq.getParam("jsp_page_nm")) + "(" + slabUtils.trim(gdReq.getParam("jsp_page_id")) + ")";
 			slabUtils.printLog(logId, mthdNm, "F+");
 
-			gdReq.setNavigateValue(mthdNm); // »óÀ§ Method ¸í
-			gdReq.setIPAddress(logId);      // Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(mthdNm); // ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId);      // Logging ì„ ìœ„í•œ ID
 
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)ejbConn.trx("cSlabYdInOutStatPlanModify", new Class[] { GridData.class }, new Object[] { gdReq });
@@ -2111,14 +2111,14 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 			String rtnMsg	 		= slabUtils.nvl(jrRtn.getFieldString("RTN_MSG"), "");
 			slabUtils.printLog(logId, mthdNm + " rtnCd:"+ rtnCd, "SL");
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			GridData gdRet = OperateGridData.cloneResponseGridData(gdReq);
-			//È­¸é ¸Ş½ÃÁö
+			//í™”ë©´ ë©”ì‹œì§€
 			if (!"1".equals(rtnCd)) {
 				gdRet.setMessage(rtnMsg);
 				m_ctx.setRollbackOnly();
 			}else{
-				gdRet.setMessage("°èÈ¹·® ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+				gdRet.setMessage("ê³„íšëŸ‰ ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			} 			
 			slabUtils.printLog(logId, mthdNm, "F-");
 			return gdRet;
@@ -2132,22 +2132,22 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±ÇÇÏºÒ°¡À§Ä¡ Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getYdDnWoLocNotAllowedInfo(GridData gdReq) throws DAOException {
-		String methodNm = "±ÇÇÏºÒ°¡À§Ä¡ Á¶È¸[SlabYdJspFaEJB.getYdDnWoLocNotAllowedInfo]";
+		String methodNm = "ê¶Œí•˜ë¶ˆê°€ìœ„ì¹˜ ì¡°íšŒ[SlabYdJspFaEJB.getYdDnWoLocNotAllowedInfo]";
 		String logId = slabUtils.getLogId();
 
 		try {
-			gdReq.setNavigateValue(methodNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(methodNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			return (GridData)ejbConn.trx("getYdDnWoLocNotAllowedInfo", new Class[] { GridData.class }, new Object[] { gdReq });
 		} catch(DAOException e) {
@@ -2158,22 +2158,22 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±ÇÇÏºÒ°¡Àç·á Á¶È¸
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê¶Œí•˜ë¶ˆê°€ì¬ë£Œ ì¡°íšŒ
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return GridData
 	 *      @throws DAOException
 	*/
 	public GridData getSlabDnNotAllowedInfo(GridData gdReq) throws DAOException {
-		String methodNm = "±ÇÇÏºÒ°¡Àç·á Á¶È¸[SlabYdJspFaEJB.getSlabDnNotAllowedInfo]";
+		String methodNm = "ê¶Œí•˜ë¶ˆê°€ì¬ë£Œ ì¡°íšŒ[SlabYdJspFaEJB.getSlabDnNotAllowedInfo]";
 		String logId = slabUtils.getLogId();
 
 		try {
-			gdReq.setNavigateValue(methodNm); //»óÀ§ Method ¸í
-			gdReq.setIPAddress(logId); //Logging À» À§ÇÑ ID
+			gdReq.setNavigateValue(methodNm); //ìƒìœ„ Method ëª…
+			gdReq.setIPAddress(logId); //Logging ì„ ìœ„í•œ ID
 
-			//Á¶È¸
+			//ì¡°íšŒ
 			EJBConnector ejbConn = new EJBConnector("default", "SlabYdJspSeEJB", this);
 			return (GridData)ejbConn.trx("getSlabDnNotAllowedInfo", new Class[] { GridData.class }, new Object[] { gdReq });
 		} catch(DAOException e) {
@@ -2184,15 +2184,15 @@ public class SlabYdJspFaEJBBean extends BaseSessionBean {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÆÈ·¿Æ® ÀÚµ¿ »óÂ÷¿Ï·á Ã³¸® ¿©ºÎ º¯°æ
-	 *		¿À¿øÀç(1524711)
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : íŒ”ë ›íŠ¸ ìë™ ìƒì°¨ì™„ë£Œ ì²˜ë¦¬ ì—¬ë¶€ ë³€ê²½
+	 *		ì˜¤ì›ì¬(1524711)
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param inDto
 	 *      @return 
 	 *      @throws JDTOException
 	*/
 	public GridData updPtAutoComplete(GridData inDto) throws JDTOException {
-		String methodNm = "ÆÈ·¿Æ® ÀÚµ¿ »óÂ÷¿Ï·á Ã³¸® ¿©ºÎ º¯°æ[SlabYdJspFaEJB.updPtAutoComplete]";
+		String methodNm = "íŒ”ë ›íŠ¸ ìë™ ìƒì°¨ì™„ë£Œ ì²˜ë¦¬ ì—¬ë¶€ ë³€ê²½[SlabYdJspFaEJB.updPtAutoComplete]";
 		String logId = slabUtils.getLogId();
 		
 		GridData gdRes = null;

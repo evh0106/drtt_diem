@@ -14,14 +14,14 @@ public class PSlabYdTcConst {
 	// TC Code Map
 	public HashMap regTcMap =new HashMap();
 
-	// º€ºˆΩ≈ TCCode vs Method Map
+	// ÏÜ°ÏàòÏã† TCCode vs Method Map
 	public HashMap rcvTcFaMap = new HashMap();
 	public HashMap rcvTcOpMap = new HashMap();
 	public HashMap rcvTcDescMap =new HashMap();
 	public HashMap rcvTcYdMap 	=new HashMap();
 	
 	
-	// Facade CAll¿ª ¿ß«— TCCode
+	// Facade CAllÏùÑ ÏúÑÌïú TCCode
 	public final String FACADE_TCCODE ="FACADEPT";	
 	
 	
@@ -38,7 +38,7 @@ public class PSlabYdTcConst {
 	
 	
 	/**
-	 * TcCodeø° ¥Î«— MethodName ¡§«’º∫ Check
+	 * TcCodeÏóê ÎåÄÌïú MethodName Ï†ïÌï©ÏÑ± Check
 	 * @param String TC Code, String MethodName
 	 * @return : true, false
 	 */
@@ -76,9 +76,9 @@ public class PSlabYdTcConst {
 
 	
 	/**
-	 * TCƒ⁄µÂ∑Œ ≥ª∫Œ, ø‹∫Œ, Facade º€Ω≈¿ª ±∏∫–«ÿº≠ ∏Æ≈œ«—¥Ÿ
+	 * TCÏΩîÎìúÎ°ú ÎÇ¥Î∂Ä, Ïô∏Î∂Ä, Facade ÏÜ°Ïã†ÏùÑ Íµ¨Î∂ÑÌï¥ÏÑú Î¶¨ÌÑ¥ÌïúÎã§
 	 * @param  	inTcCode
-	 * @return  1:≥ª∫ŒJMS, 2:∏Æ∏∆Æ EAI, 3:L2 EAI, 9:Facade, 
+	 * @return  1:ÎÇ¥Î∂ÄJMS, 2:Î¶¨Î™®Ìä∏ EAI, 3:L2 EAI, 9:Facade, 
 	 *          0:Unknown, -1:Error
 	 */
 	public int chkTcType(String szTcCode)
@@ -95,7 +95,7 @@ public class PSlabYdTcConst {
 		szTcCode.trim().toUpperCase();
 
 		//
-		// Facade º€Ω≈  Call Check
+		// Facade ÏÜ°Ïã†  Call Check
 		//
 		if( szTcCode.equals(FACADE_TCCODE))
 			return 3;
@@ -108,10 +108,10 @@ public class PSlabYdTcConst {
 		//
 		// TC Type Check
 		//
-		if("J".equals(szChkID) )		// ≥ª∫Œ JMS MSG
+		if("J".equals(szChkID) )		// ÎÇ¥Î∂Ä JMS MSG
 			return 1;
 		else if("R".equals(szChkID)){	// Remote EAI MSG
-			//√‚«œhttp ->jms
+			//Ï∂úÌïòhttp ->jms
 		    if(szTcCode.substring(2,4).equals("DM")){
 		    	return 1;
 		    }else{
@@ -137,7 +137,7 @@ public class PSlabYdTcConst {
 	 */																																																																																																																																			
 	public void tcRcvMethodInit(){
 		//
-		// TC Code, Method µÓ∑œ
+		// TC Code, Method Îì±Î°ù
 		//
 
 		String szMsg="";
@@ -160,22 +160,22 @@ public class PSlabYdTcConst {
 				// TC Map Reg
 				szTcCode=ydRcvTcDefMap.strTcMap[i][0].trim().toUpperCase();
 				regTcMap.put(""+i, szTcCode);
-//				System.out.println("µÓ∑œ TC Code=["+szTcCode+"]");
+//				System.out.println("Îì±Î°ù TC Code=["+szTcCode+"]");
 				
 				
 				// FaName Map Reg
 				rcvTcFaMap.put(szTcCode, ydRcvTcDefMap.strTcMap[i][1]);
-//				System.out.println("µÓ∑œ FaName=["+ydRcvTcDefMap.strTcMap[i][1]+"]");
+//				System.out.println("Îì±Î°ù FaName=["+ydRcvTcDefMap.strTcMap[i][1]+"]");
 				
 				
 				// OpName Map Reg
 				rcvTcOpMap.put(szTcCode, ydRcvTcDefMap.strTcMap[i][2]);
-//				System.out.println("µÓ∑œ OpName=["+ydRcvTcDefMap.strTcMap[i][2]+"]");
+//				System.out.println("Îì±Î°ù OpName=["+ydRcvTcDefMap.strTcMap[i][2]+"]");
 				
 				
 				// Desc Map Reg
 				rcvTcDescMap.put(szTcCode, ydRcvTcDefMap.strTcMap[i][3]);
-//				System.out.println("µÓ∑œ Desc=["+ydRcvTcDefMap.strTcMap[i][3]+"]\n");
+//				System.out.println("Îì±Î°ù Desc=["+ydRcvTcDefMap.strTcMap[i][3]+"]\n");
 				
 				// yd Map Reg
 				if(szTcCode.substring(0,4).equals("YDYD")){

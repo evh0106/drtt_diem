@@ -16,7 +16,7 @@ import com.inisteel.cim.yd.common.util.YdUtils;
 
 
 /**
- * Ãâ°íÀÛ¾÷¿ä±¸ Facade Session EJB
+ * ì¶œê³ ì‘ì—…ìš”êµ¬ Facade Session EJB
  *
  * @ejb.bean name="IssueWrkDmdFaEJB" jndi-name="IssueWrkDmdFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -49,29 +49,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Y3 Take-In¿Ï·á (Y3YDL013)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Y3 Take-Inì™„ë£Œ (Y3YDL013)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvY3TakeInCmpl(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? Y3 Take-In¿Ï·á
+		// YD-UC-???? Y3 Take-Inì™„ë£Œ
 		// TC : Y3YDL013
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvY3TakeInCmpl";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -83,7 +83,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //AÈÄÆÇTake-InÀç·áµî·Ï
+            //Aí›„íŒTake-Inì¬ë£Œë“±ë¡
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procY3TakeInCmpl", inRecord);
 
         } catch (Exception e) {         
@@ -95,7 +95,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="Y3 Take-In¿Ï·á Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Y3 Take-Inì™„ë£Œ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -107,16 +107,16 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÁ¤Á¤L2 C3 Take-In¿Ï·á (C3YDL005, C7YDL005)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì •ì •L2 C3 Take-Inì™„ë£Œ (C3YDL005, C7YDL005)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvC3TakeInCmpl(JDTORecord inRecord) throws JDTOException {
 		
-		logger.println(LogLevel.DEBUG, "rcvC3TakeInCmpl() ¸Ş¼Òµå°¡ È£ÃâµÇ¾ú½À´Ï´Ù.");
+		logger.println(LogLevel.DEBUG, "rcvC3TakeInCmpl() ë©”ì†Œë“œê°€ í˜¸ì¶œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		
 		Object[] keyArr = ((JDTORecordImplMap)inRecord).getFieldNames();
 		for(int ii=0;ii<keyArr.length;ii++){
@@ -132,7 +132,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -142,7 +142,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
         try {
             
-            //C¿¬ÁÖTake-InÀç·áµî·Ï
+            //Cì—°ì£¼Take-Inì¬ë£Œë“±ë¡
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procC3TakeInCmpl", inRecord);
 
         } catch (Exception e) {         
@@ -155,7 +155,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
         logger.println(LogLevel.DEBUG, "rcvC3TakeInCmpl() 3 ");
 		
-		szMsg="C3 Take-In¿Ï·á Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="C3 Take-Inì™„ë£Œ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -163,35 +163,35 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬  Á¤Á¤º¸±Ş¿ä±¸  (HRYDJ008)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°  ì •ì •ë³´ê¸‰ìš”êµ¬  (HRYDJ008)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws DAOException
 	 */
 	public void rcvCHrShearInSupLotCompFromHr(JDTORecord inRecord) throws DAOException {
 		//
-		// YD-UC-???? C¿­¿¬  Á¤Á¤º¸±Ş¿ä±¸
+		// YD-UC-???? Cì—´ì—°  ì •ì •ë³´ê¸‰ìš”êµ¬
 		// TC : YDYDJ252
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrShearInSupLotCompFromHr";
 		JDTORecord   outRecord   	= JDTORecordFactory.getInstance().create();
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return;
 		}
 		
         try {
-            //C¿­¿¬ Á¤Á¤ÀÔÃø º¸±ŞLot Æí¼º
+            //Cì—´ì—° ì •ì •ì…ì¸¡ ë³´ê¸‰Lot í¸ì„±
 //sjhkim        	outRecord = (JDTORecord)ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrShearInSupLotComp", inRecord);
         	outRecord = (JDTORecord)ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrShearInSupLotComp", inRecord);
             String sRTN_CD		= StringHelper.evl(outRecord.getFieldString("RTN_CD"), "0");
@@ -211,7 +211,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬  Á¤Á¤º¸±Ş¿ä±¸ - HRYDJ008 ("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°  ì •ì •ë³´ê¸‰ìš”êµ¬ - HRYDJ008 ("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -219,29 +219,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : R3 Á¤Á¤ÀÔÃøº¸±ŞLotÆí¼º(H2YDL001)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : R3 ì •ì •ì…ì¸¡ë³´ê¸‰Lotí¸ì„±(H2YDL001)
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrShearInSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 Á¤Á¤ÀÔÃøº¸±ŞLotÆí¼º
+		// YD-UC-???? R3 ì •ì •ì…ì¸¡ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ252
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrShearInSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -253,7 +253,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬ Á¤Á¤ÀÔÃø º¸±ŞLot Æí¼º
+            //Cì—´ì—° ì •ì •ì…ì¸¡ ë³´ê¸‰Lot í¸ì„±
              ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrShearInSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -265,7 +265,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="R3 Á¤Á¤ÀÔÃøº¸±ŞLotÆí¼º ("+szMethodName+") ¿Ï·á";
+		szMsg="R3 ì •ì •ì…ì¸¡ë³´ê¸‰Lotí¸ì„± ("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -275,40 +275,40 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : R3 Á¤Á¤ÀÔÃøLine-In¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : R3 ì •ì •ì…ì¸¡Line-Inìš”êµ¬
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvR3ShearInLineInReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 Á¤Á¤ÀÔÃøLine-In¿ä±¸
+		// YD-UC-???? R3 ì •ì •ì…ì¸¡Line-Inìš”êµ¬
 		// TC : R3YDL001
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvR3ShearInLineInReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
 		}
 		
         try {
-            //C¿­¿¬ Á¤Á¤ÀÔÃø Line-In ¿ä±¸
+            //Cì—´ì—° ì •ì •ì…ì¸¡ Line-In ìš”êµ¬
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procR3ShearInLineInReq", inRecord);
 //            ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procR3ShearInLineInReq", inRecord);
             
-            //C¿­¿¬ Á¤Á¤ÀÔÃø º¸±ŞLot Æí¼º
+            //Cì—´ì—° ì •ì •ì…ì¸¡ ë³´ê¸‰Lot í¸ì„±
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrShearInSupLotComp", inRecord);
             
 
@@ -321,7 +321,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="R3 Á¤Á¤ÀÔÃøLine-In¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="R3 ì •ì •ì…ì¸¡Line-Inìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -330,29 +330,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : R3 ¼ö³ÃÅÊÅ©º¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : R3 ìˆ˜ëƒ‰íƒ±í¬ë³´ê¸‰Lotí¸ì„±
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrWtclTnkSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 ¼ö³ÃÅÊÅ©º¸±ŞLotÆí¼º
+		// YD-UC-???? R3 ìˆ˜ëƒ‰íƒ±í¬ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ251
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrWtclTnkSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -364,7 +364,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬ ¼ö³ÃÅÊÅ© º¸±Ş Lot Æí¼º
+            //Cì—´ì—° ìˆ˜ëƒ‰íƒ±í¬ ë³´ê¸‰ Lot í¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrWtclTnkSupLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrWtclTnkSupLotComp", inRecord);
 
@@ -377,7 +377,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="R3 ¼ö³ÃÅÊÅ©º¸±ŞLotÆí¼º("+szMethodName+") ¿Ï·á";
+		szMsg="R3 ìˆ˜ëƒ‰íƒ±í¬ë³´ê¸‰Lotí¸ì„±("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -386,29 +386,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : R3 ¼ö³ÃÅÊÅ©Line-In¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : R3 ìˆ˜ëƒ‰íƒ±í¬Line-Inìš”êµ¬
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvR3WtclTnkLineInReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 ¼ö³ÃÅÊÅ©Line-In¿ä±¸
+		// YD-UC-???? R3 ìˆ˜ëƒ‰íƒ±í¬Line-Inìš”êµ¬
 		// TC : R3YDL002
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvR3WtclTnkLineInReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -420,7 +420,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬ ¼ö³ÃÅÊÅ© Line-In ¿ä±¸
+            //Cì—´ì—° ìˆ˜ëƒ‰íƒ±í¬ Line-In ìš”êµ¬
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procR3WtclTnkLineInReq", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procR3WtclTnkLineInReq", inRecord);
 
@@ -433,40 +433,40 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="R3 ¼ö³ÃÅÊÅ©Line-In¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="R3 ìˆ˜ëƒ‰íƒ±í¬Line-Inìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
 	} // end of rcvR3WtclTnkLineInReq()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖC¿­¿¬º¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Lotí¸ì„±
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsCHrSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖC¿­¿¬º¸±ŞLotÆí¼º
+		// YD-UC-???? Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ231
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsCHrSupLotComp";
 		
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
 		}
 		
         try {
-            //C¿¬ÁÖ C¿­¿¬ º¸±Ş Lot Æí¼º
+            //Cì—°ì£¼ Cì—´ì—° ë³´ê¸‰ Lot í¸ì„±
         	ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsCHrSupLotComp", inRecord);
             
         } catch (Exception e) {         
@@ -475,35 +475,35 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } // end of try catch
 		
-		szMsg="C¿¬ÁÖC¿­¿¬º¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCCsCHrSupLotComp()
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖM-Scarfingº¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼M-Scarfingë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsMScarfingSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖM-Scarfingº¸±ŞLotÆí¼º
+		// YD-UC-???? Cì—°ì£¼M-Scarfingë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ232
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsMScarfingSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -515,7 +515,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
         	
-            //C¿¬ÁÖ M-Scarfing º¸±Ş Lot Æí¼º
+            //Cì—°ì£¼ M-Scarfing ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsMScarfingSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -527,7 +527,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖM-Scarfingº¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼M-Scarfingë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCCsMScarfingSupLotComp()
@@ -537,29 +537,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÁ¤Á¤º¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì •ì •ë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsShearSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖÁ¤Á¤º¸±ŞLotÆí¼º
+		// YD-UC-???? Cì—°ì£¼ì •ì •ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ233
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsShearSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -570,7 +570,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 		
         try {
-            //C¿¬ÁÖ Á¤Á¤ º¸±Ş Lot Æí¼º
+            //Cì—°ì£¼ ì •ì • ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsShearSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -582,7 +582,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖÁ¤Á¤º¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì •ì •ë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 //
 	} // end of rcvCCsShearSupLotComp()
@@ -592,29 +592,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖC¿­¿¬º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsCHrSupCarryInWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖC¿­¿¬º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 		// TC : YDYDJ241
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsCHrSupCarryInWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -626,7 +626,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖC¿­¿¬º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+            //Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsCHrSupCarryInWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -638,7 +638,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖC¿­¿¬º¸±ŞCarry-InÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼Cì—´ì—°ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsCHrSupCarryInWrkReq()
@@ -649,29 +649,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖScarfingº¸±ŞCarry-InÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼Scarfingë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsScarfingSupCarryInWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖScarfingº¸±ŞCarry-InÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—°ì£¼Scarfingë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 		// TC : YDYDJ242
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsScarfingSupCarryInWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -683,7 +683,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ M-Scarfing º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+            //Cì—°ì£¼ M-Scarfing ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsScarfingSupCarryInWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -695,7 +695,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖScarfingº¸±ŞCarry-InÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼Scarfingë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsScarfingSupCarryInWrkReq()
@@ -707,29 +707,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÁ¤Á¤º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì •ì •ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCSShearSupCarryInWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖÁ¤Á¤º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—°ì£¼ì •ì •ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
 		// TC : YDYDJ243
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCSShearSupCarryInWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -741,7 +741,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ Á¤Á¤ º¸±ŞCarry-InÀÛ¾÷¿ä±¸
+            //Cì—°ì£¼ ì •ì • ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCSShearSupCarryInWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -753,7 +753,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖÁ¤Á¤º¸±ŞCarry-InÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì •ì •ë³´ê¸‰Carry-Inì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCSShearSupCarryInWrkReq()
@@ -766,29 +766,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖ¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsMatlFtmvCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖ¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º
+		// YD-UC-???? Cì—°ì£¼ì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±
 		// TC : YDYDJ234
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsMatlFtmvCarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -800,7 +800,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ ¼ÒÀçÀÌ¼Û »óÂ÷ LOT Æí¼º
+            //Cì—°ì£¼ ì†Œì¬ì´ì†¡ ìƒì°¨ LOT í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsMatlFtmvCarLdLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -812,7 +812,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖ¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsMatlFtmvCarLdLotComp()
@@ -826,29 +826,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvSUnMatlFtmvCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º
+		// YD-UC-???? í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±
 		// TC : YDYDJ288
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvSUnMatlFtmvCarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -860,7 +860,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //ÅëÇÕ¾ßµå ¼ÒÀçÀÌ¼Û »óÂ÷ LOT Æí¼º
+            //í†µí•©ì•¼ë“œ ì†Œì¬ì´ì†¡ ìƒì°¨ LOT í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procSUnMatlFtmvCarLdLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -872,7 +872,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvSUnMatlFtmvCarLdLotComp()
@@ -881,29 +881,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 		
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º(Å©·¹ÀÎº°)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±(í¬ë ˆì¸ë³„)
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvSUnMatlFtmvCarLdLotCompCrn(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º
+		// YD-UC-???? í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„±
 		// TC : YDYDJ295
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvSUnMatlFtmvCarLdLotCompCrn";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -915,7 +915,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //ÅëÇÕ¾ßµå ¼ÒÀçÀÌ¼Û »óÂ÷ LOT Æí¼º
+            //í†µí•©ì•¼ë“œ ì†Œì¬ì´ì†¡ ìƒì°¨ LOT í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procSUnMatlFtmvCarLdLotCompCrn", inRecord);
 
         } catch (Exception e) {         
@@ -927,7 +927,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="ÅëÇÕ¾ßµå¼ÒÀçÀÌ¼Û»óÂ÷LOTÆí¼º Ã³¸®(Å©·¹ÀÎº°)("+szMethodName+") ¿Ï·á";
+		szMsg="í†µí•©ì•¼ë“œì†Œì¬ì´ì†¡ìƒì°¨LOTí¸ì„± ì²˜ë¦¬(í¬ë ˆì¸ë³„)("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvSUnMatlFtmvCarLdLotCompCrn()
@@ -936,9 +936,9 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖ¿ÜÆÇÃâÇÏ»óÂ÷LOTÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì™¸íŒì¶œí•˜ìƒì°¨LOTí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
@@ -949,21 +949,21 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		// TC : YDYDJ235
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg = "";
 		String szMethodName = "rcvCCsOutplDistCarLdlotComp";
 
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg = szMethodName + "() ½ÇÇà ½ÇÆĞ";
+			szMsg = szMethodName + "() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 
 		try {
-            //C¿¬ÁÖ ¿ÜÆÇÃâÇÏ »óÂ÷ LOT Æí¼º
+            //Cì—°ì£¼ ì™¸íŒì¶œí•˜ ìƒì°¨ LOT í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsOutplDistCarLdlotComp", inRecord);
         } catch (Exception e) {         
             szMsg = szMethodName + "() " + e.getMessage(); 
@@ -971,7 +971,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } // end of try catch
 
-		szMsg="C¿¬ÁÖ¿ÜÆÇÃâÇÏ»óÂ÷LOTÆí¼ºÃ³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì™¸íŒì¶œí•˜ìƒì°¨LOTí¸ì„±ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	} // end of rcvCCsOutplDistCarLdlotComp()
 	
@@ -985,29 +985,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖ´ëÂ÷»óÂ÷LOTÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ëŒ€ì°¨ìƒì°¨LOTí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsTcarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖ´ëÂ÷»óÂ÷LOTÆí¼º
+		// YD-UC-???? Cì—°ì£¼ëŒ€ì°¨ìƒì°¨LOTí¸ì„±
 		// TC : YDYDJ236
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsTcarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1019,7 +1019,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ ´ëÂ÷ »óÂ÷ LOT Æí¼º
+            //Cì—°ì£¼ ëŒ€ì°¨ ìƒì°¨ LOT í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsTcarLdLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -1031,7 +1031,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖ´ëÂ÷»óÂ÷LOTÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ëŒ€ì°¨ìƒì°¨LOTí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsTcarLdLotComp()
@@ -1046,22 +1046,22 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsCarLdWrkReq(JDTORecord inRecord) throws Exception {
 		//
-		// YD-UC-???? C¿¬ÁÖÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—°ì£¼ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ244
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsCarLdWrkReq";
@@ -1069,7 +1069,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1081,22 +1081,22 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ Â÷·®»óÂ÷ ÀÛ¾÷¿ä±¸
+            //Cì—°ì£¼ ì°¨ëŸ‰ìƒì°¨ ì‘ì—…ìš”êµ¬
         	szRtnMsg = (String)ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsCarLdWrkReq", inRecord);
-        	//¸®ÅÏ°ª¿¡ µû¸¥ ¿¹¿ÜÃ³¸® ÇÊ¿ä - ·Ñ¹éÃ³¸®°¡ µÇµµ·Ï...
-        	szMsg ="[C¿¬ÁÖÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ - Facade] ¸®ÅÏ°ª = " + szRtnMsg; 
+        	//ë¦¬í„´ê°’ì— ë”°ë¥¸ ì˜ˆì™¸ì²˜ë¦¬ í•„ìš” - ë¡¤ë°±ì²˜ë¦¬ê°€ ë˜ë„ë¡...
+        	szMsg ="[Cì—°ì£¼ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ - Facade] ë¦¬í„´ê°’ = " + szRtnMsg; 
             ydUtils.putLog(szSessionName, szMethodName, szMsg,YdConstant.DEBUG);
 
         } catch (Exception e) {         
-            szMsg ="[C¿¬ÁÖÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ - Facade] ¿¹¿Ü¹ß»ı : " + e.getMessage(); 
+            szMsg ="[Cì—°ì£¼ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ - Facade] ì˜ˆì™¸ë°œìƒ : " + e.getMessage(); 
             ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
-            //¿¹¿Ü°¡ ¹ß»ıÇÏ´Â °æ¿ì¿¡´Â ·Ñ¹éÃ³¸®¸¦ ÁøÇàÇÑ´Ù.
+            //ì˜ˆì™¸ê°€ ë°œìƒí•˜ëŠ” ê²½ìš°ì—ëŠ” ë¡¤ë°±ì²˜ë¦¬ë¥¼ ì§„í–‰í•œë‹¤.
            throw new JDTOException(szMsg);
 
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsCarLdWrkReq()
@@ -1105,33 +1105,33 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 		
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÅëÇÕ¾ßµåÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í†µí•©ì•¼ë“œì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvSlabTotCarLdWrkReq(JDTORecord inRecord) throws Exception {
 		//
-		// YD-UC-???? ÅëÇÕ¾ßµåÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? í†µí•©ì•¼ë“œì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ244
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvSlabTotCarLdWrkReq";
-		String szOperationName = "ÅëÇÕ¾ßµåÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸";
+		String szOperationName = "í†µí•©ì•¼ë“œì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬";
 		String szRtnMsg = null;
 		
-		szMsg="["+szOperationName+" - Facade] ¸Ş¼Òµå ½ÃÀÛ";
+		szMsg="["+szOperationName+" - Facade] ë©”ì†Œë“œ ì‹œì‘";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1140,22 +1140,22 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //ÅëÇÕ¾ßµåÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+            //í†µí•©ì•¼ë“œì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
         	szRtnMsg = (String)ydEjbCon.trx("IssueWrkDmdSeEJB", "procSlabTotCarLdWrkReq", inRecord);
-        	//¸®ÅÏ°ª¿¡ µû¸¥ ¿¹¿ÜÃ³¸® ÇÊ¿ä - ·Ñ¹éÃ³¸®°¡ µÇµµ·Ï...
-        	szMsg ="["+szOperationName+" - Facade] ¸®ÅÏ°ª = " + szRtnMsg; 
+        	//ë¦¬í„´ê°’ì— ë”°ë¥¸ ì˜ˆì™¸ì²˜ë¦¬ í•„ìš” - ë¡¤ë°±ì²˜ë¦¬ê°€ ë˜ë„ë¡...
+        	szMsg ="["+szOperationName+" - Facade] ë¦¬í„´ê°’ = " + szRtnMsg; 
             ydUtils.putLog(szSessionName, szMethodName, szMsg,YdConstant.DEBUG);
 
         } catch (Exception e) {         
-            szMsg ="["+szOperationName+" - Facade] ¿¹¿Ü¹ß»ı : " + e.getMessage(); 
+            szMsg ="["+szOperationName+" - Facade] ì˜ˆì™¸ë°œìƒ : " + e.getMessage(); 
             ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
-            //¿¹¿Ü°¡ ¹ß»ıÇÏ´Â °æ¿ì¿¡´Â ·Ñ¹éÃ³¸®¸¦ ÁøÇàÇÑ´Ù.
+            //ì˜ˆì™¸ê°€ ë°œìƒí•˜ëŠ” ê²½ìš°ì—ëŠ” ë¡¤ë°±ì²˜ë¦¬ë¥¼ ì§„í–‰í•œë‹¤.
             throw new JDTOException(szMsg);
 
         } // end of try catch
 
 		
-		szMsg="["+szOperationName+" - Facade] ¸Ş¼Òµå ³¡";
+		szMsg="["+szOperationName+" - Facade] ë©”ì†Œë“œ ë";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvSlabTotCarLdWrkReq()
@@ -1165,29 +1165,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖ´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsTcarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖ´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—°ì£¼ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ249
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsTcarLdWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1199,7 +1199,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ ´ëÂ÷»óÂ÷ ÀÛ¾÷¿ä±¸
+            //Cì—°ì£¼ ëŒ€ì°¨ìƒì°¨ ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsTcarLdWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -1211,7 +1211,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖ´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsTcarLdWrkReq()
@@ -1226,32 +1226,32 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvAPlRefurSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? AÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º
+		// YD-UC-???? Aí›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ237
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvAPlRefurSupLotComp";
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
 		}
         try {
-            //AÈÄÆÇ °¡¿­·Î º¸±Ş Lot Æí¼º
+            //Aí›„íŒ ê°€ì—´ë¡œ ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procAPlRefurSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -1260,7 +1260,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } // end of try catch
 		
-		szMsg="AÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlRefurSupLotComp()
@@ -1268,29 +1268,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇCarry-InÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒCarry-Inì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvAPlCarryInWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? AÈÄÆÇCarry-InÀÛ¾÷¿ä±¸
+		// YD-UC-???? Aí›„íŒCarry-Inì‘ì—…ìš”êµ¬
 		// TC : YDYDJ245
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvAPlCarryInWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1301,7 +1301,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 		
         try {
-            //AÈÄÆÇ Carry-In ÀÛ¾÷¿ä±¸
+            //Aí›„íŒ Carry-In ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procAPlCarryInWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -1313,7 +1313,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="AÈÄÆÇCarry-InÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒCarry-Inì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlCarryInWrkReq()
@@ -1324,32 +1324,32 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2ÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 2í›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvBPlRefurSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? 2ÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º
+		// YD-UC-???? 2í›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ497
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvBPlRefurSupLotComp";
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
 		}
         try {
-            //2ÈÄÆÇ °¡¿­·Î º¸±Ş Lot Æí¼º
+            //2í›„íŒ ê°€ì—´ë¡œ ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procBPlRefurSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -1358,7 +1358,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } // end of try catch
 		
-		szMsg="AÈÄÆÇ°¡¿­·Îº¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒê°€ì—´ë¡œë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlRefurSupLotComp()
@@ -1366,29 +1366,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 2ÈÄÆÇCarry-InÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 2í›„íŒCarry-Inì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvBPlCarryInWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? 2ÈÄÆÇCarry-InÀÛ¾÷¿ä±¸
+		// YD-UC-???? 2í›„íŒCarry-Inì‘ì—…ìš”êµ¬
 		// TC : YDYDJ495
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvBPlCarryInWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1396,7 +1396,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		}
 		
         try {
-            //2ÈÄÆÇ Carry-In ÀÛ¾÷¿ä±¸
+            //2í›„íŒ Carry-In ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procBPlCarryInWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -1408,7 +1408,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="2ÈÄÆÇCarry-InÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="2í›„íŒCarry-Inì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlCarryInWrkReq()
@@ -1419,29 +1419,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇ¼ÒÀçÀÌ¼Û»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒì†Œì¬ì´ì†¡ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvAPlMatlFtmvCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? AÈÄÆÇ¼ÒÀçÀÌ¼Û»óÂ÷LotÆí¼º
+		// YD-UC-???? Aí›„íŒì†Œì¬ì´ì†¡ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ238
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvAPlMatlFtmvCarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1452,7 +1452,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 		
         try {
-            //AÈÄÆÇ ¼ÒÀçÀÌ¼Û »óÂ÷ Lot Æí¼º
+            //Aí›„íŒ ì†Œì¬ì´ì†¡ ìƒì°¨ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procAPlMatlFtmvCarLdLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -1464,7 +1464,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="AÈÄÆÇ¼ÒÀçÀÌ¼Û»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒì†Œì¬ì´ì†¡ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlMatlFtmvCarLdLotComp()
@@ -1479,29 +1479,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvAPlCarldWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? AÈÄÆÇÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? Aí›„íŒì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ246
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvAPlCarldWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1512,7 +1512,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 		
         try {
-            //AÈÄÆÇ Â÷·®»óÂ÷ ÀÛ¾÷¿ä±¸
+            //Aí›„íŒ ì°¨ëŸ‰ìƒì°¨ ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procAPlCarldWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -1524,7 +1524,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="AÈÄÆÇÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlCarldWrkReq()
@@ -1538,29 +1538,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇÃ¢°íÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì°½ê³ ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */	
 	public void rcvY4CarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÈÄÆÇÃ¢°íÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? í›„íŒì°½ê³ ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ247
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvY4CarLdWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1571,7 +1571,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 		
         try {
-            //ÈÄÆÇ Ã¢°í Â÷·®»óÂ÷ ÀÛ¾÷¿ä±¸
+            //í›„íŒ ì°½ê³  ì°¨ëŸ‰ìƒì°¨ ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procY4CarLdWrkReq", inRecord);
 
         } catch (Exception e) {         
@@ -1583,7 +1583,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="ÈÄÆÇÃ¢°íÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="í›„íŒì°½ê³ ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvY4CarLdWrkReq()
@@ -1597,30 +1597,30 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬Â÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrCarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬Â÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—´ì—°ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 
 		// TC : YDYDJ248
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrCarLdWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1632,7 +1632,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-//sjhkim            //C¿­¿¬ Â÷·®»óÂ÷ ÀÛ¾÷¿ä±¸
+//sjhkim            //Cì—´ì—° ì°¨ëŸ‰ìƒì°¨ ì‘ì—…ìš”êµ¬
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrCarLdWrkReq", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrCarLdWrkReq", inRecord);
 
@@ -1645,7 +1645,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬Â÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrCarLdWrkReq()
@@ -1660,29 +1660,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬¼ÒÀçÀÓ°¡°øLOTÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì†Œì¬ì„ê°€ê³µLOTí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrMatlRentProcLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬¼ÒÀçÀÓ°¡°øLOTÆí¼º
+		// YD-UC-???? Cì—´ì—°ì†Œì¬ì„ê°€ê³µLOTí¸ì„±
 		// TC : YDYDJ239
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrMatlRentProcLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1694,7 +1694,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬ ¼ÒÀç ÀÓ°¡°ø LOT Æí¼º
+            //Cì—´ì—° ì†Œì¬ ì„ê°€ê³µ LOT í¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrMatlRentProcLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrMatlRentProcLotComp", inRecord);
 
@@ -1707,7 +1707,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬¼ÒÀçÀÓ°¡°øLOTÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì†Œì¬ì„ê°€ê³µLOTí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrMatlRentProcLotComp()
@@ -1722,29 +1722,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : AÈÄÆÇÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Aí›„íŒì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvAPlChgLotNoEffSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? AÈÄÆÇÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º
+		// YD-UC-???? Aí›„íŒì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ264
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvAPlChgLotNoEffSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1756,7 +1756,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //AÈÄÆÇ ÀåÀÔLotNoÀû¿ë º¸±Ş Lot Æí¼º
+            //Aí›„íŒ ì¥ì…LotNoì ìš© ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procAPlChgLotNoEffSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -1768,7 +1768,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="AÈÄÆÇÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Aí›„íŒì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvAPlChgLotNoEffSupLotComp()
@@ -1780,29 +1780,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrTcarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? Cì—´ì—°ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ250
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrTcarLdWrkReq";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1814,7 +1814,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬ ´ëÂ÷»óÂ÷ ÀÛ¾÷¿ä±¸
+            //Cì—´ì—° ëŒ€ì°¨ìƒì°¨ ì‘ì—…ìš”êµ¬
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrTcarLdWrkReq", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrTcarLdWrkReq", inRecord);
 
@@ -1827,7 +1827,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬´ëÂ÷»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ëŒ€ì°¨ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrTcarLdWrkReq()
@@ -1842,29 +1842,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬¼ÒÀçÀÌ¼ÛLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì†Œì¬ì´ì†¡Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrMatlFtmvLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬¼ÒÀçÀÌ¼ÛLotÆí¼º
+		// YD-UC-???? Cì—´ì—°ì†Œì¬ì´ì†¡Lotí¸ì„±
 		// TC : YDYDJ253
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrMatlFtmvLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1876,7 +1876,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬¼ÒÀçÀÌ¼ÛLotÆí¼º
+            //Cì—´ì—°ì†Œì¬ì´ì†¡Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrMatlFtmvLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrMatlFtmvLotComp", inRecord);
 
@@ -1889,7 +1889,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬¼ÒÀçÀÌ¼ÛLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì†Œì¬ì´ì†¡Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrMatlFtmvLotComp()
@@ -1904,29 +1904,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬Á¦Ç°°í°£ÀÌ¼ÛLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì œí’ˆê³ ê°„ì´ì†¡Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrGdsWhFtmvLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬Á¦Ç°°í°£ÀÌ¼ÛLotÆí¼º
+		// YD-UC-???? Cì—´ì—°ì œí’ˆê³ ê°„ì´ì†¡Lotí¸ì„±
 		// TC : YDYDJ254
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrGdsWhFtmvLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -1938,7 +1938,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬Á¦Ç°°í°£ÀÌ¼ÛLotÆí¼º
+            //Cì—´ì—°ì œí’ˆê³ ê°„ì´ì†¡Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrGdsWhFtmvLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrGdsWhFtmvLotComp", inRecord);
 
@@ -1951,7 +1951,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬Á¦Ç°°í°£ÀÌ¼ÛLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì œí’ˆê³ ê°„ì´ì†¡Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrGdsWhFtmvLotComp()
@@ -1966,29 +1966,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬¼ÒÀç´ëÂ÷»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì†Œì¬ëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrMatlTcarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬¼ÒÀç´ëÂ÷»óÂ÷LotÆí¼º
+		// YD-UC-???? Cì—´ì—°ì†Œì¬ëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ255
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrMatlTcarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -2000,7 +2000,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬¼ÒÀç´ëÂ÷»óÂ÷LotÆí¼º
+            //Cì—´ì—°ì†Œì¬ëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrMatlTcarLdLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrMatlTcarLdLotComp", inRecord);
 
@@ -2013,7 +2013,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬¼ÒÀç´ëÂ÷»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì†Œì¬ëŒ€ì°¨ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrMatlTcarLdLotComp()
@@ -2028,29 +2028,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬Á¦Ç°´ëÂ÷»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì œí’ˆëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrGdsTcarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬Á¦Ç°´ëÂ÷»óÂ÷LotÆí¼º
+		// YD-UC-???? Cì—´ì—°ì œí’ˆëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ256
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCHrGdsTcarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -2062,7 +2062,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿­¿¬Á¦Ç°´ëÂ÷»óÂ÷LotÆí¼º
+            //Cì—´ì—°ì œí’ˆëŒ€ì°¨ìƒì°¨Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCHrGdsTcarLdLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCHrGdsTcarLdLotComp", inRecord);
 
@@ -2075,7 +2075,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬Á¦Ç°´ëÂ÷»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—°ì œí’ˆëŒ€ì°¨ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCHrGdsTcarLdLotComp()
@@ -2090,29 +2090,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇÁ¦Ç°ÀÌ¼Û»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì œí’ˆì´ì†¡ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvPlGdsFtmvCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÈÄÆÇÁ¦Ç°ÀÌ¼Û»óÂ÷LotÆí¼º
+		// YD-UC-???? í›„íŒì œí’ˆì´ì†¡ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ257
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvPlGdsFtmvCarLdLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -2124,7 +2124,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //ÈÄÆÇÁ¦Ç°ÀÌ¼Û»óÂ÷LotÆí¼º
+            //í›„íŒì œí’ˆì´ì†¡ìƒì°¨Lotí¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procPlGdsFtmvCarLdLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -2135,7 +2135,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 
         } // end of try catch
 		
-		szMsg="ÈÄÆÇÁ¦Ç°ÀÌ¼Û»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="í›„íŒì œí’ˆì´ì†¡ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvPlGdsFtmvCarLdLotComp()
@@ -2150,29 +2150,29 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCCsChgLotNoEffSupLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿¬ÁÖÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º
+		// YD-UC-???? Cì—°ì£¼ì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„±
 		// TC : YDYDJ258
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCCsChgLotNoEffSupLotComp";
 		
 
 		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 
 			return;
@@ -2184,7 +2184,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            //C¿¬ÁÖ ÀåÀÔLotNoÀû¿ë º¸±Ş Lot Æí¼º
+            //Cì—°ì£¼ ì¥ì…LotNoì ìš© ë³´ê¸‰ Lot í¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procCCsChgLotNoEffSupLotComp", inRecord);
 
         } catch (Exception e) {         
@@ -2196,7 +2196,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖÀåÀÔLotNoÀû¿ëº¸±ŞLotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ì¥ì…LotNoì ìš©ë³´ê¸‰Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 	} // end of rcvCCsChgLotNoEffSupLotComp()
@@ -2205,34 +2205,34 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvPlGdsDistCarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÈÄÆÇÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? í›„íŒì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ244
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvPlGdsDistCarLdWrkReq";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+            // ì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procPlGdsDistCarLdWrkReq", inRecord);
         } catch (Exception e) {         
             szMsg = szMethodName + "() " + e.getMessage(); 
@@ -2241,40 +2241,40 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÈÄÆÇÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "í›„íŒì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvPlGdsDistCarLdWrkReq()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÃâÇÏÂ÷·®½ºÄÉÁÙ ¼öÁ¤
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì¶œí•˜ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì •
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvDistCarSch(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÃâÇÏÂ÷·®½ºÄÉÁÙ ¼öÁ¤
+		// YD-UC-???? ì¶œí•˜ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì •
 		// TC : YDYDJ293
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvDistCarSch";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+            // ì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procDistCarSch", inRecord);
         } catch (Exception e) {         
             szMsg = szMethodName + "() " + e.getMessage(); 
@@ -2283,41 +2283,41 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÃâÇÏÂ÷·®½ºÄÉÁÙ ¼öÁ¤("+szMethodName+") ¿Ï·á";
+		szMsg = "ì¶œí•˜ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì •("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvDistCarSch()
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCoilGdsDistCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+		// YD-UC-???? ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ282
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCoilGdsDistCarLdLotComp";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+            // ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCoilGdsDistCarLdComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCoilGdsDistCarLdComp", inRecord);
         } catch (Exception e) {         
@@ -2327,34 +2327,34 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCoilGdsDistCarLdLotComp()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÄÚÀÏÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì½”ì¼ì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCoilGdsDistCarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÄÚÀÏÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? ì½”ì¼ì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ244
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCoilGdsDistCarLdWrkReq";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
@@ -2370,41 +2370,41 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÄÚÀÏÁ¦Ç°ÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ì½”ì¼ì œí’ˆì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCoilGdsDistCarLdWrkReq()
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÄÚÀÏÀÓ°¡°øÃâÇÏ»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì½”ì¼ì„ê°€ê³µì¶œí•˜ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCoilOutplDistCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÄÚÀÏÀÓ°¡°øÃâÇÏ»óÂ÷LotÆí¼º
+		// YD-UC-???? ì½”ì¼ì„ê°€ê³µì¶œí•˜ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ283
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCoilOutplDistCarLdLotComp";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÄÚÀÏÀÓ°¡°øÃâÇÏ»óÂ÷LotÆí¼º
+            // ì½”ì¼ì„ê°€ê³µì¶œí•˜ìƒì°¨Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCoilOutplDistCarLdLotComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCoilOutplDistCarLdLotComp", inRecord);
         } catch (Exception e) {         
@@ -2414,7 +2414,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÄÚÀÏÀÓ°¡°øÃâÇÏ»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ì½”ì¼ì„ê°€ê³µì¶œí•˜ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCoilOutplDistCarLdLotComp()
@@ -2423,34 +2423,34 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvPlGdsDistCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÈÄÆÇÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+		// YD-UC-???? í›„íŒì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ284
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvPlGdsDistCarLdLotComp";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÈÄÆÇÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+            // í›„íŒì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procPlGdsDistCarLdLotComp", inRecord);
         } catch (Exception e) {         
             szMsg = szMethodName + "() " + e.getMessage(); 
@@ -2459,36 +2459,36 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÈÄÆÇÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "í›„íŒì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvPlGdsDistCarLdLotComp()
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í :   ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… :   ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void ydManualReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 Á¤Á¤ÀÔÃøLine-In¿ä±¸
+		// YD-UC-???? R3 ì •ì •ì…ì¸¡Line-Inìš”êµ¬
 		// TC : R3YDL001
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="slabYdManualReq";
 		
 
 //		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-//			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+//			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 //
 //			return;
@@ -2500,7 +2500,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            // ½½¶óºê¾ßµå ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸
+            // ìŠ¬ë¼ë¸Œì•¼ë“œ ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬
             ydEjbCon.trx("IssueWrkDmdSeEJB", "ydManualReq", inRecord);
 
         } catch (Exception e) {         
@@ -2512,41 +2512,41 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖ ½½¶óºê¾ßµå ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼ ìŠ¬ë¼ë¸Œì•¼ë“œ ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
 	} // end of ydManualReq()
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÈÄÆÇÁ¦Ç° ¹İ³³ ´ë»óÀç LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : í›„íŒì œí’ˆ ë°˜ë‚© ëŒ€ìƒì¬ Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvPlGdsRetnLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÈÄÆÇÁ¦Ç° ¹İ³³ ´ë»óÀç LotÆí¼º
+		// YD-UC-???? í›„íŒì œí’ˆ ë°˜ë‚© ëŒ€ìƒì¬ Lotí¸ì„±
 		// TC : 
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvPlGdsRetnLotComp";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÈÄÆÇÁ¦Ç° ¹İ³³ ´ë»óÀç LotÆí¼º
+            // í›„íŒì œí’ˆ ë°˜ë‚© ëŒ€ìƒì¬ Lotí¸ì„±
             ydEjbCon.trx("IssueWrkDmdSeEJB", "procPlGdsRetnLotComp", inRecord);
         } catch (Exception e) {         
             szMsg = szMethodName + "() " + e.getMessage(); 
@@ -2555,16 +2555,16 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÈÄÆÇÁ¦Ç° ¹İ³³ ´ë»óÀç LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "í›„íŒì œí’ˆ ë°˜ë‚© ëŒ€ìƒì¬ Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvPlGdsDistCarLdLotComp()
 
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿¬ÁÖÁ¤Á¤L2 OHC Take-In ¿ä±¸ (C3YDL006, C7YDL006)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—°ì£¼ì •ì •L2 OHC Take-In ìš”êµ¬ (C3YDL006, C7YDL006)
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
@@ -2574,7 +2574,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		String szMethodName = "rcvOHCTakeInCmpl";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
@@ -2588,7 +2588,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "OHC Take-In ¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "OHC Take-In ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvOHCTakeInCmpl()
@@ -2598,28 +2598,28 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬Á¤Á¤ Take-In ¿ä±¸ (H2YDL004) - ±Ç¿ÀÃ¢ 2010.01.13
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì •ì • Take-In ìš”êµ¬ (H2YDL004) - ê¶Œì˜¤ì°½ 2010.01.13
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrShearTakeInReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬Á¤Á¤ Take-In ¿ä±¸
+		// YD-UC-???? Cì—´ì—°ì •ì • Take-In ìš”êµ¬
 		// TC : H2YDL004
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMethodName = "rcvCHrShearTakeInReq";
 		String szMsg        = "";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg = szMethodName + "() ½ÇÇà ½ÇÆĞ";
+			szMsg = szMethodName + "() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
@@ -2633,7 +2633,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } 
 		
-		szMsg = "C¿­¿¬Á¤Á¤ Take-In ¿ä±¸(H2YDL004) Ã³¸®(" + szMethodName + ") ¿Ï·á";
+		szMsg = "Cì—´ì—°ì •ì • Take-In ìš”êµ¬(H2YDL004) ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	}
 	
@@ -2642,28 +2642,28 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : C¿­¿¬Á¤Á¤ Take-Out ¿ä±¸ (H2YDL005) - ±Ç¿ÀÃ¢ 2010.01.13
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Cì—´ì—°ì •ì • Take-Out ìš”êµ¬ (H2YDL005) - ê¶Œì˜¤ì°½ 2010.01.13
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCHrShearTakeOutReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? C¿­¿¬Á¤Á¤ Take-Out ¿ä±¸
+		// YD-UC-???? Cì—´ì—°ì •ì • Take-Out ìš”êµ¬
 		// TC : H2YDL005
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMethodName = "rcvCHrShearTakeOutReq";
 		String szMsg        = "";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg = szMethodName + "() ½ÇÇà ½ÇÆĞ";
+			szMsg = szMethodName + "() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
@@ -2677,36 +2677,36 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
             throw new JDTOException(szMsg);
         } 
 		
-		szMsg = "C¿­¿¬Á¤Á¤ Take-Out ¿ä±¸(H2YDL005) Ã³¸®(" + szMethodName + ") ¿Ï·á";
+		szMsg = "Cì—´ì—°ì •ì • Take-Out ìš”êµ¬(H2YDL005) ì²˜ë¦¬(" + szMethodName + ") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 	}
 
 	
 //!AT	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í :   ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… :   ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void ydManualReqCoil(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? R3 Á¤Á¤ÀÔÃøLine-In¿ä±¸
+		// YD-UC-???? R3 ì •ì •ì…ì¸¡Line-Inìš”êµ¬
 		// TC : R3YDL001
 		// 
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="YdManualReqCoil";
 		
 
 //		if( !ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-//			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+//			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 //			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 //
 //			return;
@@ -2718,7 +2718,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 		
         try {
             
-            // ÄÚÀÏ¾ßµå ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸
+            // ì½”ì¼ì•¼ë“œ ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "ydManualReqCoil", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "ydManualReqCoil", inRecord);
 
@@ -2731,7 +2731,7 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿­¿¬ ÄÚÀÏ  ¸Ş´º¾ó ÀÛ¾÷Áö½Ã ¿ä±¸Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—´ì—° ì½”ì¼  ë©”ë‰´ì–¼ ì‘ì—…ì§€ì‹œ ìš”êµ¬ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
@@ -2739,9 +2739,9 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í :   C¿¬ÁÖ/ÈÄÆÇ ÀÚµ¿ÁØºñÀÛ¾÷ LOTÆí¼º ±â´É
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… :   Cì—°ì£¼/í›„íŒ ìë™ì¤€ë¹„ì‘ì—… LOTí¸ì„± ê¸°ëŠ¥
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
@@ -2765,41 +2765,41 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg="C¿¬ÁÖ/ÈÄÆÇ ÀÚµ¿ÁØºñÀÛ¾÷ LOTÆí¼º ±â´É("+szMethodName+") ¿Ï·á";
+		szMsg="Cì—°ì£¼/í›„íŒ ìë™ì¤€ë¹„ì‘ì—… LOTí¸ì„± ê¸°ëŠ¥("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 
 		
 	} // end of rcvAutoWorkLotComp()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÄÚÀÏHYSCOÃâÇÏ»óÂ÷LotÆí¼º
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì½”ì¼HYSCOì¶œí•˜ìƒì°¨Lotí¸ì„±
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCoilHYSCOCarLdLotComp(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÄÚÀÏHYSCOÃâÇÏ»óÂ÷LotÆí¼º
+		// YD-UC-???? ì½”ì¼HYSCOì¶œí•˜ìƒì°¨Lotí¸ì„±
 		// TC : YDYDJ282
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCoilHYSCOCarLdLotComp";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
 		
         try {
-            // ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º
+            // ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„±
 //sjhkim            ydEjbCon.trx("IssueWrkDmdSeEJB", "procCoilGdsDistCarLdComp", inRecord);
             ydEjbCon.trx("CoilIssueWrkDmdSeEJB", "procCoilHYSCOCarLdComp", inRecord);
         } catch (Exception e) {         
@@ -2809,34 +2809,34 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÄÚÀÏÁ¦Ç°ÃâÇÏ»óÂ÷LotÆí¼º Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ì½”ì¼ì œí’ˆì¶œí•˜ìƒì°¨Lotí¸ì„± ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of procCoilHYSCOCarLdComp()
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÄÚÀÏHYSCOÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì½”ì¼HYSCOì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 	 *  
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inRecord
 	 * @return
 	 * @throws JDTOException
 	 */
 	public void rcvCoilHYSCOCarLdWrkReq(JDTORecord inRecord) throws JDTOException {
 		//
-		// YD-UC-???? ÄÚÀÏHYSCOÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸
+		// YD-UC-???? ì½”ì¼HYSCOì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬
 		// TC : YDYDJ244
 		//  
 		//
-		//¦®¦¬¦¯
-		//¦­
-		//¦±¦¬¦°
+		//â”â”â”“
+		//â”ƒ
+		//â”—â”â”›
 		
 		String szMsg="";
 		String szMethodName="rcvCoilHYSCOCarLdWrkReq";
 		
 		if(!ydUtils.rcvMsgChk(inRecord, szSessionName, szMethodName)){			
-			szMsg= szMethodName+"() ½ÇÇà ½ÇÆĞ";
+			szMsg= szMethodName+"() ì‹¤í–‰ ì‹¤íŒ¨";
 			ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.ERROR);
 			return ;
 		}
@@ -2851,20 +2851,20 @@ public class IssueWrkDmdFaEJBBean extends BaseSessionBean {
         } // end of try catch
 
 		
-		szMsg = "ÄÚÀÏHYSCOÃâÇÏÂ÷·®»óÂ÷ÀÛ¾÷¿ä±¸ Ã³¸®("+szMethodName+") ¿Ï·á";
+		szMsg = "ì½”ì¼HYSCOì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì‘ì—…ìš”êµ¬ ì²˜ë¦¬("+szMethodName+") ì™„ë£Œ";
 		ydUtils.putLog(szSessionName, szMethodName, szMsg, YdConstant.DEBUG);
 		
 	} // end of rcvCoilHYSCOCarLdWrkReq()
 	
 
 	
-	//¦®¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¯
+	//â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“
 	//                                                
-	//                     ÀÏ°üÁ¦Ã¶¼ÒÁ¤º¸°ü¸®½Ã½ºÅÛ-¾ßµå°ü¸®
-	//              ÀÛ¾÷¿ä±¸°ü¸®-Ãâ°íÀÛ¾÷¿ä±¸ Facade Session Bean
+	//                     ì¼ê´€ì œì² ì†Œì •ë³´ê´€ë¦¬ì‹œìŠ¤í…œ-ì•¼ë“œê´€ë¦¬
+	//              ì‘ì—…ìš”êµ¬ê´€ë¦¬-ì¶œê³ ì‘ì—…ìš”êµ¬ Facade Session Bean
 	//                          2008.09.30 YHWHman
 	//                                                      
-	//¦±¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦°
+	//â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›
 	
 	
 	

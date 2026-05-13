@@ -6,7 +6,7 @@ package com.inisteel.cim.yd.common.util.loc;
 import java.util.Comparator;
 
 /**
- * @author ÀÓÃá¼ö
+ * @author ì„ì¶˜ìˆ˜
  *
  */
 public class CoilYdToLayComparator implements Comparator {
