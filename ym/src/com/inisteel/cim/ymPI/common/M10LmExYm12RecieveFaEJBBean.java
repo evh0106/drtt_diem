@@ -27,7 +27,7 @@ import jspeed.base.record.JDTORecord;
 import tmt.json.JSONException;
 
 /**
- *      [A] Å¬·¡½º¸í : RabbitMQ Yd_»èÁ¦
+ *      [A] í´ë˜ìŠ¤ëª… : RabbitMQ Yd_ì‚­ì œ
  * 
  * @ejb.bean name="M10LmExYm12RecieveFaEJBD" jndi-name="M10LmExYm12RecieveFaEJBD" type="Stateless"
  *           view-type="remote" display-name="" description="RabbitMQ Yd"

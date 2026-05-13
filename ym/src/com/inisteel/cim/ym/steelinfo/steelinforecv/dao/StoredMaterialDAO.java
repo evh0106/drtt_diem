@@ -15,7 +15,7 @@ import com.inisteel.cim.common.exception.DAOException;
  * @(#)StoredMaterialDAO.java
  * 
  * @version    :
- * @author     : ÀÌºÀÁØ
+ * @author     : ì´ë´‰ì¤€
  * @date         : 2005. 7. 20
  *
  * @description :
@@ -29,10 +29,10 @@ public class StoredMaterialDAO extends CommonDAO{
 
 	/**
 	 * @Param 
-	 * stockid : ½½¶óºê Àç·á¹øÈ£
+	 * stockid : ìŠ¬ë¼ë¸Œ ì¬ë£Œë²ˆí˜¸
 	 * 
 	 *
-	 * @description : ÇØ´ç Àç·á ¹øÈ£¿¡ ÇØ´çÇÏ´Â ½½¶óºêÀÇ »ó¼¼ Á¤º¸¸¦ °¡Á®¿Â´Ù. 
+	 * @description : í•´ë‹¹ ì¬ë£Œ ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ìŠ¬ë¼ë¸Œì˜ ìƒì„¸ ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤. 
 	 * 
 	 */
 	public JDTORecord selectSlabInfo(String stockid) {
@@ -114,10 +114,10 @@ public class StoredMaterialDAO extends CommonDAO{
 	
 	/**
 	 * @Param 
-	 * stockid : ÄÚÀÏ Àç·á¹øÈ£
+	 * stockid : ì½”ì¼ ì¬ë£Œë²ˆí˜¸
 	 * 
 	 *
-	 * @description : ÇØ´ç Àç·á ¹øÈ£¿¡ ÇØ´çÇÏ´Â ÄÚÀÏÀÇ »ó¼¼Á¤º¸¸¦ ¼ÒÁ¦ ¶Ç´Â Á¦Ç°º°·Î °¡Á®¿Â´Ù. 
+	 * @description : í•´ë‹¹ ì¬ë£Œ ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ì½”ì¼ì˜ ìƒì„¸ì •ë³´ë¥¼ ì†Œì œ ë˜ëŠ” ì œí’ˆë³„ë¡œ ê°€ì ¸ì˜¨ë‹¤. 
 	 * 
 	 */
 	public JDTORecord selectCoilInfo(String stockid) {
@@ -130,104 +130,104 @@ public class StoredMaterialDAO extends CommonDAO{
 		    String queryCode = "ym.steelinfo.steelinforecv.dao.StoredMaterialDAO.selectCoilInfo";
 		    rset = dba.executeQueryUsingId(queryCode,new Object[]{stockid});	    		    
 		    while(rset.next()){	   
-		    	jRecord.setField("COIL_NO",							rset.getString("COIL_NO"));//COIL ¹øÈ£
-		    	jRecord.setField("PLANT_GP",						rset.getString("PLANT_GP"));//°øÀå ±¸ºĞ
-		    	jRecord.setField("MFG_PROG_STAT",					rset.getString("MFG_PROG_STAT"));//Á¦ÀÛ ÁøÇà »óÅÂ
-		    	jRecord.setField("REAGENT_NO",						rset.getString("REAGENT_NO"));//½ÃÆí ¹øÈ£
-		    	jRecord.setField("COIL_CREATE_DDTT",				rset.getString("COIL_CREATE_DDTT"));//COIL »ı¼º ÀÏ½Ã
-		    	jRecord.setField("COIL_CREATE_GP",					rset.getString("COIL_CREATE_GP"));//COIL »ı¼º ±¸ºĞ
-		    	jRecord.setField("MFG_END_GP",						rset.getString("MFG_END_GP"));//Á¦ÀÛ Á¾·á ±¸ºĞ
-		    	jRecord.setField("MFG_END_DDTT",					rset.getString("MFG_END_DDTT"));//Á¦ÀÛ Á¾·á ÀÏ½Ã
-		    	jRecord.setField("CURR_PROG_CD_REG_PGM",			rset.getString("CURR_PROG_CD_REG_PGM"));//ÇöÀç Áøµµ CODE µî·Ï PROGRAM
-		    	jRecord.setField("CURR_PROG_REG_DDTT",				rset.getString("CURR_PROG_REG_DDTT"));//ÇöÀç Áøµµ µî·Ï ÀÏ½Ã
-		    	jRecord.setField("CURR_PROG_CD",					rset.getString("CURR_PROG_CD"));//ÇöÀç Áøµµ CODE
-		    	jRecord.setField("BEFO_PROG_CD_REG_PGM",			rset.getString("BEFO_PROG_CD_REG_PGM"));//Àü Áøµµ CODE µî·Ï PROGRAM
-		    	jRecord.setField("BEFO_PROG_REG_DDTT",				rset.getString("BEFO_PROG_REG_DDTT"));//Àü Áøµµ µî·Ï ÀÏ½Ã
-		    	jRecord.setField("BEFO_PROG_CD",					rset.getString("BEFO_PROG_CD"));//Àü Áøµµ CODE
-		    	jRecord.setField("BEFOBEFO_PROG_CD_REG_PGM",		rset.getString("BEFOBEFO_PROG_CD_REG_PGM"));//ÀüÀü Áøµµ CODE µî·Ï PROGRAM
-		    	jRecord.setField("BEFOBEFO_PROG_REG_DDTT",			rset.getString("BEFOBEFO_PROG_REG_DDTT"));//ÀüÀü Áøµµ µî·Ï ÀÏ½Ã
-		    	jRecord.setField("BEFOBEFO_PROG_CD",				rset.getString("BEFOBEFO_PROG_CD"));//ÀüÀü Áøµµ CODE
-		    	jRecord.setField("ORD_YEOJAE_GP",					rset.getString("ORD_YEOJAE_GP"));//ÁÖ¹® ¿©Àç ±¸ºĞ
-		    	jRecord.setField("STL_APPEAR_GP",					rset.getString("STL_APPEAR_GP"));//Àç·á ¿ÜÇü ±¸ºĞ
-		    	jRecord.setField("SPEC_ABBSYM",						rset.getString("SPEC_ABBSYM"));//±Ô°İ ¾àÈ£
-		    	jRecord.setField("HEATOUT_AIM",						rset.getString("HEATOUT_AIM"));//Ãâ°­ ¸ñÇ¥
-		    	jRecord.setField("COIL_T",							rset.getString("COIL_T"));//COIL µÎ²²
-		    	jRecord.setField("COIL_W",							rset.getString("COIL_W"));//COIL Æø
-		    	jRecord.setField("COIL_LEN",						rset.getString("COIL_LEN"));//COIL ±æÀÌ
-		    	jRecord.setField("WT_GP",							rset.getString("WT_GP"));//Áß·® ±¸ºĞ
-		    	jRecord.setField("NET_WEIGH_WT",					rset.getString("NET_WEIGH_WT"));//NET °è·® Áß·®
-		    	jRecord.setField("NET_CAL_WT",						rset.getString("NET_CAL_WT"));//NET °è»ê Áß·®
-		    	jRecord.setField("GROSS_WEIGH_WT",					rset.getString("GROSS_WEIGH_WT"));//GROSS °è·® Áß·®
-		    	jRecord.setField("GROSS_CAL_WT",					rset.getString("GROSS_CAL_WT"));//GROSS °è»ê Áß·®
-		    	jRecord.setField("MFG_NO_DTL",						rset.getString("MFG_NO_DTL"));//Á¦ÀÛ ¹øÈ£ Çà¹ø
-		    	jRecord.setField("ITEMNAME_CD",						rset.getString("ITEMNAME_CD"));//Ç°¸í CODE
-		    	jRecord.setField("PROC_ITEMNAME_CD",				rset.getString("PROC_ITEMNAME_CD"));//°øÁ¤ Ç°¸í CODE
-		    	jRecord.setField("YEOJAE_CAUSE_CD",					rset.getString("YEOJAE_CAUSE_CD"));//¿©Àç ¿øÀÎ CODE
-		    	jRecord.setField("YEOJAE_OCCUR_DATE",				rset.getString("YEOJAE_OCCUR_DATE"));//¿©Àç ¹ß»ı ÀÏÀÚ
-		    	jRecord.setField("TEST_STL_GP",						rset.getString("TEST_STL_GP"));//TEST Àç·á ±¸ºĞ
-		    	jRecord.setField("PLAN_PROC1",						rset.getString("PLAN_PROC1"));//°èÈ¹ °øÁ¤1
-		    	jRecord.setField("PLAN_PROC2",						rset.getString("PLAN_PROC2"));//°èÈ¹ °øÁ¤2
-		    	jRecord.setField("PLAN_PROC3",						rset.getString("PLAN_PROC3"));//°èÈ¹ °øÁ¤3
-		    	jRecord.setField("PASS_PROC1",						rset.getString("PASS_PROC1"));//Åë°ú °øÁ¤1
-		    	jRecord.setField("PASS_PROC2",						rset.getString("PASS_PROC2"));//Åë°ú °øÁ¤2
-		    	jRecord.setField("PASS_PROC3",						rset.getString("PASS_PROC3"));//Åë°ú °øÁ¤3
-		    	jRecord.setField("REMAIN_PROC1",					rset.getString("REMAIN_PROC1"));//ÀÜ¿© °øÁ¤1
-		    	jRecord.setField("REMAIN_PROC2",					rset.getString("REMAIN_PROC2"));//ÀÜ¿© °øÁ¤2
-		    	jRecord.setField("NEXT_DEMAND_PROC",				rset.getString("NEXT_DEMAND_PROC"));//´ÙÀ½ ¿ä±¸ °øÁ¤
-		    	jRecord.setField("NEXT_DEMAND_PROC_CAUSE",			rset.getString("NEXT_DEMAND_PROC_CAUSE"));//´ÙÀ½ ¿ä±¸ °øÁ¤ ¿øÀÎ
-		    	jRecord.setField("YD_GP",							rset.getString("YD_GP"));//YARD ±¸ºĞ
-		    	jRecord.setField("BAY",								rset.getString("BAY"));//µ¿
+		    	jRecord.setField("COIL_NO",							rset.getString("COIL_NO"));//COIL ë²ˆí˜¸
+		    	jRecord.setField("PLANT_GP",						rset.getString("PLANT_GP"));//ê³µì¥ êµ¬ë¶„
+		    	jRecord.setField("MFG_PROG_STAT",					rset.getString("MFG_PROG_STAT"));//ì œì‘ ì§„í–‰ ìƒíƒœ
+		    	jRecord.setField("REAGENT_NO",						rset.getString("REAGENT_NO"));//ì‹œí¸ ë²ˆí˜¸
+		    	jRecord.setField("COIL_CREATE_DDTT",				rset.getString("COIL_CREATE_DDTT"));//COIL ìƒì„± ì¼ì‹œ
+		    	jRecord.setField("COIL_CREATE_GP",					rset.getString("COIL_CREATE_GP"));//COIL ìƒì„± êµ¬ë¶„
+		    	jRecord.setField("MFG_END_GP",						rset.getString("MFG_END_GP"));//ì œì‘ ì¢…ë£Œ êµ¬ë¶„
+		    	jRecord.setField("MFG_END_DDTT",					rset.getString("MFG_END_DDTT"));//ì œì‘ ì¢…ë£Œ ì¼ì‹œ
+		    	jRecord.setField("CURR_PROG_CD_REG_PGM",			rset.getString("CURR_PROG_CD_REG_PGM"));//í˜„ì¬ ì§„ë„ CODE ë“±ë¡ PROGRAM
+		    	jRecord.setField("CURR_PROG_REG_DDTT",				rset.getString("CURR_PROG_REG_DDTT"));//í˜„ì¬ ì§„ë„ ë“±ë¡ ì¼ì‹œ
+		    	jRecord.setField("CURR_PROG_CD",					rset.getString("CURR_PROG_CD"));//í˜„ì¬ ì§„ë„ CODE
+		    	jRecord.setField("BEFO_PROG_CD_REG_PGM",			rset.getString("BEFO_PROG_CD_REG_PGM"));//ì „ ì§„ë„ CODE ë“±ë¡ PROGRAM
+		    	jRecord.setField("BEFO_PROG_REG_DDTT",				rset.getString("BEFO_PROG_REG_DDTT"));//ì „ ì§„ë„ ë“±ë¡ ì¼ì‹œ
+		    	jRecord.setField("BEFO_PROG_CD",					rset.getString("BEFO_PROG_CD"));//ì „ ì§„ë„ CODE
+		    	jRecord.setField("BEFOBEFO_PROG_CD_REG_PGM",		rset.getString("BEFOBEFO_PROG_CD_REG_PGM"));//ì „ì „ ì§„ë„ CODE ë“±ë¡ PROGRAM
+		    	jRecord.setField("BEFOBEFO_PROG_REG_DDTT",			rset.getString("BEFOBEFO_PROG_REG_DDTT"));//ì „ì „ ì§„ë„ ë“±ë¡ ì¼ì‹œ
+		    	jRecord.setField("BEFOBEFO_PROG_CD",				rset.getString("BEFOBEFO_PROG_CD"));//ì „ì „ ì§„ë„ CODE
+		    	jRecord.setField("ORD_YEOJAE_GP",					rset.getString("ORD_YEOJAE_GP"));//ì£¼ë¬¸ ì—¬ì¬ êµ¬ë¶„
+		    	jRecord.setField("STL_APPEAR_GP",					rset.getString("STL_APPEAR_GP"));//ì¬ë£Œ ì™¸í˜• êµ¬ë¶„
+		    	jRecord.setField("SPEC_ABBSYM",						rset.getString("SPEC_ABBSYM"));//ê·œê²© ì•½í˜¸
+		    	jRecord.setField("HEATOUT_AIM",						rset.getString("HEATOUT_AIM"));//ì¶œê°• ëª©í‘œ
+		    	jRecord.setField("COIL_T",							rset.getString("COIL_T"));//COIL ë‘ê»˜
+		    	jRecord.setField("COIL_W",							rset.getString("COIL_W"));//COIL í­
+		    	jRecord.setField("COIL_LEN",						rset.getString("COIL_LEN"));//COIL ê¸¸ì´
+		    	jRecord.setField("WT_GP",							rset.getString("WT_GP"));//ì¤‘ëŸ‰ êµ¬ë¶„
+		    	jRecord.setField("NET_WEIGH_WT",					rset.getString("NET_WEIGH_WT"));//NET ê³„ëŸ‰ ì¤‘ëŸ‰
+		    	jRecord.setField("NET_CAL_WT",						rset.getString("NET_CAL_WT"));//NET ê³„ì‚° ì¤‘ëŸ‰
+		    	jRecord.setField("GROSS_WEIGH_WT",					rset.getString("GROSS_WEIGH_WT"));//GROSS ê³„ëŸ‰ ì¤‘ëŸ‰
+		    	jRecord.setField("GROSS_CAL_WT",					rset.getString("GROSS_CAL_WT"));//GROSS ê³„ì‚° ì¤‘ëŸ‰
+		    	jRecord.setField("MFG_NO_DTL",						rset.getString("MFG_NO_DTL"));//ì œì‘ ë²ˆí˜¸ í–‰ë²ˆ
+		    	jRecord.setField("ITEMNAME_CD",						rset.getString("ITEMNAME_CD"));//í’ˆëª… CODE
+		    	jRecord.setField("PROC_ITEMNAME_CD",				rset.getString("PROC_ITEMNAME_CD"));//ê³µì • í’ˆëª… CODE
+		    	jRecord.setField("YEOJAE_CAUSE_CD",					rset.getString("YEOJAE_CAUSE_CD"));//ì—¬ì¬ ì›ì¸ CODE
+		    	jRecord.setField("YEOJAE_OCCUR_DATE",				rset.getString("YEOJAE_OCCUR_DATE"));//ì—¬ì¬ ë°œìƒ ì¼ì
+		    	jRecord.setField("TEST_STL_GP",						rset.getString("TEST_STL_GP"));//TEST ì¬ë£Œ êµ¬ë¶„
+		    	jRecord.setField("PLAN_PROC1",						rset.getString("PLAN_PROC1"));//ê³„íš ê³µì •1
+		    	jRecord.setField("PLAN_PROC2",						rset.getString("PLAN_PROC2"));//ê³„íš ê³µì •2
+		    	jRecord.setField("PLAN_PROC3",						rset.getString("PLAN_PROC3"));//ê³„íš ê³µì •3
+		    	jRecord.setField("PASS_PROC1",						rset.getString("PASS_PROC1"));//í†µê³¼ ê³µì •1
+		    	jRecord.setField("PASS_PROC2",						rset.getString("PASS_PROC2"));//í†µê³¼ ê³µì •2
+		    	jRecord.setField("PASS_PROC3",						rset.getString("PASS_PROC3"));//í†µê³¼ ê³µì •3
+		    	jRecord.setField("REMAIN_PROC1",					rset.getString("REMAIN_PROC1"));//ì”ì—¬ ê³µì •1
+		    	jRecord.setField("REMAIN_PROC2",					rset.getString("REMAIN_PROC2"));//ì”ì—¬ ê³µì •2
+		    	jRecord.setField("NEXT_DEMAND_PROC",				rset.getString("NEXT_DEMAND_PROC"));//ë‹¤ìŒ ìš”êµ¬ ê³µì •
+		    	jRecord.setField("NEXT_DEMAND_PROC_CAUSE",			rset.getString("NEXT_DEMAND_PROC_CAUSE"));//ë‹¤ìŒ ìš”êµ¬ ê³µì • ì›ì¸
+		    	jRecord.setField("YD_GP",							rset.getString("YD_GP"));//YARD êµ¬ë¶„
+		    	jRecord.setField("BAY",								rset.getString("BAY"));//ë™
 		    	jRecord.setField("SPAN",							rset.getString("SPAN"));//SPAN
-		    	jRecord.setField("COL",								rset.getString("COL"));//¿­
-		    	jRecord.setField("CELLNO",							rset.getString("CELLNO"));//¹øÁö
-		    	jRecord.setField("STACK_LAYER",						rset.getString("STACK_LAYER"));//ÀûÄ¡ ´Ü
-		    	jRecord.setField("COIL_INDIA",						rset.getString("COIL_INDIA"));//COIL ³»°æ
-		    	jRecord.setField("COIL_ALLOC_WT",					rset.getString("COIL_ALLOC_WT"));//COIL ¹èºĞ Áß·®
-		    	jRecord.setField("SHEAR_WORD_DDTT",					rset.getString("SHEAR_WORD_DDTT"));//Á¤Á¤ ÀÛ¾÷Áö½Ã ÀÏ½Ã
-		    	jRecord.setField("SHEAR_WRSLT_DDTT",				rset.getString("SHEAR_WRSLT_DDTT"));//Á¤Á¤ ½ÇÀû ÀÏ½Ã
-		    	jRecord.setField("SCRAP_CAUSE",						rset.getString("SCRAP_CAUSE"));//SCRAP ¿øÀÎ
-		    	jRecord.setField("BOOK_MARK_YN",					rset.getString("BOOK_MARK_YN"));//¿¹¾à Ç¥½Ã À¯¹«
-		    	jRecord.setField("BOOK_DATE",						rset.getString("BOOK_DATE"));//¿¹¾à ÀÏÀÚ
-		    	jRecord.setField("FRTOMOVE_ORD_DATE",				rset.getString("FRTOMOVE_ORD_DATE"));//ÀÌ¼Û Áö½Ã ÀÏÀÚ
-		    	jRecord.setField("FRTOMOVE_PLANT_GP",				rset.getString("FRTOMOVE_PLANT_GP"));//ÀÌ¼Û °øÀå ±¸ºĞ
-		    	jRecord.setField("DUTY_PARTY",						rset.getString("DUTY_PARTY"));//±Ù Á¶
-		    	jRecord.setField("INGR_STAMP_GRADE",				rset.getString("INGR_STAMP_GRADE"));//¼ººĞ ÆÇÁ¤ µî±Ş
-		    	jRecord.setField("INGR_STAMP_DATE",					rset.getString("INGR_STAMP_DATE"));//¼ººĞ ÆÇÁ¤ ÀÏÀÚ
-		    	jRecord.setField("STLQLTY_STAMP_GRADE",				rset.getString("STLQLTY_STAMP_GRADE"));//ÀçÁú ÆÇÁ¤ µî±Ş
-		    	jRecord.setField("STLQLTY_STAMP_DATE",				rset.getString("STLQLTY_STAMP_DATE"));//ÀçÁú ÆÇÁ¤ ÀÏÀÚ
-		    	jRecord.setField("SURFACE_GRADE_CR_USAGE",			rset.getString("SURFACE_GRADE_CR_USAGE"));//Ç¥¸é µî±Ş ³Ã¿¬ ¿ëµµ
-		    	jRecord.setField("SURFACE_GRADE_STLPIPE_USAGE",		rset.getString("SURFACE_GRADE_STLPIPE_USAGE"));//Ç¥¸é µî±Ş °­°ü ¿ëµµ
-		    	jRecord.setField("SURFACE_GRADE_STRUCTURE_USAGE",	rset.getString("SURFACE_GRADE_STRUCTURE_USAGE"));//Ç¥¸é µî±Ş ±¸Á¶ ¿ëµµ
-		    	jRecord.setField("SURFACE_OVERALL_GRADE",			rset.getString("SURFACE_OVERALL_GRADE"));//Ç¥¸é Á¾ÇÕ µî±Ş
-		    	jRecord.setField("FORM_GRADE",						rset.getString("FORM_GRADE"));//Çü»ó µî±Ş
-		    	jRecord.setField("WDH_GRADE",						rset.getString("WDH_GRADE"));//Ä©¼ö µî±Ş
-		    	jRecord.setField("APPEAR_OVERALL_GRADE",			rset.getString("APPEAR_OVERALL_GRADE"));//¿Ü°ü Á¾ÇÕ µî±Ş
-		    	jRecord.setField("APPEAR_GRADE_STAMP_DATE",			rset.getString("APPEAR_GRADE_STAMP_DATE"));//¿Ü°ü µî±Ş ÆÇÁ¤ ÀÏÀÚ
-		    	jRecord.setField("OVERALL_STAMP_GRADE",				rset.getString("OVERALL_STAMP_GRADE"));//Á¾ÇÕ ÆÇÁ¤ µî±Ş
-		    	jRecord.setField("OVERALL_STAMP_DATE",				rset.getString("OVERALL_STAMP_DATE"));//Á¾ÇÕ ÆÇÁ¤ ÀÏÀÚ
-		    	jRecord.setField("MID_INSPECT_DATE",				rset.getString("MID_INSPECT_DATE"));//Áß°£ °Ë»ç ÀÏÀÚ
-		    	jRecord.setField("MID_INSPECT_DEFECT_CD1",			rset.getString("MID_INSPECT_DEFECT_CD1"));//Áß°£ °Ë»ç Èì CODE1
-		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD1",		rset.getString("MID_INSPECT_EXAMMARK_CD1"));//Áß°£ °Ë»ç ÆòÁ¡ CODE1
-		    	jRecord.setField("MID_INSPECT_DEFECT_CD2",			rset.getString("MID_INSPECT_DEFECT_CD2"));//Áß°£ °Ë»ç Èì CODE2
-		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD2",		rset.getString("MID_INSPECT_EXAMMARK_CD2"));//Áß°£ °Ë»ç ÆòÁ¡ CODE2
-		    	jRecord.setField("MID_INSPECT_DEFECT_CD3",			rset.getString("MID_INSPECT_DEFECT_CD3"));//Áß°£ °Ë»ç Èì CODE3
-		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD3",		rset.getString("MID_INSPECT_EXAMMARK_CD3"));//Áß°£ °Ë»ç ÆòÁ¡ CODE3
-		    	jRecord.setField("MID_INSPECT_DEFECT_CD4",			rset.getString("MID_INSPECT_DEFECT_CD4"));//Áß°£ °Ë»ç Èì CODE4
-		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD4",		rset.getString("MID_INSPECT_EXAMMARK_CD4"));//Áß°£ °Ë»ç ÆòÁ¡ CODE4
-		    	jRecord.setField("MID_INSPECT_DEFECT_CD5",			rset.getString("MID_INSPECT_DEFECT_CD5"));//Áß°£ °Ë»ç Èì CODE5
-		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD5",		rset.getString("MID_INSPECT_EXAMMARK_CD5"));//Áß°£ °Ë»ç ÆòÁ¡ CODE5
-		    	jRecord.setField("FNL_SHEAR_DEFECT_CD1",			rset.getString("FNL_SHEAR_DEFECT_CD1"));//ÃÖÁ¾ Á¤Á¤ Èì CODE1
-		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD1",			rset.getString("FNL_SHEAR_EXAMMARK_CD1"));//ÃÖÁ¾ Á¤Á¤ ÆòÁ¡ CODE1
-		    	jRecord.setField("FNL_SHEAR_DEFECT_CD2",			rset.getString("FNL_SHEAR_DEFECT_CD2"));//ÃÖÁ¾ Á¤Á¤ Èì CODE2
-		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD2",			rset.getString("FNL_SHEAR_EXAMMARK_CD2"));//ÃÖÁ¾ Á¤Á¤ ÆòÁ¡ CODE2
-		    	jRecord.setField("FNL_SHEAR_DEFECT_CD3",			rset.getString("FNL_SHEAR_DEFECT_CD3"));//ÃÖÁ¾ Á¤Á¤ Èì CODE3
-		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD3",			rset.getString("FNL_SHEAR_EXAMMARK_CD3"));//ÃÖÁ¾ Á¤Á¤ ÆòÁ¡ CODE3
-		    	jRecord.setField("FNL_SHEAR_DEFECT_CD4",			rset.getString("FNL_SHEAR_DEFECT_CD4"));//ÃÖÁ¾ Á¤Á¤ Èì CODE4
-		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD4",			rset.getString("FNL_SHEAR_EXAMMARK_CD4"));//ÃÖÁ¾ Á¤Á¤ ÆòÁ¡ CODE4
-		    	jRecord.setField("FNL_SHEAR_DEFECT_CD5",			rset.getString("FNL_SHEAR_DEFECT_CD5"));//ÃÖÁ¾ Á¤Á¤ Èì CODE5
-		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD5",			rset.getString("FNL_SHEAR_EXAMMARK_CD5"));//ÃÖÁ¾ Á¤Á¤ ÆòÁ¡ CODE5
-		    	jRecord.setField("SLAB_NO",							rset.getString("SLAB_NO"));//SLAB ¹øÈ£
-		    	jRecord.setField("STORE_LOC_CD",					rset.getString("STORE_LOC_CD"));//ÀúÀå À§Ä¡ CODE
+		    	jRecord.setField("COL",								rset.getString("COL"));//ì—´
+		    	jRecord.setField("CELLNO",							rset.getString("CELLNO"));//ë²ˆì§€
+		    	jRecord.setField("STACK_LAYER",						rset.getString("STACK_LAYER"));//ì ì¹˜ ë‹¨
+		    	jRecord.setField("COIL_INDIA",						rset.getString("COIL_INDIA"));//COIL ë‚´ê²½
+		    	jRecord.setField("COIL_ALLOC_WT",					rset.getString("COIL_ALLOC_WT"));//COIL ë°°ë¶„ ì¤‘ëŸ‰
+		    	jRecord.setField("SHEAR_WORD_DDTT",					rset.getString("SHEAR_WORD_DDTT"));//ì •ì • ì‘ì—…ì§€ì‹œ ì¼ì‹œ
+		    	jRecord.setField("SHEAR_WRSLT_DDTT",				rset.getString("SHEAR_WRSLT_DDTT"));//ì •ì • ì‹¤ì  ì¼ì‹œ
+		    	jRecord.setField("SCRAP_CAUSE",						rset.getString("SCRAP_CAUSE"));//SCRAP ì›ì¸
+		    	jRecord.setField("BOOK_MARK_YN",					rset.getString("BOOK_MARK_YN"));//ì˜ˆì•½ í‘œì‹œ ìœ ë¬´
+		    	jRecord.setField("BOOK_DATE",						rset.getString("BOOK_DATE"));//ì˜ˆì•½ ì¼ì
+		    	jRecord.setField("FRTOMOVE_ORD_DATE",				rset.getString("FRTOMOVE_ORD_DATE"));//ì´ì†¡ ì§€ì‹œ ì¼ì
+		    	jRecord.setField("FRTOMOVE_PLANT_GP",				rset.getString("FRTOMOVE_PLANT_GP"));//ì´ì†¡ ê³µì¥ êµ¬ë¶„
+		    	jRecord.setField("DUTY_PARTY",						rset.getString("DUTY_PARTY"));//ê·¼ ì¡°
+		    	jRecord.setField("INGR_STAMP_GRADE",				rset.getString("INGR_STAMP_GRADE"));//ì„±ë¶„ íŒì • ë“±ê¸‰
+		    	jRecord.setField("INGR_STAMP_DATE",					rset.getString("INGR_STAMP_DATE"));//ì„±ë¶„ íŒì • ì¼ì
+		    	jRecord.setField("STLQLTY_STAMP_GRADE",				rset.getString("STLQLTY_STAMP_GRADE"));//ì¬ì§ˆ íŒì • ë“±ê¸‰
+		    	jRecord.setField("STLQLTY_STAMP_DATE",				rset.getString("STLQLTY_STAMP_DATE"));//ì¬ì§ˆ íŒì • ì¼ì
+		    	jRecord.setField("SURFACE_GRADE_CR_USAGE",			rset.getString("SURFACE_GRADE_CR_USAGE"));//í‘œë©´ ë“±ê¸‰ ëƒ‰ì—° ìš©ë„
+		    	jRecord.setField("SURFACE_GRADE_STLPIPE_USAGE",		rset.getString("SURFACE_GRADE_STLPIPE_USAGE"));//í‘œë©´ ë“±ê¸‰ ê°•ê´€ ìš©ë„
+		    	jRecord.setField("SURFACE_GRADE_STRUCTURE_USAGE",	rset.getString("SURFACE_GRADE_STRUCTURE_USAGE"));//í‘œë©´ ë“±ê¸‰ êµ¬ì¡° ìš©ë„
+		    	jRecord.setField("SURFACE_OVERALL_GRADE",			rset.getString("SURFACE_OVERALL_GRADE"));//í‘œë©´ ì¢…í•© ë“±ê¸‰
+		    	jRecord.setField("FORM_GRADE",						rset.getString("FORM_GRADE"));//í˜•ìƒ ë“±ê¸‰
+		    	jRecord.setField("WDH_GRADE",						rset.getString("WDH_GRADE"));//ì¹«ìˆ˜ ë“±ê¸‰
+		    	jRecord.setField("APPEAR_OVERALL_GRADE",			rset.getString("APPEAR_OVERALL_GRADE"));//ì™¸ê´€ ì¢…í•© ë“±ê¸‰
+		    	jRecord.setField("APPEAR_GRADE_STAMP_DATE",			rset.getString("APPEAR_GRADE_STAMP_DATE"));//ì™¸ê´€ ë“±ê¸‰ íŒì • ì¼ì
+		    	jRecord.setField("OVERALL_STAMP_GRADE",				rset.getString("OVERALL_STAMP_GRADE"));//ì¢…í•© íŒì • ë“±ê¸‰
+		    	jRecord.setField("OVERALL_STAMP_DATE",				rset.getString("OVERALL_STAMP_DATE"));//ì¢…í•© íŒì • ì¼ì
+		    	jRecord.setField("MID_INSPECT_DATE",				rset.getString("MID_INSPECT_DATE"));//ì¤‘ê°„ ê²€ì‚¬ ì¼ì
+		    	jRecord.setField("MID_INSPECT_DEFECT_CD1",			rset.getString("MID_INSPECT_DEFECT_CD1"));//ì¤‘ê°„ ê²€ì‚¬ í  CODE1
+		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD1",		rset.getString("MID_INSPECT_EXAMMARK_CD1"));//ì¤‘ê°„ ê²€ì‚¬ í‰ì  CODE1
+		    	jRecord.setField("MID_INSPECT_DEFECT_CD2",			rset.getString("MID_INSPECT_DEFECT_CD2"));//ì¤‘ê°„ ê²€ì‚¬ í  CODE2
+		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD2",		rset.getString("MID_INSPECT_EXAMMARK_CD2"));//ì¤‘ê°„ ê²€ì‚¬ í‰ì  CODE2
+		    	jRecord.setField("MID_INSPECT_DEFECT_CD3",			rset.getString("MID_INSPECT_DEFECT_CD3"));//ì¤‘ê°„ ê²€ì‚¬ í  CODE3
+		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD3",		rset.getString("MID_INSPECT_EXAMMARK_CD3"));//ì¤‘ê°„ ê²€ì‚¬ í‰ì  CODE3
+		    	jRecord.setField("MID_INSPECT_DEFECT_CD4",			rset.getString("MID_INSPECT_DEFECT_CD4"));//ì¤‘ê°„ ê²€ì‚¬ í  CODE4
+		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD4",		rset.getString("MID_INSPECT_EXAMMARK_CD4"));//ì¤‘ê°„ ê²€ì‚¬ í‰ì  CODE4
+		    	jRecord.setField("MID_INSPECT_DEFECT_CD5",			rset.getString("MID_INSPECT_DEFECT_CD5"));//ì¤‘ê°„ ê²€ì‚¬ í  CODE5
+		    	jRecord.setField("MID_INSPECT_EXAMMARK_CD5",		rset.getString("MID_INSPECT_EXAMMARK_CD5"));//ì¤‘ê°„ ê²€ì‚¬ í‰ì  CODE5
+		    	jRecord.setField("FNL_SHEAR_DEFECT_CD1",			rset.getString("FNL_SHEAR_DEFECT_CD1"));//ìµœì¢… ì •ì • í  CODE1
+		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD1",			rset.getString("FNL_SHEAR_EXAMMARK_CD1"));//ìµœì¢… ì •ì • í‰ì  CODE1
+		    	jRecord.setField("FNL_SHEAR_DEFECT_CD2",			rset.getString("FNL_SHEAR_DEFECT_CD2"));//ìµœì¢… ì •ì • í  CODE2
+		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD2",			rset.getString("FNL_SHEAR_EXAMMARK_CD2"));//ìµœì¢… ì •ì • í‰ì  CODE2
+		    	jRecord.setField("FNL_SHEAR_DEFECT_CD3",			rset.getString("FNL_SHEAR_DEFECT_CD3"));//ìµœì¢… ì •ì • í  CODE3
+		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD3",			rset.getString("FNL_SHEAR_EXAMMARK_CD3"));//ìµœì¢… ì •ì • í‰ì  CODE3
+		    	jRecord.setField("FNL_SHEAR_DEFECT_CD4",			rset.getString("FNL_SHEAR_DEFECT_CD4"));//ìµœì¢… ì •ì • í  CODE4
+		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD4",			rset.getString("FNL_SHEAR_EXAMMARK_CD4"));//ìµœì¢… ì •ì • í‰ì  CODE4
+		    	jRecord.setField("FNL_SHEAR_DEFECT_CD5",			rset.getString("FNL_SHEAR_DEFECT_CD5"));//ìµœì¢… ì •ì • í  CODE5
+		    	jRecord.setField("FNL_SHEAR_EXAMMARK_CD5",			rset.getString("FNL_SHEAR_EXAMMARK_CD5"));//ìµœì¢… ì •ì • í‰ì  CODE5
+		    	jRecord.setField("SLAB_NO",							rset.getString("SLAB_NO"));//SLAB ë²ˆí˜¸
+		    	jRecord.setField("STORE_LOC_CD",					rset.getString("STORE_LOC_CD"));//ì €ì¥ ìœ„ì¹˜ CODE
 		    }		    
 		    return jRecord;
 		}catch(Exception e){
@@ -242,10 +242,10 @@ public class StoredMaterialDAO extends CommonDAO{
 
 	/**
 	 * @Param 
-	 * stockid : Àç·á¹øÈ£
+	 * stockid : ì¬ë£Œë²ˆí˜¸
 	 * 
 	 *
-	 * @description : ÇØ´ç Àç·á ¹øÈ£¿¡ ÇØ´çÇÏ´Â Á¦Ç°(¼ÒÀç)ÀÇ À§Ä¡ º¯°æÀÌ·ÂÀ» °¡Á®¿Â´Ù. 
+	 * @description : í•´ë‹¹ ì¬ë£Œ ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ì œí’ˆ(ì†Œì¬)ì˜ ìœ„ì¹˜ ë³€ê²½ì´ë ¥ì„ ê°€ì ¸ì˜¨ë‹¤. 
 	 * 
 	 */
 	public List historyMatLoc(String stockid){
@@ -261,10 +261,10 @@ public class StoredMaterialDAO extends CommonDAO{
 		    rset = dba.executeQueryUsingId(queryCode,new Object[]{stockid});		    		    
 		    while(rset.next()){
 		        jRecord = JDTORecordFactory.getInstance().create();
-				jRecord.setField("CRANE_WORK_DATE",rset.getString("CRANE_WORK_DATE"));//º¯°æÀÏ½Ã
-				jRecord.setField("CRANE_WRSLT_PUT_LOC",rset.getString("CRANE_WRSLT_PUT_LOC"));//À§Ä¡
-				jRecord.setField("CRANE_WORK_PARTY",rset.getString("CRANE_WORK_PARTY"));//ÀÛ¾÷Å©·¹ÀÎ
-				jRecord.setField("SCH_WKIND",rset.getString("SCH_WKIND"));//½ºÄÉÁÙÁ¾·ù
+				jRecord.setField("CRANE_WORK_DATE",rset.getString("CRANE_WORK_DATE"));//ë³€ê²½ì¼ì‹œ
+				jRecord.setField("CRANE_WRSLT_PUT_LOC",rset.getString("CRANE_WRSLT_PUT_LOC"));//ìœ„ì¹˜
+				jRecord.setField("CRANE_WORK_PARTY",rset.getString("CRANE_WORK_PARTY"));//ì‘ì—…í¬ë ˆì¸
+				jRecord.setField("SCH_WKIND",rset.getString("SCH_WKIND"));//ìŠ¤ì¼€ì¤„ì¢…ë¥˜
 				locHisList.add(jRecord);
 		    }
 		    
@@ -322,17 +322,17 @@ public class StoredMaterialDAO extends CommonDAO{
     B.COIL_WT AS COIL_WT,
     B.COIL_W AS COIL_W,
     B.COIL_T AS COIL_T,
-    '°­Á¾' AS STLKIND,
+    'ê°•ì¢…' AS STLKIND,
     NVL2(C.WBOOK_ID,'Y','N') AS WBOOK_ID
 */
 		        jRecord = JDTORecordFactory.getInstance().create();
-				jRecord.setField("STOCK_ID",rset.getString("STOCK_ID"));//Àç·á NO
-				jRecord.setField("STOCK_LOCATION",rset.getString("STOCK_LOCATION"));//ÀúÀåÀ§Ä¡
-				jRecord.setField("COIL_WT",rset.getString("COIL_WT"));//Áß·®
-				jRecord.setField("COIL_W",rset.getString("COIL_W"));//Æø
-				jRecord.setField("COIL_T",rset.getString("COIL_T"));//µÎ²²
-				jRecord.setField("STLKIND",rset.getString("STLKIND"));//°­Á¾
-				jRecord.setField("WBOOK_ID",rset.getString("WBOOK_ID"));//ÀÛ¾÷Áö½Ã ¼ö½Å¿©ºÎ
+				jRecord.setField("STOCK_ID",rset.getString("STOCK_ID"));//ì¬ë£Œ NO
+				jRecord.setField("STOCK_LOCATION",rset.getString("STOCK_LOCATION"));//ì €ì¥ìœ„ì¹˜
+				jRecord.setField("COIL_WT",rset.getString("COIL_WT"));//ì¤‘ëŸ‰
+				jRecord.setField("COIL_W",rset.getString("COIL_W"));//í­
+				jRecord.setField("COIL_T",rset.getString("COIL_T"));//ë‘ê»˜
+				jRecord.setField("STLKIND",rset.getString("STLKIND"));//ê°•ì¢…
+				jRecord.setField("WBOOK_ID",rset.getString("WBOOK_ID"));//ì‘ì—…ì§€ì‹œ ìˆ˜ì‹ ì—¬ë¶€
 				producList.add(jRecord);
 		    }
 		    

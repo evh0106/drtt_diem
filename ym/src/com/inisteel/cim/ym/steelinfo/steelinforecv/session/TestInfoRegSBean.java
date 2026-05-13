@@ -32,7 +32,7 @@ import com.inisteel.cim.ym.scheduling.crane.dao.YdLocSearchDAO;
 import com.inisteel.cim.ym.scheduling.crane.dao.YdStockMoveRouteDAO;
 
 /**
- * ÀÌÅ¬·¡½º´Â ¾÷¹« È­¸éÀÇ ¸Ş´º¸¦ °ü¸®ÇÏ±â À§ÇÑ Session EJBÅ¬·¡½ºÀÔ´Ï´Ù.
+ * ì´í´ë˜ìŠ¤ëŠ” ì—…ë¬´ í™”ë©´ì˜ ë©”ë‰´ë¥¼ ê´€ë¦¬í•˜ê¸° ìœ„í•œ Session EJBí´ë˜ìŠ¤ì…ë‹ˆë‹¤.
  *
  * @ejb.bean name="TestInfoRegXEJB" jndi-name="JNDITestInfoReg" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -50,10 +50,10 @@ public class TestInfoRegSBean extends BaseSessionBean {
 	}
 		
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
@@ -69,17 +69,17 @@ public class TestInfoRegSBean extends BaseSessionBean {
 	}
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */            	
 	public JDTORecord getInfo(String sQueryID, String stockid){
 		/*
-		 * ±¸ÀÚ¿ø ´Ü°èº° »èÁ¦ ·ÎÁ÷  
+		 * êµ¬ìì› ë‹¨ê³„ë³„ ì‚­ì œ ë¡œì§  
 		 */
 		String sAPP060_OLDSRC_YN = ymComm.BCoilApplyYn("APP060","3","OLD_SRC2");
 		if(sAPP060_OLDSRC_YN.equals("Y")){
@@ -90,10 +90,10 @@ public class TestInfoRegSBean extends BaseSessionBean {
 		return dao.findByPrimaryKey(sQueryID, new Object[] { stockid });
 	}
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
@@ -101,7 +101,7 @@ public class TestInfoRegSBean extends BaseSessionBean {
 	public int deleteWork(String stockid, String wbookid, String schid) {
 	
 		/*
-		 * ±¸ÀÚ¿ø ´Ü°èº° »èÁ¦ ·ÎÁ÷  
+		 * êµ¬ìì› ë‹¨ê³„ë³„ ì‚­ì œ ë¡œì§  
 		 */
 		String sAPP060_OLDSRC_YN = ymComm.BCoilApplyYn("APP060","3","OLD_SRC2");
 		if(sAPP060_OLDSRC_YN.equals("Y")){
@@ -139,17 +139,17 @@ public class TestInfoRegSBean extends BaseSessionBean {
 		return iSeq3;
 	}
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */            	
 	public int deleteMoveRoute(String qeuryId1, String qeuryId2, String stock_move_route_id) {
 		/*
-		 * ±¸ÀÚ¿ø ´Ü°èº° »èÁ¦ ·ÎÁ÷  
+		 * êµ¬ìì› ë‹¨ê³„ë³„ ì‚­ì œ ë¡œì§  
 		 */
 		String sAPP060_OLDSRC_YN = ymComm.BCoilApplyYn("APP060","3","OLD_SRC2");
 		if(sAPP060_OLDSRC_YN.equals("Y")){
@@ -173,10 +173,10 @@ public class TestInfoRegSBean extends BaseSessionBean {
         }
 	}
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
@@ -186,7 +186,7 @@ public class TestInfoRegSBean extends BaseSessionBean {
 	    List dataList = null;
 	    try{
 			/*
-			 * ±¸ÀÚ¿ø ´Ü°èº° »èÁ¦ ·ÎÁ÷  
+			 * êµ¬ìì› ë‹¨ê³„ë³„ ì‚­ì œ ë¡œì§  
 			 */
 			String sAPP060_OLDSRC_YN = ymComm.BCoilApplyYn("APP060","3","OLD_SRC2");
 			if(sAPP060_OLDSRC_YN.equals("Y")){
@@ -203,10 +203,10 @@ public class TestInfoRegSBean extends BaseSessionBean {
 	    }
 	}
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 

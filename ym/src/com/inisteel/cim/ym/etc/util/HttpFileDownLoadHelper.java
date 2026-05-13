@@ -93,7 +93,7 @@ public class HttpFileDownLoadHelper
 		String[] columnsName = {"A","B","C","D","E","F","G","H","J","K"};
 		
 		row = sheet.createRow((short) 0);
-		for (int i = 0; i < numberOfColumns; i++) // ColumnÀÇ Title Ãâ·Â ºÎºÐ
+		for (int i = 0; i < numberOfColumns; i++) // Columnì˜ Title ì¶œë ¥ ë¶€ë¶„
 		{
 			cell 	= row.createCell((short) (i + 1));
 			cell.setEncoding(HSSFCell.ENCODING_UTF_16);

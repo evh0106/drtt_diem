@@ -2,14 +2,14 @@
  * @(#)YmCommDAO
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  * 
- * @description      ¾ßµå°ü¸® °øÅë DAO
+ * @description      ì•¼ë“œê´€ë¦¬ ê³µí†µ DAO
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.bcommon.dao;
@@ -30,7 +30,7 @@ import com.inisteel.cim.common.exception.DAOException;
 import com.inisteel.cim.ym.bcommon.util.YmCommUtils;
 
 /**
- * [A] Å¬·¡½º¸í : ¾ßµå°ü¸® °øÅë DAO
+ * [A] í´ë˜ìŠ¤ëª… : ì•¼ë“œê´€ë¦¬ ê³µí†µ DAO
  *
  */
 public class YmCommDAO extends DBAssistantDAO {
@@ -38,9 +38,9 @@ public class YmCommDAO extends DBAssistantDAO {
 	private YmCommUtils commUtils = new YmCommUtils();
 	private DBAssistantDAO dbAssDao = new DBAssistantDAO(); 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¼ö½ÅµÈ Àü¹®ÀÇ Á¤º¸¸¦ Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìˆ˜ì‹ ëœ ì „ë¬¸ì˜ ì •ë³´ë¥¼ ì¡°íšŒ
 	 *      
-	 *      @param String msgID : ¼ö½ÅµÈ Àü¹®ÀÇ MSG_ID
+	 *      @param String msgID : ìˆ˜ì‹ ëœ ì „ë¬¸ì˜ MSG_ID
 	 *      @return JDTORecordSet
 	 *      @throws DAOException
 	*/
@@ -53,11 +53,11 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : conversionFieldname 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : conversionFieldname 
 	 * 
-	 * @param  JDTORecord recPara    // ÆÄ¶ó¹ÌÅÍ ·¹ÄÚµå
-	 *         int intGp             // ±¸ºĞ(0:"V_" Ãß°¡, 1:"V_" Á¦°Å
-	 * @return JDTORecord			 // ÇÊµå¸íÀ» º¯È¯ÇÑ °á°ú·¹ÄÚµå
+	 * @param  JDTORecord recPara    // íŒŒë¼ë¯¸í„° ë ˆì½”ë“œ
+	 *         int intGp             // êµ¬ë¶„(0:"V_" ì¶”ê°€, 1:"V_" ì œê±°
+	 * @return JDTORecord			 // í•„ë“œëª…ì„ ë³€í™˜í•œ ê²°ê³¼ë ˆì½”ë“œ
 	 * @throws JDTOException 
 	 */
 	public JDTORecord conversionFieldname(JDTORecord recPara, int intGp) throws JDTOException {
@@ -65,17 +65,17 @@ public class YmCommDAO extends DBAssistantDAO {
 		String szFieldName = null;
 		Iterator itrFieldName = null;
 		
-		//ÇÊµå¸íÀ» °¡Á®¿Â´Ù.
+		//í•„ë“œëª…ì„ ê°€ì ¸ì˜¨ë‹¤.
 		itrFieldName = recPara.iterateName();
 		
-		//ÇÊµå¸í °¹¼ö¸¸Å­ ·çÇÁ¸¦ µ·´Ù.
+		//í•„ë“œëª… ê°¯ìˆ˜ë§Œí¼ ë£¨í”„ë¥¼ ëˆë‹¤.
 		while(itrFieldName.hasNext()) {
 			
 			szFieldName = (String)itrFieldName.next();
-			//"V_" Ãß°¡
+			//"V_" ì¶”ê°€
 			if (intGp == 0) {
 				recRtnVal.setField("V_" + szFieldName, recPara.getField(szFieldName));
-			//"V_" Á¦°Å
+			//"V_" ì œê±°
 			} else {
 				recRtnVal.setField(szFieldName.substring(2), recPara.getField(szFieldName));
 			}
@@ -85,7 +85,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Jsp È­¸é¿ë SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Jsp í™”ë©´ìš© SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
@@ -98,27 +98,27 @@ public class YmCommDAO extends DBAssistantDAO {
 	 */	
 	public int jspSelect(JDTORecord inRec, JDTORecordSet outRecSet, String queryId, String logId, String mthdNm) throws DAOException, JDTOException {
 		
-		String methodNm = "Á¶È¸[YmCommDAO.jspSelect] < " + mthdNm;
+		String methodNm = "ì¡°íšŒ[YmCommDAO.jspSelect] < " + mthdNm;
 		
 		JDTORecord recPara = null;	
 		JDTORecordSet rsTemp = null;
 		
 		try {
 			
-			//PIDEV_S :º´Çà°¡µ¿¿ë:PI_YD
+			//PIDEV_S :ë³‘í–‰ê°€ë™ìš©:PI_YD
 //			String sPI_YD     = commUtils.nvl(inRec.getFieldString("PI_YD"), "*");				
 //			
 //			// PIDEV
 //			queryId = this.getYmRulePI("", methodNm, "YM0001", queryId, "APPPI0", sPI_YD, "*" );
 
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, "Á¶È¸[YmCommDAO.jspSelect] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, "ì¡°íšŒ[YmCommDAO.jspSelect] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			if (rsTemp.size() > 0) {
 				outRecSet.addAll(rsTemp);
@@ -134,7 +134,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         String        queryId    QueryId 
@@ -153,7 +153,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			
 //			queryId = this.getYmRulePI("", "", "YM0001", queryId, "APPPI0", piYd, "*" );
 
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
@@ -168,7 +168,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         String        queryId    QueryId 
@@ -191,14 +191,14 @@ public class YmCommDAO extends DBAssistantDAO {
 			
 //			queryId = this.getYmRulePI("", methodNm, "YM0001", queryId, "APPPI0", piYd, "*" );
 	
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			JDTORecordSet rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.select] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.select] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			return rsTemp;
 			
@@ -220,7 +220,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			
 //			queryId = this.getYmRulePI("", "", "YM0001", queryId, "APPPI0", piYd, "*" );
 
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
@@ -246,14 +246,14 @@ public class YmCommDAO extends DBAssistantDAO {
 			
 //			queryId = this.getYmRulePI("", methodNm, "YM0001", queryId, "APPPI0", piYd, "*" );
 
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			JDTORecordSet rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.select3] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.select3] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			return rsTemp;
 			
@@ -264,7 +264,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         String        queryId    QueryId 
@@ -284,14 +284,14 @@ public class YmCommDAO extends DBAssistantDAO {
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.select] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.select] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			return rsTemp;
 			
@@ -301,7 +301,7 @@ public class YmCommDAO extends DBAssistantDAO {
 		
 	}	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : UPDATE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : UPDATE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -315,7 +315,7 @@ public class YmCommDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {		
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
@@ -330,7 +330,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : UPDATE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : UPDATE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -349,14 +349,14 @@ public class YmCommDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.update] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.update] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -366,7 +366,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : INSERT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : INSERT ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -380,7 +380,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : INSERT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : INSERT ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -399,14 +399,14 @@ public class YmCommDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.insert] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.insert] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -416,7 +416,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : DELETE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : DELETE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -430,7 +430,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : DELETE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : DELETE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -449,14 +449,14 @@ public class YmCommDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[YmCommDAO.delete] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[YmCommDAO.delete] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -466,7 +466,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Procesure È£Ãâ ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Procesure í˜¸ì¶œ ë©”ì†Œë“œ
 	 * 
 	 * @param  Object[] 		inParam 		procedure input parameter array
 	 *         int[]   	 		inParamIndex   	procedure input parameter seq array 
@@ -493,18 +493,18 @@ public class YmCommDAO extends DBAssistantDAO {
 	}		
 	
 	/***************************************************************************
-	 * CodeÁ¶È¸
+	 * Codeì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °øÅë¾ßµå ÄÚµå Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³µí†µì•¼ë“œ ì½”ë“œ ì¡°íšŒ
 	 *
 	 *      @param GridData gdReq
 	 *      @return JDTORecordSet
 	 *      @throws DAOException
 	*/
 	public JDTORecordSet getYmCode(GridData gdReq) throws DAOException {
-		String methodNm = "ÄÚµåÁ¶È¸[YmCommDAO.getYmCode] < " + gdReq.getNavigateValue();
+		String methodNm = "ì½”ë“œì¡°íšŒ[YmCommDAO.getYmCode] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		String trtNm = "";
 
@@ -512,134 +512,134 @@ public class YmCommDAO extends DBAssistantDAO {
 			String jspeed_query_id = "";
 			Object[] param = null;
 			
-			String itmGp = commUtils.trim(gdReq.getParam("V_ITM_GP")); //ÄÚµåÇ×¸ñ±¸ºĞ
+			String itmGp = commUtils.trim(gdReq.getParam("V_ITM_GP")); //ì½”ë“œí•­ëª©êµ¬ë¶„
 
-			commUtils.printLog(logId, "Á¶È¸[YmCommDAO.jspSelect] °á°ú °Ç¼ö: " + itmGp , "DB");
+			commUtils.printLog(logId, "ì¡°íšŒ[YmCommDAO.jspSelect] ê²°ê³¼ ê±´ìˆ˜: " + itmGp , "DB");
 			
 			if ("YD_BAY_GP".equals(itmGp)) {
-				trtNm = "µ¿±¸ºĞ";
+				trtNm = "ë™êµ¬ë¶„";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdBayGp";  
 				param = new Object[] {
-						  commUtils.trim(gdReq.getParam("V_YD_GP"))  //¾ßµå±¸ºĞ
-						, commUtils.trim(gdReq.getParam("V_LOC_GP")) //ÀÛ¾÷Àå±¸ºĞ
+						  commUtils.trim(gdReq.getParam("V_YD_GP"))  //ì•¼ë“œêµ¬ë¶„
+						, commUtils.trim(gdReq.getParam("V_LOC_GP")) //ì‘ì—…ì¥êµ¬ë¶„
 								};
 
 			} else if ("YD_EQP_GP".equals(itmGp)) { //00~99
-				trtNm = "¼³ºñ±¸ºĞ";
+				trtNm = "ì„¤ë¹„êµ¬ë¶„";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdEqpGp";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµå±¸ºĞ + µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œêµ¬ë¶„ + ë™êµ¬ë¶„
 					};
-			} else if ("YD_LOC_GP".equals(itmGp)) { //00~99, ¼³ºñ
-				trtNm = "À§Ä¡±¸ºĞ";
+			} else if ("YD_LOC_GP".equals(itmGp)) { //00~99, ì„¤ë¹„
+				trtNm = "ìœ„ì¹˜êµ¬ë¶„";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdLocGp";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµå±¸ºĞ + µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œêµ¬ë¶„ + ë™êµ¬ë¶„
 					};				
 			} else if ("YD_STK_COL_NO".equals(itmGp)) {
-				trtNm = "ÀûÄ¡¿­¹øÈ£";
+				trtNm = "ì ì¹˜ì—´ë²ˆí˜¸";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdStkColNo";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµå±¸ºĞ + µ¿±¸ºĞ + Span±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œêµ¬ë¶„ + ë™êµ¬ë¶„ + Spanêµ¬ë¶„
 					};
 			} else if ("YD_STK_BED_NO".equals(itmGp)) {
-				trtNm = "ÀûÄ¡Bed¹øÈ£";
+				trtNm = "ì ì¹˜Bedë²ˆí˜¸";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdStkBedNo";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 					};
 			} else if ("STACK_LAYER_GP".equals(itmGp)) {
-				trtNm = "ÀûÄ¡´Ü¹øÈ£";
+				trtNm = "ì ì¹˜ë‹¨ë²ˆí˜¸";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdStkLyrNo";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_STACK_BED_GP")) //BED±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_STACK_BED_GP")) //BEDêµ¬ë¶„
 					};
 			} else if ("YD_EQP_ID_CR".equals(itmGp)) {
-				trtNm = "Å©·¹ÀÎ¼³ºñID";
+				trtNm = "í¬ë ˆì¸ì„¤ë¹„ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdEqp";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //¾ßµå±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //ì•¼ë“œêµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //ë™êµ¬ë¶„
 				};
 			} else if ("YD_EQP_ID_TC".equals(itmGp)) {
-				trtNm = "´ëÂ÷¼³ºñID";
+				trtNm = "ëŒ€ì°¨ì„¤ë¹„ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdEqpTc";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP")) //¾ßµå±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_YD_GP")) //ì•¼ë“œêµ¬ë¶„
 				};
 			} else if ("YD_EQP_ID_TC_BY_BAY".equals(itmGp)) {
-				trtNm = "´ëÂ÷¼³ºñID";
+				trtNm = "ëŒ€ì°¨ì„¤ë¹„ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdEqpTcByBay";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP")) //¾ßµå±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //µ¿±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_TO_BAY_GP")) //µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_YD_GP")) //ì•¼ë“œêµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //ë™êµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_TO_BAY_GP")) //ë™êµ¬ë¶„
 				};
 			} else if ("YD_SCH_CD".equals(itmGp)) {
-				trtNm = "½ºÄÉÁÙÄÚµå";
+				trtNm = "ìŠ¤ì¼€ì¤„ì½”ë“œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeYdSchCd";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //¾ßµå±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //ì•¼ë“œêµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //ë™êµ¬ë¶„
 					};
 			} else if ("YD_SCH_CD_OPRN".equals(itmGp)) {
-				trtNm = "½ºÄÉÁÙÄÚµå";
+				trtNm = "ìŠ¤ì¼€ì¤„ì½”ë“œ";
 				jspeed_query_id = "com.inisteel.cim.ym.common.dao.YmCommDAO.getCodeYdSchCdOprn";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //¾ßµå±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //µ¿±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_YD_GP"    )) //ì•¼ë“œêµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_YD_BAY_GP")) //ë™êµ¬ë¶„
 					};		
 			} else if ("YD_STK_ABLE_SPAN".equals(itmGp)) { 
-				trtNm = "ÀûÄ¡°¡´ÉSpan";
+				trtNm = "ì ì¹˜ê°€ëŠ¥Span";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getAbleYdLocGp";
 				param = new Object[] {
-					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
+					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 					};				
 			} else if ("YD_STK_ABLE_COL".equals(itmGp)) { 
-				trtNm = "ÀûÄ¡°¡´Écol";
+				trtNm = "ì ì¹˜ê°€ëŠ¥col";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getAbleStkColNo";
 				param = new Object[] {
-					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
+					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 					};				
 			} else if ("YD_STK_ABLE_BED".equals(itmGp)) { 
-				trtNm = "ÀûÄ¡°¡´ÉBed";
+				trtNm = "ì ì¹˜ê°€ëŠ¥Bed";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getUsableBedList";
 				param = new Object[] {
-					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
+					   commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 					};
 			} else if ("YD_STK_ABLE_LYR".equals(itmGp)) {
-				trtNm = "ÀûÄ¡°¡´ÉLyr";
+				trtNm = "ì ì¹˜ê°€ëŠ¥Lyr";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getUsableLyrList";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
-					   ,commUtils.trim(gdReq.getParam("V_STACK_BED_GP")) //¾ßµåÀûÄ¡¿­±¸ºĞ
+						commUtils.trim(gdReq.getParam("V_STACK_COL_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					   ,commUtils.trim(gdReq.getParam("V_STACK_BED_GP")) //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 					};
 			} else if ("YD_RT".equals(itmGp)) {
-				trtNm = "¾ßµåÇà¼±";
+				trtNm = "ì•¼ë“œí–‰ì„ ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdRt";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP")) //¾ßµå±¸ºĞ
-					  , commUtils.trim(gdReq.getParam("V_YD_SCH_CD")) //½ºÄÉÁÙÄÚµå
+						commUtils.trim(gdReq.getParam("V_YD_GP")) //ì•¼ë“œêµ¬ë¶„
+					  , commUtils.trim(gdReq.getParam("V_YD_SCH_CD")) //ìŠ¤ì¼€ì¤„ì½”ë“œ
 					};
 			} else if ("YD_RT_SLAB".equals(itmGp)) {
-				trtNm = "¾ßµåÇà¼±";
+				trtNm = "ì•¼ë“œí–‰ì„ ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdRtSlab";
 				param = new Object[] {
-						commUtils.trim(gdReq.getParam("V_YD_GP")) //¾ßµå±¸ºĞ
-					  , commUtils.trim(gdReq.getParam("V_YD_SCH_CD")) //½ºÄÉÁÙÄÚµå
+						commUtils.trim(gdReq.getParam("V_YD_GP")) //ì•¼ë“œêµ¬ë¶„
+					  , commUtils.trim(gdReq.getParam("V_YD_SCH_CD")) //ìŠ¤ì¼€ì¤„ì½”ë“œ
 					};
-			} else { //°øÅëÄÚµåÁ¶È¸
-				trtNm = "[" + itmGp + "]ÄÚµå";
+			} else { //ê³µí†µì½”ë“œì¡°íšŒ
+				trtNm = "[" + itmGp + "]ì½”ë“œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCodeCmCodes";
 				param = new Object[] {
-						itmGp //ÄÚµå¿µ¹®ID
-					   ,commUtils.trim(gdReq.getParam("V_CD_CAT_ID")) //ÄÚµåÄ«Å×°í¸®ID
+						itmGp //ì½”ë“œì˜ë¬¸ID
+					   ,commUtils.trim(gdReq.getParam("V_CD_CAT_ID")) //ì½”ë“œì¹´í…Œê³ ë¦¬ID
 					};
 			}
 			
 			trtNm += " : ";
-			commUtils.printLog(logId, "Á¶È¸[YmCommDAO.jspSelect] °á°ú °Ç¼ö11: " + itmGp , "DB");
+			commUtils.printLog(logId, "ì¡°íšŒ[YmCommDAO.jspSelect] ê²°ê³¼ ê±´ìˆ˜11: " + itmGp , "DB");
 
 			return getRecordSet(jspeed_query_id, param);
 		} catch(Exception e) {
@@ -647,11 +647,11 @@ public class YmCommDAO extends DBAssistantDAO {
 		}
 	}
 	/***************************************************************************
-	 * L2 ¼Û½Å Àü¹® Á¶È¸
+	 * L2 ì†¡ì‹  ì „ë¬¸ ì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : L2Àü¹®Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : L2ì „ë¬¸ì¡°íšŒ
 	 *      
 	 *      @param String msgId
 	 *      @param JDTORecord jrParam
@@ -659,54 +659,54 @@ public class YmCommDAO extends DBAssistantDAO {
 	 *      @throws DAOException
 	*/
 	public JDTORecordSet getMsgL2(String msgId, JDTORecord jrParam) throws DAOException {
-		String methodNm = "L2Àü¹®»ı¼º[YmCommDAO.getMsgL2] < " + jrParam.getResultMsg();
+		String methodNm = "L2ì „ë¬¸ìƒì„±[YmCommDAO.getMsgL2] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 		String trtNm = "";
 
 		try {
 			String jspeed_query_id = "";
 
-			/* B¿­¿¬ COIL¾ßµå L2 ¼Û½Å *************************************************************************************/			    	
+			/* Bì—´ì—° COILì•¼ë“œ L2 ì†¡ì‹  *************************************************************************************/			    	
 			if("YMA7L001".equals(msgId)) {
 			
-				trtNm = "B¿­¿¬ COIL ÀúÀåÀ§Ä¡ Á¦¿ø";
+				trtNm = "Bì—´ì—° COIL ì €ì¥ìœ„ì¹˜ ì œì›";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L001_PIDEV 
 
-				SELECT JMS_TC_CD                                  --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                  --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-				     ||'I'                                        --Àü¹®±¸ºĞ
-				     ||'0090'                                     --Àü¹®±æÀÌ
-				     ||RPAD(' ',29,' ')                           --ÀÓ½Ã
-				     ||RPAD(NVL(YD_INFO_SYNC_CD     ,' '), 1,' ') --¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-				     ||RPAD(NVL(YD_GP               ,' '), 1,' ') --¾ßµå±¸ºĞ
-				     ||RPAD(NVL(BAY_GP              ,' '), 1,' ') --¾ßµåµ¿±¸ºĞ
-				     ||RPAD(NVL(SECT_GP             ,' '), 2,' ') --¾ßµå¼³ºñ±¸ºĞ
-				     ||RPAD(NVL(COL_GP              ,' '), 2,' ') --¾ßµåÀûÄ¡¿­¹øÈ£
-				     ||RPAD(NVL(STACK_BED_GP        ,' '), 2,' ') --¾ßµåÀûÄ¡Bed¹øÈ£
-				     ||RPAD(NVL(STACK_LAYER_GP      ,' '), 2,' ') --¾ßµåÀûÄ¡´Ü¹øÈ£
-				     ||RPAD(NVL(YS_STK_BED_L_GP     ,' '), 1,' ') --¾ßµåÀûÄ¡Bed±æÀÌ±¸ºĞ
-				     ||RPAD(NVL(YS_STK_BED_W_GP     ,' '), 1,' ') --¾ßµåÀûÄ¡BedÆø±¸ºĞ
-				     ||RPAD(NVL(YD_STK_BED_DIR_GP   ,' '), 1,' ') --¾ßµåÀûÄ¡Bed¹æÇâ±¸ºĞ
-				     ||RPAD(NVL(YD_STK_BED_ACT_STAT ,' '), 1,' ') --¾ßµåÀûÄ¡BedÈ°¼º»óÅÂ
-				     ||RPAD(NVL(YD_STK_BED_WHIO_STAT,' '), 1,' ') --¾ßµåÀûÄ¡BedÀÔÃâ°í»óÅÂ
-				     ||RPAD(NVL(YD_STK_BED_XAXIS    ,' '), 7,' ') --¾ßµåÀûÄ¡BedXÃà(ÁÖÇà)
-				     ||RPAD(NVL(YD_STK_BED_YAXIS    ,' '), 5,' ') --¾ßµåÀûÄ¡BedYÃà(ÁÖÇà)
-				     ||RPAD(NVL(YD_STK_BED_ZAXIS_SYM,' '), 1,' ') --¾ßµåÀûÄ¡BedZÃàºÎÈ£
-				     ||RPAD(NVL(YD_STK_BED_ZAXIS    ,' '), 5,' ') --¾ßµåÀûÄ¡BedZÃà(ÁÖÇà)
-				     ||RPAD(NVL(YD_STK_BED_LYR_MAX  ,' '), 3,' ') --¾ßµåÀûÄ¡Bed´ÜMax
-				     ||RPAD(NVL(YD_STK_BED_WT_MAX   ,' '), 7,' ') --¾ßµåÀûÄ¡BedÁß·®Max
-				     ||RPAD(NVL(YD_STK_BED_H_MAX    ,' '), 5,' ') --¾ßµåÀûÄ¡Bed³ôÀÌMax
-				     ||RPAD(NVL(YD_STK_BED_L_MAX    ,' '), 5,' ') --¾ßµåÀûÄ¡Bed±æÀÌMax
-				     ||RPAD(NVL(YD_STK_BED_W_MAX    ,' '), 5,' ') --¾ßµåÀûÄ¡BedÆøMax
-				     ||RPAD(NVL(YD_CAR_ARRSTRT_STAT ,' '), 1,' ') --¾ßµåÂ÷·®Âø¹ß»óÅÂ
-				     ||RPAD(NVL(YD_CAR_USE_GP       ,' '), 1,' ') --¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-				     ||RPAD(NVL(YD_EQP_WRK_STAT     ,' '), 1,' ') --¾ßµå¼³ºñÀÛ¾÷»óÅÂ
-				     ||RPAD(NVL(CAR_NO              ,' '),15,' ') --Â÷·®¹øÈ£
-				     ||RPAD(NVL(TRN_EQP_CD          ,' '), 8,' ') --¿î¼ÛÀåºñÄÚµå
-				     ||RPAD(NVL(CARD_NO             ,' '), 4,' ') --Ä«µå¹øÈ£
-				     ||RPAD(NVL(YD_CAR_AIM_YD_GP    ,' '), 1,' ') --¾ßµåÂ÷·®¸ñÇ¥¾ßµå±¸ºĞ
+				SELECT JMS_TC_CD                                  --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                  --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+				     ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+				     ||'0090'                                     --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(' ',29,' ')                           --ì„ì‹œ
+				     ||RPAD(NVL(YD_INFO_SYNC_CD     ,' '), 1,' ') --ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+				     ||RPAD(NVL(YD_GP               ,' '), 1,' ') --ì•¼ë“œêµ¬ë¶„
+				     ||RPAD(NVL(BAY_GP              ,' '), 1,' ') --ì•¼ë“œë™êµ¬ë¶„
+				     ||RPAD(NVL(SECT_GP             ,' '), 2,' ') --ì•¼ë“œì„¤ë¹„êµ¬ë¶„
+				     ||RPAD(NVL(COL_GP              ,' '), 2,' ') --ì•¼ë“œì ì¹˜ì—´ë²ˆí˜¸
+				     ||RPAD(NVL(STACK_BED_GP        ,' '), 2,' ') --ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+				     ||RPAD(NVL(STACK_LAYER_GP      ,' '), 2,' ') --ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+				     ||RPAD(NVL(YS_STK_BED_L_GP     ,' '), 1,' ') --ì•¼ë“œì ì¹˜Bedê¸¸ì´êµ¬ë¶„
+				     ||RPAD(NVL(YS_STK_BED_W_GP     ,' '), 1,' ') --ì•¼ë“œì ì¹˜Bedí­êµ¬ë¶„
+				     ||RPAD(NVL(YD_STK_BED_DIR_GP   ,' '), 1,' ') --ì•¼ë“œì ì¹˜Bedë°©í–¥êµ¬ë¶„
+				     ||RPAD(NVL(YD_STK_BED_ACT_STAT ,' '), 1,' ') --ì•¼ë“œì ì¹˜Bedí™œì„±ìƒíƒœ
+				     ||RPAD(NVL(YD_STK_BED_WHIO_STAT,' '), 1,' ') --ì•¼ë“œì ì¹˜Bedì…ì¶œê³ ìƒíƒœ
+				     ||RPAD(NVL(YD_STK_BED_XAXIS    ,' '), 7,' ') --ì•¼ë“œì ì¹˜BedXì¶•(ì£¼í–‰)
+				     ||RPAD(NVL(YD_STK_BED_YAXIS    ,' '), 5,' ') --ì•¼ë“œì ì¹˜BedYì¶•(ì£¼í–‰)
+				     ||RPAD(NVL(YD_STK_BED_ZAXIS_SYM,' '), 1,' ') --ì•¼ë“œì ì¹˜BedZì¶•ë¶€í˜¸
+				     ||RPAD(NVL(YD_STK_BED_ZAXIS    ,' '), 5,' ') --ì•¼ë“œì ì¹˜BedZì¶•(ì£¼í–‰)
+				     ||RPAD(NVL(YD_STK_BED_LYR_MAX  ,' '), 3,' ') --ì•¼ë“œì ì¹˜Bedë‹¨Max
+				     ||RPAD(NVL(YD_STK_BED_WT_MAX   ,' '), 7,' ') --ì•¼ë“œì ì¹˜Bedì¤‘ëŸ‰Max
+				     ||RPAD(NVL(YD_STK_BED_H_MAX    ,' '), 5,' ') --ì•¼ë“œì ì¹˜Bedë†’ì´Max
+				     ||RPAD(NVL(YD_STK_BED_L_MAX    ,' '), 5,' ') --ì•¼ë“œì ì¹˜Bedê¸¸ì´Max
+				     ||RPAD(NVL(YD_STK_BED_W_MAX    ,' '), 5,' ') --ì•¼ë“œì ì¹˜Bedí­Max
+				     ||RPAD(NVL(YD_CAR_ARRSTRT_STAT ,' '), 1,' ') --ì•¼ë“œì°¨ëŸ‰ì°©ë°œìƒíƒœ
+				     ||RPAD(NVL(YD_CAR_USE_GP       ,' '), 1,' ') --ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+				     ||RPAD(NVL(YD_EQP_WRK_STAT     ,' '), 1,' ') --ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ
+				     ||RPAD(NVL(CAR_NO              ,' '),15,' ') --ì°¨ëŸ‰ë²ˆí˜¸
+				     ||RPAD(NVL(TRN_EQP_CD          ,' '), 8,' ') --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				     ||RPAD(NVL(CARD_NO             ,' '), 4,' ') --ì¹´ë“œë²ˆí˜¸
+				     ||RPAD(NVL(YD_CAR_AIM_YD_GP    ,' '), 1,' ') --ì•¼ë“œì°¨ëŸ‰ëª©í‘œì•¼ë“œêµ¬ë¶„
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				  
@@ -761,10 +761,10 @@ public class YmCommDAO extends DBAssistantDAO {
 				                           AND SC.DEL_YN        = 'N'
 				                           AND TS.DEL_YN        = 'N'
 				                           AND ((TS.TRN_EQP_CD    = SC.TRN_EQP_CD
-				                             AND SC.YD_CAR_USE_GP = 'L')  --±¸³»¿î¼Û
+				                             AND SC.YD_CAR_USE_GP = 'L')  --êµ¬ë‚´ìš´ì†¡
 				                             OR (TS.CAR_NO        = SC.CAR_NO
 				                             AND TS.CARD_NO       = SC.CARD_NO
-				                             AND SC.YD_CAR_USE_GP = 'G')) --ÃâÇÏÂ÷·®
+				                             AND SC.YD_CAR_USE_GP = 'G')) --ì¶œí•˜ì°¨ëŸ‰
 				                         UNION ALL
 				                        SELECT SC.STACK_COL_GP
 				                              ,TS.YD_CARUD_STOP_LOC
@@ -802,154 +802,154 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	
 			} else if("YMA7L001_CarInfo".equals(msgId)) {
 
-		    	trtNm = "B¿­¿¬ ÄÚÀÏ ÀúÀåÀ§Ä¡Á¦¿ø(Â÷·®Á¤º¸Backup";
+		    	trtNm = "Bì—´ì—° ì½”ì¼ ì €ì¥ìœ„ì¹˜ì œì›(ì°¨ëŸ‰ì •ë³´Backup";
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L001_CarInfo";
 			} else if("YMA7L002_SCRAP".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ ÄÚÀÏ ÀúÀåÇ°Á¦¿ø";
+				trtNm = "Bì—´ì—° ì½”ì¼ ì €ì¥í’ˆì œì›";
 				
 				String ydInfoSyncCd = commUtils.trim(jrParam.getFieldString("YD_INFO_SYNC_CD"));
 				
 				if ("1".equals(ydInfoSyncCd) || "2".equals(ydInfoSyncCd) || "3".equals(ydInfoSyncCd) || "4".equals(ydInfoSyncCd)) {
-					//À§Ä¡º° >> 1:µ¿,2:SPAN,3:¿­,4:BED
+					//ìœ„ì¹˜ë³„ >> 1:ë™,2:SPAN,3:ì—´,4:BED
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002ByLoc_SCRAP";
 				} else {
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002_SCRAP";
 				}
 			} else if("YMA7L002".equals(msgId)) {
 
-		    	trtNm = "B¿­¿¬ ÄÚÀÏ ÀúÀåÇ°Á¦¿ø";
+		    	trtNm = "Bì—´ì—° ì½”ì¼ ì €ì¥í’ˆì œì›";
 		    	
-				//¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå 
+				//ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ 
 				String ydInfoSyncCd = commUtils.trim(jrParam.getFieldString("YD_INFO_SYNC_CD"));
 				
 				if ("1".equals(ydInfoSyncCd) || "2".equals(ydInfoSyncCd) || "3".equals(ydInfoSyncCd) || "4".equals(ydInfoSyncCd)) {
-					//À§Ä¡º° >> 1:µ¿,2:SPAN,3:¿­,4:BED
+					//ìœ„ì¹˜ë³„ >> 1:ë™,2:SPAN,3:ì—´,4:BED
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002ByLoc_PIDEV
-					-- ÀúÀåÇ°Á¦¿øÁ¤º¸
-					SELECT JMS_TC_CD                                     --JMSTCÄÚµå
-					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-					      ,JMS_TC_CD                                     --Àü¹®ID
-					     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --»ı¼ºÀÏ½Ã
-					     ||RPAD(NVL(MSG_GP                 ,'I'), 1,' ') --Àü¹®±¸ºĞ
-					     ||'0318'                                        --Àü¹®±æÀÌ
-					     ||RPAD(' ',29,' ')                              --ÀÓ½Ã
-					     ||RPAD(NVL(YD_INFO_SYNC_CD        ,' '), 1,' ') --¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-					     ||TO_CHAR(LEAST(COUNT(*) OVER (),999),'FM000')  --¾ßµåÀç·áÁ¤º¸¼Û½Å¸Å¼ö
-					     ||TO_CHAR(LEAST(ROWNUM          ,999),'FM000')  --¾ßµåÀç·áÁ¤º¸¼Û½Å¼ø¹ø
-					     ||RPAD(NVL(STL_APPEAR_GP          ,' '), 1,' ') --Àç·á¿ÜÇü±¸ºĞ
-					     ||RPAD(NVL(STOCK_ID               ,' '),11,' ') --Àç·á¹øÈ£
-					     ||RPAD(NVL(YD_STR_LOC             ,' '), 8,' ') --¾ßµåÀúÀåÀ§Ä¡
-					     ||RPAD(NVL(STACK_LAYER_GP         ,' '), 2,' ') --¾ßµåÀûÄ¡´Ü¹øÈ£
-					     ||LPAD(NVL(YD_STL_WT              ,'0'), 5,'0') --¾ßµåÀç·áÁß·®
-					     ||LPAD(NVL(YD_STL_T               ,'0'), 6,'0') --¾ßµåÀç·áµÎ²²
-					     ||LPAD(NVL(YD_STL_W               ,'0'), 5,'0') --¾ßµåÀç·áÆø
-					     ||LPAD(NVL(YD_STL_L               ,'0'), 7,'0') --¾ßµåÀç·á±æÀÌ
-					     ||LPAD(NVL(MAT_ODIA               ,'0'), 5,'0') --Àç·á¿Ü°æ
-					     ||LPAD(NVL(MAT_IDIA               ,'0'), 5,'0') --Àç·á³»°æ
-					     ||RPAD(NVL(STLKIND_CD             ,' '), 3,' ') --°­Á¾
-					     ||RPAD(NVL(SPEC_ABBSYM            ,' '),15,' ') --±Ô°İ¾àÈ£
-					     ||RPAD(NVL(YD_IPGO_DD             ,' '),14,' ') --¾ßµåÀÔ°íÀÏÀÚ
-					     ||RPAD(NVL(PLNT_PROC_CD           ,' '), 3,' ') --°øÀå°øÁ¤ÄÚµå
-					     ||RPAD(NVL(CURR_PROG_CD           ,' '), 1,' ') --ÇöÀçÁøµµÄÚµå
-					     ||RPAD(NVL(ORD_YEOJAE_GP          ,' '), 1,' ') --ÁÖ¹®¿©Àç±¸ºĞ
-					     ||RPAD(NVL(ORD_NO                 ,' '),10,' ') --ÁÖ¹®¹øÈ£
-					     ||RPAD(NVL(ORD_DTL                ,' '), 3,' ') --ÁÖ¹®Çà¹ø
-					     ||RPAD(NVL(BUY_SLAB_NO            ,' '),30,' ') --±¸ÀÔSLAB¹øÈ£
-					     ||RPAD(NVL(SLAB_WO_RT_CD          ,' '), 2,' ') --SLABÁö½ÃÇà¼±ÄÚµå
-					     ||RPAD(NVL(ORD_HCR_GP             ,' '), 1,' ') --¼³°èHCR±¸ºĞ
-					     ||RPAD(NVL(HCR_GP                 ,' '), 1,' ') --HCR±¸ºĞ
-					     ||RPAD(NVL(CC_MC_CD               ,' '), 1,' ') --¿¬ÁÖMachineÄÚµå          
-					     ||RPAD(NVL(SCARFING_YN            ,' '), 1,' ') --SCARFING¿©ºÎ             
-					     ||RPAD(NVL(SCARFING_DONE_YN       ,' '), 1,' ') --SCARFING¿Ï·áÀ¯¹«         
-					     ||RPAD(NVL(RPR_MTD                ,' '), 1,' ') --ÁÖÆí¼ÕÁú¹æ¹ı             
-					     ||RPAD(NVL(SCARFING_DEPTH         ,' '), 2,' ') --SCARFING±íÀÌ             
-					     ||RPAD(NVL(REHEAT_SLAB_GP         ,' '), 1,' ') --Àç¿­Àç±¸ºĞ               
-					     ||RPAD(NVL(PTOP_PLNT_GP           ,' '), 2,' ') --Á¶¾÷°øÀå±¸ºĞ             
-					     ||RPAD(NVL(REFUR_CHG_LOT_NO       ,' '),10,' ') --°¡¿­·ÎÀåÀÔLot¹øÈ£        
-					     ||LPAD(NVL(CT_LOT_SCH_SERNO       ,'0'),22,'0') --»ı»êÅëÁ¦Lot½ºÄÉÁÙÀÏ·Ã¹øÈ£
-					     ||RPAD(NVL(FRTOMOVE_ORD_DATE      ,' '), 8,' ') --ÀÌ¼ÛÁö½ÃÀÏÀÚ             
-					     ||RPAD(NVL(FRTOMOVE_PLANT_GP      ,' '), 2,' ') --ÀÌ¼Û°øÀå±¸ºĞ             
-					     ||RPAD(NVL(URGENT_FRTOMOVE_WORD_GP,' '), 1,' ') --±ä±ŞÀÌ¼ÛÀÛ¾÷Áö½Ã±¸ºĞ     
-					     ||RPAD(NVL(HYSCO_TRANS_CLS        ,' '), 1,' ') --HYSCO¿î¼Û±¸ºĞ            
-					     ||RPAD(NVL(APPEAR_GRADE           ,' '), 1,' ') --¿Ü°üÁ¾ÇÕÆÇÁ¤µî±Ş         
-					     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --±ÇÃëÄÚÀÏ³Ã°¢¹æ¹ı         
-					     ||RPAD(NVL(COOL_DONE_GP           ,' '), 1,' ') --³Ã°¢¿Ï·á±¸ºĞ             
-					     ||RPAD(NVL(CONV_BRANCH_CD         ,' '), 2,' ') --¾ßµåConveyorºĞ±âÄÚµå     
-					     ||RPAD(NVL(CUST_KO_NAME           ,' '),40,' ') --°í°´»ç¸í                 
-					     ||RPAD(NVL(DEST_CD                ,' '), 5,' ') --¸ñÀûÁöÄÚµå               
-					     ||RPAD(NVL(DLVRDD_RULE_DD         ,' '), 8,' ') --³³±â±âÁØÀÏ               
-					     ||RPAD(NVL(ITEMNAME_CD            ,' '), 3,' ') --Ç°¸íÄÚµå                 
-					     ||RPAD(NVL(OVERALL_STATAMP_GRADE  ,' '), 1,' ') --Á¾ÇÕÆÇÁ¤µî±Ş             
-					     ||RPAD(NVL(ORD_GP                 ,' '), 1,' ') --¼öÁÖ±¸ºĞ                 
-					     ||RPAD(NVL(YD_STK_LOT_TP          ,' '), 2,' ') --¾ßµå»êÀûLotType          
-					     ||RPAD(NVL(YD_STK_LOT_CD          ,' '),18,' ') --¾ßµå»êÀûLotÄÚµå          
-					     ||RPAD(NVL(YD_PLAN_PROC           ,' '),10,' ') --°èÈ¹°øÁ¤                 
-					     ||RPAD(NVL(YD_PASS_PROC           ,' '),10,' ') --Åë°ú°øÁ¤                 
-					     ||RPAD(NVL(YD_NEXT_PROC           ,' '), 2,' ') --´ÙÀ½°øÁ¤                 
-					     ||RPAD(NVL(HRMILL_CMPL_DT         ,' '),14,' ') --¿­¿¬¾Ğ¿¬¿Ï·áÀÏ½Ã         
+					-- ì €ì¥í’ˆì œì›ì •ë³´
+					SELECT JMS_TC_CD                                     --JMSTCì½”ë“œ
+					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+					      ,JMS_TC_CD                                     --ì „ë¬¸ID
+					     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --ìƒì„±ì¼ì‹œ
+					     ||RPAD(NVL(MSG_GP                 ,'I'), 1,' ') --ì „ë¬¸êµ¬ë¶„
+					     ||'0318'                                        --ì „ë¬¸ê¸¸ì´
+					     ||RPAD(' ',29,' ')                              --ì„ì‹œ
+					     ||RPAD(NVL(YD_INFO_SYNC_CD        ,' '), 1,' ') --ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+					     ||TO_CHAR(LEAST(COUNT(*) OVER (),999),'FM000')  --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ë§¤ìˆ˜
+					     ||TO_CHAR(LEAST(ROWNUM          ,999),'FM000')  --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ìˆœë²ˆ
+					     ||RPAD(NVL(STL_APPEAR_GP          ,' '), 1,' ') --ì¬ë£Œì™¸í˜•êµ¬ë¶„
+					     ||RPAD(NVL(STOCK_ID               ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸
+					     ||RPAD(NVL(YD_STR_LOC             ,' '), 8,' ') --ì•¼ë“œì €ì¥ìœ„ì¹˜
+					     ||RPAD(NVL(STACK_LAYER_GP         ,' '), 2,' ') --ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+					     ||LPAD(NVL(YD_STL_WT              ,'0'), 5,'0') --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰
+					     ||LPAD(NVL(YD_STL_T               ,'0'), 6,'0') --ì•¼ë“œì¬ë£Œë‘ê»˜
+					     ||LPAD(NVL(YD_STL_W               ,'0'), 5,'0') --ì•¼ë“œì¬ë£Œí­
+					     ||LPAD(NVL(YD_STL_L               ,'0'), 7,'0') --ì•¼ë“œì¬ë£Œê¸¸ì´
+					     ||LPAD(NVL(MAT_ODIA               ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½
+					     ||LPAD(NVL(MAT_IDIA               ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½
+					     ||RPAD(NVL(STLKIND_CD             ,' '), 3,' ') --ê°•ì¢…
+					     ||RPAD(NVL(SPEC_ABBSYM            ,' '),15,' ') --ê·œê²©ì•½í˜¸
+					     ||RPAD(NVL(YD_IPGO_DD             ,' '),14,' ') --ì•¼ë“œì…ê³ ì¼ì
+					     ||RPAD(NVL(PLNT_PROC_CD           ,' '), 3,' ') --ê³µì¥ê³µì •ì½”ë“œ
+					     ||RPAD(NVL(CURR_PROG_CD           ,' '), 1,' ') --í˜„ì¬ì§„ë„ì½”ë“œ
+					     ||RPAD(NVL(ORD_YEOJAE_GP          ,' '), 1,' ') --ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+					     ||RPAD(NVL(ORD_NO                 ,' '),10,' ') --ì£¼ë¬¸ë²ˆí˜¸
+					     ||RPAD(NVL(ORD_DTL                ,' '), 3,' ') --ì£¼ë¬¸í–‰ë²ˆ
+					     ||RPAD(NVL(BUY_SLAB_NO            ,' '),30,' ') --êµ¬ì…SLABë²ˆí˜¸
+					     ||RPAD(NVL(SLAB_WO_RT_CD          ,' '), 2,' ') --SLABì§€ì‹œí–‰ì„ ì½”ë“œ
+					     ||RPAD(NVL(ORD_HCR_GP             ,' '), 1,' ') --ì„¤ê³„HCRêµ¬ë¶„
+					     ||RPAD(NVL(HCR_GP                 ,' '), 1,' ') --HCRêµ¬ë¶„
+					     ||RPAD(NVL(CC_MC_CD               ,' '), 1,' ') --ì—°ì£¼Machineì½”ë“œ          
+					     ||RPAD(NVL(SCARFING_YN            ,' '), 1,' ') --SCARFINGì—¬ë¶€             
+					     ||RPAD(NVL(SCARFING_DONE_YN       ,' '), 1,' ') --SCARFINGì™„ë£Œìœ ë¬´         
+					     ||RPAD(NVL(RPR_MTD                ,' '), 1,' ') --ì£¼í¸ì†ì§ˆë°©ë²•             
+					     ||RPAD(NVL(SCARFING_DEPTH         ,' '), 2,' ') --SCARFINGê¹Šì´             
+					     ||RPAD(NVL(REHEAT_SLAB_GP         ,' '), 1,' ') --ì¬ì—´ì¬êµ¬ë¶„               
+					     ||RPAD(NVL(PTOP_PLNT_GP           ,' '), 2,' ') --ì¡°ì—…ê³µì¥êµ¬ë¶„             
+					     ||RPAD(NVL(REFUR_CHG_LOT_NO       ,' '),10,' ') --ê°€ì—´ë¡œì¥ì…Lotë²ˆí˜¸        
+					     ||LPAD(NVL(CT_LOT_SCH_SERNO       ,'0'),22,'0') --ìƒì‚°í†µì œLotìŠ¤ì¼€ì¤„ì¼ë ¨ë²ˆí˜¸
+					     ||RPAD(NVL(FRTOMOVE_ORD_DATE      ,' '), 8,' ') --ì´ì†¡ì§€ì‹œì¼ì             
+					     ||RPAD(NVL(FRTOMOVE_PLANT_GP      ,' '), 2,' ') --ì´ì†¡ê³µì¥êµ¬ë¶„             
+					     ||RPAD(NVL(URGENT_FRTOMOVE_WORD_GP,' '), 1,' ') --ê¸´ê¸‰ì´ì†¡ì‘ì—…ì§€ì‹œêµ¬ë¶„     
+					     ||RPAD(NVL(HYSCO_TRANS_CLS        ,' '), 1,' ') --HYSCOìš´ì†¡êµ¬ë¶„            
+					     ||RPAD(NVL(APPEAR_GRADE           ,' '), 1,' ') --ì™¸ê´€ì¢…í•©íŒì •ë“±ê¸‰         
+					     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --ê¶Œì·¨ì½”ì¼ëƒ‰ê°ë°©ë²•         
+					     ||RPAD(NVL(COOL_DONE_GP           ,' '), 1,' ') --ëƒ‰ê°ì™„ë£Œêµ¬ë¶„             
+					     ||RPAD(NVL(CONV_BRANCH_CD         ,' '), 2,' ') --ì•¼ë“œConveyorë¶„ê¸°ì½”ë“œ     
+					     ||RPAD(NVL(CUST_KO_NAME           ,' '),40,' ') --ê³ ê°ì‚¬ëª…                 
+					     ||RPAD(NVL(DEST_CD                ,' '), 5,' ') --ëª©ì ì§€ì½”ë“œ               
+					     ||RPAD(NVL(DLVRDD_RULE_DD         ,' '), 8,' ') --ë‚©ê¸°ê¸°ì¤€ì¼               
+					     ||RPAD(NVL(ITEMNAME_CD            ,' '), 3,' ') --í’ˆëª…ì½”ë“œ                 
+					     ||RPAD(NVL(OVERALL_STATAMP_GRADE  ,' '), 1,' ') --ì¢…í•©íŒì •ë“±ê¸‰             
+					     ||RPAD(NVL(ORD_GP                 ,' '), 1,' ') --ìˆ˜ì£¼êµ¬ë¶„                 
+					     ||RPAD(NVL(YD_STK_LOT_TP          ,' '), 2,' ') --ì•¼ë“œì‚°ì LotType          
+					     ||RPAD(NVL(YD_STK_LOT_CD          ,' '),18,' ') --ì•¼ë“œì‚°ì Lotì½”ë“œ          
+					     ||RPAD(NVL(YD_PLAN_PROC           ,' '),10,' ') --ê³„íšê³µì •                 
+					     ||RPAD(NVL(YD_PASS_PROC           ,' '),10,' ') --í†µê³¼ê³µì •                 
+					     ||RPAD(NVL(YD_NEXT_PROC           ,' '), 2,' ') --ë‹¤ìŒê³µì •                 
+					     ||RPAD(NVL(HRMILL_CMPL_DT         ,' '),14,' ') --ì—´ì—°ì••ì—°ì™„ë£Œì¼ì‹œ         
 
 					       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 					FROM (
 
-					        SELECT   'YMA7L002'                             AS JMS_TC_CD                --Àü¹®ID
-					               , :V_MSG_GP                              AS MSG_GP                   --Àü¹®±¸ºĞ
-					               , :V_YD_INFO_SYNC_CD                     AS YD_INFO_SYNC_CD          --¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå  
-					               , '001'                                  AS YD_STL_INFO_SND_SH       --¾ßµåÀç·áÁ¤º¸¼Û½Å¸Å¼ö
-					               , '001'                                  AS YD_STL_INFO_SND_CNT      --¾ßµåÀç·áÁ¤º¸¼Û½Å¼ø¹ø
-					               , CC.STL_APPEAR_GP                       AS STL_APPEAR_GP            --Àç·á¿ÜÇü±¸ºĞ
-					               , ST.STOCK_ID                            AS STOCK_ID                 --Àç·á¹øÈ£
-					               , LY.STACK_COL_GP || LY.STACK_BED_GP     AS YD_STR_LOC               --¾ßµåÀúÀåÀ§Ä¡
-					               , LY.STACK_LAYER_GP                      AS STACK_LAYER_GP           --¾ßµåÀûÄ¡´Ü¹øÈ£
-					               , TO_CHAR(CC.COIL_WT    , 'FM00000'  )   AS YD_STL_WT                --¾ßµåÀç·áÁß·®
-					               , TO_CHAR(CC.COIL_T     , 'FM000V000')   AS YD_STL_T                 --¾ßµåÀç·áµÎ²²
-					               , TO_CHAR(CC.COIL_W     , 'FM0000V0' )   AS YD_STL_W                 --¾ßµåÀç·áÆø
-					               , TO_CHAR(CC.COIL_LEN   , 'FM0000000')   AS YD_STL_L                 --¾ßµåÀç·á±æÀÌ
-					               , TO_CHAR(CC.COIL_OUTDIA, 'FM00000'  )   AS MAT_ODIA                 --Àç·á¿Ü°æ
-					               , TO_CHAR(CC.COIL_INDIA , 'FM0000V0' )   AS MAT_IDIA                 --Àç·á³»°æ
-					               , NULL                                   AS STLKIND_CD               --°­Á¾
-					               , CC.SPEC_ABBSYM                         AS SPEC_ABBSYM              --±Ô°İ¾àÈ£
-					               , CC.RECEIPT_DATE                        AS YD_IPGO_DD               --¾ßµåÀÔ°íÀÏÀÚ
-					               , CC.PLNT_PROC_CD                        AS PLNT_PROC_CD             --°øÀå°øÁ¤ÄÚµå
-					               , CC.CURR_PROG_CD                        AS CURR_PROG_CD             --ÇöÀçÁøµµÄÚµå
-					               , CC.ORD_YEOJAE_GP                       AS ORD_YEOJAE_GP            --ÁÖ¹®¿©Àç±¸ºĞ
-					               , CC.ORD_NO                              AS ORD_NO                   --ÁÖ¹®¹øÈ£
-					               , CC.ORD_DTL                             AS ORD_DTL                  --ÁÖ¹®Çà¹ø
-					               , NULL                                   AS BUY_SLAB_NO              --±¸ÀÔSLAB¹øÈ£
-					               , NULL                                   AS SLAB_WO_RT_CD            --SLABÁö½ÃÇà¼±ÄÚµå
-					               , OC.ORD_HCR_GP                          AS ORD_HCR_GP               --¼³°èHCR±¸ºĞ
-					               , CC.HCR_GP                              AS HCR_GP                   --HCR±¸ºĞ
-					               , NULL                                   AS CC_MC_CD                 --¿¬ÁÖMachineÄÚµå
-					               , NULL                                   AS SCARFING_YN              --SCARFING¿©ºÎ
-					               , NULL                                   AS SCARFING_DONE_YN         --SCARFING¿Ï·áÀ¯¹«
-					               , NULL                                   AS RPR_MTD                  --ÁÖÆí¼ÕÁú¹æ¹ı
-					               , NULL                                   AS SCARFING_DEPTH           --SCARFING±íÀÌ
-					               , NULL                                   AS REHEAT_SLAB_GP           --Àç¿­Àç±¸ºĞ
-					               , CC.PTOP_PLNT_GP                        AS PTOP_PLNT_GP             --Á¶¾÷°øÀå±¸ºĞ
-					               , NULL                                   AS REFUR_CHG_LOT_NO         --°¡¿­·ÎÀåÀÔLot¹øÈ£
-					               , NULL                                   AS CT_LOT_SCH_SERNO         --»ı»êÅëÁ¦Lot½ºÄÉÁÙÀÏ·Ã¹øÈ£
-					               , CC.FRTOMOVE_ORD_DATE                   AS FRTOMOVE_ORD_DATE         --ÀÌ¼ÛÁö½ÃÀÏÀÚ
-					               , CC.FRTOMOVE_PLANT_GP                   AS FRTOMOVE_PLANT_GP         --ÀÌ¼Û°øÀå±¸ºĞ
-					               , ''                                     AS URGENT_FRTOMOVE_WORD_GP  --±ä±ŞÀÌ¼ÛÀÛ¾÷Áö½Ã±¸ºĞ
-					               , CC.HYSCO_TRANS_GP                      AS HYSCO_TRANS_CLS          --HYSCO¿î¼Û±¸ºĞ
-					               , CC.APPEAR_GRADE                        AS APPEAR_GRADE             --¿Ü°üÁ¾ÇÕÆÇÁ¤µî±Ş
-					               , OC.COOL_METHOD                         AS COOL_METHOD              --±ÇÃëÄÚÀÏ³Ã°¢¹æ¹ı
-					               , CC.COOL_DONE_GP                                   AS COOL_DONE_GP             --³Ã°¢¿Ï·á±¸ºĞ
-					               , NULL                                   AS CONV_BRANCH_CD           --¾ßµåConveyorºĞ±âÄÚµå
-					               , (SELECT REPLACE(CUST_KO_NAME,'¢ß','(ÁÖ)') 
+					        SELECT   'YMA7L002'                             AS JMS_TC_CD                --ì „ë¬¸ID
+					               , :V_MSG_GP                              AS MSG_GP                   --ì „ë¬¸êµ¬ë¶„
+					               , :V_YD_INFO_SYNC_CD                     AS YD_INFO_SYNC_CD          --ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ  
+					               , '001'                                  AS YD_STL_INFO_SND_SH       --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ë§¤ìˆ˜
+					               , '001'                                  AS YD_STL_INFO_SND_CNT      --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ìˆœë²ˆ
+					               , CC.STL_APPEAR_GP                       AS STL_APPEAR_GP            --ì¬ë£Œì™¸í˜•êµ¬ë¶„
+					               , ST.STOCK_ID                            AS STOCK_ID                 --ì¬ë£Œë²ˆí˜¸
+					               , LY.STACK_COL_GP || LY.STACK_BED_GP     AS YD_STR_LOC               --ì•¼ë“œì €ì¥ìœ„ì¹˜
+					               , LY.STACK_LAYER_GP                      AS STACK_LAYER_GP           --ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+					               , TO_CHAR(CC.COIL_WT    , 'FM00000'  )   AS YD_STL_WT                --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰
+					               , TO_CHAR(CC.COIL_T     , 'FM000V000')   AS YD_STL_T                 --ì•¼ë“œì¬ë£Œë‘ê»˜
+					               , TO_CHAR(CC.COIL_W     , 'FM0000V0' )   AS YD_STL_W                 --ì•¼ë“œì¬ë£Œí­
+					               , TO_CHAR(CC.COIL_LEN   , 'FM0000000')   AS YD_STL_L                 --ì•¼ë“œì¬ë£Œê¸¸ì´
+					               , TO_CHAR(CC.COIL_OUTDIA, 'FM00000'  )   AS MAT_ODIA                 --ì¬ë£Œì™¸ê²½
+					               , TO_CHAR(CC.COIL_INDIA , 'FM0000V0' )   AS MAT_IDIA                 --ì¬ë£Œë‚´ê²½
+					               , NULL                                   AS STLKIND_CD               --ê°•ì¢…
+					               , CC.SPEC_ABBSYM                         AS SPEC_ABBSYM              --ê·œê²©ì•½í˜¸
+					               , CC.RECEIPT_DATE                        AS YD_IPGO_DD               --ì•¼ë“œì…ê³ ì¼ì
+					               , CC.PLNT_PROC_CD                        AS PLNT_PROC_CD             --ê³µì¥ê³µì •ì½”ë“œ
+					               , CC.CURR_PROG_CD                        AS CURR_PROG_CD             --í˜„ì¬ì§„ë„ì½”ë“œ
+					               , CC.ORD_YEOJAE_GP                       AS ORD_YEOJAE_GP            --ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+					               , CC.ORD_NO                              AS ORD_NO                   --ì£¼ë¬¸ë²ˆí˜¸
+					               , CC.ORD_DTL                             AS ORD_DTL                  --ì£¼ë¬¸í–‰ë²ˆ
+					               , NULL                                   AS BUY_SLAB_NO              --êµ¬ì…SLABë²ˆí˜¸
+					               , NULL                                   AS SLAB_WO_RT_CD            --SLABì§€ì‹œí–‰ì„ ì½”ë“œ
+					               , OC.ORD_HCR_GP                          AS ORD_HCR_GP               --ì„¤ê³„HCRêµ¬ë¶„
+					               , CC.HCR_GP                              AS HCR_GP                   --HCRêµ¬ë¶„
+					               , NULL                                   AS CC_MC_CD                 --ì—°ì£¼Machineì½”ë“œ
+					               , NULL                                   AS SCARFING_YN              --SCARFINGì—¬ë¶€
+					               , NULL                                   AS SCARFING_DONE_YN         --SCARFINGì™„ë£Œìœ ë¬´
+					               , NULL                                   AS RPR_MTD                  --ì£¼í¸ì†ì§ˆë°©ë²•
+					               , NULL                                   AS SCARFING_DEPTH           --SCARFINGê¹Šì´
+					               , NULL                                   AS REHEAT_SLAB_GP           --ì¬ì—´ì¬êµ¬ë¶„
+					               , CC.PTOP_PLNT_GP                        AS PTOP_PLNT_GP             --ì¡°ì—…ê³µì¥êµ¬ë¶„
+					               , NULL                                   AS REFUR_CHG_LOT_NO         --ê°€ì—´ë¡œì¥ì…Lotë²ˆí˜¸
+					               , NULL                                   AS CT_LOT_SCH_SERNO         --ìƒì‚°í†µì œLotìŠ¤ì¼€ì¤„ì¼ë ¨ë²ˆí˜¸
+					               , CC.FRTOMOVE_ORD_DATE                   AS FRTOMOVE_ORD_DATE         --ì´ì†¡ì§€ì‹œì¼ì
+					               , CC.FRTOMOVE_PLANT_GP                   AS FRTOMOVE_PLANT_GP         --ì´ì†¡ê³µì¥êµ¬ë¶„
+					               , ''                                     AS URGENT_FRTOMOVE_WORD_GP  --ê¸´ê¸‰ì´ì†¡ì‘ì—…ì§€ì‹œêµ¬ë¶„
+					               , CC.HYSCO_TRANS_GP                      AS HYSCO_TRANS_CLS          --HYSCOìš´ì†¡êµ¬ë¶„
+					               , CC.APPEAR_GRADE                        AS APPEAR_GRADE             --ì™¸ê´€ì¢…í•©íŒì •ë“±ê¸‰
+					               , OC.COOL_METHOD                         AS COOL_METHOD              --ê¶Œì·¨ì½”ì¼ëƒ‰ê°ë°©ë²•
+					               , CC.COOL_DONE_GP                                   AS COOL_DONE_GP             --ëƒ‰ê°ì™„ë£Œêµ¬ë¶„
+					               , NULL                                   AS CONV_BRANCH_CD           --ì•¼ë“œConveyorë¶„ê¸°ì½”ë“œ
+					               , (SELECT REPLACE(CUST_KO_NAME,'ãˆœ','(ì£¼)') 
 					                    FROM TB_SM_CUSTINFO 
-					                   WHERE CUST_CD = OC.CUST_CD)          AS CUST_KO_NAME             --°í°´»ç¸í
-					               , OC.DEST_CD                             AS DEST_CD                  --¸ñÀûÁöÄÚµå
-					               , TO_CHAR(OC.ORD_CONS_DATE,'YYYYMMDD')   AS DLVRDD_RULE_DD           --³³±â±âÁØÀÏ
-					               , CC.ITEMNAME_CD                         AS ITEMNAME_CD              --Ç°¸íÄÚµå
-					               , CC.OVERALL_STAMP_GRADE                 AS OVERALL_STATAMP_GRADE    --Á¾ÇÕÆÇÁ¤µî±Ş
-					               , OC.ORD_GP                              AS ORD_GP                   --¼öÁÖ±¸ºĞ
-					               , NULL                                   AS YD_STK_LOT_TP             --¾ßµå»êÀûLotType
-					               , ST.STACK_LOT_NO                        AS YD_STK_LOT_CD             --¾ßµå»êÀûLotÄÚµå
-					               , CC.PLAN_PROC1||CC.PLAN_PROC2||CC.PLAN_PROC3||CC.PLAN_PROC4||CC.PLAN_PROC5  AS YD_PLAN_PROC  --°èÈ¹°øÁ¤
-					               , CC.PASS_PROC1||CC.PASS_PROC2||CC.PASS_PROC3||CC.PASS_PROC4||CC.PASS_PROC5  AS YD_PASS_PROC  --Åë°ú°øÁ¤
-					               , CC.NEXT_PROC                           AS YD_NEXT_PROC              --´ÙÀ½°øÁ¤
-					               , TO_CHAR(CC.HRMILL_CMPL_DT,'YYYYMMDDHH24MISS') AS HRMILL_CMPL_DT     --¿­¿¬¾Ğ¿¬¿Ï·áÀÏ½Ã
+					                   WHERE CUST_CD = OC.CUST_CD)          AS CUST_KO_NAME             --ê³ ê°ì‚¬ëª…
+					               , OC.DEST_CD                             AS DEST_CD                  --ëª©ì ì§€ì½”ë“œ
+					               , TO_CHAR(OC.ORD_CONS_DATE,'YYYYMMDD')   AS DLVRDD_RULE_DD           --ë‚©ê¸°ê¸°ì¤€ì¼
+					               , CC.ITEMNAME_CD                         AS ITEMNAME_CD              --í’ˆëª…ì½”ë“œ
+					               , CC.OVERALL_STAMP_GRADE                 AS OVERALL_STATAMP_GRADE    --ì¢…í•©íŒì •ë“±ê¸‰
+					               , OC.ORD_GP                              AS ORD_GP                   --ìˆ˜ì£¼êµ¬ë¶„
+					               , NULL                                   AS YD_STK_LOT_TP             --ì•¼ë“œì‚°ì LotType
+					               , ST.STACK_LOT_NO                        AS YD_STK_LOT_CD             --ì•¼ë“œì‚°ì Lotì½”ë“œ
+					               , CC.PLAN_PROC1||CC.PLAN_PROC2||CC.PLAN_PROC3||CC.PLAN_PROC4||CC.PLAN_PROC5  AS YD_PLAN_PROC  --ê³„íšê³µì •
+					               , CC.PASS_PROC1||CC.PASS_PROC2||CC.PASS_PROC3||CC.PASS_PROC4||CC.PASS_PROC5  AS YD_PASS_PROC  --í†µê³¼ê³µì •
+					               , CC.NEXT_PROC                           AS YD_NEXT_PROC              --ë‹¤ìŒê³µì •
+					               , TO_CHAR(CC.HRMILL_CMPL_DT,'YYYYMMDDHH24MISS') AS HRMILL_CMPL_DT     --ì—´ì—°ì••ì—°ì™„ë£Œì¼ì‹œ
 					               
 					          FROM 
 					                 TB_YM_STOCK ST
@@ -971,7 +971,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002ByLoc_PIDEV";
 			    	
 				} else {
-					//Àç·áº° >> 5:ÁöÁ¤ÀúÀåÇ°,A:»ı»ê½ÇÀû,B:Â÷·®ÀÔ°í,C:Çà¼±º¯°æ,D:»ı»êÁ¾·á(»èÁ¦),H:C¿­¿¬ÀåÀÔ,P:1ÈÄÆÇÀåÀÔ,Q:2ÈÄÆÇÀåÀÔ
+					//ì¬ë£Œë³„ >> 5:ì§€ì •ì €ì¥í’ˆ,A:ìƒì‚°ì‹¤ì ,B:ì°¨ëŸ‰ì…ê³ ,C:í–‰ì„ ë³€ê²½,D:ìƒì‚°ì¢…ë£Œ(ì‚­ì œ),H:Cì—´ì—°ì¥ì…,P:1í›„íŒì¥ì…,Q:2í›„íŒì¥ì…
 			    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002_PIDEV";
 				}
 				
@@ -980,133 +980,133 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 			} else if("YMA7L002DnWr".equals(msgId)) {
 			    
-				trtNm = "B¿­¿¬ ÄÚÀÏ ÀúÀåÇ° Á¦¿ø";
+				trtNm = "Bì—´ì—° ì½”ì¼ ì €ì¥í’ˆ ì œì›";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L002DnWr_PIDEV
-				-- ÀúÀåÇ°Á¦¿øÁ¤º¸
-				SELECT JMS_TC_CD                                     --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --»ı¼ºÀÏ½Ã
-				     ||'I'                                           --Àü¹®±¸ºĞ
-				     ||'0318'                                        --Àü¹®±æÀÌ
-				     ||RPAD(' ',29,' ')                              --ÀÓ½Ã
-				     ||RPAD(NVL(YD_INFO_SYNC_CD        ,' '), 1,' ') --¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-				     ||RPAD(NVL(YD_STL_INFO_SND_SH     ,' '), 3,' ') --¾ßµåÀç·áÁ¤º¸¼Û½Å¸Å¼ö
-				     ||RPAD(NVL(YD_STL_INFO_SND_CNT    ,' '), 3,' ') --¾ßµåÀç·áÁ¤º¸¼Û½Å¼ø¹ø
-				     ||RPAD(NVL(STL_APPEAR_GP          ,' '), 1,' ') --Àç·á¿ÜÇü±¸ºĞ
-				     ||RPAD(NVL(STOCK_ID               ,' '),11,' ') --Àç·á¹øÈ£
-				     ||RPAD(NVL(YD_STR_LOC             ,' '), 8,' ') --¾ßµåÀúÀåÀ§Ä¡
-				     ||RPAD(NVL(STACK_LAYER_GP         ,' '), 2,' ') --¾ßµåÀûÄ¡´Ü¹øÈ£
-				     ||RPAD(NVL(YD_STL_WT              ,' '), 5,' ') --¾ßµåÀç·áÁß·®
-				     ||RPAD(NVL(YD_STL_T               ,' '), 6,' ') --¾ßµåÀç·áµÎ²²
-				     ||RPAD(NVL(YD_STL_W               ,' '), 5,' ') --¾ßµåÀç·áÆø
-				     ||RPAD(NVL(YD_STL_L               ,' '), 7,' ') --¾ßµåÀç·á±æÀÌ
-				     ||RPAD(NVL(MAT_ODIA               ,' '), 5,' ') --Àç·á¿Ü°æ
-				     ||RPAD(NVL(MAT_IDIA               ,' '), 5,' ') --Àç·á³»°æ
-				     ||RPAD(NVL(STLKIND_CD             ,' '), 3,' ') --°­Á¾
-				     ||RPAD(NVL(SPEC_ABBSYM            ,' '),15,' ') --±Ô°İ¾àÈ£
-				     ||RPAD(NVL(YD_IPGO_DD             ,' '),14,' ') --¾ßµåÀÔ°íÀÏÀÚ
-				     ||RPAD(NVL(PLNT_PROC_CD           ,' '), 3,' ') --°øÀå°øÁ¤ÄÚµå
-				     ||RPAD(NVL(CURR_PROG_CD           ,' '), 1,' ') --ÇöÀçÁøµµÄÚµå
-				     ||RPAD(NVL(ORD_YEOJAE_GP          ,' '), 1,' ') --ÁÖ¹®¿©Àç±¸ºĞ
-				     ||RPAD(NVL(ORD_NO                 ,' '),10,' ') --ÁÖ¹®¹øÈ£
-				     ||RPAD(NVL(ORD_DTL                ,' '), 3,' ') --ÁÖ¹®Çà¹ø
-				     ||RPAD(NVL(BUY_SLAB_NO            ,' '),30,' ') --±¸ÀÔSLAB¹øÈ£
-				     ||RPAD(NVL(SLAB_WO_RT_CD          ,' '), 2,' ') --SLABÁö½ÃÇà¼±ÄÚµå
-				     ||RPAD(NVL(ORD_HCR_GP             ,' '), 1,' ') --¼³°èHCR±¸ºĞ
-				     ||RPAD(NVL(HCR_GP                 ,' '), 1,' ') --HCR±¸ºĞ
-				     ||RPAD(NVL(CC_MC_CD               ,' '), 1,' ') --¿¬ÁÖMachineÄÚµå          
-				     ||RPAD(NVL(SCARFING_YN            ,' '), 1,' ') --SCARFING¿©ºÎ             
-				     ||RPAD(NVL(SCARFING_DONE_YN       ,' '), 1,' ') --SCARFING¿Ï·áÀ¯¹«         
-				     ||RPAD(NVL(RPR_MTD                ,' '), 1,' ') --ÁÖÆí¼ÕÁú¹æ¹ı             
-				     ||RPAD(NVL(SCARFING_DEPTH         ,' '), 2,' ') --SCARFING±íÀÌ             
-				     ||RPAD(NVL(REHEAT_SLAB_GP         ,' '), 1,' ') --Àç¿­Àç±¸ºĞ               
-				     ||RPAD(NVL(PTOP_PLNT_GP           ,' '), 2,' ') --Á¶¾÷°øÀå±¸ºĞ             
-				     ||RPAD(NVL(REFUR_CHG_LOT_NO       ,' '),10,' ') --°¡¿­·ÎÀåÀÔLot¹øÈ£        
-				     ||RPAD(NVL(CT_LOT_SCH_SERNO       ,' '),22,' ') --»ı»êÅëÁ¦Lot½ºÄÉÁÙÀÏ·Ã¹øÈ£
-				     ||RPAD(NVL(FRTOMOVE_ORD_DATE      ,' '), 8,' ') --ÀÌ¼ÛÁö½ÃÀÏÀÚ             
-				     ||RPAD(NVL(FRTOMOVE_PLANT_GP      ,' '), 2,' ') --ÀÌ¼Û°øÀå±¸ºĞ             
-				     ||RPAD(NVL(URGENT_FRTOMOVE_WORD_GP,' '), 1,' ') --±ä±ŞÀÌ¼ÛÀÛ¾÷Áö½Ã±¸ºĞ     
-				     ||RPAD(NVL(HYSCO_TRANS_CLS        ,' '), 1,' ') --HYSCO¿î¼Û±¸ºĞ            
-				     ||RPAD(NVL(APPEAR_GRADE           ,' '), 1,' ') --¿Ü°üÁ¾ÇÕÆÇÁ¤µî±Ş         
-				     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --±ÇÃëÄÚÀÏ³Ã°¢¹æ¹ı         
-				     ||RPAD(NVL(COOL_DONE_GP           ,' '), 1,' ') --³Ã°¢¿Ï·á±¸ºĞ             
-				     ||RPAD(NVL(CONV_BRANCH_CD         ,' '), 2,' ') --¾ßµåConveyorºĞ±âÄÚµå     
-				     ||RPAD(NVL(CUST_KO_NAME           ,' '),40,' ') --°í°´»ç¸í                 
-				     ||RPAD(NVL(DEST_CD                ,' '), 5,' ') --¸ñÀûÁöÄÚµå               
-				     ||RPAD(NVL(DLVRDD_RULE_DD         ,' '), 8,' ') --³³±â±âÁØÀÏ               
-				     ||RPAD(NVL(ITEMNAME_CD            ,' '), 3,' ') --Ç°¸íÄÚµå                 
-				     ||RPAD(NVL(OVERALL_STATAMP_GRADE  ,' '), 1,' ') --Á¾ÇÕÆÇÁ¤µî±Ş             
-				     ||RPAD(NVL(ORD_GP                 ,' '), 1,' ') --¼öÁÖ±¸ºĞ                 
-				     ||RPAD(NVL(YD_STK_LOT_TP          ,' '), 2,' ') --¾ßµå»êÀûLotType          
-				     ||RPAD(NVL(YD_STK_LOT_CD          ,' '),18,' ') --¾ßµå»êÀûLotÄÚµå          
-				     ||RPAD(NVL(YD_PLAN_PROC           ,' '),10,' ') --°èÈ¹°øÁ¤                 
-				     ||RPAD(NVL(YD_PASS_PROC           ,' '),10,' ') --Åë°ú°øÁ¤                 
-				     ||RPAD(NVL(YD_NEXT_PROC           ,' '), 2,' ') --´ÙÀ½°øÁ¤                 
-				     ||RPAD(NVL(HRMILL_CMPL_DT         ,' '),14,' ') --¿­¿¬¾Ğ¿¬¿Ï·áÀÏ½Ã         
+				-- ì €ì¥í’ˆì œì›ì •ë³´
+				SELECT JMS_TC_CD                                     --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --ìƒì„±ì¼ì‹œ
+				     ||'I'                                           --ì „ë¬¸êµ¬ë¶„
+				     ||'0318'                                        --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(' ',29,' ')                              --ì„ì‹œ
+				     ||RPAD(NVL(YD_INFO_SYNC_CD        ,' '), 1,' ') --ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+				     ||RPAD(NVL(YD_STL_INFO_SND_SH     ,' '), 3,' ') --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ë§¤ìˆ˜
+				     ||RPAD(NVL(YD_STL_INFO_SND_CNT    ,' '), 3,' ') --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ìˆœë²ˆ
+				     ||RPAD(NVL(STL_APPEAR_GP          ,' '), 1,' ') --ì¬ë£Œì™¸í˜•êµ¬ë¶„
+				     ||RPAD(NVL(STOCK_ID               ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸
+				     ||RPAD(NVL(YD_STR_LOC             ,' '), 8,' ') --ì•¼ë“œì €ì¥ìœ„ì¹˜
+				     ||RPAD(NVL(STACK_LAYER_GP         ,' '), 2,' ') --ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+				     ||RPAD(NVL(YD_STL_WT              ,' '), 5,' ') --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰
+				     ||RPAD(NVL(YD_STL_T               ,' '), 6,' ') --ì•¼ë“œì¬ë£Œë‘ê»˜
+				     ||RPAD(NVL(YD_STL_W               ,' '), 5,' ') --ì•¼ë“œì¬ë£Œí­
+				     ||RPAD(NVL(YD_STL_L               ,' '), 7,' ') --ì•¼ë“œì¬ë£Œê¸¸ì´
+				     ||RPAD(NVL(MAT_ODIA               ,' '), 5,' ') --ì¬ë£Œì™¸ê²½
+				     ||RPAD(NVL(MAT_IDIA               ,' '), 5,' ') --ì¬ë£Œë‚´ê²½
+				     ||RPAD(NVL(STLKIND_CD             ,' '), 3,' ') --ê°•ì¢…
+				     ||RPAD(NVL(SPEC_ABBSYM            ,' '),15,' ') --ê·œê²©ì•½í˜¸
+				     ||RPAD(NVL(YD_IPGO_DD             ,' '),14,' ') --ì•¼ë“œì…ê³ ì¼ì
+				     ||RPAD(NVL(PLNT_PROC_CD           ,' '), 3,' ') --ê³µì¥ê³µì •ì½”ë“œ
+				     ||RPAD(NVL(CURR_PROG_CD           ,' '), 1,' ') --í˜„ì¬ì§„ë„ì½”ë“œ
+				     ||RPAD(NVL(ORD_YEOJAE_GP          ,' '), 1,' ') --ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+				     ||RPAD(NVL(ORD_NO                 ,' '),10,' ') --ì£¼ë¬¸ë²ˆí˜¸
+				     ||RPAD(NVL(ORD_DTL                ,' '), 3,' ') --ì£¼ë¬¸í–‰ë²ˆ
+				     ||RPAD(NVL(BUY_SLAB_NO            ,' '),30,' ') --êµ¬ì…SLABë²ˆí˜¸
+				     ||RPAD(NVL(SLAB_WO_RT_CD          ,' '), 2,' ') --SLABì§€ì‹œí–‰ì„ ì½”ë“œ
+				     ||RPAD(NVL(ORD_HCR_GP             ,' '), 1,' ') --ì„¤ê³„HCRêµ¬ë¶„
+				     ||RPAD(NVL(HCR_GP                 ,' '), 1,' ') --HCRêµ¬ë¶„
+				     ||RPAD(NVL(CC_MC_CD               ,' '), 1,' ') --ì—°ì£¼Machineì½”ë“œ          
+				     ||RPAD(NVL(SCARFING_YN            ,' '), 1,' ') --SCARFINGì—¬ë¶€             
+				     ||RPAD(NVL(SCARFING_DONE_YN       ,' '), 1,' ') --SCARFINGì™„ë£Œìœ ë¬´         
+				     ||RPAD(NVL(RPR_MTD                ,' '), 1,' ') --ì£¼í¸ì†ì§ˆë°©ë²•             
+				     ||RPAD(NVL(SCARFING_DEPTH         ,' '), 2,' ') --SCARFINGê¹Šì´             
+				     ||RPAD(NVL(REHEAT_SLAB_GP         ,' '), 1,' ') --ì¬ì—´ì¬êµ¬ë¶„               
+				     ||RPAD(NVL(PTOP_PLNT_GP           ,' '), 2,' ') --ì¡°ì—…ê³µì¥êµ¬ë¶„             
+				     ||RPAD(NVL(REFUR_CHG_LOT_NO       ,' '),10,' ') --ê°€ì—´ë¡œì¥ì…Lotë²ˆí˜¸        
+				     ||RPAD(NVL(CT_LOT_SCH_SERNO       ,' '),22,' ') --ìƒì‚°í†µì œLotìŠ¤ì¼€ì¤„ì¼ë ¨ë²ˆí˜¸
+				     ||RPAD(NVL(FRTOMOVE_ORD_DATE      ,' '), 8,' ') --ì´ì†¡ì§€ì‹œì¼ì             
+				     ||RPAD(NVL(FRTOMOVE_PLANT_GP      ,' '), 2,' ') --ì´ì†¡ê³µì¥êµ¬ë¶„             
+				     ||RPAD(NVL(URGENT_FRTOMOVE_WORD_GP,' '), 1,' ') --ê¸´ê¸‰ì´ì†¡ì‘ì—…ì§€ì‹œêµ¬ë¶„     
+				     ||RPAD(NVL(HYSCO_TRANS_CLS        ,' '), 1,' ') --HYSCOìš´ì†¡êµ¬ë¶„            
+				     ||RPAD(NVL(APPEAR_GRADE           ,' '), 1,' ') --ì™¸ê´€ì¢…í•©íŒì •ë“±ê¸‰         
+				     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --ê¶Œì·¨ì½”ì¼ëƒ‰ê°ë°©ë²•         
+				     ||RPAD(NVL(COOL_DONE_GP           ,' '), 1,' ') --ëƒ‰ê°ì™„ë£Œêµ¬ë¶„             
+				     ||RPAD(NVL(CONV_BRANCH_CD         ,' '), 2,' ') --ì•¼ë“œConveyorë¶„ê¸°ì½”ë“œ     
+				     ||RPAD(NVL(CUST_KO_NAME           ,' '),40,' ') --ê³ ê°ì‚¬ëª…                 
+				     ||RPAD(NVL(DEST_CD                ,' '), 5,' ') --ëª©ì ì§€ì½”ë“œ               
+				     ||RPAD(NVL(DLVRDD_RULE_DD         ,' '), 8,' ') --ë‚©ê¸°ê¸°ì¤€ì¼               
+				     ||RPAD(NVL(ITEMNAME_CD            ,' '), 3,' ') --í’ˆëª…ì½”ë“œ                 
+				     ||RPAD(NVL(OVERALL_STATAMP_GRADE  ,' '), 1,' ') --ì¢…í•©íŒì •ë“±ê¸‰             
+				     ||RPAD(NVL(ORD_GP                 ,' '), 1,' ') --ìˆ˜ì£¼êµ¬ë¶„                 
+				     ||RPAD(NVL(YD_STK_LOT_TP          ,' '), 2,' ') --ì•¼ë“œì‚°ì LotType          
+				     ||RPAD(NVL(YD_STK_LOT_CD          ,' '),18,' ') --ì•¼ë“œì‚°ì Lotì½”ë“œ          
+				     ||RPAD(NVL(YD_PLAN_PROC           ,' '),10,' ') --ê³„íšê³µì •                 
+				     ||RPAD(NVL(YD_PASS_PROC           ,' '),10,' ') --í†µê³¼ê³µì •                 
+				     ||RPAD(NVL(YD_NEXT_PROC           ,' '), 2,' ') --ë‹¤ìŒê³µì •                 
+				     ||RPAD(NVL(HRMILL_CMPL_DT         ,' '),14,' ') --ì—´ì—°ì••ì—°ì™„ë£Œì¼ì‹œ         
 				
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
 				
 				  SELECT  'YMA7L002'                 AS JMS_TC_CD
-				        , :V_YD_INFO_SYNC_CD         AS YD_INFO_SYNC_CD            --¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå              
-				        , '001'                      AS YD_STL_INFO_SND_SH        --¾ßµåÀç·áÁ¤º¸¼Û½Å¸Å¼ö
-				        , '001'                      AS YD_STL_INFO_SND_CNT       --¾ßµåÀç·áÁ¤º¸¼Û½Å¼ø¹ø
-				        , B.STL_APPEAR_GP            AS STL_APPEAR_GP             --Àç·á¿ÜÇü±¸ºĞ
-				        , A.STOCK_ID                 AS STOCK_ID                  --Àç·á¹øÈ£
+				        , :V_YD_INFO_SYNC_CD         AS YD_INFO_SYNC_CD            --ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ              
+				        , '001'                      AS YD_STL_INFO_SND_SH        --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ë§¤ìˆ˜
+				        , '001'                      AS YD_STL_INFO_SND_CNT       --ì•¼ë“œì¬ë£Œì •ë³´ì†¡ì‹ ìˆœë²ˆ
+				        , B.STL_APPEAR_GP            AS STL_APPEAR_GP             --ì¬ë£Œì™¸í˜•êµ¬ë¶„
+				        , A.STOCK_ID                 AS STOCK_ID                  --ì¬ë£Œë²ˆí˜¸
 				        , SUBSTR(A.CARUNLOAD_PUT_LOC,1,8)                 
-				                                     AS YD_STR_LOC                --¾ßµåÀúÀåÀ§Ä¡
+				                                     AS YD_STR_LOC                --ì•¼ë“œì €ì¥ìœ„ì¹˜
 				        , SUBSTR(A.CARUNLOAD_PUT_LOC,9,2)
-				                                     AS STACK_LAYER_GP            --¾ßµåÀûÄ¡´Ü¹øÈ£
-				        , TO_CHAR(B.COIL_WT    , 'FM00000'  ) AS YD_STL_WT        --¾ßµåÀç·áÁß·®
-				        , TO_CHAR(B.COIL_T     , 'FM000V000') AS YD_STL_T         --¾ßµåÀç·áµÎ²²
-				        , TO_CHAR(B.COIL_W     , 'FM0000V0' ) AS YD_STL_W         --¾ßµåÀç·áÆø
-				        , TO_CHAR(B.COIL_LEN   , 'FM0000000') AS YD_STL_L         --¾ßµåÀç·á±æÀÌ
-				        , TO_CHAR(B.COIL_OUTDIA, 'FM00000'  ) AS MAT_ODIA         --Àç·á¿Ü°æ
-				        , TO_CHAR(B.COIL_INDIA , 'FM0000V0' ) AS MAT_IDIA         --Àç·á³»°æ
-				        , NULL                       AS STLKIND_CD                --°­Á¾
-				        , B.SPEC_ABBSYM              AS SPEC_ABBSYM               --±Ô°İ¾àÈ£
-				        , B.RECEIPT_DATE             AS YD_IPGO_DD                --¾ßµåÀÔ°íÀÏÀÚ
-				        , B.PLNT_PROC_CD             AS PLNT_PROC_CD              --°øÀå°øÁ¤ÄÚµå
-				        , B.CURR_PROG_CD             AS CURR_PROG_CD              --ÇöÀçÁøµµÄÚµå
-				        , B.ORD_YEOJAE_GP            AS ORD_YEOJAE_GP             --ÁÖ¹®¿©Àç±¸ºĞ
-				        , B.ORD_NO                   AS ORD_NO                    --ÁÖ¹®¹øÈ£
-				        , B.ORD_DTL                  AS ORD_DTL                   --ÁÖ¹®Çà¹ø
-				        , NULL                       AS BUY_SLAB_NO               --±¸ÀÔSLAB¹øÈ£
-				        , NULL                       AS SLAB_WO_RT_CD             --SLABÁö½ÃÇà¼±ÄÚµå
-				        , C.ORD_HCR_GP               AS ORD_HCR_GP                --¼³°èHCR±¸ºĞ
-				        , B.HCR_GP                   AS HCR_GP                    --HCR±¸ºĞ
-				        , NULL                       AS CC_MC_CD                  --¿¬ÁÖMachineÄÚµå
-				        , NULL                       AS SCARFING_YN               --SCARFING¿©ºÎ
-				        , NULL                       AS SCARFING_DONE_YN          --SCARFING¿Ï·áÀ¯¹«
-				        , NULL                       AS RPR_MTD                   --ÁÖÆí¼ÕÁú¹æ¹ı
-				        , NULL                       AS SCARFING_DEPTH            --SCARFING±íÀÌ
-				        , NULL                       AS REHEAT_SLAB_GP            --Àç¿­Àç±¸ºĞ
-				        , B.PTOP_PLNT_GP             AS PTOP_PLNT_GP              --Á¶¾÷°øÀå±¸ºĞ
-				        , NULL                       AS REFUR_CHG_LOT_NO          --°¡¿­·ÎÀåÀÔLot¹øÈ£
-				        , NULL                       AS CT_LOT_SCH_SERNO          --»ı»êÅëÁ¦Lot½ºÄÉÁÙÀÏ·Ã¹øÈ£
-				        , B.FRTOMOVE_ORD_DATE        AS FRTOMOVE_ORD_DATE         --ÀÌ¼ÛÁö½ÃÀÏÀÚ
-				        , B.FRTOMOVE_PLANT_GP        AS FRTOMOVE_PLANT_GP         --ÀÌ¼Û°øÀå±¸ºĞ
-				        , NULL                       AS URGENT_FRTOMOVE_WORD_GP   --±ä±ŞÀÌ¼ÛÀÛ¾÷Áö½Ã±¸ºĞ
-				        , B.HYSCO_TRANS_GP           AS HYSCO_TRANS_CLS           --HYSCO¿î¼Û±¸ºĞ
-				        , B.APPEAR_GRADE             AS APPEAR_GRADE              --¿Ü°üÁ¾ÇÕÆÇÁ¤µî±Ş
-				        , C.COOL_METHOD              AS COOL_METHOD               --±ÇÃëÄÚÀÏ³Ã°¢¹æ¹ı
-				        , B.COOL_DONE_GP             AS COOL_DONE_GP              --³Ã°¢¿Ï·á±¸ºĞ
-				        , NULL                       AS CONV_BRANCH_CD            --¾ßµåConveyorºĞ±âÄÚµå
-				        , (SELECT REPLACE(CUST_KO_NAME,'¢ß','(ÁÖ)') FROM TB_SM_CUSTINFO WHERE CUST_CD =B.CUST_CD)           
-				                                     AS CUST_KO_NAME              --°í°´»ç¸í
-				        , C.DEST_CD                  AS DEST_CD                   --¸ñÀûÁöÄÚµå
-				        , NULL                       AS DLVRDD_RULE_DD            --³³±â±âÁØÀÏ
-				        , B.ITEMNAME_CD              AS ITEMNAME_CD               --Ç°¸íÄÚµå
-				        , NULL                       AS OVERALL_STATAMP_GRADE     --Á¾ÇÕÆÇÁ¤µî±Ş
-				        , C.ORD_GP                   AS ORD_GP                    --¼öÁÖ±¸ºĞ
-				        , NULL                       AS YD_STK_LOT_TP             --¾ßµå»êÀûLotType
-				        , A.STACK_LOT_NO             AS YD_STK_LOT_CD             --¾ßµå»êÀûLotÄÚµå
+				                                     AS STACK_LAYER_GP            --ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+				        , TO_CHAR(B.COIL_WT    , 'FM00000'  ) AS YD_STL_WT        --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰
+				        , TO_CHAR(B.COIL_T     , 'FM000V000') AS YD_STL_T         --ì•¼ë“œì¬ë£Œë‘ê»˜
+				        , TO_CHAR(B.COIL_W     , 'FM0000V0' ) AS YD_STL_W         --ì•¼ë“œì¬ë£Œí­
+				        , TO_CHAR(B.COIL_LEN   , 'FM0000000') AS YD_STL_L         --ì•¼ë“œì¬ë£Œê¸¸ì´
+				        , TO_CHAR(B.COIL_OUTDIA, 'FM00000'  ) AS MAT_ODIA         --ì¬ë£Œì™¸ê²½
+				        , TO_CHAR(B.COIL_INDIA , 'FM0000V0' ) AS MAT_IDIA         --ì¬ë£Œë‚´ê²½
+				        , NULL                       AS STLKIND_CD                --ê°•ì¢…
+				        , B.SPEC_ABBSYM              AS SPEC_ABBSYM               --ê·œê²©ì•½í˜¸
+				        , B.RECEIPT_DATE             AS YD_IPGO_DD                --ì•¼ë“œì…ê³ ì¼ì
+				        , B.PLNT_PROC_CD             AS PLNT_PROC_CD              --ê³µì¥ê³µì •ì½”ë“œ
+				        , B.CURR_PROG_CD             AS CURR_PROG_CD              --í˜„ì¬ì§„ë„ì½”ë“œ
+				        , B.ORD_YEOJAE_GP            AS ORD_YEOJAE_GP             --ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+				        , B.ORD_NO                   AS ORD_NO                    --ì£¼ë¬¸ë²ˆí˜¸
+				        , B.ORD_DTL                  AS ORD_DTL                   --ì£¼ë¬¸í–‰ë²ˆ
+				        , NULL                       AS BUY_SLAB_NO               --êµ¬ì…SLABë²ˆí˜¸
+				        , NULL                       AS SLAB_WO_RT_CD             --SLABì§€ì‹œí–‰ì„ ì½”ë“œ
+				        , C.ORD_HCR_GP               AS ORD_HCR_GP                --ì„¤ê³„HCRêµ¬ë¶„
+				        , B.HCR_GP                   AS HCR_GP                    --HCRêµ¬ë¶„
+				        , NULL                       AS CC_MC_CD                  --ì—°ì£¼Machineì½”ë“œ
+				        , NULL                       AS SCARFING_YN               --SCARFINGì—¬ë¶€
+				        , NULL                       AS SCARFING_DONE_YN          --SCARFINGì™„ë£Œìœ ë¬´
+				        , NULL                       AS RPR_MTD                   --ì£¼í¸ì†ì§ˆë°©ë²•
+				        , NULL                       AS SCARFING_DEPTH            --SCARFINGê¹Šì´
+				        , NULL                       AS REHEAT_SLAB_GP            --ì¬ì—´ì¬êµ¬ë¶„
+				        , B.PTOP_PLNT_GP             AS PTOP_PLNT_GP              --ì¡°ì—…ê³µì¥êµ¬ë¶„
+				        , NULL                       AS REFUR_CHG_LOT_NO          --ê°€ì—´ë¡œì¥ì…Lotë²ˆí˜¸
+				        , NULL                       AS CT_LOT_SCH_SERNO          --ìƒì‚°í†µì œLotìŠ¤ì¼€ì¤„ì¼ë ¨ë²ˆí˜¸
+				        , B.FRTOMOVE_ORD_DATE        AS FRTOMOVE_ORD_DATE         --ì´ì†¡ì§€ì‹œì¼ì
+				        , B.FRTOMOVE_PLANT_GP        AS FRTOMOVE_PLANT_GP         --ì´ì†¡ê³µì¥êµ¬ë¶„
+				        , NULL                       AS URGENT_FRTOMOVE_WORD_GP   --ê¸´ê¸‰ì´ì†¡ì‘ì—…ì§€ì‹œêµ¬ë¶„
+				        , B.HYSCO_TRANS_GP           AS HYSCO_TRANS_CLS           --HYSCOìš´ì†¡êµ¬ë¶„
+				        , B.APPEAR_GRADE             AS APPEAR_GRADE              --ì™¸ê´€ì¢…í•©íŒì •ë“±ê¸‰
+				        , C.COOL_METHOD              AS COOL_METHOD               --ê¶Œì·¨ì½”ì¼ëƒ‰ê°ë°©ë²•
+				        , B.COOL_DONE_GP             AS COOL_DONE_GP              --ëƒ‰ê°ì™„ë£Œêµ¬ë¶„
+				        , NULL                       AS CONV_BRANCH_CD            --ì•¼ë“œConveyorë¶„ê¸°ì½”ë“œ
+				        , (SELECT REPLACE(CUST_KO_NAME,'ãˆœ','(ì£¼)') FROM TB_SM_CUSTINFO WHERE CUST_CD =B.CUST_CD)           
+				                                     AS CUST_KO_NAME              --ê³ ê°ì‚¬ëª…
+				        , C.DEST_CD                  AS DEST_CD                   --ëª©ì ì§€ì½”ë“œ
+				        , NULL                       AS DLVRDD_RULE_DD            --ë‚©ê¸°ê¸°ì¤€ì¼
+				        , B.ITEMNAME_CD              AS ITEMNAME_CD               --í’ˆëª…ì½”ë“œ
+				        , NULL                       AS OVERALL_STATAMP_GRADE     --ì¢…í•©íŒì •ë“±ê¸‰
+				        , C.ORD_GP                   AS ORD_GP                    --ìˆ˜ì£¼êµ¬ë¶„
+				        , NULL                       AS YD_STK_LOT_TP             --ì•¼ë“œì‚°ì LotType
+				        , A.STACK_LOT_NO             AS YD_STK_LOT_CD             --ì•¼ë“œì‚°ì Lotì½”ë“œ
 				        , B.PLAN_PROC1||B.PLAN_PROC2||B.PLAN_PROC3||B.PLAN_PROC4||B.PLAN_PROC5 
-				        AS YD_PLAN_PROC              --°èÈ¹°øÁ¤
-				        , B.PASS_PROC1||B.PASS_PROC2||B.PASS_PROC3||B.PASS_PROC4||B.PASS_PROC5            AS YD_PASS_PROC              --Åë°ú°øÁ¤
-				        , B.NEXT_PROC                AS YD_NEXT_PROC              --´ÙÀ½°øÁ¤
-				        , TO_CHAR(B.HRMILL_CMPL_DT,'YYYYMMDDHH24MISS') AS HRMILL_CMPL_DT     --¿­¿¬¾Ğ¿¬¿Ï·áÀÏ½Ã
+				        AS YD_PLAN_PROC              --ê³„íšê³µì •
+				        , B.PASS_PROC1||B.PASS_PROC2||B.PASS_PROC3||B.PASS_PROC4||B.PASS_PROC5            AS YD_PASS_PROC              --í†µê³¼ê³µì •
+				        , B.NEXT_PROC                AS YD_NEXT_PROC              --ë‹¤ìŒê³µì •
+				        , TO_CHAR(B.HRMILL_CMPL_DT,'YYYYMMDDHH24MISS') AS HRMILL_CMPL_DT     --ì—´ì—°ì••ì—°ì™„ë£Œì¼ì‹œ
 					   
 				FROM  TB_YM_STOCK A
 				    , USRPTA.TB_PT_COILCOMM B
@@ -1136,7 +1136,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				jrParam.setField("PI_YD"	, "3");
 				
 				//SCRAP
-		    	trtNm = "1¿­¿¬ COIL ÀÛ¾÷Áö½Ã";
+		    	trtNm = "1ì—´ì—° COIL ì‘ì—…ì§€ì‹œ";
 
 		    	String sAPP022  = "N";
 		    	JDTORecord jrParam1 = commUtils.getParam("", methodNm, "");
@@ -1152,7 +1152,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				   AND ITEM  = :V_ITEM
 				   AND DEL_YN = 'N'
 				*/  
-				JDTORecordSet jsChk = this.select(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getBCoilApplyYn", logId, methodNm, "¿­Á¤º¸ Read"); 
+				JDTORecordSet jsChk = this.select(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getBCoilApplyYn", logId, methodNm, "ì—´ì •ë³´ Read"); 
 
 				if (jsChk.size() > 0) {
 					sAPP022    = commUtils.trim(jsChk.getRecord(0).getFieldString("APPLY_YN"));
@@ -1182,32 +1182,32 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	} //END if(sAPP022.equals("Y")) {
 			} else if("YMA7L004WC".equals(msgId)) {
 				
-				trtNm = "1¿­¿¬ ºĞµ¿COIL ÀÛ¾÷Áö½Ã";
+				trtNm = "1ì—´ì—° ë¶„ë™COIL ì‘ì—…ì§€ì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA7L004WeightCoil";
 				
 			} else if("YMA7L004ROT".equals(msgId)) {
 				
-				trtNm = "1¿­¿¬ ¼³ºñº¸±Ş È¸Àü ÀÛ¾÷Áö½Ã";
+				trtNm = "1ì—´ì—° ì„¤ë¹„ë³´ê¸‰ íšŒì „ ì‘ì—…ì§€ì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA7L004Rotaion";
 				
 			}else if("YMA7L006".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ COIL ´ëÂ÷Ãâ¹ßÁö½Ã";
+		    	trtNm = "Bì—´ì—° COIL ëŒ€ì°¨ì¶œë°œì§€ì‹œ";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA7L006
-		    	SELECT JMS_TC_CD --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,JMS_TC_CD                                  --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-		    	     ||'I'                                        --Àü¹®±¸ºĞ
-		    	     ||'0029' --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',29,' ')                           --ÀÓ½Ã
-		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --¾ßµå¼³ºñID
-		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --¾ßµå¼³ºñÀÛ¾÷»óÅÂ
-		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 1,' ')  --¾ßµå¸ñÇ¥µ¿±¸ºĞ
-		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --¾ßµåÇÏÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷¸Å¼ö
-		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷Áß·®
+		    	SELECT JMS_TC_CD --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,JMS_TC_CD                                  --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+		    	     ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0029' --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',29,' ')                           --ì„ì‹œ
+		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --ì•¼ë“œì„¤ë¹„ID
+		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ
+		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 1,' ')  --ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --ì•¼ë“œí•˜ì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ë§¤ìˆ˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ì¤‘ëŸ‰
 		    	     
 		    	       AS JMS_TC_MESSAGE    --JMSTCMessage
 		    	  FROM (SELECT 'YMA7L006'  AS JMS_TC_CD
@@ -1238,22 +1238,22 @@ public class YmCommDAO extends DBAssistantDAO {
 		    			    	
 			} else if("YMA8L006".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ SLAB ´ëÂ÷Ãâ¹ßÁö½Ã";
+		    	trtNm = "Bì—´ì—° SLAB ëŒ€ì°¨ì¶œë°œì§€ì‹œ";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA8L006 
-		    	SELECT JMS_TC_CD --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,JMS_TC_CD                                  --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-		    	     ||'I'                                        --Àü¹®±¸ºĞ
-		    	     ||'0034' --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',31,' ')                           --ÀÓ½Ã
-		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --¾ßµå¼³ºñID
-		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --¾ßµå¼³ºñÀÛ¾÷»óÅÂ
-		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 6,' ')  --¾ßµå¸ñÇ¥µ¿±¸ºĞ
-		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --¾ßµåÇÏÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷¸Å¼ö
-		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷Áß·®
+		    	SELECT JMS_TC_CD --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,JMS_TC_CD                                  --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+		    	     ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0034' --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',31,' ')                           --ì„ì‹œ
+		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --ì•¼ë“œì„¤ë¹„ID
+		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ
+		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 6,' ')  --ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --ì•¼ë“œí•˜ì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ë§¤ìˆ˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ì¤‘ëŸ‰
 		    	     
 		    	       AS JMS_TC_MESSAGE    --JMSTCMessage
 		    	  FROM (SELECT 'YMA8L006'  AS JMS_TC_CD
@@ -1286,22 +1286,22 @@ public class YmCommDAO extends DBAssistantDAO {
 		    			    	
 			} else if("YMA8L006BACKUP".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ SLAB ´ëÂ÷Ãâ¹ßÁö½Ã ¹é¾÷";
+		    	trtNm = "Bì—´ì—° SLAB ëŒ€ì°¨ì¶œë°œì§€ì‹œ ë°±ì—…";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA8L006 
-		    	SELECT JMS_TC_CD --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,JMS_TC_CD                                  --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-		    	     ||'I'                                        --Àü¹®±¸ºĞ
-		    	     ||'0034' --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',31,' ')                           --ÀÓ½Ã
-		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --¾ßµå¼³ºñID
-		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --¾ßµå¼³ºñÀÛ¾÷»óÅÂ
-		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 6,' ')  --¾ßµå¸ñÇ¥µ¿±¸ºĞ
-		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --¾ßµåÇÏÂ÷Á¤ÁöÀ§Ä¡
-		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷¸Å¼ö
-		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --¾ßµå´ëÂ÷ÀÛ¾÷Áß·®
+		    	SELECT JMS_TC_CD --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,JMS_TC_CD                                  --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+		    	     ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0034' --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',31,' ')                           --ì„ì‹œ
+		    	     ||RPAD(NVL(YD_EQP_ID          ,' '), 6,' ')  --ì•¼ë“œì„¤ë¹„ID
+		    	     ||RPAD(NVL(YD_EQP_WRK_STAT    ,' '), 1,' ')  --ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ
+		    	     ||RPAD(NVL(YD_AIM_BAY_GP      ,' '), 6,' ')  --ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+		    	     ||RPAD(NVL(YD_TCAR_LD_LOC     ,' '), 6,' ')  --ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_TCAR_UD_LOC     ,' '), 6,' ')  --ì•¼ë“œí•˜ì°¨ì •ì§€ìœ„ì¹˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_SH      ,' '), 2,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ë§¤ìˆ˜
+		    	     ||RPAD(NVL(YD_EQP_WRK_WT      ,' '), 7,' ')  --ì•¼ë“œëŒ€ì°¨ì‘ì—…ì¤‘ëŸ‰
 		    	     
 		    	       AS JMS_TC_MESSAGE    --JMSTCMessage
 				  FROM (SELECT 'YMA8L006'  AS JMS_TC_CD
@@ -1333,36 +1333,36 @@ public class YmCommDAO extends DBAssistantDAO {
 		    			    			    	
 			} else if("YMA7L007".equals(msgId)) {
 				
-		    	trtNm = "ÀÛ¾÷ ÇöÈ² ÀÀ´ä";
+		    	trtNm = "ì‘ì—… í˜„í™© ì‘ë‹µ";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA7L007 
-		    	SELECT 'YMA7L007'                          AS JMS_TC_CD --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,'YMA7L007'                                 --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-		    	     ||'I'                                        --Àü¹®±¸ºĞ
-		    	     ||'0046' --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',46,' ')                           --ÀÓ½Ã
-		    	     ||RPAD(NVL(:V_YD_EQP_ID       ,' '), 6,' ')  --¾ßµå¼³ºñID
-		    	     ||RPAD(NVL(YD_SCH_FLAG1       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT1        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG2       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT2        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG3       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT3        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG4       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT4        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG5       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT5        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG6       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT6        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG7       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT7        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG8       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT8        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG9       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT9        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-		    	     ||RPAD(NVL(YD_SCH_FLAG10      ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-		    	     ||RPAD(NVL(YD_SCH_CNT10       ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
+		    	SELECT 'YMA7L007'                          AS JMS_TC_CD --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,'YMA7L007'                                 --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+		    	     ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0046' --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',46,' ')                           --ì„ì‹œ
+		    	     ||RPAD(NVL(:V_YD_EQP_ID       ,' '), 6,' ')  --ì•¼ë“œì„¤ë¹„ID
+		    	     ||RPAD(NVL(YD_SCH_FLAG1       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT1        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG2       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT2        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG3       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT3        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG4       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT4        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG5       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT5        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG6       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT6        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG7       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT7        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG8       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT8        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG9       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT9        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+		    	     ||RPAD(NVL(YD_SCH_FLAG10      ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+		    	     ||RPAD(NVL(YD_SCH_CNT10       ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
 		    	     
 		    	       AS JMS_TC_MESSAGE    --JMSTCMessage
 		    	  FROM (
@@ -1393,15 +1393,15 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	             , LPAD(TO_CHAR(COUNT(*)),'3',0) AS YD_SCH_CNT
 		    	             , ROW_NUMBER() OVER(ORDER BY YD_SCH_FLAG) AS CNT
 		    	          FROM (
-		    	                SELECT (CASE WHEN A.YD_SCH_CD LIKE '3_KE0_LM' THEN 'A'--¼öÀÔ
-		    	                             WHEN (B.CD_CONTENTS LIKE '%º¸±Ş%' or B.CD_CONTENTS LIKE '%TakeIn%')  THEN 'B'--º¸±Ş
-		    	                             WHEN A.YD_SCH_CD LIKE '3_TC%'    THEN 'C'--´ëÂ÷
-		    	                             WHEN (B.CD_CONTENTS LIKE '%ÀÌ¼ÛÀÔ°í%' OR B.CD_CONTENTS LIKE '%¹İÀÔ%') THEN 'D'--¹İÀÔ
-		    	                             WHEN A.YD_SCH_CD LIKE '3_PT01UM' THEN 'E'-- ÃâÇÏ
-		    	                             WHEN A.YD_SCH_CD LIKE '3_PT03UM' THEN 'F'--ÀÌ¼Û
-		    	                             WHEN B.CD_CONTENTS LIKE '%ÀÔÃøTakeOut%' THEN 'G'--ÀÔÃøÃßÃâ
-		    	                             WHEN B.CD_CONTENTS LIKE '%ÃâÃøTakeOut%' THEN 'H'--ÃâÃøÃßÃâ
-		    	                             WHEN B.YD_SCH_CD LIKE '%3_PT08UM%' THEN 'J'--Â÷·®ÀÌÀû
+		    	                SELECT (CASE WHEN A.YD_SCH_CD LIKE '3_KE0_LM' THEN 'A'--ìˆ˜ì…
+		    	                             WHEN (B.CD_CONTENTS LIKE '%ë³´ê¸‰%' or B.CD_CONTENTS LIKE '%TakeIn%')  THEN 'B'--ë³´ê¸‰
+		    	                             WHEN A.YD_SCH_CD LIKE '3_TC%'    THEN 'C'--ëŒ€ì°¨
+		    	                             WHEN (B.CD_CONTENTS LIKE '%ì´ì†¡ì…ê³ %' OR B.CD_CONTENTS LIKE '%ë°˜ì…%') THEN 'D'--ë°˜ì…
+		    	                             WHEN A.YD_SCH_CD LIKE '3_PT01UM' THEN 'E'-- ì¶œí•˜
+		    	                             WHEN A.YD_SCH_CD LIKE '3_PT03UM' THEN 'F'--ì´ì†¡
+		    	                             WHEN B.CD_CONTENTS LIKE '%ì…ì¸¡TakeOut%' THEN 'G'--ì…ì¸¡ì¶”ì¶œ
+		    	                             WHEN B.CD_CONTENTS LIKE '%ì¶œì¸¡TakeOut%' THEN 'H'--ì¶œì¸¡ì¶”ì¶œ
+		    	                             WHEN B.YD_SCH_CD LIKE '%3_PT08UM%' THEN 'J'--ì°¨ëŸ‰ì´ì 
 		    	                         END) AS YD_SCH_FLAG,B.YD_WRK_CRN ,B.YD_ALT_CRN,A.YD_SCH_CD
 		    	                FROM USRYMA.TB_YM_CRNSCH A
 		    	                   , TB_YM_SCHEDULERULE B
@@ -1419,36 +1419,36 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L007";
 		    			    	
 			} else if("YMA8L007".equals(msgId)) { 
-				 trtNm = "B¿­¿¬ SALB ÀÛ¾÷ ÇöÈ² ÀÀ´ä";
+				 trtNm = "Bì—´ì—° SALB ì‘ì—… í˜„í™© ì‘ë‹µ";
 				    /* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA8L007 
-				    SELECT 'YMA8L007'                          AS JMS_TC_CD --JMSTCÄÚµå
-				          ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				          ,'YMA8L007'                                 --Àü¹®ID
-				         ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --»ı¼ºÀÏ½Ã
-				         ||'I'                                        --Àü¹®±¸ºĞ
-				         ||'0046' --Àü¹®±æÀÌ
-				         ||RPAD(' ',29,' ')                           --ÀÓ½Ã
-				         ||RPAD(NVL(:V_YD_EQP_ID       ,' '), 6,' ')  --¾ßµå¼³ºñID
-				         ||RPAD(NVL(YD_SCH_FLAG1       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT1        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG2       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT2        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG3       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT3        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG4       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT4        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG5       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT5        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG6       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT6        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG7       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT7        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG8       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT8        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG9       ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT9        ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
-				         ||RPAD(NVL(YD_SCH_FLAG10      ,' '), 1,' ')  --¿ä±¸½ºÄÉÁì±¸ºĞ1
-				         ||RPAD(NVL(YD_SCH_CNT10       ,' '), 3,' ')  --¿ä±¸½ºÄÉÁì°Ç¼ö1
+				    SELECT 'YMA8L007'                          AS JMS_TC_CD --JMSTCì½”ë“œ
+				          ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				          ,'YMA8L007'                                 --ì „ë¬¸ID
+				         ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')    --ìƒì„±ì¼ì‹œ
+				         ||'I'                                        --ì „ë¬¸êµ¬ë¶„
+				         ||'0046' --ì „ë¬¸ê¸¸ì´
+				         ||RPAD(' ',29,' ')                           --ì„ì‹œ
+				         ||RPAD(NVL(:V_YD_EQP_ID       ,' '), 6,' ')  --ì•¼ë“œì„¤ë¹„ID
+				         ||RPAD(NVL(YD_SCH_FLAG1       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT1        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG2       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT2        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG3       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT3        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG4       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT4        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG5       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT5        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG6       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT6        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG7       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT7        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG8       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT8        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG9       ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT9        ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
+				         ||RPAD(NVL(YD_SCH_FLAG10      ,' '), 1,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´êµ¬ë¶„1
+				         ||RPAD(NVL(YD_SCH_CNT10       ,' '), 3,' ')  --ìš”êµ¬ìŠ¤ì¼€ì¥´ê±´ìˆ˜1
 				         
 				           AS JMS_TC_MESSAGE    --JMSTCMessage
 				      FROM (
@@ -1479,28 +1479,28 @@ public class YmCommDAO extends DBAssistantDAO {
 				                 , LPAD(TO_CHAR(COUNT(*)),'3',0) AS YD_SCH_CNT
 				                 , ROW_NUMBER() OVER(ORDER BY YD_SCH_FLAG) AS CNT
 				              FROM (
-				                    SELECT (CASE WHEN A.YD_SCH_CD LIKE '2_PT02UM'    THEN 'A'--ÀÌ¼Û»óÂ÷       
-				                                 WHEN A.YD_SCH_CD LIKE '2ESE01UM'    THEN 'B'--½ºÄ«ÇÎº¸±Ş
+				                    SELECT (CASE WHEN A.YD_SCH_CD LIKE '2_PT02UM'    THEN 'A'--ì´ì†¡ìƒì°¨       
+				                                 WHEN A.YD_SCH_CD LIKE '2ESE01UM'    THEN 'B'--ìŠ¤ì¹´í•‘ë³´ê¸‰
 				                                 
-				                                 WHEN A.YD_SCH_CD LIKE '2_WB01UM'    THEN 'D'--W/B º¸±Ş                            
-				                                 WHEN A.YD_SCH_CD LIKE '2_PT02_M'    THEN 'E'--ÀÌ¼ÛÇÏÂ÷       
-				                                 WHEN A.YD_SCH_CD LIKE '2ESE01LM'    THEN 'F'--½ºÄ«ÇÎÃßÃâ
+				                                 WHEN A.YD_SCH_CD LIKE '2_WB01UM'    THEN 'D'--W/B ë³´ê¸‰                            
+				                                 WHEN A.YD_SCH_CD LIKE '2_PT02_M'    THEN 'E'--ì´ì†¡í•˜ì°¨       
+				                                 WHEN A.YD_SCH_CD LIKE '2ESE01LM'    THEN 'F'--ìŠ¤ì¹´í•‘ì¶”ì¶œ
 				                                 
-				                                 WHEN A.YD_SCH_CD LIKE '2_YD11MM'    THEN 'H'--µ¿³»ÀÌÀû(1)    
-				                                 WHEN A.YD_SCH_CD LIKE '2_CT01UM'    THEN 'I'--CTC º¸±Ş       
-				                                 -- JÀı´ÜÀå º¸±Ş
+				                                 WHEN A.YD_SCH_CD LIKE '2_YD11MM'    THEN 'H'--ë™ë‚´ì´ì (1)    
+				                                 WHEN A.YD_SCH_CD LIKE '2_CT01UM'    THEN 'I'--CTC ë³´ê¸‰       
+				                                 -- Jì ˆë‹¨ì¥ ë³´ê¸‰
 				                                 WHEN A.YD_SCH_CD LIKE '2_HB01LM'    THEN 'L'--H/B LineOff    
-				                                 --M Àı´ÜÀå ÃßÃâ
-				                                 --N Æ®·¹ÀÏ·¯ÇÏÂ÷
-				                                 --O ET CAR ÇÏÂ÷
-				                                 WHEN A.YD_SCH_CD LIKE '2_PT02_M'    THEN 'N'--ÀÌ¼Û»óÇÏÂ÷
-				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC1' THEN 'C'--´ëÂ÷ÇÏÂ÷(1)    
-				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC1' THEN 'C'--´ëÂ÷ÇÏÂ÷(1)    
-				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC2' THEN 'G'--´ëÂ÷ÇÏÂ÷(2)    
-				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC2' THEN 'G'--´ëÂ÷ÇÏÂ÷(2)    
-				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC3' THEN 'K'--´ëÂ÷ÇÏÂ÷(3)    
-				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC3' THEN 'K'--´ëÂ÷ÇÏÂ÷(4)    
-				            --                     WHEN A.YD_SCH_CD LIKE '2_HB02UM'    THEN 'L'--STE ºñ»óº¸±Ş   
+				                                 --M ì ˆë‹¨ì¥ ì¶”ì¶œ
+				                                 --N íŠ¸ë ˆì¼ëŸ¬í•˜ì°¨
+				                                 --O ET CAR í•˜ì°¨
+				                                 WHEN A.YD_SCH_CD LIKE '2_PT02_M'    THEN 'N'--ì´ì†¡ìƒí•˜ì°¨
+				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC1' THEN 'C'--ëŒ€ì°¨í•˜ì°¨(1)    
+				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC1' THEN 'C'--ëŒ€ì°¨í•˜ì°¨(1)    
+				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC2' THEN 'G'--ëŒ€ì°¨í•˜ì°¨(2)    
+				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC2' THEN 'G'--ëŒ€ì°¨í•˜ì°¨(2)    
+				                                 WHEN SUBSTR(YD_UP_WO_LOC, 3, 3) = 'TC3' THEN 'K'--ëŒ€ì°¨í•˜ì°¨(3)    
+				                                 WHEN SUBSTR(YD_DN_WO_LOC, 3, 3) = 'TC3' THEN 'K'--ëŒ€ì°¨í•˜ì°¨(4)    
+				            --                     WHEN A.YD_SCH_CD LIKE '2_HB02UM'    THEN 'L'--STE ë¹„ìƒë³´ê¸‰   
 				                             END) AS YD_SCH_FLAG,B.YD_WRK_CRN ,B.YD_ALT_CRN,A.YD_SCH_CD
 				                    FROM TB_YM_CRNSCH A
 				                       , TB_YM_SCHEDULERULE B
@@ -1543,187 +1543,187 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 		    } else if("YMA7L008".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ COIL Â÷·®¿¹Á¤Á¤º¸";
+		    	trtNm = "Bì—´ì—° COIL ì°¨ëŸ‰ì˜ˆì •ì •ë³´";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L008 
-		    	-- Â÷·®ÀÛ¾÷¿¹Á¤Á¤º¸
-		    	SELECT JMS_TC_CD  --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT  --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,JMS_TC_CD                                                  --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')                    --»ı¼ºÀÏ½Ã
-		    	     ||'I'                                                        --Àü¹®±¸ºĞ
-		    	     ||'0825'                                                     --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',29,' ')                                           --ÀÓ½Ã
-		    	     ||RPAD(NVL(A.PT_LOAD_LOC                        ,' '), 6,' ') --»óÂ÷µµÀ§Ä¡
-		    	     ||RPAD(NVL(A.CAR_NO                             ,' '),15,' ') --Â÷·®¹øÈ£
-		    	     ||RPAD(NVL(A.CARD_NO                            ,' '), 4,' ') --Â÷·®¹øÈ£
-		    	     ||RPAD(NVL(A.PT_CLS                             ,' '), 2,' ') --Â÷·®±¸ºĞ
-		    	     ||RPAD(NVL(A.WORK_CLS                           ,' '), 1,' ') --ÀÚ¾÷±¸ºĞ
-		    	     ||LPAD(NVL(A.WORK_COIL_MAX_CNT                  ,'0'), 2,'0') --¾ßµåÀûÄ¡Bed¹øÈ£
+		    	-- ì°¨ëŸ‰ì‘ì—…ì˜ˆì •ì •ë³´
+		    	SELECT JMS_TC_CD  --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT  --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,JMS_TC_CD                                                  --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')                    --ìƒì„±ì¼ì‹œ
+		    	     ||'I'                                                        --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0825'                                                     --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',29,' ')                                           --ì„ì‹œ
+		    	     ||RPAD(NVL(A.PT_LOAD_LOC                        ,' '), 6,' ') --ìƒì°¨ë„ìœ„ì¹˜
+		    	     ||RPAD(NVL(A.CAR_NO                             ,' '),15,' ') --ì°¨ëŸ‰ë²ˆí˜¸
+		    	     ||RPAD(NVL(A.CARD_NO                            ,' '), 4,' ') --ì°¨ëŸ‰ë²ˆí˜¸
+		    	     ||RPAD(NVL(A.PT_CLS                             ,' '), 2,' ') --ì°¨ëŸ‰êµ¬ë¶„
+		    	     ||RPAD(NVL(A.WORK_CLS                           ,' '), 1,' ') --ìì—…êµ¬ë¶„
+		    	     ||LPAD(NVL(A.WORK_COIL_MAX_CNT                  ,'0'), 2,'0') --ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 		    	      
-		    	     ||RPAD(NVL(A.STOCK_ID_0                         ,' '),11,' ') --Àç·á¹øÈ£_0
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_0                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_0
-		    	     ||LPAD(NVL(A.COIL_WT_0                          ,'0'), 5,'0') --Àç·áÁß·®_0
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_0,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_0
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_0,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_0
-		    	     ||LPAD(NVL(A.COIL_LEN_0                         ,'0'), 7,'0') --Àç·á±æÀÌ_0
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_0                      ,'0'), 5,'0') --Àç·á¿Ü°æ_0
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_0,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_0
-		    	     ||RPAD(NVL(A.WORK_STATE_0                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_0
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_0                   ,' '), 6,' ') --µ¿Á¤º¸_0
+		    	     ||RPAD(NVL(A.STOCK_ID_0                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_0
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_0                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_0
+		    	     ||LPAD(NVL(A.COIL_WT_0                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_0
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_0,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_0
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_0,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_0
+		    	     ||LPAD(NVL(A.COIL_LEN_0                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_0
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_0                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_0
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_0,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_0
+		    	     ||RPAD(NVL(A.WORK_STATE_0                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_0
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_0                   ,' '), 6,' ') --ë™ì •ë³´_0
 
-		    	     ||RPAD(NVL(A.STOCK_ID_1                         ,' '),11,' ') --Àç·á¹øÈ£_1
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_1                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_1
-		    	     ||LPAD(NVL(A.COIL_WT_1                          ,'0'), 5,'0') --Àç·áÁß·®_1
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_1,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_1
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_1,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_1
-		    	     ||LPAD(NVL(A.COIL_LEN_1                         ,'0'), 7,'0') --Àç·á±æÀÌ_1
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_1                      ,'0'), 5,'0') --Àç·á¿Ü°æ_1
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_1,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_1
-		    	     ||RPAD(NVL(A.WORK_STATE_1                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_1
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_1                   ,' '), 6,' ') --µ¿Á¤º¸_1
+		    	     ||RPAD(NVL(A.STOCK_ID_1                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_1
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_1                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_1
+		    	     ||LPAD(NVL(A.COIL_WT_1                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_1
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_1,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_1
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_1,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_1
+		    	     ||LPAD(NVL(A.COIL_LEN_1                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_1
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_1                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_1
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_1,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_1
+		    	     ||RPAD(NVL(A.WORK_STATE_1                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_1
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_1                   ,' '), 6,' ') --ë™ì •ë³´_1
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_2                         ,' '),11,' ') --Àç·á¹øÈ£_2
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_2                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_2
-		    	     ||LPAD(NVL(A.COIL_WT_2                          ,'0'), 5,'0') --Àç·áÁß·®_2
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_2,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_2
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_2,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_2
-		    	     ||LPAD(NVL(A.COIL_LEN_2                         ,'0'), 7,'0') --Àç·á±æÀÌ_2
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_2                      ,'0'), 5,'0') --Àç·á¿Ü°æ_2
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_2,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_2
-		    	     ||RPAD(NVL(A.WORK_STATE_2                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_2
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_2                   ,' '), 6,' ') --µ¿Á¤º¸_2
+		    	     ||RPAD(NVL(A.STOCK_ID_2                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_2
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_2                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_2
+		    	     ||LPAD(NVL(A.COIL_WT_2                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_2
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_2,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_2
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_2,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_2
+		    	     ||LPAD(NVL(A.COIL_LEN_2                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_2
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_2                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_2
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_2,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_2
+		    	     ||RPAD(NVL(A.WORK_STATE_2                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_2
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_2                   ,' '), 6,' ') --ë™ì •ë³´_2
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_3                         ,' '),11,' ') --Àç·á¹øÈ£_3
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_3                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_3
-		    	     ||LPAD(NVL(A.COIL_WT_3                          ,'0'), 5,'0') --Àç·áÁß·®_3
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_3,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_3
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_3,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_3
-		    	     ||LPAD(NVL(A.COIL_LEN_3                         ,'0'), 7,'0') --Àç·á±æÀÌ_3
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_3                      ,'0'), 5,'0') --Àç·á¿Ü°æ_3
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_3,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_3
-		    	     ||RPAD(NVL(A.WORK_STATE_3                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_3
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_3                   ,' '), 6,' ') --µ¿Á¤º¸_3
+		    	     ||RPAD(NVL(A.STOCK_ID_3                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_3
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_3                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_3
+		    	     ||LPAD(NVL(A.COIL_WT_3                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_3
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_3,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_3
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_3,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_3
+		    	     ||LPAD(NVL(A.COIL_LEN_3                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_3
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_3                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_3
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_3,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_3
+		    	     ||RPAD(NVL(A.WORK_STATE_3                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_3
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_3                   ,' '), 6,' ') --ë™ì •ë³´_3
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_4                         ,' '),11,' ') --Àç·á¹øÈ£_4
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_4                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_4
-		    	     ||LPAD(NVL(A.COIL_WT_4                          ,'0'), 5,'0') --Àç·áÁß·®_4
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_4,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_4
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_4,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_4
-		    	     ||LPAD(NVL(A.COIL_LEN_4                         ,'0'), 7,'0') --Àç·á±æÀÌ_4
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_4                      ,'0'), 5,'0') --Àç·á¿Ü°æ_4
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_4,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_4
-		    	     ||RPAD(NVL(A.WORK_STATE_4                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_4
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_4                   ,' '), 6,' ') --µ¿Á¤º¸_4
+		    	     ||RPAD(NVL(A.STOCK_ID_4                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_4
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_4                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_4
+		    	     ||LPAD(NVL(A.COIL_WT_4                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_4
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_4,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_4
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_4,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_4
+		    	     ||LPAD(NVL(A.COIL_LEN_4                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_4
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_4                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_4
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_4,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_4
+		    	     ||RPAD(NVL(A.WORK_STATE_4                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_4
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_4                   ,' '), 6,' ') --ë™ì •ë³´_4
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_5                         ,' '),11,' ') --Àç·á¹øÈ£_5
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_5                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_5
-		    	     ||LPAD(NVL(A.COIL_WT_5                          ,'0'), 5,'0') --Àç·áÁß·®_5
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_5,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_5
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_5,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_5
-		    	     ||LPAD(NVL(A.COIL_LEN_5                         ,'0'), 7,'0') --Àç·á±æÀÌ_5
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_5                      ,'0'), 5,'0') --Àç·á¿Ü°æ_5
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_5,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_5
-		    	     ||RPAD(NVL(A.WORK_STATE_5                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_5
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_5                   ,' '), 6,' ') --µ¿Á¤º¸_5
+		    	     ||RPAD(NVL(A.STOCK_ID_5                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_5
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_5                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_5
+		    	     ||LPAD(NVL(A.COIL_WT_5                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_5
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_5,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_5
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_5,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_5
+		    	     ||LPAD(NVL(A.COIL_LEN_5                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_5
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_5                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_5
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_5,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_5
+		    	     ||RPAD(NVL(A.WORK_STATE_5                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_5
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_5                   ,' '), 6,' ') --ë™ì •ë³´_5
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_6                         ,' '),11,' ') --Àç·á¹øÈ£_6
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_6                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_6
-		    	     ||LPAD(NVL(A.COIL_WT_6                          ,'0'), 5,'0') --Àç·áÁß·®_6
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_6,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_6
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_6,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_6
-		    	     ||LPAD(NVL(A.COIL_LEN_6                         ,'0'), 7,'0') --Àç·á±æÀÌ_6
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_6                      ,'0'), 5,'0') --Àç·á¿Ü°æ_6
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_6,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_6
-		    	     ||RPAD(NVL(A.WORK_STATE_6                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_6
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_6                   ,' '), 6,' ') --µ¿Á¤º¸_6
+		    	     ||RPAD(NVL(A.STOCK_ID_6                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_6
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_6                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_6
+		    	     ||LPAD(NVL(A.COIL_WT_6                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_6
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_6,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_6
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_6,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_6
+		    	     ||LPAD(NVL(A.COIL_LEN_6                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_6
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_6                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_6
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_6,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_6
+		    	     ||RPAD(NVL(A.WORK_STATE_6                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_6
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_6                   ,' '), 6,' ') --ë™ì •ë³´_6
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_7                         ,' '),11,' ') --Àç·á¹øÈ£_7
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_7                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_7
-		    	     ||LPAD(NVL(A.COIL_WT_7                          ,'0'), 5,'0') --Àç·áÁß·®_7
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_7,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_7
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_7,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_7
-		    	     ||LPAD(NVL(A.COIL_LEN_7                         ,'0'), 7,'0') --Àç·á±æÀÌ_7
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_7                      ,'0'), 5,'0') --Àç·á¿Ü°æ_7
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_7,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_7
-		    	     ||RPAD(NVL(A.WORK_STATE_7                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_7
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_7                   ,' '), 6,' ') --µ¿Á¤º¸_7
+		    	     ||RPAD(NVL(A.STOCK_ID_7                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_7
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_7                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_7
+		    	     ||LPAD(NVL(A.COIL_WT_7                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_7
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_7,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_7
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_7,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_7
+		    	     ||LPAD(NVL(A.COIL_LEN_7                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_7
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_7                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_7
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_7,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_7
+		    	     ||RPAD(NVL(A.WORK_STATE_7                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_7
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_7                   ,' '), 6,' ') --ë™ì •ë³´_7
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_8                         ,' '),11,' ') --Àç·á¹øÈ£_8
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_8                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_8
-		    	     ||LPAD(NVL(A.COIL_WT_8                          ,'0'), 5,'0') --Àç·áÁß·®_8
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_8,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_8
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_8,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_8
-		    	     ||LPAD(NVL(A.COIL_LEN_8                         ,'0'), 7,'0') --Àç·á±æÀÌ_8
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_8                      ,'0'), 5,'0') --Àç·á¿Ü°æ_8
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_8,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_8
-		    	     ||RPAD(NVL(A.WORK_STATE_8                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_8
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_8                   ,' '), 6,' ') --µ¿Á¤º¸_8
+		    	     ||RPAD(NVL(A.STOCK_ID_8                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_8
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_8                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_8
+		    	     ||LPAD(NVL(A.COIL_WT_8                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_8
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_8,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_8
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_8,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_8
+		    	     ||LPAD(NVL(A.COIL_LEN_8                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_8
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_8                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_8
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_8,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_8
+		    	     ||RPAD(NVL(A.WORK_STATE_8                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_8
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_8                   ,' '), 6,' ') --ë™ì •ë³´_8
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_9                         ,' '),11,' ') --Àç·á¹øÈ£_9
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_9                      ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_9
-		    	     ||LPAD(NVL(A.COIL_WT_9                          ,'0'), 5,'0') --Àç·áÁß·®_9
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_9,'FM000V000')      ,'0'), 6,'0') --Àç·áµÎ²²_9
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_9,'FM0000V0')       ,'0'), 5,'0') --Àç·áÆø_9
-		    	     ||LPAD(NVL(A.COIL_LEN_9                         ,'0'), 7,'0') --Àç·á±æÀÌ_9
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_9                      ,'0'), 5,'0') --Àç·á¿Ü°æ_9
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_9,'FM0000V0')   ,'0'), 5,'0') --Àç·á³»°æ_9
-		    	     ||RPAD(NVL(A.WORK_STATE_9                       ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_9
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_9                   ,' '), 6,' ') --µ¿Á¤º¸_9
+		    	     ||RPAD(NVL(A.STOCK_ID_9                         ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_9
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_9                      ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_9
+		    	     ||LPAD(NVL(A.COIL_WT_9                          ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_9
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_9,'FM000V000')      ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_9
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_9,'FM0000V0')       ,'0'), 5,'0') --ì¬ë£Œí­_9
+		    	     ||LPAD(NVL(A.COIL_LEN_9                         ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_9
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_9                      ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_9
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_9,'FM0000V0')   ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_9
+		    	     ||RPAD(NVL(A.WORK_STATE_9                       ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_9
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_9                   ,' '), 6,' ') --ë™ì •ë³´_9
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_10                        ,' '),11,' ') --Àç·á¹øÈ£_10
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_10                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_10
-		    	     ||LPAD(NVL(A.COIL_WT_10                         ,'0'), 5,'0') --Àç·áÁß·®_10
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_10,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_10
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_10,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_10
-		    	     ||LPAD(NVL(A.COIL_LEN_10                        ,'0'), 7,'0') --Àç·á±æÀÌ_10
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_10                     ,'0'), 5,'0') --Àç·á¿Ü°æ_10
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_10,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_10
-		    	     ||RPAD(NVL(A.WORK_STATE_10                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_10
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_10                  ,' '), 6,' ') --µ¿Á¤º¸_10
+		    	     ||RPAD(NVL(A.STOCK_ID_10                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_10
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_10                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_10
+		    	     ||LPAD(NVL(A.COIL_WT_10                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_10
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_10,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_10
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_10,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_10
+		    	     ||LPAD(NVL(A.COIL_LEN_10                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_10
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_10                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_10
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_10,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_10
+		    	     ||RPAD(NVL(A.WORK_STATE_10                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_10
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_10                  ,' '), 6,' ') --ë™ì •ë³´_10
 		    	 
-		    	     ||RPAD(NVL(A.STOCK_ID_11                        ,' '),11,' ') --Àç·á¹øÈ£_11
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_11                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_11
-		    	     ||LPAD(NVL(A.COIL_WT_11                         ,'0'), 5,'0') --Àç·áÁß·®_11
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_11,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_11
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_11,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_11
-		    	     ||LPAD(NVL(A.COIL_LEN_11                        ,'0'), 7,'0') --Àç·á±æÀÌ_11
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_11                     ,'0'), 5,'0') --Àç·á¿Ü°æ_11
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_11,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_11
-		    	     ||RPAD(NVL(A.WORK_STATE_11                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_11
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_11                  ,' '), 6,' ') --µ¿Á¤º¸_11
+		    	     ||RPAD(NVL(A.STOCK_ID_11                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_11
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_11                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_11
+		    	     ||LPAD(NVL(A.COIL_WT_11                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_11
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_11,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_11
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_11,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_11
+		    	     ||LPAD(NVL(A.COIL_LEN_11                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_11
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_11                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_11
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_11,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_11
+		    	     ||RPAD(NVL(A.WORK_STATE_11                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_11
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_11                  ,' '), 6,' ') --ë™ì •ë³´_11
 
-		    	     ||RPAD(NVL(A.STOCK_ID_12                        ,' '),11,' ') --Àç·á¹øÈ£_12
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_12                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_12
-		    	     ||LPAD(NVL(A.COIL_WT_12                         ,'0'), 5,'0') --Àç·áÁß·®_12
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_12,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_12
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_12,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_12
-		    	     ||LPAD(NVL(A.COIL_LEN_12                        ,'0'), 7,'0') --Àç·á±æÀÌ_12
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_12                     ,'0'), 5,'0') --Àç·á¿Ü°æ_12
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_12,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_12
-		    	     ||RPAD(NVL(A.WORK_STATE_12                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_12
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_12                  ,' '), 6,' ') --µ¿Á¤º¸_12
+		    	     ||RPAD(NVL(A.STOCK_ID_12                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_12
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_12                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_12
+		    	     ||LPAD(NVL(A.COIL_WT_12                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_12
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_12,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_12
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_12,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_12
+		    	     ||LPAD(NVL(A.COIL_LEN_12                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_12
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_12                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_12
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_12,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_12
+		    	     ||RPAD(NVL(A.WORK_STATE_12                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_12
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_12                  ,' '), 6,' ') --ë™ì •ë³´_12
 		    	     
-		    	     ||RPAD(NVL(A.STOCK_ID_13                        ,' '),11,' ') --Àç·á¹øÈ£_13
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_13                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_13
-		    	     ||LPAD(NVL(A.COIL_WT_13                         ,'0'), 5,'0') --Àç·áÁß·®_13
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_13,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_13
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_13,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_13
-		    	     ||LPAD(NVL(A.COIL_LEN_13                        ,'0'), 7,'0') --Àç·á±æÀÌ_13
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_13                     ,'0'), 5,'0') --Àç·á¿Ü°æ_13
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_13,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_13
-		    	     ||RPAD(NVL(A.WORK_STATE_13                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_13
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_13                  ,' '), 6,' ') --µ¿Á¤º¸_13
+		    	     ||RPAD(NVL(A.STOCK_ID_13                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_13
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_13                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_13
+		    	     ||LPAD(NVL(A.COIL_WT_13                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_13
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_13,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_13
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_13,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_13
+		    	     ||LPAD(NVL(A.COIL_LEN_13                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_13
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_13                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_13
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_13,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_13
+		    	     ||RPAD(NVL(A.WORK_STATE_13                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_13
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_13                  ,' '), 6,' ') --ë™ì •ë³´_13
 		    	     
-		    	     ||RPAD(NVL(A.STOCK_ID_14                        ,' '),11,' ') --Àç·á¹øÈ£_14
-		    	     ||RPAD(NVL(A.LOAD_LOC_CD_14                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_14
-		    	     ||LPAD(NVL(A.COIL_WT_14                         ,'0'), 5,'0') --Àç·áÁß·®_14
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_14,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_14
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_14,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_14
-		    	     ||LPAD(NVL(A.COIL_LEN_14                        ,'0'), 7,'0') --Àç·á±æÀÌ_14
-		    	     ||LPAD(NVL(A.COIL_OUTDIA_14                     ,'0'), 5,'0') --Àç·á¿Ü°æ_14
-		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_14,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_14
-		    	     ||RPAD(NVL(A.WORK_STATE_14                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_14
-		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_14                  ,' '), 6,' ') --µ¿Á¤º¸_14
+		    	     ||RPAD(NVL(A.STOCK_ID_14                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_14
+		    	     ||RPAD(NVL(A.LOAD_LOC_CD_14                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_14
+		    	     ||LPAD(NVL(A.COIL_WT_14                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_14
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_T_14,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_14
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_W_14,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_14
+		    	     ||LPAD(NVL(A.COIL_LEN_14                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_14
+		    	     ||LPAD(NVL(A.COIL_OUTDIA_14                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_14
+		    	     ||LPAD(NVL(TO_CHAR(A.COIL_INDIA_14,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_14
+		    	     ||RPAD(NVL(A.WORK_STATE_14                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_14
+		    	     ||RPAD(NVL(A.YD_CURR_BAY_GP_14                  ,' '), 6,' ') --ë™ì •ë³´_14
 		    	     
 		    	       AS JMS_TC_MESSAGE --JMSTCMessage
 		    	      
@@ -1926,185 +1926,185 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L008";
 
 			} else if("YMA7L008BackUp".equals(msgId)) {
-				/* Â÷·®ÀÛ¾÷¿¹Á¤Á¤º¸BackUp - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L008BackUp 
-				SELECT JMS_TC_CD  --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT  --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                                  --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')                    --»ı¼ºÀÏ½Ã
-				     ||'I'                                                        --Àü¹®±¸ºĞ
-				     ||'0825'                                                     --Àü¹®±æÀÌ
-				     ||RPAD(' ',29,' ')                                           --ÀÓ½Ã
-				     ||RPAD(NVL(A.PT_LOAD_LOC                       ,' '), 6,' ') --»óÂ÷µµÀ§Ä¡
-				     ||RPAD(NVL(A.CAR_NO                            ,' '),15,' ') --Â÷·®¹øÈ£
-				     ||RPAD(NVL(A.CARD_NO                           ,' '), 4,' ') --Ä«µå¹øÈ£
-				     ||RPAD(NVL(A.PT_CLS                            ,' '), 2,' ') --Â÷·®±¸ºĞ
-				     ||RPAD(NVL(A.WORK_CLS                          ,' '), 1,' ') --ÀÚ¾÷±¸ºĞ
-				     ||LPAD(NVL(A.WORK_COIL_MAX_CNT                 ,'0'), 2,'0') --¾ßµåÀûÄ¡Bed¹øÈ£
+				/* ì°¨ëŸ‰ì‘ì—…ì˜ˆì •ì •ë³´BackUp - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L008BackUp 
+				SELECT JMS_TC_CD  --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT  --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                                  --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')                    --ìƒì„±ì¼ì‹œ
+				     ||'I'                                                        --ì „ë¬¸êµ¬ë¶„
+				     ||'0825'                                                     --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(' ',29,' ')                                           --ì„ì‹œ
+				     ||RPAD(NVL(A.PT_LOAD_LOC                       ,' '), 6,' ') --ìƒì°¨ë„ìœ„ì¹˜
+				     ||RPAD(NVL(A.CAR_NO                            ,' '),15,' ') --ì°¨ëŸ‰ë²ˆí˜¸
+				     ||RPAD(NVL(A.CARD_NO                           ,' '), 4,' ') --ì¹´ë“œë²ˆí˜¸
+				     ||RPAD(NVL(A.PT_CLS                            ,' '), 2,' ') --ì°¨ëŸ‰êµ¬ë¶„
+				     ||RPAD(NVL(A.WORK_CLS                          ,' '), 1,' ') --ìì—…êµ¬ë¶„
+				     ||LPAD(NVL(A.WORK_COIL_MAX_CNT                 ,'0'), 2,'0') --ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 				     
-				     ||RPAD(NVL(A.STOCK_ID_0                        ,' '),11,' ') --Àç·á¹øÈ£_0
-				     ||RPAD(NVL(A.LOAD_LOC_CD_0                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_0
-				     ||LPAD(NVL(C_0.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_0
-				     ||LPAD(NVL(TO_CHAR(C_0.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_0
-				     ||LPAD(NVL(TO_CHAR(C_0.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_0
-				     ||LPAD(NVL(C_0.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_0
-				     ||LPAD(NVL(C_0.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_0
-				     ||LPAD(NVL(TO_CHAR(C_0.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_0
-				     ||RPAD(NVL(A.WORK_STATE_0                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_0
-				     ||RPAD(DECODE(A.STOCK_ID_0,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_0
+				     ||RPAD(NVL(A.STOCK_ID_0                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_0
+				     ||RPAD(NVL(A.LOAD_LOC_CD_0                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_0
+				     ||LPAD(NVL(C_0.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_0
+				     ||LPAD(NVL(TO_CHAR(C_0.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_0
+				     ||LPAD(NVL(TO_CHAR(C_0.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_0
+				     ||LPAD(NVL(C_0.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_0
+				     ||LPAD(NVL(C_0.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_0
+				     ||LPAD(NVL(TO_CHAR(C_0.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_0
+				     ||RPAD(NVL(A.WORK_STATE_0                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_0
+				     ||RPAD(DECODE(A.STOCK_ID_0,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_0
 				     
-				     ||RPAD(NVL(A.STOCK_ID_1                        ,' '),11,' ') --Àç·á¹øÈ£_1
-				     ||RPAD(NVL(A.LOAD_LOC_CD_1                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_1
-				     ||LPAD(NVL(C_1.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_1
-				     ||LPAD(NVL(TO_CHAR(C_1.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_1
-				     ||LPAD(NVL(TO_CHAR(C_1.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_1
-				     ||LPAD(NVL(C_1.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_1
-				     ||LPAD(NVL(C_1.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_1
-				     ||LPAD(NVL(TO_CHAR(C_1.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_1
-				     ||RPAD(NVL(A.WORK_STATE_1                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_1
-				     ||RPAD(DECODE(A.STOCK_ID_1,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_1
+				     ||RPAD(NVL(A.STOCK_ID_1                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_1
+				     ||RPAD(NVL(A.LOAD_LOC_CD_1                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_1
+				     ||LPAD(NVL(C_1.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_1
+				     ||LPAD(NVL(TO_CHAR(C_1.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_1
+				     ||LPAD(NVL(TO_CHAR(C_1.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_1
+				     ||LPAD(NVL(C_1.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_1
+				     ||LPAD(NVL(C_1.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_1
+				     ||LPAD(NVL(TO_CHAR(C_1.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_1
+				     ||RPAD(NVL(A.WORK_STATE_1                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_1
+				     ||RPAD(DECODE(A.STOCK_ID_1,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_1
 				     
-				     ||RPAD(NVL(A.STOCK_ID_2                        ,' '),11,' ') --Àç·á¹øÈ£_2
-				     ||RPAD(NVL(A.LOAD_LOC_CD_2                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_2
-				     ||LPAD(NVL(C_2.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_2
-				     ||LPAD(NVL(TO_CHAR(C_2.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_2
-				     ||LPAD(NVL(TO_CHAR(C_2.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_2
-				     ||LPAD(NVL(C_2.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_2
-				     ||LPAD(NVL(C_2.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_2
-				     ||LPAD(NVL(TO_CHAR(C_2.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_2
-				     ||RPAD(NVL(A.WORK_STATE_2                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_2
-				     ||RPAD(DECODE(A.STOCK_ID_2,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_2
+				     ||RPAD(NVL(A.STOCK_ID_2                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_2
+				     ||RPAD(NVL(A.LOAD_LOC_CD_2                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_2
+				     ||LPAD(NVL(C_2.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_2
+				     ||LPAD(NVL(TO_CHAR(C_2.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_2
+				     ||LPAD(NVL(TO_CHAR(C_2.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_2
+				     ||LPAD(NVL(C_2.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_2
+				     ||LPAD(NVL(C_2.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_2
+				     ||LPAD(NVL(TO_CHAR(C_2.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_2
+				     ||RPAD(NVL(A.WORK_STATE_2                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_2
+				     ||RPAD(DECODE(A.STOCK_ID_2,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_2
 				     
-				     ||RPAD(NVL(A.STOCK_ID_3                        ,' '),11,' ') --Àç·á¹øÈ£_3
-				     ||RPAD(NVL(A.LOAD_LOC_CD_3                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_3
-				     ||LPAD(NVL(C_3.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_3
-				     ||LPAD(NVL(TO_CHAR(C_3.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_3
-				     ||LPAD(NVL(TO_CHAR(C_3.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_3
-				     ||LPAD(NVL(C_3.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_3
-				     ||LPAD(NVL(C_3.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_3
-				     ||LPAD(NVL(TO_CHAR(C_3.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_3
-				     ||RPAD(NVL(A.WORK_STATE_3                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_3
-				     ||RPAD(DECODE(A.STOCK_ID_3,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_3
+				     ||RPAD(NVL(A.STOCK_ID_3                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_3
+				     ||RPAD(NVL(A.LOAD_LOC_CD_3                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_3
+				     ||LPAD(NVL(C_3.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_3
+				     ||LPAD(NVL(TO_CHAR(C_3.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_3
+				     ||LPAD(NVL(TO_CHAR(C_3.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_3
+				     ||LPAD(NVL(C_3.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_3
+				     ||LPAD(NVL(C_3.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_3
+				     ||LPAD(NVL(TO_CHAR(C_3.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_3
+				     ||RPAD(NVL(A.WORK_STATE_3                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_3
+				     ||RPAD(DECODE(A.STOCK_ID_3,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_3
 				     
-				     ||RPAD(NVL(A.STOCK_ID_4                        ,' '),11,' ') --Àç·á¹øÈ£_4
-				     ||RPAD(NVL(A.LOAD_LOC_CD_4                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_4
-				     ||LPAD(NVL(C_4.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_4
-				     ||LPAD(NVL(TO_CHAR(C_4.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_4
-				     ||LPAD(NVL(TO_CHAR(C_4.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_4
-				     ||LPAD(NVL(C_4.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_4
-				     ||LPAD(NVL(C_4.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_4
-				     ||LPAD(NVL(TO_CHAR(C_4.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_4
-				     ||RPAD(NVL(A.WORK_STATE_4                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_4
-				     ||RPAD(DECODE(A.STOCK_ID_4,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_4
+				     ||RPAD(NVL(A.STOCK_ID_4                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_4
+				     ||RPAD(NVL(A.LOAD_LOC_CD_4                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_4
+				     ||LPAD(NVL(C_4.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_4
+				     ||LPAD(NVL(TO_CHAR(C_4.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_4
+				     ||LPAD(NVL(TO_CHAR(C_4.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_4
+				     ||LPAD(NVL(C_4.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_4
+				     ||LPAD(NVL(C_4.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_4
+				     ||LPAD(NVL(TO_CHAR(C_4.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_4
+				     ||RPAD(NVL(A.WORK_STATE_4                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_4
+				     ||RPAD(DECODE(A.STOCK_ID_4,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_4
 				     
-				     ||RPAD(NVL(A.STOCK_ID_5                        ,' '),11,' ') --Àç·á¹øÈ£_5
-				     ||RPAD(NVL(A.LOAD_LOC_CD_5                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_5
-				     ||LPAD(NVL(C_5.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_5
-				     ||LPAD(NVL(TO_CHAR(C_5.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_5
-				     ||LPAD(NVL(TO_CHAR(C_5.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_5
-				     ||LPAD(NVL(C_5.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_5
-				     ||LPAD(NVL(C_5.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_5
-				     ||LPAD(NVL(TO_CHAR(C_5.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_5
-				     ||RPAD(NVL(A.WORK_STATE_5                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_5
-				     ||RPAD(DECODE(A.STOCK_ID_5,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_5
+				     ||RPAD(NVL(A.STOCK_ID_5                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_5
+				     ||RPAD(NVL(A.LOAD_LOC_CD_5                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_5
+				     ||LPAD(NVL(C_5.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_5
+				     ||LPAD(NVL(TO_CHAR(C_5.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_5
+				     ||LPAD(NVL(TO_CHAR(C_5.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_5
+				     ||LPAD(NVL(C_5.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_5
+				     ||LPAD(NVL(C_5.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_5
+				     ||LPAD(NVL(TO_CHAR(C_5.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_5
+				     ||RPAD(NVL(A.WORK_STATE_5                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_5
+				     ||RPAD(DECODE(A.STOCK_ID_5,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_5
 				     
-				     ||RPAD(NVL(A.STOCK_ID_6                        ,' '),11,' ') --Àç·á¹øÈ£_6
-				     ||RPAD(NVL(A.LOAD_LOC_CD_6                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_6
-				     ||LPAD(NVL(C_6.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_6
-				     ||LPAD(NVL(TO_CHAR(C_6.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_6
-				     ||LPAD(NVL(TO_CHAR(C_6.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_6
-				     ||LPAD(NVL(C_6.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_6
-				     ||LPAD(NVL(C_6.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_6
-				     ||LPAD(NVL(TO_CHAR(C_6.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_6
-				     ||RPAD(NVL(A.WORK_STATE_6                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_6
-				     ||RPAD(DECODE(A.STOCK_ID_6,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_6
+				     ||RPAD(NVL(A.STOCK_ID_6                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_6
+				     ||RPAD(NVL(A.LOAD_LOC_CD_6                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_6
+				     ||LPAD(NVL(C_6.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_6
+				     ||LPAD(NVL(TO_CHAR(C_6.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_6
+				     ||LPAD(NVL(TO_CHAR(C_6.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_6
+				     ||LPAD(NVL(C_6.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_6
+				     ||LPAD(NVL(C_6.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_6
+				     ||LPAD(NVL(TO_CHAR(C_6.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_6
+				     ||RPAD(NVL(A.WORK_STATE_6                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_6
+				     ||RPAD(DECODE(A.STOCK_ID_6,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_6
 				     
-				     ||RPAD(NVL(A.STOCK_ID_7                        ,' '),11,' ') --Àç·á¹øÈ£_7
-				     ||RPAD(NVL(A.LOAD_LOC_CD_7                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_7
-				     ||LPAD(NVL(C_7.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_7
-				     ||LPAD(NVL(TO_CHAR(C_7.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_7
-				     ||LPAD(NVL(TO_CHAR(C_7.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_7
-				     ||LPAD(NVL(C_7.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_7
-				     ||LPAD(NVL(C_7.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_7
-				     ||LPAD(NVL(TO_CHAR(C_7.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_7
-				     ||RPAD(NVL(A.WORK_STATE_7                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_7
-				     ||RPAD(DECODE(A.STOCK_ID_7,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_7
+				     ||RPAD(NVL(A.STOCK_ID_7                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_7
+				     ||RPAD(NVL(A.LOAD_LOC_CD_7                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_7
+				     ||LPAD(NVL(C_7.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_7
+				     ||LPAD(NVL(TO_CHAR(C_7.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_7
+				     ||LPAD(NVL(TO_CHAR(C_7.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_7
+				     ||LPAD(NVL(C_7.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_7
+				     ||LPAD(NVL(C_7.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_7
+				     ||LPAD(NVL(TO_CHAR(C_7.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_7
+				     ||RPAD(NVL(A.WORK_STATE_7                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_7
+				     ||RPAD(DECODE(A.STOCK_ID_7,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_7
 				     
-				     ||RPAD(NVL(A.STOCK_ID_8                        ,' '),11,' ') --Àç·á¹øÈ£_8
-				     ||RPAD(NVL(A.LOAD_LOC_CD_8                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_8
-				     ||LPAD(NVL(C_8.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_8
-				     ||LPAD(NVL(TO_CHAR(C_8.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_8
-				     ||LPAD(NVL(TO_CHAR(C_8.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_8
-				     ||LPAD(NVL(C_8.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_8
-				     ||LPAD(NVL(C_8.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_8
-				     ||LPAD(NVL(TO_CHAR(C_8.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_8
-				     ||RPAD(NVL(A.WORK_STATE_8                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_8
-				     ||RPAD(DECODE(A.STOCK_ID_8,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_8
+				     ||RPAD(NVL(A.STOCK_ID_8                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_8
+				     ||RPAD(NVL(A.LOAD_LOC_CD_8                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_8
+				     ||LPAD(NVL(C_8.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_8
+				     ||LPAD(NVL(TO_CHAR(C_8.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_8
+				     ||LPAD(NVL(TO_CHAR(C_8.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_8
+				     ||LPAD(NVL(C_8.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_8
+				     ||LPAD(NVL(C_8.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_8
+				     ||LPAD(NVL(TO_CHAR(C_8.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_8
+				     ||RPAD(NVL(A.WORK_STATE_8                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_8
+				     ||RPAD(DECODE(A.STOCK_ID_8,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_8
 				     
-				     ||RPAD(NVL(A.STOCK_ID_9                        ,' '),11,' ') --Àç·á¹øÈ£_9
-				     ||RPAD(NVL(A.LOAD_LOC_CD_9                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_9
-				     ||LPAD(NVL(C_9.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_9
-				     ||LPAD(NVL(TO_CHAR(C_9.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_9
-				     ||LPAD(NVL(TO_CHAR(C_9.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_9
-				     ||LPAD(NVL(C_9.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_9
-				     ||LPAD(NVL(C_9.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_9
-				     ||LPAD(NVL(TO_CHAR(C_9.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_9
-				     ||RPAD(NVL(A.WORK_STATE_9                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_9
-				     ||RPAD(DECODE(A.STOCK_ID_9,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_9
+				     ||RPAD(NVL(A.STOCK_ID_9                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_9
+				     ||RPAD(NVL(A.LOAD_LOC_CD_9                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_9
+				     ||LPAD(NVL(C_9.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_9
+				     ||LPAD(NVL(TO_CHAR(C_9.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_9
+				     ||LPAD(NVL(TO_CHAR(C_9.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_9
+				     ||LPAD(NVL(C_9.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_9
+				     ||LPAD(NVL(C_9.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_9
+				     ||LPAD(NVL(TO_CHAR(C_9.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_9
+				     ||RPAD(NVL(A.WORK_STATE_9                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_9
+				     ||RPAD(DECODE(A.STOCK_ID_9,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_9
 				     
-				     ||RPAD(NVL(A.STOCK_ID_10                        ,' '),11,' ') --Àç·á¹øÈ£_10
-				     ||RPAD(NVL(A.LOAD_LOC_CD_10                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_10
-				     ||LPAD(NVL(C_10.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_10
-				     ||LPAD(NVL(TO_CHAR(C_10.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_10
-				     ||LPAD(NVL(TO_CHAR(C_10.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_10
-				     ||LPAD(NVL(C_10.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_10
-				     ||LPAD(NVL(C_10.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_10
-				     ||LPAD(NVL(TO_CHAR(C_10.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_10
-				     ||RPAD(NVL(A.WORK_STATE_10                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_10
-				     ||RPAD(DECODE(A.STOCK_ID_10,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_10
+				     ||RPAD(NVL(A.STOCK_ID_10                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_10
+				     ||RPAD(NVL(A.LOAD_LOC_CD_10                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_10
+				     ||LPAD(NVL(C_10.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_10
+				     ||LPAD(NVL(TO_CHAR(C_10.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_10
+				     ||LPAD(NVL(TO_CHAR(C_10.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_10
+				     ||LPAD(NVL(C_10.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_10
+				     ||LPAD(NVL(C_10.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_10
+				     ||LPAD(NVL(TO_CHAR(C_10.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_10
+				     ||RPAD(NVL(A.WORK_STATE_10                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_10
+				     ||RPAD(DECODE(A.STOCK_ID_10,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_10
 				     
-				     ||RPAD(NVL(A.STOCK_ID_11                        ,' '),11,' ') --Àç·á¹øÈ£_11
-				     ||RPAD(NVL(A.LOAD_LOC_CD_11                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_11
-				     ||LPAD(NVL(C_11.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_11
-				     ||LPAD(NVL(TO_CHAR(C_11.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_11
-				     ||LPAD(NVL(TO_CHAR(C_11.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_11
-				     ||LPAD(NVL(C_11.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_11
-				     ||LPAD(NVL(C_11.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_11
-				     ||LPAD(NVL(TO_CHAR(C_11.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_11
-				     ||RPAD(NVL(A.WORK_STATE_11                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_11
-				     ||RPAD(DECODE(A.STOCK_ID_11,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_11
+				     ||RPAD(NVL(A.STOCK_ID_11                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_11
+				     ||RPAD(NVL(A.LOAD_LOC_CD_11                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_11
+				     ||LPAD(NVL(C_11.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_11
+				     ||LPAD(NVL(TO_CHAR(C_11.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_11
+				     ||LPAD(NVL(TO_CHAR(C_11.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_11
+				     ||LPAD(NVL(C_11.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_11
+				     ||LPAD(NVL(C_11.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_11
+				     ||LPAD(NVL(TO_CHAR(C_11.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_11
+				     ||RPAD(NVL(A.WORK_STATE_11                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_11
+				     ||RPAD(DECODE(A.STOCK_ID_11,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_11
 				     
-				     ||RPAD(NVL(A.STOCK_ID_12                        ,' '),11,' ') --Àç·á¹øÈ£_12
-				     ||RPAD(NVL(A.LOAD_LOC_CD_12                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_12
-				     ||LPAD(NVL(C_12.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_12
-				     ||LPAD(NVL(TO_CHAR(C_12.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_12
-				     ||LPAD(NVL(TO_CHAR(C_12.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_12
-				     ||LPAD(NVL(C_12.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_12
-				     ||LPAD(NVL(C_12.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_12
-				     ||LPAD(NVL(TO_CHAR(C_12.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_12
-				     ||RPAD(NVL(A.WORK_STATE_12                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_12
-				     ||RPAD(DECODE(A.STOCK_ID_12,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_12
+				     ||RPAD(NVL(A.STOCK_ID_12                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_12
+				     ||RPAD(NVL(A.LOAD_LOC_CD_12                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_12
+				     ||LPAD(NVL(C_12.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_12
+				     ||LPAD(NVL(TO_CHAR(C_12.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_12
+				     ||LPAD(NVL(TO_CHAR(C_12.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_12
+				     ||LPAD(NVL(C_12.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_12
+				     ||LPAD(NVL(C_12.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_12
+				     ||LPAD(NVL(TO_CHAR(C_12.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_12
+				     ||RPAD(NVL(A.WORK_STATE_12                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_12
+				     ||RPAD(DECODE(A.STOCK_ID_12,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_12
 				     
-				     ||RPAD(NVL(A.STOCK_ID_13                        ,' '),11,' ') --Àç·á¹øÈ£_13
-				     ||RPAD(NVL(A.LOAD_LOC_CD_13                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_13
-				     ||LPAD(NVL(C_13.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_13
-				     ||LPAD(NVL(TO_CHAR(C_13.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_13
-				     ||LPAD(NVL(TO_CHAR(C_13.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_13
-				     ||LPAD(NVL(C_13.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_13
-				     ||LPAD(NVL(C_13.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_13
-				     ||LPAD(NVL(TO_CHAR(C_13.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_13
-				     ||RPAD(NVL(A.WORK_STATE_13                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_13
-				     ||RPAD(DECODE(A.STOCK_ID_13,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_13
+				     ||RPAD(NVL(A.STOCK_ID_13                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_13
+				     ||RPAD(NVL(A.LOAD_LOC_CD_13                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_13
+				     ||LPAD(NVL(C_13.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_13
+				     ||LPAD(NVL(TO_CHAR(C_13.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_13
+				     ||LPAD(NVL(TO_CHAR(C_13.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_13
+				     ||LPAD(NVL(C_13.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_13
+				     ||LPAD(NVL(C_13.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_13
+				     ||LPAD(NVL(TO_CHAR(C_13.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_13
+				     ||RPAD(NVL(A.WORK_STATE_13                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_13
+				     ||RPAD(DECODE(A.STOCK_ID_13,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_13
 				     
-				     ||RPAD(NVL(A.STOCK_ID_14                        ,' '),11,' ') --Àç·á¹øÈ£_14
-				     ||RPAD(NVL(A.LOAD_LOC_CD_14                     ,' '), 2,' ') --Â÷·®ÀûÀçÀ§Ä¡_14
-				     ||LPAD(NVL(C_14.COIL_WT                         ,'0'), 5,'0') --Àç·áÁß·®_14
-				     ||LPAD(NVL(TO_CHAR(C_14.COIL_T,'FM000V000')     ,'0'), 6,'0') --Àç·áµÎ²²_14
-				     ||LPAD(NVL(TO_CHAR(C_14.COIL_W,'FM0000V0')      ,'0'), 5,'0') --Àç·áÆø_14
-				     ||LPAD(NVL(C_14.COIL_LEN                        ,'0'), 7,'0') --Àç·á±æÀÌ_14
-				     ||LPAD(NVL(C_14.COIL_OUTDIA                     ,'0'), 5,'0') --Àç·á¿Ü°æ_14
-				     ||LPAD(NVL(TO_CHAR(C_14.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --Àç·á³»°æ_14
-				     ||RPAD(NVL(A.WORK_STATE_14                      ,' '), 1,' ') --ÀÛ¾÷»óÅÂ_14
-				     ||RPAD(DECODE(A.STOCK_ID_14,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --µ¿Á¤º¸_14
+				     ||RPAD(NVL(A.STOCK_ID_14                        ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_14
+				     ||RPAD(NVL(A.LOAD_LOC_CD_14                     ,' '), 2,' ') --ì°¨ëŸ‰ì ì¬ìœ„ì¹˜_14
+				     ||LPAD(NVL(C_14.COIL_WT                         ,'0'), 5,'0') --ì¬ë£Œì¤‘ëŸ‰_14
+				     ||LPAD(NVL(TO_CHAR(C_14.COIL_T,'FM000V000')     ,'0'), 6,'0') --ì¬ë£Œë‘ê»˜_14
+				     ||LPAD(NVL(TO_CHAR(C_14.COIL_W,'FM0000V0')      ,'0'), 5,'0') --ì¬ë£Œí­_14
+				     ||LPAD(NVL(C_14.COIL_LEN                        ,'0'), 7,'0') --ì¬ë£Œê¸¸ì´_14
+				     ||LPAD(NVL(C_14.COIL_OUTDIA                     ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½_14
+				     ||LPAD(NVL(TO_CHAR(C_14.COIL_INDIA,'FM0000V0')  ,'0'), 5,'0') --ì¬ë£Œë‚´ê²½_14
+				     ||RPAD(NVL(A.WORK_STATE_14                      ,' '), 1,' ') --ì‘ì—…ìƒíƒœ_14
+				     ||RPAD(DECODE(A.STOCK_ID_14,NULL,' ',A.PT_LOAD_LOC)  , 6,' ') --ë™ì •ë³´_14
 				     
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				      
@@ -2212,19 +2212,19 @@ public class YmCommDAO extends DBAssistantDAO {
 				  AND  A.STOCK_ID_13 = C_13.COIL_NO(+)
 				  AND  A.STOCK_ID_14 = C_14.COIL_NO(+)
 				  */
-		    	trtNm = "B¿­¿¬ COIL Â÷·®¿¹Á¤Á¤º¸ Backup";
+		    	trtNm = "Bì—´ì—° COIL ì°¨ëŸ‰ì˜ˆì •ì •ë³´ Backup";
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA7L008BackUp";
 
 			} else if("YMA7L009".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L009_PIDEV
-				--¾Ğ¿¬Áö½Ã ¼Û½Å
-				SELECT JMS_TC_CD                                     				--JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     				--Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--»ı¼ºÀÏ½Ã
-				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--Àü¹®±¸ºĞ
-				     ||'0112'                                        				--Àü¹®±æÀÌ
+				--ì••ì—°ì§€ì‹œ ì†¡ì‹ 
+				SELECT JMS_TC_CD                                     				--JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     				--ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--ìƒì„±ì¼ì‹œ
+				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--ì „ë¬¸êµ¬ë¶„
+				     ||'0112'                                        				--ì „ë¬¸ê¸¸ì´
 				     ||RPAD(NVL(STOCK_ID              , ' '),  11, ' ')
 				     ||RPAD(NVL(GRP                   , ' '),  1 , ' ')
 				     ||RPAD(NVL(ORD_NO_DTL            , ' '),  13, ' ')
@@ -2243,7 +2243,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				        SELECT 'YMA7L009'                               AS JMS_TC_CD  
-				             , 'I'                                      AS TC_ID                   	--Àü¹®±¸ºĞ
+				             , 'I'                                      AS TC_ID                   	--ì „ë¬¸êµ¬ë¶„
 				             , A.COIL_NO                                AS STOCK_ID 
 				             , '2'                                      AS GRP
 				             , A.ORD_NO||A.ORD_DTL                      AS ORD_NO_DTL
@@ -2263,36 +2263,36 @@ public class YmCommDAO extends DBAssistantDAO {
 				          FROM TB_PT_COILCOMM A
 				             , TB_SM_CUSTINFO B
 				         WHERE A.DEMANDER_CD =B.CUST_CD 
-				           AND A.COIL_NO = :V_COIL_NO   -- Àç·á¹øÈ£(KCN48660) 
+				           AND A.COIL_NO = :V_COIL_NO   -- ì¬ë£Œë²ˆí˜¸(KCN48660) 
 				       )
 				 WHERE 1 = 1
 				 */
-				trtNm = "¾Ğ¿¬Áö½Ã ¼Û½Å"; 
+				trtNm = "ì••ì—°ì§€ì‹œ ì†¡ì‹ "; 
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L009_PIDEV";
 			} else if("YMA7L010".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L010 
-				SELECT JMS_TC_CD                                     --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(MSG_GP                 ,'I'), 1,' ') --Àü¹®±¸ºĞ
-				     ||'0058'                                        --Àü¹®±æÀÌ
-				     ||RPAD(' ',29,' ')                              --ÀÓ½Ã
+				SELECT JMS_TC_CD                                     --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')       --ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(MSG_GP                 ,'I'), 1,' ') --ì „ë¬¸êµ¬ë¶„
+				     ||'0058'                                        --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(' ',29,' ')                              --ì„ì‹œ
 				     ||RPAD(NVL(STOCK_ID               ,' '),11,' ') --COILNO
-				     ||RPAD(NVL(GRP                    ,' '), 1,' ') --±º
-				     ||RPAD(NVL(ORD_NO_DTL             ,' '),13,' ') --Á¦ÀÛ¹øÈ£Çà¹ø
-				     ||RPAD(NVL(YD_STL_T               ,' '), 6,' ') --¾ßµåÀç·áµÎ²²
-				     ||LPAD(NVL(YD_STL_W               ,'0'), 5,'0') --¾ßµåÀç·áÆø
-				     ||LPAD(NVL(YD_STL_L               ,'0'), 7,'0') --¾ßµåÀç·á±æÀÌ
-				     ||LPAD(NVL(MAT_ODIA               ,'0'), 5,'0') --Àç·á¿Ü°æ
-				     ||LPAD(NVL(YD_STL_WT              ,'0'), 5,'0') --¾ßµåÀç·áÁß·®
-				     ||RPAD(NVL(BRANCH_CD              ,' '), 2,' ') --ºĞ±âCONVÀ§Ä¡CODE
-				     ||RPAD(NVL(EXTEND_BRANCH_CD       ,' '), 2,' ') --È®ÀåCONVºĞ±âÀ§Ä¡CODE
-				     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --³Ã°¢¹æ¹ı
+				     ||RPAD(NVL(GRP                    ,' '), 1,' ') --êµ°
+				     ||RPAD(NVL(ORD_NO_DTL             ,' '),13,' ') --ì œì‘ë²ˆí˜¸í–‰ë²ˆ
+				     ||RPAD(NVL(YD_STL_T               ,' '), 6,' ') --ì•¼ë“œì¬ë£Œë‘ê»˜
+				     ||LPAD(NVL(YD_STL_W               ,'0'), 5,'0') --ì•¼ë“œì¬ë£Œí­
+				     ||LPAD(NVL(YD_STL_L               ,'0'), 7,'0') --ì•¼ë“œì¬ë£Œê¸¸ì´
+				     ||LPAD(NVL(MAT_ODIA               ,'0'), 5,'0') --ì¬ë£Œì™¸ê²½
+				     ||LPAD(NVL(YD_STL_WT              ,'0'), 5,'0') --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰
+				     ||RPAD(NVL(BRANCH_CD              ,' '), 2,' ') --ë¶„ê¸°CONVìœ„ì¹˜CODE
+				     ||RPAD(NVL(EXTEND_BRANCH_CD       ,' '), 2,' ') --í™•ì¥CONVë¶„ê¸°ìœ„ì¹˜CODE
+				     ||RPAD(NVL(COOL_METHOD            ,' '), 1,' ') --ëƒ‰ê°ë°©ë²•
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
-				        SELECT'YMA7L010'            AS JMS_TC_CD                --Àü¹®ID
-				             , 'I'                  AS MSG_GP                   --Àü¹®±¸ºĞ
+				        SELECT'YMA7L010'            AS JMS_TC_CD                --ì „ë¬¸ID
+				             , 'I'                  AS MSG_GP                   --ì „ë¬¸êµ¬ë¶„
 				             , A.COIL_NO            AS STOCK_ID
 				             , '2'                  AS GRP
 				             , A.ORD_NO|| A.ORD_DTL AS ORD_NO_DTL
@@ -2309,18 +2309,18 @@ public class YmCommDAO extends DBAssistantDAO {
 				         WHERE A.COIL_NO = :V_STOCK_ID
 				        )   
 				 */
-				trtNm = "ÄÚÀÏ ºĞ±â Conv To È®Àå Conv ½ÃÁ¡Á¤º¸";
+				trtNm = "ì½”ì¼ ë¶„ê¸° Conv To í™•ì¥ Conv ì‹œì ì •ë³´";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L010";				
 			} else if("YMA7L011".equals(msgId)) {
 				/*
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(MSG_GP      , ' '), 1 , ' ') --Àü¹®±¸ºĞ
-				     ||RPAD(NVL(MSG_LEN     , ' '), 4 , ' ') --Àü¹®±æÀÌ
-				     ||RPAD(NVL(TEMP        , ' '), 29, ' ') --ÀÓ½Ã
-				     ||RPAD(NVL(YD_EQP_ID   , ' '), 6 , ' ') --¼³ºñÄÚµå    
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(MSG_GP      , ' '), 1 , ' ') --ì „ë¬¸êµ¬ë¶„
+				     ||RPAD(NVL(MSG_LEN     , ' '), 4 , ' ') --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(NVL(TEMP        , ' '), 29, ' ') --ì„ì‹œ
+				     ||RPAD(NVL(YD_EQP_ID   , ' '), 6 , ' ') --ì„¤ë¹„ì½”ë“œ    
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				        SELECT 'YMA7L011' AS JMS_TC_CD  
@@ -2333,50 +2333,50 @@ public class YmCommDAO extends DBAssistantDAO {
 				       )
 				 WHERE 1 = 1
 				 */
-				trtNm = "ÄÚÀÏ 1³Ã¿¬ ´ëÂ÷ÀÌµ¿¿ä±¸";
+				trtNm = "ì½”ì¼ 1ëƒ‰ì—° ëŒ€ì°¨ì´ë™ìš”êµ¬";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L011";
 		    	
 			} else if("YMA7L012".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L012
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(MSG_GP      , ' '), 1 , ' ') --Àü¹®±¸ºĞ
-				     ||RPAD(NVL(MSG_LEN     , ' '), 4 , ' ') --Àü¹®±æÀÌ
-				     ||RPAD(NVL(TEMP        , ' '), 29, ' ') --ÀÓ½Ã
-				     ||RPAD(NVL(STOCK_ID    , ' '), 11, ' ') --¼³ºñÄÚµå  
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(MSG_GP      , ' '), 1 , ' ') --ì „ë¬¸êµ¬ë¶„
+				     ||RPAD(NVL(MSG_LEN     , ' '), 4 , ' ') --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(NVL(TEMP        , ' '), 29, ' ') --ì„ì‹œ
+				     ||RPAD(NVL(STOCK_ID    , ' '), 11, ' ') --ì„¤ë¹„ì½”ë“œ  
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				 FROM (
-				        SELECT'YMA7L012'    AS JMS_TC_CD --Àü¹®ID
-				             , 'I'          AS MSG_GP    --Àü¹®±¸ºĞ
+				        SELECT'YMA7L012'    AS JMS_TC_CD --ì „ë¬¸ID
+				             , 'I'          AS MSG_GP    --ì „ë¬¸êµ¬ë¶„
 				             , '0011'       AS MSG_LEN     
 							 , ''           AS TEMP 
 				             , :V_STOCK_ID   AS STOCK_ID
 				          FROM DUAL
 				      )  
 				 */
-				trtNm = "È®Àå CONV LINE OFF ¿ä±¸ ÀÀ´ä";
-				//LINE OFF ¿ä±¸½Ã ¼Û½Å
+				trtNm = "í™•ì¥ CONV LINE OFF ìš”êµ¬ ì‘ë‹µ";
+				//LINE OFF ìš”êµ¬ì‹œ ì†¡ì‹ 
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L012";
 		    	
 			} else if("YMA7L013".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L013 
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --Àü¹®±¸ºĞ
-				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --Àü¹®±æÀÌ
-				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ÀÓ½Ã
-				     ||RPAD(NVL(YD_EQP_ID       , ' '), 6 , ' ') --¼³ºñÄÚµå  
-				     ||RPAD(NVL(MV_GP           , ' '), 1 , ' ') --ÀÌµ¿±¸ºĞ
-				     ||LPAD(NVL(YD_WO_LOC_XAXIS , '0'), 7 , '0') --ÀÌµ¿Áö½ÃXÃà  
-				     ||LPAD(NVL(YD_WO_LOC_YAXIS , '0'), 5 , '0') --ÀÌµ¿Áö½ÃYÃà  
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --ì „ë¬¸êµ¬ë¶„
+				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ì„ì‹œ
+				     ||RPAD(NVL(YD_EQP_ID       , ' '), 6 , ' ') --ì„¤ë¹„ì½”ë“œ  
+				     ||RPAD(NVL(MV_GP           , ' '), 1 , ' ') --ì´ë™êµ¬ë¶„
+				     ||LPAD(NVL(YD_WO_LOC_XAXIS , '0'), 7 , '0') --ì´ë™ì§€ì‹œXì¶•  
+				     ||LPAD(NVL(YD_WO_LOC_YAXIS , '0'), 5 , '0') --ì´ë™ì§€ì‹œYì¶•  
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				 FROM (
-				        SELECT'YMA7L013'            AS JMS_TC_CD --Àü¹®ID
-				             , 'I'                  AS MSG_GP    --Àü¹®±¸ºĞ
+				        SELECT'YMA7L013'            AS JMS_TC_CD --ì „ë¬¸ID
+				             , 'I'                  AS MSG_GP    --ì „ë¬¸êµ¬ë¶„
 				             , '0019'               AS MSG_LEN     
 							 , ''                   AS TEMP 
 				             , :V_YD_EQP_ID         AS YD_EQP_ID
@@ -2386,36 +2386,36 @@ public class YmCommDAO extends DBAssistantDAO {
 				          FROM DUAL
 				      )  
 				*/
-				trtNm = "ÄÚÀÏ HOME ÀÌµ¿Áö½Ã";
-				//LINE OFF ¿ä±¸½Ã ¼Û½Å
+				trtNm = "ì½”ì¼ HOME ì´ë™ì§€ì‹œ";
+				//LINE OFF ìš”êµ¬ì‹œ ì†¡ì‹ 
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L013";
 				
 			}else if("YMA7L014".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L014 
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --Àü¹®±¸ºĞ
-				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --Àü¹®±æÀÌ
-				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ÀÓ½Ã
-				     ||RPAD(NVL(CAR_NO       , ' '), 15 , ' ') --Â÷·®¹øÈ£
-				     ||LPAD(NVL(TRANS_ORD_SEQNO , '0'), 6 , '0')--Áö½Ã¹øÈ£
-				     ||LPAD(NVL(AB_COIL_NUM , '0'), 1 , '0')--ÀÌ»óÄÚÀÏ ¹ß»ı ¼ö·®
-				     ||RPAD(NVL(STL_NO1       , ' '), 11 , ' ') --ÀÌ»óÄÚÀÏ ³Ñ¹ö1
-				     ||LPAD(NVL(YD_AB_CD1 , '0'), 3 , '0')--ÀÌ»óÄÚÀÏÁ¾·ù1
-				     ||LPAD(NVL(YD_AB_CD_DETAIL1 , '0'), 2 , '0')--ÀÌ»óÄÚÀÏ»ó¼¼1
-				     ||RPAD(NVL(STL_NO2       , ' '), 11 , ' ') --ÀÌ»óÄÚÀÏ ³Ñ¹ö1
-				     ||LPAD(NVL(YD_AB_CD2 , '0'), 3 , '0')--ÀÌ»óÄÚÀÏÁ¾·ù1
-				     ||LPAD(NVL(YD_AB_CD_DETAIL2 , '0'), 2 , '0')--ÀÌ»óÄÚÀÏ»ó¼¼1
-				     ||RPAD(NVL(STL_NO3       , ' '), 11 , ' ') --ÀÌ»óÄÚÀÏ ³Ñ¹ö1
-				     ||LPAD(NVL(YD_AB_CD3 , '0'), 3 , '0')--ÀÌ»óÄÚÀÏÁ¾·ù1
-				     ||LPAD(NVL(YD_AB_CD_DETAIL3 , '0'), 2 , '0')--ÀÌ»óÄÚÀÏ»ó¼¼1
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --ì „ë¬¸êµ¬ë¶„
+				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ì„ì‹œ
+				     ||RPAD(NVL(CAR_NO       , ' '), 15 , ' ') --ì°¨ëŸ‰ë²ˆí˜¸
+				     ||LPAD(NVL(TRANS_ORD_SEQNO , '0'), 6 , '0')--ì§€ì‹œë²ˆí˜¸
+				     ||LPAD(NVL(AB_COIL_NUM , '0'), 1 , '0')--ì´ìƒì½”ì¼ ë°œìƒ ìˆ˜ëŸ‰
+				     ||RPAD(NVL(STL_NO1       , ' '), 11 , ' ') --ì´ìƒì½”ì¼ ë„˜ë²„1
+				     ||LPAD(NVL(YD_AB_CD1 , '0'), 3 , '0')--ì´ìƒì½”ì¼ì¢…ë¥˜1
+				     ||LPAD(NVL(YD_AB_CD_DETAIL1 , '0'), 2 , '0')--ì´ìƒì½”ì¼ìƒì„¸1
+				     ||RPAD(NVL(STL_NO2       , ' '), 11 , ' ') --ì´ìƒì½”ì¼ ë„˜ë²„1
+				     ||LPAD(NVL(YD_AB_CD2 , '0'), 3 , '0')--ì´ìƒì½”ì¼ì¢…ë¥˜1
+				     ||LPAD(NVL(YD_AB_CD_DETAIL2 , '0'), 2 , '0')--ì´ìƒì½”ì¼ìƒì„¸1
+				     ||RPAD(NVL(STL_NO3       , ' '), 11 , ' ') --ì´ìƒì½”ì¼ ë„˜ë²„1
+				     ||LPAD(NVL(YD_AB_CD3 , '0'), 3 , '0')--ì´ìƒì½”ì¼ì¢…ë¥˜1
+				     ||LPAD(NVL(YD_AB_CD_DETAIL3 , '0'), 2 , '0')--ì´ìƒì½”ì¼ìƒì„¸1
 				     
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				 FROM (
-				        SELECT'YMA7L014'            AS JMS_TC_CD --Àü¹®ID
-				             , 'I'                  AS MSG_GP    --Àü¹®±¸ºĞ
+				        SELECT'YMA7L014'            AS JMS_TC_CD --ì „ë¬¸ID
+				             , 'I'                  AS MSG_GP    --ì „ë¬¸êµ¬ë¶„
 				             , '0070'               AS MSG_LEN     
 				             , ''                   AS TEMP 
 				             ,CAR_NO
@@ -2466,26 +2466,26 @@ public class YmCommDAO extends DBAssistantDAO {
 				          ,TRANS_ORD_SEQNO
 				          ,STL_NO
 				      )*/
-				trtNm = "ÀÌ»óÄÚÀÏ¹ß»ıÁ¤º¸";
-				//LINE OFF ¿ä±¸½Ã ¼Û½Å
+				trtNm = "ì´ìƒì½”ì¼ë°œìƒì •ë³´";
+				//LINE OFF ìš”êµ¬ì‹œ ì†¡ì‹ 
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA7L014";
 				
 			}else if("CF1BP04".equals(msgId)) {
-				trtNm = "ºĞ±â CONV' ºĞ±â LINE OFF";
+				trtNm = "ë¶„ê¸° CONV' ë¶„ê¸° LINE OFF";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP04 
-				SELECT JMS_TC_CD                                     				--JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     				--Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--»ı¼ºÀÏ½Ã
-				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--Àü¹®±¸ºĞ
-				     ||'0012'                                        				--Àü¹®±æÀÌ
+				SELECT JMS_TC_CD                                     				--JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     				--ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--ìƒì„±ì¼ì‹œ
+				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--ì „ë¬¸êµ¬ë¶„
+				     ||'0012'                                        				--ì „ë¬¸ê¸¸ì´
 				     ||RPAD(NVL(STOCK_ID              ,' '),10,' ') 				--COILNO
-				     ||RPAD(' ',2,' ')                              				--ÀÓ½Ã
+				     ||RPAD(' ',2,' ')                              				--ì„ì‹œ
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
-				        SELECT'CF1BP04'               AS JMS_TC_CD                	--Àü¹®ID
-				             , 'I'                    AS TC_ID                   	--Àü¹®±¸ºĞ
+				        SELECT'CF1BP04'               AS JMS_TC_CD                	--ì „ë¬¸ID
+				             , 'I'                    AS TC_ID                   	--ì „ë¬¸êµ¬ë¶„
 				             , A.STOCK_ID             AS STOCK_ID
 				          FROM USRYMA.TB_YM_CRNWRKMTL A
 				         WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID  
@@ -2495,21 +2495,21 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP04";	
 				
 			} else if("CF1BP04B".equals(msgId)) {
-				trtNm = "ºĞ±â CONV' ºĞ±â LINE OFF";
+				trtNm = "ë¶„ê¸° CONV' ë¶„ê¸° LINE OFF";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP04BackUp 
-				SELECT JMS_TC_CD                                     --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       --»ı¼ºÀÏ½Ã
-				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       --»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') --Àü¹®±¸ºĞ
-				     ||'0012'                                        --Àü¹®±æÀÌ
+				SELECT JMS_TC_CD                                     --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       --ìƒì„±ì¼ì‹œ
+				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       --ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') --ì „ë¬¸êµ¬ë¶„
+				     ||'0012'                                        --ì „ë¬¸ê¸¸ì´
 				     ||RPAD(NVL(STOCK_ID              ,' '),10,' ') --COILNO
-				     ||RPAD(' ',2,' ')                              --ÀÓ½Ã
+				     ||RPAD(' ',2,' ')                              --ì„ì‹œ
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
-				        SELECT'CF1BP04'             AS JMS_TC_CD    --Àü¹®ID
-				             , 'I'                  AS TC_ID        --Àü¹®±¸ºĞ
+				        SELECT'CF1BP04'             AS JMS_TC_CD    --ì „ë¬¸ID
+				             , 'I'                  AS TC_ID        --ì „ë¬¸êµ¬ë¶„
 				             , A.STOCK_ID           AS STOCK_ID
 				          FROM USRYMA.TB_YM_CRNWRKMTL A
 				         WHERE YD_CRN_SCH_ID = (
@@ -2524,21 +2524,21 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP04BackUp";	
 				
 			} else if("CF1BP05".equals(msgId)) {
-				trtNm = "ºĞ±â CONV' Take Out";
+				trtNm = "ë¶„ê¸° CONV' Take Out";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP05 
-				SELECT JMS_TC_CD                                     				--JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     				--Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--»ı¼ºÀÏ½Ã
-				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--Àü¹®±¸ºĞ
-				     ||'0012'                                        				--Àü¹®±æÀÌ
+				SELECT JMS_TC_CD                                     				--JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     				--ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--ìƒì„±ì¼ì‹œ
+				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--ì „ë¬¸êµ¬ë¶„
+				     ||'0012'                                        				--ì „ë¬¸ê¸¸ì´
 				     ||RPAD(NVL(STOCK_ID              ,' '),10,' ') 				--COILNO
-				     ||RPAD(' ',2,' ')                              				--ÀÓ½Ã
+				     ||RPAD(' ',2,' ')                              				--ì„ì‹œ
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
-				        SELECT'CF1BP05'               AS JMS_TC_CD                	--Àü¹®ID
-				             , 'I'                    AS TC_ID                   	--Àü¹®±¸ºĞ
+				        SELECT'CF1BP05'               AS JMS_TC_CD                	--ì „ë¬¸ID
+				             , 'I'                    AS TC_ID                   	--ì „ë¬¸êµ¬ë¶„
 				             , A.STOCK_ID             AS STOCK_ID
 				          FROM USRYMA.TB_YM_CRNWRKMTL A
 				         WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID  
@@ -2548,21 +2548,21 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP05";
 				
 			} else if("CF1BP06".equals(msgId)) {
-				trtNm = "ºĞ±â CONV' Take In";
+				trtNm = "ë¶„ê¸° CONV' Take In";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCF1BP06 
-				SELECT JMS_TC_CD                                     				--JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                     				--Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--»ı¼ºÀÏ½Ã
-				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--Àü¹®±¸ºĞ
-				     ||'0012'                                        				--Àü¹®±æÀÌ
+				SELECT JMS_TC_CD                                     				--JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT 	--JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                     				--ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DD')       							--ìƒì„±ì¼ì‹œ
+				     ||TO_CHAR(SYSDATE,'HH24-MI-SS')       							--ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(TC_ID                 ,'I'), 1,' ') 				--ì „ë¬¸êµ¬ë¶„
+				     ||'0012'                                        				--ì „ë¬¸ê¸¸ì´
 				     ||RPAD(NVL(STOCK_ID              ,' '),10,' ') 				--COILNO
-				     ||RPAD(' ',2,' ')                              				--ÀÓ½Ã
+				     ||RPAD(' ',2,' ')                              				--ì„ì‹œ
 				       AS JMS_TC_MESSAGE --JMSTCMESSAGE
 				FROM (
-				        SELECT'CF1BP06'               AS JMS_TC_CD                	--Àü¹®ID
-				             , 'I'                    AS TC_ID                   	--Àü¹®±¸ºĞ
+				        SELECT'CF1BP06'               AS JMS_TC_CD                	--ì „ë¬¸ID
+				             , 'I'                    AS TC_ID                   	--ì „ë¬¸êµ¬ë¶„
 				             , A.STOCK_ID             AS STOCK_ID
 				          FROM USRYMA.TB_YM_CRNWRKMTL A
 				         WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID  
@@ -2582,122 +2582,122 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 				
 				
-		    /* B¿­¿¬ SLAB ¾ßµå L2 ¼Û½Å ************************************************************************************/			    	
+		    /* Bì—´ì—° SLAB ì•¼ë“œ L2 ì†¡ì‹  ************************************************************************************/			    	
 			} else if("YMA8L001".equals(msgId)) {
 
-		    	trtNm = "B¿­¿¬ SLAB ÀúÀåÀ§Ä¡Á¦¿ø";
+		    	trtNm = "Bì—´ì—° SLAB ì €ì¥ìœ„ì¹˜ì œì›";
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L001";
 		    	
 			} else if("YMA8L001_CarInfo".equals(msgId)) {
 
-		    	trtNm = "B¿­¿¬ SLAB ÀúÀåÀ§Ä¡Á¦¿ø(Â÷·®Á¤º¸Backup";
+		    	trtNm = "Bì—´ì—° SLAB ì €ì¥ìœ„ì¹˜ì œì›(ì°¨ëŸ‰ì •ë³´Backup";
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L001_CarInfo";
 		    	
 			} else if("YMA8L002".equals(msgId)) {
 
-		    	trtNm = "B¿­¿¬ SLAB ÀúÀåÇ°Á¦¿ø";
+		    	trtNm = "Bì—´ì—° SLAB ì €ì¥í’ˆì œì›";
 		    	
-				//¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå 
+				//ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ 
 				String ydInfoSyncCd = commUtils.trim(jrParam.getFieldString("YD_INFO_SYNC_CD"));
 				
 				if ("1".equals(ydInfoSyncCd) || "2".equals(ydInfoSyncCd) || "3".equals(ydInfoSyncCd) || "4".equals(ydInfoSyncCd)) {
-					//À§Ä¡º° >> 1:µ¿,2:SPAN,3:¿­,4:BED
+					//ìœ„ì¹˜ë³„ >> 1:ë™,2:SPAN,3:ì—´,4:BED
 			    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002ByLoc_PIDEV";
 				} else {
-					//Àç·áº° >> 5:ÁöÁ¤ÀúÀåÇ°,A:»ı»ê½ÇÀû,B:Â÷·®ÀÔ°í,C:Çà¼±º¯°æ,D:»ı»êÁ¾·á(»èÁ¦),H:C¿­¿¬ÀåÀÔ,P:1ÈÄÆÇÀåÀÔ,Q:2ÈÄÆÇÀåÀÔ
+					//ì¬ë£Œë³„ >> 5:ì§€ì •ì €ì¥í’ˆ,A:ìƒì‚°ì‹¤ì ,B:ì°¨ëŸ‰ì…ê³ ,C:í–‰ì„ ë³€ê²½,D:ìƒì‚°ì¢…ë£Œ(ì‚­ì œ),H:Cì—´ì—°ì¥ì…,P:1í›„íŒì¥ì…,Q:2í›„íŒì¥ì…
 			    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002_PIDEV";
 				}
 
 			} else if("YMA8L002ChgWoClear".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ SLAB ÀúÀåÇ°Á¦¿ø ÀåÀÔLOT »èÁ¦ Á¤º¸";
+				trtNm = "Bì—´ì—° SLAB ì €ì¥í’ˆì œì› ì¥ì…LOT ì‚­ì œ ì •ë³´";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002ChgWoClear_PIDEV";
 				
 			} else if("YMA8L002ChgWoSet".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ SLAB ÀúÀåÇ°Á¦¿ø ÀåÀÔLOT ¼³Á¤ Á¤º¸";
+				trtNm = "Bì—´ì—° SLAB ì €ì¥í’ˆì œì› ì¥ì…LOT ì„¤ì • ì •ë³´";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002ChgWoSet_PIDEV";
 				
 			} else if("YMA8L002DnWr".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ SLAB ÀúÀåÇ°Á¦¿ø ±ÇÇÏ½ÇÀû";
+				trtNm = "Bì—´ì—° SLAB ì €ì¥í’ˆì œì› ê¶Œí•˜ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002DnWr_PIDEV";
 				
 			}else if("YMA8L002Del".equals(msgId)) {
 				
-				trtNm = "1¿­¿¬ SLAB ÀúÀåÇ°Á¦¿ø »êÀûÀ§Ä¡ »èÁ¦";
+				trtNm = "1ì—´ì—° SLAB ì €ì¥í’ˆì œì› ì‚°ì ìœ„ì¹˜ ì‚­ì œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L002Del";
 				
 			} else if("YMA8L008BackUp".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ SLAB Â÷·®¿¹Á¤Á¤º¸ Backup";
+		    	trtNm = "Bì—´ì—° SLAB ì°¨ëŸ‰ì˜ˆì •ì •ë³´ Backup";
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.YMA8L008BackUp";
 		    	
 		    	
-		    /* 1³Ã¿¬ ¼Û½Å ***********************************************************************************************/		    	
+		    /* 1ëƒ‰ì—° ì†¡ì‹  ***********************************************************************************************/		    	
 			} else if("MIMH220".equals(msgId)) {
 				
-		    	trtNm = "1³Ã¿¬ ´ëÂ÷ÀÌµ¿Á¤º¸";
+		    	trtNm = "1ëƒ‰ì—° ëŒ€ì°¨ì´ë™ì •ë³´";
 
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcMIMH220 
-		    	SELECT JMS_TC_CD                                  --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,JMS_TC_CD                                  --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')    --»ı¼ºÀÏ½Ã
-				     ||RPAD(NVL(WORK_EXP            ,' '), 2,' ') --ÀÛ¾÷±ÙÁ¶
-				     ||RPAD(NVL(WORK_PLANT          ,' '), 1,' ') --ÀÛ¾÷°øÀå
-				     ||RPAD(NVL(WORK_PROC           ,' '), 1,' ') --ÀÛ¾÷°øÁ¤
-				     ||RPAD(NVL(TC_COUNT            ,' '), 1,' ') --Àü¹®count
-				     ||RPAD(NVL(TC_DEMAND_GP        ,' '), 1,' ') --Àü¹®¿ä±¸±¸ºĞ
-				     ||RPAD(' ',13,'0')                           --ÀÓ½Ã
-				     ||RPAD(NVL(MOVE_GP             ,' '), 1,' ') --ÀÌµ¿±¸ºĞ
-				     ||RPAD(NVL(LEAVE_CELLNO        ,' '), 10,' ') --Ãâ¹ß¹øÁö
-				     ||RPAD(NVL(ARRIVE_CELLNO       ,' '), 10,' ') --µµÂø¹øÁö
+		    	SELECT JMS_TC_CD                                  --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,JMS_TC_CD                                  --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')    --ìƒì„±ì¼ì‹œ
+				     ||RPAD(NVL(WORK_EXP            ,' '), 2,' ') --ì‘ì—…ê·¼ì¡°
+				     ||RPAD(NVL(WORK_PLANT          ,' '), 1,' ') --ì‘ì—…ê³µì¥
+				     ||RPAD(NVL(WORK_PROC           ,' '), 1,' ') --ì‘ì—…ê³µì •
+				     ||RPAD(NVL(TC_COUNT            ,' '), 1,' ') --ì „ë¬¸count
+				     ||RPAD(NVL(TC_DEMAND_GP        ,' '), 1,' ') --ì „ë¬¸ìš”êµ¬êµ¬ë¶„
+				     ||RPAD(' ',13,'0')                           --ì„ì‹œ
+				     ||RPAD(NVL(MOVE_GP             ,' '), 1,' ') --ì´ë™êµ¬ë¶„
+				     ||RPAD(NVL(LEAVE_CELLNO        ,' '), 10,' ') --ì¶œë°œë²ˆì§€
+				     ||RPAD(NVL(ARRIVE_CELLNO       ,' '), 10,' ') --ë„ì°©ë²ˆì§€
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM 
-				       (SELECT 'MIMH220'        AS JMS_TC_CD        --JMSTCÄÚµå 
-				             , :V_WORK_EXP      AS WORK_EXP	        --ÀÛ¾÷±ÙÁ¶        
-				             , 'I'              AS WORK_PLANT	    --ÀÛ¾÷°øÀå      
-				             , 'I'              AS WORK_PROC	    --ÀÛ¾÷°øÁ¤        
-				             , '*'              AS TC_COUNT	        --Àü¹®count       
-				             , 'I'              AS TC_DEMAND_GP	    --Àü¹®¿ä±¸±¸ºĞ
-				             , :V_MV_GP         AS MOVE_GP	        --ÀÌµ¿±¸ºĞ          
-				             , :V_LEV_CELLNO    AS LEAVE_CELLNO	    --Ãâ¹ß¹øÁö    
-				             , :V_ARR_CELLNO    AS ARRIVE_CELLNO    --µµÂø¹øÁö   
+				       (SELECT 'MIMH220'        AS JMS_TC_CD        --JMSTCì½”ë“œ 
+				             , :V_WORK_EXP      AS WORK_EXP	        --ì‘ì—…ê·¼ì¡°        
+				             , 'I'              AS WORK_PLANT	    --ì‘ì—…ê³µì¥      
+				             , 'I'              AS WORK_PROC	    --ì‘ì—…ê³µì •        
+				             , '*'              AS TC_COUNT	        --ì „ë¬¸count       
+				             , 'I'              AS TC_DEMAND_GP	    --ì „ë¬¸ìš”êµ¬êµ¬ë¶„
+				             , :V_MV_GP         AS MOVE_GP	        --ì´ë™êµ¬ë¶„          
+				             , :V_LEV_CELLNO    AS LEAVE_CELLNO	    --ì¶œë°œë²ˆì§€    
+				             , :V_ARR_CELLNO    AS ARRIVE_CELLNO    --ë„ì°©ë²ˆì§€   
 				          FROM DUAL	)
 		    	*/
 		    	jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcMIMH220";		    	
 			
 			} else if ("MIMH110".equals(msgId)) {
 				
-				trtNm = "ÄÚÀÏ1³Ã¿¬ ´ëÂ÷»óÂ÷½ÇÀû";
+				trtNm = "ì½”ì¼1ëƒ‰ì—° ëŒ€ì°¨ìƒì°¨ì‹¤ì ";
 				
 				/*
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(WORK_EXP      , ' '), 2 , ' ') --ÀÛ¾÷±ÙÁ¶     
-				     ||RPAD(NVL(WORK_PLANT    , ' '), 1 , ' ') --ÀÛ¾÷°øÀå     
-				     ||RPAD(NVL(WORK_PROC     , ' '), 1 , ' ') --ÀÛ¾÷°øÁ¤     
-				     ||RPAD(NVL(TC_COUNT      , ' '), 1 , ' ') --Àü¹®COUNT    
-				     ||RPAD(NVL(TC_DEMAND_GP  , ' '), 1 , ' ') --Àü¹®¿ä±¸±¸ºĞ 
-				     ||RPAD(NVL(EXTRA_ITEM    , ' '), 13, ' ') --¿©ºĞÇ×¸ñ    
-				     ||RPAD(NVL(EQUIP_CD      , ' '), 4 , ' ') --¼³ºñÄÚµå    
-				     ||RPAD(NVL(WORK_COIL_QNTY, ' '), 1 , ' ') --ÀÛ¾÷COIL¼ö  
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(WORK_EXP      , ' '), 2 , ' ') --ì‘ì—…ê·¼ì¡°     
+				     ||RPAD(NVL(WORK_PLANT    , ' '), 1 , ' ') --ì‘ì—…ê³µì¥     
+				     ||RPAD(NVL(WORK_PROC     , ' '), 1 , ' ') --ì‘ì—…ê³µì •     
+				     ||RPAD(NVL(TC_COUNT      , ' '), 1 , ' ') --ì „ë¬¸COUNT    
+				     ||RPAD(NVL(TC_DEMAND_GP  , ' '), 1 , ' ') --ì „ë¬¸ìš”êµ¬êµ¬ë¶„ 
+				     ||RPAD(NVL(EXTRA_ITEM    , ' '), 13, ' ') --ì—¬ë¶„í•­ëª©    
+				     ||RPAD(NVL(EQUIP_CD      , ' '), 4 , ' ') --ì„¤ë¹„ì½”ë“œ    
+				     ||RPAD(NVL(WORK_COIL_QNTY, ' '), 1 , ' ') --ì‘ì—…COILìˆ˜  
 				     ||RPAD(NVL(COILNO1       , ' '), 15, ' ') --COILNO1     
-				     ||RPAD(NVL(CON_NO1       , ' '), 10, ' ') --°è¾à¹øÈ£1   
-				     ||RPAD(NVL(CON_DTL1      , ' '), 5 , ' ') --°è¾àÇà¹ø1   
+				     ||RPAD(NVL(CON_NO1       , ' '), 10, ' ') --ê³„ì•½ë²ˆí˜¸1   
+				     ||RPAD(NVL(CON_DTL1      , ' '), 5 , ' ') --ê³„ì•½í–‰ë²ˆ1   
 				     ||RPAD(NVL(COILNO2       , ' '), 15, ' ') --COILNO2     
-				     ||RPAD(NVL(CON_NO2       , ' '), 10, ' ') --°è¾à¹øÈ£2   
-				     ||RPAD(NVL(CON_DTL2      , ' '), 5 , ' ') --°è¾àÇà¹ø2   
+				     ||RPAD(NVL(CON_NO2       , ' '), 10, ' ') --ê³„ì•½ë²ˆí˜¸2   
+				     ||RPAD(NVL(CON_DTL2      , ' '), 5 , ' ') --ê³„ì•½í–‰ë²ˆ2   
 				     ||RPAD(NVL(COILNO3       , ' '), 15, ' ') --COILNO3     
-				     ||RPAD(NVL(CON_NO3       , ' '), 10, ' ') --°è¾à¹øÈ£3   
-				     ||RPAD(NVL(CON_DTL3      , ' '), 5 , ' ') --°è¾àÇà¹ø3   
+				     ||RPAD(NVL(CON_NO3       , ' '), 10, ' ') --ê³„ì•½ë²ˆí˜¸3   
+				     ||RPAD(NVL(CON_DTL3      , ' '), 5 , ' ') --ê³„ì•½í–‰ë²ˆ3   
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				        SELECT 'MIMH110'         AS JMS_TC_CD  
-				             , :V_WORK_EXP       AS WORK_EXP      --ÀÛ¾÷±ÙÁ¶
+				             , :V_WORK_EXP       AS WORK_EXP      --ì‘ì—…ê·¼ì¡°
 				             , 'I'       AS WORK_PLANT    
 				             , 'I'       AS WORK_PROC     
 				             , '*'       AS TC_COUNT      
@@ -2729,7 +2729,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                           AND SC.DEL_YN = 'N'
 				                           AND MT.DEL_YN = 'N'
 				                           AND SUBSTR(SC.YD_DN_WO_LOC, 3, 2) = 'TC'
-				                           AND SC.YD_SCH_CD LIKE '__TC12UM' --´ëÂ÷ÃâÇÏ»óÂ÷
+				                           AND SC.YD_SCH_CD LIKE '__TC12UM' --ëŒ€ì°¨ì¶œí•˜ìƒì°¨
 				                      ) A
 				                     ,( SELECT A.ORD_NO          
 				                             , '00'||A.ORD_DTL         AS ORD_DTL
@@ -2756,12 +2756,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 			} else if ("MIMH210".equals(msgId)) {
 				
-				trtNm = "ÄÚÀÏ1³Ã¿¬ ´ëÂ÷»óÅÂÁ¤º¸";
+				trtNm = "ì½”ì¼1ëƒ‰ì—° ëŒ€ì°¨ìƒíƒœì •ë³´";
 				/*
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --¹ß»ıÀÏÀÚ
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --ë°œìƒì¼ì
 				     ||RPAD(NVL(WORK_EXP    , ' '), 2 , ' ') 
 				     ||RPAD(NVL(WORK_PLANT  , ' '), 1 , ' ') 
 				     ||RPAD(NVL(WORK_PROC   , ' '), 1 , ' ') 
@@ -2774,15 +2774,15 @@ public class YmCommDAO extends DBAssistantDAO {
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				        SELECT 'MIMH210'   AS JMS_TC_CD  
-				             , :V_WORK_EXP AS WORK_EXP   --ÀÛ¾÷±ÙÁ¶
-				             , 'I'         AS WORK_PLANT --ÀÛ¾÷°øÀå( Çö´ëÁ¦Ã¶ : 'I', HYSCO : 'B')
-				             , 'I'         AS WORK_PROC  --ÀÛ¾÷°øÁ¤( Çö´ëÁ¦Ã¶ : 'I', HYSCO : 'H')
-				             , '*'         AS TC_COUNT   --Àü¹® ¹ß»ı count(Àü¹®ÀÌ 3°³ »ı¼º½Ã Ã¹¹øÂ° 1, µÎ¹øÂ° 2, ¸¶Áö¸· Àü¹®ÀÏ°æ¿ì *)
-				             , 'I'         AS TC_DEMAND_GP --Àü¹®¿ä±¸±¸ºĞ
-				             , ''          AS EXTRA_ITEM   --¿©ºĞÇ×¸ñ
-				             , 'SSX1'      AS EQUIP_CD    --¼³ºñÄÚµå
-				             , NVL(:V_DRV_STAT, 'A') AS DRV_STAT    --¿îÀü»óÅÂ 'A':AUTO, 'M':MANUAL( AUTO Mode¸¦ Á¦¿ÜÇÑ ¿îÀü Mode )
-				             , :V_EQP_SATT AS EQP_SATT    --¼³ºñ»óÅÂ '0' : °íÀå, '1' : Á¤»ó
+				             , :V_WORK_EXP AS WORK_EXP   --ì‘ì—…ê·¼ì¡°
+				             , 'I'         AS WORK_PLANT --ì‘ì—…ê³µì¥( í˜„ëŒ€ì œì²  : 'I', HYSCO : 'B')
+				             , 'I'         AS WORK_PROC  --ì‘ì—…ê³µì •( í˜„ëŒ€ì œì²  : 'I', HYSCO : 'H')
+				             , '*'         AS TC_COUNT   --ì „ë¬¸ ë°œìƒ count(ì „ë¬¸ì´ 3ê°œ ìƒì„±ì‹œ ì²«ë²ˆì§¸ 1, ë‘ë²ˆì§¸ 2, ë§ˆì§€ë§‰ ì „ë¬¸ì¼ê²½ìš° *)
+				             , 'I'         AS TC_DEMAND_GP --ì „ë¬¸ìš”êµ¬êµ¬ë¶„
+				             , ''          AS EXTRA_ITEM   --ì—¬ë¶„í•­ëª©
+				             , 'SSX1'      AS EQUIP_CD    --ì„¤ë¹„ì½”ë“œ
+				             , NVL(:V_DRV_STAT, 'A') AS DRV_STAT    --ìš´ì „ìƒíƒœ 'A':AUTO, 'M':MANUAL( AUTO Modeë¥¼ ì œì™¸í•œ ìš´ì „ Mode )
+				             , :V_EQP_SATT AS EQP_SATT    --ì„¤ë¹„ìƒíƒœ '0' : ê³ ì¥, '1' : ì •ìƒ
 				          FROM DUAL
 				         WHERE 1 = 1
 				       )
@@ -2793,12 +2793,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 			} else if ("MIMH510".equals(msgId)) {
 				
-				trtNm = "ÄÚÀÏ1³Ã¿¬ ÄÚÀÏ»ó¼¼Á¤º¸";
+				trtNm = "ì½”ì¼1ëƒ‰ì—° ì½”ì¼ìƒì„¸ì •ë³´";
 				/*
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --¹ß»ıÀÏÀÚ
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') --ë°œìƒì¼ì
 				     ||RPAD(NVL(WORK_EXP    , ' '), 2 , ' ') 
 				     ||RPAD(NVL(WORK_PLANT  , ' '), 1 , ' ') 
 				     ||RPAD(NVL(WORK_PROC   , ' '), 1 , ' ') 
@@ -2832,12 +2832,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				  FROM (
 				        SELECT 'MIMH210'   AS JMS_TC_CD  
-				             , :V_WORK_EXP AS WORK_EXP   --ÀÛ¾÷±ÙÁ¶
-				             , 'I'         AS WORK_PLANT --ÀÛ¾÷°øÀå( Çö´ëÁ¦Ã¶ : 'I', HYSCO : 'B')
-				             , 'I'         AS WORK_PROC  --ÀÛ¾÷°øÁ¤( Çö´ëÁ¦Ã¶ : 'I', HYSCO : 'H')
-				             , '*'         AS TC_COUNT   --Àü¹® ¹ß»ı count(Àü¹®ÀÌ 3°³ »ı¼º½Ã Ã¹¹øÂ° 1, µÎ¹øÂ° 2, ¸¶Áö¸· Àü¹®ÀÏ°æ¿ì *)
-				             , 'I'         AS TC_DEMAND_GP --Àü¹®¿ä±¸±¸ºĞ
-				             , ''          AS EXTRA_ITEM   --¿©ºĞÇ×¸ñ
+				             , :V_WORK_EXP AS WORK_EXP   --ì‘ì—…ê·¼ì¡°
+				             , 'I'         AS WORK_PLANT --ì‘ì—…ê³µì¥( í˜„ëŒ€ì œì²  : 'I', HYSCO : 'B')
+				             , 'I'         AS WORK_PROC  --ì‘ì—…ê³µì •( í˜„ëŒ€ì œì²  : 'I', HYSCO : 'H')
+				             , '*'         AS TC_COUNT   --ì „ë¬¸ ë°œìƒ count(ì „ë¬¸ì´ 3ê°œ ìƒì„±ì‹œ ì²«ë²ˆì§¸ 1, ë‘ë²ˆì§¸ 2, ë§ˆì§€ë§‰ ì „ë¬¸ì¼ê²½ìš° *)
+				             , 'I'         AS TC_DEMAND_GP --ì „ë¬¸ìš”êµ¬êµ¬ë¶„
+				             , ''          AS EXTRA_ITEM   --ì—¬ë¶„í•­ëª©
 				             
 				             , CON_NO
 				             , CON_NO_DTL
@@ -2898,7 +2898,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                 ORDER BY STEP_NO DESC             
 				               ) C
 				             , (
-				                SELECT CASE WHEN FRTOMOVE_EQUIP_BED_GP = '01' THEN 'B1XSS-X101'    --ÀÌ¼Û¼³ºñ¹øÁö
+				                SELECT CASE WHEN FRTOMOVE_EQUIP_BED_GP = '01' THEN 'B1XSS-X101'    --ì´ì†¡ì„¤ë¹„ë²ˆì§€
 				                            WHEN FRTOMOVE_EQUIP_BED_GP = '02' THEN 'B1XSS-X102'
 				                            WHEN FRTOMOVE_EQUIP_BED_GP = '03' THEN 'B1XSS-X103'
 				                            ELSE NULL
@@ -2918,11 +2918,11 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcMIMH510";
 			} else if ("CF1BP14".equals(msgId)) {
 					
-					trtNm = "½½¶óºê W/B 4,5 Á¤º¸";
+					trtNm = "ìŠ¬ë¼ë¸Œ W/B 4,5 ì •ë³´";
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP14 
 
-					SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCÄÚµå
-					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã  
+					SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCì½”ë“œ
+					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ  
 					      ,TC_CD  
 					     ||TC_Date  
 					     ||TC_Time
@@ -2971,11 +2971,11 @@ public class YmCommDAO extends DBAssistantDAO {
 					FROM 
 					     (       SELECT  
 					                    'POCFL114' AS NEW_TC_CD
-					                   ,'CF1BP14' TC_CD                             --JMSTCÄÚµå
-					                   ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTC»ı¼ºÀÏ½Ã
-					                   ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTC»ı¼ºÀÏ½Ã
-					                   ,'I'                           AS TC_ID     --Àü¹®±¸ºĞ
-					                   ,'0254'                        AS TC_Length --±æÀÌ 
+					                   ,'CF1BP14' TC_CD                             --JMSTCì½”ë“œ
+					                   ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTCìƒì„±ì¼ì‹œ
+					                   ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTCìƒì„±ì¼ì‹œ
+					                   ,'I'                           AS TC_ID     --ì „ë¬¸êµ¬ë¶„
+					                   ,'0254'                        AS TC_Length --ê¸¸ì´ 
 					                   
 					                   ,MAX(DECODE(CNT,1,STOCK_ID,''))   AS SLAB_NO1
 					                   ,MAX(DECODE(CNT,1,SLAB_T,  ''))   AS SLAB_T1
@@ -3037,10 +3037,10 @@ public class YmCommDAO extends DBAssistantDAO {
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP14";
 			} else if ("CF1BP03".equals(msgId)) {
 					
-					trtNm = "½½¶óºê Line Off ¿Ï·á½ÇÀû";
+					trtNm = "ìŠ¬ë¼ë¸Œ Line Off ì™„ë£Œì‹¤ì ";
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP03 
-					SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCÄÚµå
-					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã 
+					SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCì½”ë“œ
+					      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ 
 					      ,TC_CD  
 					     ||TC_Date  
 					     ||TC_Time
@@ -3051,10 +3051,10 @@ public class YmCommDAO extends DBAssistantDAO {
 					  FROM (
 					        SELECT  'POCFL103' AS NEW_TC_CD
 					               ,'CF1BP03' AS TC_CD  
-					               ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTC»ı¼ºÀÏ½Ã
-						           ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTC»ı¼ºÀÏ½Ã
-						           ,'I'                           AS TC_ID     --Àü¹®±¸ºĞ
-						           ,'0012'                        AS TC_Length --±æÀÌ
+					               ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTCìƒì„±ì¼ì‹œ
+						           ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTCìƒì„±ì¼ì‹œ
+						           ,'I'                           AS TC_ID     --ì „ë¬¸êµ¬ë¶„
+						           ,'0012'                        AS TC_Length --ê¸¸ì´
 					               ,:V_SLAB_NO                    AS SLAB_NO      
 					          FROM DUAL
 					         WHERE 1 = 1
@@ -3063,10 +3063,10 @@ public class YmCommDAO extends DBAssistantDAO {
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP03";
 			}  else if ("CF1BP12".equals(msgId)) {
 				
-				trtNm = "CTC ±ÇÇÏ¿Ï·á½ÇÀû ";
+				trtNm = "CTC ê¶Œí•˜ì™„ë£Œì‹¤ì  ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP12 
-				SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCÄÚµå
-			          ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
+				SELECT NEW_TC_CD AS JMS_TC_CD  --JMSTCì½”ë“œ
+			          ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
 			          ,TC_CD  
 				     ||TC_Date  
 				     ||TC_Time
@@ -3078,10 +3078,10 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM (
 				        SELECT    'POCFL112' AS NEW_TC_CD
 			                     ,'CF1BP12' AS TC_CD  
-				                 ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTC»ı¼ºÀÏ½Ã
-					             ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTC»ı¼ºÀÏ½Ã
-					             ,'I'                           AS TC_ID     --Àü¹®±¸ºĞ
-					             ,'0013'                        AS TC_Length --±æÀÌ
+				                 ,TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TC_Date   --JMSTCìƒì„±ì¼ì‹œ
+					             ,TO_CHAR(SYSDATE,'HH24-MI-SS') AS TC_Time   --JMSTCìƒì„±ì¼ì‹œ
+					             ,'I'                           AS TC_ID     --ì „ë¬¸êµ¬ë¶„
+					             ,'0013'                        AS TC_Length --ê¸¸ì´
 				                 ,:V_SLAB_NO                    AS SLAB_NO      
 				                 ,CASE WHEN SUBSTR(:V_POSITION,1,6) ='2ACT01' THEN '1'
 				                       WHEN SUBSTR(:V_POSITION,1,6) ='2ACT02' THEN '2'
@@ -3096,7 +3096,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.tcCF1BP12";
 			} else if("YMA8L004".equals(msgId)) {
 				
-		    	trtNm = "B¿­¿¬ SLAB ÀÛ¾÷Áö½Ã";
+		    	trtNm = "Bì—´ì—° SLAB ì‘ì—…ì§€ì‹œ";
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA8L004
 		    	WITH TEMP_CRN_SCH_ID AS 
 		    	( SELECT *
@@ -3113,99 +3113,99 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	          WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID 
 		    	) 
 
-		    	SELECT 'YMA8L004'                          AS JMS_TC_CD          --JMSTCÄÚµå
-		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-		    	      ,'YMA8L004'                                     --Àü¹®ID
-		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')         --»ı¼ºÀÏ½Ã
-		    	     ||NVL(:V_MSG_GP,'I')                              --Àü¹®±¸ºĞ
-		    	     ||'0460'                                          --Àü¹®±æÀÌ
-		    	     ||RPAD(' ',29,' ')                                --ÀÓ½Ã
-		    	     ||RPAD(NVL(YD_EQP_ID                                   ,' '),6 ,' ') --¾ßµå¼³ºñID                 
-		    	     ||RPAD(NVL(YD_WRK_PROG_STAT                            ,' '),1 ,' ') --¾ßµåÀÛ¾÷ÁøÇà»óÅÂ           
-		    	     ||RPAD(NVL(YD_SCH_CD                                   ,' '),8 ,' ') --¾ßµå½ºÄÉÁìÄÚµå             
-		    	     ||RPAD(NVL(YD_SCH_NAME                                 ,' '),30,' ') --¾ßµå½ºÄÉÁÙ¸í               
-		    	     ||RPAD(NVL(YD_CRN_SCH_ID                               ,' '),18,' ') --¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID         
-		    	     ||RPAD(NVL(YD_CRN_SCH_RMD_CNT                          ,' '),2 ,' ') --¾ßµåÅ©·¹ÀÎ½ºÄÉÁÙÀÜ¿©È¸¼ö   
-		    	     ||LPAD(NVL(TO_CHAR(WORK_ORD_NUMSHEET      ,'FM00'     ),'0'),2 ,'0') --ÀÛ¾÷Áö½Ã ¸Å¼ö   	     
+		    	SELECT 'YMA8L004'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+		    	      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+		    	      ,'YMA8L004'                                     --ì „ë¬¸ID
+		    	     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS')         --ìƒì„±ì¼ì‹œ
+		    	     ||NVL(:V_MSG_GP,'I')                              --ì „ë¬¸êµ¬ë¶„
+		    	     ||'0460'                                          --ì „ë¬¸ê¸¸ì´
+		    	     ||RPAD(' ',29,' ')                                --ì„ì‹œ
+		    	     ||RPAD(NVL(YD_EQP_ID                                   ,' '),6 ,' ') --ì•¼ë“œì„¤ë¹„ID                 
+		    	     ||RPAD(NVL(YD_WRK_PROG_STAT                            ,' '),1 ,' ') --ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ           
+		    	     ||RPAD(NVL(YD_SCH_CD                                   ,' '),8 ,' ') --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ             
+		    	     ||RPAD(NVL(YD_SCH_NAME                                 ,' '),30,' ') --ì•¼ë“œìŠ¤ì¼€ì¤„ëª…               
+		    	     ||RPAD(NVL(YD_CRN_SCH_ID                               ,' '),18,' ') --ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID         
+		    	     ||RPAD(NVL(YD_CRN_SCH_RMD_CNT                          ,' '),2 ,' ') --ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¤„ì”ì—¬íšŒìˆ˜   
+		    	     ||LPAD(NVL(TO_CHAR(WORK_ORD_NUMSHEET      ,'FM00'     ),'0'),2 ,'0') --ì‘ì—…ì§€ì‹œ ë§¤ìˆ˜   	     
 		    	     
-		    	     ||RPAD(NVL(YD_UP_WO_LOC                                ,' '),8 ,' ') --¾ßµå±Ç»óÁö½ÃÀ§Ä¡           
-		    	     ||LPAD(NVL(YD_UP_WO_LAYER                              ,'0'),3 ,'0') --¾ßµå±Ç»óÁö½Ã´Ü 
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_XAXIS     ,'FM0000000'),'0'),7 ,'0') --¾ßµå±Ç»óÁö½ÃXÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_XAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃXÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_XAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃXÃà¿ÀÂ÷ÃÖ¼Ò    
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_YAXIS     ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃYÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_YAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃYÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_YAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃYÃà¿ÀÂ÷ÃÖ¼Ò   
-		    	     ||RPAD(NVL(YD_UP_WO_LOC_ZAXIS_SYM                      ,' '),1 ,' ') --¾ßµå±Ç»óÁö½ÃZÃà ºÎÈ£   	      
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃZÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_ZAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃZÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_ZAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±Ç»óÁö½ÃZÃà¿ÀÂ÷ÃÖ¼Ò  
-		    	     ||LPAD(NVL(TO_CHAR(UP_ROTATION_ANGLE      ,'FM0'      ),'0'),1 ,'0') --±Ç»óÀ§Ä¡ È¸Àü°¢µµ             
+		    	     ||RPAD(NVL(YD_UP_WO_LOC                                ,' '),8 ,' ') --ì•¼ë“œê¶Œìƒì§€ì‹œìœ„ì¹˜           
+		    	     ||LPAD(NVL(YD_UP_WO_LAYER                              ,'0'),3 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œë‹¨ 
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_XAXIS     ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_XAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_XAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•ì˜¤ì°¨ìµœì†Œ    
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_YAXIS     ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_YAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_YAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•ì˜¤ì°¨ìµœì†Œ   
+		    	     ||RPAD(NVL(YD_UP_WO_LOC_ZAXIS_SYM                      ,' '),1 ,' ') --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶• ë¶€í˜¸   	      
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_ZAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_UP_WO_ZAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•ì˜¤ì°¨ìµœì†Œ  
+		    	     ||LPAD(NVL(TO_CHAR(UP_ROTATION_ANGLE      ,'FM0'      ),'0'),1 ,'0') --ê¶Œìƒìœ„ì¹˜ íšŒì „ê°ë„             
 		    	     
-		    	     ||RPAD(NVL(YD_DN_WO_LOC                                ,' '),8 ,' ') --¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡           
-		    	     ||LPAD(NVL(YD_DN_WO_LAYER                              ,'0'),3 ,'0') --¾ßµå±ÇÇÏÁö½Ã´Ü             
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_XAXIS     ,'FM0000000'),'0'),7 ,'0') --¾ßµå±ÇÇÏÁö½ÃXÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_XAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃXÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_XAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃXÃà¿ÀÂ÷ÃÖ¼Ò    
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_YAXIS     ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃYÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_YAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃYÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_YAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃYÃà¿ÀÂ÷ÃÖ¼Ò    
-		    	     ||RPAD(NVL(YD_DN_WO_LOC_ZAXIS_SYM                      ,' '),1 ,' ') --¾ßµå±ÇÇÏÁö½ÃZÃà ºÎÈ£ 
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃZÃà            
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_ZAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃZÃà¿ÀÂ÷ÃÖ´ë    
-		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_ZAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --¾ßµå±ÇÇÏÁö½ÃZÃà¿ÀÂ÷ÃÖ¼Ò
-		    	     ||RPAD(NVL(TO_CHAR(DOWN_ROTATION_ANGLE    ,'FM0'      ),'0'),1 ,'0') --±ÇÇÏÀ§Ä¡ È¸Àü°¢µµ 
+		    	     ||RPAD(NVL(YD_DN_WO_LOC                                ,' '),8 ,' ') --ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜           
+		    	     ||LPAD(NVL(YD_DN_WO_LAYER                              ,'0'),3 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨             
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_XAXIS     ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_XAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_XAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•ì˜¤ì°¨ìµœì†Œ    
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_YAXIS     ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_YAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_YAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•ì˜¤ì°¨ìµœì†Œ    
+		    	     ||RPAD(NVL(YD_DN_WO_LOC_ZAXIS_SYM                      ,' '),1 ,' ') --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶• ë¶€í˜¸ 
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•            
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_ZAXIS_GAP_MAX ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•ì˜¤ì°¨ìµœëŒ€    
+		    	     ||LPAD(NVL(TO_CHAR(YD_DN_WO_ZAXIS_GAP_MIN ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•ì˜¤ì°¨ìµœì†Œ
+		    	     ||RPAD(NVL(TO_CHAR(DOWN_ROTATION_ANGLE    ,'FM0'      ),'0'),1 ,'0') --ê¶Œí•˜ìœ„ì¹˜ íšŒì „ê°ë„ 
 		    	     
-		    	     ||RPAD(NVL(GRUSH_COIL_YN                               ,' '),1 ,' ') --Â¯±¸ÄÚÀÏ ¿©ºÎ              
-		    	     ||RPAD(NVL(SPM_HFL_YN                                  ,' '),1 ,' ') --SPM/HFL  À¯¹«              
-		    	     ||RPAD(NVL(CUT_YN                                      ,' '),1 ,' ') --Àı´ÜÀç ¿©ºÎ                
-		    	     ||RPAD(NVL(YD_EQP_ID2                                  ,' '),6 ,' ') --¾ßµå¼³ºñID2                
-		    	     ||RPAD(NVL(YD_TC_AIM_BAY_GP                            ,' '),1 ,' ') --¾ßµå´ëÂ÷¸ñÀûµ¿             
-		    	     ||RPAD(NVL(YD_CAR_USE_GP                               ,' '),1 ,' ') --¾ßµåÂ÷·®»ç¿ë±¸ºĞ           
-		    	     ||RPAD(NVL(CAR_NO                                      ,' '),15,' ') --Â÷·®¹øÈ£                   
-		    	     ||RPAD(NVL(TRN_EQP_CD                                  ,' '),8 ,' ') --¿î¼ÛÀåºñÄÚµå  
-		    	     ||RPAD(NVL(CARD_NO                                     ,' '),4 ,' ') --Ä«µå¹øÈ£ 
-		    	     ||RPAD(NVL(TO_CHAR(YD_EQP_WRK_SH          ,'FM00'     ),'00'),2,' ') --¾ßµå¼³ºñÀÛ¾÷¸Å¼ö  
-		    	     ||RPAD(NVL(TO_CHAR(YD_EQP_RMN_SH          ,'FM00'     ),'00'),2,' ') --¾ßµå¼³ºñÀÜ·®¸Å¼ö      
-		    	     ||RPAD(NVL(STOCK_ID1                                   ,' '),11,' ') --Àç·á¹øÈ£1                   
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_WT1             ,'FM00000'  ),'0'),5 ,'0') --¾ßµåÀç·áÁß·®1              
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_T1              ,'FM000V000'),'0'),6 ,'0') --¾ßµåÀç·áµÎ²²1              
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_W1              ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÀç·áÆø1                
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_L1              ,'FM0000000'),'0'),7 ,'0') --¾ßµåÀç·á±æÀÌ1
-		    	     ||RPAD(NVL(WORK_ORD_SEQNO1                             ,' '),1 ,' ') --½½¶óºê1 Hot ¼ÒÀç¿©ºÎ       
-		    	     ||RPAD(NVL(TREAT_GP1                                   ,' '),1 ,' ') --°í°­µµ °­Á¾¿©ºÎ1           
-		    	     ||RPAD(NVL(CHARGE_SEQNO1                               ,' '),10,' ') --ÀåÀÔ¼øÀ§1  
-		    	     ||RPAD(NVL(STOCK_ID2                                   ,' '),11,' ') --Àç·á¹øÈ£2                  
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_WT2             ,'FM00000'  ),'0'),5 ,'0') --¾ßµåÀç·áÁß·®2              
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_T2              ,'FM000V000'),'0'),6 ,'0') --¾ßµåÀç·áµÎ²²2              
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_W2              ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÀç·áÆø2                
-		    	     ||LPAD(NVL(TO_CHAR(YD_STL_L2              ,'FM0000000'),'0'),7 ,'0') --¾ßµåÀç·á±æÀÌ2 
-		    	     ||RPAD(NVL(WORK_ORD_SEQNO2                             ,' '),1 ,' ') --½½¶óºê2 Hot ¼ÒÀç¿©ºÎ       
-		    	     ||RPAD(NVL(TREAT_GP2                                   ,' '),1 ,' ') --°í°­µµ °­Á¾¿©ºÎ2           
-		    	     ||RPAD(NVL(CHARGE_SEQNO2                               ,' '),10,' ') --ÀåÀÔ¼øÀ§2
-		    	     ||RPAD(NVL(YD_SCH_CD_NEXT                              ,' '),8 ,' ') --¾ßµå½ºÄÉÁìÄÚµå_Next        
-		    	     ||RPAD(NVL(YD_SCH_NAME_NEXT                            ,' '),30,' ') --¾ßµå½ºÄÉÁÙ¸í_NEXT          
-		    	     ||RPAD(NVL(YD_UP_WO_LOC_NEXT                           ,' '),8 ,' ') --¾ßµå±Ç»óÁö½ÃÀ§Ä¡_Next      
-		    	     ||LPAD(NVL(YD_UP_WO_LAYER_NEXT                         ,'0'),3 ,'0') --¾ßµå±Ç»óÁö½Ã´Ü_Next        
-		    	     ||RPAD(NVL(YD_DN_WO_LOC_NEXT                           ,' '),8 ,' ') --¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡_Next      
-		    	     ||LPAD(NVL(YD_DN_WO_LAYER_NEXT                         ,'0'),3 ,'0') --¾ßµå±ÇÇÏÁö½Ã´Ü_Next        
-		    	     ||RPAD(NVL(STOCK_ID_NEXT                               ,' '),11,' ') --Àç·á¹øÈ£_Next              
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_WT_NEXT     ,'FM0000000'),'0'),7 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷Áß·®_Next    
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_T_NEXT      ,'FM000V000'),'0'),6 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÑµÎ²²_Next  
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_MAX_W_NEXT  ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÖ´ëÆø_Next  
-		    	     ||LPAD(NVL(TO_CHAR(COIL_OUTDIA_NEXT       ,'FM00000'  ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ¿Ü°æ_Next
-		    	     ||LPAD(NVL(TO_CHAR(COIL_INDIA_NEXT        ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ³»°æ_Next
-		    	     ||RPAD(NVL(STOCK_ID_NEXT2                              ,' '),11,' ') --Àç·á¹øÈ£2_Next
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_WT_NEXT2    ,'FM0000000'),'0'),7 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷Áß·®2_Next    
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_T_NEXT2     ,'FM000V000'),'0'),6 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÑµÎ²²2_Next  
-		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_MAX_W_NEXT2 ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÖ´ëÆø2_Next  
-		    	     ||LPAD(NVL(TO_CHAR(COIL_OUTDIA_NEXT2      ,'FM00000'  ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ¿Ü°æ2_Next
-		    	     ||LPAD(NVL(TO_CHAR(COIL_INDIA_NEXT2       ,'FM0000V0' ),'0'),5 ,'0') --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ³»°æ2_Next
-		    	     ||RPAD(NVL(LAST_WORK_ORD_GP                            ,' '),1 ,' ') --¸¶Áö¸· Áö½Ã ±¸ºĞ
+		    	     ||RPAD(NVL(GRUSH_COIL_YN                               ,' '),1 ,' ') --ì§±êµ¬ì½”ì¼ ì—¬ë¶€              
+		    	     ||RPAD(NVL(SPM_HFL_YN                                  ,' '),1 ,' ') --SPM/HFL  ìœ ë¬´              
+		    	     ||RPAD(NVL(CUT_YN                                      ,' '),1 ,' ') --ì ˆë‹¨ì¬ ì—¬ë¶€                
+		    	     ||RPAD(NVL(YD_EQP_ID2                                  ,' '),6 ,' ') --ì•¼ë“œì„¤ë¹„ID2                
+		    	     ||RPAD(NVL(YD_TC_AIM_BAY_GP                            ,' '),1 ,' ') --ì•¼ë“œëŒ€ì°¨ëª©ì ë™             
+		    	     ||RPAD(NVL(YD_CAR_USE_GP                               ,' '),1 ,' ') --ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„           
+		    	     ||RPAD(NVL(CAR_NO                                      ,' '),15,' ') --ì°¨ëŸ‰ë²ˆí˜¸                   
+		    	     ||RPAD(NVL(TRN_EQP_CD                                  ,' '),8 ,' ') --ìš´ì†¡ì¥ë¹„ì½”ë“œ  
+		    	     ||RPAD(NVL(CARD_NO                                     ,' '),4 ,' ') --ì¹´ë“œë²ˆí˜¸ 
+		    	     ||RPAD(NVL(TO_CHAR(YD_EQP_WRK_SH          ,'FM00'     ),'00'),2,' ') --ì•¼ë“œì„¤ë¹„ì‘ì—…ë§¤ìˆ˜  
+		    	     ||RPAD(NVL(TO_CHAR(YD_EQP_RMN_SH          ,'FM00'     ),'00'),2,' ') --ì•¼ë“œì„¤ë¹„ì”ëŸ‰ë§¤ìˆ˜      
+		    	     ||RPAD(NVL(STOCK_ID1                                   ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸1                   
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_WT1             ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰1              
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_T1              ,'FM000V000'),'0'),6 ,'0') --ì•¼ë“œì¬ë£Œë‘ê»˜1              
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_W1              ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œì¬ë£Œí­1                
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_L1              ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œì¬ë£Œê¸¸ì´1
+		    	     ||RPAD(NVL(WORK_ORD_SEQNO1                             ,' '),1 ,' ') --ìŠ¬ë¼ë¸Œ1 Hot ì†Œì¬ì—¬ë¶€       
+		    	     ||RPAD(NVL(TREAT_GP1                                   ,' '),1 ,' ') --ê³ ê°•ë„ ê°•ì¢…ì—¬ë¶€1           
+		    	     ||RPAD(NVL(CHARGE_SEQNO1                               ,' '),10,' ') --ì¥ì…ìˆœìœ„1  
+		    	     ||RPAD(NVL(STOCK_ID2                                   ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸2                  
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_WT2             ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰2              
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_T2              ,'FM000V000'),'0'),6 ,'0') --ì•¼ë“œì¬ë£Œë‘ê»˜2              
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_W2              ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œì¬ë£Œí­2                
+		    	     ||LPAD(NVL(TO_CHAR(YD_STL_L2              ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œì¬ë£Œê¸¸ì´2 
+		    	     ||RPAD(NVL(WORK_ORD_SEQNO2                             ,' '),1 ,' ') --ìŠ¬ë¼ë¸Œ2 Hot ì†Œì¬ì—¬ë¶€       
+		    	     ||RPAD(NVL(TREAT_GP2                                   ,' '),1 ,' ') --ê³ ê°•ë„ ê°•ì¢…ì—¬ë¶€2           
+		    	     ||RPAD(NVL(CHARGE_SEQNO2                               ,' '),10,' ') --ì¥ì…ìˆœìœ„2
+		    	     ||RPAD(NVL(YD_SCH_CD_NEXT                              ,' '),8 ,' ') --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ_Next        
+		    	     ||RPAD(NVL(YD_SCH_NAME_NEXT                            ,' '),30,' ') --ì•¼ë“œìŠ¤ì¼€ì¤„ëª…_NEXT          
+		    	     ||RPAD(NVL(YD_UP_WO_LOC_NEXT                           ,' '),8 ,' ') --ì•¼ë“œê¶Œìƒì§€ì‹œìœ„ì¹˜_Next      
+		    	     ||LPAD(NVL(YD_UP_WO_LAYER_NEXT                         ,'0'),3 ,'0') --ì•¼ë“œê¶Œìƒì§€ì‹œë‹¨_Next        
+		    	     ||RPAD(NVL(YD_DN_WO_LOC_NEXT                           ,' '),8 ,' ') --ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜_Next      
+		    	     ||LPAD(NVL(YD_DN_WO_LAYER_NEXT                         ,'0'),3 ,'0') --ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨_Next        
+		    	     ||RPAD(NVL(STOCK_ID_NEXT                               ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸_Next              
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_WT_NEXT     ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì¤‘ëŸ‰_Next    
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_T_NEXT      ,'FM000V000'),'0'),6 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì´ë‘ê»˜_Next  
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_MAX_W_NEXT  ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìµœëŒ€í­_Next  
+		    	     ||LPAD(NVL(TO_CHAR(COIL_OUTDIA_NEXT       ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ì™¸ê²½_Next
+		    	     ||LPAD(NVL(TO_CHAR(COIL_INDIA_NEXT        ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ë‚´ê²½_Next
+		    	     ||RPAD(NVL(STOCK_ID_NEXT2                              ,' '),11,' ') --ì¬ë£Œë²ˆí˜¸2_Next
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_WT_NEXT2    ,'FM0000000'),'0'),7 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì¤‘ëŸ‰2_Next    
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_T_NEXT2     ,'FM000V000'),'0'),6 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì´ë‘ê»˜2_Next  
+		    	     ||LPAD(NVL(TO_CHAR(YD_CRN_WRK_MAX_W_NEXT2 ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìµœëŒ€í­2_Next  
+		    	     ||LPAD(NVL(TO_CHAR(COIL_OUTDIA_NEXT2      ,'FM00000'  ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ì™¸ê²½2_Next
+		    	     ||LPAD(NVL(TO_CHAR(COIL_INDIA_NEXT2       ,'FM0000V0' ),'0'),5 ,'0') --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ë‚´ê²½2_Next
+		    	     ||RPAD(NVL(LAST_WORK_ORD_GP                            ,' '),1 ,' ') --ë§ˆì§€ë§‰ ì§€ì‹œ êµ¬ë¶„
 		    	     
 		    	     AS JMS_TC_MESSAGE --JMSTCMessage
-		    	     , LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') AS YD_UP_WO_LOC_ZAXIS--¾ßµå±Ç»óÁö½ÃZÃà            
-		    	     , LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') AS YD_DN_WO_LOC_ZAXIS--¾ßµå±ÇÇÏÁö½ÃZÃà            
+		    	     , LPAD(NVL(TO_CHAR(YD_UP_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') AS YD_UP_WO_LOC_ZAXIS--ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•            
+		    	     , LPAD(NVL(TO_CHAR(YD_DN_WO_LOC_ZAXIS     ,'FM00000'  ),'0'),5 ,'0') AS YD_DN_WO_LOC_ZAXIS--ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•            
 
 		    	  FROM (
 		    	        SELECT K.*
@@ -3213,44 +3213,44 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	              (         
 
 		    	            SELECT /*+ INDEX(B PK_YM_STACKLAYER )
-		    	                   CUR_INFO.YD_EQP_ID                AS YD_EQP_ID                 --¾ßµå¼³ºñID
+		    	                   CUR_INFO.YD_EQP_ID                AS YD_EQP_ID                 --ì•¼ë“œì„¤ë¹„ID
 		    	                 , CASE WHEN CUR_INFO.YD_L2_REQUEST_STAT = 'D' THEN '1'
 		    	                        WHEN CUR_INFO.YD_L2_REQUEST_STAT = 'X' THEN 'D'
 		    	                        WHEN CUR_INFO.YD_L2_REQUEST_STAT = '5' THEN '5'
 		    	                        ELSE DECODE(CUR_INFO.YD_WRK_PROG_STAT,'S','1','W','1',CUR_INFO.YD_WRK_PROG_STAT)  END
-		    	                                                     AS YD_WRK_PROG_STAT          --¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-		    	                 , CUR_INFO.YD_SCH_CD                AS YD_SCH_CD                 --¾ßµå½ºÄÉÁìÄÚµå
+		    	                                                     AS YD_WRK_PROG_STAT          --ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+		    	                 , CUR_INFO.YD_SCH_CD                AS YD_SCH_CD                 --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 		    	                 , SUBSTRB((SELECT CD_CONTENTS
 		    	                              FROM USRYMA.TB_YM_SCHEDULERULE WHERE YD_SCH_CD = CUR_INFO.YD_SCH_CD)
-		    	                          || (CASE WHEN CUR_INFO.YD_AID_WRK_YN='N' THEN '[ÁÖ]' ELSE '[º¸Á¶]' END),1,30) AS YD_SCH_NAME
-		    	                 , CUR_INFO.YD_CRN_SCH_ID            AS YD_CRN_SCH_ID             --¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+		    	                          || (CASE WHEN CUR_INFO.YD_AID_WRK_YN='N' THEN '[ì£¼]' ELSE '[ë³´ì¡°]' END),1,30) AS YD_SCH_NAME
+		    	                 , CUR_INFO.YD_CRN_SCH_ID            AS YD_CRN_SCH_ID             --ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 		    	                 , DECODE(CUR_INFO.YD_SCH_PRIOR,0,'Y','N')||CUR_INFO.CURR_PROG_CD
-		    	                                                     AS YD_CRN_SCH_RMD_CNT        --¾ßµåÅ©·¹ÀÎ½ºÄÉÁÙÀÜ¿©È¸¼ö
+		    	                                                     AS YD_CRN_SCH_RMD_CNT        --ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¤„ì”ì—¬íšŒìˆ˜
 		    	                 , CASE WHEN CUR_INFO.STOCK_ID2 IS NOT NULL THEN '2' ELSE '1' END
-		    	                                                     AS WORK_ORD_NUMSHEET         --ÀÛ¾÷Áö½Ã¸Å¼ö
+		    	                                                     AS WORK_ORD_NUMSHEET         --ì‘ì—…ì§€ì‹œë§¤ìˆ˜
 
-		    	                 , CUR_INFO.YD_UP_WO_LOC             AS YD_UP_WO_LOC              --¾ßµå±Ç»óÁö½ÃÀ§Ä¡
-		    	                 , CUR_INFO.YD_UP_WO_LAYER           AS YD_UP_WO_LAYER            --¾ßµå±Ç»óÁö½Ã´Ü
-		    	--                 , CUR_INFO.YD_UP_WO_LOC_XAXIS       AS YD_UP_WO_LOC_XAXIS        --¾ßµå±Ç»óÁö½ÃXÃà
+		    	                 , CUR_INFO.YD_UP_WO_LOC             AS YD_UP_WO_LOC              --ì•¼ë“œê¶Œìƒì§€ì‹œìœ„ì¹˜
+		    	                 , CUR_INFO.YD_UP_WO_LAYER           AS YD_UP_WO_LAYER            --ì•¼ë“œê¶Œìƒì§€ì‹œë‹¨
+		    	--                 , CUR_INFO.YD_UP_WO_LOC_XAXIS       AS YD_UP_WO_LOC_XAXIS        --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•
 
-		    	                 -- Dµ¿ÀÌ¼ÛÇÏÂ÷/Cµ¿ 1¹ø´ëÂ÷ÇÏÂ÷ ´Â Çü»ó°ª
-		    	                 -- Çü»ó »ç¿ë±¸ºĞÀÌ 'Y' ÀÌ°í Çü»ó°ªÀÌ µé¾î¿Ô´ÂÁö CHECK
+		    	                 -- Dë™ì´ì†¡í•˜ì°¨/Cë™ 1ë²ˆëŒ€ì°¨í•˜ì°¨ ëŠ” í˜•ìƒê°’
+		    	                 -- í˜•ìƒ ì‚¬ìš©êµ¬ë¶„ì´ 'Y' ì´ê³  í˜•ìƒê°’ì´ ë“¤ì–´ì™”ëŠ”ì§€ CHECK
 		    	                 , CASE WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND  CUR_INFO.FACE_GP  = 'PT' THEN
 		    	                             CASE WHEN CUR_INFO.YD_EQP_WRK_SH = 1 THEN WGT_CENTER_XAXIS1
 		    	                                  WHEN CUR_INFO.YD_EQP_WRK_SH = 2 THEN WGT_CENTER_XAXIS2  END
-		    	                        WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP != 'PT' THEN 0        -- Çü»ó°ª ¾øÀ½         
+		    	                        WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP != 'PT' THEN 0        -- í˜•ìƒê°’ ì—†ìŒ         
 
 		    	                        WHEN SUBSTR(CUR_INFO.YD_UP_WO_LOC,1,5) = '2CTC1' AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP  = 'TC'  THEN
 		    	                             CASE WHEN CUR_INFO.YD_EQP_WRK_SH = 1 THEN WGT_CENTER_XAXIS1
 		    	                                  WHEN CUR_INFO.YD_EQP_WRK_SH = 2 THEN WGT_CENTER_XAXIS2  END     
 		    	                        WHEN SUBSTR(CUR_INFO.YD_UP_WO_LOC,1,5) = '2CTC1' AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP != 'TC' THEN 0
 		    	                        ELSE CUR_INFO.YD_UP_WO_LOC_XAXIS 
-		    	                        END                          AS YD_UP_WO_LOC_XAXIS        --¾ßµå±Ç»óÁö½ÃXÃà
+		    	                        END                          AS YD_UP_WO_LOC_XAXIS        --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•
 
-		    	                 , CUR_INFO.YD_UP_WO_XAXIS_GAP_MAX   AS YD_UP_WO_XAXIS_GAP_MAX    --¾ßµå±Ç»óÁö½ÃXÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_UP_WO_XAXIS_GAP_MIN   AS YD_UP_WO_XAXIS_GAP_MIN    --¾ßµå±Ç»óÁö½ÃXÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                 , CUR_INFO.YD_UP_WO_XAXIS_GAP_MAX   AS YD_UP_WO_XAXIS_GAP_MAX    --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_UP_WO_XAXIS_GAP_MIN   AS YD_UP_WO_XAXIS_GAP_MIN    --ì•¼ë“œê¶Œìƒì§€ì‹œXì¶•ì˜¤ì°¨ìµœì†Œ
 
-		    	                 -- Dµ¿ÀÌ¼ÛÇÏÂ÷/Cµ¿ 1¹ø´ëÂ÷ÇÏÂ÷ ´Â Çü»ó°ª
+		    	                 -- Dë™ì´ì†¡í•˜ì°¨/Cë™ 1ë²ˆëŒ€ì°¨í•˜ì°¨ ëŠ” í˜•ìƒê°’
 		    	                 , CASE WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP != 'PT' THEN 0
 		    	                        WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP  = 'PT' THEN
 		    	                             CASE WHEN CUR_INFO.YD_EQP_WRK_SH = 1 THEN WGT_CENTER_YAXIS1
@@ -3261,18 +3261,18 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                             CASE WHEN CUR_INFO.YD_EQP_WRK_SH = 1 THEN WGT_CENTER_YAXIS1
 		    	                                  WHEN CUR_INFO.YD_EQP_WRK_SH = 2 THEN WGT_CENTER_YAXIS2  END 
 		    	                        ELSE CUR_INFO.YD_UP_WO_LOC_YAXIS 
-		    	                        END                          AS YD_UP_WO_LOC_YAXIS        --¾ßµå±Ç»óÁö½ÃYÃà
+		    	                        END                          AS YD_UP_WO_LOC_YAXIS        --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•
 
-		    	                 , CUR_INFO.YD_UP_WO_YAXIS_GAP_MAX   AS YD_UP_WO_YAXIS_GAP_MAX    --¾ßµå±Ç»óÁö½ÃYÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_UP_WO_YAXIS_GAP_MIN   AS YD_UP_WO_YAXIS_GAP_MIN    --¾ßµå±Ç»óÁö½ÃYÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                 , CUR_INFO.YD_UP_WO_YAXIS_GAP_MAX   AS YD_UP_WO_YAXIS_GAP_MAX    --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_UP_WO_YAXIS_GAP_MIN   AS YD_UP_WO_YAXIS_GAP_MIN    --ì•¼ë“œê¶Œìƒì§€ì‹œYì¶•ì˜¤ì°¨ìµœì†Œ
 
-		    	                 -- ¾ßµå±Ç»óÁö½ÃZÃà
-		    	                 -- ÀÌ¼ÛÀÏ °æ¿ì 
-		    	                     -- 1¸ÅÀÎ °æ¿ì ±âÁØ³ôÀÌ + 1¹øÀçÀç·á Çü»ó°ª + 1¹øÀçÀç·á ¹êµù°ª - (1¹øÀç Àç·áµÎ²² * 0.6)
-		    	                     -- 2¸ÅÀÎ °æ¿ì ±âÁØ³ôÀÌ + 2¹øÀçÀç·á Çü»ó°ª + 2¹øÀçÀç·á ¹êµù°ª - (1¹øÀç Àç·áµÎ²² * 0.6)
-		    	                 -- ÀÌ¼ÛÀÌ ¾Æ´Ñ °æ¿ì
-		    	                     -- 1¸ÅÀÎ °æ¿ì ±âÁØ³ôÀÌ + Àç·áµÎ²²ÇÕ                          - (1¹øÀç Àç·áµÎ²² * 0.6)
-		    	                     -- 2¸ÅÀÎ °æ¿ì ±âÁØ³ôÀÌ + Àç·áµÎ²²ÇÕ       - 1¹øÀç Àç·áµÎ²²   - (2¹øÀç Àç·áµÎ²² * 0.6)
+		    	                 -- ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•
+		    	                 -- ì´ì†¡ì¼ ê²½ìš° 
+		    	                     -- 1ë§¤ì¸ ê²½ìš° ê¸°ì¤€ë†’ì´ + 1ë²ˆì¬ì¬ë£Œ í˜•ìƒê°’ + 1ë²ˆì¬ì¬ë£Œ ë°´ë”©ê°’ - (1ë²ˆì¬ ì¬ë£Œë‘ê»˜ * 0.6)
+		    	                     -- 2ë§¤ì¸ ê²½ìš° ê¸°ì¤€ë†’ì´ + 2ë²ˆì¬ì¬ë£Œ í˜•ìƒê°’ + 2ë²ˆì¬ì¬ë£Œ ë°´ë”©ê°’ - (1ë²ˆì¬ ì¬ë£Œë‘ê»˜ * 0.6)
+		    	                 -- ì´ì†¡ì´ ì•„ë‹Œ ê²½ìš°
+		    	                     -- 1ë§¤ì¸ ê²½ìš° ê¸°ì¤€ë†’ì´ + ì¬ë£Œë‘ê»˜í•©                          - (1ë²ˆì¬ ì¬ë£Œë‘ê»˜ * 0.6)
+		    	                     -- 2ë§¤ì¸ ê²½ìš° ê¸°ì¤€ë†’ì´ + ì¬ë£Œë‘ê»˜í•©       - 1ë²ˆì¬ ì¬ë£Œë‘ê»˜   - (2ë²ˆì¬ ì¬ë£Œë‘ê»˜ * 0.6)
 		    	                 , CASE WHEN YD_UP_WO_LOC_ZAXIS  > 10 THEN YD_UP_WO_LOC_ZAXIS
 		    	                        WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP != 'PT' THEN 0
 		    	                        WHEN CUR_INFO.YD_SCH_CD = '2DPT02LM'  AND CUR_INFO.FACE_USE_YN = 'Y' AND CUR_INFO.FACE_GP  = 'PT' THEN
@@ -3309,64 +3309,64 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                         
 
 		    	                 ----
-		    	                 , CUR_INFO.YD_UP_WO_ZAXIS_GAP_MAX   AS YD_UP_WO_ZAXIS_GAP_MAX    --¾ßµå±Ç»óÁö½ÃZÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_UP_WO_ZAXIS_GAP_MIN   AS YD_UP_WO_ZAXIS_GAP_MIN    --¾ßµå±Ç»óÁö½ÃZÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                 , CUR_INFO.YD_UP_WO_ZAXIS_GAP_MAX   AS YD_UP_WO_ZAXIS_GAP_MAX    --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_UP_WO_ZAXIS_GAP_MIN   AS YD_UP_WO_ZAXIS_GAP_MIN    --ì•¼ë“œê¶Œìƒì§€ì‹œZì¶•ì˜¤ì°¨ìµœì†Œ
 
 		    	                 , CASE WHEN CUR_INFO.YD_L2_REQUEST_STAT='5'
 		    	                        THEN CUR_INFO.YD_DN_WO_LOC_TO ELSE CUR_INFO.YD_DN_WO_LOC   END
-		    	                                                     AS YD_DN_WO_LOC              --¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡
+		    	                                                     AS YD_DN_WO_LOC              --ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 		    	                 , CASE WHEN CUR_INFO.YD_L2_REQUEST_STAT='5'
 		    	                        THEN CUR_INFO.STK_LYR_NO_TEMP ELSE CUR_INFO.YD_DN_WO_LAYER END
-		    	                                                     AS YD_DN_WO_LAYER            --¾ßµå±ÇÇÏÁö½Ã´Ü
+		    	                                                     AS YD_DN_WO_LAYER            --ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨
 		    	                 , CASE WHEN CUR_INFO.YD_L2_REQUEST_STAT='5'
 		    	                        THEN B.STACK_LAYER_X_AXIS ELSE CUR_INFO.YD_DN_WO_LOC_XAXIS END
-		    	                                                     AS YD_DN_WO_LOC_XAXIS        --¾ßµå±ÇÇÏÁö½ÃXÃà
-		    	                 , CUR_INFO.YD_DN_WO_XAXIS_GAP_MAX   AS YD_DN_WO_XAXIS_GAP_MAX    --¾ßµå±ÇÇÏÁö½ÃXÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_DN_WO_XAXIS_GAP_MIN   AS YD_DN_WO_XAXIS_GAP_MIN    --¾ßµå±ÇÇÏÁö½ÃXÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                                                     AS YD_DN_WO_LOC_XAXIS        --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•
+		    	                 , CUR_INFO.YD_DN_WO_XAXIS_GAP_MAX   AS YD_DN_WO_XAXIS_GAP_MAX    --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_DN_WO_XAXIS_GAP_MIN   AS YD_DN_WO_XAXIS_GAP_MIN    --ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•ì˜¤ì°¨ìµœì†Œ
 
 		    	                 , ROUND(CASE WHEN CUR_INFO.YD_L2_REQUEST_STAT = '5' THEN B.STACK_LAYER_Y_AXIS
 		    	                              ELSE CUR_INFO.YD_DN_WO_LOC_YAXIS
-		    	                              END )                  AS YD_DN_WO_LOC_YAXIS        --¾ßµå±ÇÇÏÁö½ÃYÃà
-		    	                 , CUR_INFO.YD_DN_WO_YAXIS_GAP_MAX   AS YD_DN_WO_YAXIS_GAP_MAX    --¾ßµå±ÇÇÏÁö½ÃYÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_DN_WO_YAXIS_GAP_MIN   AS YD_DN_WO_YAXIS_GAP_MIN    --¾ßµå±ÇÇÏÁö½ÃYÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                              END )                  AS YD_DN_WO_LOC_YAXIS        --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•
+		    	                 , CUR_INFO.YD_DN_WO_YAXIS_GAP_MAX   AS YD_DN_WO_YAXIS_GAP_MAX    --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_DN_WO_YAXIS_GAP_MIN   AS YD_DN_WO_YAXIS_GAP_MIN    --ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•ì˜¤ì°¨ìµœì†Œ
 
-		    	                 --¾ßµå±ÇÇÏÁö½ÃZÃà
+		    	                 --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•
 		    	                 ,  CASE WHEN CUR_INFO.YD_EQP_WRK_SH = 1 THEN (CUR_INFO.DN_BASE_SLAB_T + CUR_INFO.DN_MTL_SLAB_T) + (CUR_INFO.YD_MTL_T1 * 0.3)
 		    	                         WHEN CUR_INFO.YD_EQP_WRK_SH = 2 THEN (CUR_INFO.DN_BASE_SLAB_T + CUR_INFO.DN_MTL_SLAB_T) + (CUR_INFO.YD_MTL_T2 * 0.3)
-		    	                         END                         AS YD_DN_WO_LOC_ZAXIS        --¾ßµå±ÇÇÏÁö½ÃZÃà 
+		    	                         END                         AS YD_DN_WO_LOC_ZAXIS        --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶• 
 		    	                 --
 
-		    	                 , CUR_INFO.YD_DN_WO_ZAXIS_GAP_MAX   AS YD_DN_WO_ZAXIS_GAP_MAX    --¾ßµå±ÇÇÏÁö½ÃZÃà¿ÀÂ÷ÃÖ´ë
-		    	                 , CUR_INFO.YD_DN_WO_ZAXIS_GAP_MIN   AS YD_DN_WO_ZAXIS_GAP_MIN    --¾ßµå±ÇÇÏÁö½ÃZÃà¿ÀÂ÷ÃÖ¼Ò
+		    	                 , CUR_INFO.YD_DN_WO_ZAXIS_GAP_MAX   AS YD_DN_WO_ZAXIS_GAP_MAX    --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•ì˜¤ì°¨ìµœëŒ€
+		    	                 , CUR_INFO.YD_DN_WO_ZAXIS_GAP_MIN   AS YD_DN_WO_ZAXIS_GAP_MIN    --ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•ì˜¤ì°¨ìµœì†Œ
 		    	 
-		    	                 , ''                                AS GRUSH_COIL_YN             --Â¯±¸ÄÚÀÏ ¿©ºÎ
-		    	                 , ''                                AS SPM_HFL_YN                --SPM/HFL  À¯¹«
-		    	                 , ''                                AS CUT_YN                    --Àı´ÜÀç ¿©ºÎ
+		    	                 , ''                                AS GRUSH_COIL_YN             --ì§±êµ¬ì½”ì¼ ì—¬ë¶€
+		    	                 , ''                                AS SPM_HFL_YN                --SPM/HFL  ìœ ë¬´
+		    	                 , ''                                AS CUT_YN                    --ì ˆë‹¨ì¬ ì—¬ë¶€
 		    	                 , CASE WHEN SUBSTR(CUR_INFO.YD_SCH_CD, 3, 2) = 'TC' AND YD_AID_WRK_YN = 'N' THEN CUR_INFO.TCAR_GP
 		    	                        WHEN SUBSTR(CUR_INFO.YD_SCH_CD, 3, 2) = 'PT' AND YD_AID_WRK_YN = 'N' AND SUBSTR(CUR_INFO.YD_SCH_CD, 7, 2) = 'UM' THEN SUBSTR(CUR_INFO.YD_DN_WO_LOC, 1, 6)
 		    	                        WHEN SUBSTR(CUR_INFO.YD_SCH_CD, 3, 2) = 'PT' AND YD_AID_WRK_YN = 'N' AND SUBSTR(CUR_INFO.YD_SCH_CD, 7, 2) = 'LM' THEN SUBSTR(CUR_INFO.YD_UP_WO_LOC, 1, 6)
-		    	                        ELSE '' END                  AS YD_EQP_ID2                          --¾ßµå¼³ºñID2
-		    	                 , C.YD_AIM_BAY_GP                   AS YD_TC_AIM_BAY_GP          --¾ßµå´ëÂ÷¸ñÀûµ¿
-		    	                 , C.YD_CAR_USE_GP                   AS YD_CAR_USE_GP             --¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-		    	                 , C.CAR_NO                          AS CAR_NO                    --Â÷·®¹øÈ£
+		    	                        ELSE '' END                  AS YD_EQP_ID2                          --ì•¼ë“œì„¤ë¹„ID2
+		    	                 , C.YD_AIM_BAY_GP                   AS YD_TC_AIM_BAY_GP          --ì•¼ë“œëŒ€ì°¨ëª©ì ë™
+		    	                 , C.YD_CAR_USE_GP                   AS YD_CAR_USE_GP             --ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+		    	                 , C.CAR_NO                          AS CAR_NO                    --ì°¨ëŸ‰ë²ˆí˜¸
 
-		    	                 , C.CARD_NO                         AS CARD_NO                   --Â÷·®¹øÈ£
-		    	                 , C.TRN_EQP_CD                      AS TRN_EQP_CD                --¿î¼ÛÀåºñÄÚµå
-		    	                 , CUR_INFO.YD_EQP_WRK_SH            AS YD_EQP_WRK_SH             --¾ßµå¼³ºñÀÛ¾÷¸Å¼ö
-		    	                 --´ëÂ÷ ¹× Â÷·®ÀÌ¼Û ÇÏÂ÷ ÀÛ¾÷½Ã
+		    	                 , C.CARD_NO                         AS CARD_NO                   --ì°¨ëŸ‰ë²ˆí˜¸
+		    	                 , C.TRN_EQP_CD                      AS TRN_EQP_CD                --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+		    	                 , CUR_INFO.YD_EQP_WRK_SH            AS YD_EQP_WRK_SH             --ì•¼ë“œì„¤ë¹„ì‘ì—…ë§¤ìˆ˜
+		    	                 --ëŒ€ì°¨ ë° ì°¨ëŸ‰ì´ì†¡ í•˜ì°¨ ì‘ì—…ì‹œ
 		    	                 , CASE WHEN SUBSTR(CUR_INFO.YD_SCH_CD,3,2) IN ('TC','PT') AND SUBSTR(CUR_INFO.YD_SCH_CD,7,2) IN ('LM')   THEN
 		    	                             (SELECT COUNT(*)
 		    	                                FROM TB_YM_STACKLAYER SL
 		    	                               WHERE SL.STACK_COL_GP = SUBSTR(CUR_INFO.YD_UP_WO_LOC,1,6)
 		    	                                 AND SL.STACK_BED_GP = SUBSTR(CUR_INFO.YD_UP_WO_LOC,7,2)
 		    	                                 AND SL.STACK_LAYER_STAT IN ('C','U')) - CUR_INFO.YD_EQP_WRK_SH 
-		    	                        ELSE 0 END                   AS YD_EQP_RMN_SH             --¾ßµå¼³ºñÀÜ·®¸Å¼ö
+		    	                        ELSE 0 END                   AS YD_EQP_RMN_SH             --ì•¼ë“œì„¤ë¹„ì”ëŸ‰ë§¤ìˆ˜
 		    	                 
-		    	                 , CUR_INFO.STOCK_ID1                AS STOCK_ID1                 --Àç·á¹øÈ£1
-		    	                 , CUR_INFO.YD_MTL_WT1               AS YD_STL_WT1                --¾ßµåÀç·áÁß·®1
-		    	                 , CUR_INFO.YD_MTL_T1                AS YD_STL_T1                 --¾ßµåÀç·áµÎ²²1
-		    	                 , CUR_INFO.YD_MTL_W1                AS YD_STL_W1                 --¾ßµåÀç·áÆø1
-		    	                 , CUR_INFO.YD_MTL_L1                AS YD_STL_L1                 --¾ßµåÀç·á±æÀÌ1
+		    	                 , CUR_INFO.STOCK_ID1                AS STOCK_ID1                 --ì¬ë£Œë²ˆí˜¸1
+		    	                 , CUR_INFO.YD_MTL_WT1               AS YD_STL_WT1                --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰1
+		    	                 , CUR_INFO.YD_MTL_T1                AS YD_STL_T1                 --ì•¼ë“œì¬ë£Œë‘ê»˜1
+		    	                 , CUR_INFO.YD_MTL_W1                AS YD_STL_W1                 --ì•¼ë“œì¬ë£Œí­1
+		    	                 , CUR_INFO.YD_MTL_L1                AS YD_STL_L1                 --ì•¼ë“œì¬ë£Œê¸¸ì´1
 		    	                 , CUR_INFO.WORK_ORD_SEQNO1          AS WORK_ORD_SEQNO1
 		    	                 , NVL(NVL(   (SELECT '1' 
 		    	                                 FROM USRYDA.VW_YD_SLABCOMM
@@ -3388,11 +3388,11 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                        
 		    	                 , CUR_INFO.CHARGE_SEQNO1            AS CHARGE_SEQNO1
 
-		    	                 , CUR_INFO.STOCK_ID2                AS STOCK_ID2                 --Àç·á¹øÈ£2
-		    	                 , CUR_INFO.YD_MTL_WT2               AS YD_STL_WT2                --¾ßµåÀç·áÁß·®2
-		    	                 , CUR_INFO.YD_MTL_T2                AS YD_STL_T2                 --¾ßµåÀç·áµÎ²²2
-		    	                 , CUR_INFO.YD_MTL_W2                AS YD_STL_W2                 --¾ßµåÀç·áÆø2
-		    	                 , CUR_INFO.YD_MTL_L2                AS YD_STL_L2                 --¾ßµåÀç·á±æÀÌ2
+		    	                 , CUR_INFO.STOCK_ID2                AS STOCK_ID2                 --ì¬ë£Œë²ˆí˜¸2
+		    	                 , CUR_INFO.YD_MTL_WT2               AS YD_STL_WT2                --ì•¼ë“œì¬ë£Œì¤‘ëŸ‰2
+		    	                 , CUR_INFO.YD_MTL_T2                AS YD_STL_T2                 --ì•¼ë“œì¬ë£Œë‘ê»˜2
+		    	                 , CUR_INFO.YD_MTL_W2                AS YD_STL_W2                 --ì•¼ë“œì¬ë£Œí­2
+		    	                 , CUR_INFO.YD_MTL_L2                AS YD_STL_L2                 --ì•¼ë“œì¬ë£Œê¸¸ì´2
 		    	                 , CUR_INFO.WORK_ORD_SEQNO2          AS WORK_ORD_SEQNO2
 		    	                 , CASE WHEN CUR_INFO.STOCK_ID2  IS NOT NULL THEN 
 		    	                        NVL(NVL(  (SELECT '1' FROM USRYDA.VW_YD_SLABCOMM
@@ -3413,36 +3413,36 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                        ELSE '0' END                 AS TREAT_GP2                         
 		    	                 , CUR_INFO.CHARGE_SEQNO2            AS CHARGE_SEQNO2
 
-		    	                 , NEXT_INFO.YD_SCH_CD_NEXT          AS YD_SCH_CD_NEXT            --¾ßµå½ºÄÉÁìÄÚµå_Next
+		    	                 , NEXT_INFO.YD_SCH_CD_NEXT          AS YD_SCH_CD_NEXT            --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ_Next
 		    	                 , SUBSTRB((SELECT CD_CONTENTS
 		    	                              FROM USRYMA.TB_YM_SCHEDULERULE WHERE YD_SCH_CD = NEXT_INFO.YD_SCH_CD_NEXT)
 		    	                          || (CASE WHEN NEXT_INFO.YD_SCH_CD_NEXT IS NULL THEN ''
-		    	                                   WHEN NEXT_INFO.YD_AID_WRK_YN_NEXT='N' THEN '[ÁÖ]' 
-		    	                                   ELSE '[º¸Á¶]' END),1,30)
-		    	                                                     AS YD_SCH_NAME_NEXT          --¾ßµå½ºÄÉÁÙ¸í_NEXT
-		    	                 , NEXT_INFO.YD_UP_WO_LOC_NEXT       AS YD_UP_WO_LOC_NEXT         --¾ßµå±Ç»óÁö½ÃÀ§Ä¡_Next
-		    	                 , NEXT_INFO.YD_UP_WO_LAYER_NEXT     AS YD_UP_WO_LAYER_NEXT       --¾ßµå±Ç»óÁö½Ã´Ü_Next
-		    	                 , NEXT_INFO.YD_DN_WO_LOC_NEXT       AS YD_DN_WO_LOC_NEXT         --¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡_Next
-		    	                 , NEXT_INFO.YD_DN_WO_LAYER_NEXT     AS YD_DN_WO_LAYER_NEXT       --¾ßµå±ÇÇÏÁö½Ã´Ü_Next
+		    	                                   WHEN NEXT_INFO.YD_AID_WRK_YN_NEXT='N' THEN '[ì£¼]' 
+		    	                                   ELSE '[ë³´ì¡°]' END),1,30)
+		    	                                                     AS YD_SCH_NAME_NEXT          --ì•¼ë“œìŠ¤ì¼€ì¤„ëª…_NEXT
+		    	                 , NEXT_INFO.YD_UP_WO_LOC_NEXT       AS YD_UP_WO_LOC_NEXT         --ì•¼ë“œê¶Œìƒì§€ì‹œìœ„ì¹˜_Next
+		    	                 , NEXT_INFO.YD_UP_WO_LAYER_NEXT     AS YD_UP_WO_LAYER_NEXT       --ì•¼ë“œê¶Œìƒì§€ì‹œë‹¨_Next
+		    	                 , NEXT_INFO.YD_DN_WO_LOC_NEXT       AS YD_DN_WO_LOC_NEXT         --ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜_Next
+		    	                 , NEXT_INFO.YD_DN_WO_LAYER_NEXT     AS YD_DN_WO_LAYER_NEXT       --ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨_Next
 
-		    	                 , NEXT_INFO.STOCK_ID_NEXT           AS STOCK_ID_NEXT             --Àç·á¹øÈ£_Next
-		    	                 , NEXT_INFO.YD_MTL_WT_NEXT          AS YD_CRN_WRK_WT_NEXT        --¾ßµåÅ©·¹ÀÎÀÛ¾÷Áß·®_Next
-		    	                 , NEXT_INFO.YD_MTL_T_NEXT           AS YD_CRN_WRK_T_NEXT         --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÑµÎ²²_Next
-		    	                 , NEXT_INFO.YD_CRN_WRK_MAX_W_NEXT   AS YD_CRN_WRK_MAX_W_NEXT     --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÖ´ëÆø_Next
+		    	                 , NEXT_INFO.STOCK_ID_NEXT           AS STOCK_ID_NEXT             --ì¬ë£Œë²ˆí˜¸_Next
+		    	                 , NEXT_INFO.YD_MTL_WT_NEXT          AS YD_CRN_WRK_WT_NEXT        --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì¤‘ëŸ‰_Next
+		    	                 , NEXT_INFO.YD_MTL_T_NEXT           AS YD_CRN_WRK_T_NEXT         --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì´ë‘ê»˜_Next
+		    	                 , NEXT_INFO.YD_CRN_WRK_MAX_W_NEXT   AS YD_CRN_WRK_MAX_W_NEXT     --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìµœëŒ€í­_Next
 
-		    	                 , ''                                AS COIL_OUTDIA_NEXT          --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ¿Ü°æ_Next
-		    	                 , ''                                AS COIL_INDIA_NEXT           --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ³»°æ_Next
+		    	                 , ''                                AS COIL_OUTDIA_NEXT          --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ì™¸ê²½_Next
+		    	                 , ''                                AS COIL_INDIA_NEXT           --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ë‚´ê²½_Next
 
-		    	                 , NEXT_INFO.STOCK_ID_NEXT2          AS STOCK_ID_NEXT2            --Àç·á¹øÈ£_Next
-		    	                 , NEXT_INFO.YD_MTL_WT_NEXT2         AS YD_CRN_WRK_WT_NEXT2       --¾ßµåÅ©·¹ÀÎÀÛ¾÷Áß·®_Next
-		    	                 , NEXT_INFO.YD_MTL_T_NEXT2          AS YD_CRN_WRK_T_NEXT2        --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÑµÎ²²_Next
-		    	                 , NEXT_INFO.YD_CRN_WRK_MAX_W_NEXT2  AS YD_CRN_WRK_MAX_W_NEXT2    --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÃÖ´ëÆø_Next
+		    	                 , NEXT_INFO.STOCK_ID_NEXT2          AS STOCK_ID_NEXT2            --ì¬ë£Œë²ˆí˜¸_Next
+		    	                 , NEXT_INFO.YD_MTL_WT_NEXT2         AS YD_CRN_WRK_WT_NEXT2       --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì¤‘ëŸ‰_Next
+		    	                 , NEXT_INFO.YD_MTL_T_NEXT2          AS YD_CRN_WRK_T_NEXT2        --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì´ë‘ê»˜_Next
+		    	                 , NEXT_INFO.YD_CRN_WRK_MAX_W_NEXT2  AS YD_CRN_WRK_MAX_W_NEXT2    --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ìµœëŒ€í­_Next
 
-		    	                 , ''                                AS COIL_OUTDIA_NEXT2         --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ¿Ü°æ_Next
-		    	                 , ''                                AS COIL_INDIA_NEXT2          --¾ßµåÅ©·¹ÀÎÀÛ¾÷ÄÚÀÏ³»°æ_Next
+		    	                 , ''                                AS COIL_OUTDIA_NEXT2         --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ì™¸ê²½_Next
+		    	                 , ''                                AS COIL_INDIA_NEXT2          --ì•¼ë“œí¬ë ˆì¸ì‘ì—…ì½”ì¼ë‚´ê²½_Next
 
-		    	                 , CUR_INFO.UP_ROTATION_ANGLE        AS UP_ROTATION_ANGLE         --±Ç»óÀ§Ä¡ È¸Àü°¢µµ
-		    	                 , CUR_INFO.DOWN_ROTATION_ANGLE      AS DOWN_ROTATION_ANGLE       --±ÇÇÏÀ§Ä¡ È¸Àü°¢µµ
+		    	                 , CUR_INFO.UP_ROTATION_ANGLE        AS UP_ROTATION_ANGLE         --ê¶Œìƒìœ„ì¹˜ íšŒì „ê°ë„
+		    	                 , CUR_INFO.DOWN_ROTATION_ANGLE      AS DOWN_ROTATION_ANGLE       --ê¶Œí•˜ìœ„ì¹˜ íšŒì „ê°ë„
 
 		    	                 , CUR_INFO.RN                       AS RN
 		    	                 , CUR_INFO.YD_L2_REQUEST_STAT       AS YD_L2_REQUEST_STAT
@@ -3453,7 +3453,7 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                        ELSE '-' END                 AS YD_DN_WO_LOC_ZAXIS_SYM
 		    	                        
 		    	--                 , 'E' AS LAST_WORK_ORD_GP 
-		    	                 --´ëÂ÷ ¹× Â÷·®ÀÌ¼Û ÇÏÂ÷ ÀÛ¾÷½Ã
+		    	                 --ëŒ€ì°¨ ë° ì°¨ëŸ‰ì´ì†¡ í•˜ì°¨ ì‘ì—…ì‹œ
 		    	                 , CASE WHEN SUBSTR(CUR_INFO.YD_SCH_CD,3,2) IN ('TC','PT') 
 		    	                         AND SUBSTR(CUR_INFO.YD_SCH_CD,7,2) IN ('LM')  
 		    	                         AND (SELECT COUNT(*)
@@ -3462,10 +3462,10 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                                 AND SL.STACK_BED_GP = SUBSTR(CUR_INFO.YD_UP_WO_LOC,7,2)
 		    	                                 AND SL.STACK_LAYER_STAT IN ('C','U')) - CUR_INFO.YD_EQP_WRK_SH > 0 THEN ''
 		    	                         ELSE 'E' END                AS LAST_WORK_ORD_GP      
-		    	              FROM  -- ´ë»óÀÛ¾÷Áö½Ã
+		    	              FROM  -- ëŒ€ìƒì‘ì—…ì§€ì‹œ
 		    	                   (
 		    	                    SELECT A.*
-		    	                           --±Ç»óÀ§Ä¡ µÎ²² ÇÕ 
+		    	                           --ê¶Œìƒìœ„ì¹˜ ë‘ê»˜ í•© 
 		    	                         , (SELECT nvl(SUM(SLAB_T),0)
 		    	                              FROM TB_YM_STACKLAYER SL
 		    	                                 , VW_YD_SLABCOMM   SC 
@@ -3474,14 +3474,14 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                               AND SL.STOCK_ID = SC.SLAB_NO 
 		    	                               AND SL.STACK_LAYER_STAT IN ('C','U')
 		    	                           )                         AS UP_MTL_SLAB_T
-		    	                         ,   --±âÁØ À§Ä¡
+		    	                         ,   --ê¸°ì¤€ ìœ„ì¹˜
 		    	                           (SELECT NVL(STACK_BED_Z_AXIS,0)
 		    	                              FROM TB_YM_STACKER SK
 		    	                             WHERE SK.STACK_COL_GP = SUBSTR(A.YD_UP_WO_LOC,1,6)
 		    	                               AND SK.STACK_BED_GP = SUBSTR(A.YD_UP_WO_LOC,7,2)
 		    	                               AND ROWNUM = 1
 		    	                           )                         AS UP_BASE_SLAB_T
-		    	                         ,  --±ÇÇÏÀ§Ä¡ µÎ²² ÇÕ 
+		    	                         ,  --ê¶Œí•˜ìœ„ì¹˜ ë‘ê»˜ í•© 
 		    	                           (SELECT nvl(SUM(SLAB_T),0)
 		    	                              FROM TB_YM_STACKLAYER SL
 		    	                                 , VW_YD_SLABCOMM   SC 
@@ -3491,7 +3491,7 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                               AND SL.STACK_LAYER_STAT IN ('C')
 		    	                           )                         AS DN_MTL_SLAB_T
 		    	                            
-		    	                         ,   --±âÁØ À§Ä¡
+		    	                         ,   --ê¸°ì¤€ ìœ„ì¹˜
 		    	                           (SELECT NVL(STACK_BED_Z_AXIS,0)
 		    	                              FROM TB_YM_STACKER SK
 		    	                             WHERE SK.STACK_COL_GP = SUBSTR(A.YD_DN_WO_LOC,1,6)
@@ -3506,12 +3506,12 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                                 , C.SLAB_W                     AS YD_MTL_W1
 		    	                                 , C.SLAB_LEN                   AS YD_MTL_L1
 		    	                                 , C.WORK_ORD_SEQNO             AS WORK_ORD_SEQNO1
-		    	                                 , ST.CHARGE_LOT_NO             AS CHARGE_SEQNO1  --ÀåÀÔ¼ø¹ø
-		    	                                 -- Çü»ó°ª¿©ºÎ : Â÷·®ÀÎ°æ¿ì ´ëÂ÷ Çü»óÀÎ °æ¿ì CHECK
+		    	                                 , ST.CHARGE_LOT_NO             AS CHARGE_SEQNO1  --ì¥ì…ìˆœë²ˆ
+		    	                                 -- í˜•ìƒê°’ì—¬ë¶€ : ì°¨ëŸ‰ì¸ê²½ìš° ëŒ€ì°¨ í˜•ìƒì¸ ê²½ìš° CHECK
 		    	                                 , CASE WHEN ST.WGT_CENTER_XAXIS BETWEEN '300000' AND '320000' THEN 'PT'
 		    	                                        WHEN ST.WGT_CENTER_XAXIS BETWEEN  '53000' AND  '57000' THEN 'TC'
 		    	                                        ELSE 'ETC' END          AS FACE_GP
-		    	                                 -- Çü»ó°ª »ç¿ë¿©ºÎ
+		    	                                 -- í˜•ìƒê°’ ì‚¬ìš©ì—¬ë¶€
 		    	                                 , (SELECT NVL(DTL_ITM1,'N') 
 		    	                                      FROM USRYMA.TB_YM_RULE 
 		    	                                     WHERE REPR_CD_GP= 'YM2006' AND ITEM = A.YD_BAY_GP) AS FACE_USE_YN
@@ -3562,7 +3562,7 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                           ) A
 		    	                     WHERE RN = 1
 		    	                   ) CUR_INFO   
-		    	                   -- ´ÙÀ½ÀÛ¾÷Áö½Ã
+		    	                   -- ë‹¤ìŒì‘ì—…ì§€ì‹œ
 		    	                 , (
 		    	                    SELECT A.*
 		    	                      FROM (
@@ -3596,11 +3596,11 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	                     WHERE RN = 1
 		    	                ) NEXT_INFO 
 		    	                , TB_YM_STACKLAYER B
-		    	             --Â÷·®Á¤º¸
+		    	             --ì°¨ëŸ‰ì •ë³´
 		    	                , (SELECT YD_CRN_SCH_ID, YD_AIM_BAY_GP, YD_CAR_USE_GP, TRN_EQP_CD, CAR_NO, CARD_NO
 		    	                     FROM (
 		    	                          SELECT :V_YD_CRN_SCH_ID                AS YD_CRN_SCH_ID
-		    	                               , ''                              AS YD_AIM_BAY_GP    --B¿­¿¬:È®ÀÎ
+		    	                               , ''                              AS YD_AIM_BAY_GP    --Bì—´ì—°:í™•ì¸
 		    	                               , (CASE WHEN A.TRN_EQP_CD IS NOT NULL THEN 'L'
 		    	                                       WHEN A.CAR_NO IS NOT NULL THEN 'G'
 		    	                                       ELSE A.YD_CAR_USE_GP END) AS YD_CAR_USE_GP
@@ -3630,30 +3630,30 @@ public class YmCommDAO extends DBAssistantDAO {
 		    	
 			} else if("YMA8L009".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ SLAB Scarfing ÀÛ¾÷Áö½Ã";
+				trtNm = "Bì—´ì—° SLAB Scarfing ì‘ì—…ì§€ì‹œ";
 				
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMA8L009";
 				
 			} else if("YMA8L010".equals(msgId)) {
 				
-				trtNm = "B¿­¿¬ SLAB HOME ÀÌµ¿Áö½Ã";
+				trtNm = "Bì—´ì—° SLAB HOME ì´ë™ì§€ì‹œ";
 				
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYMA8L010 
-				SELECT JMS_TC_CD                                    --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , JMS_TC_CD                                 --Àü¹®ID
-				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --¹ß»ıÀÏÀÚ
-				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --Àü¹®±¸ºĞ
-				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --Àü¹®±æÀÌ
-				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ÀÓ½Ã
-				     ||RPAD(NVL(YD_EQP_ID       , ' '), 6 , ' ') --¼³ºñÄÚµå  
-				     ||RPAD(NVL(MV_GP           , ' '), 1 , ' ') --ÀÌµ¿±¸ºĞ
-				     ||LPAD(NVL(YD_WO_LOC_XAXIS , '0'), 7 , '0') --ÀÌµ¿Áö½ÃXÃà  
-				     ||LPAD(NVL(YD_WO_LOC_YAXIS , '0'), 5 , '0') --ÀÌµ¿Áö½ÃYÃà  
+				SELECT JMS_TC_CD                                    --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , JMS_TC_CD                                 --ì „ë¬¸ID
+				     ||TO_CHAR(SYSDATE,'YYYY-MM-DDHH24:MI:SS') --ë°œìƒì¼ì
+				     ||RPAD(NVL(MSG_GP          , ' '), 1 , ' ') --ì „ë¬¸êµ¬ë¶„
+				     ||RPAD(NVL(MSG_LEN         , ' '), 4 , ' ') --ì „ë¬¸ê¸¸ì´
+				     ||RPAD(NVL(TEMP            , ' '), 29, ' ') --ì„ì‹œ
+				     ||RPAD(NVL(YD_EQP_ID       , ' '), 6 , ' ') --ì„¤ë¹„ì½”ë“œ  
+				     ||RPAD(NVL(MV_GP           , ' '), 1 , ' ') --ì´ë™êµ¬ë¶„
+				     ||LPAD(NVL(YD_WO_LOC_XAXIS , '0'), 7 , '0') --ì´ë™ì§€ì‹œXì¶•  
+				     ||LPAD(NVL(YD_WO_LOC_YAXIS , '0'), 5 , '0') --ì´ë™ì§€ì‹œYì¶•  
 				       AS JMS_TC_MESSAGE --JMSTCMessage
 				 FROM (
-				        SELECT'YMA8L010'            AS JMS_TC_CD --Àü¹®ID
-				             , 'I'                  AS MSG_GP    --Àü¹®±¸ºĞ
+				        SELECT'YMA8L010'            AS JMS_TC_CD --ì „ë¬¸ID
+				             , 'I'                  AS MSG_GP    --ì „ë¬¸êµ¬ë¶„
 				             , '0019'               AS MSG_LEN     
 							 , ''                   AS TEMP 
 				             , :V_YD_EQP_ID         AS YD_EQP_ID
@@ -3684,11 +3684,11 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/***************************************************************************
-	 * L3 ¼Û½Å Àü¹® Á¶È¸
+	 * L3 ì†¡ì‹  ì „ë¬¸ ì¡°íšŒ
 	 **************************************************************************/
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : L3Àü¹®»ı¼º
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : L3ì „ë¬¸ìƒì„±
 	 *      
 	 *      @param String msgId
 	 *      @param JDTORecord jrParam
@@ -3696,7 +3696,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	 *      @throws DAOException
 	*/
 	public JDTORecordSet getMsgL3(String msgId, JDTORecord jrParam) throws DAOException {
-		String methodNm = "L3Àü¹®»ı¼º[YmCommDAO.getMsgL3] < " + jrParam.getResultMsg();
+		String methodNm = "L3ì „ë¬¸ìƒì„±[YmCommDAO.getMsgL3] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 		String trtNm = "";
 
@@ -3705,14 +3705,14 @@ public class YmCommDAO extends DBAssistantDAO {
 			
 			jrParam.setField("JMS_TC_CD"       , msgId);
 			
-/* ÃâÇÏ°ü¸®  */	
+/* ì¶œí•˜ê´€ë¦¬  */	
 			if ("YDDMR001".equals(msgId) ) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR001 
-				-- ÀÔ°í½ÇÀûÀû Àü¹®Á¶È¸ 
-				SELECT 'YDDMR001'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR001'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				-- ì…ê³ ì‹¤ì ì  ì „ë¬¸ì¡°íšŒ 
+				SELECT 'YDDMR001'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR001'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , MT.STOCK_ID                         AS GOODS_NO
 				     , TO_CHAR(SYSDATE,'YYYYMMDD') AS RECEIPT_DATE
 				     , TO_CHAR(SYSDATE,'HH24MISS') AS RECEIPT_TIME
@@ -3731,7 +3731,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				AND    MT.STOCK_ID = PT.COIL_NO
 				AND    PT.CURR_PROG_CD IN ('H')
 				 */       				
-				trtNm = "ÀÔ°í½ÇÀû";
+				trtNm = "ì…ê³ ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR001";
 			}
 //			 else if("YDDMR003".equals(msgId)) {
@@ -3759,7 +3759,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				    AND A.YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID
 				    ORDER BY B.STACK_LAYER_GP   
 				  */
-//					trtNm = "ÀÓ°¡°øÀÔ°íÀÛ¾÷½ÇÀû";
+//					trtNm = "ì„ê°€ê³µì…ê³ ì‘ì—…ì‹¤ì ";
 //					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR003";
 //					
 //			}
@@ -3776,8 +3776,8 @@ public class YmCommDAO extends DBAssistantDAO {
 				      , P.JMS_TC_CD                         AS TC_CODE                                             
 				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT
 				      , A.STOCK_ID                          AS GOODS_NO
-				      , B.YD_STR_LOC_HIS1                   AS BEFO_STORE_LOC    --Æ¯¼ö°­¾ßµåÀúÀåÀ§Ä¡ÀÌ·Â
-				      , C.STACK_COL_GP||STACK_BED_GP||STACK_LAYER_GP          AS TO_STORE_LOC    --ÀúÀåÀ§Ä¡
+				      , B.YD_STR_LOC_HIS1                   AS BEFO_STORE_LOC    --íŠ¹ìˆ˜ê°•ì•¼ë“œì €ì¥ìœ„ì¹˜ì´ë ¥
+				      , C.STACK_COL_GP||STACK_BED_GP||STACK_LAYER_GP          AS TO_STORE_LOC    --ì €ì¥ìœ„ì¹˜
 				      , TO_CHAR(SYSDATE,'YYYYMMDD')         AS MOVENSTACK_DATE
 				      , TO_CHAR(SYSDATE,'HH24MISS')         AS MOVENSTACK_TIME
 				   FROM USRYMA.TB_YM_STOCK A
@@ -3787,23 +3787,23 @@ public class YmCommDAO extends DBAssistantDAO {
 				  WHERE A.STOCK_ID  = B.COIL_NO
 				    AND A.STOCK_ID  = P.STOCK_ID    
 				    AND A.STOCK_ID  = C.STOCK_ID 
-				    AND C.STACK_LAYER_ACTIVE_STAT IN('C','U') --ÀûÄ¡Áß, ±Ç»ó´ë±â
+				    AND C.STACK_LAYER_ACTIVE_STAT IN('C','U') --ì ì¹˜ì¤‘, ê¶ŒìƒëŒ€ê¸°
 				   */ 
-					trtNm = "ÄÚÀÏÁ¦Ç°ÀÌÀûÀÛ¾÷½ÇÀû";
+					trtNm = "ì½”ì¼ì œí’ˆì´ì ì‘ì—…ì‹¤ì ";
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR004";				
 				}			
 //			 else if ("YDDMR007".equals(msgId) ) {
 //				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR007 
-//				SELECT 'YDDMR007'                          AS JMS_TC_CD          --JMSTCÄÚµå
-//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-//				      ,'YDDMR007'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-//				      ,TS.CAR_NO                                                 --Â÷·®¹øÈ£
-//				      ,SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              --¾ßµå±¸ºĞ
-//				      ,COUNT(*) OVER ()                    AS BD_EA           --Á¦Ç°°³¼ö
-//				      ,TM.STOCK_ID                         AS BD_NO           --Á¦Ç°¹øÈ£
-//				      ,TS.TRANS_ORD_DATE                   AS TRANS_WORD_DATE                                --¿î¼ÛÁö½ÃÀÏÀÚ
-//				      ,TS.TRANS_ORD_SEQNO                  AS TRANS_WORD_SEQNO                               --¿î¼ÛÁö½Ã¼ø¹ø
+//				SELECT 'YDDMR007'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+//				      ,'YDDMR007'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+//				      ,TS.CAR_NO                                                 --ì°¨ëŸ‰ë²ˆí˜¸
+//				      ,SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              --ì•¼ë“œêµ¬ë¶„
+//				      ,COUNT(*) OVER ()                    AS BD_EA           --ì œí’ˆê°œìˆ˜
+//				      ,TM.STOCK_ID                         AS BD_NO           --ì œí’ˆë²ˆí˜¸
+//				      ,TS.TRANS_ORD_DATE                   AS TRANS_WORD_DATE                                --ìš´ì†¡ì§€ì‹œì¼ì
+//				      ,TS.TRANS_ORD_SEQNO                  AS TRANS_WORD_SEQNO                               --ìš´ì†¡ì§€ì‹œìˆœë²ˆ
 //				      ,'1'                                 AS SPST_FRTOMOVE_GP
 //				  FROM (
 //				            SELECT *
@@ -3816,57 +3816,57 @@ public class YmCommDAO extends DBAssistantDAO {
 //				            WHERE  YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID
 //				       ) TM
 //				 */       				
-//				trtNm = "ÃâÇÏÂ÷·®»óÂ÷°³½Ã";
+//				trtNm = "ì¶œí•˜ì°¨ëŸ‰ìƒì°¨ê°œì‹œ";
 //				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR007";
 //			} 
 				else if ("YDDMR011".equals(msgId) ) {
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR011 
-					SELECT 'YDDMR011'                          AS JMS_TC_CD          --JMSTCÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-					     , 'YDDMR011'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-					     , TS.CARD_NO                                                 --Ä«µå¹øÈ£   
-					     , TS.CAR_NO                                                 --Â÷·®¹øÈ£
-					     , SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              --¾ßµå±¸ºĞ
-					     , :V_GOODS_EA                         AS GOODS_EA           --Á¦Ç°°³¼ö¿Ï·á½Ã(*)
-					     , :V_STOCK_ID                         AS GOODS_NO           --Á¦Ç°¹øÈ£
-					     , TS.TRANS_ORD_DATE                   AS TRANS_WORD_DATE                                        --¿î¼ÛÁö½ÃÀÏÀÚ
-					     , TS.TRANS_ORD_SEQNO                  AS TRANS_WORD_SEQNO                               --¿î¼ÛÁö½Ã¼ø¹ø
+					SELECT 'YDDMR011'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+					     , 'YDDMR011'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+					     , TS.CARD_NO                                                 --ì¹´ë“œë²ˆí˜¸   
+					     , TS.CAR_NO                                                 --ì°¨ëŸ‰ë²ˆí˜¸
+					     , SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              --ì•¼ë“œêµ¬ë¶„
+					     , :V_GOODS_EA                         AS GOODS_EA           --ì œí’ˆê°œìˆ˜ì™„ë£Œì‹œ(*)
+					     , :V_STOCK_ID                         AS GOODS_NO           --ì œí’ˆë²ˆí˜¸
+					     , TS.TRANS_ORD_DATE                   AS TRANS_WORD_DATE                                        --ìš´ì†¡ì§€ì‹œì¼ì
+					     , TS.TRANS_ORD_SEQNO                  AS TRANS_WORD_SEQNO                               --ìš´ì†¡ì§€ì‹œìˆœë²ˆ
 					  FROM USRYDA.TB_YD_CARSCH TS
 					 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 					*/ 
 					
-					trtNm = "ÄÚÀÏÀÏÇ°ÃâÇÏ»óÂ÷½ÇÀû";
+					trtNm = "ì½”ì¼ì¼í’ˆì¶œí•˜ìƒì°¨ì‹¤ì ";
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR011";	
 				}			 
 			 else if ("YDDMR015".equals(msgId) ) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR015 
-				--ÃâÇÏ»óÂ÷¿Ï·á Àü¹®Á¶È¸ 
-				SELECT 'YDDMR015'                              AS JMS_TC_CD          --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,'YDDMR015'                              AS TC_CODE            --IF±¸ºĞÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-				      ,TS.CAR_NO                                                     --Â÷·®¹øÈ£
+				--ì¶œí•˜ìƒì°¨ì™„ë£Œ ì „ë¬¸ì¡°íšŒ 
+				SELECT 'YDDMR015'                              AS JMS_TC_CD          --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,'YDDMR015'                              AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+				      ,TS.CAR_NO                                                     --ì°¨ëŸ‰ë²ˆí˜¸
 				      ,TS.CARD_NO 
 				      ,MIN(SUBSTR(TS.YD_CARLD_STOP_LOC,1,1))   AS YD_GP  
-				      ,TO_CHAR(TS.YD_CARLD_CMPL_DT,'YYYYMMDD') AS CARLOAD_END_DATE   --»óÂ÷¿Ï·áÀÏÀÚ
-				      ,TO_CHAR(TS.YD_CARLD_CMPL_DT,'HH24MISS') AS CARLOAD_END_TIME   --»óÂ÷¿Ï·á½Ã°¢
-				      ,MIN(TS.TRANS_ORD_DATE )                 AS TRANS_WORD_DATE     --¿î¼ÛÁö½ÃÀÏÀÚ
-				      ,MIN(TS.TRANS_ORD_SEQNO)                 AS TRANS_WORD_SEQNO    --¿î¼ÛÁö½Ã¼ø¹ø
+				      ,TO_CHAR(TS.YD_CARLD_CMPL_DT,'YYYYMMDD') AS CARLOAD_END_DATE   --ìƒì°¨ì™„ë£Œì¼ì
+				      ,TO_CHAR(TS.YD_CARLD_CMPL_DT,'HH24MISS') AS CARLOAD_END_TIME   --ìƒì°¨ì™„ë£Œì‹œê°
+				      ,MIN(TS.TRANS_ORD_DATE )                 AS TRANS_WORD_DATE     --ìš´ì†¡ì§€ì‹œì¼ì
+				      ,MIN(TS.TRANS_ORD_SEQNO)                 AS TRANS_WORD_SEQNO    --ìš´ì†¡ì§€ì‹œìˆœë²ˆ
 				    --  ,'1' AS SPST_FRTOMOVE_GP
 				  FROM TB_YD_CARSCH     TS
 				 WHERE TS.YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				 GROUP BY TS.CARD_NO, TS.CAR_NO, TS.YD_CARLD_CMPL_DT
 				 */       				
-				trtNm = "ÃâÇÏÂ÷·®»óÂ÷¿Ï·á";
+				trtNm = "ì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR015";
 			}
 			else if ("YDDMR019".equals(msgId) ) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR019 
-				SELECT  'YDDMR019'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				      , 'YDDMR019'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT  'YDDMR019'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				      , 'YDDMR019'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				      , TM.UPCARUNLOAD_GP
 				      , TM.CARD_NO
 				      , TM.CAR_NO 
@@ -3947,7 +3947,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                     , TB_YD_PREPMTL C
 				                 WHERE A.YD_CARLD_WRK_BOOK_ID = B.YD_WBOOK_ID
 				                   AND B.YD_PREP_SCH_ID=C.YD_PREP_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --»óÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --ìƒì°¨
 				                 UNION ALL
 				                SELECT A.YD_CAR_SCH_ID  AS YD_CAR_SCH_ID
 				                     , A.TRN_EQP_CD AS TRN_EQP_CD
@@ -3961,7 +3961,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                  FROM TB_YD_CARSCH A
 				                     , TB_YD_CARFTMVMTL C
 				                 WHERE A.YD_CAR_SCH_ID=C.YD_CAR_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --ÇÏÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --í•˜ì°¨
 				                   AND A.DEL_YN='N'
 				               ) TA
 				               , USRYMA.TB_YM_STOCK TX           
@@ -3975,15 +3975,15 @@ public class YmCommDAO extends DBAssistantDAO {
 				             AND DM.DEL_YN='N') TM
 				GROUP BY   UPCARUNLOAD_GP,CARD_NO,CAR_NO ,YD_GP,CARLOAD_START_DATE, CARLOAD_START_TIME                 
 				*/
-				trtNm = "ÄÚÀÏÁ¦Ç°°í°£ÀÌ¼Û»óÇÏÂ÷°³½Ã";
+				trtNm = "ì½”ì¼ì œí’ˆê³ ê°„ì´ì†¡ìƒí•˜ì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR019";
 			}
 			else if ("YDDMR020".equals(msgId) ) {
 				 /* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR020  
-				SELECT 'YDDMR020'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR020'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDDMR020'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR020'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , CASE WHEN YD_CAR_PROG_STAT IN ('2','3','4','5')       THEN 'U'   
 				            ELSE 'D' END                   AS UPCARUNLOAD_GP
 				     , CARD_NO                             AS CARD_NO         
@@ -4000,15 +4000,15 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÀÓ°¡°øÀÌ¼Û»óÇÏÂ÷°³½Ã";
+				trtNm = "ì„ê°€ê³µì´ì†¡ìƒí•˜ì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR020";
 			}
 			else if ("YDDMR021".equals(msgId) ) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR021_PIDEV
-				SELECT 'YDDMR021'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR021'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDDMR021'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR021'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , UPCARUNLOAD_GP
 				     , CARD_NO
 				     , CAR_NO
@@ -4215,7 +4215,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                     , TB_YD_PREPMTL C
 				                 WHERE A.YD_CARLD_WRK_BOOK_ID = B.YD_WBOOK_ID
 				                   AND B.YD_PREP_SCH_ID=C.YD_PREP_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --»óÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --ìƒì°¨
 				                 UNION ALL
 				                SELECT A.YD_CAR_SCH_ID           AS YD_CAR_SCH_ID
 				                     , A.TRN_EQP_CD              AS TRN_EQP_CD
@@ -4232,7 +4232,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                  FROM TB_YD_CARSCH A
 				                     , TB_YD_CARFTMVMTL C
 				                 WHERE A.YD_CAR_SCH_ID=C.YD_CAR_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --ÇÏÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --í•˜ì°¨
 				                   AND A.DEL_YN='N'
 				               ) TA
 				             , USRYMA.TB_YM_STOCK TX           
@@ -4247,15 +4247,15 @@ public class YmCommDAO extends DBAssistantDAO {
 				     ) DD
 				 GROUP BY   UPCARUNLOAD_GP,CARD_NO,CAR_NO,YD_PNT_CD   
 				*/ 
-				trtNm = "ÄÚÀÏÁ¦Ç°°í°£ÀÌ¼Û»óÇÏÂ÷¿Ï·á";
+				trtNm = "ì½”ì¼ì œí’ˆê³ ê°„ì´ì†¡ìƒí•˜ì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR021_PIDEV";
 			}
 			else if ("YDDMR022".equals(msgId) ) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR022 
-				SELECT 'YDDMR022'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR022'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDDMR022'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR022'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 					 , CASE WHEN YD_CAR_PROG_STAT IN ('3','4','5') THEN 'U'   
 						    ELSE 'D' END                   AS UPCARUNLOAD_GP
 				     , CARD_NO                             AS CARD_NO
@@ -4273,47 +4273,47 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				 */
-				trtNm = "ÀÓ°¡°øÀÌ¼Û»óÂ÷¿Ï·á";
+				trtNm = "ì„ê°€ê³µì´ì†¡ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR022";
 			}
 			 else if("YDDMR024".equals(msgId)) {
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR024 
-					SELECT 'YDDMR024'                          AS JMS_TC_CD          --JMSTCÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-					     , 'YDDMR024'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-					     , :V_GOODS_NO                         AS GOODS_NO           -- Á¦Ç° ¹øÈ£
-					     , :V_FROM_STORE_LOC_CD                AS FROM_STORE_LOC_CD  --FROMÀúÀå À§Ä¡
-					     , :V_TRANS_DATE                       AS TRANS_DATE         --ÀÌ¼ÛÀÏÀÚ
-					     , :V_TRANS_TIME                       AS TRANS_TIME         --ÀÌ¼Û½Ã°¢
-					     , :V_CR_FRTOMOVE_GP                   AS CR_FRTOMOVE_GP     --³Ã¿¬±¸ºĞ 
+					SELECT 'YDDMR024'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+					     , 'YDDMR024'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+					     , :V_GOODS_NO                         AS GOODS_NO           -- ì œí’ˆ ë²ˆí˜¸
+					     , :V_FROM_STORE_LOC_CD                AS FROM_STORE_LOC_CD  --FROMì €ì¥ ìœ„ì¹˜
+					     , :V_TRANS_DATE                       AS TRANS_DATE         --ì´ì†¡ì¼ì
+					     , :V_TRANS_TIME                       AS TRANS_TIME         --ì´ì†¡ì‹œê°
+					     , :V_CR_FRTOMOVE_GP                   AS CR_FRTOMOVE_GP     --ëƒ‰ì—°êµ¬ë¶„ 
 					  FROM DUAL				
 					*/
-				    trtNm = "HYSCO´ëÂ÷ÀÌ¼Û½ÇÀû";
+				    trtNm = "HYSCOëŒ€ì°¨ì´ì†¡ì‹¤ì ";
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR024";
 
 				} 
 			 else if("YDDMR025".equals(msgId)) {
 				 /*com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR025
-				 SELECT 'YDDMR025'                          AS JMS_TC_CD          --JMSTCÄÚµå     
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã 
-				      , 'YDDMR025'                          AS TC_CODE            --IF±¸ºĞÄÚµå    
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã    
-				      , :V_GOODS_NO                         AS GOODS_NO           -- Á¦Ç° ¹øÈ£ 
+				 SELECT 'YDDMR025'                          AS JMS_TC_CD          --JMSTCì½”ë“œ     
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ 
+				      , 'YDDMR025'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ    
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ    
+				      , :V_GOODS_NO                         AS GOODS_NO           -- ì œí’ˆ ë²ˆí˜¸ 
 				   FROM DUAL	                                   				
 					*/
-				    trtNm = "HYSCO¼ö³Ã½ÇÀû";
+				    trtNm = "HYSCOìˆ˜ëƒ‰ì‹¤ì ";
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR025";
 
 				} 				
 			else if ("YDDMR026".equals(msgId) ) {
 				/* Origin >com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkcol_PIDEV */
 				/* Adapter> com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR026*/
-				//--Æ÷ÀÎÆ®»ç¿ë½ÇÀû
-				/*SELECT   'YDDMR026'                          AS JMS_TC_CD          --JMSTCÄÚµå
-							,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-							,'YDDMR026'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-							,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
+				//--í¬ì¸íŠ¸ì‚¬ìš©ì‹¤ì 
+				/*SELECT   'YDDMR026'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+							,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+							,'YDDMR026'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+							,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
 							,WLOC_CD
 							,YD_PNT_CD
 					        ,'B' AS YD_PNT_OCPY_GP
@@ -4324,69 +4324,69 @@ public class YmCommDAO extends DBAssistantDAO {
 							 FROM TB_YM_STACKCOL      
 							WHERE STACK_COL_GP = :V_YD_STK_COL_GP
 					      AND DEL_YN ='N'*/			
-				trtNm = "Æ÷ÀÎÆ®»ç¿ë½ÇÀû";
+				trtNm = "í¬ì¸íŠ¸ì‚¬ìš©ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR026";
 			}
 			else if ("YDDMR036".equals(msgId) ||"YDDMR074".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR036 
 				SELECT CASE WHEN NVL(CR_FRTOMOVE_GP,'') ='' THEN 'YDDMR036'
-				            ELSE 'YDDMR074' END             AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
+				            ELSE 'YDDMR074' END             AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
 				     , CASE WHEN NVL(CR_FRTOMOVE_GP,'') ='' THEN 'YDDMR036'
-				            ELSE 'YDDMR074' END             AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
-				     , TRANS_ORD_DATE                       AS TRANS_WORD_DATE   --¿î¼ÛÁö½ÃÀÏÀÚ
-				     , TRANS_ORD_SEQNO                      AS TRANS_WORD_SEQNO     --¿î¼ÛÁö½Ã¼ø¹ø
+				            ELSE 'YDDMR074' END             AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
+				     , TRANS_ORD_DATE                       AS TRANS_WORD_DATE   --ìš´ì†¡ì§€ì‹œì¼ì
+				     , TRANS_ORD_SEQNO                      AS TRANS_WORD_SEQNO     --ìš´ì†¡ì§€ì‹œìˆœë²ˆ
 				     , CAR_NO2                              AS CAR_NO
-				     , CARLD_CHK_DONE_DATE              --»óÂ÷°Ë¼ö¿Ï·áÀÏÀÚ
-				     , CARLD_CHK_DONE_TIME              --»óÂ÷°Ë¼ö¿Ï·á½Ã°¢
-				     , GOOODS_NO_CNT                    --Á¦Ç°°¹¼ö
-				     , GOOODS_NO1                      --Á¦Ç°¹øÈ£1
-				     , GOODS_CHK_AB_CD1    --ÀÌ»óÄÚµå1
-				     , LABEL_REISSUE_YN1   --¶óº§Àç¹ßÇàÀ¯¹«1
-				     , GOOODS_NO2              --Á¦Ç°¹øÈ£2
-				     , GOODS_CHK_AB_CD2    --ÀÌ»óÄÚµå2
-				     , LABEL_REISSUE_YN2   --¶óº§Àç¹ßÇàÀ¯¹«2
-				     , GOOODS_NO3              --Á¦Ç°¹øÈ£3
-				     , GOODS_CHK_AB_CD3    --ÀÌ»óÄÚµå3
-				     , LABEL_REISSUE_YN3   --¶óº§Àç¹ßÇàÀ¯¹«3
-				     , GOOODS_NO4              --Á¦Ç°¹øÈ£4
-				     , GOODS_CHK_AB_CD4    --ÀÌ»óÄÚµå4
-				     , LABEL_REISSUE_YN4   --¶óº§Àç¹ßÇàÀ¯¹«4
-				     , GOOODS_NO5              --Á¦Ç°¹øÈ£5
-				     , GOODS_CHK_AB_CD5    --ÀÌ»óÄÚµå5
-				     , LABEL_REISSUE_YN5   --¶óº§Àç¹ßÇàÀ¯¹«5
-				     , GOOODS_NO6              --Á¦Ç°¹øÈ£6
-				     , GOODS_CHK_AB_CD6    --ÀÌ»óÄÚµå6
-				     , LABEL_REISSUE_YN6   --¶óº§Àç¹ßÇàÀ¯¹«6
-				     , GOOODS_NO7              --Á¦Ç°¹øÈ£7
-				     , GOODS_CHK_AB_CD7    --ÀÌ»óÄÚµå7
-				     , LABEL_REISSUE_YN7   --¶óº§Àç¹ßÇàÀ¯¹«7
-				     , GOOODS_NO8              --Á¦Ç°¹øÈ£8
-				     , GOODS_CHK_AB_CD8    --ÀÌ»óÄÚµå8
-				     , LABEL_REISSUE_YN8   --¶óº§Àç¹ßÇàÀ¯¹«8
-				     , GOOODS_NO9              --Á¦Ç°¹øÈ£9
-				     , GOODS_CHK_AB_CD9    --ÀÌ»óÄÚµå9
-				     , LABEL_REISSUE_YN9   --¶óº§Àç¹ßÇàÀ¯¹«9
-				     , GOOODS_NO10             --Á¦Ç°¹øÈ£10
-				     , GOODS_CHK_AB_CD10   --ÀÌ»óÄÚµå10
-				     , LABEL_REISSUE_YN10  --¶óº§Àç¹ßÇàÀ¯¹«10
-				     , GOOODS_NO11             --Á¦Ç°¹øÈ£11
-				     , GOODS_CHK_AB_CD11   --ÀÌ»óÄÚµå11
-				     , LABEL_REISSUE_YN11  --¶óº§Àç¹ßÇàÀ¯¹«11
-				     , GOOODS_NO12             --Á¦Ç°¹øÈ£12
-				     , GOODS_CHK_AB_CD12   --ÀÌ»óÄÚµå12
-				     , LABEL_REISSUE_YN12  --¶óº§Àç¹ßÇàÀ¯¹«12
-				     , GOOODS_NO13             --Á¦Ç°¹øÈ£13
-				     , GOODS_CHK_AB_CD13   --ÀÌ»óÄÚµå13
-				     , LABEL_REISSUE_YN13  --¶óº§Àç¹ßÇàÀ¯¹«13
-				     , GOOODS_NO14             --Á¦Ç°¹øÈ£10
-				     , GOODS_CHK_AB_CD14   --ÀÌ»óÄÚµå14
-				     , LABEL_REISSUE_YN14  --¶óº§Àç¹ßÇàÀ¯¹«14   
-				     , GOOODS_NO15             --Á¦Ç°¹øÈ£15
-				     , GOODS_CHK_AB_CD15   --ÀÌ»óÄÚµå15
-				     , LABEL_REISSUE_YN15  --¶óº§Àç¹ßÇàÀ¯¹«15              
-				     , CR_FRTOMOVE_GP     --³Ã¿¬ÀÌ¼Û±¸ºĞ
+				     , CARLD_CHK_DONE_DATE              --ìƒì°¨ê²€ìˆ˜ì™„ë£Œì¼ì
+				     , CARLD_CHK_DONE_TIME              --ìƒì°¨ê²€ìˆ˜ì™„ë£Œì‹œê°
+				     , GOOODS_NO_CNT                    --ì œí’ˆê°¯ìˆ˜
+				     , GOOODS_NO1                      --ì œí’ˆë²ˆí˜¸1
+				     , GOODS_CHK_AB_CD1    --ì´ìƒì½”ë“œ1
+				     , LABEL_REISSUE_YN1   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´1
+				     , GOOODS_NO2              --ì œí’ˆë²ˆí˜¸2
+				     , GOODS_CHK_AB_CD2    --ì´ìƒì½”ë“œ2
+				     , LABEL_REISSUE_YN2   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´2
+				     , GOOODS_NO3              --ì œí’ˆë²ˆí˜¸3
+				     , GOODS_CHK_AB_CD3    --ì´ìƒì½”ë“œ3
+				     , LABEL_REISSUE_YN3   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´3
+				     , GOOODS_NO4              --ì œí’ˆë²ˆí˜¸4
+				     , GOODS_CHK_AB_CD4    --ì´ìƒì½”ë“œ4
+				     , LABEL_REISSUE_YN4   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´4
+				     , GOOODS_NO5              --ì œí’ˆë²ˆí˜¸5
+				     , GOODS_CHK_AB_CD5    --ì´ìƒì½”ë“œ5
+				     , LABEL_REISSUE_YN5   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´5
+				     , GOOODS_NO6              --ì œí’ˆë²ˆí˜¸6
+				     , GOODS_CHK_AB_CD6    --ì´ìƒì½”ë“œ6
+				     , LABEL_REISSUE_YN6   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´6
+				     , GOOODS_NO7              --ì œí’ˆë²ˆí˜¸7
+				     , GOODS_CHK_AB_CD7    --ì´ìƒì½”ë“œ7
+				     , LABEL_REISSUE_YN7   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´7
+				     , GOOODS_NO8              --ì œí’ˆë²ˆí˜¸8
+				     , GOODS_CHK_AB_CD8    --ì´ìƒì½”ë“œ8
+				     , LABEL_REISSUE_YN8   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´8
+				     , GOOODS_NO9              --ì œí’ˆë²ˆí˜¸9
+				     , GOODS_CHK_AB_CD9    --ì´ìƒì½”ë“œ9
+				     , LABEL_REISSUE_YN9   --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´9
+				     , GOOODS_NO10             --ì œí’ˆë²ˆí˜¸10
+				     , GOODS_CHK_AB_CD10   --ì´ìƒì½”ë“œ10
+				     , LABEL_REISSUE_YN10  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´10
+				     , GOOODS_NO11             --ì œí’ˆë²ˆí˜¸11
+				     , GOODS_CHK_AB_CD11   --ì´ìƒì½”ë“œ11
+				     , LABEL_REISSUE_YN11  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´11
+				     , GOOODS_NO12             --ì œí’ˆë²ˆí˜¸12
+				     , GOODS_CHK_AB_CD12   --ì´ìƒì½”ë“œ12
+				     , LABEL_REISSUE_YN12  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´12
+				     , GOOODS_NO13             --ì œí’ˆë²ˆí˜¸13
+				     , GOODS_CHK_AB_CD13   --ì´ìƒì½”ë“œ13
+				     , LABEL_REISSUE_YN13  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´13
+				     , GOOODS_NO14             --ì œí’ˆë²ˆí˜¸10
+				     , GOODS_CHK_AB_CD14   --ì´ìƒì½”ë“œ14
+				     , LABEL_REISSUE_YN14  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´14   
+				     , GOOODS_NO15             --ì œí’ˆë²ˆí˜¸15
+				     , GOODS_CHK_AB_CD15   --ì´ìƒì½”ë“œ15
+				     , LABEL_REISSUE_YN15  --ë¼ë²¨ì¬ë°œí–‰ìœ ë¬´15              
+				     , CR_FRTOMOVE_GP     --ëƒ‰ì—°ì´ì†¡êµ¬ë¶„
 				FROM (
 
 				        SELECT
@@ -4465,23 +4465,23 @@ public class YmCommDAO extends DBAssistantDAO {
 				    )
 				*/
 				
-				trtNm = "°Ë¼ö¿Ï·á½ÇÀû";
+				trtNm = "ê²€ìˆ˜ì™„ë£Œì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR036";	
 			}
 			else if("YDDMR028".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR028 
-				SELECT 'YDDMR028'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				      ,'YDDMR028'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
-				      ,CARD_NO                                                     --Ä«Æ®¹øÈ£
-				      ,CAR_NO                                                      --Â÷·®¹øÈ£      
-				      ,TRANS_ORD_DATE                      AS TRANS_WORD_DATE      --¿î¼ÛÀÛ¾÷Áö½ÃÀÏÀÚ
-				      ,TRANS_ORD_SEQNO                     AS TRANS_WORD_SEQNO     --¿î¼ÛÀÛ¾÷Áö½Ã¼ø¹ø
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS BAYIN_DDTT           --ÀÔµ¿ÀÏ½Ã
-				      ,ARR_WLOC_CD                         AS WLOC_CD  --°³¼ÒÄÚµå(ÂøÁö) 
-				      ,YD_PNT_CD                                                --¾ßµåÂ÷·®Æ®ÄÚµå
-				      ,'Y'                                 AS LOAN_PULLOUT_ABLE_YN --Â÷ÀÔÀÎÃâ°¡´É¿©ºÎ
+				SELECT 'YDDMR028'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				      ,'YDDMR028'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
+				      ,CARD_NO                                                     --ì¹´íŠ¸ë²ˆí˜¸
+				      ,CAR_NO                                                      --ì°¨ëŸ‰ë²ˆí˜¸      
+				      ,TRANS_ORD_DATE                      AS TRANS_WORD_DATE      --ìš´ì†¡ì‘ì—…ì§€ì‹œì¼ì
+				      ,TRANS_ORD_SEQNO                     AS TRANS_WORD_SEQNO     --ìš´ì†¡ì‘ì—…ì§€ì‹œìˆœë²ˆ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS BAYIN_DDTT           --ì…ë™ì¼ì‹œ
+				      ,ARR_WLOC_CD                         AS WLOC_CD  --ê°œì†Œì½”ë“œ(ì°©ì§€) 
+				      ,YD_PNT_CD                                                --ì•¼ë“œì°¨ëŸ‰íŠ¸ì½”ë“œ
+				      ,'Y'                                 AS LOAN_PULLOUT_ABLE_YN --ì°¨ì…ì¸ì¶œê°€ëŠ¥ì—¬ë¶€
 				  FROM (SELECT TS.CARD_NO
 				              ,TS.CAR_NO
 				              ,TS.TRANS_ORD_DATE
@@ -4497,53 +4497,53 @@ public class YmCommDAO extends DBAssistantDAO {
 				              ,USRYDA.TB_YD_CARSCH TS
 				         WHERE SC.STACK_COL_GP       = :V_STACK_COL_GP
 				           AND SC.DEL_YN              = 'N'
-				           AND SC.STACK_COL_ACTIVE_STAT  = 'C' --ºñÈ°¼ºÈ­
-				           AND (SC.STACK_COL_USAGE_CD  IS NULL OR SC.STACK_COL_USAGE_CD != 'GT') --ÃâÇÏ
+				           AND SC.STACK_COL_ACTIVE_STAT  = 'C' --ë¹„í™œì„±í™”
+				           AND (SC.STACK_COL_USAGE_CD  IS NULL OR SC.STACK_COL_USAGE_CD != 'GT') --ì¶œí•˜
 				           AND ((TS.YD_CAR_PROG_STAT = '1' AND TS.YD_CARLD_STOP_LOC = SC.STACK_COL_GP)
 				             OR (TS.YD_CAR_PROG_STAT = 'A' AND TS.YD_CARUD_STOP_LOC = SC.STACK_COL_GP))
 				           AND TS.DEL_YN             = 'N'
 				         ORDER BY YD_BAYIN_WO_SEQ, YD_CAR_SCH_ID)
-				 WHERE ROWNUM = 1          --Ã¹¹øÂ°°¡
-				   AND YD_CAR_USE_GP = 'G' --ÃâÇÏÂ÷·®
+				 WHERE ROWNUM = 1          --ì²«ë²ˆì§¸ê°€
+				   AND YD_CAR_USE_GP = 'G' --ì¶œí•˜ì°¨ëŸ‰
 				 */
-				trtNm = "Â÷·®ÀÔµ¿Áö½Ã";
+				trtNm = "ì°¨ëŸ‰ì…ë™ì§€ì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR028";
 
 			}
 			 else if("YDDMR029".equals(msgId)) {
-					trtNm = "Á¦Ç°ÃâÇÏÂ÷·®µµÂø½ÇÀû)";
+					trtNm = "ì œí’ˆì¶œí•˜ì°¨ëŸ‰ë„ì°©ì‹¤ì )";
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR029 
-					SELECT 'YDDMR029'                          AS JMS_TC_CD          --JMSTCÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-					     , 'YDDMR029'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-					     , :V_YD_GP                            AS YD_GP              --¾ßµå±¸ºĞ
-					     , :V_TRANS_WORD_DATE                  AS TRANS_WORD_DATE    --¿î¼ÛÁö½ÃÀÏÀÚ
-					     , :V_TRANS_WORD_SEQNO                 AS TRANS_WORD_SEQNO   --¿î¼ÛÁö½Ã½Ã°¢
-					     , :V_CAR_NO                           AS CAR_NO             --Â÷·®¹øÈ£
-					     , :V_CARD_NO                          AS CARD_NO            --Ä«µå¹øÈ£
-					     , :V_ARR_WLOC_CD                      AS ARR_WLOC_CD        --ÂøÁö°³¼ÒÄÚµå 
-					     , :V_ARR_YD_PNT_CD                    AS ARR_YD_PNT_CD      --ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-					     , :V_CAR_ARR_DT                       AS CAR_ARR_DT         --Â÷·®µµÂøÀÏ½Ã
+					SELECT 'YDDMR029'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+					     , 'YDDMR029'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+					     , :V_YD_GP                            AS YD_GP              --ì•¼ë“œêµ¬ë¶„
+					     , :V_TRANS_WORD_DATE                  AS TRANS_WORD_DATE    --ìš´ì†¡ì§€ì‹œì¼ì
+					     , :V_TRANS_WORD_SEQNO                 AS TRANS_WORD_SEQNO   --ìš´ì†¡ì§€ì‹œì‹œê°
+					     , :V_CAR_NO                           AS CAR_NO             --ì°¨ëŸ‰ë²ˆí˜¸
+					     , :V_CARD_NO                          AS CARD_NO            --ì¹´ë“œë²ˆí˜¸
+					     , :V_ARR_WLOC_CD                      AS ARR_WLOC_CD        --ì°©ì§€ê°œì†Œì½”ë“œ 
+					     , :V_ARR_YD_PNT_CD                    AS ARR_YD_PNT_CD      --ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+					     , :V_CAR_ARR_DT                       AS CAR_ARR_DT         --ì°¨ëŸ‰ë„ì°©ì¼ì‹œ
 					  FROM DUAL				
 					*/
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR029";
 
 			 }			
 			 else if("YDDMR050".equals(msgId)) {
-					trtNm = "»óÂ÷¿Ï·á(¾ßµåÇÚµå¸µ)";
+					trtNm = "ìƒì°¨ì™„ë£Œ(ì•¼ë“œí•¸ë“œë§)";
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR050 
-					SELECT 'YDDMR050'                          AS JMS_TC_CD          --JMSTCÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-					     , 'YDDMR050'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-					     , :V_YD_GP                            AS YD_GP              --¾ßµå±¸ºĞ
-					     , :V_TRANS_ORD_DT                     AS TRANS_ORD_DT       --¿î¼ÛÁö½ÃÀÏÀÚ
-					     , :V_TRANS_ORD_SEQNO                  AS TRANS_ORD_SEQNO    --¿î¼ÛÁö½Ã½Ã°¢
+					SELECT 'YDDMR050'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+					     , 'YDDMR050'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+					     , :V_YD_GP                            AS YD_GP              --ì•¼ë“œêµ¬ë¶„
+					     , :V_TRANS_ORD_DT                     AS TRANS_ORD_DT       --ìš´ì†¡ì§€ì‹œì¼ì
+					     , :V_TRANS_ORD_SEQNO                  AS TRANS_ORD_SEQNO    --ìš´ì†¡ì§€ì‹œì‹œê°
 					     , :V_CMBN_CARLD_YN                    AS CMBN_CARLD_YN      -- 
 					     , :V_CARLD_PNT_CD                     AS CARLD_PNT_CD       -- 
-					     , :V_CAR_NO                           AS CAR_NO             --Â÷·®¹øÈ£
-					     , :V_HANDLING_CNT                     AS HANDLING_CNT       --ÇÚµå¸µ¼ö
+					     , :V_CAR_NO                           AS CAR_NO             --ì°¨ëŸ‰ë²ˆí˜¸
+					     , :V_HANDLING_CNT                     AS HANDLING_CNT       --í•¸ë“œë§ìˆ˜
 					     , :V_YD_STK_BED_WHIO_STAT             AS YD_STK_BED_WHIO_STAT
 					  FROM DUAL				
 					*/
@@ -4551,18 +4551,18 @@ public class YmCommDAO extends DBAssistantDAO {
 
 			} 			
 			else if("YDDMR070".equals(msgId)) {
-				/*--Â÷·®ÀÔµ¿Áö½Ã Àü¹®Á¶È¸ - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR070
-				SELECT 'YDDMR070'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				      ,'YDDMR070'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
-				      ,CARD_NO                                                     --Ä«Æ®¹øÈ£
-				      ,CAR_NO                                                      --Â÷·®¹øÈ£      
-				      ,TRANS_ORD_DATE                      AS TRANS_WORD_DATE      --¿î¼ÛÀÛ¾÷Áö½ÃÀÏÀÚ
-				      ,TRANS_ORD_SEQNO                     AS TRANS_WORD_SEQNO     --¿î¼ÛÀÛ¾÷Áö½Ã¼ø¹ø
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS BAYIN_DATE           --ÀÔµ¿ÀÏ½Ã
-				      ,YD_PNT_CD                                                --¾ßµåÂ÷·®Æ®ÄÚµå
-				      ,'Y'                                 AS LOAN_PULLOUT_ABLE_YN --Â÷ÀÔÀÎÃâ°¡´É¿©ºÎ
+				/*--ì°¨ëŸ‰ì…ë™ì§€ì‹œ ì „ë¬¸ì¡°íšŒ - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR070
+				SELECT 'YDDMR070'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				      ,'YDDMR070'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
+				      ,CARD_NO                                                     --ì¹´íŠ¸ë²ˆí˜¸
+				      ,CAR_NO                                                      --ì°¨ëŸ‰ë²ˆí˜¸      
+				      ,TRANS_ORD_DATE                      AS TRANS_WORD_DATE      --ìš´ì†¡ì‘ì—…ì§€ì‹œì¼ì
+				      ,TRANS_ORD_SEQNO                     AS TRANS_WORD_SEQNO     --ìš´ì†¡ì‘ì—…ì§€ì‹œìˆœë²ˆ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS BAYIN_DATE           --ì…ë™ì¼ì‹œ
+				      ,YD_PNT_CD                                                --ì•¼ë“œì°¨ëŸ‰íŠ¸ì½”ë“œ
+				      ,'Y'                                 AS LOAN_PULLOUT_ABLE_YN --ì°¨ì…ì¸ì¶œê°€ëŠ¥ì—¬ë¶€
 				      ,'1'                                 AS CR_FRTOMOVE_GP
 				  FROM (SELECT TS.CARD_NO
 				              ,TS.CAR_NO
@@ -4579,26 +4579,26 @@ public class YmCommDAO extends DBAssistantDAO {
 				              ,USRYDA.TB_YD_CARSCH TS
 				         WHERE SC.STACK_COL_GP       = :V_STACK_COL_GP
 				           AND SC.DEL_YN              = 'N'
-				           AND SC.STACK_COL_ACTIVE_STAT  = 'C' --ºñÈ°¼ºÈ­
-				           AND (SC.STACK_COL_USAGE_CD  IS NULL OR SC.STACK_COL_USAGE_CD != 'GT') --ÃâÇÏ
+				           AND SC.STACK_COL_ACTIVE_STAT  = 'C' --ë¹„í™œì„±í™”
+				           AND (SC.STACK_COL_USAGE_CD  IS NULL OR SC.STACK_COL_USAGE_CD != 'GT') --ì¶œí•˜
 				           AND ((TS.YD_CAR_PROG_STAT = '1' AND TS.YD_CARLD_STOP_LOC = SC.STACK_COL_GP)
 				             OR (TS.YD_CAR_PROG_STAT = 'A' AND TS.YD_CARUD_STOP_LOC = SC.STACK_COL_GP))
 				           AND TS.DEL_YN             = 'N'
 				         ORDER BY YD_BAYIN_WO_SEQ, YD_CAR_SCH_ID)
-				 WHERE ROWNUM = 1          --Ã¹¹øÂ°°¡
-				   AND YD_CAR_USE_GP = 'G' --ÃâÇÏÂ÷·®	
+				 WHERE ROWNUM = 1          --ì²«ë²ˆì§¸ê°€
+				   AND YD_CAR_USE_GP = 'G' --ì¶œí•˜ì°¨ëŸ‰	
 			*/	   		
-				trtNm = "Â÷·®ÀÔµ¿Áö½Ã";
+				trtNm = "ì°¨ëŸ‰ì…ë™ì§€ì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR070";
 
 			} 
 			else if("YDDMR071".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR071 
-				-- ÄÚÀÏÀÌ¼Û »óÂ÷°³½Ã
-				SELECT 'YDDMR071'                           AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR071'                           AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã		
+				-- ì½”ì¼ì´ì†¡ ìƒì°¨ê°œì‹œ
+				SELECT 'YDDMR071'                           AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR071'                           AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ		
 				     , CAR_NO		                    AS CAR_NO
 				     , CARD_NO 		                    AS CARD_NO 
 				     , SUBSTR(YD_CARLD_STOP_LOC,1,1) AS YD_GP   
@@ -4637,19 +4637,19 @@ public class YmCommDAO extends DBAssistantDAO {
 				        )  A 
 
 				*/	   
-				trtNm = "ÄÚÀÏÀÌ¼Û »óÂ÷°³½Ã";
+				trtNm = "ì½”ì¼ì´ì†¡ ìƒì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR071";
 
 			}
 			else if("YDDMR072".equals(msgId)) {
-				/*--ÄÚÀÏÀÏÇ°ÃâÇÏ»óÂ÷½ÇÀû??? - 
+				/*--ì½”ì¼ì¼í’ˆì¶œí•˜ìƒì°¨ì‹¤ì ??? - 
 				/* Origin  >> com.inisteel.cim.yd.dao.ydcarschdao.YdCarschDao.getYdCarYdStockYdCarFtmvMtlSTLNo */
 				/* Adapter >> com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR072 */
 				/*SELECT 
-                        'YDDMR072'                           AS JMS_TC_CD            --JMSTCÄÚµå
-						,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-						,'YDDMR072'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-						,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã	
+                        'YDDMR072'                           AS JMS_TC_CD            --JMSTCì½”ë“œ
+						,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+						,'YDDMR072'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+						,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ	
 						,TA.YD_CAR_SCH_ID                    AS YD_CAR_SCH_ID                         
 						,TA.CARD_NO		                     AS CARD_NO                                 
 						,TA.CAR_NO		                     AS CAR_NO                                  
@@ -4664,15 +4664,15 @@ public class YmCommDAO extends DBAssistantDAO {
 					 AND TA.TRANS_ORD_SEQNO = TB.TRANS_ORD_SEQNO2
 					 AND TB.STOCK_ID=  :V_STOCK_ID
 					AND  TA.YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID*/			
-				trtNm = "ÄÚÀÏÀÏÇ°ÃâÇÏ»óÂ÷½ÇÀû";
+				trtNm = "ì½”ì¼ì¼í’ˆì¶œí•˜ìƒì°¨ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR072";
 
 			}	else if("YDDMR073".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR073 
-				SELECT 'YDDMR073'                           AS JMS_TC_CD            --JMSTCÄÚµå
-					 , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-					 , 'YDDMR073'                           AS TC_CODE              --IF±¸ºĞÄÚµå
-					 , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã		
+				SELECT 'YDDMR073'                           AS JMS_TC_CD            --JMSTCì½”ë“œ
+					 , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+					 , 'YDDMR073'                           AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+					 , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ		
 				     , TA.CAR_NO		                    AS CAR_NO
 				     , TA.CARD_NO 		                    AS CARD_NO 
 				     , substr(TA.YD_CARLD_STOP_LOC,1,1)     AS YD_GP   
@@ -4694,7 +4694,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				             , B.YD_STK_LYR_NO      AS YD_STK_LYR_NO
 				             , A.CAR_NO             AS CAR_NO
 				             , A.YD_EQP_ID          AS YD_EQP_ID
-				             , NVL(TO_CHAR(A.YD_CARLD_CMPL_DT, 'YYYYMMDDHH24MISS'),:V_WR_DT) AS YD_CARLD_CMPL_DT --»óÂ÷¿Ï·á                             
+				             , NVL(TO_CHAR(A.YD_CARLD_CMPL_DT, 'YYYYMMDDHH24MISS'),:V_WR_DT) AS YD_CARLD_CMPL_DT --ìƒì°¨ì™„ë£Œ                             
 				             , A.CARD_NO            AS CARD_NO                 
 				             , A.YD_CARUD_STOP_LOC  AS YD_CARUD_STOP_LOC
 				             , A.YD_PNT_CD1
@@ -4708,17 +4708,17 @@ public class YmCommDAO extends DBAssistantDAO {
 				  WHERE TA.STL_NO = TB.STOCK_ID
 				    AND TA.DEL_YN = 'N'
 				*/		   
-				trtNm = "ÄÚÀÏÀÌ¼Û »óÂ÷¿Ï·á";
+				trtNm = "ì½”ì¼ì´ì†¡ ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR073";
 
 			}
 			else if("YDDMR075".equals(msgId)) {
-				/*--ÄÚÀÏÀÌ¼ÛÇÏÂ÷°³½ÃÀü¼Û PDA - */	
+				/*--ì½”ì¼ì´ì†¡í•˜ì°¨ê°œì‹œì „ì†¡ PDA - */	
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR075 
-				SELECT 'YDDMR075'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR075'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDDMR075'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR075'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , TA.CARD_NO		                   AS CARD_NO     
 				     , TA.CAR_NO	                       AS CAR_NO            
 				     , substr(TA.YD_CARUD_STOP_LOC,1,1)    AS YD_GP
@@ -4753,16 +4753,16 @@ public class YmCommDAO extends DBAssistantDAO {
 				      ,TB_YM_STOCK TB
 				 WHERE TA.STL_NO = TB.STOCK_ID
 				   */
-				trtNm = "ÄÚÀÏÀÌ¼ÛÇÏÂ÷°³½ÃÀü¼Û PDA";
+				trtNm = "ì½”ì¼ì´ì†¡í•˜ì°¨ê°œì‹œì „ì†¡ PDA";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR075";
 			}
 			else if("YDDMR076".equals(msgId)) {
-				/*--ÄÚÀÏÀÌ¼ÛÇÏÂ÷¿Ï·áÀü¼Û PDA - */	
+				/*--ì½”ì¼ì´ì†¡í•˜ì°¨ì™„ë£Œì „ì†¡ PDA - */	
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR076 
-				SELECT 'YDDMR076'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDDMR076'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDDMR076'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDDMR076'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , CARD_NO		                       AS CARD_NO     
 				     , CAR_NO		                       AS CAR_NO            
 				     , SUBSTR(YD_CARUD_STOP_LOC,1,1)       AS YD_GP
@@ -4779,77 +4779,77 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÄÚÀÏÀÌ¼ÛÇÏÂ÷¿Ï·áÀü¼Û PDA";
+				trtNm = "ì½”ì¼ì´ì†¡í•˜ì°¨ì™„ë£Œì „ì†¡ PDA";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR076";
 			}
 			
-			/* ±¸³»¿î¼Û  */  			
+			/* êµ¬ë‚´ìš´ì†¡  */  			
 //			else if("YDTSJ007".equals(msgId)) {
-//				trtNm = "¼ÒÀçÂ÷·®»óÂ÷°³½Ã";
+//				trtNm = "ì†Œì¬ì°¨ëŸ‰ìƒì°¨ê°œì‹œ";
 //				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ007 
-//				--¼ÒÀçÂ÷·®»óÂ÷°³½Ã Àü¹®
-//				SELECT 'YDTSJ007'                          AS JMS_TC_CD          --JMSTCÄÚµå
-//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-//				      ,TS.TRN_EQP_CD                                             --¿î¼ÛÀåºñÄÚµå
-//				      ,SC.WLOC_CD                          AS SPOS_WLOC_CD       --¹ßÁö°³¼ÒÄÚµå
-//				      ,SC.YD_PNT_CD                        AS SPOS_YD_PNT_CD     --¹ßÁö°³¼ÒÆ÷ÀÎÆ®
-//				      ,TS.ARR_WLOC_CD                                            --ÂøÁö°³¼ÒÄÚµå
-//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TRN_WRK_ST_DT --¿î¼ÛÀÛ¾÷½ÃÀÛÀÏ½Ã
+//				--ì†Œì¬ì°¨ëŸ‰ìƒì°¨ê°œì‹œ ì „ë¬¸
+//				SELECT 'YDTSJ007'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+//				      ,TS.TRN_EQP_CD                                             --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+//				      ,SC.WLOC_CD                          AS SPOS_WLOC_CD       --ë°œì§€ê°œì†Œì½”ë“œ
+//				      ,SC.YD_PNT_CD                        AS SPOS_YD_PNT_CD     --ë°œì§€ê°œì†Œí¬ì¸íŠ¸
+//				      ,TS.ARR_WLOC_CD                                            --ì°©ì§€ê°œì†Œì½”ë“œ
+//				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TRN_WRK_ST_DT --ìš´ì†¡ì‘ì—…ì‹œì‘ì¼ì‹œ
 //				  FROM TB_YM_STACKCOL SC
 //				      ,TB_YD_CARSCH TS
 //				 WHERE SC.YD_CAR_USE_GP = TS.YD_CAR_USE_GP
 //				   AND SC.TRN_EQP_CD    = TS.TRN_EQP_CD
 //				   AND SC.STACK_COL_GP  = :V_STACK_COL_GP
-//				   AND SC.YD_CAR_USE_GP = 'L'           --L:±¸³»¿î¼Û, G:ÃâÇÏÂ÷·®
+//				   AND SC.YD_CAR_USE_GP = 'L'           --L:êµ¬ë‚´ìš´ì†¡, G:ì¶œí•˜ì°¨ëŸ‰
 //				   AND SC.DEL_YN        = 'N'
-//				   --AND TS.YD_CAR_PROG_STAT IN ('5') --Â÷·®ÁøÇà»óÅÂ 5:»óÂ÷¿Ï·á
-//				   AND TS.YD_CAR_PROG_STAT IN ('3','2') --Â÷·®ÁøÇà»óÅÂ 5:»óÂ÷¿Ï·á
+//				   --AND TS.YD_CAR_PROG_STAT IN ('5') --ì°¨ëŸ‰ì§„í–‰ìƒíƒœ 5:ìƒì°¨ì™„ë£Œ
+//				   AND TS.YD_CAR_PROG_STAT IN ('3','2') --ì°¨ëŸ‰ì§„í–‰ìƒíƒœ 5:ìƒì°¨ì™„ë£Œ
 //				   AND TS.DEL_YN        = 'N'
 //				*/	   
 //				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ007";
 
 			//} 
 		else if("YDTSJ008".equals(msgId)) {
-				trtNm = "¼ÒÀçÂ÷·®»óÂ÷¿Ï·á";
-				/* ¼ÒÀçÂ÷·®»óÂ÷¿Ï·á(YDTSJ008) - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ008 
+				trtNm = "ì†Œì¬ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ";
+				/* ì†Œì¬ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ(YDTSJ008) - com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ008 
 
-				SELECT 'YDTSJ008'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				      ,'YDTSJ008'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
-				      ,TRN_EQP_CD           --¿î¼ÛÀåºñÄÚµå
-				      ,SPOS_WLOC_CD         --¹ßÁö°³¼ÒÄÚµå
-				      ,SPOS_YD_PNT_CD       --¹ßÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				      ,ARR_WLOC_CD          --ÂøÁö°³¼ÒÄÚµå
-				      ,TRN_WRK_MTL_GP       --¿î¼ÛÀÛ¾÷Àç·á±¸ºĞ
-				      ,MTL_UGNT_GP          --Àç·á±ä±Ş±¸ºĞ
-				      ,HCR_GP               --HCR±¸ºĞ
-				      ,CARLD_CMPL_DT        --»óÂ÷¿Ï·áÀÏ½Ã
-				      ,CARLD_SH             --»óÂ÷¸Å¼ö
-				      ,SSTL_NO1             --Æ¯¼ö°­Àç·á¹øÈ£1
-				      ,STL_WT1              --Àç·áÁß·®1
-				      ,SSTL_NO2             --Æ¯¼ö°­Àç·á¹øÈ£2
-				      ,STL_WT2              --Àç·áÁß·®2
-				      ,SSTL_NO3             --Æ¯¼ö°­Àç·á¹øÈ£3
-				      ,STL_WT3              --Àç·áÁß·®3
-				      ,SSTL_NO4             --Æ¯¼ö°­Àç·á¹øÈ£4
-				      ,STL_WT4              --Àç·áÁß·®4
-				      ,SSTL_NO5             --Æ¯¼ö°­Àç·á¹øÈ£5
-				      ,STL_WT5              --Àç·áÁß·®5
-				      ,SSTL_NO6             --Æ¯¼ö°­Àç·á¹øÈ£6
-				      ,STL_WT6              --Àç·áÁß·®6
-				      ,SSTL_NO7             --Æ¯¼ö°­Àç·á¹øÈ£7
-				      ,STL_WT7              --Àç·áÁß·®7
-				      ,SSTL_NO8             --Æ¯¼ö°­Àç·á¹øÈ£8
-				      ,STL_WT8              --Àç·áÁß·®8
-				      ,SSTL_NO9             --Æ¯¼ö°­Àç·á¹øÈ£9
-				      ,STL_WT9              --Àç·áÁß·®9
-				      ,SSTL_NO10            --Æ¯¼ö°­Àç·á¹øÈ£10
-				      ,STL_WT10             --Àç·áÁß·®10
-				      ,SSTL_NO11            --Æ¯¼ö°­Àç·á¹øÈ£11
-				      ,STL_WT11             --Àç·áÁß·®11
-				      ,SSTL_NO12            --Æ¯¼ö°­Àç·á¹øÈ£12
-				      ,STL_WT12             --Àç·áÁß·®12
+				SELECT 'YDTSJ008'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				      ,'YDTSJ008'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
+				      ,TRN_EQP_CD           --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				      ,SPOS_WLOC_CD         --ë°œì§€ê°œì†Œì½”ë“œ
+				      ,SPOS_YD_PNT_CD       --ë°œì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				      ,ARR_WLOC_CD          --ì°©ì§€ê°œì†Œì½”ë“œ
+				      ,TRN_WRK_MTL_GP       --ìš´ì†¡ì‘ì—…ì¬ë£Œêµ¬ë¶„
+				      ,MTL_UGNT_GP          --ì¬ë£Œê¸´ê¸‰êµ¬ë¶„
+				      ,HCR_GP               --HCRêµ¬ë¶„
+				      ,CARLD_CMPL_DT        --ìƒì°¨ì™„ë£Œì¼ì‹œ
+				      ,CARLD_SH             --ìƒì°¨ë§¤ìˆ˜
+				      ,SSTL_NO1             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸1
+				      ,STL_WT1              --ì¬ë£Œì¤‘ëŸ‰1
+				      ,SSTL_NO2             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸2
+				      ,STL_WT2              --ì¬ë£Œì¤‘ëŸ‰2
+				      ,SSTL_NO3             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸3
+				      ,STL_WT3              --ì¬ë£Œì¤‘ëŸ‰3
+				      ,SSTL_NO4             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸4
+				      ,STL_WT4              --ì¬ë£Œì¤‘ëŸ‰4
+				      ,SSTL_NO5             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸5
+				      ,STL_WT5              --ì¬ë£Œì¤‘ëŸ‰5
+				      ,SSTL_NO6             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸6
+				      ,STL_WT6              --ì¬ë£Œì¤‘ëŸ‰6
+				      ,SSTL_NO7             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸7
+				      ,STL_WT7              --ì¬ë£Œì¤‘ëŸ‰7
+				      ,SSTL_NO8             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸8
+				      ,STL_WT8              --ì¬ë£Œì¤‘ëŸ‰8
+				      ,SSTL_NO9             --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸9
+				      ,STL_WT9              --ì¬ë£Œì¤‘ëŸ‰9
+				      ,SSTL_NO10            --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸10
+				      ,STL_WT10             --ì¬ë£Œì¤‘ëŸ‰10
+				      ,SSTL_NO11            --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸11
+				      ,STL_WT11             --ì¬ë£Œì¤‘ëŸ‰11
+				      ,SSTL_NO12            --íŠ¹ìˆ˜ê°•ì¬ë£Œë²ˆí˜¸12
+				      ,STL_WT12             --ì¬ë£Œì¤‘ëŸ‰12
 				      
 				FROM (
 
@@ -4894,7 +4894,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                      ,A.SPOS_WLOC_CD 
 				                      ,C.YD_PNT_CD AS SPOS_YD_PNT_CD
 				                      ,A.ARR_WLOC_CD 
-				                      ,DECODE( A.SPOS_WLOC_CD, 'D3Y43', 'S' , DECODE(D.STOCK_ITEM , 'CM', 'C' , 'CG', 'H' , '') ) AS TRN_WRK_MTL_GP -- D3Y43:SLAB¾ßµå > H(SLAB), CM > C(COILÁ¦Ç°), CG > H(¿­¿¬COIL)
+				                      ,DECODE( A.SPOS_WLOC_CD, 'D3Y43', 'S' , DECODE(D.STOCK_ITEM , 'CM', 'C' , 'CG', 'H' , '') ) AS TRN_WRK_MTL_GP -- D3Y43:SLABì•¼ë“œ > H(SLAB), CM > C(COILì œí’ˆ), CG > H(ì—´ì—°COIL)
 				                      ,'' AS MTL_UGNT_GP
 				                      ,B.HCR_GP 
 				                      ,TO_CHAR(A.YD_CARLD_CMPL_DT, 'YYYYMMDDHH24MISS') AS CARLD_CMPL_DT
@@ -4927,37 +4927,37 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ008";
 				
 			} else if("YDTSJ009".equals(msgId)) {
-				trtNm = "¼ÒÀçÂ÷·®ÇÏÂ÷°³½Ã";
+				trtNm = "ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ê°œì‹œ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ009 
-				--¼ÒÀçÂ÷·®ÇÏÂ÷°³½Ã Àü¹®
-				SELECT 'YDTSJ009'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,TS.TRN_EQP_CD                                             --¿î¼ÛÀåºñÄÚµå
-				      ,TS.ARR_WLOC_CD                                            --ÂøÁö°³¼ÒÄÚµå
-				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				      ,NVL(:V_WR_DT,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')) AS TRN_WRK_ST_DT --¿î¼ÛÀÛ¾÷½ÃÀÛÀÏ½Ã
+				--ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ê°œì‹œ ì „ë¬¸
+				SELECT 'YDTSJ009'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,TS.TRN_EQP_CD                                             --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				      ,TS.ARR_WLOC_CD                                            --ì°©ì§€ê°œì†Œì½”ë“œ
+				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				      ,NVL(:V_WR_DT,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')) AS TRN_WRK_ST_DT --ìš´ì†¡ì‘ì—…ì‹œì‘ì¼ì‹œ
 				  FROM TB_YM_STACKCOL SC
 				      ,TB_YM_CARSCH TS
 				 WHERE SC.YD_CAR_USE_GP = TS.YD_CAR_USE_GP
 				   AND SC.TRN_EQP_CD    = TS.TRN_EQP_CD
 				   AND SC.STACK_COL_GP = :V_STACK_COL_GP
-				   AND SC.YD_CAR_USE_GP = 'L'           --±¸³»¿î¼Û
+				   AND SC.YD_CAR_USE_GP = 'L'           --êµ¬ë‚´ìš´ì†¡
 				   AND SC.DEL_YN        = 'N'
-				   AND TS.YD_CAR_PROG_STAT IN ('B','C') --ÇÏÂ÷µµÂø,°Ë¼ö
+				   AND TS.YD_CAR_PROG_STAT IN ('B','C') --í•˜ì°¨ë„ì°©,ê²€ìˆ˜
 				   AND TS.DEL_YN        = 'N'
 				*/	   
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ009";
 
 			} else if("YDTSJ010".equals(msgId)) {
-				trtNm = "¼ÒÀçÂ÷·®ÇÏÂ÷¿Ï·á";
+				trtNm = "ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ì™„ë£Œ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ010 
-				--¼ÒÀçÂ÷·®ÇÏÂ÷¿Ï·á Àü¹®
-				SELECT 'YDTSJ010'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,TS.TRN_EQP_CD                                             --¿î¼ÛÀåºñÄÚµå
-				      ,TS.ARR_WLOC_CD                                            --ÂøÁö°³¼ÒÄÚµå
-				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				      ,TO_CHAR(TS.YD_CARUD_CMPL_DT,'YYYYMMDDHH24MISS') AS CARUD_CMPL_DT --ÇÏÂ÷¿Ï·áÀÏ½Ã
+				--ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ì™„ë£Œ ì „ë¬¸
+				SELECT 'YDTSJ010'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,TS.TRN_EQP_CD                                             --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				      ,TS.ARR_WLOC_CD                                            --ì°©ì§€ê°œì†Œì½”ë“œ
+				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				      ,TO_CHAR(TS.YD_CARUD_CMPL_DT,'YYYYMMDDHH24MISS') AS CARUD_CMPL_DT --í•˜ì°¨ì™„ë£Œì¼ì‹œ
 				  FROM TB_YM_STACKCOL SC
 				      ,TB_YD_CARSCH TS
 				 WHERE SC.STACK_COL_GP = TS.YD_CARUD_STOP_LOC
@@ -4967,15 +4967,15 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ010";
 				
 			} else if("YDTSJ010_BSLAB".equals(msgId)) {
-				trtNm = "¼ÒÀçÂ÷·®ÇÏÂ÷¿Ï·á(B¿­¿¬ SLAB¾ßµå)";
+				trtNm = "ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ì™„ë£Œ(Bì—´ì—° SLABì•¼ë“œ)";
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.TcYDTSJ010_BSLAB 
-				--B¿­¿¬ SLAB ¼ÒÀçÂ÷·®ÇÏÂ÷¿Ï·á Àü¹®
-				SELECT 'YDTSJ010'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,TS.TRN_EQP_CD                                             --¿î¼ÛÀåºñÄÚµå
-				      ,'D3Y43' AS ARR_WLOC_CD                                    --ÂøÁö°³¼ÒÄÚµå
-				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				      ,TO_CHAR(TS.YD_CARUD_CMPL_DT,'YYYYMMDDHH24MISS') AS CARUD_CMPL_DT --ÇÏÂ÷¿Ï·áÀÏ½Ã
+				--Bì—´ì—° SLAB ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ì™„ë£Œ ì „ë¬¸
+				SELECT 'YDTSJ010'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,TS.TRN_EQP_CD                                             --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				      ,'D3Y43' AS ARR_WLOC_CD                                    --ì°©ì§€ê°œì†Œì½”ë“œ
+				      ,SC.YD_PNT_CD                        AS ARR_YD_PNT_CD      --ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				      ,TO_CHAR(TS.YD_CARUD_CMPL_DT,'YYYYMMDDHH24MISS') AS CARUD_CMPL_DT --í•˜ì°¨ì™„ë£Œì¼ì‹œ
 				  FROM TB_YM_STACKCOL SC
 				      ,TB_YD_CARSCH TS
 				 WHERE SC.STACK_COL_GP = TS.YD_CARUD_STOP_LOC
@@ -4985,32 +4985,32 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 				
 			} else if("YDTSJ011".equals(msgId)) {
-				trtNm = "¼ÒÀçÂ÷·® Æ÷ÀÎÆ® Áö½Ã";
+				trtNm = "ì†Œì¬ì°¨ëŸ‰ í¬ì¸íŠ¸ ì§€ì‹œ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ011 
-				--±¸³»¿î¼Û ¼ÒÀçÂ÷·® Æ÷ÀÎÆ® Áö½Ã(YDTSJ011) 
-				SELECT  'YDTSJ011'                          AS JMS_TC_CD            --JMSTCÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTC»ı¼ºÀÏ½Ã
-				      , 'YDTSJ011'                          AS TC_CODE              --IF±¸ºĞÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
-				      , :V_TRN_EQP_CD AS TRN_EQP_CD      -- ¿î¼ÛÀåºñÄÚµå
-				      , :V_WLOC_CD    AS WLOC_CD         -- °³¼ÒÄÚµå
-				      , :V_YD_PNT_CD  AS YD_PNT_CD       -- ¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				      , :V_PNT_WO_GP  AS PNT_WO_GP       -- Æ÷ÀÎÆ®Áö½Ã±¸ºĞ
-				      , :V_PNT_WO_DT  AS PNT_WO_DT       -- Æ÷ÀÎÆ®Áö½ÃÀÏ½Ã
+				--êµ¬ë‚´ìš´ì†¡ ì†Œì¬ì°¨ëŸ‰ í¬ì¸íŠ¸ ì§€ì‹œ(YDTSJ011) 
+				SELECT  'YDTSJ011'                          AS JMS_TC_CD            --JMSTCì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT   --JMSTCìƒì„±ì¼ì‹œ
+				      , 'YDTSJ011'                          AS TC_CODE              --IFêµ¬ë¶„ì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
+				      , :V_TRN_EQP_CD AS TRN_EQP_CD      -- ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				      , :V_WLOC_CD    AS WLOC_CD         -- ê°œì†Œì½”ë“œ
+				      , :V_YD_PNT_CD  AS YD_PNT_CD       -- ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				      , :V_PNT_WO_GP  AS PNT_WO_GP       -- í¬ì¸íŠ¸ì§€ì‹œêµ¬ë¶„
+				      , :V_PNT_WO_DT  AS PNT_WO_DT       -- í¬ì¸íŠ¸ì§€ì‹œì¼ì‹œ
 				      , :V_YD_MSG_NM  AS YD_MSG_NM
 				      , :V_TRN_WRK_MTL_GP AS TRN_WRK_MTL_GP
 				   FROM DUAL
 				*/   
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDTSJ011";
 
-/* ÁøÇà°ü¸®  */			
+/* ì§„í–‰ê´€ë¦¬  */			
 			} else if("YDPTJ002".equals(msgId)) {
-				trtNm = "ÄÚÀÏ¼ÒÀçÀÌ¼Û¿Ï·á½ÇÀû";
+				trtNm = "ì½”ì¼ì†Œì¬ì´ì†¡ì™„ë£Œì‹¤ì ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ002 
-				SELECT 'YDPTJ002'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDPTJ002'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDPTJ002'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDPTJ002'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
 
 				     , A.COIL_NO                           AS STL_NO
 				     , A.ORD_NO                            AS ORD_NO
@@ -5035,12 +5035,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ002";
 				
 			} else if("YDPTJ003".equals(msgId)) {
-				trtNm = "ÀÓ°¡°øÄÚÀÏ¼ÒÀçÀÌ¼Û¿Ï·á½ÇÀû";
+				trtNm = "ì„ê°€ê³µì½”ì¼ì†Œì¬ì´ì†¡ì™„ë£Œì‹¤ì ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ003 
-				SELECT 'YDPTJ003'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDPTJ003'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDPTJ003'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDPTJ003'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
 
 				     , A.COIL_NO                           AS STL_NO
 				     , A.ORD_NO                            AS ORD_NO
@@ -5065,25 +5065,25 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ003";
 
 			} else if("YDPTJ006".equals(msgId)) {
-				trtNm = "³Ã¿¬ÄÚÀÏÀÌ¼ÛÁøÇà »óÅÂ½ÇÀû";
+				trtNm = "ëƒ‰ì—°ì½”ì¼ì´ì†¡ì§„í–‰ ìƒíƒœì‹¤ì ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ006 
-				SELECT 'YDPTJ006'                          AS JMS_TC_CD          --JMSTCÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				     , 'YDPTJ006'                          AS TC_CODE            --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
+				SELECT 'YDPTJ006'                          AS JMS_TC_CD          --JMSTCì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				     , 'YDPTJ006'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
 				     , :V_STL_NO                           AS STL_NO
-				     , '6'                                 AS MATL_FTMV_STAT_GP   --Àç·áÀÌ¼Û»óÅÂ
+				     , '6'                                 AS MATL_FTMV_STAT_GP   --ì¬ë£Œì´ì†¡ìƒíƒœ
 				  FROM DUAL			
 				*/
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ006";
 
 			} else if("YDPTJ007".equals(msgId)) {
-				trtNm = "³Ã¿¬ÄÚÀÏÀÌ¼ÛÁøÇà »óÅÂ½ÇÀû";
+				trtNm = "ëƒ‰ì—°ì½”ì¼ì´ì†¡ì§„í–‰ ìƒíƒœì‹¤ì ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ007
-				SELECT 'YDPTJ007'                          AS JMS_TC_CD          --JMSTCÄÚµå 
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã 
-				     , 'YDPTJ007'                          AS TC_CODE            --IF±¸ºĞÄÚµå 
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã 
+				SELECT 'YDPTJ007'                          AS JMS_TC_CD          --JMSTCì½”ë“œ 
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ 
+				     , 'YDPTJ007'                          AS TC_CODE            --IFêµ¬ë¶„ì½”ë“œ 
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ 
 				     , :V_STL_NO                           AS STL_NO 
 				     , :V_SPOS_WLOC_CD                     AS SPOS_WLOC_CD 
 				     , :V_ARR_WLOC_CD                      AS ARR_WLOC_CD 
@@ -5095,12 +5095,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				 
 				*/
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDPTJ007";
-/* Á¶¾÷  */ 
+/* ì¡°ì—…  */ 
 			} else if("YMPOJ161".equals(msgId)) {
-				trtNm = "Á¶¾÷ ¼Û½Å:ÄÚÀÏº¸±Ş ¹× º¸±Ş Ãë¼Ò Ã³¸®";
+				trtNm = "ì¡°ì—… ì†¡ì‹ :ì½”ì¼ë³´ê¸‰ ë° ë³´ê¸‰ ì·¨ì†Œ ì²˜ë¦¬";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMPO161 
-				SELECT 'YMPOJ161'                           AS JMS_TC_CD          --JMSTCÄÚµå  
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã  
+				SELECT 'YMPOJ161'                           AS JMS_TC_CD          --JMSTCì½”ë“œ  
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ  
 				     , 'YMPOJ161'                           AS tcCode
 				     , substr(TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'),1,8) AS tcDate
 				     , substr(TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'),9,6) AS tcTime
@@ -5111,13 +5111,13 @@ public class YmCommDAO extends DBAssistantDAO {
 				     , TO_CHAR(SYSDATE,'YYYYMMDD')         AS downDate  
 				     , TO_CHAR(SYSDATE,'HH24MISS')         AS downTime  
 				     , SUBSTR(A.TRK_INFO,2,1)              AS positionNo  
-				  FROM (SELECT CASE WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,2,6) IN ('DKE01U','EKE01U') THEN 'N1'  --2SPM º¸±ŞÁ¸ 
-				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE01U'          ) THEN 'S1'  --1SPM º¸±ŞÁ¸ 
+				  FROM (SELECT CASE WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,2,6) IN ('DKE01U','EKE01U') THEN 'N1'  --2SPM ë³´ê¸‰ì¡´ 
+				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE01U'          ) THEN 'S1'  --1SPM ë³´ê¸‰ì¡´ 
 				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,6) IN ('DKE03U','EKE03U') THEN 'N5'  --2SPM TAKE IN 
 				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE03U'          ) THEN 'S5'  --1SPM TAKE IN 
-				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE01U'          ) THEN 'H1'  --HFL  º¸±ŞÁ¸ 
+				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE01U'          ) THEN 'H1'  --HFL  ë³´ê¸‰ì¡´ 
 				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE03U'          ) THEN 'H5'  --HFL  TAKE IN 
-				                    WHEN SUBSTR(LOC,3,2) IN ('FE')                                                  THEN 'F1'  --2SPM³» HFLº¸±Ş 
+				                    WHEN SUBSTR(LOC,3,2) IN ('FE')                                                  THEN 'F1'  --2SPMë‚´ HFLë³´ê¸‰ 
 				                    ELSE '' END AS TRK_INFO 
 				            , STOCK_ID 
 				         FROM (SELECT :V_YD_DN_WR_LOC  AS LOC  
@@ -5130,8 +5130,8 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMPOJ161";
 			} else if("YMPOJ161B".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMPOJ161BackUp 
-				SELECT 'YMPOJ161'                          AS JMS_TC_CD          --JMSTCÄÚµå  
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã  
+				SELECT 'YMPOJ161'                          AS JMS_TC_CD          --JMSTCì½”ë“œ  
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ  
 				     , 'YMPOJ161'                          AS tcCode
 				     , substr(TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'),1,8) AS tcDate
 				     , substr(TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'),9,6) AS tcTime
@@ -5142,13 +5142,13 @@ public class YmCommDAO extends DBAssistantDAO {
 				     , TO_CHAR(SYSDATE,'YYYYMMDD')         AS downDate  
 				     , TO_CHAR(SYSDATE,'HH24MISS')         AS downTime  
 				     , SUBSTR(A.TRK_INFO,2,1)              AS positionNo  
-				  FROM (SELECT CASE WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,2,6) IN ('DKE01U','EKE01U') THEN 'N1'  --2SPM º¸±ŞÁ¸ 
-				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE01U'          ) THEN 'S1'  --1SPM º¸±ŞÁ¸ 
+				  FROM (SELECT CASE WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,2,6) IN ('DKE01U','EKE01U') THEN 'N1'  --2SPM ë³´ê¸‰ì¡´ 
+				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE01U'          ) THEN 'S1'  --1SPM ë³´ê¸‰ì¡´ 
 				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,6) IN ('DKE03U','EKE03U') THEN 'N5'  --2SPM TAKE IN 
 				                    WHEN SUBSTR(LOC,3,2) IN ('KE') AND SUBSTR(YD_SCH_CD,3,5) IN ('KE03U'          ) THEN 'S5'  --1SPM TAKE IN 
-				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE01U'          ) THEN 'H1'  --HFL  º¸±ŞÁ¸ 
+				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE01U'          ) THEN 'H1'  --HFL  ë³´ê¸‰ì¡´ 
 				                    WHEN SUBSTR(LOC,3,2) IN ('FE') AND SUBSTR(YD_SCH_CD,3,5) IN ('FE03U'          ) THEN 'H5'  --HFL  TAKE IN 
-				                    WHEN SUBSTR(LOC,3,2) IN ('FE')                                                  THEN 'F1'  --2SPM³» HFLº¸±Ş 
+				                    WHEN SUBSTR(LOC,3,2) IN ('FE')                                                  THEN 'F1'  --2SPMë‚´ HFLë³´ê¸‰ 
 				                    ELSE '' END AS TRK_INFO 
 				            , STOCK_ID 
 				         FROM (SELECT :V_YD_DN_WR_LOC  AS LOC  
@@ -5167,14 +5167,14 @@ public class YmCommDAO extends DBAssistantDAO {
 				       ) A               
 				 */
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYMPOJ161BackUp";
-/* Ç°Áú  */ 
+/* í’ˆì§ˆ  */ 
 			} else if("YDQMJ002".equals(msgId)) {
-				trtNm = "Ç°Áú ¼Û½Å:¿­¿¬Á¤Á¤ÀÔÃøº¸±Ş½ÇÀû";
+				trtNm = "í’ˆì§ˆ ì†¡ì‹ :ì—´ì—°ì •ì •ì…ì¸¡ë³´ê¸‰ì‹¤ì ";
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDQMJ002 
-				SELECT 'YDQMJ002'                          AS JMS_TC_CD          --JMSTCÄÚµå  
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã  
-				     , A.PTOP_PLNT_GP                      AS PTOP_PLNT_GP            --IF±¸ºĞÄÚµå  
-				     , A.STL_APPEAR_GP                     AS STL_APPEAR_GP     --TC»ı¼ºÀÏ½Ã  
+				SELECT 'YDQMJ002'                          AS JMS_TC_CD          --JMSTCì½”ë“œ  
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ  
+				     , A.PTOP_PLNT_GP                      AS PTOP_PLNT_GP            --IFêµ¬ë¶„ì½”ë“œ  
+				     , A.STL_APPEAR_GP                     AS STL_APPEAR_GP     --TCìƒì„±ì¼ì‹œ  
 				     , A.COIL_NO                           AS STL_NO  
 				  FROM (SELECT B.PTOP_PLNT_GP
 				             , B.STL_APPEAR_GP
@@ -5188,10 +5188,10 @@ public class YmCommDAO extends DBAssistantDAO {
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDQMJ002";
 			} else if ("YDQMJ002B".equals(msgId)) {
 				/*
-				SELECT 'YDQMJ002'                          AS JMS_TC_CD          --JMSTCÄÚµå  
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã  
-				     , A.PTOP_PLNT_GP                      AS PTOP_PLNT_GP            --IF±¸ºĞÄÚµå  
-				     , A.STL_APPEAR_GP                     AS STL_APPEAR_GP     --TC»ı¼ºÀÏ½Ã  
+				SELECT 'YDQMJ002'                          AS JMS_TC_CD          --JMSTCì½”ë“œ  
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ  
+				     , A.PTOP_PLNT_GP                      AS PTOP_PLNT_GP            --IFêµ¬ë¶„ì½”ë“œ  
+				     , A.STL_APPEAR_GP                     AS STL_APPEAR_GP     --TCìƒì„±ì¼ì‹œ  
 				     , A.COIL_NO                           AS STL_NO  
 				  FROM (SELECT B.PTOP_PLNT_GP
 				             , B.STL_APPEAR_GP
@@ -5212,28 +5212,28 @@ public class YmCommDAO extends DBAssistantDAO {
 				
 			} else if ("YDCTJ032".equals(msgId)) {
 				
-				trtNm = "»ı»êÅëÁ¦ ÀåÀÔÁøÇà½ÇÀû";
-				/* »ı»êÅëÁ¦ ÀåÀÔÁøÇà½ÇÀû - com.inisteel.cim.ym.bslab.dao.BSlabDAO.TcYDCTJ032 
+				trtNm = "ìƒì‚°í†µì œ ì¥ì…ì§„í–‰ì‹¤ì ";
+				/* ìƒì‚°í†µì œ ì¥ì…ì§„í–‰ì‹¤ì  - com.inisteel.cim.ym.bslab.dao.BSlabDAO.TcYDCTJ032 
 
-				SELECT DD.JMS_TC_CD                                                   --JMSTCÄÚµå
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS JMS_TC_CREATE_DDTT --JMSTC»ı¼ºÀÏ½Ã
-				      ,'HB'                                     AS PTOP_PLNT_GP       --Á¶¾÷°øÀå±¸ºĞ
-				      ,'C'                                      AS STL_APPEAR_GP      --Àç·á¿ÜÇü±¸ºĞ(Bloom)
-				      ,:V_CHG_SUP_PROG_STAT                     AS CHG_SUP_PROG_STAT  --ÀåÀÔº¸±ŞÁøÇà»óÅÂ
-				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS WR_OCCR_DT         --½ÇÀû¹ß»ıÀÏ½Ã
-				      ,TO_CHAR(COUNT(*))                        AS YD_EQP_WR_CNT      --¾ßµå¼³ºñÀÛ¾÷¸Å¼ö
-				      ,MIN(DECODE(STACK_LAYER_GP, 1,STOCK_ID))  AS STL_NO1            --Àç·á¹øÈ£1
-				      ,MIN(DECODE(STACK_LAYER_GP, 2,STOCK_ID))  AS STL_NO2            --Àç·á¹øÈ£2
-				      ,MIN(DECODE(STACK_LAYER_GP, 3,STOCK_ID))  AS STL_NO3            --Àç·á¹øÈ£3
-				      ,MIN(DECODE(STACK_LAYER_GP, 4,STOCK_ID))  AS STL_NO4            --Àç·á¹øÈ£4
-				      ,MIN(DECODE(STACK_LAYER_GP, 5,STOCK_ID))  AS STL_NO5            --Àç·á¹øÈ£5
-				      ,MIN(DECODE(STACK_LAYER_GP, 6,STOCK_ID))  AS STL_NO6            --Àç·á¹øÈ£6
-				      ,MIN(DECODE(STACK_LAYER_GP, 7,STOCK_ID))  AS STL_NO7            --Àç·á¹øÈ£7
-				      ,MIN(DECODE(STACK_LAYER_GP, 8,STOCK_ID))  AS STL_NO8            --Àç·á¹øÈ£8
-				      ,MIN(DECODE(STACK_LAYER_GP, 9,STOCK_ID))  AS STL_NO9            --Àç·á¹øÈ£9
-				      ,MIN(DECODE(STACK_LAYER_GP,10,STOCK_ID))  AS STL_NO10           --Àç·á¹øÈ£10
-				      ,MIN(DECODE(STACK_LAYER_GP,11,STOCK_ID))  AS STL_NO11           --Àç·á¹øÈ£11
-				      ,MIN(DECODE(STACK_LAYER_GP,12,STOCK_ID))  AS STL_NO12           --Àç·á¹øÈ£12
+				SELECT DD.JMS_TC_CD                                                   --JMSTCì½”ë“œ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS JMS_TC_CREATE_DDTT --JMSTCìƒì„±ì¼ì‹œ
+				      ,'HB'                                     AS PTOP_PLNT_GP       --ì¡°ì—…ê³µì¥êµ¬ë¶„
+				      ,'C'                                      AS STL_APPEAR_GP      --ì¬ë£Œì™¸í˜•êµ¬ë¶„(Bloom)
+				      ,:V_CHG_SUP_PROG_STAT                     AS CHG_SUP_PROG_STAT  --ì¥ì…ë³´ê¸‰ì§„í–‰ìƒíƒœ
+				      ,TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS WR_OCCR_DT         --ì‹¤ì ë°œìƒì¼ì‹œ
+				      ,TO_CHAR(COUNT(*))                        AS YD_EQP_WR_CNT      --ì•¼ë“œì„¤ë¹„ì‘ì—…ë§¤ìˆ˜
+				      ,MIN(DECODE(STACK_LAYER_GP, 1,STOCK_ID))  AS STL_NO1            --ì¬ë£Œë²ˆí˜¸1
+				      ,MIN(DECODE(STACK_LAYER_GP, 2,STOCK_ID))  AS STL_NO2            --ì¬ë£Œë²ˆí˜¸2
+				      ,MIN(DECODE(STACK_LAYER_GP, 3,STOCK_ID))  AS STL_NO3            --ì¬ë£Œë²ˆí˜¸3
+				      ,MIN(DECODE(STACK_LAYER_GP, 4,STOCK_ID))  AS STL_NO4            --ì¬ë£Œë²ˆí˜¸4
+				      ,MIN(DECODE(STACK_LAYER_GP, 5,STOCK_ID))  AS STL_NO5            --ì¬ë£Œë²ˆí˜¸5
+				      ,MIN(DECODE(STACK_LAYER_GP, 6,STOCK_ID))  AS STL_NO6            --ì¬ë£Œë²ˆí˜¸6
+				      ,MIN(DECODE(STACK_LAYER_GP, 7,STOCK_ID))  AS STL_NO7            --ì¬ë£Œë²ˆí˜¸7
+				      ,MIN(DECODE(STACK_LAYER_GP, 8,STOCK_ID))  AS STL_NO8            --ì¬ë£Œë²ˆí˜¸8
+				      ,MIN(DECODE(STACK_LAYER_GP, 9,STOCK_ID))  AS STL_NO9            --ì¬ë£Œë²ˆí˜¸9
+				      ,MIN(DECODE(STACK_LAYER_GP,10,STOCK_ID))  AS STL_NO10           --ì¬ë£Œë²ˆí˜¸10
+				      ,MIN(DECODE(STACK_LAYER_GP,11,STOCK_ID))  AS STL_NO11           --ì¬ë£Œë²ˆí˜¸11
+				      ,MIN(DECODE(STACK_LAYER_GP,12,STOCK_ID))  AS STL_NO12           --ì¬ë£Œë²ˆí˜¸12
 
 				FROM  (
 
@@ -5248,11 +5248,11 @@ public class YmCommDAO extends DBAssistantDAO {
 				      ) DD */
 				jspeed_query_id = "com.inisteel.cim.ym.bslab.dao.BSlabDAO.TcYDCTJ032";
 			} else if ("M10YDLMJ1075".equals(msgId)) {
-				//*¹°·ùÁøÇà	 *//
+				//*ë¬¼ë¥˜ì§„í–‰	 *//
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1075_PIDEV 
 				SELECT 
-				       'M10YDLMJ1075'                      AS MQ_TC_CD  --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				       'M10YDLMJ1075'                      AS MQ_TC_CD  --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , TRANS_ORD_DATE                      AS TRN_REQ_DATE
 				     , TRANS_ORD_SEQNO                     AS TRN_REQ_SEQ     
 				     , CAR_NO                              AS CAR_NO
@@ -5273,12 +5273,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				 WHERE 
 				 	   YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÀÓ°¡°øÀÌ¼Û»óÂ÷°³½Ã";
+				trtNm = "ì„ê°€ê³µì´ì†¡ìƒì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1075_PIDEV";
 			} else if ("M10YDLMJ1095".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1095A_PIDEV 
-				SELECT 'M10YDLMJ1095'                        AS MQ_TC_CD              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') 	 AS MQ_TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				SELECT 'M10YDLMJ1095'                        AS MQ_TC_CD              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') 	 AS MQ_TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , TRANS_ORD_DATE             			 AS TRN_REQ_DATE
 				     , TRANS_ORD_SEQNO                     	 AS TRN_REQ_SEQ
 				     , CAR_NO                              	 AS CAR_NO
@@ -5295,13 +5295,13 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÀÓ°¡°øÀÌ¼Û»óÂ÷¿Ï·á°³½Ã";
+				trtNm = "ì„ê°€ê³µì´ì†¡ìƒì°¨ì™„ë£Œê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1095A_PIDEV";
 			} else if ("M10YDLMJ1115".equals(msgId)) {
 				 /* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1115_PIDEV  
 				SELECT 
-				       'M10YDLMJ1115'                      AS MQ_TC_CD          --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				       'M10YDLMJ1115'                      AS MQ_TC_CD          --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , TRANS_ORD_DATE                      AS TRN_REQ_DATE
 				     , TRANS_ORD_SEQNO                     AS TRN_REQ_SEQ     
 				     , CAR_NO                              AS CAR_NO
@@ -5322,12 +5322,12 @@ public class YmCommDAO extends DBAssistantDAO {
 				 WHERE 
 				 			 YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÀÓ°¡°øÀÌ¼ÛÇÏÂ÷°³½Ã";
+				trtNm = "ì„ê°€ê³µì´ì†¡í•˜ì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1115_PIDEV";
 			} else if ("M10YDLMJ1011".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcYDDMR001 
 				 */       				
-				trtNm = "ÀÔ°í½ÇÀû";
+				trtNm = "ì…ê³ ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1011_PIDEV";
 			
 			} else if ("M10YDLMJ1031".equals(msgId)) {
@@ -5339,18 +5339,18 @@ public class YmCommDAO extends DBAssistantDAO {
 				      FROM DUAL
 				 )
 				 SELECT 
-				        P.JMS_TC_CD                                                                           -- JMSTCÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT                             -- JMSTC»ı¼ºÀÏ½Ã
-				      , P.JMS_TC_CD AS MQ_TC_CD                                                               -- IF±¸ºĞÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT                              -- Àü¼ÛÀÏ½Ã
-				      , B.YD_GP                                                                               -- ¾ßµå±¸ºĞ
-				      , 'H' AS DIST_GOODS_GP                                                                  -- ÃâÇÏÁ¦Ç°±¸ºĞ
-				      , '' AS YARD_GP                                                                         -- ÃâÇÏÃ¢°í±¸ºĞ
-				      , A.STOCK_ID                            AS GOODS_NO                                       -- Á¦Ç° ¹øÈ£
-				      , B.YD_STR_LOC                        AS STORE_LOC_CD_FROM                              -- FROM ÀúÀåÀ§Ä¡
-				      , C.STACK_COL_GP||STACK_BED_GP||STACK_LAYER_GP     AS STORE_LOC_CD_TO                -- ÀúÀåÀ§Ä¡ÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDD')         AS MOVENSTACK_DATE                                -- ÀÌÀû ÀÏÀÚ
-				      , TO_CHAR(SYSDATE,'HH24MISS')         AS MOVENSTACK_TIME                                -- ÀÌÀû ½Ã°¢
+				        P.JMS_TC_CD                                                                           -- JMSTCì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS JMS_TC_CREATE_DDTT                             -- JMSTCìƒì„±ì¼ì‹œ
+				      , P.JMS_TC_CD AS MQ_TC_CD                                                               -- IFêµ¬ë¶„ì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT                              -- ì „ì†¡ì¼ì‹œ
+				      , B.YD_GP                                                                               -- ì•¼ë“œêµ¬ë¶„
+				      , 'H' AS DIST_GOODS_GP                                                                  -- ì¶œí•˜ì œí’ˆêµ¬ë¶„
+				      , '' AS YARD_GP                                                                         -- ì¶œí•˜ì°½ê³ êµ¬ë¶„
+				      , A.STOCK_ID                            AS GOODS_NO                                       -- ì œí’ˆ ë²ˆí˜¸
+				      , B.YD_STR_LOC                        AS STORE_LOC_CD_FROM                              -- FROM ì €ì¥ìœ„ì¹˜
+				      , C.STACK_COL_GP||STACK_BED_GP||STACK_LAYER_GP     AS STORE_LOC_CD_TO                -- ì €ì¥ìœ„ì¹˜ì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDD')         AS MOVENSTACK_DATE                                -- ì´ì  ì¼ì
+				      , TO_CHAR(SYSDATE,'HH24MISS')         AS MOVENSTACK_TIME                                -- ì´ì  ì‹œê°
 				   FROM USRYMA.TB_YM_STOCK A
 				      , USRPTA.TB_PT_COILCOMM B
 				      , USRYMA.TB_YM_STACKLAYER C
@@ -5358,56 +5358,56 @@ public class YmCommDAO extends DBAssistantDAO {
 				  WHERE A.STOCK_ID  = B.COIL_NO
 				    AND A.STOCK_ID  = P.STOCK_ID    
 				    AND A.STOCK_ID  = C.STOCK_ID 
-				    AND C.STACK_LAYER_STAT IN('C','U') --ÀûÄ¡Áß, ±Ç»ó´ë±â
+				    AND C.STACK_LAYER_STAT IN('C','U') --ì ì¹˜ì¤‘, ê¶ŒìƒëŒ€ê¸°
 				*/
-					trtNm = "ÄÚÀÏÁ¦Ç°ÀÌÀûÀÛ¾÷½ÇÀû";
+					trtNm = "ì½”ì¼ì œí’ˆì´ì ì‘ì—…ì‹¤ì ";
 					jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1031_PIDEV";				
 			} else if ("M10YDLMJ1081A".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1081A_PIDEV 
-				SELECT 'M10YDLMJ1081'                      AS MQ_TC_CD           -- IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT  -- TC»ı¼ºÀÏ½Ã
-				     , TS.TRANS_ORD_DATE                  AS TRN_REQ_DATE -- ¿î¼ÛÁö½ÃÀÏÀÚ
-				     , TS.TRANS_ORD_SEQNO                 AS TRN_REQ_SEQ -- ¿î¼ÛÁö½Ã¼ø¹ø
-				     , SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              -- ¾ßµå±¸ºĞ
-				--     , TS.CARD_NO                                                -- Ä«µå¹øÈ£   
-				     , TS.CAR_NO                                                 -- Â÷·®¹øÈ£
-				     , 'H'                                 AS DIST_GOODS_GP      -- ÃâÇÏÁ¦Ç°±¸ºĞ
-				     , 'N'                                 AS SCH_YN             -- ½ºÄÉÁÙ¿©ºÎ
-				     , :V_GOODS_EA                         AS GOODS_EA           -- Á¦Ç°°³¼ö¿Ï·á½Ã(*)
-				     , :V_STOCK_ID                         AS GOODS_NO           -- Á¦Ç°¹øÈ£
+				SELECT 'M10YDLMJ1081'                      AS MQ_TC_CD           -- IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT  -- TCìƒì„±ì¼ì‹œ
+				     , TS.TRANS_ORD_DATE                  AS TRN_REQ_DATE -- ìš´ì†¡ì§€ì‹œì¼ì
+				     , TS.TRANS_ORD_SEQNO                 AS TRN_REQ_SEQ -- ìš´ì†¡ì§€ì‹œìˆœë²ˆ
+				     , SUBSTR(TS.YD_CARLD_STOP_LOC,1,1)    AS YD_GP              -- ì•¼ë“œêµ¬ë¶„
+				--     , TS.CARD_NO                                                -- ì¹´ë“œë²ˆí˜¸   
+				     , TS.CAR_NO                                                 -- ì°¨ëŸ‰ë²ˆí˜¸
+				     , 'H'                                 AS DIST_GOODS_GP      -- ì¶œí•˜ì œí’ˆêµ¬ë¶„
+				     , 'N'                                 AS SCH_YN             -- ìŠ¤ì¼€ì¤„ì—¬ë¶€
+				     , :V_GOODS_EA                         AS GOODS_EA           -- ì œí’ˆê°œìˆ˜ì™„ë£Œì‹œ(*)
+				     , :V_STOCK_ID                         AS GOODS_NO           -- ì œí’ˆë²ˆí˜¸
 				  FROM USRYDA.TB_YD_CARSCH TS
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/ 
-				trtNm = "ÄÚÀÏÀÏÇ°ÃâÇÏ»óÂ÷½ÇÀû";
+				trtNm = "ì½”ì¼ì¼í’ˆì¶œí•˜ìƒì°¨ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1081A_PIDEV";
 				
 			} else if ("M10YDLMJ1091A".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1091A_PIDEV 
-				--ÃâÇÏ»óÂ÷¿Ï·á Àü¹®Á¶È¸ 
-				SELECT 'M10YDLMJ1091'                           AS MQ_TC_CD            --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS MQ_TC_CREATE_DDTT     --TC»ı¼ºÀÏ½Ã
-				     , MIN(TS.TRANS_ORD_DATE )                  AS TRN_REQ_DATE     --¿î¼ÛÁö½ÃÀÏÀÚ
-				     , MIN(TS.TRANS_ORD_SEQNO)                  AS TRN_REQ_SEQ    --¿î¼ÛÁö½Ã¼ø¹ø     
+				--ì¶œí•˜ìƒì°¨ì™„ë£Œ ì „ë¬¸ì¡°íšŒ 
+				SELECT 'M10YDLMJ1091'                           AS MQ_TC_CD            --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS MQ_TC_CREATE_DDTT     --TCìƒì„±ì¼ì‹œ
+				     , MIN(TS.TRANS_ORD_DATE )                  AS TRN_REQ_DATE     --ìš´ì†¡ì§€ì‹œì¼ì
+				     , MIN(TS.TRANS_ORD_SEQNO)                  AS TRN_REQ_SEQ    --ìš´ì†¡ì§€ì‹œìˆœë²ˆ     
 				     , 'H'                                      AS DIST_GOODS_GP
 				     , 'N'                                      AS SCH_YN
 				--     , TS.CARD_NO 
-				     , TS.CAR_NO                                                     --Â÷·®¹øÈ£
+				     , TS.CAR_NO                                                     --ì°¨ëŸ‰ë²ˆí˜¸
 				     , MIN(SUBSTR(TS.YD_CARLD_STOP_LOC,1,1))   AS YD_GP  
-				     , TO_CHAR(TS.YD_CARLD_CMPL_DT,'YYYYMMDD') AS CARLD_CMPL_DATE   --»óÂ÷¿Ï·áÀÏÀÚ
-				     , TO_CHAR(TS.YD_CARLD_CMPL_DT,'HH24MISS') AS CARLD_CMPL_TIME   --»óÂ÷¿Ï·á½Ã°¢
+				     , TO_CHAR(TS.YD_CARLD_CMPL_DT,'YYYYMMDD') AS CARLD_CMPL_DATE   --ìƒì°¨ì™„ë£Œì¼ì
+				     , TO_CHAR(TS.YD_CARLD_CMPL_DT,'HH24MISS') AS CARLD_CMPL_TIME   --ìƒì°¨ì™„ë£Œì‹œê°
 				  FROM TB_YD_CARSCH     TS
 				 WHERE TS.YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				 GROUP BY TS.CARD_NO
 				        , TS.CAR_NO
 				        , TS.YD_CARLD_CMPL_DT
 				 */       				
-				trtNm = "ÃâÇÏÂ÷·®»óÂ÷¿Ï·á";
+				trtNm = "ì¶œí•˜ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1091A_PIDEV";
 				
 			} else if ("M10YDLMJ1111A".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1111A_PIDEV 
-				SELECT  'M10YDLMJ1111'                           AS MQ_TC_CD             --IF±¸ºĞÄÚµå
-				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS MQ_TC_CREATE_DDTT    --TC»ı¼ºÀÏ½Ã
+				SELECT  'M10YDLMJ1111'                           AS MQ_TC_CD             --IFêµ¬ë¶„ì½”ë“œ
+				      , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')      AS MQ_TC_CREATE_DDTT    --TCìƒì„±ì¼ì‹œ
 				--      , TM.CARD_NO
 				      , TM.CAR_NO 
 				      , TM.YD_GP
@@ -5468,7 +5468,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                     , TB_YD_PREPMTL C
 				                 WHERE A.YD_CARLD_WRK_BOOK_ID = B.YD_WBOOK_ID
 				                   AND B.YD_PREP_SCH_ID=C.YD_PREP_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --»óÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --ìƒì°¨
 				                 UNION ALL
 				                SELECT A.YD_CAR_SCH_ID  AS YD_CAR_SCH_ID
 				                     , A.TRN_EQP_CD AS TRN_EQP_CD
@@ -5482,7 +5482,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                  FROM TB_YD_CARSCH A
 				                     , TB_YD_CARFTMVMTL C
 				                 WHERE A.YD_CAR_SCH_ID=C.YD_CAR_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --ÇÏÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --í•˜ì°¨
 				                   AND A.DEL_YN='N'
 				               ) TA
 				               , USRYMA.TB_YM_STOCK TX           
@@ -5497,14 +5497,14 @@ public class YmCommDAO extends DBAssistantDAO {
 				             ) TM
 				GROUP BY   UPCARUNLOAD_GP,CAR_NO ,YD_GP,CARLOAD_START_DATE, CARLOAD_START_TIME  
 				*/
-				trtNm = "ÄÚÀÏÁ¦Ç°°í°£ÀÌ¼Û»óÇÏÂ÷°³½Ã";
+				trtNm = "ì½”ì¼ì œí’ˆê³ ê°„ì´ì†¡ìƒí•˜ì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1111A_PIDEV";
 
 			} else if ("M10YDLMJ1125".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1125_PIDEV 
 				SELECT 
-				       'M10YDLMJ1125'                         	AS MQ_TC_CD              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') 		AS MQ_TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã
+				       'M10YDLMJ1125'                         	AS MQ_TC_CD              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') 		AS MQ_TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ
 				     , TRANS_ORD_DATE                      		AS TRANS_REQ_DATE
 				     , TRANS_ORD_SEQNO                     		AS TRANS_REQ_SEQNO     
 				     , CAR_NO                              		AS CAR_NO
@@ -5521,24 +5521,24 @@ public class YmCommDAO extends DBAssistantDAO {
 				  	   TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				 */
-				trtNm = "ÀÓ°¡°øÀÌ¼Û»óÂ÷¿Ï·á";
+				trtNm = "ì„ê°€ê³µì´ì†¡ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1125_PIDEV";
 				
 			} else if("M10YDLMJ1051".equals(msgId)) {
-					trtNm = "»óÂ÷¿Ï·á(¾ßµåÇÚµå¸µ)";
+					trtNm = "ìƒì°¨ì™„ë£Œ(ì•¼ë“œí•¸ë“œë§)";
 					
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1051_PIDEV 
-					SELECT 'M10YDLMJ1051'                          AS MQ_TC_CD            -- IF±¸ºĞÄÚµå
-					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       -- TC»ı¼ºÀÏ½Ã
-					     , :V_YD_GP                            AS YD_GP                 -- ¾ßµå±¸ºĞ     
-					     , 'H'                                 AS DIST_GOODS_GP         -- ÃâÇÏÁ¦Ç°±¸ºĞ
-					     , :V_CAR_NO                           AS CAR_NO                -- Â÷·®¹øÈ£     
-					     , :V_TRANS_ORD_DT                     AS TRN_REQ_DATE          -- ¿î¼ÛÁö½ÃÀÏÀÚ
-					     , :V_TRANS_ORD_SEQNO                  AS TRN_REQ_SEQ           -- ¿î¼ÛÁö½Ã½Ã°¢
-					     , :V_CMBN_CARLD_YN                    AS CMBN_CARLD_YN         -- Á¶ÇÕ»óÂ÷À¯¹«
-					     , :V_CARLD_PNT_CD                     AS CARLD_PNT_CD          -- »óÂ÷Æ÷ÀÎÆ®ÄÚµå
-					     , :V_HANDLING_CNT                      AS HANDLING_CNT         -- ÇÚµé¸µÈ½¼ö
-					     , :V_YD_STK_BED_WHIO_STAT             AS YD_STK_BED_WHIO_STAT  -- ¾ßµåÀûÄ¡BEDÀÔÃâ°í»óÅÂ
+					SELECT 'M10YDLMJ1051'                          AS MQ_TC_CD            -- IFêµ¬ë¶„ì½”ë“œ
+					     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT       -- TCìƒì„±ì¼ì‹œ
+					     , :V_YD_GP                            AS YD_GP                 -- ì•¼ë“œêµ¬ë¶„     
+					     , 'H'                                 AS DIST_GOODS_GP         -- ì¶œí•˜ì œí’ˆêµ¬ë¶„
+					     , :V_CAR_NO                           AS CAR_NO                -- ì°¨ëŸ‰ë²ˆí˜¸     
+					     , :V_TRANS_ORD_DT                     AS TRN_REQ_DATE          -- ìš´ì†¡ì§€ì‹œì¼ì
+					     , :V_TRANS_ORD_SEQNO                  AS TRN_REQ_SEQ           -- ìš´ì†¡ì§€ì‹œì‹œê°
+					     , :V_CMBN_CARLD_YN                    AS CMBN_CARLD_YN         -- ì¡°í•©ìƒì°¨ìœ ë¬´
+					     , :V_CARLD_PNT_CD                     AS CARLD_PNT_CD          -- ìƒì°¨í¬ì¸íŠ¸ì½”ë“œ
+					     , :V_HANDLING_CNT                      AS HANDLING_CNT         -- í•¸ë“¤ë§íšŸìˆ˜
+					     , :V_YD_STK_BED_WHIO_STAT             AS YD_STK_BED_WHIO_STAT  -- ì•¼ë“œì ì¹˜BEDì…ì¶œê³ ìƒíƒœ
 					  FROM DUAL 
 					*/
 					
@@ -5546,9 +5546,9 @@ public class YmCommDAO extends DBAssistantDAO {
 					
 			} else if("M10YDLMJ1071B".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1071B_PIDEV
-				-- ÄÚÀÏÀÌ¼Û »óÂ÷°³½Ã
-				SELECT 'M10YDLMJ1071'                       AS MQ_TC_CD              --IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS MQ_TC_CREATE_DDTT       --TC»ı¼ºÀÏ½Ã		
+				-- ì½”ì¼ì´ì†¡ ìƒì°¨ê°œì‹œ
+				SELECT 'M10YDLMJ1071'                       AS MQ_TC_CD              --IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')  AS MQ_TC_CREATE_DDTT       --TCìƒì„±ì¼ì‹œ		
 				     , TRANS_ORD_DATE                       AS TRN_REQ_DATE
 				     , TRANS_ORD_SEQNO                      AS TRN_REQ_SEQ   
 				     , CAR_NO		                        AS CAR_NO
@@ -5590,21 +5590,21 @@ public class YmCommDAO extends DBAssistantDAO {
 				        )  A 
 
 				 */
-				trtNm = "ÄÚÀÏÀÌ¼Û »óÂ÷°³½Ã";
+				trtNm = "ì½”ì¼ì´ì†¡ ìƒì°¨ê°œì‹œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1071B_PIDEV";
 
 			} else if("M10YDLMJ1081B".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1081B_PIDEV
-				SELECT 'M10YDLMJ1081'                          AS MQ_TC_CD             -- IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS MQ_TC_CREATE_DDTT    -- TC»ı¼ºÀÏ½Ã	
-				     , TB.TRANS_ORD_DATE2                      AS TRN_REQ_DATE         -- ¿î¼ÛÀÇ·ÚÀÏÀÚ
-				     , TB.TRANS_ORD_SEQNO2                     AS TRN_REQ_SEQ          -- ¿î¼ÛÀÇ·Ú¼ø¹ø
-				--     , TA.CARD_NO		                       AS CARD_NO              -- Ä«µå¹øÈ£
-				     , TA.CAR_NO		                       AS CAR_NO               -- Â÷·®¹øÈ£
-				     , substr(TA.YD_CARLD_STOP_LOC,1,1)        AS YD_GP                -- ¾ßµå±¸ºĞ
-				     , 'H'                                     AS DIST_GOODS_GP        -- ÃâÇÏÁ¦Ç°±¸ºĞ
-				     , 'Y'                                     AS SCH_YN               -- ½ºÄÉÁì¿©ºÎ
-				     , TB.STOCK_ID                             AS GOODS_NO             -- Á¦Ç° ¹øÈ£
+				SELECT 'M10YDLMJ1081'                          AS MQ_TC_CD             -- IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS MQ_TC_CREATE_DDTT    -- TCìƒì„±ì¼ì‹œ	
+				     , TB.TRANS_ORD_DATE2                      AS TRN_REQ_DATE         -- ìš´ì†¡ì˜ë¢°ì¼ì
+				     , TB.TRANS_ORD_SEQNO2                     AS TRN_REQ_SEQ          -- ìš´ì†¡ì˜ë¢°ìˆœë²ˆ
+				--     , TA.CARD_NO		                       AS CARD_NO              -- ì¹´ë“œë²ˆí˜¸
+				     , TA.CAR_NO		                       AS CAR_NO               -- ì°¨ëŸ‰ë²ˆí˜¸
+				     , substr(TA.YD_CARLD_STOP_LOC,1,1)        AS YD_GP                -- ì•¼ë“œêµ¬ë¶„
+				     , 'H'                                     AS DIST_GOODS_GP        -- ì¶œí•˜ì œí’ˆêµ¬ë¶„
+				     , 'Y'                                     AS SCH_YN               -- ìŠ¤ì¼€ì¥´ì—¬ë¶€
+				     , TB.STOCK_ID                             AS GOODS_NO             -- ì œí’ˆ ë²ˆí˜¸
 				     , TA.YD_CAR_SCH_ID                        AS YD_CAR_SCH_ID        
 				--   ,TB.CR_FRTOMOVE_GP                   AS CR_FRTOMOVE_GP
 				  FROM TB_YD_CARSCH TA
@@ -5614,18 +5614,18 @@ public class YmCommDAO extends DBAssistantDAO {
 				  AND TB.STOCK_ID=  :V_STOCK_ID
 				  AND TA.YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/			
-				trtNm = "ÄÚÀÏÀÏÇ°ÃâÇÏ»óÂ÷½ÇÀû";
+				trtNm = "ì½”ì¼ì¼í’ˆì¶œí•˜ìƒì°¨ì‹¤ì ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1081B_PIDEV";
 
 			} else if("M10YDLMJ1091B".equals(msgId)) {
 				/**/
-				trtNm = "ÄÚÀÏÀÌ¼Û »óÂ÷¿Ï·á";
+				trtNm = "ì½”ì¼ì´ì†¡ ìƒì°¨ì™„ë£Œ";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1091B_PIDEV";
 				
 			} else if("M10YDLMJ1111B".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1111B_PIDEV
-				SELECT 'M10YDLMJ1111'                      AS MQ_TC_CD            -- IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT   -- TC»ı¼ºÀÏ½Ã
+				SELECT 'M10YDLMJ1111'                      AS MQ_TC_CD            -- IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS') AS MQ_TC_CREATE_DDTT   -- TCìƒì„±ì¼ì‹œ
 				     , TB.TRANS_ORD_DATE2                  AS TRN_REQ_DATE
 				     , TB.TRANS_ORD_SEQNO2                 AS TRN_REQ_SEQ
 				--     , TA.CARD_NO		                   AS CARD_NO
@@ -5663,14 +5663,14 @@ public class YmCommDAO extends DBAssistantDAO {
 				      ,TB_YM_STOCK TB
 				 WHERE TA.STL_NO = TB.STOCK_ID
 				*/
-				trtNm = "ÄÚÀÏÀÌ¼ÛÇÏÂ÷°³½ÃÀü¼Û PDA";
+				trtNm = "ì½”ì¼ì´ì†¡í•˜ì°¨ê°œì‹œì „ì†¡ PDA";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1111B_PIDEV";
 
 			} else if("M10YDLMJ1121A".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1121A_PIDEV
 				SELECT
-				       'M10YDLMJ1121'                            AS MQ_TC_CD             -- IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')       AS MQ_TC_CREATE_DDTT    -- TC»ı¼ºÀÏ½Ã
+				       'M10YDLMJ1121'                            AS MQ_TC_CD             -- IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')       AS MQ_TC_CREATE_DDTT    -- TCìƒì„±ì¼ì‹œ
 				     , MAX(DECODE(NO,1,DD.TRANS_ORD_DATE,''))    AS TRN_REQ_DATE
 				     , MAX(DECODE(NO,1,DD.TRANS_ORD_SEQNO,''))   AS TRN_REQ_SEQ
 				     , CAR_NO                                    AS CAR_NO
@@ -5761,7 +5761,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                     , TB_YD_PREPMTL C
 				                 WHERE A.YD_CARLD_WRK_BOOK_ID = B.YD_WBOOK_ID
 				                   AND B.YD_PREP_SCH_ID=C.YD_PREP_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --»óÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='U' --ìƒì°¨
 				                 UNION ALL
 				                SELECT A.YD_CAR_SCH_ID           AS YD_CAR_SCH_ID
 				                     , A.TRN_EQP_CD              AS TRN_EQP_CD
@@ -5778,7 +5778,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                  FROM TB_YD_CARSCH A
 				                     , TB_YD_CARFTMVMTL C
 				                 WHERE A.YD_CAR_SCH_ID=C.YD_CAR_SCH_ID
-				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --ÇÏÂ÷
+				                   AND (CASE WHEN YD_CAR_PROG_STAT BETWEEN '1' AND '5' THEN 'U' ELSE 'L' END)='L' --í•˜ì°¨
 				                   AND A.DEL_YN='N'
 				               ) TA
 				             , USRYMA.TB_YM_STOCK TX
@@ -5793,14 +5793,14 @@ public class YmCommDAO extends DBAssistantDAO {
 				     ) DD
 				 GROUP BY   UPCARUNLOAD_GP,CARD_NO,CAR_NO,YD_PNT_CD
 				 */
-				trtNm = "ÄÚÀÏÀÌ¼ÛÇÏÂ÷¿Ï·áÀü¼Û PDA";
+				trtNm = "ì½”ì¼ì´ì†¡í•˜ì°¨ì™„ë£Œì „ì†¡ PDA";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1121A_PIDEV";
 
 			} else if("M10YDLMJ1121B".equals(msgId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1121_PIDEV 
 				SELECT 
-				       'M10YDLMJ1121'                          AS MQ_TC_CD             -- IF±¸ºĞÄÚµå
-				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS MQ_TC_CREATE_DDTT    -- TC»ı¼ºÀÏ½Ã
+				       'M10YDLMJ1121'                          AS MQ_TC_CD             -- IFêµ¬ë¶„ì½”ë“œ
+				     , TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS')     AS MQ_TC_CREATE_DDTT    -- TCìƒì„±ì¼ì‹œ
 				     , TRANS_ORD_DATE                          AS TRN_REQ_DATE
 				     , TRANS_ORD_SEQNO                         AS TRN_REQ_SEQ
 				--     , CARD_NO		                             AS CARD_NO
@@ -5821,11 +5821,11 @@ public class YmCommDAO extends DBAssistantDAO {
 				  FROM TB_YD_CARSCH C
 				 WHERE YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				*/
-				trtNm = "ÄÚÀÏÀÌ¼ÛÇÏÂ÷¿Ï·áÀü¼Û PDA";
+				trtNm = "ì½”ì¼ì´ì†¡í•˜ì°¨ì™„ë£Œì „ì†¡ PDA";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.TcM10YDLMJ1121B_PIDEV";				
 			}
 
-			/* ¿øº»
+			/* ì›ë³¸
 			JDTORecordSet jsRst = null;
 			JDTORecordSet addData = JDTORecordFactory.getInstance().createRecordSet("");
 			
@@ -5873,7 +5873,7 @@ public class YmCommDAO extends DBAssistantDAO {
 					
 				commUtils.printLog(logId, trtNm + jsRst.size(), "DB");
 				
-				//---[JMS IF ·Î±× Á¶È¸ ½Ã ¼ø¼­¹Ù²ñ Çö»ó ¼öÁ¤ Ãß°¡ ½ÃÀÛ]-------------------------------------------------------
+				//---[JMS IF ë¡œê·¸ ì¡°íšŒ ì‹œ ìˆœì„œë°”ë€œ í˜„ìƒ ìˆ˜ì • ì¶”ê°€ ì‹œì‘]-------------------------------------------------------
 				JDTORecordSet addData = JDTORecordFactory.getInstance().createRecordSet("");
 				String sITM_ID;
 				String sITM_VALUE;
@@ -5902,7 +5902,7 @@ public class YmCommDAO extends DBAssistantDAO {
 					jsRst = JDTORecordFactory.getInstance().createRecordSet("");
 					jsRst.addAll(addData);
 				}
-				//---[JMS IF ·Î±× Á¶È¸ ½Ã ¼ø¼­¹Ù²ñ Çö»ó ¼öÁ¤ Ãß°¡ Á¾·á]-------------------------------------------------------
+				//---[JMS IF ë¡œê·¸ ì¡°íšŒ ì‹œ ìˆœì„œë°”ë€œ í˜„ìƒ ìˆ˜ì • ì¶”ê°€ ì¢…ë£Œ]-------------------------------------------------------
 			}
 			
 			return jsRst;			
@@ -5912,7 +5912,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Sequence ID Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Sequence ID ì¡°íšŒ
 	 *      
 	 *      @param String logId
 	 *      @param String methodNm
@@ -5921,36 +5921,36 @@ public class YmCommDAO extends DBAssistantDAO {
 	 *      @throws DAOException
 	*/
 	public String getSeqId(String logId, String mthdNm, String trtGp) throws DAOException {
-		String methodNm = "SeqIDÁ¶È¸[YsCommDAO.getSeqId] < " + mthdNm;
+		String methodNm = "SeqIDì¡°íšŒ[YsCommDAO.getSeqId] < " + mthdNm;
 		String trtNm = "";
 
 		try {
 			String jspeed_query_id = "";
-			String seqId = ""; //¹İÈ¯ÇÒ Sequence ID
+			String seqId = ""; //ë°˜í™˜í•  Sequence ID
  
 			if ("CrnSch".equals(trtGp)) {
-				trtNm = "¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID";
+				trtNm = "ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getSeqIdCrnSch";
 			} else if ("WrkBook".equals(trtGp)) {
-				trtNm = "¾ßµåÀÛ¾÷¿¹¾àID";
+				trtNm = "ì•¼ë“œì‘ì—…ì˜ˆì•½ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getSeqIdWrkBook";
 //			} else if ("PrepSch".equals(trtGp)) {
-//				trtNm = "¾ßµåÁØºñ½ºÄÉÁìID";
+//				trtNm = "ì•¼ë“œì¤€ë¹„ìŠ¤ì¼€ì¥´ID";
 //				jspeed_query_id = "com.inisteel.cim.ys.common.dao.YsCommDAO.getSeqIdPrepSch";
 			} else if ("TcarSch".equals(trtGp)) {
-				trtNm = "¾ßµå´ëÂ÷½ºÄÉÁìID";
+				trtNm = "ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getSeqIdTcarSch";
 			} else if ("CarSch".equals(trtGp)) {
-				trtNm = "¾ßµåÂ÷·®½ºÄÉÁìID";
+				trtNm = "ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¥´ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getSeqIdCarSch";
 			}  else if ("FtMvWo".equals(trtGp)) {
-				trtNm = "ÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£";
+				trtNm = "ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getFrToMoveWordNo";
 			}  else if ("RetHt".equals(trtGp)) {
-				trtNm = "È¸¼ÛÀÌ·ÂID";
+				trtNm = "íšŒì†¡ì´ë ¥ID";
 				jspeed_query_id = "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getRetHtHistID";
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			trtNm += " : ";
@@ -5968,25 +5968,25 @@ public class YmCommDAO extends DBAssistantDAO {
 	}	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÂ÷·®½ºÄÉÁìID¸¦ »ı¼ºÇÏ¿© ¹İÈ¯ÇÏ´Â ¸Ş¼Òµå
-	 * @return String : ¾ßµåÂ÷·®½ºÄÉÁìID
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¥´IDë¥¼ ìƒì„±í•˜ì—¬ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œ
+	 * @return String : ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¥´ID
 	 */
 	public String getYdCarschId(String logId ) throws DAOException {
-		//¸Ş¼Òµå¸í
+		//ë©”ì†Œë“œëª…
 		//String szMethodName = "getYdCarschId";
-		String methodNm = "¾ßµåÂ÷·®½ºÄÉÁìID[YmCommDAO.getYdCarschId]" ;
-		//·¹ÄÚµå
+		String methodNm = "ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¥´ID[YmCommDAO.getYdCarschId]" ;
+		//ë ˆì½”ë“œ
 		JDTORecord recKey = JDTORecordFactory.getInstance().create();
-		//Â÷·®½ºÄÉÁìID
+		//ì°¨ëŸ‰ìŠ¤ì¼€ì¥´ID
 		String szYdCarSchId = "";
  
 		try {
-			//JSPEED Äõ¸®ID
+			//JSPEED ì¿¼ë¦¬ID
 			recKey.setField("JSPEED_QUERY_ID", "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getYdCarschId");
-			//Äõ¸® ½ÇÇà
+			//ì¿¼ë¦¬ ì‹¤í–‰
 			JDTORecordSet rsTemp = dbAssDao.getRecordSet(recKey);
 			if( rsTemp.size() <= 0 ) {
-				throw new JDTOException("¾ßµåÂ÷·®½ºÄÉÁÙID ·¹ÄÚµå°¡ Á¸ÀçÇÏÁö ¾ÊÀ½");
+				throw new JDTOException("ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID ë ˆì½”ë“œê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŒ");
 			}
 			rsTemp.first();
 			recKey = rsTemp.getRecord();
@@ -5994,7 +5994,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			szYdCarSchId = commUtils.trim(recKey.getFieldString("YD_CAR_SCH_ID")) ;
 		}catch(JDTOException e) {
 			
-			String szMsg ="["+methodNm+"] ¾ßµåÂ÷·®½ºÄÉÁÙID »ı¼º ½Ã ¿¡·¯ ¹ß»ı";
+			String szMsg ="["+methodNm+"] ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID ìƒì„± ì‹œ ì—ëŸ¬ ë°œìƒ";
 			commUtils.printLog(logId, szMsg, "SL");	
 			throw new DAOException(szMsg, e);
 		}
@@ -6003,12 +6003,12 @@ public class YmCommDAO extends DBAssistantDAO {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : º¥µùÀç Ã³¸® (Ç¥½Ã/ÇØÁ¦)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë²¤ë”©ì¬ ì²˜ë¦¬ (í‘œì‹œ/í•´ì œ)
 	 * @return GridData
 	 */
 	public GridData updStockBendReg(GridData jrParam) throws DAOException {
     
-		String methodNm = "º¥µùÀç Ã³¸® (¸ğ¹ÙÀÏ)[updStockBendReg] : ";
+		String methodNm = "ë²¤ë”©ì¬ ì²˜ë¦¬ (ëª¨ë°”ì¼)[updStockBendReg] : ";
 		String logId = "updStockBendReg";  //gdReq.getIPAddress();
 		String trtNm = ",updStockBendReg";
 		int result = 0;
@@ -6022,7 +6022,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			String vStockList[] = vStock_No.split(",");
 			Object oParam[]   = null;
 			
-			System.out.println("   -. Àç·áÁ¤º¸(Parms) : " + vStockList);
+			System.out.println("   -. ì¬ë£Œì •ë³´(Parms) : " + vStockList);
 			
 			String queryId = "com.inisteel.cim.ym.bcommon.dao.YmCommDao.updStockBendReg";
 			
@@ -6035,12 +6035,12 @@ public class YmCommDAO extends DBAssistantDAO {
 						,vStockList[i]
 				};
 	
-				// INSERT Äõ¸® ½ÇÇà
+				// INSERT ì¿¼ë¦¬ ì‹¤í–‰
 				result = dbAssDao.trtProcess(queryId, oParam);
 				processBendingCount++;
 			} // for
 	
-			System.out.println("   -. Àç·áÁ¤º¸ º¥µùÃ³¸® °Ç¼ö : " + processBendingCount);
+			System.out.println("   -. ì¬ë£Œì •ë³´ ë²¤ë”©ì²˜ë¦¬ ê±´ìˆ˜ : " + processBendingCount);
 	
 			return jrParam;
 
@@ -6051,12 +6051,12 @@ public class YmCommDAO extends DBAssistantDAO {
 		}
 	} 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¸¶Å·Àç Ã³¸® test (Ç¥½Ã/ÇØÁ¦)
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : ë§ˆí‚¹ì¬ ì²˜ë¦¬ test (í‘œì‹œ/í•´ì œ)
 	 * @return GridData
 	 */
 	public GridData updStockMarkReg(GridData jrParam) throws DAOException {
     
-		String methodNm = "¸¶Å·Àç Ã³¸® (¸ğ¹ÙÀÏ)[updStockBendReg] : ";
+		String methodNm = "ë§ˆí‚¹ì¬ ì²˜ë¦¬ (ëª¨ë°”ì¼)[updStockBendReg] : ";
 		String logId = "updStockMarkReg";  //gdReq.getIPAddress();
 		String trtNm = ",updStockMarkReg";
 		int result = 0;
@@ -6070,7 +6070,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			String vStockList[] = vStock_No.split(",");
 			Object oParam[]   = null;
 			
-			System.out.println("   -. Àç·áÁ¤º¸(Parms) : " + vStockList);
+			System.out.println("   -. ì¬ë£Œì •ë³´(Parms) : " + vStockList);
 			
 			String queryId = "com.inisteel.cim.ym.bcommon.dao.YmCommDao.updStockMarkReg";
 			
@@ -6081,12 +6081,12 @@ public class YmCommDAO extends DBAssistantDAO {
 						,vStockList[i]
 				};
 	
-				// INSERT Äõ¸® ½ÇÇà
+				// INSERT ì¿¼ë¦¬ ì‹¤í–‰
 				result = dbAssDao.trtProcess(queryId, oParam);
 				processMarkingCount++;
 			} // for
 	
-			System.out.println("   -. Àç·áÁ¤º¸ ¸¶Å·Ã³¸® °Ç¼ö : " + processMarkingCount);
+			System.out.println("   -. ì¬ë£Œì •ë³´ ë§ˆí‚¹ì²˜ë¦¬ ê±´ìˆ˜ : " + processMarkingCount);
 	
 			return jrParam;
 
@@ -6098,8 +6098,8 @@ public class YmCommDAO extends DBAssistantDAO {
 	} 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : WebMethod »ç¿ë ¿©ºÎ 
-	 * @return String : »ç¿ë¿©ºÎ Y:WebMethod »ç¿ë ,N:»ç¿ë¾ÈÇÔ
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : WebMethod ì‚¬ìš© ì—¬ë¶€ 
+	 * @return String : ì‚¬ìš©ì—¬ë¶€ Y:WebMethod ì‚¬ìš© ,N:ì‚¬ìš©ì•ˆí•¨
 	 */
 	public String getWebMothodYn() throws DAOException {
 		
@@ -6110,7 +6110,7 @@ public class YmCommDAO extends DBAssistantDAO {
 			JDTORecordSet jsRst = getRecordSet("com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getWebMethodYn", null);
 			
 			if (jsRst.size() > 0) {
-				sFlagYn = commUtils.trim(jsRst.getRecord(0).getFieldString("WEB_METHOD_YN")); //WebMethod »ç¿ë ¿©ºÎ
+				sFlagYn = commUtils.trim(jsRst.getRecord(0).getFieldString("WEB_METHOD_YN")); //WebMethod ì‚¬ìš© ì—¬ë¶€
 			}
 			
 		} catch (Exception e) {
@@ -6122,7 +6122,7 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-     * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¹ÚÆÇ ¿­¿¬(yf) ½Å±Ô¸ğµâ Àû¿ë¿©ºÎ ¸®ÅÏ ¸Ş¼Òµå
+     * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ë°•íŒ ì—´ì—°(yf) ì‹ ê·œëª¨ë“ˆ ì ìš©ì—¬ë¶€ ë¦¬í„´ ë©”ì†Œë“œ
      *
      * @param  void
      * @return JDTORecord
@@ -6165,15 +6165,15 @@ public class YmCommDAO extends DBAssistantDAO {
 
 	// PIDEV
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í :  Tb_YM_RULE_PI Á¶È¸
-	 *      -- AS_IS SQL Name¿¡ ÇØ´çÇÏ´Â TO_BE SQL Name °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… :  Tb_YM_RULE_PI ì¡°íšŒ
+	 *      -- AS_IS SQL Nameì— í•´ë‹¹í•˜ëŠ” TO_BE SQL Name ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 *
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public String getYmRulePI(String logId, String mthdNms,String sReprCdGp, String sDtlItemAs, String sReprCdGp1, String sCdGp1,String sItem1) throws DAOException {
-		String mthdNm = "getYmRulePI Á¶È¸[YmCommDAO.getYmRulePI] < " + mthdNms;
+		String mthdNm = "getYmRulePI ì¡°íšŒ[YmCommDAO.getYmRulePI] < " + mthdNms;
 		
 		String toBeSqlNm = "";
 
@@ -6181,15 +6181,15 @@ public class YmCommDAO extends DBAssistantDAO {
 			commUtils.printLog(logId, mthdNm, "S+");
 
 			/**********************************************************
-			* 1. TB_YM_RULE_PI Á¶È¸
+			* 1. TB_YM_RULE_PI ì¡°íšŒ
 			**********************************************************/
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam("", mthdNm, "");
-			jrParam.setField("REPR_CD_GP_PI"		, sReprCdGp  ); //ÀÛ¾÷±¸ºĞ(TB_YM_RULE_PI)
-			jrParam.setField("DTL_ITEM_AS_PI"      , sDtlItemAs ); //±¸ºĞ(TB_YM_RULE_PI)
-			jrParam.setField("REPR_CD_GP"     	, sReprCdGp1 ); //ÀÛ¾÷±¸ºĞ(TB_YM_RULE)
-			jrParam.setField("CD_GP"     		, sCdGp1     ); //ÄÚµå±¸ºĞ(TB_YM_RULE)
-			jrParam.setField("ITEM"     		, sItem1     ); //¾ÆÀÌÅÛ(TB_YM_RULE)
+			jrParam.setField("REPR_CD_GP_PI"		, sReprCdGp  ); //ì‘ì—…êµ¬ë¶„(TB_YM_RULE_PI)
+			jrParam.setField("DTL_ITEM_AS_PI"      , sDtlItemAs ); //êµ¬ë¶„(TB_YM_RULE_PI)
+			jrParam.setField("REPR_CD_GP"     	, sReprCdGp1 ); //ì‘ì—…êµ¬ë¶„(TB_YM_RULE)
+			jrParam.setField("CD_GP"     		, sCdGp1     ); //ì½”ë“œêµ¬ë¶„(TB_YM_RULE)
+			jrParam.setField("ITEM"     		, sItem1     ); //ì•„ì´í…œ(TB_YM_RULE)
 
 			/*
 				SELECT 
@@ -6211,7 +6211,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				                  AND DEL_YN = 'N'   
 				              )
 			*/
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			jrParam = conversionFieldname(jrParam, 0);			
 			//query id setting
 			jrParam.setField("JSPEED_QUERY_ID", "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYmRulePi_PIDEV");
@@ -6237,26 +6237,26 @@ public class YmCommDAO extends DBAssistantDAO {
 	}		    
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í :  PI½Ã½ºÅÛ Àû¿ë ¿©ºÎ_PIDEV
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… :  PIì‹œìŠ¤í…œ ì ìš© ì—¬ë¶€_PIDEV
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public String ApplyYnPI(String logId, String mthdNms,String sReprCdGp, String sCdGp,String sItem) throws DAOException {
-		String mthdNm = "PI½Ã½ºÅÛ Àû¿ë¿©ºÎ[YmCommDAO.ApplyYnPI] < " + mthdNms;
+		String mthdNm = "PIì‹œìŠ¤í…œ ì ìš©ì—¬ë¶€[YmCommDAO.ApplyYnPI] < " + mthdNms;
 		String szAPPLY_YN = "N";
 
 		try {
 			commUtils.printLog(logId, mthdNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
+			//ìˆ˜ì‹  í•­ëª© ê°’
 			/**********************************************************
-			* 2. ¿­Á¤º¸ read
+			* 2. ì—´ì •ë³´ read
 			**********************************************************/
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, mthdNm, "");
-			jrParam.setField("REPR_CD_GP", sReprCdGp  ); //ÀÛ¾÷±¸ºĞ
-			jrParam.setField("CD_GP"     , sCdGp      ); //±¸ºĞ
+			jrParam.setField("REPR_CD_GP", sReprCdGp  ); //ì‘ì—…êµ¬ë¶„
+			jrParam.setField("CD_GP"     , sCdGp      ); //êµ¬ë¶„
 			jrParam.setField("ITEM"      , sItem      ); //ITEM
 
 			/* 
@@ -6267,7 +6267,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				   AND ITEM  = :V_ITEM
 				   AND DEL_YN = 'N'
 			*/  
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			jrParam = conversionFieldname(jrParam, 0);			
 			//query id setting
 			jrParam.setField("JSPEED_QUERY_ID", "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getBCoilApplyYn_PIDEV");
@@ -6290,14 +6290,14 @@ public class YmCommDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í :  ¿î¼ÛÀÌ¼Û±¸ºĞ ¹İÈ¯_PIDEV
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… :  ìš´ì†¡ì´ì†¡êµ¬ë¶„ ë°˜í™˜_PIDEV
 	 *
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public String[] getTrnFrtomoveGpPI(String logId, String mthdNms,String sTrnOrdDate, String sTrnOrdSeqno) throws DAOException {
-		String mthdNm = "getTrnFrtomoveGpPI Á¶È¸[YmCommDAO.getTrnFrtomoveGpPI] < " + mthdNms;
+		String mthdNm = "getTrnFrtomoveGpPI ì¡°íšŒ[YmCommDAO.getTrnFrtomoveGpPI] < " + mthdNms;
 		
 		String transFrtomoveGp = "";
 		String hIssueGp = "";
@@ -6307,12 +6307,12 @@ public class YmCommDAO extends DBAssistantDAO {
 			commUtils.printLog(logId, mthdNm, "S+");
 	
 			/**********************************************************
-			* 1. VW_LM_P_TRANSWORDCOMM (¿î¼ÛÁö½Ã°øÅë) Á¶È¸
+			* 1. VW_LM_P_TRANSWORDCOMM (ìš´ì†¡ì§€ì‹œê³µí†µ) ì¡°íšŒ
 			**********************************************************/
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam("", mthdNm, "");
-			jrParam.setField("TRN_ORD_DATE"		  , sTrnOrdDate  );	//  ¿î¼ÛÁö½ÃÀÏÀÚ
-			jrParam.setField("TRN_ORD_SEQNO"      , sTrnOrdSeqno ); // ¿î¼ÛÁö½Ã¼ø¹ø
+			jrParam.setField("TRN_ORD_DATE"		  , sTrnOrdDate  );	//  ìš´ì†¡ì§€ì‹œì¼ì
+			jrParam.setField("TRN_ORD_SEQNO"      , sTrnOrdSeqno ); // ìš´ì†¡ì§€ì‹œìˆœë²ˆ
 	
 			/*
 				SELECT 
@@ -6323,7 +6323,7 @@ public class YmCommDAO extends DBAssistantDAO {
 				 WHERE TRANS_WORD_DATE  = :V_TRN_ORD_DATE
 				   AND TRANS_WORD_SEQNO = :V_TRN_ORD_SEQNO
 			*/ 
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			jrParam = conversionFieldname(jrParam, 0);			
 			//query id setting
 			jrParam.setField("JSPEED_QUERY_ID", "com.inisteel.cim.ydPI.dao.getTrnFrtomoveGpPi_PIDEV");

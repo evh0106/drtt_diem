@@ -2,14 +2,14 @@
  * @(#)AutowaySpecialistJspFaEJBSBean
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2020/04/13
  *
- * @description      AutowaySpecialist (B¿­¿¬ SLAB ¾ßµå È­¸é°ü¸® Facade EJB)
+ * @description      AutowaySpecialist (Bì—´ì—° SLAB ì•¼ë“œ í™”ë©´ê´€ë¦¬ Facade EJB)
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2020/04/13   ¹Úºñ¿À      ¹Úºñ¿À      ÃÖÃÊ µî·Ï
+ * V1.00  2020/04/13   ë°•ë¹„ì˜¤      ë°•ë¹„ì˜¤      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.autoway.session;
@@ -24,7 +24,7 @@ import com.inisteel.cim.ym.bcommon.util.YmCommUtils;
 import com.inisteel.cim.ym.bcommon.util.YmConstant;
 
 /**
- *      [A] AutowaySpecialist(Å¬·¡½º¸í : B¿­¿¬ SLAB ¾ßµå È­¸é°ü¸® Facade EJB)
+ *      [A] AutowaySpecialist(í´ë˜ìŠ¤ëª… : Bì—´ì—° SLAB ì•¼ë“œ í™”ë©´ê´€ë¦¬ Facade EJB)
  *
  * @ejb.bean name="AutowaySpecialistJspFaEJB" jndi-name="AutowaySpecialistJspFaEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -44,15 +44,15 @@ public class AutowaySpecialistJspFaEJBSBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ´Ü¼ø Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë‹¨ìˆœ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * 
 	 * @throws DAOException
 	 */
 	public JDTORecordSet getAutowaySpecialist(JDTORecord gdReq) throws DAOException {
 		EJBConnector ejbConn = null;
 		System.out.println("getAutowaySpecialist");
-		String methodNm =  "¿ÀÅä¿şÀÌ ½Ã½ºÅÛ´ã´çÀÚ[AutowaySpecialistJspFaEJB.getAutowaySpecialist]";
+		String methodNm =  "ì˜¤í† ì›¨ì´ ì‹œìŠ¤í…œë‹´ë‹¹ì[AutowaySpecialistJspFaEJB.getAutowaySpecialist]";
 		String logId = commUtils.getLogId(YmConstant.YD_GP_0);
 		try {
 			commUtils.printLog(logId, methodNm, "F+", gdReq);		

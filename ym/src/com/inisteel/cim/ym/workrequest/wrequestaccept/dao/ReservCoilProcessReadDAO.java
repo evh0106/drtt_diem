@@ -1,13 +1,13 @@
 /*****************************************************************************
-** ÇÁ·Î±×·¥ ID	: /po/jungjung/result/dao/ReservCoilProcessReadDAO.java
-** ÀÛ ¼º ÀÏ ÀÚ	    : 2005/10/28
-** ÀÛ  ¼º   ÀÚ	    : ¹ÚÁ¾¹Î
-** ¼³       ¸í	    : 
+** í”„ë¡œê·¸ë¨ ID	: /po/jungjung/result/dao/ReservCoilProcessReadDAO.java
+** ì‘ ì„± ì¼ ì	    : 2005/10/28
+** ì‘  ì„±   ì	    : ë°•ì¢…ë¯¼
+** ì„¤       ëª…	    : 
 ** --------------------------------------------------------------------------
-** ¼öÁ¤ÀÌ·Â             :
-** ¼öÁ¤ÀÏÀÚ		: 
-** ¼ö Á¤ ÀÚ		: 
-** ¼³    ¸í		: 
+** ìˆ˜ì •ì´ë ¥             :
+** ìˆ˜ì •ì¼ì		: 
+** ìˆ˜ ì • ì		: 
+** ì„¤    ëª…		: 
 getCoilCommDtl
 *****************************************************************************/
 /*
@@ -39,7 +39,7 @@ public class ReservCoilProcessReadDAO extends CommonDAO {
 		log = LogService.getInstance().getLogServiceContext().getLogger( "template" );
 	}
 	
-	/* COIL°øÅë Á¶È¸(TB_PM_COILCOMM)*/     		
+	/* COILê³µí†µ ì¡°íšŒ(TB_PM_COILCOMM)*/     		
 	public List getCoilCommDtl(String coilNo) throws DAOException {
 		/*  ----------------------------------------------------------
 			SELECT * FROM TB_PM_COILCOMM  WHERE COIL_NO = ?

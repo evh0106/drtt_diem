@@ -2,14 +2,14 @@
  * @(#)BSlabSchSeEJBSBean
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  *
- * @description      B¿­¿¬ SLAB ¾ßµå Schedule Ã³¸® Session EJB
+ * @description      Bì—´ì—° SLAB ì•¼ë“œ Schedule ì²˜ë¦¬ Session EJB
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.bslab.session;
@@ -31,7 +31,7 @@ import jspeed.base.record.JDTORecordFactory;
 import jspeed.base.record.JDTORecordSet;
 
 /**
- *      [A] Å¬·¡½º¸í : B¿­¿¬ SLAB ¾ßµå Schedule Ã³¸® 
+ *      [A] í´ë˜ìŠ¤ëª… : Bì—´ì—° SLAB ì•¼ë“œ Schedule ì²˜ë¦¬ 
  * 
  * @ejb.bean name="BSlabSchSeEJB" jndi-name="BSlabSchSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -59,27 +59,27 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**	
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SLAB Å©·¹ÀÎ½ºÄÉÁÙ(YMYMJ202)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SLAB í¬ë ˆì¸ìŠ¤ì¼€ì¤„(YMYMJ202)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 *      @ejb.transaction type="RequiresNew"
 	*/
 	public JDTORecord rcvYMYMJ202(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "SLAB Å©·¹ÀÎ½ºÄÉÁÙMAIN[BSlabSchSeEJB.rcvYMYMJ202] < " + rcvMsg.getResultMsg();
+		String methodNm = "SLAB í¬ë ˆì¸ìŠ¤ì¼€ì¤„MAIN[BSlabSchSeEJB.rcvYMYMJ202] < " + rcvMsg.getResultMsg();
 		
 		String logId = rcvMsg.getResultCode();
 		JDTORecordSet jsWbook = JDTORecordFactory.getInstance().createRecordSet("Temp");
 		int intRtnVal = 0;
-		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();;	//Àü¹® Return
+		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();;	//ì „ë¬¸ Return
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
 			jrRtn = commUtils.addSndData(jrRtn, this.procYMYMJ202(rcvMsg));
 			
-			commUtils.printLog(logId, methodNm + "[½ºÄÉÁì¸ŞÀÎÁ¾·á]", "S-");
+			commUtils.printLog(logId, methodNm + "[ìŠ¤ì¼€ì¥´ë©”ì¸ì¢…ë£Œ]", "S-");
 			return jrRtn;
 
 		} catch (DAOException e) {
@@ -90,19 +90,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}
 	
 	/**	
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½½¶óºêÅ©·¹ÀÎ½ºÄÉÁÙ ¸ÖÆ¼±âµ¿(YMYMJ302)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¬ë¼ë¸Œí¬ë ˆì¸ìŠ¤ì¼€ì¤„ ë©€í‹°ê¸°ë™(YMYMJ302)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 *      @ejb.transaction type="RequiresNew"
 	*/
 	public JDTORecord rcvYMYMJ203(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "½½¶óºêÅ©·¹ÀÎ½ºÄÉÁÙMAIN¸ÖÆ¼±âµ¿ [BSlabSchSeEJB.¸ÖÆ¼±âµ¿] < " + rcvMsg.getResultMsg();
+		String methodNm = "ìŠ¬ë¼ë¸Œí¬ë ˆì¸ìŠ¤ì¼€ì¤„MAINë©€í‹°ê¸°ë™ [BSlabSchSeEJB.ë©€í‹°ê¸°ë™] < " + rcvMsg.getResultMsg();
 		
 		String logId = rcvMsg.getResultCode();
-		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();;	//Àü¹® Return
+		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();;	//ì „ë¬¸ Return
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
@@ -113,19 +113,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			int schCnt  = Integer.parseInt(commUtils.nvl(rcvMsg.getFieldString("SCH_CNT"),"0")); 
 
 			for(int i = 1 ; i<=schCnt; i++){				
-				String ydWbookId  = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"+i  )); //¾ßµåÀÛ¾÷¿¹¾àID
+				String ydWbookId  = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"+i  )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 
 				if(ydWbookId.equals("") ||ydWbookId.length() == 0 ) {
 	           	   continue;
 				}
 				jrParam.setField("JMS_TC_CD"			, "YMYMJ202"); 
-				jrParam.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-				jrParam.setField("YD_WBOOK_ID"			, ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_SCH_CD"  			, ""); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_EQP_ID"  			, ""); //¾ßµå¼³ºñID					
+				jrParam.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+				jrParam.setField("YD_WBOOK_ID"			, ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_SCH_CD"  			, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_EQP_ID"  			, ""); //ì•¼ë“œì„¤ë¹„ID					
 				jrRtn = commUtils.addSndData(jrRtn, this.procYMYMJ202(jrParam));
 				
-				// ÀÌ¼ÛÇÏÂ÷ ÀÎ °æ¿ì µ¿°£ÀÛ¾÷±âÁØ¿¡ ´ëÂ÷ »óÂ÷ÀÎ °æ¿ì¿¡´Â 1°³¸¸ ±âµ¿ ½ÃÅ²´Ù.
+				// ì´ì†¡í•˜ì°¨ ì¸ ê²½ìš° ë™ê°„ì‘ì—…ê¸°ì¤€ì— ëŒ€ì°¨ ìƒì°¨ì¸ ê²½ìš°ì—ëŠ” 1ê°œë§Œ ê¸°ë™ ì‹œí‚¨ë‹¤.
 				if(i == 1) {
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPtToTcChk 
 					SELECT *
@@ -141,14 +141,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					   AND WB.YD_SCH_CD = EQ.UP_SCH
 					   AND WB.YD_SCH_CD LIKE '2_PT02LM
 					*/
-					JDTORecordSet jsPtToTcChk = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPtToTcChk", logId, methodNm, "´ëÂ÷ »óÂ÷¿©ºÎ Á¶È¸");
+					JDTORecordSet jsPtToTcChk = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPtToTcChk", logId, methodNm, "ëŒ€ì°¨ ìƒì°¨ì—¬ë¶€ ì¡°íšŒ");
 					if(jsPtToTcChk.size() > 0) {
 						break;
 					}
 				}
 			}	
 			
-			commUtils.printLog(logId, methodNm + "[½ºÄÉÁì¸ŞÀÎÁ¾·á]", "S-");
+			commUtils.printLog(logId, methodNm + "[ìŠ¤ì¼€ì¥´ë©”ì¸ì¢…ë£Œ]", "S-");
 			return jrRtn;
 
 		} catch (DAOException e) {
@@ -158,15 +158,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		}
 	}
 	/**	
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SLABÅ©·¹ÀÎ½ºÄÉÁÙ(YMYMJ202)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SLABí¬ë ˆì¸ìŠ¤ì¼€ì¤„(YMYMJ202)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord procYMYMJ202(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "SLABÅ©·¹ÀÎ½ºÄÉÁÙMAIN[BSlabSchSeEJB.procYMYMJ202] < " + rcvMsg.getResultMsg();
+		String methodNm = "SLABí¬ë ˆì¸ìŠ¤ì¼€ì¤„MAIN[BSlabSchSeEJB.procYMYMJ202] < " + rcvMsg.getResultMsg();
 		
 		String logId = rcvMsg.getResultCode();
 		JDTORecordSet jsWbook = JDTORecordFactory.getInstance().createRecordSet("Temp");
@@ -175,42 +175,42 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER")); //¼öÁ¤ÀÚ(Backup Only)
+			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER")); //ìˆ˜ì •ì(Backup Only)
 			
-			//¼ö½Å Ç×¸ñ °ª
-			String msgId      = commUtils.getMsgId(rcvMsg);								//EAI, JMS, HTTP(ÃâÇÏ°ü¸® µî) ¼ö½Å Àü¹® I/F ID
-			String ydWbookId  = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )); //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydSchCd    = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"    )); //¾ßµå½ºÄÉÁìÄÚµå
-			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"    )); //¾ßµå¼³ºñID
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			String msgId      = commUtils.getMsgId(rcvMsg);								//EAI, JMS, HTTP(ì¶œí•˜ê´€ë¦¬ ë“±) ìˆ˜ì‹  ì „ë¬¸ I/F ID
+			String ydWbookId  = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydSchCd    = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"    )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"    )); //ì•¼ë“œì„¤ë¹„ID
 
 			if ("".equals(modifier)) { modifier = msgId; }
 
-			commUtils.printLog(logId, "½ºÄÉÁìÄÚµå[" + ydSchCd + "], ¼³ºñID[" + ydEqpId + "], ÀÛ¾÷¿¹¾àID[" + ydWbookId + "], ¼öÁ¤ÀÚ[" + modifier + "]", "SL");
+			commUtils.printLog(logId, "ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "], ì„¤ë¹„ID[" + ydEqpId + "], ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "], ìˆ˜ì •ì[" + modifier + "]", "SL");
 
-			JDTORecord jrRtn = null;	 //Àü¹® Return
-			String trtMsg  = ""; 		 //Ã³¸®¸Ş¼¼Áö
-			String ydL3Msg = ""; 		 //¾ßµåL3MESSAGE
-			String stackLayerChkYn = ""; //ÀûÀçÀ§Ä¡ CHECK ¿©ºÎ
+			JDTORecord jrRtn = null;	 //ì „ë¬¸ Return
+			String trtMsg  = ""; 		 //ì²˜ë¦¬ë©”ì„¸ì§€
+			String ydL3Msg = ""; 		 //ì•¼ë“œL3MESSAGE
+			String stackLayerChkYn = ""; //ì ì¬ìœ„ì¹˜ CHECK ì—¬ë¶€
 			
-			String sAPP005_YN = YmComm.BCoilApplyYn("APP005","2","1");   //slab_log¿©ºÎ
-			commUtils.printLog(logId,  "TOÀ§Ä¡ LOG Àû¿ë:" + sAPP005_YN, "SL");	
+			String sAPP005_YN = YmComm.BCoilApplyYn("APP005","2","1");   //slab_logì—¬ë¶€
+			commUtils.printLog(logId,  "TOìœ„ì¹˜ LOG ì ìš©:" + sAPP005_YN, "SL");	
 			
-			//Á¶È¸ ¹× µî·Ï¿ë
+			//ì¡°íšŒ ë° ë“±ë¡ìš©
 			JDTORecord jrParam = JDTORecordFactory.getInstance().create();
 			jrParam.setResultCode(logId);	//Log ID
 			jrParam.setResultMsg(methodNm);	//Log Method Name
-			jrParam.setField("YD_WBOOK_ID", ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrParam.setField("YD_SCH_CD"  , ydSchCd  ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("YD_EQP_ID"  , ydEqpId  ); //¾ßµå¼³ºñID
-			jrParam.setField("MODIFIER"   , modifier ); //¼öÁ¤ÀÚ
+			jrParam.setField("YD_WBOOK_ID", ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParam.setField("YD_SCH_CD"  , ydSchCd  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("YD_EQP_ID"  , ydEqpId  ); //ì•¼ë“œì„¤ë¹„ID
+			jrParam.setField("MODIFIER"   , modifier ); //ìˆ˜ì •ì
 
 			/**********************************************************
-			* 1. ÆÄ¶ó¸ŞÅ¸ Á¤º¸  Check
-			* 1.1 ½ºÄÉÁÙÄÚµå »óÅÂ Check
-			* 1.2 ¼³ºñ°íÀå ¹× OFF-LINE Check
-			* 1.3 ÆÄ¶ó¸ŞÅ¸ Á¤º¸ Check
+			* 1. íŒŒë¼ë©”íƒ€ ì •ë³´  Check
+			* 1.1 ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒíƒœ Check
+			* 1.2 ì„¤ë¹„ê³ ì¥ ë° OFF-LINE Check
+			* 1.3 íŒŒë¼ë©”íƒ€ ì •ë³´ Check
 			**********************************************************/
-			//½ºÄÉÁÙÄÚµå Check
+			//ìŠ¤ì¼€ì¤„ì½”ë“œ Check
 			if ("".equals(ydWbookId) && !"".equals(ydSchCd)) {
 				JDTORecord jrChk = YmComm.chkSchCd(jrParam);
 				
@@ -221,7 +221,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			}
 
-			//¼³ºñID Check
+			//ì„¤ë¹„ID Check
 			if ("".equals(ydWbookId) && "".equals(ydSchCd) && !"".equals(ydEqpId)) {
 				JDTORecord jrChk = YmComm.chkEqpStat(jrParam);
 
@@ -232,17 +232,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			}
 			/**********************************************************
- 			 * 1.3  ÆÄ¶ó¸ŞÅ¸ Á¤º¸ Check
- 			 * 1.3.1 ÆÄ¶ó¸ŞÅ¸ : Å©·¹ÀÎ¼³ºñID                           -> ÇØ´çÅ©·¹ÀÎ¼³ºñID·Î ¸¸µé¾îÁø Å©·¹ÀÎ½ºÄÉÁÙ±İÁö°¡ µÇÁö ¾Ê°í Å©·¹ÀÎ¿ì¼±¼øÀ§°¡ °¡Àåºü¸¥ ÀÛ¾÷¿¹¾àµé Áß¿¡¼­
- 			 * 	                                                                                                           °¡Àåºü¸¥ ÀÛ¾÷¿¹¾àÀ» ÇÏ³ª Á¶È¸ÇØ¼­ ÀÛ¾÷ ÁøÇà.
- 			 * 1.3.2. ÆÄ¶ó¸ŞÅ¸ : Å©·¹ÀÎ½ºÄÉÁÙÄÚµå, Å©·¹ÀÎ¼³ºñID            -> Å©·¹ÀÎ½ºÄÉÁÙÄÚµå·Î Å©·¹ÀÎ½ºÄÉÁÙÀÌ »ı¼ºµÇÁö ¾ÊÀº ÀÛ¾÷¿¹¾àµé Áß¿¡¼­ °¡Àåºü¸¥ ÀÛ¾÷¿¹¾àÀ» ÇÏ³ª Á¶È¸ÇØ¼­ ÀÛ¾÷ ÁøÇà.
- 			 * 1.3.3. ÆÄ¶ó¸ŞÅ¸ : Å©·¹ÀÎ½ºÄÉÁÙÄÚµå, Å©·¹ÀÎ¼³ºñID, ÀÛ¾÷¿¹¾àID	-> ÇØ´çÀÛ¾÷¿¹¾àID·Î Á÷Á¢ Á¶È¸¸¦ ÇØ¼­ ÀÛ¾÷ÁøÇà - Â÷·®µµÂøÀÎ °æ¿ì
+ 			 * 1.3  íŒŒë¼ë©”íƒ€ ì •ë³´ Check
+ 			 * 1.3.1 íŒŒë¼ë©”íƒ€ : í¬ë ˆì¸ì„¤ë¹„ID                           -> í•´ë‹¹í¬ë ˆì¸ì„¤ë¹„IDë¡œ ë§Œë“¤ì–´ì§„ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸ˆì§€ê°€ ë˜ì§€ ì•Šê³  í¬ë ˆì¸ìš°ì„ ìˆœìœ„ê°€ ê°€ì¥ë¹ ë¥¸ ì‘ì—…ì˜ˆì•½ë“¤ ì¤‘ì—ì„œ
+ 			 * 	                                                                                                           ê°€ì¥ë¹ ë¥¸ ì‘ì—…ì˜ˆì•½ì„ í•˜ë‚˜ ì¡°íšŒí•´ì„œ ì‘ì—… ì§„í–‰.
+ 			 * 1.3.2. íŒŒë¼ë©”íƒ€ : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ, í¬ë ˆì¸ì„¤ë¹„ID            -> í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ìƒì„±ë˜ì§€ ì•Šì€ ì‘ì—…ì˜ˆì•½ë“¤ ì¤‘ì—ì„œ ê°€ì¥ë¹ ë¥¸ ì‘ì—…ì˜ˆì•½ì„ í•˜ë‚˜ ì¡°íšŒí•´ì„œ ì‘ì—… ì§„í–‰.
+ 			 * 1.3.3. íŒŒë¼ë©”íƒ€ : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ, í¬ë ˆì¸ì„¤ë¹„ID, ì‘ì—…ì˜ˆì•½ID	-> í•´ë‹¹ì‘ì—…ì˜ˆì•½IDë¡œ ì§ì ‘ ì¡°íšŒë¥¼ í•´ì„œ ì‘ì—…ì§„í–‰ - ì°¨ëŸ‰ë„ì°©ì¸ ê²½ìš°
 			**********************************************************/			
-			//ÀÛ¾÷¿¹¾àID Á¶È¸
+			//ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ
 			if (!"".equals(ydWbookId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbook
 				SELECT YD_WBOOK_ID
-				     -- ¾ßµå½ºÄÉÁìºĞÇÒ±¸ºĞÀ» ÀúÀåÀ§Ä¡ CHECK ¿©ºÎ·Î »ç¿ë
+				     -- ì•¼ë“œìŠ¤ì¼€ì¥´ë¶„í• êµ¬ë¶„ì„ ì €ì¥ìœ„ì¹˜ CHECK ì—¬ë¶€ë¡œ ì‚¬ìš©
 				     , NVL((SELECT YD_SCH_DIV_GP 
 				              FROM TB_YM_SCHEDULERULE 
 				             WHERE YD_SCH_CD = A.YD_SCH_CD),'Y') AS  STACK_LAYER_CHK_YN
@@ -253,12 +253,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                               FROM TB_YM_CRNSCH
 				                              WHERE DEL_YN = 'N')
 				*/
-				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbook", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸");
+				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbook", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ");
 				
 			} else if (!"".equals(ydSchCd)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookEqp
 				SELECT YD_WBOOK_ID
-				 -- ¾ßµå½ºÄÉÁìºĞÇÒ±¸ºĞÀ» ÀúÀåÀ§Ä¡ CHECK ¿©ºÎ·Î »ç¿ë
+				 -- ì•¼ë“œìŠ¤ì¼€ì¥´ë¶„í• êµ¬ë¶„ì„ ì €ì¥ìœ„ì¹˜ CHECK ì—¬ë¶€ë¡œ ì‚¬ìš©
 				     , NVL(A.YD_SCH_DIV_GP,'Y') AS  STACK_LAYER_CHK_YN
 				  FROM (SELECT WB.YD_WBOOK_ID
 				             , SR.YD_SCH_DIV_GP
@@ -275,12 +275,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				         ORDER BY WB.YD_SCH_PRIOR, WB.YD_WBOOK_ID) A
 				 WHERE ROWNUM = 1
 				*/ 
-				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookSchcd", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸");
+				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookSchcd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ");
 				 
 			} else if (!"".equals(ydEqpId)) {
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookEqp
 				SELECT YD_WBOOK_ID
-				 -- ¾ßµå½ºÄÉÁìºĞÇÒ±¸ºĞÀ» ÀúÀåÀ§Ä¡ CHECK ¿©ºÎ·Î »ç¿ë
+				 -- ì•¼ë“œìŠ¤ì¼€ì¥´ë¶„í• êµ¬ë¶„ì„ ì €ì¥ìœ„ì¹˜ CHECK ì—¬ë¶€ë¡œ ì‚¬ìš©
 				     , NVL(A.YD_SCH_DIV_GP,'Y') AS  STACK_LAYER_CHK_YN
 				  FROM (SELECT WB.YD_WBOOK_ID
 				             , SR.YD_SCH_DIV_GP
@@ -297,10 +297,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				         ORDER BY WB.YD_SCH_PRIOR, WB.YD_WBOOK_ID) A
 				 WHERE ROWNUM = 1
 				*/ 
-				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookEqp", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸");
+				jsWbook = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookEqp", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ");
 				 
 			} else {
-				throw new Exception("¿À·ù:ÀÛ¾÷¿¹¾àIDÁ¶È¸ Ç×¸ñ ¾øÀ½");
+				throw new Exception("ì˜¤ë¥˜:ì‘ì—…ì˜ˆì•½IDì¡°íšŒ í•­ëª© ì—†ìŒ");
 			}
 
 			if (jsWbook != null && jsWbook.size() > 0) {
@@ -317,97 +317,97 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 				   AND MODIFIER = 'SCH_DEL'  
 				*/
-				JDTORecordSet jsWbDelInfo = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookMtldel", logId, methodNm, "ÀÛ¾÷ SKIP ¿©ºÎ");
+				JDTORecordSet jsWbDelInfo = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookMtldel", logId, methodNm, "ì‘ì—… SKIP ì—¬ë¶€");
 				if(jsWbDelInfo.size() > 0 ) {
-					commUtils.printLog(logId, "½ºÄÉÁìÄÚµå[" + ydSchCd + "], ¼³ºñID[" + ydEqpId + "], ÀÛ¾÷¿¹¾àID[" + ydWbookId + "], ¼öÁ¤ÀÚ[" + modifier + "] »ó´ÜÀÛ¾÷¿¹¾à°ú °áÇÕ" , "SL");
+					commUtils.printLog(logId, "ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "], ì„¤ë¹„ID[" + ydEqpId + "], ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "], ìˆ˜ì •ì[" + modifier + "] ìƒë‹¨ì‘ì—…ì˜ˆì•½ê³¼ ê²°í•©" , "SL");
 					return jrRtn;
 				} else  {
-					//throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÁ¤º¸ ¾øÀ½");
-					commUtils.printLog(logId, "¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÁ¤º¸ ¾øÀ½", "SL");
+					//throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì •ë³´ ì—†ìŒ");
+					commUtils.printLog(logId, "ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì •ë³´ ì—†ìŒ", "SL");
 					return jrRtn;
 				}
 			}
 
-			commUtils.printLog(logId, trtMsg + " >> °áÁ¤µÈ ÀÛ¾÷¿¹¾àID [" + ydWbookId + "]", "SL");
+			commUtils.printLog(logId, trtMsg + " >> ê²°ì •ëœ ì‘ì—…ì˜ˆì•½ID [" + ydWbookId + "]", "SL");
 
-			jrParam.setField("YD_WBOOK_ID", ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
+			jrParam.setField("YD_WBOOK_ID", ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 
 
-			//2024.03.29 HJW Àç·á Áßº¹ÀûÄ¡ ¿©ºÎ È®ÀÎÇÏ¿© exception Ãß°¡ (ora- ¿¡·¯ ¹æÁö¿ë).
-			//ÀÛ¾÷¿¹¾à Àç·áÀÇ ÀúÀåÀ§Ä¡ µî·ÏµÈ °É·Î ÃßÈÄ ½Ã½ºÅÛ¿¡¼­ »ç¿ëÇÏ±â ¶§¹®¿¡,
-			//Áßº¹ÀûÄ¡Çö»ó ¹ß»ıÀ¸·Î ÀÛ¾÷¿¹¾à Àç·áÀÇ À§Ä¡¸¦ Á¤È®È÷ °¡Á®¿ÀÁö ¸øÇÏ¸é, ÃßÈÄ ½ÇÀûÃ³¸®µµ ÀÌ»óÇØÁú ¼ö ÀÖÀ½.
+			//2024.03.29 HJW ì¬ë£Œ ì¤‘ë³µì ì¹˜ ì—¬ë¶€ í™•ì¸í•˜ì—¬ exception ì¶”ê°€ (ora- ì—ëŸ¬ ë°©ì§€ìš©).
+			//ì‘ì—…ì˜ˆì•½ ì¬ë£Œì˜ ì €ì¥ìœ„ì¹˜ ë“±ë¡ëœ ê±¸ë¡œ ì¶”í›„ ì‹œìŠ¤í…œì—ì„œ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—,
+			//ì¤‘ë³µì ì¹˜í˜„ìƒ ë°œìƒìœ¼ë¡œ ì‘ì—…ì˜ˆì•½ ì¬ë£Œì˜ ìœ„ì¹˜ë¥¼ ì •í™•íˆ ê°€ì ¸ì˜¤ì§€ ëª»í•˜ë©´, ì¶”í›„ ì‹¤ì ì²˜ë¦¬ë„ ì´ìƒí•´ì§ˆ ìˆ˜ ìˆìŒ.
 			if(chkDupStkByWBookId(ydWbookId,logId)){
-				commUtils.printLog(logId, "ÀÛ¾÷¿¹¾àÀç·á Áßº¹ÀûÄ¡Çö»ó ¹ß»ı", "SL");
-				throw new Exception("¿À·ù : ÀÛ¾÷¿¹¾àÀç·á Áßº¹ÀûÄ¡Çö»ó ¹ß»ı");
+				commUtils.printLog(logId, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì¤‘ë³µì ì¹˜í˜„ìƒ ë°œìƒ", "SL");
+				throw new Exception("ì˜¤ë¥˜ : ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì¤‘ë³µì ì¹˜í˜„ìƒ ë°œìƒ");
 			}
 			
 			
 			/**********************************************************
-			* 1.2 Å©·¹ÀÎ ÀÛ¾÷ Àç·á¿¡ ÇöÀç ÀûÄ¡´Ü ÀúÀåÀ§Ä¡ Update (º°µµ Transaction À¸·Î Ã³¸®)
+			* 1.2 í¬ë ˆì¸ ì‘ì—… ì¬ë£Œì— í˜„ì¬ ì ì¹˜ë‹¨ ì €ì¥ìœ„ì¹˜ Update (ë³„ë„ Transaction ìœ¼ë¡œ ì²˜ë¦¬)
 			**********************************************************/
 			EJBConnector tranConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 			tranConn.trx("updCrnSchWB", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
 			
 			/**********************************************************
-			* 2.½ºÄÉÁÙ¼öÇàÆÇ´Ü ¸ğµâ
-			* 2.1 Å©·¹ÀÎ ¼±ÅÃ
-			* 2.2 TOÀ§Ä¡ »çÀü Á¡°Ë
+			* 2.ìŠ¤ì¼€ì¤„ìˆ˜í–‰íŒë‹¨ ëª¨ë“ˆ
+			* 2.1 í¬ë ˆì¸ ì„ íƒ
+			* 2.2 TOìœ„ì¹˜ ì‚¬ì „ ì ê²€
 			**********************************************************/
 	
-			//Á¶È¸µÈ ÀÛ¾÷¿¹¾àID·Î »óÅÂÁ¤º¸ Check
-			String ydToLocDcsnMtd = ""; 	//¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-			String ydToLocGuide   = ""; 	//¾ßµåToÀ§Ä¡Guide
-			String toLocChkGp     = ""; 	//ToÀ§Ä¡ Á¡°ËÀ» À§ÇÑ ±¸ºĞ(G:ToÀ§Ä¡Guide, C:Â÷·®»óÂ÷, T:´ëÂ÷»óÂ÷)
-			String trnEqpCd       = ""; 	//¿î¼ÛÀåºñÄÚµå
-			String ydEqpStat      = "";		//¾ßµå¼³ºñ»óÅÂ
+			//ì¡°íšŒëœ ì‘ì—…ì˜ˆì•½IDë¡œ ìƒíƒœì •ë³´ Check
+			String ydToLocDcsnMtd = ""; 	//ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+			String ydToLocGuide   = ""; 	//ì•¼ë“œToìœ„ì¹˜Guide
+			String toLocChkGp     = ""; 	//Toìœ„ì¹˜ ì ê²€ì„ ìœ„í•œ êµ¬ë¶„(G:Toìœ„ì¹˜Guide, C:ì°¨ëŸ‰ìƒì°¨, T:ëŒ€ì°¨ìƒì°¨)
+			String trnEqpCd       = ""; 	//ìš´ì†¡ì¥ë¹„ì½”ë“œ
+			String ydEqpStat      = "";		//ì•¼ë“œì„¤ë¹„ìƒíƒœ
 			String ydSchPrior     = "";
 
-			int ttMtlSh;			//ÀüÃ¼ Àç·á¸Å¼ö
-			int wmMtlSh;			//ÀÛ¾÷¿¹¾à Àç·á¸Å¼ö
-			int stMtlSh;			//ÀúÀåÇ° Àç·á¸Å¼ö
-			int slMtlSh;			//ÀûÄ¡´Ü Àç·á¸Å¼ö
-			int statCSh;			//ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö(¾ßµåÀûÄ¡´ÜÀç·á»óÅÂ°¡ ÀûÄ¡ Áß[C] ÀÎ Àç·á¼ö)
-			int abLocSh;			//ÀúÀåÀ§Ä¡ÀÌ»ó Àç·á¸Å¼ö
+			int ttMtlSh;			//ì „ì²´ ì¬ë£Œë§¤ìˆ˜
+			int wmMtlSh;			//ì‘ì—…ì˜ˆì•½ ì¬ë£Œë§¤ìˆ˜
+			int stMtlSh;			//ì €ì¥í’ˆ ì¬ë£Œë§¤ìˆ˜
+			int slMtlSh;			//ì ì¹˜ë‹¨ ì¬ë£Œë§¤ìˆ˜
+			int statCSh;			//ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜(ì•¼ë“œì ì¹˜ë‹¨ì¬ë£Œìƒíƒœê°€ ì ì¹˜ ì¤‘[C] ì¸ ì¬ë£Œìˆ˜)
+			int abLocSh;			//ì €ì¥ìœ„ì¹˜ì´ìƒ ì¬ë£Œë§¤ìˆ˜
 			
-			String szYD_TO_LOC_GUIDE_FNL = ""; //E100 ¼­Æ÷ÆÃºí·Ï ÀÌ»ó½Ã ToÀ§Ä¡ °¡ÀÌµå
+			String szYD_TO_LOC_GUIDE_FNL = ""; //E100 ì„œí¬íŒ…ë¸”ë¡ ì´ìƒì‹œ Toìœ„ì¹˜ ê°€ì´ë“œ
 			
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStat
-			--Å©·¹ÀÎ½ºÄÉÁÙ »óÅÂÁ¤º¸ Á¶È¸ 
-			SELECT WB.YD_GP                                         --¾ßµå±¸ºĞ
-			      ,WB.YD_BAY_GP                                     --¾ßµåµ¿±¸ºĞ
-			      ,WB.YD_SCH_CD                                     --¾ßµå½ºÄÉÁìÄÚµå
-			      ,WB.YD_SCH_PRIOR                                  --¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			      ,WB.YD_TO_LOC_DCSN_MTD                            --¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-			      ,WB.YD_TO_LOC_GUIDE                               --¾ßµåToÀ§Ä¡Guide
-			      ,TO_CHAR(WB.REG_DDTT,'YYYYMMDDHH24MISS') AS YD_WBOOK_DT --¾ßµåÀÛ¾÷¿¹¾àÀÏ½Ã
-			      ,CASE WHEN WB.YD_SCH_CD LIKE '__PT__U_' THEN 'C'  --Â÷·®»óÂ÷
-			            WHEN WB.YD_SCH_CD LIKE '__TC__U_' THEN 'T'  --´ëÂ÷»óÂ÷
-			            WHEN LENGTH(WB.YD_TO_LOC_GUIDE) >= 4        --Span±¸ºĞ ÀÌ»óÀÌ¸é
-			             AND WB.YD_TO_LOC_GUIDE LIKE WB.YD_GP||WB.YD_BAY_GP||'%' THEN 'G' --ToÀ§Ä¡Guide
-			      	    ELSE 'Z'                                    --±âÅ¸
-			      	END AS TO_LOC_CHK_GP                            --ToÀ§Ä¡Á¡°Ë±¸ºĞ
-			      ,SR.YD_SCH_PROH_EXN                               --¾ßµå½ºÄÉÁì±İÁöÀ¯¹«
+			--í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìƒíƒœì •ë³´ ì¡°íšŒ 
+			SELECT WB.YD_GP                                         --ì•¼ë“œêµ¬ë¶„
+			      ,WB.YD_BAY_GP                                     --ì•¼ë“œë™êµ¬ë¶„
+			      ,WB.YD_SCH_CD                                     --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			      ,WB.YD_SCH_PRIOR                                  --ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			      ,WB.YD_TO_LOC_DCSN_MTD                            --ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+			      ,WB.YD_TO_LOC_GUIDE                               --ì•¼ë“œToìœ„ì¹˜Guide
+			      ,TO_CHAR(WB.REG_DDTT,'YYYYMMDDHH24MISS') AS YD_WBOOK_DT --ì•¼ë“œì‘ì—…ì˜ˆì•½ì¼ì‹œ
+			      ,CASE WHEN WB.YD_SCH_CD LIKE '__PT__U_' THEN 'C'  --ì°¨ëŸ‰ìƒì°¨
+			            WHEN WB.YD_SCH_CD LIKE '__TC__U_' THEN 'T'  --ëŒ€ì°¨ìƒì°¨
+			            WHEN LENGTH(WB.YD_TO_LOC_GUIDE) >= 4        --Spanêµ¬ë¶„ ì´ìƒì´ë©´
+			             AND WB.YD_TO_LOC_GUIDE LIKE WB.YD_GP||WB.YD_BAY_GP||'%' THEN 'G' --Toìœ„ì¹˜Guide
+			      	    ELSE 'Z'                                    --ê¸°íƒ€
+			      	END AS TO_LOC_CHK_GP                            --Toìœ„ì¹˜ì ê²€êµ¬ë¶„
+			      ,SR.YD_SCH_PROH_EXN                               --ì•¼ë“œìŠ¤ì¼€ì¥´ê¸ˆì§€ìœ ë¬´
 			      
-			      ,WB.YD_WRK_PLAN_CRN AS YD_WRK_CRN_PLN             --°èÈ¹Å©·¹ÀÎ
-			      ,E0.WPROG_STAT      AS YD_EQP_STAT_PLN            --°èÈ¹Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-			      ,E0.WORK_MODE       AS YD_EQP_WRK_MODE_PLN        --°èÈ¹Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+			      ,WB.YD_WRK_PLAN_CRN AS YD_WRK_CRN_PLN             --ê³„íší¬ë ˆì¸
+			      ,E0.WPROG_STAT      AS YD_EQP_STAT_PLN            --ê³„íší¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+			      ,E0.WORK_MODE       AS YD_EQP_WRK_MODE_PLN        --ê³„íší¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 			      
-			      ,SR.YD_WRK_CRN                                    --ÀÛ¾÷Å©·¹ÀÎ
-			      ,SR.YD_WRK_CRN_PRIOR                              --ÀÛ¾÷Å©·¹ÀÎ¿ì¼±¼øÀ§
-			      ,E1.WPROG_STAT      AS YD_EQP_STAT_WRK            --ÀÛ¾÷Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-			      ,E1.WORK_MODE       AS YD_EQP_WRK_MODE_WRK        --ÀÛ¾÷Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+			      ,SR.YD_WRK_CRN                                    --ì‘ì—…í¬ë ˆì¸
+			      ,SR.YD_WRK_CRN_PRIOR                              --ì‘ì—…í¬ë ˆì¸ìš°ì„ ìˆœìœ„
+			      ,E1.WPROG_STAT      AS YD_EQP_STAT_WRK            --ì‘ì—…í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+			      ,E1.WORK_MODE       AS YD_EQP_WRK_MODE_WRK        --ì‘ì—…í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 			      
-			      ,SR.YD_ALT_CRN                                    --´ëÃ¼Å©·¹ÀÎ
-			      ,SR.YD_ALT_CRN_PRIOR                              --´ëÃ¼Å©·¹ÀÎ¿ì¼±¼øÀ§
-			      ,E2.WPROG_STAT      AS YD_EQP_STAT_ALT            --´ëÃ¼Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-			      ,E2.WORK_MODE       AS YD_EQP_WRK_MODE_ALT        --´ëÃ¼Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+			      ,SR.YD_ALT_CRN                                    --ëŒ€ì²´í¬ë ˆì¸
+			      ,SR.YD_ALT_CRN_PRIOR                              --ëŒ€ì²´í¬ë ˆì¸ìš°ì„ ìˆœìœ„
+			      ,E2.WPROG_STAT      AS YD_EQP_STAT_ALT            --ëŒ€ì²´í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+			      ,E2.WORK_MODE       AS YD_EQP_WRK_MODE_ALT        --ëŒ€ì²´í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 			      
-			      ,NVL(WM.TT_MTL_SH,0) AS TT_MTL_SH                 --ÀüÃ¼ Àç·á¸Å¼ö
-			      ,NVL(WM.WM_MTL_SH,0) AS WM_MTL_SH                 --ÀÛ¾÷¿¹¾à Àç·á¸Å¼ö
-			      ,NVL(WM.ST_MTL_SH,0) AS ST_MTL_SH                 --ÀúÀåÇ° Àç·á¸Å¼ö
-			      ,NVL(WM.SL_MTL_SH,0) AS SL_MTL_SH                 --ÀûÄ¡´Ü Àç·á¸Å¼ö
-			      ,NVL(WM.STAT_C_SH,0) AS STAT_C_SH                 --ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö
+			      ,NVL(WM.TT_MTL_SH,0) AS TT_MTL_SH                 --ì „ì²´ ì¬ë£Œë§¤ìˆ˜
+			      ,NVL(WM.WM_MTL_SH,0) AS WM_MTL_SH                 --ì‘ì—…ì˜ˆì•½ ì¬ë£Œë§¤ìˆ˜
+			      ,NVL(WM.ST_MTL_SH,0) AS ST_MTL_SH                 --ì €ì¥í’ˆ ì¬ë£Œë§¤ìˆ˜
+			      ,NVL(WM.SL_MTL_SH,0) AS SL_MTL_SH                 --ì ì¹˜ë‹¨ ì¬ë£Œë§¤ìˆ˜
+			      ,NVL(WM.STAT_C_SH,0) AS STAT_C_SH                 --ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜
 			      ,(SELECT COUNT(*)
 			          FROM TB_YM_WRKBOOKMTL WM
 			              ,TB_YM_STACKLAYER     SL
@@ -416,13 +416,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			           AND SL.STACK_COL_GP NOT LIKE SUBSTR(WB.YD_SCH_CD,1,2)||'%'
 			           AND SL.STACK_LAYER_STAT = 'C'
 			           AND WM.DEL_YN      = 'N'
-			           AND SL.DEL_YN      = 'N') AS AB_LOC_SH       --ÀúÀåÀ§Ä¡ÀÌ»ó Àç·á¸Å¼ö
-			      , 'N' AS CM_DUP_YN                                -- Å©·¹ÀÎ½ºÄÉÁÙ Àç·áÁßº¹¿©ºÎ
-			      , 'N' AS CL_DUP_GP                                -- Å©·¹ÀÎ½ºÄÉÁÙ ÀúÀåÀ§Ä¡Áßº¹¿©ºÎ
-			      ,WB.YD_CAR_USE_GP                                 -- ¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-			      ,WB.TRN_EQP_CD                                    -- ¿î¼ÛÀåºñÄÚµå
-			      ,WB.CAR_NO                                        -- Â÷·®¹øÈ£
-			      ,WB.CARD_NO                                       -- Ä«µå¹øÈ£
+			           AND SL.DEL_YN      = 'N') AS AB_LOC_SH       --ì €ì¥ìœ„ì¹˜ì´ìƒ ì¬ë£Œë§¤ìˆ˜
+			      , 'N' AS CM_DUP_YN                                -- í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ë£Œì¤‘ë³µì—¬ë¶€
+			      , 'N' AS CL_DUP_GP                                -- í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì €ì¥ìœ„ì¹˜ì¤‘ë³µì—¬ë¶€
+			      ,WB.YD_CAR_USE_GP                                 -- ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+			      ,WB.TRN_EQP_CD                                    -- ìš´ì†¡ì¥ë¹„ì½”ë“œ
+			      ,WB.CAR_NO                                        -- ì°¨ëŸ‰ë²ˆí˜¸
+			      ,WB.CARD_NO                                       -- ì¹´ë“œë²ˆí˜¸
 			      ,(SELECT SUBSTR(CURR_STOP_LOC,2,1)
 			          FROM TB_YM_EQUIP EQ
 			         WHERE EQ.EQUIP_GP = SUBSTR(WB.YD_SCH_CD,1,1)||'XTC'||SUBSTR(WB.YD_SCH_CD,5,2)) AS YD_CURR_BAY_GP
@@ -436,7 +436,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			            AND SL.DEL_YN      = 'N'
 			            AND S2.STACK_COL_GP = SL.STACK_COL_GP 
 			            AND S2.STACK_BED_GP = SL.STACK_BED_GP
-			            AND S2.STACK_LAYER_GP > SL.STACK_LAYER_GP),0) AS UP_DN_GP    --»ó´Ü ±ÇÇÏ ´ë»ó ¿©ºÎ         
+			            AND S2.STACK_LAYER_GP > SL.STACK_LAYER_GP),0) AS UP_DN_GP    --ìƒë‹¨ ê¶Œí•˜ ëŒ€ìƒ ì—¬ë¶€         
 			            
 			      , (SELECT CASE WHEN MAX(CAL_SLAB_WT) > CASE WHEN E0.WPROG_STAT != 'B' AND E0.WORK_MODE != 2 THEN E0.STACK_MAX_QNTY 
 			                                                  WHEN E1.WPROG_STAT != 'B' AND E1.WORK_MODE != 2 THEN E1.STACK_MAX_QNTY 
@@ -471,7 +471,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			              ,COUNT(DISTINCT WM.STOCK_ID) AS WM_MTL_SH
 			              ,COUNT(DISTINCT ST.STOCK_ID) AS ST_MTL_SH
 			              ,COUNT(DISTINCT SL.STOCK_ID) AS SL_MTL_SH
-			              ,SUM(DECODE(SL.STACK_LAYER_STAT,'C',1,'U',1)) AS STAT_C_SH --ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö
+			              ,SUM(DECODE(SL.STACK_LAYER_STAT,'C',1,'U',1)) AS STAT_C_SH --ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜
 			              ,MAX(WM.YD_UP_COLL_SEQ)      AS YD_UP_COLL_SEQ
 			          FROM TB_YM_WRKBOOKMTL WM
 			              ,TB_YM_STOCK      ST
@@ -495,77 +495,77 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			   AND E2.DEL_YN(+)       = 'N'
 			   AND E0.DEL_YN(+)       = 'N'
 			*/		   
-			JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStat", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸");
+			JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStat", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ");
 			if (jsChk.size() <= 0) {
-				throw new Exception("¿À·ù:" + trtMsg + " >> »óÅÂÁ¤º¸ ¾øÀ½");
+				throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ìƒíƒœì •ë³´ ì—†ìŒ");
 			} else {
 				JDTORecord jrChk = jsChk.getRecord(0);
 
-				ydSchCd                = commUtils.trim(jrChk.getFieldString("YD_SCH_CD"          ));	//¾ßµå½ºÄÉÁìÄÚµå
-				ydToLocDcsnMtd         = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_DCSN_MTD" ));	//¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-				ydToLocGuide           = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE"    ));	//¾ßµåToÀ§Ä¡Guide
-				toLocChkGp             = commUtils.trim(jrChk.getFieldString("TO_LOC_CHK_GP"      ));	//ToÀ§Ä¡Á¡°Ë±¸ºĞ
-				ydSchPrior             = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN_PRIOR"   ));	//¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+				ydSchCd                = commUtils.trim(jrChk.getFieldString("YD_SCH_CD"          ));	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				ydToLocDcsnMtd         = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_DCSN_MTD" ));	//ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+				ydToLocGuide           = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE"    ));	//ì•¼ë“œToìœ„ì¹˜Guide
+				toLocChkGp             = commUtils.trim(jrChk.getFieldString("TO_LOC_CHK_GP"      ));	//Toìœ„ì¹˜ì ê²€êµ¬ë¶„
+				ydSchPrior             = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN_PRIOR"   ));	//ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 				
-				String ydWrkPlanCrn    = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN_PLN"    ));	//°èÈ¹Å©·¹ÀÎ
-				String ydEqpStatPln    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_PLN"    ));	//°èÈ¹Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-				String ydEqpWrkModePln = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_PLN"));	//°èÈ¹Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+				String ydWrkPlanCrn    = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN_PLN"    ));	//ê³„íší¬ë ˆì¸
+				String ydEqpStatPln    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_PLN"    ));	//ê³„íší¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				String ydEqpWrkModePln = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_PLN"));	//ê³„íší¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 				
-				String ydWrkCrn        = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN"         ));	//ÀÛ¾÷Å©·¹ÀÎ
-				String ydEqpStatWrk    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_WRK"    ));	//ÀÛ¾÷Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-				String ydEqpWrkModeWrk = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_WRK"));	//ÀÛ¾÷Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+				String ydWrkCrn        = commUtils.trim(jrChk.getFieldString("YD_WRK_CRN"         ));	//ì‘ì—…í¬ë ˆì¸
+				String ydEqpStatWrk    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_WRK"    ));	//ì‘ì—…í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				String ydEqpWrkModeWrk = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_WRK"));	//ì‘ì—…í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 
-				String ydAltCrn        = commUtils.trim(jrChk.getFieldString("YD_ALT_CRN"         ));	//´ëÃ¼Å©·¹ÀÎ
-				String ydEqpStatAlt    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//´ëÃ¼Å©·¹ÀÎ ¾ßµå¼³ºñ»óÅÂ
-				String ydEqpWrkModeAlt = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//´ëÃ¼Å©·¹ÀÎ ¾ßµå¼³ºñÀÛ¾÷Mode
+				String ydAltCrn        = commUtils.trim(jrChk.getFieldString("YD_ALT_CRN"         ));	//ëŒ€ì²´í¬ë ˆì¸
+				String ydEqpStatAlt    = commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//ëŒ€ì²´í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				String ydEqpWrkModeAlt = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//ëŒ€ì²´í¬ë ˆì¸ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
 				
-				String cmDupYn         = commUtils.trim(jrChk.getFieldString("CM_DUP_YN"          ));	//Å©·¹ÀÎ½ºÄÉÁÙ Àç·áÁßº¹¿©ºÎ
-				String clDupGp         = commUtils.trim(jrChk.getFieldString("CL_DUP_GP"          ));	//Å©·¹ÀÎ½ºÄÉÁÙ ÀúÀåÀ§Ä¡Áßº¹¿©ºÎ
-				String upDnGp          = commUtils.trim(jrChk.getFieldString("UP_DN_GP"           ));	//»ó´Ü ±ÇÇÏ SLAB ¿©ºÎ
-				String slabWtYn        = commUtils.trim(jrChk.getFieldString("SLAB_WT_YN"         ));	//Áß·® 53000 ÀÌ»ó 
-				String tcFlag          = commUtils.trim(jrChk.getFieldString("TC_FLAG"            ));	//´ëÂ÷ÀÎ °æ¿ì µ¿°£ÀÛ¾÷±âÁØ Á¶È¸
-				
-				
-//				String sYD_EQP_STAT_ALT= commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//´ëÃ¼Å©·¹ÀÎ ¼³ºñ»óÅÂ
-//				String sYD_EQP_WRK_MODE_ALT = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//¾ßµå¼³ºñÀÛ¾÷Mode(»ó´ëÅ©·¹ÀÎ ÀÛ¾÷¸ğµå)
-				
-				ttMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("TT_MTL_SH"),"0"));	//ÀüÃ¼ Àç·á¸Å¼ö
-				wmMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("WM_MTL_SH"),"0"));	//ÀÛ¾÷¿¹¾à Àç·á¸Å¼ö
-				stMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("ST_MTL_SH"),"0"));	//ÀúÀåÇ° Àç·á¸Å¼ö
-				slMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("SL_MTL_SH"),"0"));	//ÀûÄ¡´Ü Àç·á¸Å¼ö
-				statCSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("STAT_C_SH"),"0"));	//ÀûÄ¡ÁßÀÎ Àç·á¸Å¼ö(¾ßµåÀûÄ¡´ÜÀç·á»óÅÂ°¡ ÀûÄ¡ Áß[C] ÀÎ Àç·á¼ö)
-				abLocSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("AB_LOC_SH"),"0"));	//ÀúÀåÀ§Ä¡ÀÌ»ó Àç·á¸Å¼ö
+				String cmDupYn         = commUtils.trim(jrChk.getFieldString("CM_DUP_YN"          ));	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ë£Œì¤‘ë³µì—¬ë¶€
+				String clDupGp         = commUtils.trim(jrChk.getFieldString("CL_DUP_GP"          ));	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì €ì¥ìœ„ì¹˜ì¤‘ë³µì—¬ë¶€
+				String upDnGp          = commUtils.trim(jrChk.getFieldString("UP_DN_GP"           ));	//ìƒë‹¨ ê¶Œí•˜ SLAB ì—¬ë¶€
+				String slabWtYn        = commUtils.trim(jrChk.getFieldString("SLAB_WT_YN"         ));	//ì¤‘ëŸ‰ 53000 ì´ìƒ 
+				String tcFlag          = commUtils.trim(jrChk.getFieldString("TC_FLAG"            ));	//ëŒ€ì°¨ì¸ ê²½ìš° ë™ê°„ì‘ì—…ê¸°ì¤€ ì¡°íšŒ
 				
 				
+//				String sYD_EQP_STAT_ALT= commUtils.trim(jrChk.getFieldString("YD_EQP_STAT_ALT"    ));	//ëŒ€ì²´í¬ë ˆì¸ ì„¤ë¹„ìƒíƒœ
+//				String sYD_EQP_WRK_MODE_ALT = commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE_ALT"));	//ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(ìƒëŒ€í¬ë ˆì¸ ì‘ì—…ëª¨ë“œ)
 				
-				
-				szYD_TO_LOC_GUIDE_FNL = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE_FNL")); //E100 ¼­Æ÷ÆÃºí·° ÀÌ»ó½Ã ToÀ§Ä¡ °¡ÀÌµå 
+				ttMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("TT_MTL_SH"),"0"));	//ì „ì²´ ì¬ë£Œë§¤ìˆ˜
+				wmMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("WM_MTL_SH"),"0"));	//ì‘ì—…ì˜ˆì•½ ì¬ë£Œë§¤ìˆ˜
+				stMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("ST_MTL_SH"),"0"));	//ì €ì¥í’ˆ ì¬ë£Œë§¤ìˆ˜
+				slMtlSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("SL_MTL_SH"),"0"));	//ì ì¹˜ë‹¨ ì¬ë£Œë§¤ìˆ˜
+				statCSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("STAT_C_SH"),"0"));	//ì ì¹˜ì¤‘ì¸ ì¬ë£Œë§¤ìˆ˜(ì•¼ë“œì ì¹˜ë‹¨ì¬ë£Œìƒíƒœê°€ ì ì¹˜ ì¤‘[C] ì¸ ì¬ë£Œìˆ˜)
+				abLocSh = Integer.parseInt(commUtils.nvl(jrChk.getFieldString("AB_LOC_SH"),"0"));	//ì €ì¥ìœ„ì¹˜ì´ìƒ ì¬ë£Œë§¤ìˆ˜
 				
 				
 				
 				
-				//¢º¢º¢º¢º¢º¢º¢ºLOG_TABLE 
+				szYD_TO_LOC_GUIDE_FNL = commUtils.trim(jrChk.getFieldString("YD_TO_LOC_GUIDE_FNL")); //E100 ì„œí¬íŒ…ë¸”ëŸ­ ì´ìƒì‹œ Toìœ„ì¹˜ ê°€ì´ë“œ 
+				
+				
+				
+				
+				//â–¶â–¶â–¶â–¶â–¶â–¶â–¶LOG_TABLE 
 				if(sAPP005_YN.equals("Y")) {
 					if (wmMtlSh == 0) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·á Á¤º¸ ¾øÀ½";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì •ë³´ ì—†ìŒ";
 					} else if (wmMtlSh != ttMtlSh) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·á ÀûÄ¡´Ü Áßº¹ µî·Ï [ÀÛ¾÷¿¹¾à: " + wmMtlSh + ", ÀûÄ¡´Ü: " + ttMtlSh + "]";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì ì¹˜ë‹¨ ì¤‘ë³µ ë“±ë¡ [ì‘ì—…ì˜ˆì•½: " + wmMtlSh + ", ì ì¹˜ë‹¨: " + ttMtlSh + "]";
 					} else if (wmMtlSh != stMtlSh) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·á ÀúÀåÇ° Á¤º¸ ÀÌ»ó [" + (wmMtlSh - stMtlSh) + "¸Å]";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì €ì¥í’ˆ ì •ë³´ ì´ìƒ [" + (wmMtlSh - stMtlSh) + "ë§¤]";
 					} else if ("Y".equals(cmDupYn)) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·á°¡ ±â µî·ÏµÈ Å©·¹ÀÎÀÛ¾÷Àç·á¿Í Áßº¹";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ì‘ì—…ì¬ë£Œì™€ ì¤‘ë³µ";
 					} else if ("1".equals(clDupGp)) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±ÇÇÏÀ§Ä¡¿Í Áßº¹";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œí•˜ìœ„ì¹˜ì™€ ì¤‘ë³µ";
 					} else if ("2".equals(clDupGp)) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±Ç»óÀ§Ä¡¿Í Áßº¹";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œìƒìœ„ì¹˜ì™€ ì¤‘ë³µ";
 					} else if ("Y".equals(upDnGp)) {
-						 trtMsg = "¿À·ù:>> »ó´Ü¿¡ ±ÇÇÏ ÀÛ¾÷ÀÌ ÀÖ½À´Ï´Ù. ºÒ°¡ÇÕ´Ï´Ù.";
+						 trtMsg = "ì˜¤ë¥˜:>> ìƒë‹¨ì— ê¶Œí•˜ ì‘ì—…ì´ ìˆìŠµë‹ˆë‹¤. ë¶ˆê°€í•©ë‹ˆë‹¤.";
 					} else if ("B".equals(ydEqpStatWrk) && "B".equals(ydEqpStatAlt) ) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷ ºÒ°¡ ÇÕ´Ï´Ù. Å©·¹ÀÎ °íÀå";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—… ë¶ˆê°€ í•©ë‹ˆë‹¤. í¬ë ˆì¸ ê³ ì¥";
 					} else if ("2".equals(ydEqpWrkModePln) && "2".equals(ydEqpWrkModeAlt) ) {
-						 trtMsg = "¿À·ù:>> ÀÛ¾÷ ºÒ°¡ ÇÕ´Ï´Ù. Å©·¹ÀÎ OFF-LINE";
+						 trtMsg = "ì˜¤ë¥˜:>> ì‘ì—… ë¶ˆê°€ í•©ë‹ˆë‹¤. í¬ë ˆì¸ OFF-LINE";
 					} else if ("Y".equals(tcFlag)) {
-						 trtMsg = "¿À·ù:>> ´ëÂ÷ÀÛ¾÷½Ã µ¿°£ÀÛ¾÷±âÁØ°ú Æ²¸³´Ï´Ù.";
+						 trtMsg = "ì˜¤ë¥˜:>> ëŒ€ì°¨ì‘ì—…ì‹œ ë™ê°„ì‘ì—…ê¸°ì¤€ê³¼ í‹€ë¦½ë‹ˆë‹¤.";
 					}
 					if(trtMsg.length() > 5) {
 						JDTORecord jrLog  				= JDTORecordFactory.getInstance().create(); 
@@ -573,7 +573,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    			jrLog.setField("YD_CRN_SCH_ID"	, ydWbookId);
 		    			jrLog.setField("YD_GP"			, "2");
 		    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-		    			jrLog.setField("SCH_CONTENTS"	, "½ºÄÉÁì´ë»ó Á¡°Ë½ÇÆĞ:"+ trtMsg+" LOG :"+"\r\n" );
+		    			jrLog.setField("SCH_CONTENTS"	, "ìŠ¤ì¼€ì¥´ëŒ€ìƒ ì ê²€ì‹¤íŒ¨:"+ trtMsg+" LOG :"+"\r\n" );
 	
 		    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 		    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
@@ -582,90 +582,90 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				
 				if (wmMtlSh == 0) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·á Á¤º¸ ¾øÀ½");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì •ë³´ ì—†ìŒ");
 				} else if (wmMtlSh != ttMtlSh) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·á ÀûÄ¡´Ü Áßº¹ µî·Ï [ÀÛ¾÷¿¹¾à: " + wmMtlSh + ", ÀûÄ¡´Ü: " + ttMtlSh + "]");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì ì¹˜ë‹¨ ì¤‘ë³µ ë“±ë¡ [ì‘ì—…ì˜ˆì•½: " + wmMtlSh + ", ì ì¹˜ë‹¨: " + ttMtlSh + "]");
 				} else if (wmMtlSh != stMtlSh) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·á ÀúÀåÇ° Á¤º¸ ÀÌ»ó [" + (wmMtlSh - stMtlSh) + "¸Å]");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì €ì¥í’ˆ ì •ë³´ ì´ìƒ [" + (wmMtlSh - stMtlSh) + "ë§¤]");
 				} else if ("Y".equals(cmDupYn)) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·á°¡ ±â µî·ÏµÈ Å©·¹ÀÎÀÛ¾÷Àç·á¿Í Áßº¹");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ì‘ì—…ì¬ë£Œì™€ ì¤‘ë³µ");
 				} else if ("1".equals(clDupGp)) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±ÇÇÏÀ§Ä¡¿Í Áßº¹");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œí•˜ìœ„ì¹˜ì™€ ì¤‘ë³µ");
 				} else if ("2".equals(clDupGp)) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷¿¹¾àÀç·áÀÇ ÇöÀçÀ§Ä¡°¡ ±â µî·ÏµÈ Å©·¹ÀÎ½ºÄÉÁì ±Ç»óÀ§Ä¡¿Í Áßº¹");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—…ì˜ˆì•½ì¬ë£Œì˜ í˜„ì¬ìœ„ì¹˜ê°€ ê¸° ë“±ë¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê¶Œìƒìœ„ì¹˜ì™€ ì¤‘ë³µ");
 				} else if ("Y".equals(upDnGp)) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> »ó´Ü¿¡ ±ÇÇÏ ÀÛ¾÷ÀÌ ÀÖ½À´Ï´Ù. ºÒ°¡ÇÕ´Ï´Ù.");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ìƒë‹¨ì— ê¶Œí•˜ ì‘ì—…ì´ ìˆìŠµë‹ˆë‹¤. ë¶ˆê°€í•©ë‹ˆë‹¤.");
 				} else if ("B".equals(ydEqpStatWrk) && "B".equals(ydEqpStatAlt) ) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷ ºÒ°¡ ÇÕ´Ï´Ù. Å©·¹ÀÎ °íÀå."); 
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—… ë¶ˆê°€ í•©ë‹ˆë‹¤. í¬ë ˆì¸ ê³ ì¥."); 
 				} else if ("2".equals(ydEqpWrkModePln) && "2".equals(ydEqpWrkModeAlt) ) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ÀÛ¾÷ ºÒ°¡ ÇÕ´Ï´Ù. Å©·¹ÀÎ OFF-LINE"); 
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì‘ì—… ë¶ˆê°€ í•©ë‹ˆë‹¤. í¬ë ˆì¸ OFF-LINE"); 
 				} else if ("Y".equals(tcFlag)) {
-					throw new Exception("¿À·ù:" + trtMsg + " >> ´ëÂ÷ ÀÛ¾÷½Ã µ¿°£ÀÛ¾÷±âÁØ°ú Æ²¸³´Ï´Ù..");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ëŒ€ì°¨ ì‘ì—…ì‹œ ë™ê°„ì‘ì—…ê¸°ì¤€ê³¼ í‹€ë¦½ë‹ˆë‹¤..");
 					
 //				} else if ("N".equals(slabWtYn)) {
-//					throw new Exception("¿À·ù:" + trtMsg + " >> slabÁß·®ÀÌ 53000ÀÌ»ó ÃÊ°ú. ºÒ°¡ÇÕ´Ï´Ù.");
+//					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> slabì¤‘ëŸ‰ì´ 53000ì´ìƒ ì´ˆê³¼. ë¶ˆê°€í•©ë‹ˆë‹¤.");
 				}
 					
 				/**********************************************************
-				* 1.3 Å©·¹ÀÎ °áÁ¤
+				* 1.3 í¬ë ˆì¸ ê²°ì •
 				**********************************************************/
 
 				if (!"".equals(ydWrkPlanCrn) && !"B".equals(ydEqpStatPln) && "1".equals(ydEqpWrkModePln)) {
-					//ÀÛ¾÷¿¹¾à ÁöÁ¤Å©·¹ÀÎ : ÃÖ¿ì¼± ÁöÁ¤
-					ydEqpId   = ydWrkPlanCrn;	//¾ßµå¼³ºñID
-					ydEqpStat = ydEqpStatPln;	//¾ßµå¼³ºñ»óÅÂ
-					commUtils.printLog(logId, trtMsg + " >> ÀÛ¾÷¿¹¾à ÁöÁ¤Å©·¹ÀÎ[" + ydWrkPlanCrn + "]À¸·Î ¼³Á¤", "SL");
+					//ì‘ì—…ì˜ˆì•½ ì§€ì •í¬ë ˆì¸ : ìµœìš°ì„  ì§€ì •
+					ydEqpId   = ydWrkPlanCrn;	//ì•¼ë“œì„¤ë¹„ID
+					ydEqpStat = ydEqpStatPln;	//ì•¼ë“œì„¤ë¹„ìƒíƒœ
+					commUtils.printLog(logId, trtMsg + " >> ì‘ì—…ì˜ˆì•½ ì§€ì •í¬ë ˆì¸[" + ydWrkPlanCrn + "]ìœ¼ë¡œ ì„¤ì •", "SL");
 				} else if (!"".equals(ydWrkCrn) && !"B".equals(ydEqpStatWrk) && "1".equals(ydEqpWrkModeWrk)) {
-					//ÀÛ¾÷Å©·¹ÀÎ :
-					ydEqpId   = ydWrkCrn;		//¾ßµå¼³ºñID
-					ydEqpStat = ydEqpStatWrk;	//¾ßµå¼³ºñ»óÅÂ
+					//ì‘ì—…í¬ë ˆì¸ :
+					ydEqpId   = ydWrkCrn;		//ì•¼ë“œì„¤ë¹„ID
+					ydEqpStat = ydEqpStatWrk;	//ì•¼ë“œì„¤ë¹„ìƒíƒœ
 				} else if (!"".equals(ydAltCrn) && !"B".equals(ydEqpStatAlt) && "1".equals(ydEqpWrkModeAlt)) {
-					//´ëÃ¼Å©·¹ÀÎ
-					ydEqpId   = ydAltCrn;		//¾ßµå¼³ºñID
-					ydEqpStat = ydEqpStatAlt;	//¾ßµå¼³ºñ»óÅÂ
+					//ëŒ€ì²´í¬ë ˆì¸
+					ydEqpId   = ydAltCrn;		//ì•¼ë“œì„¤ë¹„ID
+					ydEqpStat = ydEqpStatAlt;	//ì•¼ë“œì„¤ë¹„ìƒíƒœ
 				} else {
-					throw new Exception("¿À·ù:" + trtMsg + " >> >> ÀÛ¾÷ ºÒ°¡ ÇÕ´Ï´Ù. Å©·¹ÀÎ °íÀå");
+					throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> >> ì‘ì—… ë¶ˆê°€ í•©ë‹ˆë‹¤. í¬ë ˆì¸ ê³ ì¥");
 				}
 				
 //				/***********************************************************
-//				 * 1.3.1 Å©·¹ÀÎÀÌ °íÀå»óÅÂÀÌ¸é ´ëÃ¼Å©·¹ÀÎÀ¸·Î Æí¼º
+//				 * 1.3.1 í¬ë ˆì¸ì´ ê³ ì¥ìƒíƒœì´ë©´ ëŒ€ì²´í¬ë ˆì¸ìœ¼ë¡œ í¸ì„±
 //				 ***********************************************************/
-//				// Å©·¹ÀÎÀÌ °íÀåÀÌ°í ´ëÃ¼Å©·¹ÀÎÀÌ °íÀåÀÌ ¾Æ´Ï¸é ´ëÃ¼Å©·¹ÀÎÀ¸·Î ±³Ã¼
+//				// í¬ë ˆì¸ì´ ê³ ì¥ì´ê³  ëŒ€ì²´í¬ë ˆì¸ì´ ê³ ì¥ì´ ì•„ë‹ˆë©´ ëŒ€ì²´í¬ë ˆì¸ìœ¼ë¡œ êµì²´
 //				if ("B".equals(ydEqpStat)||"B".equals(ydEqpStat)) {
 //					if (!"".equals(sYD_ALT_CRN) && !"B".equals(sYD_EQP_STAT_ALT)) {
 //						ydEqpId   = sYD_ALT_CRN;
 //						ydEqpStat = sYD_EQP_STAT_ALT;
 //					}
 //					
-//					// ÁöÁ¤Å©·¹ÀÎÀÌ °íÀå, ÇØ´ç ½ºÄÉÁÙÀÇ ÀÛ¾÷Å©·¹ÀÎÀÌ °íÀåÀÌ ¾Æ´Ò¶§
+//					// ì§€ì •í¬ë ˆì¸ì´ ê³ ì¥, í•´ë‹¹ ìŠ¤ì¼€ì¤„ì˜ ì‘ì—…í¬ë ˆì¸ì´ ê³ ì¥ì´ ì•„ë‹ë•Œ
 //					if (!"B".equals(ydEqpStatWrk)) {
-//						ydEqpId   = ydWrkCrn;		//¾ßµå¼³ºñID
-//						ydEqpStat = ydEqpStatWrk;	//¾ßµå¼³ºñ»óÅÂ
+//						ydEqpId   = ydWrkCrn;		//ì•¼ë“œì„¤ë¹„ID
+//						ydEqpStat = ydEqpStatWrk;	//ì•¼ë“œì„¤ë¹„ìƒíƒœ
 //					}
 //				} 
 				
 				/**********************************************************
-				* 1.4 ToÀ§Ä¡ »çÀü Á¡°Ë
-				*     - Â÷·®»óÂ÷ ÀÛ¾÷('C')
-				*     - ¾ßµåToÀ§Ä¡Guide('G')
+				* 1.4 Toìœ„ì¹˜ ì‚¬ì „ ì ê²€
+				*     - ì°¨ëŸ‰ìƒì°¨ ì‘ì—…('C')
+				*     - ì•¼ë“œToìœ„ì¹˜Guide('G')
 				**********************************************************/
-				//ToÀ§Ä¡ »çÀü Á¡°Ë
+				//Toìœ„ì¹˜ ì‚¬ì „ ì ê²€
 				
-				//¢º¢º¢º¢º¢º¢º¢ºLOG_TABLE 
+				//â–¶â–¶â–¶â–¶â–¶â–¶â–¶LOG_TABLE 
 				if(sAPP005_YN.equals("Y")) {
 					if ("C".equals(toLocChkGp)) {
-						//Â÷·®»óÂ÷ÀÛ¾÷
+						//ì°¨ëŸ‰ìƒì°¨ì‘ì—…
 						if ("".equals(commUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP")))) {
-							trtMsg = "¿À·ù:>> Â÷·®»óÂ÷ÀÛ¾÷ ¾ßµåÂ÷·®»ç¿ë±¸ºĞ ¾øÀ½";
+							trtMsg = "ì˜¤ë¥˜:>> ì°¨ëŸ‰ìƒì°¨ì‘ì—… ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ ì—†ìŒ";
 							
 						} else if ("L".equals(commUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP"))) 
 								&& "".equals(commUtils.trim(jrChk.getFieldString("TRN_EQP_CD"   )))) {
-							// ±¸³»¿î¼Û
-							trtMsg = "¿À·ù:>> ±¸³»¿î¼Û »óÂ÷ÀÛ¾÷ ¿î¼ÛÀåºñÄÚµå ¾øÀ½";
+							// êµ¬ë‚´ìš´ì†¡
+							trtMsg = "ì˜¤ë¥˜:>> êµ¬ë‚´ìš´ì†¡ ìƒì°¨ì‘ì—… ìš´ì†¡ì¥ë¹„ì½”ë“œ ì—†ìŒ";
 						} else if ("G".equals(commUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP")))) {
-							// ÃâÇÏ
+							// ì¶œí•˜
 							if ("".equals(commUtils.trim(jrChk.getFieldString("CAR_NO")))) {
-								trtMsg = "¿À·ù:>> ÃâÇÏÂ÷·® »óÂ÷ÀÛ¾÷ Â÷·®¹øÈ£ ¶Ç´Â Ä«µå¹øÈ£ ¾øÀ½";	
+								trtMsg = "ì˜¤ë¥˜:>> ì¶œí•˜ì°¨ëŸ‰ ìƒì°¨ì‘ì—… ì°¨ëŸ‰ë²ˆí˜¸ ë˜ëŠ” ì¹´ë“œë²ˆí˜¸ ì—†ìŒ";	
 							}
 						}
 					} 
@@ -677,7 +677,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    			jrLog.setField("YD_CRN_SCH_ID"	, ydWbookId);
 		    			jrLog.setField("YD_GP"			, "2");
 		    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-		    			jrLog.setField("SCH_CONTENTS"	, "½ºÄÉÁì´ë»ó Á¡°Ë½ÇÆĞ:"+ trtMsg+" LOG :"+"\r\n" );
+		    			jrLog.setField("SCH_CONTENTS"	, "ìŠ¤ì¼€ì¥´ëŒ€ìƒ ì ê²€ì‹¤íŒ¨:"+ trtMsg+" LOG :"+"\r\n" );
 	
 		    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 		    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
@@ -685,35 +685,35 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}	
 				
 				if ("C".equals(toLocChkGp)) {
-					//Â÷·®»óÂ÷ÀÛ¾÷
-					String ydCarUseGp = commUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP"));	//¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-				           trnEqpCd   = commUtils.trim(jrChk.getFieldString("TRN_EQP_CD"   ));	//¿î¼ÛÀåºñÄÚµå
-					String carNo      = commUtils.trim(jrChk.getFieldString("CAR_NO"       ));	//Â÷·®¹øÈ£
+					//ì°¨ëŸ‰ìƒì°¨ì‘ì—…
+					String ydCarUseGp = commUtils.trim(jrChk.getFieldString("YD_CAR_USE_GP"));	//ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+				           trnEqpCd   = commUtils.trim(jrChk.getFieldString("TRN_EQP_CD"   ));	//ìš´ì†¡ì¥ë¹„ì½”ë“œ
+					String carNo      = commUtils.trim(jrChk.getFieldString("CAR_NO"       ));	//ì°¨ëŸ‰ë²ˆí˜¸
 
 					if ("".equals(ydCarUseGp)) {
-						throw new Exception("¿À·ù:" + trtMsg + " >> Â÷·®»óÂ÷ÀÛ¾÷ ¾ßµåÂ÷·®»ç¿ë±¸ºĞ ¾øÀ½");
+						throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì°¨ëŸ‰ìƒì°¨ì‘ì—… ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ ì—†ìŒ");
 						
 					} else if ("L".equals(ydCarUseGp) && "".equals(trnEqpCd)) {
-						// ±¸³»¿î¼Û
-						throw new Exception("¿À·ù:" + trtMsg + " >> ±¸³»¿î¼Û »óÂ÷ÀÛ¾÷ ¿î¼ÛÀåºñÄÚµå ¾øÀ½");
+						// êµ¬ë‚´ìš´ì†¡
+						throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> êµ¬ë‚´ìš´ì†¡ ìƒì°¨ì‘ì—… ìš´ì†¡ì¥ë¹„ì½”ë“œ ì—†ìŒ");
 					} else if ("G".equals(ydCarUseGp)) {
-						// ÃâÇÏ
+						// ì¶œí•˜
 						if ("".equals(carNo)) {
-							throw new Exception("¿À·ù:" + trtMsg + " >> ÃâÇÏÂ÷·® »óÂ÷ÀÛ¾÷ Â÷·®¹øÈ£ ¶Ç´Â Ä«µå¹øÈ£ ¾øÀ½");
+							throw new Exception("ì˜¤ë¥˜:" + trtMsg + " >> ì¶œí•˜ì°¨ëŸ‰ ìƒì°¨ì‘ì—… ì°¨ëŸ‰ë²ˆí˜¸ ë˜ëŠ” ì¹´ë“œë²ˆí˜¸ ì—†ìŒ");
 						}
 					}
 				} 
 				
-//				//¾ßµåToÀ§Ä¡Guide °ªÀÌ 4ÀÚ¸® ÀÌ»óÀÌ°í To ¾ßµåµ¿ÀÌ °°À» °æ¿ì°¡ ¾Æ´Ï¸é
-//				//TO À§Ä¡ °¡ÀÌµå('G') ¾Æ´Ï¸é ¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı,¾ßµåToÀ§Ä¡Guide CLEAR
+//				//ì•¼ë“œToìœ„ì¹˜Guide ê°’ì´ 4ìë¦¬ ì´ìƒì´ê³  To ì•¼ë“œë™ì´ ê°™ì„ ê²½ìš°ê°€ ì•„ë‹ˆë©´
+//				//TO ìœ„ì¹˜ ê°€ì´ë“œ('G') ì•„ë‹ˆë©´ ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•,ì•¼ë“œToìœ„ì¹˜Guide CLEAR
 //				if (!"G".equals(toLocChkGp)) {
-//					ydToLocDcsnMtd = ""; //¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-//					ydToLocGuide   = ""; //¾ßµåToÀ§Ä¡Guide
+//					ydToLocDcsnMtd = ""; //ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+//					ydToLocGuide   = ""; //ì•¼ë“œToìœ„ì¹˜Guide
 //				}
 			}
 	
 
-			// Çà¼± ¹×ÀúÀåÇ° ÀÌµ¿ Á¶°ÇÀÌ ¾øÀ¸¸é update
+			// í–‰ì„  ë°ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ì´ ì—†ìœ¼ë©´ update
 			EJBConnector tranConn1 = new EJBConnector("default", "BSlabSchSeEJB", this);
 			tranConn1.trx("updCrnSchStock", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
@@ -721,59 +721,59 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			jrParamSet.setResultCode(logId);	//Log ID
 			jrParamSet.setResultMsg(methodNm);	//Log Method Name
-			jrParamSet.setField("MODIFIER"   			, modifier ); //¼öÁ¤ÀÚ
-			jrParamSet.setField("YD_WBOOK_ID"			, ydWbookId); 			//¾ßµåÀÛ¾÷¿¹¾àID
-			jrParamSet.setField("YD_SCH_CD"  			, ydSchCd  ); 			//¾ßµå½ºÄÉÁìÄÚµå
-			jrParamSet.setField("YD_EQP_ID"  			, ydEqpId  ); 			//¾ßµå¼³ºñID
-			jrParamSet.setField("YD_SCH_PRIOR"  		, ydSchPrior  ); 		//¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			jrParamSet.setField("YD_TO_LOC_DCSN_MTD"  	, ydToLocDcsnMtd  ); 	//¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-			jrParamSet.setField("YD_TO_LOC_GUIDE"  		, ydToLocGuide  ); 		//¾ßµåToÀ§Ä¡Guide
-			jrParamSet.setField("YD_WBOOK_MTL_CNT"   	, ""+wmMtlSh ); 		//ÀÛ¾÷¿¹¾à ¸Å¼ö
-			jrParamSet.setField("LOG_YN"   				, sAPP005_YN ); 		//LOG¿©ºÎ
+			jrParamSet.setField("MODIFIER"   			, modifier ); //ìˆ˜ì •ì
+			jrParamSet.setField("YD_WBOOK_ID"			, ydWbookId); 			//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParamSet.setField("YD_SCH_CD"  			, ydSchCd  ); 			//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParamSet.setField("YD_EQP_ID"  			, ydEqpId  ); 			//ì•¼ë“œì„¤ë¹„ID
+			jrParamSet.setField("YD_SCH_PRIOR"  		, ydSchPrior  ); 		//ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			jrParamSet.setField("YD_TO_LOC_DCSN_MTD"  	, ydToLocDcsnMtd  ); 	//ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+			jrParamSet.setField("YD_TO_LOC_GUIDE"  		, ydToLocGuide  ); 		//ì•¼ë“œToìœ„ì¹˜Guide
+			jrParamSet.setField("YD_WBOOK_MTL_CNT"   	, ""+wmMtlSh ); 		//ì‘ì—…ì˜ˆì•½ ë§¤ìˆ˜
+			jrParamSet.setField("LOG_YN"   				, sAPP005_YN ); 		//LOGì—¬ë¶€
 			
-			jrParamSet.setField("YD_TO_LOC_GUIDE_FNL"  	, szYD_TO_LOC_GUIDE_FNL  ); //E100 ¼­Æ÷ÆÃºí·Ï ÀÌ»ó½Ã ToÀ§Ä¡ °¡ÀÌµå
+			jrParamSet.setField("YD_TO_LOC_GUIDE_FNL"  	, szYD_TO_LOC_GUIDE_FNL  ); //E100 ì„œí¬íŒ…ë¸”ë¡ ì´ìƒì‹œ Toìœ„ì¹˜ ê°€ì´ë“œ
 			
 			commUtils.printParam(logId, jrParamSet);
 			/**********************************************************
-			* 2.±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ¼ÂÆÃ
-            *  2-1.ÁÖÀÛ¾÷ ¹× º¸Á¶ ÀÛ¾÷ ¼ÂÆÃ
+			* 2.ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì…‹íŒ…
+            *  2-1.ì£¼ì‘ì—… ë° ë³´ì¡° ì‘ì—… ì…‹íŒ…
   			**********************************************************/
-			commUtils.printLog(logId, "±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ¼ÂÆÃ ½ÃÀÛ", "SL");			
+			commUtils.printLog(logId, "ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì…‹íŒ… ì‹œì‘", "SL");			
 
 			JDTORecordSet jsRecset	= JDTORecordFactory.getInstance().createRecordSet("Temp");
 			intRtnVal = this.CrnSchGrp(logId, methodNm, jrParamSet, jsRecset);
 			if(intRtnVal != 1) {
 				m_ctx.setRollbackOnly();
-				throw new Exception("¿À·ù:±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ÀÌ»ó (Àç·á Á¤º¸È®ÀÎ)");
+				throw new Exception("ì˜¤ë¥˜:ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì´ìƒ (ì¬ë£Œ ì •ë³´í™•ì¸)");
 			}
 			
 			if(jsRecset.size() == 0) {
 				m_ctx.setRollbackOnly();
-				throw new Exception("¿À·ù:±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ÀÌ»ó (Àç·á Á¤º¸È®ÀÎ)");
+				throw new Exception("ì˜¤ë¥˜:ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì´ìƒ (ì¬ë£Œ ì •ë³´í™•ì¸)");
 			}
 			/**********************************************************
-			* 3.Å©·¹ÀÎ½ºÄÉÁÙ°ú Å©·¹ÀÎÀÛ¾÷Àç·á µî·Ï
-			*   3-1.ÀûÄ¡´ÜÀÇ Àç·á»óÅÂ¸¦ ±Ç»ó´ë±â·Î º¯°æÃ³¸®
-			*   3-2.Å©·¹ÀÎ½ºÄÉÁÙ°ú Å©·¹ÀÎÀÛ¾÷Àç·á µî·Ï
+			* 3.í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê³¼ í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ë“±ë¡
+			*   3-1.ì ì¹˜ë‹¨ì˜ ì¬ë£Œìƒíƒœë¥¼ ê¶ŒìƒëŒ€ê¸°ë¡œ ë³€ê²½ì²˜ë¦¬
+			*   3-2.í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê³¼ í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ë“±ë¡
   			**********************************************************/
-			commUtils.printLog(logId, "Å©·¹ÀÎ½ºÄÉÁÙ°ú Å©·¹ÀÎÀÛ¾÷Àç·á µî·Ï ½ÃÀÛ ", "SL");			
+			commUtils.printLog(logId, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê³¼ í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ë“±ë¡ ì‹œì‘ ", "SL");			
 				
 			intRtnVal = this.CrnSchIns(logId, methodNm, jrParamSet, jsRecset);
 			
 			if(intRtnVal != 1) {
 				m_ctx.setRollbackOnly();
-				throw new DAOException("Å©·¹ÀÎ½ºÄÉÁÙ ¹× ÀÛ¾÷Àç·á µî·Ï ¿À·ù");
+				throw new DAOException("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ë° ì‘ì—…ì¬ë£Œ ë“±ë¡ ì˜¤ë¥˜");
 			}
 			
 			if(jsRecset.size() == 0) {
 				m_ctx.setRollbackOnly();
-				throw new Exception("¿À·ù:Å©·¹ÀÎ½ºÄÉÁÙ ¹× ÀÛ¾÷Àç·á µî·Ï ¿À·ù");
+				throw new Exception("ì˜¤ë¥˜:í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ë° ì‘ì—…ì¬ë£Œ ë“±ë¡ ì˜¤ë¥˜");
 			}
 
 			/**********************************************************
-			* 4.TO ÀúÀåÀ§Ä¡ °áÁ¤
+			* 4.TO ì €ì¥ìœ„ì¹˜ ê²°ì •
   			**********************************************************/
-			commUtils.printLog(logId, "TO ÀúÀåÀ§Ä¡ µî·Ï ½ÃÀÛ ", "SL");			
+			commUtils.printLog(logId, "TO ì €ì¥ìœ„ì¹˜ ë“±ë¡ ì‹œì‘ ", "SL");			
 			
 			JDTORecord jrLocSrcRngRtn = this.LocSrcRngDataSet(logId, methodNm, jrParamSet);
 			
@@ -781,7 +781,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			if (commUtils.trim(jrLocSrcRngRtn.getFieldString("RTN")).equals("-1")) {
 				m_ctx.setRollbackOnly();
-				throw new DAOException("TO ÀúÀåÀ§Ä¡ µî·Ï  ¿À·ù");
+				throw new DAOException("TO ì €ì¥ìœ„ì¹˜ ë“±ë¡  ì˜¤ë¥˜");
 				
 			} 
 
@@ -789,16 +789,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			if("2APT02UM".equals(ydSchCd)||"2DPT02UM".equals(ydSchCd)||"2EPT02UM".equals(ydSchCd)) {
 				if(ydToLocGuide.length() == 6  && "PT".equals(ydToLocGuide.substring(2, 4))){
 					/**********************************************************
-					* Â÷·®ÀÛ¾÷ ¿¹Á¤Á¤º¸ ¼Û½Å (YMA8L008)
+					* ì°¨ëŸ‰ì‘ì—… ì˜ˆì •ì •ë³´ ì†¡ì‹  (YMA8L008)
 					**********************************************************/
-					jrParam.setField("SEARCH_FLAG" 			, "4"				);	//1:»óÂ÷µµ, 2:Â÷·®½ºÄÉÁì ID	
-					jrParam.setField("PT_LOAD_LOC" 			, ydToLocGuide		); 	//»óÂ÷µµ À§Ä¡
+					jrParam.setField("SEARCH_FLAG" 			, "4"				);	//1:ìƒì°¨ë„, 2:ì°¨ëŸ‰ìŠ¤ì¼€ì¥´ ID	
+					jrParam.setField("PT_LOAD_LOC" 			, ydToLocGuide		); 	//ìƒì°¨ë„ ìœ„ì¹˜
 					jrRtn = commUtils.addSndData(jrRtn, YmComm.procCarPlanInfo_Slab(jrParam)); 
 				}	
 			}
 						
 			/**********************************************************
-			* 5.Å©·¹ÀÎÀÛ¾÷Áö½Ã È£Ãâ
+			* 5.í¬ë ˆì¸ì‘ì—…ì§€ì‹œ í˜¸ì¶œ
   			**********************************************************/
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStatRe 
 			SELECT A.YD_EQP_ID 
@@ -814,7 +814,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			   AND A.DEL_YN = 'N'   
 			*/	   
 			
-			JDTORecordSet jsCrnSchStatRe = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStatRe", logId, methodNm, "ÀÛ¾÷¿¹¾àÀ¸·Î Å©·¹ÀÎ ½ºÄÉÁì Á¶È¸");
+			JDTORecordSet jsCrnSchStatRe = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStatRe", logId, methodNm, "ì‘ì—…ì˜ˆì•½ìœ¼ë¡œ í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ì¡°íšŒ");
 			if (jsCrnSchStatRe.size() > 0) {
 				ydEqpId   =  commUtils.trim(jsCrnSchStatRe.getRecord(0).getFieldString("YD_EQP_ID"));
 				ydEqpStat =  commUtils.trim(jsCrnSchStatRe.getRecord(0).getFieldString("YD_EQP_STAT"));
@@ -824,36 +824,36 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			if ("W".equals(ydEqpStat)) {
 				commUtils.printLog(logId, commUtils.trim(jrLocSrcRngRtn.getFieldString("RTN")) + "ydEqpStat3:" + ydEqpStat, "SL");
 				
-				String sAPP018_YN = YmComm.BCoilApplyYn("APP018","2","1");   //slab_log¿©ºÎ
-				commUtils.printLog(logId,  "½ºÄÉÁì ¸í·É¼±ÅÃ Æ®·»Á§¼Ç Àû¿ë:" + sAPP018_YN, "SL");	
+				String sAPP018_YN = YmComm.BCoilApplyYn("APP018","2","1");   //slab_logì—¬ë¶€
+				commUtils.printLog(logId,  "ìŠ¤ì¼€ì¥´ ëª…ë ¹ì„ íƒ íŠ¸ë Œì ì…˜ ì ìš©:" + sAPP018_YN, "SL");	
 				
 				if(sAPP018_YN.equals("Y")) {
 
 					JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 					jrYdMsg.setResultCode(logId);	//Log ID
 					jrYdMsg.setResultMsg(methodNm);	//Log Method Name
-					jrYdMsg.setField("JMS_TC_CD"         , "YMYMJ001"               ); //JMSTCÄÚµå
-					jrYdMsg.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
-					jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
+					jrYdMsg.setField("JMS_TC_CD"         , "YMYMJ001"               ); //JMSTCì½”ë“œ
+					jrYdMsg.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
+					jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
 
 					EJBConnector ejbConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 		    		jrRtn = (JDTORecord)ejbConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 					
 				} else {
-					//¾ßµå¼³ºñ»óÅÂ°¡ ´ë±âÀÌ¸é ³»ºÎÅ©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¼Û
+					//ì•¼ë“œì„¤ë¹„ìƒíƒœê°€ ëŒ€ê¸°ì´ë©´ ë‚´ë¶€í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ì†¡
 					JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 					jrYdMsg.setResultCode(logId);	//Log ID
 					jrYdMsg.setResultMsg(methodNm);	//Log Method Name
-					jrYdMsg.setField("JMS_TC_CD"         , "YMYMJ001"               ); //JMSTCÄÚµå
-					jrYdMsg.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
-					jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
+					jrYdMsg.setField("JMS_TC_CD"         , "YMYMJ001"               ); //JMSTCì½”ë“œ
+					jrYdMsg.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
+					jrYdMsg.setField("YD_EQP_ID"         , ydEqpId                  ); //ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_WRK_PROG_STAT"  , "W"                      ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
 					jrRtn = commUtils.addSndData(jrRtn, jrYdMsg);
 				}
 			} 
 			
-			commUtils.printLog(logId, methodNm + "[½ºÄÉÁì¸ŞÀÎÁ¾·á]", "S-");
+			commUtils.printLog(logId, methodNm + "[ìŠ¤ì¼€ì¥´ë©”ì¸ì¢…ë£Œ]", "S-");
 			return jrRtn;
 
 		} catch (DAOException e) {
@@ -865,21 +865,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙ ÀÛ¾÷¿¹¾àÀç·á ¼öÁ¤
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ìˆ˜ì •
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return void
 	 *      @throws DAOException
 	 *      @ejb.transaction type="RequiresNew"
 	*/
 	public void updCrnSchWB(JDTORecord jrParam) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙ ÀÛ¾÷¿¹¾àÀç·á ¼öÁ¤[BSlabSchSeEJB.updCrnSchWB] < " + jrParam.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ìˆ˜ì •[BSlabSchSeEJB.updCrnSchWB] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 
 		try {
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWmStrLoc 
-			--Å©·¹ÀÎ½ºÄÉÁÙ ÀÛ¾÷¿¹¾àÀç·á ÀúÀåÀ§Ä¡ ¼öÁ¤
+			--í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì €ì¥ìœ„ì¹˜ ìˆ˜ì •
 			 MERGE INTO TB_YM_WRKBOOKMTL WM USING (
 			 SELECT YD_WBOOK_ID
 			       ,STOCK_ID
@@ -925,7 +925,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			     ,WM.YD_UP_COLL_SEQ = DD.YD_UP_COLL_SEQ
 			    */   
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWmStrLoc", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á ÀúÀåÀ§Ä¡ ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWmStrLoc", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì €ì¥ìœ„ì¹˜ ìˆ˜ì •");
 			
 		} catch (DAOException e) {
 			throw e;
@@ -935,18 +935,18 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public int CrnSchGrp( String logId, String methodNms, JDTORecord jrParamSet, JDTORecordSet jsReturn )throws JDTOException  {
-    	String 	methodNm = "±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ¼ÂÆÃ [BSlabSchSeEJB.CrnSchGrp] < " + methodNms;
+    	String 	methodNm = "ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì…‹íŒ… [BSlabSchSeEJB.CrnSchGrp] < " + methodNms;
     	
     	JDTORecordSet jsHandling = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	= "";
 		String 	szDBLogMsg	= "";
 		String 	szParmLogMsg	= "";
@@ -961,17 +961,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 			JDTORecord jrCrEquip = JDTORecordFactory.getInstance().create();		
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp 
-			--¼³ºñ»óÅÂÁ¶È¸ 
+			--ì„¤ë¹„ìƒíƒœì¡°íšŒ 
 			SELECT WPROG_STAT     AS YD_EQP_STAT
 			     , WORK_MODE      AS YD_EQP_WRK_MODE
-				 , STACK_MAX_QNTY	                  --ÀûÀç ÃÖ´ë ¼ö·®
-				 , STACK_MAX_WT		                  --ÀûÀç ÃÖ´ë Áß·®
+				 , STACK_MAX_QNTY	                  --ì ì¬ ìµœëŒ€ ìˆ˜ëŸ‰
+				 , STACK_MAX_WT		                  --ì ì¬ ìµœëŒ€ ì¤‘ëŸ‰
 			     , CURR_STOP_LOC
 			  FROM TB_YM_EQUIP EQ
 			 WHERE EQUIP_GP = :V_YD_EQP_ID
 			   AND DEL_YN    = 'N' 
 			*/	   
-			JDTORecordSet jsCrEquip = commDao.select(jrParamSet, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "¼³ºñ»óÅÂÁ¶È¸");
+			JDTORecordSet jsCrEquip = commDao.select(jrParamSet, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "ì„¤ë¹„ìƒíƒœì¡°íšŒ");
 			
 			if (jsCrEquip.size() > 0) {
 				jrCrEquip = jsCrEquip.getRecord(0);
@@ -984,10 +984,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					||(("TC".equals(ydSchCd.substring(2, 4))) && (("U".equals(ydSchCd.substring(6, 7))) || ("L".equals(ydSchCd.substring(6, 7)))))
 					){
 				//------------------------------------------------------------------------------------------------------------
-				//µ¿³»ÀÌÀûÀº ½½¶óºê ´ÜÀ§ ÀÛ¾÷¿¹¾à Æí¼º 
-				//   -- ÇÏ´Ü ÀÛ¾÷¿¹¾à°ú ±×·ìÇÎ °¡´É ¿©ºÎ Check   
-				// ´ëÂ÷ »óÂ÷ 
-				//   -- ÇÏ´Ü ÀÛ¾÷¿¹¾à°ú ±×·ìÇÎ °¡´É ¿©ºÎ Check   
+				//ë™ë‚´ì´ì ì€ ìŠ¬ë¼ë¸Œ ë‹¨ìœ„ ì‘ì—…ì˜ˆì•½ í¸ì„± 
+				//   -- í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ê³¼ ê·¸ë£¹í•‘ ê°€ëŠ¥ ì—¬ë¶€ Check   
+				// ëŒ€ì°¨ ìƒì°¨ 
+				//   -- í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ê³¼ ê·¸ë£¹í•‘ ê°€ëŠ¥ ì—¬ë¶€ Check   
 				//------------------------------------------------------------------------------------------------------------			
 				/* com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd 
 				SELECT A.STACK_COL_GP 
@@ -1055,22 +1055,22 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       ) A      
 				 GROUP BY A.YD_WBOOK_ID, A.YD_SCH_CD, A.STACK_COL_GP, A.STACK_BED_GP,A.YD_WRK_PLAN_TCAR
 				*/	   
-				//JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ÀÛ¾÷¿¹¾à BED Á¤º¸");
+				//JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BED ì •ë³´");
 				
 				JDTORecordSet jsWbBedYd;
 				
 				if(("TC".equals(ydSchCd.substring(2, 4)) &&  ("L".equals(ydSchCd.substring(6, 7)))) || "2BTC11UM".equals(ydSchCd)) { 
-					//´ëÂ÷ÇÏÂ÷  + Bµ¿´ëÂ÷»óÂ÷
-					jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYdTCL", logId, methodNm, "´ëÂ÷ÇÏÂ÷ - ÀÛ¾÷¿¹¾à BED Á¤º¸");
+					//ëŒ€ì°¨í•˜ì°¨  + Bë™ëŒ€ì°¨ìƒì°¨
+					jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYdTCL", logId, methodNm, "ëŒ€ì°¨í•˜ì°¨ - ì‘ì—…ì˜ˆì•½ BED ì •ë³´");
 				} else {
-					jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ÀÛ¾÷¿¹¾à BED Á¤º¸");
+					jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BED ì •ë³´");
 				}
 				
 				commUtils.printParam(logId, jsWbBedYd);
 				if(jsWbBedYd.size() == 1) {
 					String maxYdWbookId = commUtils.trim(jsWbBedYd.getRecord(0).getFieldString("MAX_YD_WBOOK_ID"));
 					String minYdWbookId = commUtils.trim(jsWbBedYd.getRecord(0).getFieldString("MIN_YD_WBOOK_ID"));
-					//ÇÏ´Ü ÀÛ¾÷¿¹¾àÀÌ ÀÖÀ¸¸é ÇÕÃ¼ °¡´É ¿©ºÎ CHECK
+					//í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ì´ ìˆìœ¼ë©´ í•©ì²´ ê°€ëŠ¥ ì—¬ë¶€ CHECK
 					if(!"".equals(minYdWbookId)) {
 						boolean AbleYn = false;
 						if("YD".equals(ydSchCd.substring(2, 4)) || ("TC".equals(ydSchCd.substring(2, 4))) && ( ("L".equals(ydSchCd.substring(6, 7))))){
@@ -1088,7 +1088,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 							jrParam.setField("MAX_YD_WBOOK_ID", maxYdWbookId); 
 							jrParam.setField("MIN_YD_WBOOK_ID", minYdWbookId); 
 							jrParam.setField("YD_WBOOK_ID"    , minYdWbookId); 
-							// ÀÛ¾÷ ¿¹¾à ÇÕÃ¼
+							// ì‘ì—… ì˜ˆì•½ í•©ì²´
 							/* com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum 
 							INSERT INTO TB_YM_WRKBOOKMTL (
 							       YD_WBOOK_ID
@@ -1118,9 +1118,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 							 WHERE YD_WBOOK_ID = :V_MIN_YD_WBOOK_ID
 							   AND ROWNUM = 1
 					    	 */  
-							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum", logId, methodNm, "TB_YM_WRKBOOKMTL °»½Å");
+							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum", logId, methodNm, "TB_YM_WRKBOOKMTL ê°±ì‹ ");
 							
-							//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+							//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 							/*
 							UPDATE TB_YM_WRKBOOKMTL
 							   SET MODIFIER    = :V_MODIFIER
@@ -1131,7 +1131,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 							 */
 							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");				
 							
-							//ÀÛ¾÷¿¹¾à »èÁ¦
+							//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 							/*
 							UPDATE TB_YM_WRKBOOK
 							   SET MODIFIER    = :V_MODIFIER
@@ -1146,12 +1146,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			} 
 			
-			if(("PT".equals(ydSchCd.substring(2, 4))) && ("L".equals(ydSchCd.substring(6, 7)))){  //ÀÌ¼ÛÇÏÂ÷
+			if(("PT".equals(ydSchCd.substring(2, 4))) && ("L".equals(ydSchCd.substring(6, 7)))){  //ì´ì†¡í•˜ì°¨
 				//------------------------------------------------------------------------------------------------------------
-				//µ¿³»ÀÌÀûÀº ½½¶óºê ´ÜÀ§ ÀÛ¾÷¿¹¾à Æí¼º 
-				//   -- ÇÏ´Ü ÀÛ¾÷¿¹¾à°ú ±×·ìÇÎ °¡´É ¿©ºÎ Check   
-				//ÀÌ¼ÛÇÏÂ÷ 
-				//   -- ÇÏ´Ü ÀÛ¾÷¿¹¾à°ú ±×·ìÇÎ °¡´É ¿©ºÎ Check   
+				//ë™ë‚´ì´ì ì€ ìŠ¬ë¼ë¸Œ ë‹¨ìœ„ ì‘ì—…ì˜ˆì•½ í¸ì„± 
+				//   -- í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ê³¼ ê·¸ë£¹í•‘ ê°€ëŠ¥ ì—¬ë¶€ Check   
+				//ì´ì†¡í•˜ì°¨ 
+				//   -- í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ê³¼ ê·¸ë£¹í•‘ ê°€ëŠ¥ ì—¬ë¶€ Check   
 				//------------------------------------------------------------------------------------------------------------			
 				/* com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd 
 				SELECT A.STACK_COL_GP 
@@ -1219,8 +1219,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       ) A      
 				 GROUP BY A.YD_WBOOK_ID, A.YD_SCH_CD, A.STACK_COL_GP, A.STACK_BED_GP,A.YD_WRK_PLAN_TCAR
 				*/	   
-				//JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ÀÛ¾÷¿¹¾à BED Á¤º¸");
-				JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYdTCL", logId, methodNm, "ÀÛ¾÷¿¹¾à BED Á¤º¸");
+				//JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BED ì •ë³´");
+				JDTORecordSet jsWbBedYd = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBedYdTCL", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BED ì •ë³´");
 				
 				commUtils.printParam(logId, jsWbBedYd);
 				if(jsWbBedYd.size() == 1) {
@@ -1228,7 +1228,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					String minYdWbookId = commUtils.trim(jsWbBedYd.getRecord(0).getFieldString("MIN_YD_WBOOK_ID"));
 					String sStackColGp  = commUtils.trim(jsWbBedYd.getRecord(0).getFieldString("STACK_COL_GP"));
 					
-					//ÇÏ´Ü ÀÛ¾÷¿¹¾àÀÌ ÀÖÀ¸¸é ÇÕÃ¼ °¡´É ¿©ºÎ CHECK
+					//í•˜ë‹¨ ì‘ì—…ì˜ˆì•½ì´ ìˆìœ¼ë©´ í•©ì²´ ê°€ëŠ¥ ì—¬ë¶€ CHECK
 					if(!"".equals(minYdWbookId)) {
 						boolean AbleYn = false;
 						
@@ -1238,7 +1238,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						     , A.STACK_BED_GP 
 						     , A.YD_SCH_CD
 						     , A.MIN_STACK_LAYER_GP 
-						     -- ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´ÂÁö CHECK 
+						     -- ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ì§€ CHECK 
 						     , (SELECT DECODE(COUNT(*),0,'N','Y')
 						          FROM TB_YM_EQUIP B
 						             , TB_YM_TCARSCH C
@@ -1272,13 +1272,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						*/	   
 
 						jrParamSet.setField("STACK_COL_GP", sStackColGp); 
-						JDTORecordSet jsWbBedChk = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCarMtl", logId, methodNm, "ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´ÂÁö CHECK");
+						JDTORecordSet jsWbBedChk = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCarMtl", logId, methodNm, "ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ì§€ CHECK");
 						commUtils.printParam(logId, jsWbBedChk);
 						
 						if(jsWbBedChk.size() > 0) {
 							
 							String sTcDownYn = commUtils.trim(jsWbBedChk.getRecord(0).getFieldString("TC_DOWN_YN"));
-							// ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÔ
+							// ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•¨
 							if("Y".equals(sTcDownYn)) {
 								AbleYn = this.CrnSchGrpHandlingAbleChkTC   (logId, methodNms, ydSchCd, jsWbBedYd ,jrCrEquip) ;
 							} else {
@@ -1293,7 +1293,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 								jrParam.setField("MAX_YD_WBOOK_ID", maxYdWbookId); 
 								jrParam.setField("MIN_YD_WBOOK_ID", minYdWbookId); 
 								jrParam.setField("YD_WBOOK_ID"    , minYdWbookId); 
-								// ÀÛ¾÷ ¿¹¾à ÇÕÃ¼
+								// ì‘ì—… ì˜ˆì•½ í•©ì²´
 								/* com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum 
 								INSERT INTO TB_YM_WRKBOOKMTL (
 								       YD_WBOOK_ID
@@ -1323,9 +1323,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 								 WHERE YD_WBOOK_ID = :V_MIN_YD_WBOOK_ID
 								   AND ROWNUM = 1
 						    	 */  
-								commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum", logId, methodNm, "TB_YM_WRKBOOKMTL °»½Å");
+								commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insWrkBoolMtlSum", logId, methodNm, "TB_YM_WRKBOOKMTL ê°±ì‹ ");
 								
-								//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+								//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 								/*
 								UPDATE TB_YM_WRKBOOKMTL
 								   SET MODIFIER    = :V_MODIFIER
@@ -1336,7 +1336,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 								 */
 								commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");				
 								
-								//ÀÛ¾÷¿¹¾à »èÁ¦
+								//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 								/*
 								UPDATE TB_YM_WRKBOOK
 								   SET MODIFIER    = :V_MODIFIER
@@ -1352,8 +1352,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			} 
 			//------------------------------------------------------------------------------------------------------------
-			// ÀÛ¾÷ ¿¹¾àÀ» BEDº°·Î ºĞ¸®   
-			// ÃßÈÄ  BED¿ì¼±¼øÀ§ º¯°æ½Ã ¿ëÀÇ
+			// ì‘ì—… ì˜ˆì•½ì„ BEDë³„ë¡œ ë¶„ë¦¬   
+			// ì¶”í›„  BEDìš°ì„ ìˆœìœ„ ë³€ê²½ì‹œ ìš©ì˜
 			//------------------------------------------------------------------------------------------------------------			
 			/* com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBed 
 			SELECT A.YD_WBOOK_ID 
@@ -1362,7 +1362,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			     , A.YD_SCH_CD AS YD_SCH_CD
 			     , MIN(B.STACK_LAYER_GP) AS MIN_STACK_LAYER_GP 
 			     , MAX(B.YD_UP_COLL_SEQ) AS YD_UP_COLL_SEQ
-			      -- ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´ÂÁö CHECK 
+			      -- ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ì§€ CHECK 
 			     , (SELECT DECODE(COUNT(*),0,'N','Y')
 			          FROM TB_YM_EQUIP B1
 			             , TB_YM_TCARSCH C1
@@ -1382,27 +1382,27 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			 GROUP BY A.YD_WBOOK_ID,B.STACK_COL_GP, B.STACK_BED_GP, A.YD_SCH_CD
 			 ORDER BY YD_UP_COLL_SEQ
 			*/	   
-			JDTORecordSet jsWbBed = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBed", logId, methodNm, "ÀÛ¾÷¿¹¾à BED¿ì¼±¼ø Á¤º¸");
+			JDTORecordSet jsWbBed = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.getWorkBookBed", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BEDìš°ì„ ìˆœ ì •ë³´");
 			commUtils.printParam(logId, jsWbBed);
 			if(jsWbBed.size() > 0) {
 				
 				String sTcDownYn = commUtils.trim(jsWbBed.getRecord(0).getFieldString("TC_DOWN_YN"));
-				String sAPP021_YN = YmComm.BCoilApplyYn("APP021","2","1");   //slab_log¿©ºÎ
-				commUtils.printLog(logId,  "ÀÌ¼ÛÇÏÂ÷½Å±Ô Àû¿ë:" + sAPP021_YN, "SL");
+				String sAPP021_YN = YmComm.BCoilApplyYn("APP021","2","1");   //slab_logì—¬ë¶€
+				commUtils.printLog(logId,  "ì´ì†¡í•˜ì°¨ì‹ ê·œ ì ìš©:" + sAPP021_YN, "SL");
 
 				if(sAPP021_YN.equals("Y")) {
-					// ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´Â°æ¿ì ´ëÂ÷ ·ÎÁ÷ À¸·Î
+					// ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ê²½ìš° ëŒ€ì°¨ ë¡œì§ ìœ¼ë¡œ
 					if("Y".equals(sTcDownYn)) {
 						jsHandling = this.CrnSchGrpHandling   ( logId, methodNms, "3", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed ,jrCrEquip);
 						
-					} else if(("PT".equals(ydSchCd.substring(2, 4))) && ("L".equals(ydSchCd.substring(6, 7)))){  //ÀÌ¼ÛÇÏÂ÷
+					} else if(("PT".equals(ydSchCd.substring(2, 4))) && ("L".equals(ydSchCd.substring(6, 7)))){  //ì´ì†¡í•˜ì°¨
 						jsHandling = this.CrnSchGrpHandlingPT ( logId, methodNms, "1", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed ,jrCrEquip);
 						
 					} else {	
 						jsHandling = this.CrnSchGrpHandling   ( logId, methodNms, "1", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed ,jrCrEquip);
 					}
 				} else {
-					// ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´Â°æ¿ì ´ëÂ÷ ·ÎÁ÷ À¸·Î
+					// ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ê²½ìš° ëŒ€ì°¨ ë¡œì§ ìœ¼ë¡œ
 					if("Y".equals(sTcDownYn)) {
 						jsHandling = this.CrnSchGrpHandling   ( logId, methodNms, "3", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed ,jrCrEquip);
 					} else {
@@ -1410,7 +1410,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					}
 				}
 			}	
-			commUtils.printLog(logId, "HANDLING_¼ö:" +jsHandling.size() , "SL");
+			commUtils.printLog(logId, "HANDLING_ìˆ˜:" +jsHandling.size() , "SL");
 			
 			
 			JDTORecord jrReturn  = JDTORecordFactory.getInstance().create();
@@ -1436,27 +1436,27 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	} //end of 
 	
     /**
-     * ¿ÀÆÛ·¹ÀÌ¼Ç¸í :  Handling Data Å©·¹ÀÎ»ç¾çCheck
+     * ì˜¤í¼ë ˆì´ì…˜ëª… :  Handling Data í¬ë ˆì¸ì‚¬ì–‘Check
      *  
-     * @param  ¡Ü szEqpId, vecHandledData, vecResult
-     * @return ¡Ü intRtnVal
-     * @throws ¡Ü JDTOException
+     * @param  â— szEqpId, vecHandledData, vecResult
+     * @return â— intRtnVal
+     * @throws â— JDTOException
      */
     public JDTORecord chkHandledDataCrnSpec (String logId, String methodNms, String ydSchCd, JDTORecord jrChkCr , JDTORecordSet jsSpacChk, String szParmLogMsg) throws JDTOException {
-    	String methodNm = "Handling Data Å©·¹ÀÎ»ç¾çCheck [BSlabSchSeEJB.chkHandledDataCrnSpec] < " +methodNms;
+    	String methodNm = "Handling Data í¬ë ˆì¸ì‚¬ì–‘Check [BSlabSchSeEJB.chkHandledDataCrnSpec] < " +methodNms;
     	
     	JDTORecord jrSpacChk	= JDTORecordFactory.getInstance().create(); 	
     	JDTORecord jrRtnLog 	= JDTORecordFactory.getInstance().create();
     	
-		float fmtlT     	= 0;		//Àç·áµÎ²²
-		float fmtlW     	= 0;		//Àç·áÆø
-		int   imtlWtSum 	= 0;		//Àç·áÁß·®ÇÕ
-		float fmtlTSum  	= 0;		//Àç·áµÎ²²ÇÕ
-		float fmtlWMax  	= 0;		//Àç·áÆøÃÖ´ë
-		int   imtlWt    	= 0;		//Àç·áÁß·®
-		float topfmtlW     	= 0;		//»ó´ÜÀç·áÆø
-		float botfmtlW     	= 0;		//ÇÏ´ÜÀç·áÆø
-		int   iWidDif    	= 0;		//Àç·áÆø gap
+		float fmtlT     	= 0;		//ì¬ë£Œë‘ê»˜
+		float fmtlW     	= 0;		//ì¬ë£Œí­
+		int   imtlWtSum 	= 0;		//ì¬ë£Œì¤‘ëŸ‰í•©
+		float fmtlTSum  	= 0;		//ì¬ë£Œë‘ê»˜í•©
+		float fmtlWMax  	= 0;		//ì¬ë£Œí­ìµœëŒ€
+		int   imtlWt    	= 0;		//ì¬ë£Œì¤‘ëŸ‰
+		float topfmtlW     	= 0;		//ìƒë‹¨ì¬ë£Œí­
+		float botfmtlW     	= 0;		//í•˜ë‹¨ì¬ë£Œí­
+		int   iWidDif    	= 0;		//ì¬ë£Œí­ gap
 		
 		String topSTOCK_ID  = "";
 		String botSTOCK_ID  = "";
@@ -1468,17 +1468,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			int imaxStackQty = Integer.parseInt(commUtils.nvl(jrChkCr.getFieldString("STACK_MAX_QNTY" ),"0")); 
 			int imaxStackWt  = Integer.parseInt(commUtils.nvl(jrChkCr.getFieldString("STACK_MAX_WT" ),"0")); 
-			int imaxStackW	 = Integer.parseInt(commUtils.nvl(jrChkCr.getFieldString("YM102_MAX_W" ),"2000"));  //1750 2¸ÅÀÛ¾÷ Æø ±âÁØ (TB_YM_RUEL , YM102 ,MAX_W)
+			int imaxStackW	 = Integer.parseInt(commUtils.nvl(jrChkCr.getFieldString("YM102_MAX_W" ),"2000"));  //1750 2ë§¤ì‘ì—… í­ ê¸°ì¤€ (TB_YM_RUEL , YM102 ,MAX_W)
 
 			commUtils.printLog(logId, "imaxStackQty [" + imaxStackQty + "] imaxStackWt[" + imaxStackWt +"] YM102_MAX_W[" + imaxStackW + "] ", "SL");
 
-			if (jsSpacChk.size() > imaxStackQty)	 {  // ¸Å¼ö CHECK
+			if (jsSpacChk.size() > imaxStackQty)	 {  // ë§¤ìˆ˜ CHECK
 				jsSpacChk.last();
 				jrSpacChk.setRecord(jsSpacChk.getRecord());
 				topSTOCK_ID 		= commUtils.trim(jrSpacChk.getFieldString("STOCK_ID"));
 				topSTACK_LAYER_GP	= commUtils.trim(jrSpacChk.getFieldString("STACK_LAYER_GP"));
 				jrRtnLog.setField("HANDLE_RTN"  , "-1");
-    			jrRtnLog.setField("HANDLE_CONTENTS"	, "´Ü[" +topSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +topSTOCK_ID + "] ±Ç»ó °¡´É ¸Å¼ö·Î ÀÎÇÑ ºĞ¸®");
+    			jrRtnLog.setField("HANDLE_CONTENTS"	, "ë‹¨[" +topSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +topSTOCK_ID + "] ê¶Œìƒ ê°€ëŠ¥ ë§¤ìˆ˜ë¡œ ì¸í•œ ë¶„ë¦¬");
 				return jrRtnLog;
 			} 
 			
@@ -1505,13 +1505,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			}
 
-			commUtils.printLog(logId, "»ó´Ü [" + topfmtlW + "] ÇÏ´Ü[" + botfmtlW +"] ÆøÂ÷ÀÌ±âÁØ[" + iWidDif + "]", "SL");	
+			commUtils.printLog(logId, "ìƒë‹¨ [" + topfmtlW + "] í•˜ë‹¨[" + botfmtlW +"] í­ì°¨ì´ê¸°ì¤€[" + iWidDif + "]", "SL");	
 			
 			if((topfmtlW - botfmtlW  > iWidDif ) && (botfmtlW != 0)) {
-				commUtils.printLog(logId, "»ó´ÜÆø [" + topfmtlW + "]ÀÌ ÇÏ´Ü[" + botfmtlW +"]Æø Â÷ÀÌ ["+ iWidDif + "]º¸´Ù Å©´Ù", "SL");
+				commUtils.printLog(logId, "ìƒë‹¨í­ [" + topfmtlW + "]ì´ í•˜ë‹¨[" + botfmtlW +"]í­ ì°¨ì´ ["+ iWidDif + "]ë³´ë‹¤ í¬ë‹¤", "SL");
 				
-				szParmLogMsg = "´Ü[" +topSTACK_LAYER_GP + "] "+ "»ó´ÜÀç·á¹øÈ£[" +topSTOCK_ID + "] »ó´ÜÆø [" + topfmtlW + "]ÀÌ " 
-						     + "´Ü[" +botSTACK_LAYER_GP + "] "+ "ÇÏ´ÜÀç·á¹øÈ£[" +botSTOCK_ID + "] ÇÏ´ÜÆø [" + botfmtlW + "]  Æø Â÷ÀÌ ["+ iWidDif + "]º¸´Ù Å©°Å³ª °°À½";
+				szParmLogMsg = "ë‹¨[" +topSTACK_LAYER_GP + "] "+ "ìƒë‹¨ì¬ë£Œë²ˆí˜¸[" +topSTOCK_ID + "] ìƒë‹¨í­ [" + topfmtlW + "]ì´ " 
+						     + "ë‹¨[" +botSTACK_LAYER_GP + "] "+ "í•˜ë‹¨ì¬ë£Œë²ˆí˜¸[" +botSTOCK_ID + "] í•˜ë‹¨í­ [" + botfmtlW + "]  í­ ì°¨ì´ ["+ iWidDif + "]ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ìŒ";
 				
 				jrRtnLog.setField("HANDLE_RTN"  , "-1");
     			jrRtnLog.setField("HANDLE_CONTENTS"	, szParmLogMsg);
@@ -1520,20 +1520,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			}	
 			
 			if(topfmtlW >= imaxStackW || botfmtlW >= imaxStackW){
-				commUtils.printLog(logId, "ÆøÀÌ " + imaxStackW + " mm ÀÌ»ó ÀÌ¸é 1¸ÅÀÛ¾÷", "SL");	
-				szParmLogMsg =  "´Ü[" +topSTACK_LAYER_GP + "] "+ "»ó´ÜÀç·á¹øÈ£[" +topSTOCK_ID + "] »ó´ÜÆø [" + topfmtlW + "]ÀÌ°Å³ª "
-				             + "´Ü[" +botSTACK_LAYER_GP + "] "+ "ÇÏ´ÜÀç·á¹øÈ£[" +botSTOCK_ID + "] ÇÏ´ÜÆø [" + botfmtlW + "] ÆøÀÌ " + imaxStackW + " mm ÀÌ»ó ÀÌ¸é 1¸ÅÀÛ¾÷";
+				commUtils.printLog(logId, "í­ì´ " + imaxStackW + " mm ì´ìƒ ì´ë©´ 1ë§¤ì‘ì—…", "SL");	
+				szParmLogMsg =  "ë‹¨[" +topSTACK_LAYER_GP + "] "+ "ìƒë‹¨ì¬ë£Œë²ˆí˜¸[" +topSTOCK_ID + "] ìƒë‹¨í­ [" + topfmtlW + "]ì´ê±°ë‚˜ "
+				             + "ë‹¨[" +botSTACK_LAYER_GP + "] "+ "í•˜ë‹¨ì¬ë£Œë²ˆí˜¸[" +botSTOCK_ID + "] í•˜ë‹¨í­ [" + botfmtlW + "] í­ì´ " + imaxStackW + " mm ì´ìƒ ì´ë©´ 1ë§¤ì‘ì—…";
 
 				jrRtnLog.setField("HANDLE_RTN"  , "-1");
     			jrRtnLog.setField("HANDLE_CONTENTS"	, szParmLogMsg);
 				return jrRtnLog;
 			}	
 			
-			if (imtlWtSum > imaxStackWt)	 {  // Áß·® CHECK : 53000
-				commUtils.printLog(logId, "Áß·® CHECK : "+ imaxStackWt+ " º¸´Ù Å©´Ù.", "SL");	
+			if (imtlWtSum > imaxStackWt)	 {  // ì¤‘ëŸ‰ CHECK : 53000
+				commUtils.printLog(logId, "ì¤‘ëŸ‰ CHECK : "+ imaxStackWt+ " ë³´ë‹¤ í¬ë‹¤.", "SL");	
 
-				szParmLogMsg = "´Ü[" +topSTACK_LAYER_GP + "] "+ "»ó´ÜÀç·á¹øÈ£[" +topSTOCK_ID + "]  ÇÏ´ÜÀç·á¹øÈ£[" +botSTOCK_ID + "] ÇÕÁß·® [" + imtlWtSum +"]ÀÌ"
-				             + "´Ü[" +botSTACK_LAYER_GP + "] "+ "Áß·® CHECK : "+ imaxStackWt+ "Å©´Ù";
+				szParmLogMsg = "ë‹¨[" +topSTACK_LAYER_GP + "] "+ "ìƒë‹¨ì¬ë£Œë²ˆí˜¸[" +topSTOCK_ID + "]  í•˜ë‹¨ì¬ë£Œë²ˆí˜¸[" +botSTOCK_ID + "] í•©ì¤‘ëŸ‰ [" + imtlWtSum +"]ì´"
+				             + "ë‹¨[" +botSTACK_LAYER_GP + "] "+ "ì¤‘ëŸ‰ CHECK : "+ imaxStackWt+ "í¬ë‹¤";
 				jrRtnLog.setField("HANDLE_RTN"  , "-1");
     			jrRtnLog.setField("HANDLE_CONTENTS"	, szParmLogMsg);
 				return jrRtnLog;
@@ -1553,14 +1553,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     }//end of chkHandledDataCrnSpec()	
     	
 	/**
-     * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄÉÁÙ¸µ Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï
+     * ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¼€ì¤„ë§ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡
      *  
-     * @param  ¡Ü vResult, msgRecord
-     * @return ¡Ü intRtnVal
-     * @throws ¡Ü JDTOException
+     * @param  â— vResult, msgRecord
+     * @return â— intRtnVal
+     * @throws â— JDTOException
      */
     public int CrnSchIns(String logId, String methodNms , JDTORecord jrParamSet , JDTORecordSet jsRecset) throws JDTOException {
-   		String methodNm = "½ºÄÉÁÙ¸µ Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï[BSlabSchSeEJB.CrnSchIns] < " + methodNms;
+   		String methodNm = "ìŠ¤ì¼€ì¤„ë§ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡[BSlabSchSeEJB.CrnSchIns] < " + methodNms;
 		JDTORecord recInCrn    = null;
 		int intRtnVal = 0;
 		String szName = "SYSTEM";
@@ -1575,9 +1575,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 			String szYD_SCH_PRIOR  	= commUtils.trim(jrParamSet.getFieldString("YD_SCH_PRIOR"  ));
 			String szYD_WBOOK_DT  	= commUtils.trim(jrParamSet.getFieldString("YD_WBOOK_DT"  ));
-			String modifier			= commUtils.trim(jrParamSet.getFieldString("MODIFIER")); //¼öÁ¤ÀÚ(Backup Only)
+			String modifier			= commUtils.trim(jrParamSet.getFieldString("MODIFIER")); //ìˆ˜ì •ì(Backup Only)
 			
-			String szYD_TO_LOC_GUIDE_FNL = commUtils.trim(jrParamSet.getFieldString("YD_TO_LOC_GUIDE_FNL")); //E100 ¼­Æ÷ÆÃºí·Ï ÀÌ»ó½Ã ToÀ§Ä¡ °¡ÀÌµå
+			String szYD_TO_LOC_GUIDE_FNL = commUtils.trim(jrParamSet.getFieldString("YD_TO_LOC_GUIDE_FNL")); //E100 ì„œí¬íŒ…ë¸”ë¡ ì´ìƒì‹œ Toìœ„ì¹˜ ê°€ì´ë“œ
 			String sAPP100_E100_YN = "N";
 			
 			if(!"".equals(szYD_TO_LOC_GUIDE_FNL)) {			
@@ -1588,7 +1588,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			commUtils.printParam(logId, jsRecset);
 			 
-			//Å©·¹ÀÎ ½ºÄÉÁÙ¿¡ InsertÇÑ´Ù.				
+			//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì— Insertí•œë‹¤.				
 			JDTORecord recInCrnMtl 	= JDTORecordFactory.getInstance().create();
 			String sCrHandlingLot  	= "0";
 			String ydCrnSchId 		= "0";
@@ -1604,12 +1604,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 				//=============================================================================================================================================
 				String sYM2011_CRN_SCH_TX_YN = YmComm.BCoilApplyYn("YM2011","2","CRN_SCH_TX");
-				commUtils.printLog(logId,  "==========[[[ YM2011 Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï Æ®·£Àè¼Ç ºĞ¸® :" + sYM2011_CRN_SCH_TX_YN + " ]]]============", "SL");
+				commUtils.printLog(logId,  "==========[[[ YM2011 í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡ íŠ¸ëœì­ì…˜ ë¶„ë¦¬ :" + sYM2011_CRN_SCH_TX_YN + " ]]]============", "SL");
 				
 				
 				recInCrn.setField("YD_WBOOK_ID"			, szydWbookId);
 				recInCrn.setField("STOCK_ID"			, commUtils.trim(recInCrn.getFieldString("STOCK_ID"  )));
-				//ÀÛ¾÷¿¹¾àID Á¶È¸-----------------------------------------------------------------------------------------
+				//ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ-----------------------------------------------------------------------------------------
 				if (!"".equals(szydWbookId)) {
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookChk
 					SELECT YD_WBOOK_ID 
@@ -1624,13 +1624,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                            AND C.STOCK_ID=:V_STOCK_ID
 					                            AND B.YD_WBOOK_ID=A.YD_WBOOK_ID)
 					*/
-					jsWbook = commDao.select(recInCrn, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookChk", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸(½ºÄÉÁì»ı¼± Àü)");
+					jsWbook = commDao.select(recInCrn, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnSchWbookChk", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ(ìŠ¤ì¼€ì¥´ìƒì„  ì „)");
 					
 				}
 				
 				if (jsWbook == null || jsWbook.size() <= 0) {
 					 
-					szLogMsg = "["+ methodNm +"]Å©·¹ÀÎ ½ºÄÉÁÙ µî·ÏÁß  ÀÌ¹Ì Å©·¹ÀÎ ½ºÄÉÁì Á¸Àç ÇÔ.Error!! ydWbookId: " + szydWbookId;
+					szLogMsg = "["+ methodNm +"]í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡ì¤‘  ì´ë¯¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ì¡´ì¬ í•¨.Error!! ydWbookId: " + szydWbookId;
 					commUtils.printLog(logId, szLogMsg, "SL");
 					return YmConstant.RETN_INT_FAILURE;		 
 				}
@@ -1639,9 +1639,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				if(!sCrHandlingLot.equals(commUtils.trim(recInCrn.getFieldString("HANDLING_CNT_SPEC")))){
 					/**********************************************************
-					*  Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï
+					*  í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡
 					**********************************************************/			
-					//Å©·¹ÀÎ½ºÄÉÁÙID¸¦ ÇÒ´ç¹Ş´Â´Ù
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„IDë¥¼ í• ë‹¹ë°›ëŠ”ë‹¤
 					ydCrnSchId = commDao.getSeqId(logId, methodNm, "CrnSch");
 	
 					recInCrn.setField("MODIFIER",			modifier);
@@ -1662,14 +1662,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					ydToLocGuide = commUtils.trim(recInCrn.getFieldString("YD_TO_LOC_GUIDE"));
 					
 	        		//--------------------------------------------------------------------------
-	        		// E100 ¼­Æ÷ÆÃºí·° ÀÌ»óÀ¸·Î Å©·¹ÀÎ½ºÄÉÁÙ Àç ½ÇÇà µÉ ¶§ ÀÛ¾÷¿¹¾àIDÀÇ YD_TO_LOC_GUIDE_FNL °ªÀÌ ÀÖÀ» °æ¿ì
+	        		// E100 ì„œí¬íŒ…ë¸”ëŸ­ ì´ìƒìœ¼ë¡œ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ ì‹¤í–‰ ë  ë•Œ ì‘ì—…ì˜ˆì•½IDì˜ YD_TO_LOC_GUIDE_FNL ê°’ì´ ìˆì„ ê²½ìš°
 					if("Y".equals(sAPP100_E100_YN)){
 						ydToLocGuide = szYD_TO_LOC_GUIDE_FNL;
 					}
 	        		//--------------------------------------------------------------------------
 					
 					
-					//º¸Á¶ÀÛ¾÷ ÀÎ °æ¿ì TOÀ§Ä¡ °¡ÀÌµå CLEAR
+					//ë³´ì¡°ì‘ì—… ì¸ ê²½ìš° TOìœ„ì¹˜ ê°€ì´ë“œ CLEAR
 					if(recInCrn.getFieldString("YD_TO_LOC_DCSN_MTD").equals("W")){
 						recInCrn.setField("YD_TO_LOC_GUIDE", 	"");
 					}else{
@@ -1677,7 +1677,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					}
 
 					if(ydToLocGuide.length() > 3 ){
-						//ÇöÀç ÀÛ¾÷µ¿°ú  TOÀ§Ä¡ °¡ÀÌµå µ¿ÀÌ Æ²¸° °æ¿ì  CLEAR
+						//í˜„ì¬ ì‘ì—…ë™ê³¼  TOìœ„ì¹˜ ê°€ì´ë“œ ë™ì´ í‹€ë¦° ê²½ìš°  CLEAR
 						if(!ydToLocGuide.substring(1,2).equals(recInCrn.getFieldString("STACK_COL_GP").substring(1,2))){
 							recInCrn.setField("YD_TO_LOC_GUIDE", 	"");
 						}
@@ -1686,20 +1686,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					recInCrn.setField("YD_WRK_PROG_STAT", 	"W");
 					
 					if(commUtils.trim(recInCrn.getFieldString("YD_UP_WO_LOC")).equals("")){
-						szLogMsg = "["+ methodNm +"] ±Ç»óÁö½ÃÀ§Ä¡°¡ ¾ø½À´Ï´Ù.";
+						szLogMsg = "["+ methodNm +"] ê¶Œìƒì§€ì‹œìœ„ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.";
 						commUtils.printLog(logId, szLogMsg, "SL");    			
 		    			return YmConstant.RETN_INT_FAILURE;				
 					}
  
  
 					if("Y".equals(sYM2011_CRN_SCH_TX_YN)) {
-						//Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï Æ®·£Àè¼Ç ºĞ¸®
+						//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡ íŠ¸ëœì­ì…˜ ë¶„ë¦¬
 						bslabComm.execQueryId(recInCrn, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnsch");
 					} else {
-						intRtnVal = commDao.insert(recInCrn, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnsch", logId, methodNm, "TB_YM_CRNSCH »ı¼º");
+						intRtnVal = commDao.insert(recInCrn, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnsch", logId, methodNm, "TB_YM_CRNSCH ìƒì„±");
 						
 						if(intRtnVal < 1) {
-							szLogMsg = "["+ methodNm +"]Å©·¹ÀÎ ½ºÄÉÁÙ µî·ÏÁß  Error!! ErrorCode: " + intRtnVal;
+							szLogMsg = "["+ methodNm +"]í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡ì¤‘  Error!! ErrorCode: " + intRtnVal;
 							commUtils.printLog(logId, szLogMsg, "SL");
 							return YmConstant.RETN_INT_FAILURE;
 						}						
@@ -1708,19 +1708,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				
 				/**********************************************************
-				*  Å©·¹ÀÎ ½ºÄÉÁÙ ÀÛ¾÷Àç·á µî·Ï
+				*  í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ì‘ì—…ì¬ë£Œ ë“±ë¡
 				**********************************************************/			
 				recInCrnMtl = JDTORecordFactory.getInstance().create();
 				recInCrnMtl.setResultCode(logId);	//Log ID
 				recInCrnMtl.setResultMsg(methodNm);	//Log Method Name
 				recInCrnMtl.setField("YD_CRN_SCH_ID", ydCrnSchId);
 				/*
-				 * ±âÁ¸ÀÇ MAIN_WRK_YN Àº ÁÖÀÛ¾÷ÀÌ Y º¸Á¶ÀÛ¾÷ÀÌ NÀ¸·Î µé¾î¿È 
-				 * Å©·¹ÀÎÀÛ¾÷Àç·á¿¡´Â º¸Á¶ÀÛ¾÷¿©ºÎ¿¡ °ªÀº º¸Á¶ÀÛ¾÷ÀÎ°æ¿ì Y ÁÖÀÛ¾÷ÀÎ°æ¿ì N·Î ¼ÂÆÃ!
+				 * ê¸°ì¡´ì˜ MAIN_WRK_YN ì€ ì£¼ì‘ì—…ì´ Y ë³´ì¡°ì‘ì—…ì´ Nìœ¼ë¡œ ë“¤ì–´ì˜´ 
+				 * í¬ë ˆì¸ì‘ì—…ì¬ë£Œì—ëŠ” ë³´ì¡°ì‘ì—…ì—¬ë¶€ì— ê°’ì€ ë³´ì¡°ì‘ì—…ì¸ê²½ìš° Y ì£¼ì‘ì—…ì¸ê²½ìš° Në¡œ ì…‹íŒ…!
 				 */
 				
 				if(recInCrn.getFieldString("YD_TO_LOC_DCSN_MTD").equals("W")){
-					recInCrnMtl.setField("YD_AID_WRK_YN", "Y"); //º¸Á¶ÀÛ¾÷
+					recInCrnMtl.setField("YD_AID_WRK_YN", "Y"); //ë³´ì¡°ì‘ì—…
 				}else{
 					recInCrnMtl.setField("YD_AID_WRK_YN", "N");
 				}
@@ -1736,7 +1736,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				recInCrnMtl.setField("YD_ROUTE_GP"			, "");
 				recInCrnMtl.setField("YD_TO_LOC_DCSN_MTD"	, commUtils.trim(recInCrn.getFieldString("YD_TO_LOC_DCSN_MTD")));
 
-				//Å©·¹ÀÎÀÛ¾÷Àç·á »ı¼º
+				//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ìƒì„±
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnwrkmtl
 				MERGE INTO TB_YM_CRNWRKMTL CS USING (
 				SELECT :V_YD_CRN_SCH_ID  AS V_YD_CRN_SCH_ID
@@ -1798,13 +1798,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				*/       
 				
 				if("Y".equals(sYM2011_CRN_SCH_TX_YN)) {
-					//Å©·¹ÀÎ ½ºÄÉÁÙ µî·Ï Æ®·£Àè¼Ç ºĞ¸®
+					//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ë“±ë¡ íŠ¸ëœì­ì…˜ ë¶„ë¦¬
 					bslabComm.execQueryId(recInCrnMtl, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnwrkmtl");
 				} else {
-					intRtnVal = commDao.insert(recInCrnMtl, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnwrkmtl", logId, methodNm, "TB_YM_CRNWRKMTL »ı¼º");
+					intRtnVal = commDao.insert(recInCrnMtl, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmCrnwrkmtl", logId, methodNm, "TB_YM_CRNWRKMTL ìƒì„±");
 					
 					if(intRtnVal < 1) {
-						szLogMsg = "["+ methodNm +"] Å©·¹ÀÎ ½ºÄÉÁÙ ÀÛ¾÷Àç·á µî·ÏÁß ½ÇÆĞ: " + intRtnVal;
+						szLogMsg = "["+ methodNm +"] í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ì‘ì—…ì¬ë£Œ ë“±ë¡ì¤‘ ì‹¤íŒ¨: " + intRtnVal;
 						commUtils.printLog(logId, szLogMsg, "SL");
 						return YmConstant.RETN_INT_FAILURE;
 					}						
@@ -1813,7 +1813,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				sCrHandlingLot = commUtils.trim(recInCrn.getFieldString("HANDLING_CNT_SPEC"  ));
 				/**********************************************************
-				*  ÀûÄ¡´ÜÀÇ Àç·á»óÅÂ¸¦ ±Ç»ó´ë±â·Î º¯°æ
+				*  ì ì¹˜ë‹¨ì˜ ì¬ë£Œìƒíƒœë¥¼ ê¶ŒìƒëŒ€ê¸°ë¡œ ë³€ê²½
 				**********************************************************/		
 				recInCrn.setField("STACK_LAYER_STAT", "U");
 				
@@ -1827,9 +1827,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				   AND STACK_LAYER_GP = :V_STACK_LAYER_GP
 				   AND STOCK_ID = :V_STOCK_ID
 		    	 */  
-				intRtnVal = commDao.update(recInCrn, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.updStackLayerMtlStat", logId, methodNm, "TB_YM_STACKLAYER °»½Å");
+				intRtnVal = commDao.update(recInCrn, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.updStackLayerMtlStat", logId, methodNm, "TB_YM_STACKLAYER ê°±ì‹ ");
 				if(intRtnVal < 1) {
-					commUtils.printLog(logId, "[" + methodNm + "] Àç·á[" + recInCrn.getFieldString("STOCK_ID") + "]ÀûÀç´Ü º¯°æ½Ã ¿À·ù", "SL");
+					commUtils.printLog(logId, "[" + methodNm + "] ì¬ë£Œ[" + recInCrn.getFieldString("STOCK_ID") + "]ì ì¬ë‹¨ ë³€ê²½ì‹œ ì˜¤ë¥˜", "SL");
 					return YmConstant.RETN_INT_FAILURE;
 				}
 			}
@@ -1847,13 +1847,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     
     
 	/**
-     * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB YARD - TOÀ§Ä¡°áÁ¤
+     * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLAB YARD - TOìœ„ì¹˜ê²°ì •
      * @param  inRecord, recGetCrnWrkMtl, rsResultCrnwrkmtl
-     * @return int ¼º°ø:1, ½ÇÆĞ:-1
+     * @return int ì„±ê³µ:1, ì‹¤íŒ¨:-1
      * @throws 
      */
     public JDTORecord LocSrcRngDataSet (String logId, String methodNms, JDTORecord inRecord)throws JDTOException{
-    	String methodNm = "TOÀ§Ä¡½ÃÀÛ[BSlabSchSeEJB.LocSrcRngDataSet] < " + methodNms;
+    	String methodNm = "TOìœ„ì¹˜ì‹œì‘[BSlabSchSeEJB.LocSrcRngDataSet] < " + methodNms;
     	
     	JDTORecord jrLocSrcRngRtn = JDTORecordFactory.getInstance().create();
     	String szMsg        		= "";     	  
@@ -1861,17 +1861,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     	int intRtnVal 				= 0 ;
 
     	try{
-        	commUtils.printLog(logId, "¡Ú"+methodNm, "S+");
+        	commUtils.printLog(logId, "â˜…"+methodNm, "S+");
         	//-------------------------------------------------------------------------------------------------------------
-        	//	ÆÄ¶ó¹ÌÅÍ È®ÀÎ
+        	//	íŒŒë¼ë¯¸í„° í™•ì¸
         	//-------------------------------------------------------------------------------------------------------------
-			//ÆÄ¶ó¹ÌÅÍ Null Check
+			//íŒŒë¼ë¯¸í„° Null Check
         	String szWbookId	= commUtils.trim(inRecord.getFieldString("YD_WBOOK_ID" ));	
         	String szEqpId 		= commUtils.trim(inRecord.getFieldString("YD_EQP_ID"   ));	
         	String modifier 	= commUtils.trim(inRecord.getFieldString("MODIFIER"   ));	
         	String sAPP005_YN 	= commUtils.trim(inRecord.getFieldString("LOG_YN"));
         	//-------------------------------------------------------------------------------------------------------------
-			//ÀÛ¾÷¿¹¾àÀ» Á¶È¸ÇÑ´Ù. ToÀ§Ä¡ °áÁ¤¹æ¹ıÀÌ  »ç¿ëÀÚ ÁöÁ¤ÀÎÁö ¾Ë±âÀ§ÇØ¼­...
+			//ì‘ì—…ì˜ˆì•½ì„ ì¡°íšŒí•œë‹¤. Toìœ„ì¹˜ ê²°ì •ë°©ë²•ì´  ì‚¬ìš©ì ì§€ì •ì¸ì§€ ì•Œê¸°ìœ„í•´ì„œ...
 			//-------------------------------------------------------------------------------------------------------------
         	JDTORecordSet jsTemp 		= JDTORecordFactory.getInstance().createRecordSet("");
 			
@@ -1904,10 +1904,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         	   FROM TB_YM_WRKBOOK A
         	 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 			 */
-			jsTemp = commDao.select(inRecord, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getYmWrkbook", logId, methodNm, "ÀÛ¾÷¿¹¾à Á¶È¸"); 
+			jsTemp = commDao.select(inRecord, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getYmWrkbook", logId, methodNm, "ì‘ì—…ì˜ˆì•½ ì¡°íšŒ"); 
 	    	
 	    	if (jsTemp == null || jsTemp.size() <= 0) {
-				commUtils.printLog(logId, methodNm + "[ÀÛ¾÷¿¹¾àÁ¾·á]", "SL");
+				commUtils.printLog(logId, methodNm + "[ì‘ì—…ì˜ˆì•½ì¢…ë£Œ]", "SL");
 				
     			jrLocSrcRngRtn.setField("RTN", "-1");
 
@@ -1921,7 +1921,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			String szSchCd 	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));
 			//-------------------------------------------------------------------------------------------------------------
-			//	Å©·¹ÀÎ½ºÄÉÁÙ Á¶È¸
+			//	í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡°íšŒ
 			//-------------------------------------------------------------------------------------------------------------
 			
 			JDTORecord jrInPara = JDTORecordFactory.getInstance().create();
@@ -2020,24 +2020,24 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			 ORDER BY B.YD_CRN_SCH_ID
 			 */
 			
-			JDTORecordSet jsCrnsch = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCrnSchByWBookId", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙ Á¶È¸"); 
+			JDTORecordSet jsCrnsch = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCrnSchByWBookId", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡°íšŒ"); 
 
 			//-------------------------------------------------------------------------------------------------------------
-			//	Å©·¹ÀÎ½ºÄÉÁÙÀÇ ±ÇÇÏÁö½ÃÀ§Ä¡ °áÁ¤
+			//	í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì˜ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ê²°ì •
 			//-------------------------------------------------------------------------------------------------------------
 			String StockId				= "";
-			String StackColGp 			= "";// ÀûÄ¡¿­
-			String StackBedGp			= "";// ÀûÄ¡º£µå
-			String StackLayerGp			= "";//Â÷·®Á¤ÁöÀ§Ä¡ ÀûÄ¡´Ü
+			String StackColGp 			= "";// ì ì¹˜ì—´
+			String StackBedGp			= "";// ì ì¹˜ë² ë“œ
+			String StackLayerGp			= "";//ì°¨ëŸ‰ì •ì§€ìœ„ì¹˜ ì ì¹˜ë‹¨
 			String ydCrnSchId 			= "";
 	    	
 	    	String szToLocDcsnMtd 		= "";
 	    	String szToLocGuide 		= "";
 	    	String ydWrkPlanTcar        = "";
-	    	String szStackColGp 		= "";// ÀûÄ¡¿­
-	    	String upStackColGp 		= "";// ÀûÄ¡¿­
-	    	String ydAimRtGp 		    = "";// Çà¼±
-	    	String ydBendingYn 		    = "";// bending ¿©ºÎ
+	    	String szStackColGp 		= "";// ì ì¹˜ì—´
+	    	String upStackColGp 		= "";// ì ì¹˜ì—´
+	    	String ydAimRtGp 		    = "";// í–‰ì„ 
+	    	String ydBendingYn 		    = "";// bending ì—¬ë¶€
 	    	String toLocSuccessYn       = "N";
 			int    iCoilWt              = 0;
 	    	
@@ -2056,17 +2056,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         		jsCrnsch.absolute(Loop_i);
         		jrCrnSch  = jsCrnsch.getRecord();
         		
-        		//Å©·¹ÀÎ½ºÄÉÁÙDataÀúÀå
+        		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„Dataì €ì¥
         		ydCrnSchId     = commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));
         		szSchCd        = commUtils.trim(jrCrnSch.getFieldString("YD_SCH_CD"));
         		szToLocDcsnMtd = commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"));
         		szToLocGuide   = commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_GUIDE"));
-        		szStackColGp   = commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));  //±Ç»óÀ§Ä¡
+        		szStackColGp   = commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));  //ê¶Œìƒìœ„ì¹˜
         		
         		commUtils.printLog(logId, "szToLocGuide" + szToLocGuide, "SL");
         		
         		if(szStackColGp.length() != 8) {
-        			szMsg = "LocSrcRngDataSet : Àç·á ±Ç»óÀ§Ä¡ ½ÇÆĞ!!";
+        			szMsg = "LocSrcRngDataSet : ì¬ë£Œ ê¶Œìƒìœ„ì¹˜ ì‹¤íŒ¨!!";
     				commUtils.printLog(logId, szMsg, "SL");
     				break;
         		} else {
@@ -2106,10 +2106,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     			          ,E.YD_SCH_CD
     			          ,:V_MODIFIER           AS MODIFIER
     			          ,B.ORD_YEOJAE_GP
-    			          ,SUM(B.SLAB_T)     OVER () AS SUM_MTL_T   --µÎ²²ÇÕ
-    			          ,MAX(B.SLAB_W)     OVER () AS MAX_MTL_W   --ÃÖ´ëÆø 
-    			          ,MAX(B.SLAB_LEN)   OVER () AS MAX_MTL_L   --ÃÖ´ë±æÀÌ 
-    			          ,SUM(B.SLAB_WT)    OVER () AS SUM_MTL_WT  --Áß·®ÇÕ    
+    			          ,SUM(B.SLAB_T)     OVER () AS SUM_MTL_T   --ë‘ê»˜í•©
+    			          ,MAX(B.SLAB_W)     OVER () AS MAX_MTL_W   --ìµœëŒ€í­ 
+    			          ,MAX(B.SLAB_LEN)   OVER () AS MAX_MTL_L   --ìµœëŒ€ê¸¸ì´ 
+    			          ,SUM(B.SLAB_WT)    OVER () AS SUM_MTL_WT  --ì¤‘ëŸ‰í•©    
     			          ,COUNT(A.STOCK_ID) OVER () AS CRN_WRK_SH    
     			          ,MAX(C.YD_RULE_PL_RS_GP) OVER () T_YD_RULE_PL_RS_GP
     			      FROM TB_YM_CRNSCH    E                                                        
@@ -2130,9 +2130,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     			WHERE ROWNUM = 1
         		*/
            		
-        		jsCrnMtlSch = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCrnwrkmtlBySchId", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙÀç·á ÃÖÇÏ´Ü  Á¶È¸"); 
+        		jsCrnMtlSch = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCrnwrkmtlBySchId", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì¬ë£Œ ìµœí•˜ë‹¨  ì¡°íšŒ"); 
         		if(jsCrnMtlSch.size() <= 0) {
-    				szMsg = "LocSrcRngDataSet : À§Ä¡°Ë»ö¹üÀ§ Á¶È¸ Å©·¹ÀÎÀç·á Á¤º¸ READ ½ÇÆĞ!!";
+    				szMsg = "LocSrcRngDataSet : ìœ„ì¹˜ê²€ìƒ‰ë²”ìœ„ ì¡°íšŒ í¬ë ˆì¸ì¬ë£Œ ì •ë³´ READ ì‹¤íŒ¨!!";
     				commUtils.printLog(logId, szMsg, "SL");
     				break;
 
@@ -2140,10 +2140,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         			
         			jrCrnMtlSch  = jsCrnMtlSch.getRecord(0);
         		}
-        		ydAimRtGp      = commUtils.trim(jrCrnMtlSch.getFieldString("YD_AIM_RT_GP"));  //¾ßµåÇà¼±
+        		ydAimRtGp      = commUtils.trim(jrCrnMtlSch.getFieldString("YD_AIM_RT_GP"));  //ì•¼ë“œí–‰ì„ 
 
         		
-        		szMsg = "ÀÛ¾÷¿¹¾à " + szWbookId + " [" + Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "]¿¡ ´ëÇÑ ±ÇÇÏÁö½ÃÀ§Ä¡ °áÁ¤ "; //szWbookId
+        		szMsg = "ì‘ì—…ì˜ˆì•½ " + szWbookId + " [" + Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "]ì— ëŒ€í•œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ê²°ì • "; //szWbookId
         		commUtils.printLog(logId, szMsg, "SL");
         		
            		jrInPara.setField("STACK_COL_GP"	, upStackColGp);
@@ -2175,9 +2175,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         				  	  COL_GP 
         			*/	  	  
                		
-            		jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdDummySearch", logId, methodNm, "º¸Á¶ÀÛ¾÷ TOÀ§Ä¡ °áÁ¤");
+            		jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdDummySearch", logId, methodNm, "ë³´ì¡°ì‘ì—… TOìœ„ì¹˜ ê²°ì •");
             		if(jsToLoc.size() == 0){
-            			szMsg = " ¢º  º¸Á¶ÀÛ¾÷ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ!! ¿­[" + upStackColGp + "] ¢¸  ";
+            			szMsg = " â–¶  ë³´ì¡°ì‘ì—… TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨!! ì—´[" + upStackColGp + "] â—€  ";
         				commUtils.printLog(logId, szMsg, "SL");
         				break;
             		}            		
@@ -2192,15 +2192,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         				 ORDER BY STACK_COL_GP
         				 */
         				jrInPara.setField("YD_TO_LOC_GUIDE"	    , szToLocGuide);
-	        			jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocUserCol", logId, methodNm, "»ç¿ëÀÚ ÁöÁ¤ TOÀ§Ä¡ °áÁ¤"); 
+	        			jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocUserCol", logId, methodNm, "ì‚¬ìš©ì ì§€ì • TOìœ„ì¹˜ ê²°ì •"); 
 	            		if(jsToLoc.size() == 0){
-	            			szMsg = " ¢º  »ç¿ëÀÚ ÁöÁ¤ TOÀ§Ä¡¹üÀ§ Á¶È¸ ½ÇÆĞ!! ¿­[" + upStackColGp + "] ¢¸  ";
+	            			szMsg = " â–¶  ì‚¬ìš©ì ì§€ì • TOìœ„ì¹˜ë²”ìœ„ ì¡°íšŒ ì‹¤íŒ¨!! ì—´[" + upStackColGp + "] â—€  ";
 	        				commUtils.printLog(logId, szMsg, "SL");
 	        				break;
 	            		}
         			} else {
 	        			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdPrimaryWorkSearch 
-	        			--ÁÖÀÛ¾÷ ÀûÄ¡¿­ °Ë»ö
+	        			--ì£¼ì‘ì—… ì ì¹˜ì—´ ê²€ìƒ‰
 	        			SELECT SS.YD_SCH_CD
 	        			     , SS.YD_ROUTE_GP
 	        			     , SC.STACK_COL_BED_QNTY
@@ -2216,9 +2216,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	        			   AND SC.STACK_COL_ACTIVE_STAT = 'L'
 	        			 ORDER BY YD_LOC_SRCH_RNG_SEQ
 	        			*/ 
-	        			jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdPrimaryWorkSearch", logId, methodNm, "ÁÖÀÛ¾÷ TOÀ§Ä¡ °áÁ¤"); 
+	        			jsToLoc = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdPrimaryWorkSearch", logId, methodNm, "ì£¼ì‘ì—… TOìœ„ì¹˜ ê²°ì •"); 
 	            		if(jsToLoc.size() == 0){
-	            			szMsg = " ¢º  ÁÖÀÛ¾÷  TOÀ§Ä¡°Ë»ö¹üÀ§ Á¶È¸ ½ÇÆĞ!! ½ºÄÉÁÙ ÄÚµå[" + szSchCd + "]Çà¼±[" + ydAimRtGp + "] ¢¸  ";
+	            			szMsg = " â–¶  ì£¼ì‘ì—…  TOìœ„ì¹˜ê²€ìƒ‰ë²”ìœ„ ì¡°íšŒ ì‹¤íŒ¨!! ìŠ¤ì¼€ì¤„ ì½”ë“œ[" + szSchCd + "]í–‰ì„ [" + ydAimRtGp + "] â—€  ";
 	        				commUtils.printLog(logId, szMsg, "SL");
 	        				break;
 	            		}
@@ -2256,9 +2256,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
         			) A 
         			GROUP BY YD_CRN_SCH_ID, YD_WBOOK_ID, YD_TO_LOC_GUIDE	
         			*/
-        			jsToLocGuide = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocGuide", logId, methodNm, "TOÀ§Ä¡°¡ÀÌµå Á¦¿Ü"); 
+        			jsToLocGuide = commDao.select(jrInPara, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocGuide", logId, methodNm, "TOìœ„ì¹˜ê°€ì´ë“œ ì œì™¸"); 
             		if(jsToLocGuide.size() > 0){
-            			szDBLogMsg = szDBLogMsg + "\r\n" + "Á¦¿Ü´ë»ó TOÀ§Ä¡ ÁöÁ¤ : ";
+            			szDBLogMsg = szDBLogMsg + "\r\n" + "ì œì™¸ëŒ€ìƒ TOìœ„ì¹˜ ì§€ì • : ";
             			for(int Loop_k = 1; Loop_k <= jsToLocGuide.size(); Loop_k++) {
             				jsToLocGuide.absolute(Loop_k);
             				jrToLocGuide  = jsToLocGuide.getRecord();
@@ -2270,65 +2270,65 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, szSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "°Ë»ö ¿­:"+ szDBLogMsg + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ê²€ìƒ‰ ì—´:"+ szDBLogMsg + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
         		
         		if(szToLocGuide.length() >= 8) {
             		/**********************************************************
-    				* »ç¿ëÀÚ ÁöÁ¤ 
+    				* ì‚¬ìš©ì ì§€ì • 
     				**********************************************************/            		
-            		szMsg = "["+ Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "]Àº »ç¿ëÀÚÁöÁ¤ ½ºÄÉÁÙÀÇ  ToÀ§Ä¡ °áÁ¤ ½ÃÀÛ";
+            		szMsg = "["+ Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "]ì€ ì‚¬ìš©ìì§€ì • ìŠ¤ì¼€ì¤„ì˜  Toìœ„ì¹˜ ê²°ì • ì‹œì‘";
         			commUtils.printLog(logId, szMsg, "SL");
         			
         			this.procToLocUser(logId, methodNm,sAPP005_YN, jrWbook, jrCrnSch, jrCrnMtlSch);
         			
     			} else if("SE01UM".equals(szSchCd.substring(2, 8))) {
 					/************************************
-					 * 1. ½ºÄ«ÇÎ º¸±Ş
+					 * 1. ìŠ¤ì¹´í•‘ ë³´ê¸‰
 					 ***********************************/  
-            		szMsg = "["+ Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "]Àº ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁÙÀÇ  ToÀ§Ä¡ °áÁ¤ ½ÃÀÛ";
+            		szMsg = "["+ Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "]ì€ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¤„ì˜  Toìœ„ì¹˜ ê²°ì • ì‹œì‘";
         			commUtils.printLog(logId, szMsg, "SL");
 					
 					this.procToLocBending(logId, methodNm, sAPP005_YN, jrWbook, jrCrnSch, jrCrnMtlSch, jsToLoc);
 
     			} else {	
 	   				/************************************
-					 * 1.Ã¹ °Ë»öÀ§Ä¡ ¿ì¼±¼øÀ§  : ±âº»ÀûÀ¸·Î ¼³ºñ ,¾ßµå 
+					 * 1.ì²« ê²€ìƒ‰ìœ„ì¹˜ ìš°ì„ ìˆœìœ„  : ê¸°ë³¸ì ìœ¼ë¡œ ì„¤ë¹„ ,ì•¼ë“œ 
 					 ***********************************/
 	   				/************************************
-					 * 2. TO À§Ä¡ ¼³ºñ
-					 * 2.1 TOÀ§Ä¡°¡ W/B, CTCÀÎÁö¸¦ Ã¼Å©ÇÑ´Ù.if ("WB".equals(curColGp.substring(2, 4))||"CT".equals(curColGp.substring(2, 4))) {
-					 * 2.2 TOÀ§Ä¡°¡ º¸¿ÂÄ«¹Ù(BK)ÀÎÁö¸¦ Ã¼Å©ÇÑ´Ù
-					 * 2.3 TOÀ§Ä¡°¡ Â÷·®,´ëÂ÷(TC)ÀÎÁö¸¦ Ã¼Å©ÇÑ´Ù.
+					 * 2. TO ìœ„ì¹˜ ì„¤ë¹„
+					 * 2.1 TOìœ„ì¹˜ê°€ W/B, CTCì¸ì§€ë¥¼ ì²´í¬í•œë‹¤.if ("WB".equals(curColGp.substring(2, 4))||"CT".equals(curColGp.substring(2, 4))) {
+					 * 2.2 TOìœ„ì¹˜ê°€ ë³´ì˜¨ì¹´ë°”(BK)ì¸ì§€ë¥¼ ì²´í¬í•œë‹¤
+					 * 2.3 TOìœ„ì¹˜ê°€ ì°¨ëŸ‰,ëŒ€ì°¨(TC)ì¸ì§€ë¥¼ ì²´í¬í•œë‹¤.
 					 ***********************************/
    					jrToLoc  = jsToLoc.getRecord(0);
-   	        		//¿¹Á¤À§Ä¡
+   	        		//ì˜ˆì •ìœ„ì¹˜
    					String planToLoc = commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
     				
-	        		/** ¼³ºñ ÀÎ °æ¿ì: WB/CT/BK/PT/TC**/	
+	        		/** ì„¤ë¹„ ì¸ ê²½ìš°: WB/CT/BK/PT/TC**/	
 					if(YmComm.chkEqpIdGp(szSchCd,planToLoc)) {
-						szMsg =  "[" + Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "] : ¼³ºñÀÓ";
+						szMsg =  "[" + Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "] : ì„¤ë¹„ì„";
 						this.procToLocEqpId(logId, methodNm, sAPP005_YN, jrWbook, jrCrnSch, jrCrnMtlSch, jsToLoc);
 						
 					} else {	
 	    				/************************************
-						 * 3. ÀÏ¹İ ¾ßµå
-						 *  3.1 SLABÀÇ ÀåÀÔLOT¹øÈ£°¡ Á¸ÀçÇÏÁö ¾Ê´Â °æ¿ì. (»êÀûLOT¹øÈ£ ´ÜÀ§·Î TOÀ§Ä¡ °áÁ¤)
-						 *  3.1.1 Slab ÀÌ¼ÛÇÏÂ÷
-						 *  3.2 SLABÀÇ ÀåÀÔLOT¹øÈ£°¡ Á¸ÀçÇÏ´Â °æ¿ì.
+						 * 3. ì¼ë°˜ ì•¼ë“œ
+						 *  3.1 SLABì˜ ì¥ì…LOTë²ˆí˜¸ê°€ ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ê²½ìš°. (ì‚°ì LOTë²ˆí˜¸ ë‹¨ìœ„ë¡œ TOìœ„ì¹˜ ê²°ì •)
+						 *  3.1.1 Slab ì´ì†¡í•˜ì°¨
+						 *  3.2 SLABì˜ ì¥ì…LOTë²ˆí˜¸ê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš°.
 						 ***********************************/  
 						if(szToLocDcsnMtd.equals("W")) {
-		    				szMsg =  "[" + Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "] : º¸Á¶ÀÛ¾÷ :¾ßµå·Î TO À§Ä¡°áÁ¤ ½ÃÀÛ";
+		    				szMsg =  "[" + Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "] : ë³´ì¡°ì‘ì—… :ì•¼ë“œë¡œ TO ìœ„ì¹˜ê²°ì • ì‹œì‘";
 		    				commUtils.printLog(logId, szMsg, "SL");
 						} else {
-		    				szMsg =  "[" + Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "] : ÁÖÀÛ¾÷ :¾ßµå·Î TO À§Ä¡°áÁ¤ ½ÃÀÛ";
+		    				szMsg =  "[" + Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "] : ì£¼ì‘ì—… :ì•¼ë“œë¡œ TO ìœ„ì¹˜ê²°ì • ì‹œì‘";
 		    				commUtils.printLog(logId, szMsg, "SL");
 						}
 	    				this.procToLocPrimaryWork(logId, methodNm,sAPP005_YN, jrWbook, jrCrnSch, jrCrnMtlSch, jsToLoc);
 	    				        				
-	    				szMsg =  "[" + Loop_i+"]¹øÂ° Å©·¹ÀÎ ½ºÄÉÁÙ[" + ydCrnSchId + "]Àº  ÀÛ¾÷ ½ºÄÉÁÙÀÇ ToÀ§Ä¡ °áÁ¤ ¿Ï·á ";
+	    				szMsg =  "[" + Loop_i+"]ë²ˆì§¸ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„[" + ydCrnSchId + "]ì€  ì‘ì—… ìŠ¤ì¼€ì¤„ì˜ Toìœ„ì¹˜ ê²°ì • ì™„ë£Œ ";
 	        			commUtils.printLog(logId, szMsg, "SL");
             		}
 						
@@ -2356,18 +2356,18 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			jrInPara1.setResultMsg(methodNm);	//Log Method Name
 			jrInPara1.setField("YD_WBOOK_ID"	, szWbookId);
 			jrInPara1.setField("YD_EQP_ID"		, szEqpId);    
-			JDTORecordSet jsCrnSchStatRe = commDao.select(jrInPara1, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStatRe", logId, methodNm, "ÀÛ¾÷¿¹¾àÀ¸·Î Å©·¹ÀÎ ½ºÄÉÁì Á¶È¸");
+			JDTORecordSet jsCrnSchStatRe = commDao.select(jrInPara1, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchStatRe", logId, methodNm, "ì‘ì—…ì˜ˆì•½ìœ¼ë¡œ í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ì¡°íšŒ");
 			if (jsCrnSchStatRe.size() > 0) {
 				szEqpId   =  commUtils.trim(jsCrnSchStatRe.getRecord(0).getFieldString("YD_EQP_ID"));
 			}  
         	//-------------------------------------------------------------------------------------------------------------
-    		// ToÀ§Ä¡ °áÁ¤ ½ÇÆĞ½Ã default°ªÀ¸·Î xx010101À» ¼³Á¤
+    		// Toìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ì‹œ defaultê°’ìœ¼ë¡œ xx010101ì„ ì„¤ì •
         	//-------------------------------------------------------------------------------------------------------------
         	jsCrnsch 	= JDTORecordFactory.getInstance().createRecordSet("");
     		jrInPara 	= JDTORecordFactory.getInstance().create();
     		jrInPara.setField("YD_WBOOK_ID", szWbookId);
     		jrInPara.setField("YD_EQP_ID",   szEqpId);
-    		jsCrnsch = commDao.select(jrInPara, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdCrnschByEqpIdandWBookId", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙ Á¶È¸");   		
+    		jsCrnsch = commDao.select(jrInPara, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdCrnschByEqpIdandWBookId", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡°íšŒ");   		
     		
     		for(int Loop_i = 1; Loop_i <= jsCrnsch.size(); Loop_i++) {
 				jsCrnsch.absolute(Loop_i);
@@ -2376,9 +2376,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				if(commUtils.trim(jrInPara.getFieldString("YD_DN_WO_LOC")).equals("")) {
 					jrInPara.setField("YD_DN_WO_LOC", "XX010101");
 								   
-					intRtnVal = commDao.update(jrInPara, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtDnLoc", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙ °»½Å");
+					intRtnVal = commDao.update(jrInPara, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtDnLoc", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê°±ì‹ ");
 					if(intRtnVal <= 0){
-						szMsg = methodNm + " Å©·¹ÀÎ½ºÄÉÁÙ ToÀ§Ä¡ Default°ª µî·Ï ½ÇÆĞ!!";
+						szMsg = methodNm + " í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Toìœ„ì¹˜ Defaultê°’ ë“±ë¡ ì‹¤íŒ¨!!";
 	    				commUtils.printLog(logId, szMsg, "SL");
 	        			jrLocSrcRngRtn.setField("RTN", "-1");
 	        			return jrLocSrcRngRtn;
@@ -2398,7 +2398,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     }//end of LocSrcRngDataSet()   
     
 	/**
-	 * ¼³ºñÀÛ¾÷TOÀ§Ä¡°áÁ¤
+	 * ì„¤ë¹„ì‘ì—…TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -2407,24 +2407,24 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocEqpId(String logId, String methodNms,String sAPP005_YN, JDTORecord jrWbook, JDTORecord jrCrnSch, JDTORecord jrCrnMtlSch, JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:¼³ºñÀÛ¾÷ [BSlabSchSeEJB.procToLocEqpId] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì„¤ë¹„ì‘ì—… [BSlabSchSeEJB.procToLocEqpId] < " + methodNms;
     	String szLogMsg					= null;
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ÀÛ¾÷¿¹¾à
-		String ydWrkPlanTcar    = commUtils.trim(jrWbook.getFieldString("YD_WRK_PLAN_TCAR"));	//ÀÛ¾÷¿¹¾à-¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷ 
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ì‘ì—…ì˜ˆì•½
+		String ydWrkPlanTcar    = commUtils.trim(jrWbook.getFieldString("YD_WRK_PLAN_TCAR"));	//ì‘ì—…ì˜ˆì•½-ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨ 
 
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String ydUpWoLoc 		= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));		
 		String ydUpWoLayer 		= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LAYER"));
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydBendingYn  	= commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ¿©ºÎ
-		String ydToLocDcsnMtd 	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"  ));//ÁÖÀÛ¾÷¿©ºÎ		
+		String ydBendingYn  	= commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ì—¬ë¶€
+		String ydToLocDcsnMtd 	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"  ));//ì£¼ì‘ì—…ì—¬ë¶€		
 		String sRtnBedDan       = "";
 		String planToLoc        = "";
 		
@@ -2435,7 +2435,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		
 		try {
 			if( ydUpWoLoc.equals("") ) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ ±ÇÇÏ ¶Ç´Â ±Ç»óÀ§Ä¡ ÀÌ»ó ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ ê¶Œí•˜ ë˜ëŠ” ê¶Œìƒìœ„ì¹˜ ì´ìƒ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
@@ -2446,7 +2446,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    	jrToLoc  	= jsToLoc.getRecord();
 		    	planToLoc 	= commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
 		    	
-			    // ÀåÀÔ
+			    // ì¥ì…
 				if ("WB".equals(planToLoc.substring(2, 4))||"CT".equals(planToLoc.substring(2, 4))){
 					sRtnBedDan = this.procToLocWbCt(logId, methodNm,sAPP005_YN, planToLoc,jrWbook,jrCrnMtlSch, jrCrnSch, jsToLoc);
 					if(sRtnBedDan.length() < 10) {
@@ -2455,7 +2455,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						break;
 					}
 				}
-				// º¸¿Â¹ğÅ©
+				// ë³´ì˜¨ë±…í¬
 				if ("BK".equals(planToLoc.substring(2, 4))){
 					sRtnBedDan = this.procToLocBk(logId, methodNm, sAPP005_YN,planToLoc,jrWbook,jrCrnMtlSch, jrCrnSch, jsToLoc);
 					if(sRtnBedDan.length() < 10) {
@@ -2464,7 +2464,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						break;
 					}
 				} 
-				// Â÷·®
+				// ì°¨ëŸ‰
 				if ("PT".equals(planToLoc.substring(2, 4))){
 					sRtnBedDan = this.procToLocPtTc(logId, methodNm,sAPP005_YN, planToLoc,jrWbook, jrCrnMtlSch, jrCrnSch, jsToLoc);
 					if(sRtnBedDan.length() < 10) {
@@ -2473,15 +2473,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						break;
 					}
 				}		 
-				// ´ëÂ÷
+				// ëŒ€ì°¨
 				if ("TC".equals(planToLoc.substring(2, 4))){
 					
 					String sAPP100_Z01_YN = YmComm.BCoilApplyYn("APP100","2","Z01_YN");  
 					
-					commUtils.printLog(logId,  "==========[[[ SLAB ´ëÂ÷ TOÀ§Ä¡ °íµµÈ­ Àû¿ë¿©ºÎ :" + sAPP100_Z01_YN + " , ±Ç»óÀ§Ä¡ : " + ydUpWoLoc + " ]]]============", "SL");
+					commUtils.printLog(logId,  "==========[[[ SLAB ëŒ€ì°¨ TOìœ„ì¹˜ ê³ ë„í™” ì ìš©ì—¬ë¶€ :" + sAPP100_Z01_YN + " , ê¶Œìƒìœ„ì¹˜ : " + ydUpWoLoc + " ]]]============", "SL");
 					
 					if("Y".equals(sAPP100_Z01_YN) && "TC".equals(ydUpWoLoc.substring(2, 4))) {
-						// ´ëÂ÷ -> ´ëÂ÷ ½Ã 
+						// ëŒ€ì°¨ -> ëŒ€ì°¨ ì‹œ 
 						break;
 					} else {
 						sRtnBedDan = this.procToLocPtTc(logId, methodNm,sAPP005_YN, planToLoc,jrWbook, jrCrnMtlSch, jrCrnSch, jsToLoc);
@@ -2508,7 +2508,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("EQUIP_GP"   		  , ydWrkPlanTcar    ); 
 					
 		    		
-		    		JDTORecordSet jsCarLdLoc = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getTcCarLdStopLoc", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ Á¶È¸-ÇÏÂ÷Áö");
+		    		JDTORecordSet jsCarLdLoc = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getTcCarLdStopLoc", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ì¡°íšŒ-í•˜ì°¨ì§€");
 		    		
 		    		if(jsCarLdLoc.size()>0) {
 		    			
@@ -2521,7 +2521,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    			//} else if("A".equals(planToLoc.substring(1,2))) {
 		    			//	sRtnBedDan = "2ATC220101";
 		    			//}
-						szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ(´ëÂ÷TOÀ§Ä¡) ";
+						szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨(ëŒ€ì°¨TOìœ„ì¹˜) ";
 						commUtils.printLog(logId, szLogMsg, "SL");
 						return YmConstant.RETN_CD_FAILURE;				
 		    		}
@@ -2530,22 +2530,22 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    //*********************************************
 
 		    if(sRtnBedDan.length() < 10) {
-				// ¼³ºñ¿¡ ´ë»óÀ§Ä¡ ¼±ÅÃÀÌ ¾ÈµÈ °æ¿ì °Ë»öÁ¶°Ç¿¡ ¾ßµå·Î µî·Ï µÇ¾î ÀÖ´Â °æ¿ì À§Ä¡ °áÁ¤ Àç °áÁ¤ 
+				// ì„¤ë¹„ì— ëŒ€ìƒìœ„ì¹˜ ì„ íƒì´ ì•ˆëœ ê²½ìš° ê²€ìƒ‰ì¡°ê±´ì— ì•¼ë“œë¡œ ë“±ë¡ ë˜ì–´ ìˆëŠ” ê²½ìš° ìœ„ì¹˜ ê²°ì • ì¬ ê²°ì • 
 		    	sRtnBedDan = this.procToLocPrimaryWork(logId, methodNm, sAPP005_YN, jrWbook, jrCrnSch, jrCrnMtlSch,  jsToLoc);			
 			}
 					
 			if(sRtnBedDan.length() < 10) {
-				// ¼³ºñ ½ÇÆĞ½Ã ¹Ì¸® XXX Ã³¸® ÇÔ 
+				// ì„¤ë¹„ ì‹¤íŒ¨ì‹œ ë¯¸ë¦¬ XXX ì²˜ë¦¬ í•¨ 
 				JDTORecord jrParm= JDTORecordFactory.getInstance().create();
 				jrParm.setField("YD_CRN_SCH_ID", 		ydCrnSchId);			
-				commDao.update(jrParm, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtDnLoc1", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙ °»½Å");
+				commDao.update(jrParm, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtDnLoc1", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê°±ì‹ ");
 				
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;				
 			}
 			//----------------------------------------------------------------------------------------------------------------------
-	    	// ToÀ§Ä¡ Å©·¹ÀÎ ¿¡ update 
+	    	// Toìœ„ì¹˜ í¬ë ˆì¸ ì— update 
 			//----------------------------------------------------------------------------------------------------------------------
 			JDTORecord jrSetLoc = JDTORecordFactory.getInstance().create();
 			jrSetLoc.setField("YD_CRN_SCH_ID", 	ydCrnSchId); 
@@ -2559,7 +2559,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 			this.procUpdateLoc(logId,methodNm, jrSetLoc, jrCrnSch, jrCrnMtlSch  );
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -2572,7 +2572,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}  
     
 	/**
-	 * ÁÖÀÛ¾÷TOÀ§Ä¡°áÁ¤  -> ¾ßµå
+	 * ì£¼ì‘ì—…TOìœ„ì¹˜ê²°ì •  -> ì•¼ë“œ
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -2581,49 +2581,49 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocPrimaryWork(String logId, String methodNms, String sAPP005_YN,JDTORecord jrWbook, JDTORecord jrCrnSch,JDTORecord jrCrnMtlSch,JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "¾ßµå TOÀ§Ä¡°áÁ¤[BSlabSchSeEJB.procToLocPrimaryWork] < " + methodNms;
+    	String methodNm = "ì•¼ë“œ TOìœ„ì¹˜ê²°ì •[BSlabSchSeEJB.procToLocPrimaryWork] < " + methodNms;
     	String szLogMsg		= null;
 		JDTORecord	jrTemp	= null;
 		
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 		commUtils.printLog(logId, methodNm, "S+");
 
-		String ydSchCd 	  		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));			//ÀÛ¾÷¿¹¾à
+		String ydSchCd 	  		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));			//ì‘ì—…ì˜ˆì•½
 
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId    		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId    		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String ydUpWoLoc 		= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));		
 		String ydUpWoLayer 		= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LAYER"));
 		String szToLocDcsnMtd 	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"));
 
-		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //±Ç»ó¸Å¼ö 
+		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //ê¶Œìƒë§¤ìˆ˜ 
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
 		String ydChargeLotNo	= commUtils.trim(jrCrnMtlSch.getFieldString("CHARGE_LOT_NO"));		
-		String ydMaxWid     	= commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_W"));      //MAX Æø		
-		String ydMaxLen     	= commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_L"));		//MAX ±æÀÌ
+		String ydMaxWid     	= commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_W"));      //MAX í­		
+		String ydMaxLen     	= commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_L"));		//MAX ê¸¸ì´
 		String sRtnBedDan 		= "";
 		String szDBLogMsg   	= "";
 		
 		try {
 		
 			if( ydUpWoLoc.equals("") ) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ ±ÇÇÏ ¶Ç´Â ±Ç»óÀ§Ä¡ ÀÌ»ó ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ ê¶Œí•˜ ë˜ëŠ” ê¶Œìƒìœ„ì¹˜ ì´ìƒ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
 			
 			if (jsToLoc.size() <= 0) {
-				szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+				szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
 			
 			/*******************
-			 * TOÀ§Ä¡ ¼³ºñ Á¤º¸ ºĞ¸®
+			 * TOìœ„ì¹˜ ì„¤ë¹„ ì •ë³´ ë¶„ë¦¬
 			 *******************/
 			JDTORecordSet jsToLocNew = JDTORecordFactory.getInstance().createRecordSet("");
 			JDTORecord jrToLoc		 = JDTORecordFactory.getInstance().create(); 
@@ -2634,14 +2634,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    	jrToLoc = jsToLoc.getRecord();
 		    	sToLoc 	= commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
 		    	if ("WB".equals(sToLoc.substring(2, 4))||"CT".equals(sToLoc.substring(2, 4))     
-		    			 ||"PT".equals(sToLoc.substring(2, 4))||"TC".equals(sToLoc.substring(2, 4))){  /*||"BK".equals(sToLoc.substring(2, 4)) »èÁ¦*/
+		    			 ||"PT".equals(sToLoc.substring(2, 4))||"TC".equals(sToLoc.substring(2, 4))){  /*||"BK".equals(sToLoc.substring(2, 4)) ì‚­ì œ*/
 		    	} else {
 		    		jsToLocNew.addRecord(jrToLoc);
 		    	}
 			}   	
 			
 			if (jsToLocNew.size() <= 0) {
-				szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+				szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
@@ -2651,18 +2651,18 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrInParam = JDTORecordFactory.getInstance().create();
 			jrInParam.setResultCode(logId);	//Log ID
 			jrInParam.setResultMsg(methodNm);	//Log Method Name
-			jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
+			jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
 			jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);	
 			
 			if ("".equals(ydChargeLotNo)) {
-				szDBLogMsg = szDBLogMsg + "ÀåÀÔ¼ø¹øÀÌ ¾ø´Â °æ¿ì °Ë»ö." + "\r\n";
+				szDBLogMsg = szDBLogMsg + "ì¥ì…ìˆœë²ˆì´ ì—†ëŠ” ê²½ìš° ê²€ìƒ‰." + "\r\n";
 				//----------------------------------------------------------------------------------------------------------------------
-				//	ÀåÀÔ ¼ø¹øÀÌ ¾ø´Â °æ¿ì
+				//	ì¥ì… ìˆœë²ˆì´ ì—†ëŠ” ê²½ìš°
 				//----------------------------------------------------------------------------------------------------------------------
-				// ÀÌ¼ÛÇÏÂ÷
+				// ì´ì†¡í•˜ì°¨
 				if("PT02LM".equals(ydSchCd.substring(2, 8))){
 					
 					jrSearchLoc = this.procToLocPtToYd(logId, methodNms,jrWbook,jrCrnMtlSch,jrCrnSch, jsToLocNew );
@@ -2672,8 +2672,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					
 				}	
 				if (jrSearchLoc == null) {
-					commUtils.printLog(logId, "¢º¢º¢ºÆø,±æÀÌ Ç×¸ñÀ» °¡Áö°í °Ë»ö", "SL");
-					jrInParam.setField("SELECT_GP"	, "WID/LEN");	//°Ë»öÀ§Ä¡
+					commUtils.printLog(logId, "â–¶â–¶â–¶í­,ê¸¸ì´ í•­ëª©ì„ ê°€ì§€ê³  ê²€ìƒ‰", "SL");
+					jrInParam.setField("SELECT_GP"	, "WID/LEN");	//ê²€ìƒ‰ìœ„ì¹˜
 					jrInParam.setField("MAX_MTL_W"	, ydMaxWid);	
 					jrInParam.setField("MAX_MTL_L"	, ydMaxLen);	
 					
@@ -2682,74 +2682,74 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 			} else {	
 				//----------------------------------------------------------------------------------------------------------------------
-				//	ÀåÀÔ ¼ø¹øÀÌ ÀÖ´Â °æ¿ì
+				//	ì¥ì… ìˆœë²ˆì´ ìˆëŠ” ê²½ìš°
 				//----------------------------------------------------------------------------------------------------------------------			
 
-				commUtils.printLog(logId, "ÀåÀÔLOT¹øÈ£°¡ Á¸ÀçÇÏ´Â °æ¿ì", "SL");
+				commUtils.printLog(logId, "ì¥ì…LOTë²ˆí˜¸ê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš°", "SL");
 				
-				szDBLogMsg = szDBLogMsg + "ÀåÀÔ¼ø¹øÀÌ ÀÖ´Â °æ¿ì °Ë»ö." + "\r\n";
+				szDBLogMsg = szDBLogMsg + "ì¥ì…ìˆœë²ˆì´ ìˆëŠ” ê²½ìš° ê²€ìƒ‰." + "\r\n";
 
 				/*
-				 * 1. ÀåÀÔLOT¹øÈ£TOÀ§Ä¡ µ¿ÀÏÇÑ ÀåÀÔLOT¹øÈ£ TOÀ§Ä¡ °Ë»ö
+				 * 1. ì¥ì…LOTë²ˆí˜¸TOìœ„ì¹˜ ë™ì¼í•œ ì¥ì…LOTë²ˆí˜¸ TOìœ„ì¹˜ ê²€ìƒ‰
 				 */
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÀåÀÔLOT ¼øÀ§°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö   ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-				szDBLogMsg = szDBLogMsg + "ÀåÀÔLOT ¼øÀ§°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö." + "\r\n";
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ì¥ì…LOT ìˆœìœ„ê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰   â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+				szDBLogMsg = szDBLogMsg + "ì¥ì…LOT ìˆœìœ„ê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰." + "\r\n";
 				
-				jrInParam.setField("SELECT_GP"	, "G");	//°Ë»öÀ§Ä¡
+				jrInParam.setField("SELECT_GP"	, "G");	//ê²€ìƒ‰ìœ„ì¹˜
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 				
 				if (jrSearchLoc == null ) { 
 					
-					if("PT02LM".equals(ydSchCd.substring(2,8))) { //ÀÌ¼ÛÇÏÂ÷ÀÏ°æ¿ì °Ë»ö¾ÈÇÏ°í ´ÙÀ½ °Ë»õÀ¸·Î ³Ñ¾î°¨
+					if("PT02LM".equals(ydSchCd.substring(2,8))) { //ì´ì†¡í•˜ì°¨ì¼ê²½ìš° ê²€ìƒ‰ì•ˆí•˜ê³  ë‹¤ìŒ ê²€ìƒˆìœ¼ë¡œ ë„˜ì–´ê°
 
-						commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÀÌ¼ÛÇÏÂ÷½ºÄÉÁÙÀº ÇÏ´Ü¿¡ ÈÄ¼øÀ§ ÀåÀÔLOT¹øÈ£ TOÀ§Ä¡ °Ë»ö ¾ÈÇÔ ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-						szDBLogMsg = szDBLogMsg + "ÀÌ¼ÛÇÏÂ÷½ºÄÉÁÙÀº ÇÏ´Ü¿¡ ÈÄ¼øÀ§ ÀåÀÔLOT¹øÈ£ TOÀ§Ä¡ °Ë»ö ¾ÈÇÔ." + "\r\n";
+						commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ì´ì†¡í•˜ì°¨ìŠ¤ì¼€ì¤„ì€ í•˜ë‹¨ì— í›„ìˆœìœ„ ì¥ì…LOTë²ˆí˜¸ TOìœ„ì¹˜ ê²€ìƒ‰ ì•ˆí•¨ â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+						szDBLogMsg = szDBLogMsg + "ì´ì†¡í•˜ì°¨ìŠ¤ì¼€ì¤„ì€ í•˜ë‹¨ì— í›„ìˆœìœ„ ì¥ì…LOTë²ˆí˜¸ TOìœ„ì¹˜ ê²€ìƒ‰ ì•ˆí•¨." + "\r\n";
 						
-					} else {  //Cµ¿,Aµ¿ ´ëÂ÷ÇÏÂ÷½Ã Å« ÀåÀÔ¹øÈ£ À§Ã¼ ÀÛÀº ÀåÀÔ¹øÈ£°¡ ¿Ã¶ó°¥ ¼ö ÀÖ´Ù.
+					} else {  //Cë™,Aë™ ëŒ€ì°¨í•˜ì°¨ì‹œ í° ì¥ì…ë²ˆí˜¸ ìœ„ì²´ ì‘ì€ ì¥ì…ë²ˆí˜¸ê°€ ì˜¬ë¼ê°ˆ ìˆ˜ ìˆë‹¤.
 						
-						commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÇÏ´Ü¿¡ ÈÄ¼øÀ§ ÀåÀÔLOT¹øÈ£ TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-						szDBLogMsg = szDBLogMsg + "ÇÏ´Ü¿¡ ÈÄ¼øÀ§ ÀåÀÔLOT¹øÈ£ TOÀ§Ä¡ °Ë»ö." + "\r\n";
+						commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶í•˜ë‹¨ì— í›„ìˆœìœ„ ì¥ì…LOTë²ˆí˜¸ TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+						szDBLogMsg = szDBLogMsg + "í•˜ë‹¨ì— í›„ìˆœìœ„ ì¥ì…LOTë²ˆí˜¸ TOìœ„ì¹˜ ê²€ìƒ‰." + "\r\n";
 	
 						jrInParam.setField("SELECT_GP"	, "P");	
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 					}
 				}
 				if (jrSearchLoc == null) {
-					commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÀåÀÔLOT ¼øÀ§ 01´Ü TO À§Ä¡ °Ë»ö         ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-					szDBLogMsg = szDBLogMsg + "ÀåÀÔLOT ¼øÀ§ 01´Ü TO À§Ä¡ °Ë»ö." + "\r\n";
+					commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ì¥ì…LOT ìˆœìœ„ 01ë‹¨ TO ìœ„ì¹˜ ê²€ìƒ‰         â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+					szDBLogMsg = szDBLogMsg + "ì¥ì…LOT ìˆœìœ„ 01ë‹¨ TO ìœ„ì¹˜ ê²€ìƒ‰." + "\r\n";
 
-					jrInParam.setField("SELECT_GP"	, "E");	//°Ë»öÀ§Ä¡
+					jrInParam.setField("SELECT_GP"	, "E");	//ê²€ìƒ‰ìœ„ì¹˜
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 				}
 				if (jrSearchLoc == null) {
-					commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÇà¼±ÀÌ Ãæ´ç´ë±âÀÎ À§Ä¡ °Ë»ö                 ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-					szDBLogMsg = szDBLogMsg + "¼±ÀÌ Ãæ´ç´ë±âÀÎ À§Ä¡ °Ë»ö °Ë»ö." + "\r\n";
+					commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶í–‰ì„ ì´ ì¶©ë‹¹ëŒ€ê¸°ì¸ ìœ„ì¹˜ ê²€ìƒ‰                 â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+					szDBLogMsg = szDBLogMsg + "ì„ ì´ ì¶©ë‹¹ëŒ€ê¸°ì¸ ìœ„ì¹˜ ê²€ìƒ‰ ê²€ìƒ‰." + "\r\n";
 
-					jrInParam.setField("SELECT_GP"	, "B");	//°Ë»öÀ§Ä¡
+					jrInParam.setField("SELECT_GP"	, "B");	//ê²€ìƒ‰ìœ„ì¹˜
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 				}
 				if (jrSearchLoc == null) {
-					commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºÇÏ´Ü¿¡ ÀåÀÔLOT¹øÈ£°¡ ¾ø´Â TOÀ§Ä¡ °Ë»ö ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-					szDBLogMsg = szDBLogMsg + "ÇÏ´Ü¿¡ ÀåÀÔLOT¹øÈ£°¡ ¾ø´Â TOÀ§Ä¡ °Ë»ö." + "\r\n";
-					jrInParam.setField("SELECT_GP"	, "N");	//°Ë»öÀ§Ä¡
+					commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶í•˜ë‹¨ì— ì¥ì…LOTë²ˆí˜¸ê°€ ì—†ëŠ” TOìœ„ì¹˜ ê²€ìƒ‰ â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+					szDBLogMsg = szDBLogMsg + "í•˜ë‹¨ì— ì¥ì…LOTë²ˆí˜¸ê°€ ì—†ëŠ” TOìœ„ì¹˜ ê²€ìƒ‰." + "\r\n";
+					jrInParam.setField("SELECT_GP"	, "N");	//ê²€ìƒ‰ìœ„ì¹˜
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 				}
 				if (jrSearchLoc == null) {
 					if (!"C".equals(ydUpWoLoc.substring(1,2))) {
-						// µ¿ÀÏ »êÀû lot °Ë»ö
-						szDBLogMsg = szDBLogMsg + "µ¿ÀÏ »êÀû lot °Ë»ö." + "\r\n";
+						// ë™ì¼ ì‚°ì  lot ê²€ìƒ‰
+						szDBLogMsg = szDBLogMsg + "ë™ì¼ ì‚°ì  lot ê²€ìƒ‰." + "\r\n";
 						jrSearchLoc = this.procToLocSameLot(logId, methodNms,jrWbook,jrCrnMtlSch,jrCrnSch, jsToLocNew );
 					}
 				}
 			}
 			
-			//º¸Á¶ÀÛ¾÷ ÀÎ °æ¿ì  °Ë»ö
+			//ë³´ì¡°ì‘ì—… ì¸ ê²½ìš°  ê²€ìƒ‰
 			if (jrSearchLoc == null) {
 				if(szToLocDcsnMtd.equals("W")){ 
-					commUtils.printLog(logId, "¢º¢º¢ºÆø(0),±æÀÌ(0)", "SL");
-					szDBLogMsg = szDBLogMsg + "º¸Á¶ ÀÛ¾÷ÀÎ °æ¿ì  Æø(0),±æÀÌ(0) °Ë»ö." + "\r\n";
+					commUtils.printLog(logId, "â–¶â–¶â–¶í­(0),ê¸¸ì´(0)", "SL");
+					szDBLogMsg = szDBLogMsg + "ë³´ì¡° ì‘ì—…ì¸ ê²½ìš°  í­(0),ê¸¸ì´(0) ê²€ìƒ‰." + "\r\n";
 
-					jrInParam.setField("SELECT_GP"	, "WID0/LEN0");	//°Ë»öÀ§Ä¡
+					jrInParam.setField("SELECT_GP"	, "WID0/LEN0");	//ê²€ìƒ‰ìœ„ì¹˜
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLocNew);
 				}
 			}	
@@ -2762,7 +2762,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			}	
 				
 			if(sRtnBedDan.length() < 10) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				if(sAPP005_YN.equals("Y")) {
 	    			JDTORecord jrLog  				= JDTORecordFactory.getInstance().create(); 
@@ -2770,7 +2770,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "ÀÏ¹İ¾ßµå °Ë»ö ½ÇÆĞ:"+ szDBLogMsg + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ì¼ë°˜ì•¼ë“œ ê²€ìƒ‰ ì‹¤íŒ¨:"+ szDBLogMsg + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -2783,7 +2783,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "ÀÏ¹İ¾ßµå °Ë»ö ¼º°ø:"+ sRtnBedDan +" LOG:" + szDBLogMsg + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ì¼ë°˜ì•¼ë“œ ê²€ìƒ‰ ì„±ê³µ:"+ sRtnBedDan +" LOG:" + szDBLogMsg + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}	
@@ -2791,7 +2791,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			
 			//----------------------------------------------------------------------------------------------------------------------
-	    	// ToÀ§Ä¡ Å©·¹ÀÎ ¿¡ update 
+	    	// Toìœ„ì¹˜ í¬ë ˆì¸ ì— update 
 			//----------------------------------------------------------------------------------------------------------------------
 			JDTORecord jrSetLoc = JDTORecordFactory.getInstance().create();
 			jrSetLoc.setField("YD_CRN_SCH_ID", 	ydCrnSchId); 
@@ -2805,7 +2805,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 			this.procUpdateLoc(logId,methodNm, jrSetLoc, jrCrnSch ,jrCrnMtlSch );
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 	
@@ -2818,7 +2818,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     }	   
 		
 	/**
-	 * µ¿ÀÏ »êÀû LOT°Ë»ö
+	 * ë™ì¼ ì‚°ì  LOTê²€ìƒ‰
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -2827,19 +2827,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public JDTORecord procToLocSameLot(String logId, String methodNms,JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch , JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:ÀÌ¼ÛÇÏÂ÷°¡ ¾Æ´Ñ°æ¿ì [BSlabSchSeEJB.procToLocSameLot] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì´ì†¡í•˜ì°¨ê°€ ì•„ë‹Œê²½ìš° [BSlabSchSeEJB.procToLocSameLot] < " + methodNms;
 		JDTORecord		jrTemp			= JDTORecordFactory.getInstance().create();
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
-		String ydSchCd 	   	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	   	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String StockId 	    = commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));     //±Ç»ó¸Å¼ö 
-		String ordYeojaeGp	= commUtils.trim(jrCrnMtlSch.getFieldString("ORD_YEOJAE_GP"));     //ÁÖ¿©±¸ºĞ 
+		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));     //ê¶Œìƒë§¤ìˆ˜ 
+		String ordYeojaeGp	= commUtils.trim(jrCrnMtlSch.getFieldString("ORD_YEOJAE_GP"));     //ì£¼ì—¬êµ¬ë¶„ 
 		
 		JDTORecord jrSearchLoc          = JDTORecordFactory.getInstance().create();
 		String planToLoc = "";
@@ -2849,69 +2849,69 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrInParam = JDTORecordFactory.getInstance().create();
 			jrInParam.setResultCode(logId);	//Log ID
 			jrInParam.setResultMsg(methodNm);	//Log Method Name
-			jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
+			jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
 			jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);	
 	    	//----------------------------------------------------------------------------------------------------------------------
-			//	ÇØ´ç slab Çà¼±
+			//	í•´ë‹¹ slab í–‰ì„ 
 			//----------------------------------------------------------------------------------------------------------------------			
 			String ydAimRtGp = "";
 			JDTORecord jrRtnProg = YmComm.getSlabYdAimRtGp(jrInParam);
 			if(jrRtnProg.size() > 0 ) {
 				ydAimRtGp = commUtils.trim(jrRtnProg.getFieldString("YD_AIM_RT_GP"));
 			}
-			commUtils.printLog(logId, "¾ßµå TO À§Ä¡ °áÁ¤Àü Çà¼±ÄÚµåCHECK:"+ ydAimRtGp, "SL");
+			commUtils.printLog(logId, "ì•¼ë“œ TO ìœ„ì¹˜ ê²°ì •ì „ í–‰ì„ ì½”ë“œCHECK:"+ ydAimRtGp, "SL");
 			
 			
 			
-			if(ydAimRtGp.equals("D2")||ydAimRtGp.equals("D3")) {  //ÇÚµå½ºÄ«ÇÎÀç
+			if(ydAimRtGp.equals("D2")||ydAimRtGp.equals("D3")) {  //í•¸ë“œìŠ¤ì¹´í•‘ì¬
 				
-				commUtils.printLog(logId, "¢º¢º¢º°øBED °Ë»ö", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶ê³µBED ê²€ìƒ‰", "SL");
 				jrInParam.setField("SELECT_GP"	, "E");	
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 				
 				if (jrSearchLoc == null) {
-					commUtils.printLog(logId, "¢º¢º¢º»êÀûLOT°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö	", "SL");
+					commUtils.printLog(logId, "â–¶â–¶â–¶ì‚°ì LOTê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰	", "SL");
 					jrInParam.setField("SELECT_GP"	, "S");	
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 				}
 
 			} else {	
 				/*********************
-				 * ´ë»óÀÌ ÁÖ¹®Àç ÀÎ °æ¿ì 
+				 * ëŒ€ìƒì´ ì£¼ë¬¸ì¬ ì¸ ê²½ìš° 
 				 ********************/
 				if(ordYeojaeGp.equals("1")) {
-					commUtils.printLog(logId, "¢º¢º¢ºÁÖ¿©±¸ºĞÀÌ °°°í µ¿ÀÏ°­Á¾ÀÌ°í µ¿ÀÏ»ı»êÆø(30mmÀÌ³»),µ¿ÀÏÁÖ¹®µÎ²²,ÁÖ¹®Æø ÀåÀÔ´ë»óÀç°¡¾ø´ÂBED TO À§Ä¡ °Ë»ö", "SL");
+					commUtils.printLog(logId, "â–¶â–¶â–¶ì£¼ì—¬êµ¬ë¶„ì´ ê°™ê³  ë™ì¼ê°•ì¢…ì´ê³  ë™ì¼ìƒì‚°í­(30mmì´ë‚´),ë™ì¼ì£¼ë¬¸ë‘ê»˜,ì£¼ë¬¸í­ ì¥ì…ëŒ€ìƒì¬ê°€ì—†ëŠ”BED TO ìœ„ì¹˜ ê²€ìƒ‰", "SL");
 					jrInParam.setField("SELECT_GP"	, "L");	
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 	
 					if (jrSearchLoc == null) {
-						commUtils.printLog(logId, "¢º¢º¢º°øBED °Ë»ö", "SL");
+						commUtils.printLog(logId, "â–¶â–¶â–¶ê³µBED ê²€ìƒ‰", "SL");
 						jrInParam.setField("SELECT_GP"	, "E");	
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 					}
 					if (jrSearchLoc == null) {
-						commUtils.printLog(logId, "¢º¢º¢ºµ¿ÀÏ °­Á¾/Æø/±æÀÌ À§Ä¡ °Ë»ö	", "SL");
+						commUtils.printLog(logId, "â–¶â–¶â–¶ë™ì¼ ê°•ì¢…/í­/ê¸¸ì´ ìœ„ì¹˜ ê²€ìƒ‰	", "SL");
 						jrInParam.setField("SELECT_GP"	, "S1");	
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 					}	
 				} else {
 				/************************
-				 * ´ë»óÀÌ ¿©Àç ÀÎ °æ¿ì 
+				 * ëŒ€ìƒì´ ì—¬ì¬ ì¸ ê²½ìš° 
 				 ***********************/
-					commUtils.printLog(logId, "¢º¢º¢º»êÀûLOT°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö	", "SL");
+					commUtils.printLog(logId, "â–¶â–¶â–¶ì‚°ì LOTê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰	", "SL");
 					jrInParam.setField("SELECT_GP"	, "S");	
 					jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 	
 					if (jrSearchLoc == null) {
-						commUtils.printLog(logId, "¢º¢º¢º°øBED °Ë»ö", "SL");
+						commUtils.printLog(logId, "â–¶â–¶â–¶ê³µBED ê²€ìƒ‰", "SL");
 						jrInParam.setField("SELECT_GP"	, "E");	
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 					}
 					if (jrSearchLoc == null) {
-						commUtils.printLog(logId, "¢º¢º¢ºµ¿ÀÏ °­Á¾/Æø/±æÀÌ À§Ä¡ °Ë»ö	", "SL");
+						commUtils.printLog(logId, "â–¶â–¶â–¶ë™ì¼ ê°•ì¢…/í­/ê¸¸ì´ ìœ„ì¹˜ ê²€ìƒ‰	", "SL");
 						jrInParam.setField("SELECT_GP"	, "S1");	
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 					}	
@@ -2919,14 +2919,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			}
 			
 			if (jrSearchLoc == null) {
-				commUtils.printLog(logId, "¢º¢º¢ºÀûÄ¡°¡´ÉÇÑ 01´Ü ÀÌ»óÁ¤º¸¸¦ °Ë»ö", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶ì ì¹˜ê°€ëŠ¥í•œ 01ë‹¨ ì´ìƒì •ë³´ë¥¼ ê²€ìƒ‰", "SL");
 
-				jrInParam.setField("SELECT_GP"	, "U");	//°Ë»öÀ§Ä¡
+				jrInParam.setField("SELECT_GP"	, "U");	//ê²€ìƒ‰ìœ„ì¹˜
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			}
 			
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -2939,7 +2939,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}      
  		
 	/**
-	 * BENDING TOÀ§Ä¡°áÁ¤
+	 * BENDING TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -2948,9 +2948,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocBending(String logId, String methodNms, String sAPP005_YN ,JDTORecord jrWbook, JDTORecord jrCrnSch, JDTORecord jrCrnMtlSch , JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:BendingÀÛ¾÷[BSlabSchSeEJB.procToLocBending] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:Bendingì‘ì—…[BSlabSchSeEJB.procToLocBending] < " + methodNms;
     	String szLogMsg		= null;
-    	 // ÀûÄ¡ °¡´É check
+    	 // ì ì¹˜ ê°€ëŠ¥ check
     	JDTORecordSet jsSearchLoc = JDTORecordFactory.getInstance().createRecordSet("");
 		JDTORecord	  jrSearchLoc = JDTORecordFactory.getInstance().create();
 		JDTORecord	  jrToLoc	  = JDTORecordFactory.getInstance().create();
@@ -2958,31 +2958,31 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 		commUtils.printLog(logId, methodNm, "S+");
 
-		String ydSchCd 	  	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId		= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ÀÛ¾÷¿¹¾à
-		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId    	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	  	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId		= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ì‘ì—…ì˜ˆì•½
+		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId    	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String ydUpWoLoc 	= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));		
 		String ydUpWoLayer 	= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LAYER"));
 		String StockId 	    = commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydBendingYn  = commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ¿©ºÎ
-		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //±Ç»ó¸Å¼ö 
+		String ydBendingYn  = commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ì—¬ë¶€
+		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //ê¶Œìƒë§¤ìˆ˜ 
 		String szDBLogMsg   = "";
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 			
 			if( ydUpWoLoc.equals("") ) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ ±ÇÇÏ ¶Ç´Â ±Ç»óÀ§Ä¡ ÀÌ»ó ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ ê¶Œí•˜ ë˜ëŠ” ê¶Œìƒìœ„ì¹˜ ì´ìƒ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
 			
 			if (jsToLoc.size() <= 0) {
-				szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+				szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 			
 				return YmConstant.RETN_CD_FAILURE;
@@ -2995,11 +2995,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jrInParam = JDTORecordFactory.getInstance().create();
 				jrInParam.setResultCode(logId);	//Log ID
 				jrInParam.setResultMsg(methodNm);	//Log Method Name
-				jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-				jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-				jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-				jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
-				jrInParam.setField("STACK_COL_GP"	, commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")));	//°Ë»öÀ§Ä¡
+				jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+				jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+				jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+				jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
+				jrInParam.setField("STACK_COL_GP"	, commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")));	//ê²€ìƒ‰ìœ„ì¹˜
 				jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);	
 				
 				if(ydBendingYn.equals("Y")){
@@ -3011,10 +3011,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        A.GRIP_TO,
 					        A.TO_LOC        
 					FROM    (
-					        SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-					                CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-					                CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-					                CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					        SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+					                CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+					                CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+					                CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        
 					                NVL(CUR.STACK_COL_GP, '')    ||
 					                NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -3023,7 +3023,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                NVL(CUR.STACK_BED_GP, '')    ||
 					                NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC
 					        FROM    (
-					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        SL.STACK_COL_GP,
 					                        SL.STACK_BED_GP,
 					                        SL.STACK_LAYER_GP,
@@ -3037,8 +3037,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                                    
 					                FROM    (
 					                         SELECT '1' AS STACK_BED_ABLE_QNTY 
-					                              , A.STACK_COL_GP   --ÀûÄ¡ ¿­ ±¸ºĞ
-					                              , A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ
+					                              , A.STACK_COL_GP   --ì ì¹˜ ì—´ êµ¬ë¶„
+					                              , A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„
 					                              , (SELECT SUM(CASE WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 ELSE 0 END)
 					                                   FROM TB_YM_STACKLAYER 
 					                                  WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -3054,7 +3054,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                AND     SL.STACK_LAYER_STAT = 'E'
 					                AND     SL.STACK_LAYER_ACTIVE_STAT = 'E'
 					                AND     SL.STOCK_ID IS NULL
-					 --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+					 --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 					                AND     SK.ABLE_LOC_CNT >= :V_CRN_WRK_SH                
 					                ) CUR,
 					                TB_YM_STACKLAYER SL1
@@ -3062,7 +3062,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        AND     CUR.STACK_BED_GP = SL1.STACK_BED_GP
 					        AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 					        AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
-					        AND     CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN (--ÀÛ¾÷¿¹¾à Æí¼ºÀ§Ä¡ Á¦¿Ü
+					        AND     CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN (--ì‘ì—…ì˜ˆì•½ í¸ì„±ìœ„ì¹˜ ì œì™¸
 					                                                           SELECT C.STACK_COL_GP || C.STACK_BED_GP
 					                                                             FROM TB_YM_WRKBOOK A 
 					                                                                , TB_YM_WRKBOOKMTL B
@@ -3075,11 +3075,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                                                           )
 					        ORDER BY STACK_COL_GP, STACK_BED_GP, STACK_LAYER_GP
 					    )A
-					WHERE STACK_BED_GP='03' -- BENDING Á¸ 
+					WHERE STACK_BED_GP='03' -- BENDING ì¡´ 
 					  AND ROWNUM <=1
 					*/  
-					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocDefinebending", logId, methodNm, "Bending Bed °Ë»ö");
-					szDBLogMsg = szDBLogMsg + "¹êµùÀÓ: À§Ä¡ " + commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
+					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocDefinebending", logId, methodNm, "Bending Bed ê²€ìƒ‰");
+					szDBLogMsg = szDBLogMsg + "ë°´ë”©ì„: ìœ„ì¹˜ " + commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
 
 				} else {
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol 
@@ -3091,10 +3091,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        A.TO_LOC,
 					        A.ABLE_LOC_CNT
 					FROM    (
-					        SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-					                CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-					                CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-					                CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					        SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+					                CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+					                CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+					                CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        
 					                NVL(CUR.STACK_COL_GP, '')    ||
 					                NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -3104,7 +3104,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC,
 					                CUR.ABLE_LOC_CNT
 					        FROM    (
-					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        SL.STACK_COL_GP,
 					                        SL.STACK_BED_GP,
 					                        SL.STACK_LAYER_GP,
@@ -3118,8 +3118,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                        ABLE_LOC_CNT                                    
 					                FROM    (
 					                         SELECT '1' AS STACK_BED_ABLE_QNTY, 
-					                                A.STACK_COL_GP,   --ÀûÄ¡ ¿­ ±¸ºĞ
-					                                A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ
+					                                A.STACK_COL_GP,   --ì ì¹˜ ì—´ êµ¬ë¶„
+					                                A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„
 					                                , (SELECT SUM(CASE WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 ELSE 0 END)
 					                                   FROM TB_YM_STACKLAYER 
 					                                  WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -3135,7 +3135,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                AND     SL.STACK_LAYER_STAT        = 'E'
 					                AND     SL.STACK_LAYER_ACTIVE_STAT = 'E'
 					                AND     SL.STOCK_ID IS NULL
-					                --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+					                --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 					                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2) 
 					                ) CUR,
 					                TB_YM_STACKLAYER SL1
@@ -3144,7 +3144,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 					        AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
 					        AND A.STACK_COL_GP||A.STACK_BED_GP NOT IN (
-					                                               -- TOÀ§Ä¡ °¡ÀÌµå Á¦¿Ü
+					                                               -- TOìœ„ì¹˜ ê°€ì´ë“œ ì œì™¸
 					                                              SELECT NVL(A1.YD_TO_LOC_GUIDE,'AAA')
 					                                                FROM TB_YM_WRKBOOK A1
 					                                                   , TB_YM_WRKBOOKMTL B1
@@ -3165,7 +3165,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                                                 AND LENGTH(B1.MTL_YD_TO_LOC_GUIDE) = 8
 					                                               GROUP BY B1.MTL_YD_TO_LOC_GUIDE  
 					                                              UNION ALL   
-					                                               -- ÀÛ¾÷¿¹¾àµÈ BED Á¦¿Ü
+					                                               -- ì‘ì—…ì˜ˆì•½ëœ BED ì œì™¸
 					                                              SELECT NVL(C1.STACK_COL_GP || C1.STACK_BED_GP,'AAA')
 					                                                FROM TB_YM_WRKBOOK A1 
 					                                                   , TB_YM_WRKBOOKMTL B1
@@ -3183,8 +3183,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					    )A
 					WHERE  ROWNUM = 1
 					*/
-					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "ÇØ´ç¿­ °Ë»ö");
-					szDBLogMsg = szDBLogMsg + "¹êµù¾Æ´Ô: À§Ä¡ " + commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")) ;
+					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "í•´ë‹¹ì—´ ê²€ìƒ‰");
+					szDBLogMsg = szDBLogMsg + "ë°´ë”©ì•„ë‹˜: ìœ„ì¹˜ " + commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")) ;
 
 				}
 				if(jsSearchLoc.size() > 0) {
@@ -3193,11 +3193,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrSearchLoc  = jsSearchLoc.getRecord();
 					break;
 				} else {
-					szDBLogMsg = szDBLogMsg + "½ÇÆĞ:´ë»ó¾øÀ½  "+ "\r\n";
+					szDBLogMsg = szDBLogMsg + "ì‹¤íŒ¨:ëŒ€ìƒì—†ìŒ  "+ "\r\n";
 				}
 			}
 			
-			String sRtnBedDan 	= "";  //TOÀ§Ä¡	
+			String sRtnBedDan 	= "";  //TOìœ„ì¹˜	
 			
 			if(jrSearchLoc != null) {
 				String szStackColGp   = commUtils.trim(jrSearchLoc.getFieldString("STACK_COL_GP")) ;
@@ -3207,7 +3207,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			}	
 				
 			if(sRtnBedDan.length() < 10) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				
 				if(sAPP005_YN.equals("Y")) {
@@ -3216,7 +3216,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "2XSE01UM(½ºÄ«ÇÎº¸±Ş) ½ÇÆĞ:"+ "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "2XSE01UM(ìŠ¤ì¹´í•‘ë³´ê¸‰) ì‹¤íŒ¨:"+ "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -3229,14 +3229,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, szDBLogMsg + "TOÀ§Ä¡ °áÁ¤µÊ: À§Ä¡ " + sRtnBedDan + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, szDBLogMsg + "TOìœ„ì¹˜ ê²°ì •ë¨: ìœ„ì¹˜ " + sRtnBedDan + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
 			}
 			
 			//----------------------------------------------------------------------------------------------------------------------
-	    	// ToÀ§Ä¡ Å©·¹ÀÎ ¿¡ update 
+	    	// Toìœ„ì¹˜ í¬ë ˆì¸ ì— update 
 			//----------------------------------------------------------------------------------------------------------------------
 			JDTORecord jrSetLoc = JDTORecordFactory.getInstance().create();
 			jrSetLoc.setField("YD_CRN_SCH_ID", 	ydCrnSchId); 
@@ -3250,7 +3250,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 			this.procUpdateLoc(logId,methodNm, jrSetLoc, jrCrnSch ,jrCrnMtlSch );
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -3262,7 +3262,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		return YmConstant.RETN_CD_SUCCESS;
 	}        
 	/**
-	 * TO BED °Ë»ö
+	 * TO BED ê²€ìƒ‰
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -3271,28 +3271,28 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public JDTORecord procToLocBed(String logId, String methodNms,  JDTORecord jrData ,JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TOÀ§Ä¡ °áÁ¤:TO BED °Ë»ö[BSlabSchSeEJB.procToLocBed] < " + methodNms;
+    	String methodNm = "TOìœ„ì¹˜ ê²°ì •:TO BED ê²€ìƒ‰[BSlabSchSeEJB.procToLocBed] < " + methodNms;
 
     	//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 		commUtils.printLog(logId, methodNm, "S+");
 
-		String ydSchCd 	   	= commUtils.trim(jrData.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String StockId	   	= commUtils.trim(jrData.getFieldString("STOCK_ID"));			//Å©·¹ÀÎÀÛ¾÷Àç·á
-		String ydCrnSchId 	= commUtils.trim(jrData.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId 		= commUtils.trim(jrData.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	   	= commUtils.trim(jrData.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String StockId	   	= commUtils.trim(jrData.getFieldString("STOCK_ID"));			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ
+		String ydCrnSchId 	= commUtils.trim(jrData.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId 		= commUtils.trim(jrData.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		
-        String ydSelectGp   = commUtils.trim(jrData.getFieldString("SELECT_GP"));			//°Ë»ö±¸ºĞ
-		String ydMaxWid     = commUtils.trim(jrData.getFieldString("MAX_MTL_W"));      //MAX Æø		
-		String ydMaxLen     = commUtils.trim(jrData.getFieldString("MAX_MTL_L"));		//MAX ±æÀÌ
-		String ydWrkSh 		= commUtils.trim(jrData.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö		
+        String ydSelectGp   = commUtils.trim(jrData.getFieldString("SELECT_GP"));			//ê²€ìƒ‰êµ¬ë¶„
+		String ydMaxWid     = commUtils.trim(jrData.getFieldString("MAX_MTL_W"));      //MAX í­		
+		String ydMaxLen     = commUtils.trim(jrData.getFieldString("MAX_MTL_L"));		//MAX ê¸¸ì´
+		String ydWrkSh 		= commUtils.trim(jrData.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜		
 		String StackColGp   = "";
 		String equipGpYn    = "";
         try {
 			
 			JDTORecordSet jsSearchLoc = JDTORecordFactory.getInstance().createRecordSet("");
-		    // ÀûÄ¡ °¡´É check
+		    // ì ì¹˜ ê°€ëŠ¥ check
 			JDTORecord	    jrSearchLoc	= null;
 			JDTORecord	    jrToLoc	    = JDTORecordFactory.getInstance().create();
 			JDTORecord	    jrInParam	= JDTORecordFactory.getInstance().create();
@@ -3305,18 +3305,18 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jrInParam = JDTORecordFactory.getInstance().create();
 				jrInParam.setResultCode(logId);	//Log ID
 				jrInParam.setResultMsg(methodNm);	//Log Method Name
-				jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-				jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-				jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-				jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
+				jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+				jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+				jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+				jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
 				StackColGp = commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
 				
-				jrInParam.setField("STACK_COL_GP"	, StackColGp);	//°Ë»öÀ§Ä¡
+				jrInParam.setField("STACK_COL_GP"	, StackColGp);	//ê²€ìƒ‰ìœ„ì¹˜
 				jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);
 				if(StackColGp.matches("[2][A-E]\\d\\d\\d\\d")) {
 					equipGpYn = "N";
 				} else {
-					//¼³ºñ ¿©ºÎ
+					//ì„¤ë¹„ ì—¬ë¶€
 					if(YmComm.chkEqpIdGp(ydSchCd,commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")))){
 						equipGpYn = "Y";
 					} else{
@@ -3324,49 +3324,49 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					}
 				}
 				
-				//¼³ºñ°¡ ¾Æ´Ñ °æ¿ì ¸¸ Ã³¸® ÇÔ
+				//ì„¤ë¹„ê°€ ì•„ë‹Œ ê²½ìš° ë§Œ ì²˜ë¦¬ í•¨
 				if(equipGpYn.equals("N")) {
-					commUtils.printLog(logId, "°Ë»ö¿­:"+ commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")), "S+");
-					// DUMMY °ü·Ã	
+					commUtils.printLog(logId, "ê²€ìƒ‰ì—´:"+ commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP")), "S+");
+					// DUMMY ê´€ë ¨	
 					if(ydSelectGp.equals("E")) {
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocE", logId, methodNm, "°øBED °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocE", logId, methodNm, "ê³µBED ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("S")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS", logId, methodNm, "µ¿ÀÏ LOT¹øÈ£ °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS", logId, methodNm, "ë™ì¼ LOTë²ˆí˜¸ ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("U")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocU", logId, methodNm, "ÀûÄ¡°¡´ÉÇÑ 01´ÜÀÌ»ó Á¤º¸¸¦ °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocU", logId, methodNm, "ì ì¹˜ê°€ëŠ¥í•œ 01ë‹¨ì´ìƒ ì •ë³´ë¥¼ ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("WID/LEN")) { 	
 						jrInParam.setField("MIN_WID"	, ydMaxWid);	
 						jrInParam.setField("MAX_WID"	, ydMaxWid);	
 						jrInParam.setField("MIN_LEN"	, ydMaxLen);	
 						jrInParam.setField("MAX_LEN"	, ydMaxLen);	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColWidLen", logId, methodNm, "Æø("+ydMaxWid+"),±æÀÌ("+ydMaxLen+")Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColWidLen", logId, methodNm, "í­("+ydMaxWid+"),ê¸¸ì´("+ydMaxLen+")í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("WID0/LEN0")) { 	
 						jrInParam.setField("MIN_WID"	, "999999");	
 						jrInParam.setField("MAX_WID"	, "0");	
 						jrInParam.setField("MIN_LEN"	, "999999");	
 						jrInParam.setField("MAX_LEN"	, "0");	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColWidLen", logId, methodNm, "Æø(0),±æÀÌ(0)Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColWidLen", logId, methodNm, "í­(0),ê¸¸ì´(0)í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("G")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocG",  logId, methodNm, "ÃÖ»ó´Ü¿¡ °°Àº ÀåÀÔ¼ø¹øÀÌ ÀÖ´Â À§Ä¡°Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocG",  logId, methodNm, "ìµœìƒë‹¨ì— ê°™ì€ ì¥ì…ìˆœë²ˆì´ ìˆëŠ” ìœ„ì¹˜ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("P")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocP",  logId, methodNm, "ÃÖ»ó´ÜÀÌ ÈÄ¼øÀ§ ÀåÀÔ¼ø¹ø  °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocP",  logId, methodNm, "ìµœìƒë‹¨ì´ í›„ìˆœìœ„ ì¥ì…ìˆœë²ˆ  ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("N")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocN",  logId, methodNm, "°øbed°¡ ¾Æ´Ï°í ÃÖ»ó´ÜÀÌ ÀåÀÔÀç°¡ ¾Æ´Ñ  °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocN",  logId, methodNm, "ê³µbedê°€ ì•„ë‹ˆê³  ìµœìƒë‹¨ì´ ì¥ì…ì¬ê°€ ì•„ë‹Œ  ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("L")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocL",  logId, methodNm, "ÁÖ¿©±¸ºĞÀÌ °°°í µ¿ÀÏ°­Á¾ÀÌ°í  »ı»êÆø(30mmÀÌ³»),µ¿ÀÏ ÁÖ¹®µÎ²²,ÁÖ¹®Æø °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocL",  logId, methodNm, "ì£¼ì—¬êµ¬ë¶„ì´ ê°™ê³  ë™ì¼ê°•ì¢…ì´ê³   ìƒì‚°í­(30mmì´ë‚´),ë™ì¼ ì£¼ë¬¸ë‘ê»˜,ì£¼ë¬¸í­ ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("L2")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocL2", logId, methodNm, "ÁÖ¿©±¸ºĞÀÌ °°°í µ¿ÀÏ°­Á¾ÀÌ°í ÆøÀÌ 30mm ÀÌ³»  °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocL2", logId, methodNm, "ì£¼ì—¬êµ¬ë¶„ì´ ê°™ê³  ë™ì¼ê°•ì¢…ì´ê³  í­ì´ 30mm ì´ë‚´  ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("M")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocM",  logId, methodNm, "ÁÖ¿©±¸ºĞÀÌ °°°í ´ë»óÀçµÎ²² ÆøÀÎ  ÁÖ¹®µÎ²²,ÆøÀÌº¸´Ù ÀÛÀº °æ¿ì °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocM",  logId, methodNm, "ì£¼ì—¬êµ¬ë¶„ì´ ê°™ê³  ëŒ€ìƒì¬ë‘ê»˜ í­ì¸  ì£¼ë¬¸ë‘ê»˜,í­ì´ë³´ë‹¤ ì‘ì€ ê²½ìš° ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("K")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocK",  logId, methodNm, "µ¿ÀÏ°­Á¾  °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocK",  logId, methodNm, "ë™ì¼ê°•ì¢…  ê²€ìƒ‰");
 
 					} else if(ydSelectGp.equals("B")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocB",  logId, methodNm, "Çà¼±ÀÌ Ãæ´ç´ë±â °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocB",  logId, methodNm, "í–‰ì„ ì´ ì¶©ë‹¹ëŒ€ê¸° ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("A")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocA",  logId, methodNm, "Ãæ´ç´ë±â °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocA",  logId, methodNm, "ì¶©ë‹¹ëŒ€ê¸° ê²€ìƒ‰");
 					} else if(ydSelectGp.equals("S1")) { 	
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS1", logId, methodNm, "ÁÖ¿©±¸ºĞÀÌ °°°í µ¿ÀÏ »ı»êÆø(30mmÀÌ³») °Ë»ö");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS1", logId, methodNm, "ì£¼ì—¬êµ¬ë¶„ì´ ê°™ê³  ë™ì¼ ìƒì‚°í­(30mmì´ë‚´) ê²€ìƒ‰");
 					}
 					if(jsSearchLoc.size() > 0) {
 						
@@ -3388,7 +3388,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}    
  
 	/**
-	 * »ç¿ëÀÚÁöÁ¤ÀÛ¾÷(10,8ÀÚ¸®)
+	 * ì‚¬ìš©ìì§€ì •ì‘ì—…(10,8ìë¦¬)
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -3397,58 +3397,58 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocUser(String logId, String methodNms,String sAPP005_YN, JDTORecord jrWbook, JDTORecord jrCrnSch, JDTORecord jrCrnMtlSch) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:»ç¿ëÀÚÁöÁ¤ÀÛ¾÷[BSlabSchSeEJB.procToLocUser] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì‚¬ìš©ìì§€ì •ì‘ì—…[BSlabSchSeEJB.procToLocUser] < " + methodNms;
     	String szLogMsg					= null;
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 		commUtils.printLog(logId, methodNm, "S+");
 
-		String ydSchCd 	   	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));		//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId		= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));	//ÀÛ¾÷¿¹¾à
-		String ydToLocGuide	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_GUIDE")); //ÀÛ¾÷¿¹¾à
-		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	   	= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId		= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));	//ì‘ì—…ì˜ˆì•½
+		String ydToLocGuide	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_GUIDE")); //ì‘ì—…ì˜ˆì•½
+		String ydCrnSchId 	= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     	= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String ydUpWoLoc 	= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));		
 		String ydUpWoLayer 	= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LAYER"));		
 		String StockId 	    = commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //±Ç»ó¸Å¼ö
+		String ydWrkSh 		= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH"));         //ê¶Œìƒë§¤ìˆ˜
 
-		String sRtnBedDan 	= "";  //TOÀ§Ä¡	
-		String SeaechLocYn 	= "";  //TOÀ§Ä¡	
+		String sRtnBedDan 	= "";  //TOìœ„ì¹˜	
+		String SeaechLocYn 	= "";  //TOìœ„ì¹˜	
 		
 		try {
 			
 			commUtils.printLog(logId, methodNm, "S+");
 			
 			if( ydUpWoLoc.equals("") ) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ ±ÇÇÏ ¶Ç´Â ±Ç»óÀ§Ä¡ ÀÌ»ó ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ ê¶Œí•˜ ë˜ëŠ” ê¶Œìƒìœ„ì¹˜ ì´ìƒ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
 			}
 
 			
-			//±Ç»óÀç·á¿¡ µû¶ó ¾Ë¸ÂÀº ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ¹æ¹ıÀ» Àû¿ë
+			//ê¶Œìƒì¬ë£Œì— ë”°ë¼ ì•Œë§ì€ ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ë°©ë²•ì„ ì ìš©
 			JDTORecord jrTemp = JDTORecordFactory.getInstance().create();
 			jrTemp.setResultCode(logId);	//Log ID
 			jrTemp.setResultMsg(methodNm);	//Log Method Name
-			jrTemp.setField("STOCK_ID"			, StockId);											//±Ç»ó STOCK
-			jrTemp.setField("YD_TO_LOC_GUIDE"	, ydToLocGuide);									//°¡ÀÌµå
-			jrTemp.setField("YD_SCH_CD"			, ydSchCd);											//½ºÄÉÁì ÄÚµå
-			jrTemp.setField("YD_CRN_SCH_ID"		, ydCrnSchId);										//Å©·¹ÀÎ ÀÛ¾÷Áö½Ã ID
-			jrTemp.setField("YD_EQP_ID"			, ydEqpId);											//¼³ºñ ¹øÈ£
+			jrTemp.setField("STOCK_ID"			, StockId);											//ê¶Œìƒ STOCK
+			jrTemp.setField("YD_TO_LOC_GUIDE"	, ydToLocGuide);									//ê°€ì´ë“œ
+			jrTemp.setField("YD_SCH_CD"			, ydSchCd);											//ìŠ¤ì¼€ì¥´ ì½”ë“œ
+			jrTemp.setField("YD_CRN_SCH_ID"		, ydCrnSchId);										//í¬ë ˆì¸ ì‘ì—…ì§€ì‹œ ID
+			jrTemp.setField("YD_EQP_ID"			, ydEqpId);											//ì„¤ë¹„ ë²ˆí˜¸
 			jrTemp.setField("CRN_WRK_SH"		, ydWrkSh);	
-			szLogMsg =  " TOSQL:["+ydCrnSchId+ "] ±Ç»óÀç·á["+StockId +" +½ºÄÉÁì ÄÚµå : "+ ydSchCd + "ÀÇ ÀûÄ¡°¡´ÉÇÑ º£µå Á¶È¸ ½ÃÀÛ";
+			szLogMsg =  " TOSQL:["+ydCrnSchId+ "] ê¶Œìƒì¬ë£Œ["+StockId +" +ìŠ¤ì¼€ì¥´ ì½”ë“œ : "+ ydSchCd + "ì˜ ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ì¡°íšŒ ì‹œì‘";
 			commUtils.printLog(logId, szLogMsg, "SL");
 	      	
 	    	//----------------------------------------------------------------------------------------------------------------------
-			//	»ç¿ëÀÚ ÁöÁ¤ÇÑ À§Ä¡¸¸ °Ë»ö
-			//  ÀûÀç°¡´É À§Ä¡ ¸¸ °Ë»ö
+			//	ì‚¬ìš©ì ì§€ì •í•œ ìœ„ì¹˜ë§Œ ê²€ìƒ‰
+			//  ì ì¬ê°€ëŠ¥ ìœ„ì¹˜ ë§Œ ê²€ìƒ‰
 			//----------------------------------------------------------------------------------------------------------------------
 			if(ydToLocGuide.length() == 10) {
 
-				szLogMsg =  " ÀûÀçÀ§Ä¡ °¡ÀÌµå 10ÀÚ¸®  ¿­+ º£µå+ ´Ü  ÁöÁ¤µÈ °æ¿ì ["+ydToLocGuide+"]ÀÇ º£µå Á¶È¸ ½ÃÀÛ";
+				szLogMsg =  " ì ì¬ìœ„ì¹˜ ê°€ì´ë“œ 10ìë¦¬  ì—´+ ë² ë“œ+ ë‹¨  ì§€ì •ëœ ê²½ìš° ["+ydToLocGuide+"]ì˜ ë² ë“œ ì¡°íšŒ ì‹œì‘";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithPk
 				SELECT CASE WHEN :V_STACK_COL_GP = '2CCT04' THEN ''
@@ -3465,14 +3465,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jrTemp.setField("STACK_LAYER_GP"	, ydToLocGuide.substring(8));	
 				
 				commUtils.printLog(logId, "ydWrkSh" + ydWrkSh, "SL");
-				JDTORecordSet outjsBed = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithPk", logId, methodNm, "»ç¿ëÀÚ10TOSQL º£µå Á¶È¸");
+				JDTORecordSet outjsBed = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithPk", logId, methodNm, "ì‚¬ìš©ì10TOSQL ë² ë“œ ì¡°íšŒ");
 				if (outjsBed.size() > 0) {
 					JDTORecord outjrBed = outjsBed.getRecord(0);
  	 				if(outjrBed != null) {
  	 					String chkStockId   = commUtils.trim(outjrBed.getFieldString("STOCK_ID")) ;
  	 					String chkLayerStat = commUtils.trim(outjrBed.getFieldString("STACK_LAYER_STAT")) ;
  	 					if (!"".equals(chkStockId) && chkLayerStat.equals("C")) {
- 	 						SeaechLocYn = "N";           // ¹Ì°ËÃâ
+ 	 						SeaechLocYn = "N";           // ë¯¸ê²€ì¶œ
  	 					} else {
  	 						sRtnBedDan = ydToLocGuide;
  	 					}
@@ -3493,10 +3493,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					        A.TO_LOC,
 //					        A.ABLE_LOC_CNT
 //					FROM    (
-//					        SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-//					                CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-//					                CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-//					                CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+//					        SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+//					                CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+//					                CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+//					                CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 //					                        
 //					                NVL(CUR.STACK_COL_GP, '')    ||
 //					                NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -3506,7 +3506,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					                NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC,
 //					                CUR.ABLE_LOC_CNT
 //					        FROM    (
-//					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+//					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 //					                        SL.STACK_COL_GP,
 //					                        SL.STACK_BED_GP,
 //					                        SL.STACK_LAYER_GP,
@@ -3520,8 +3520,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					                        ABLE_LOC_CNT                                    
 //					                FROM    (
 //					                         SELECT '1' AS STACK_BED_ABLE_QNTY, 
-//					                                A.STACK_COL_GP,   --ÀûÄ¡ ¿­ ±¸ºĞ
-//					                                A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ
+//					                                A.STACK_COL_GP,   --ì ì¹˜ ì—´ êµ¬ë¶„
+//					                                A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„
 //					                                , (SELECT SUM(CASE WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 ELSE 0 END)
 //					                                   FROM TB_YM_STACKLAYER 
 //					                                  WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -3537,7 +3537,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					                AND     SL.STACK_LAYER_STAT        = 'E'
 //					                AND     SL.STACK_LAYER_ACTIVE_STAT = 'E'
 //					                AND     SL.STOCK_ID IS NULL
-//					                --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+//					                --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 //					                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2) 
 //					                ) CUR,
 //					                TB_YM_STACKLAYER SL1
@@ -3545,7 +3545,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					        AND     CUR.STACK_BED_GP = SL1.STACK_BED_GP
 //					        AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 //					        AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
-//					        AND     CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ÀÛ¾÷¿¹¾à Æí¼ºÀ§Ä¡ Á¦¿Ü
+//					        AND     CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ì‘ì—…ì˜ˆì•½ í¸ì„±ìœ„ì¹˜ ì œì™¸
 //					                                                          SELECT C.STACK_COL_GP || C.STACK_BED_GP
 //					                                                            FROM TB_YM_WRKBOOK A 
 //					                                                               , TB_YM_WRKBOOKMTL B
@@ -3556,7 +3556,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					                                                             AND B.DEL_YN = 'N' 
 //					                                                             AND C.STACK_LAYER_STAT IN ('C','U')
 //					                                                           )
-//					       -- TOÀ§Ä¡ °¡ÀÌµå Á¦¿Ü
+//					       -- TOìœ„ì¹˜ ê°€ì´ë“œ ì œì™¸
 //					       AND CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN (
 //					                                              SELECT NVL(A1.YD_TO_LOC_GUIDE,'AAA')
 //					                                                FROM TB_YM_WRKBOOK A1
@@ -3581,9 +3581,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //					    )A
 //					WHERE  ROWNUM = 1
 // 					 */	
-// 					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "ÇØ´ç¿­ Á¶È¸");
+// 					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "í•´ë‹¹ì—´ ì¡°íšŒ");
 // 	 				if (outjsResult.size() <= 0) {
-// 	 					szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+// 	 					szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 // 	 					commUtils.printLog(logId, szLogMsg, "SL");
 // 	 					
 //     					if(sAPP005_YN.equals("Y")) {
@@ -3592,7 +3592,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 //    		    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 //    		    			jrLog.setField("YD_GP"			, "2");
 //    		    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-//    		    			jrLog.setField("SCH_CONTENTS"	, "»ç¿ëÀÚÁöÁ¤(procToLocUser) ºÒ°¡:"+ "\r\n" + "ÀûÀçÀ§Ä¡ °¡ÀÌµå 10ÀÚ¸®  ¿­+ º£µå+ ´Ü  ÁöÁ¤µÈ °æ¿ì ["+ydToLocGuide+"]ÀÇ º£µå Á¶È¸" + "\r\n" );
+//    		    			jrLog.setField("SCH_CONTENTS"	, "ì‚¬ìš©ìì§€ì •(procToLocUser) ë¶ˆê°€:"+ "\r\n" + "ì ì¬ìœ„ì¹˜ ê°€ì´ë“œ 10ìë¦¬  ì—´+ ë² ë“œ+ ë‹¨  ì§€ì •ëœ ê²½ìš° ["+ydToLocGuide+"]ì˜ ë² ë“œ ì¡°íšŒ" + "\r\n" );
 //    		    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 //    		    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 //     					}
@@ -3609,7 +3609,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 // 	 				}					
 //				}	
 			} else {
-				szLogMsg =  " ÀûÀçÀ§Ä¡ °¡ÀÌµå 8ÀÚ¸®  ÁöÁ¤µÈ °æ¿ì ["+ydToLocGuide+"]ÀÇ º£µå Á¶È¸ ½ÃÀÛ";
+				szLogMsg =  " ì ì¬ìœ„ì¹˜ ê°€ì´ë“œ 8ìë¦¬  ì§€ì •ëœ ê²½ìš° ["+ydToLocGuide+"]ì˜ ë² ë“œ ì¡°íšŒ ì‹œì‘";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				
 				commUtils.printLog(logId, szLogMsg + ydSchCd.substring(2, 4), "SL");
@@ -3624,16 +3624,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				        A.TO_LOC 
 				,        A.STOCK_ID
 				FROM    (
-						SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-						        CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-						        CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-						         SL1.STOCK_ID,  --ÀûÄ¡ ´Ü ±¸ºĞ
+						SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+						        CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+						        CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+						         SL1.STOCK_ID,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
 						
-						        CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-						        CUR.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-						        CUR.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-						        CUR.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-						        CUR.STACK_BED_ABLE_LEN,     --ÀûÄ¡ BED °¡´É ±æÀÌ
+						        CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+						        CUR.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+						        CUR.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+						        CUR.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+						        CUR.STACK_BED_ABLE_LEN,     --ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 						                
 						        NVL(CUR.STACK_COL_GP, '')    ||
 						        NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -3642,11 +3642,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						        NVL(CUR.STACK_BED_GP, '')    ||
 						        NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC
 						FROM    (
-						        SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-						                SK.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-						                SK.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-						                SK.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-						                SK.STACK_BED_ABLE_LEN,     --ÀûÄ¡ BED °¡´É ±æÀÌ
+						        SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+						                SK.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+						                SK.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+						                SK.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+						                SK.STACK_BED_ABLE_LEN,     --ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 						
 						                SL.STACK_COL_GP,
 						                SL.STACK_BED_GP,
@@ -3659,13 +3659,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						                            1, '0' || TO_CHAR(SL.STACK_LAYER_GP - 1),
 						                            TO_CHAR(SL.STACK_LAYER_GP - 1)))) AS PRE_LAYER_GP
 				                             
-						        FROM    (SELECT A.STACK_COL_GP,   		--ÀûÄ¡ ¿­ ±¸ºĞ
-				                                A.STACK_BED_GP,   		--ÀûÄ¡ BED ±¸ºĞ
-				                                A.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-				                                A.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-				                                A.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-				                                A.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-				                                A.STACK_BED_ABLE_LEN  	--ÀûÄ¡ BED °¡´É ±æÀÌ
+						        FROM    (SELECT A.STACK_COL_GP,   		--ì ì¹˜ ì—´ êµ¬ë¶„
+				                                A.STACK_BED_GP,   		--ì ì¹˜ BED êµ¬ë¶„
+				                                A.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+				                                A.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+				                                A.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+				                                A.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+				                                A.STACK_BED_ABLE_LEN  	--ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 				                              , (SELECT SUM(CASE WHEN substr(STACK_COL_GP,3,2) IN ( 'WB', 'CT' ) THEN 1
 				                                                 WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1
 				                                                 ELSE 0 END)
@@ -3676,13 +3676,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                          WHERE A.STACK_COL_GP            = :V_STACK_COL_GP
 				                            AND A.STACK_BED_GP            = :V_STACK_BED_GP
 				                            AND A.STACK_BED_ACTIVE_STAT   = 'L'
-				                            AND A.STACK_BED_ABLE_QNTY     >  0	 --ÀûÄ¡ BED °¡´É ¼ö·®
+				                            AND A.STACK_BED_ABLE_QNTY     >  0	 --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 				                          ORDER BY A.STACK_BED_GP ASC
 				                        ) SK,
 						                TB_YM_STACKLAYER SL
 						        WHERE   SK.STACK_COL_GP = SL.STACK_COL_GP
 						        AND     SK.STACK_BED_GP = SL.STACK_BED_GP
-				                -- ÀûÄ¡ »óÅÂ CHECK ¾ÈÇÔ ('WB','CT')
+				                -- ì ì¹˜ ìƒíƒœ CHECK ì•ˆí•¨ ('WB','CT')
 						        AND     1 = CASE WHEN SUBSTR(SK.STACK_COL_GP,3,2) IN (SELECT NVL(DTL_ITM1,'BBBB')
 				                                                                        FROM USRYMA.TB_YM_RULE 
 				                                                                       WHERE REPR_CD_GP = 'YM103'
@@ -3690,7 +3690,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                                                         AND DEL_YN = 'N')    THEN 1
 				                                 WHEN SL.STACK_LAYER_STAT IN ('E') AND  SL.STACK_LAYER_ACTIVE_STAT = 'E' THEN 1
 				                                 ELSE 2 END
-				               --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+				               --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 				                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2)               
 				                
 						        ) CUR,
@@ -3699,7 +3699,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						AND     CUR.STACK_BED_GP = SL1.STACK_BED_GP
 						AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 						AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
-				        AND    CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ÀÛ¾÷¿¹¾à Æí¼ºÀ§Ä¡ Á¦¿Ü
+				        AND    CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ì‘ì—…ì˜ˆì•½ í¸ì„±ìœ„ì¹˜ ì œì™¸
 				                                                          SELECT C.STACK_COL_GP || C.STACK_BED_GP
 				                                                            FROM TB_YM_WRKBOOK A 
 				                                                               , TB_YM_WRKBOOKMTL B
@@ -3718,9 +3718,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jrTemp.setField("STACK_COL_GP"	, ydToLocGuide.substring(0, 6));
 				jrTemp.setField("STACK_BED_GP"	, ydToLocGuide.substring(6));
 					
- 				JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColBed", logId, methodNm, "ÇØ´ç¿­ º£µå Á¶È¸");
+ 				JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColBed", logId, methodNm, "í•´ë‹¹ì—´ ë² ë“œ ì¡°íšŒ");
  				if (outjsResult.size() <= 0) {
- 					szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+ 					szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
  					commUtils.printLog(logId, szLogMsg, "SL");
  					
  					if(sAPP005_YN.equals("Y")) {
@@ -3729,7 +3729,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 		    			jrLog.setField("YD_GP"			, "2");
 		    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-		    			jrLog.setField("SCH_CONTENTS"	, "»ç¿ëÀÚÁöÁ¤(procToLocUser) ºÒ°¡:"+ "\r\n" + "ÀûÀçÀ§Ä¡ °¡ÀÌµå 6~ 8ÀÚ¸®  ÁöÁ¤µÈ °æ¿ì ["+ydToLocGuide+"]ÀÇ º£µå Á¶È¸" + "\r\n" );
+		    			jrLog.setField("SCH_CONTENTS"	, "ì‚¬ìš©ìì§€ì •(procToLocUser) ë¶ˆê°€:"+ "\r\n" + "ì ì¬ìœ„ì¹˜ ê°€ì´ë“œ 6~ 8ìë¦¬  ì§€ì •ëœ ê²½ìš° ["+ydToLocGuide+"]ì˜ ë² ë“œ ì¡°íšŒ" + "\r\n" );
 		    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 		    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 					}
@@ -3745,8 +3745,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
  					
  					//=================================================================================================== 
  					if("2CTC11LM".equals(ydSchCd) || "2CTC22LM".equals(ydSchCd)) {
- 	 					//Cµ¿ ´ëÂ÷ÇÏÂ÷´Â ÀåÀÔ¼ø¹ø ¼øÀ§°¡ ¸Â¾Æ¾ßÇÑ´Ù.
- 	 					JDTORecordSet chkResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocChgSeqChk", logId, methodNm, "TOÀ§Ä¡ ÀåÀÔ¼ø¹ø Ã¼Å©");
+ 	 					//Cë™ ëŒ€ì°¨í•˜ì°¨ëŠ” ì¥ì…ìˆœë²ˆ ìˆœìœ„ê°€ ë§ì•„ì•¼í•œë‹¤.
+ 	 					JDTORecordSet chkResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getToLocChgSeqChk", logId, methodNm, "TOìœ„ì¹˜ ì¥ì…ìˆœë²ˆ ì²´í¬");
  	 					if(chkResult.size() > 0) {
  	 						
  	 						int iSchChargeLotNo = chkResult.getRecord(0).getFieldInt("SCH_CHARGE_LOT_NO");
@@ -3756,7 +3756,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
  	 							
  	 	 						sRtnBedDan = "";
  	 	 						
- 	 	 	 					szLogMsg = ">>>>> Cµ¿ ´ëÂ÷ÇÏÂ÷½Ã TOÀ§Ä¡°¡ÀÌµå°¡ Á¤ÇØÁ® ÀÖ¾îµµ ÀåÀÔ¼ø¹øÀÌ ¿ª¼øÀÏ °æ¿ì TOÀ§Ä¡¸¦ XX010101 ÁöÁ¤!! " ;
+ 	 	 	 					szLogMsg = ">>>>> Cë™ ëŒ€ì°¨í•˜ì°¨ì‹œ TOìœ„ì¹˜ê°€ì´ë“œê°€ ì •í•´ì ¸ ìˆì–´ë„ ì¥ì…ìˆœë²ˆì´ ì—­ìˆœì¼ ê²½ìš° TOìœ„ì¹˜ë¥¼ XX010101 ì§€ì •!! " ;
  	 	 	 					commUtils.printLog(logId, szLogMsg, "SL");
  	 						}
  	 					}
@@ -3766,7 +3766,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
             }	 
 
 			if(sRtnBedDan.length() < 10) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				if(sAPP005_YN.equals("Y")) {
 	    			JDTORecord jrLog  				= JDTORecordFactory.getInstance().create(); 
@@ -3774,7 +3774,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ" + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨" + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -3787,14 +3787,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "»ç¿ëÀÚÁöÁ¤(procToLocUser) ¼º°ø:"+ "\r\n" + "ÀûÀçÀ§Ä¡ °¡ÀÌµå  ÁöÁ¤µÈ °æ¿ì ["+ydToLocGuide+"]ÀÇ º£µå Á¶È¸" + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ì‚¬ìš©ìì§€ì •(procToLocUser) ì„±ê³µ:"+ "\r\n" + "ì ì¬ìœ„ì¹˜ ê°€ì´ë“œ  ì§€ì •ëœ ê²½ìš° ["+ydToLocGuide+"]ì˜ ë² ë“œ ì¡°íšŒ" + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
 			}
 
 			//----------------------------------------------------------------------------------------------------------------------
-	    	// ToÀ§Ä¡ Å©·¹ÀÎ ¿¡ update 
+	    	// Toìœ„ì¹˜ í¬ë ˆì¸ ì— update 
 			//----------------------------------------------------------------------------------------------------------------------
 			JDTORecord jrSetLoc = JDTORecordFactory.getInstance().create();
 			jrSetLoc.setField("YD_CRN_SCH_ID", 	ydCrnSchId); 
@@ -3808,7 +3808,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 			this.procUpdateLoc(logId,methodNm, jrSetLoc, jrCrnSch ,jrCrnMtlSch );
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -3821,7 +3821,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}      
   
 	/**
-	 * ¼³ºñ(WB,CT) ÀÛ¾÷TOÀ§Ä¡°áÁ¤
+	 * ì„¤ë¹„(WB,CT) ì‘ì—…TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -3830,12 +3830,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocWbCt(String logId, String methodNms,String sAPP005_YN, String planToLoc, JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch,JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:WB,CT ÀåÀÔÀÛ¾÷[BSlabSchSeEJB.procToLocWbCt] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:WB,CT ì¥ì…ì‘ì—…[BSlabSchSeEJB.procToLocWbCt] < " + methodNms;
     	String szLogMsg					= null;
 		JDTORecord		jrTemp			= JDTORecordFactory.getInstance().create();;
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
 		String ydUpWoLoc 		= commUtils.trim(jrCrnSch.getFieldString("YD_UP_WO_LOC"));		
@@ -3843,12 +3843,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		String sSlabLotNo 		= commUtils.trim(jrCrnMtlSch.getFieldString("CHARGE_LOT_NO")); 
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
 		
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ÀÛ¾÷¿¹¾à
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ì‘ì—…ì˜ˆì•½
 
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
-		String ydWrkSh 		    = commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
+		String ydWrkSh 		    = commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜
 		String sRtnBedDan       = "";
 		String sWbCtYn          = "";
 		String szDBLogMsg   	= "";
@@ -3860,15 +3860,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			String wbLotNo   = "";
 		    	
     		if ("WB".equals(planToLoc.substring(2, 4))) {
-					commUtils.printLog(logId, "Çö ´ë»óÀç ÀåÀÔ¹øÈ£¸¦ º¸±ŞÇÒ ¼ö ÀÖ´ÂÁö Ã¼Å© SKIP", "SL");
-					szDBLogMsg = "Çö ´ë»óÀç ÀåÀÔ¹øÈ£¸¦ WB¿¡ º¸±ŞÇÒ ¼ö ÀÖ´ÂÁö Ã¼Å©  À§Ä¡ :"+ planToLoc + "\r\n";
+					commUtils.printLog(logId, "í˜„ ëŒ€ìƒì¬ ì¥ì…ë²ˆí˜¸ë¥¼ ë³´ê¸‰í•  ìˆ˜ ìˆëŠ”ì§€ ì²´í¬ SKIP", "SL");
+					szDBLogMsg = "í˜„ ëŒ€ìƒì¬ ì¥ì…ë²ˆí˜¸ë¥¼ WBì— ë³´ê¸‰í•  ìˆ˜ ìˆëŠ”ì§€ ì²´í¬  ìœ„ì¹˜ :"+ planToLoc + "\r\n";
 
 				if("LOT".equals(sCtsRelaySaddle)){
 					sWbCtYn = "1";
 				} else {
 				
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocWB 
-					--ÇöÀç W/Bº¸±ŞµÇ¾î¾ß ÇÒ ÀåÀÔLOT ¹øÈ£¸¦ °¡Á®¿Â´Ù.
+					--í˜„ì¬ W/Bë³´ê¸‰ë˜ì–´ì•¼ í•  ì¥ì…LOT ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 					SELECT ( SELECT NVL(MAX(CHARGE_LOT_NO),'') AS  CURR_LOT_NO
 					          FROM (
 					                SELECT CHARGE_LOT_NO
@@ -3882,7 +3882,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                           AND B.STACK_COL_GP NOT LIKE '2B%'
 					                           AND B.STACK_LAYER_STAT  IN ('C','U')
 					                           AND A.CHARGE_LOT_NO IS NOT NULL
-					                           -- ±âÆí¼ºµÇ¾î ÀÖ´Â°Å Á¦¿Ü
+					                           -- ê¸°í¸ì„±ë˜ì–´ ìˆëŠ”ê±° ì œì™¸
 					                           AND A.STOCK_ID NOT IN ( SELECT NVL(BB.STOCK_ID,'KKK')
 					                                                     FROM TB_YM_CRNSCH AA
 					                                                        , TB_YM_CRNWRKMTL BB
@@ -3893,7 +3893,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                        ORDER BY TO_NUMBER(NVL(A.CHARGE_LOT_NO,99999999))
 					                       ) A
 					                 WHERE ROWNUM <= :V_CRN_WRK_SH
-					                   AND ROWNUM <= 2   --2¸ÅÀÌ»ó Ã³¸® ¾ÈµÊ
+					                   AND ROWNUM <= 2   --2ë§¤ì´ìƒ ì²˜ë¦¬ ì•ˆë¨
 					               )
 					       ) AS CURR_LOT_NO
 					     , (SELECT CTS_RELAY_SADDLE 
@@ -3930,21 +3930,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrTemp.setField("STACK_COL_GP"	, planToLoc);											
 					jrTemp.setField("CRN_WRK_SH"	, ydWrkSh);											
 
-					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocWB", logId, methodNm, "WB_TOSQL º£µå Á¶È¸");
+					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocWB", logId, methodNm, "WB_TOSQL ë² ë“œ ì¡°íšŒ");
 	 				if (outjsResult.size() <= 0) {
-	 					szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+	 					szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 	 					commUtils.printLog(logId, szLogMsg, "SL");
 	 					return YmConstant.RETN_CD_FAILURE;
 	 				} else {
-	 					currLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("CURR_LOT_NO")); //ÇöÀç      LOT¹øÈ£
-	 					wbLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("WB_LOT_NO"));   //ÀåÀÔ´ëÀ§ LOT¹øÈ£
+	 					currLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("CURR_LOT_NO")); //í˜„ì¬      LOTë²ˆí˜¸
+	 					wbLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("WB_LOT_NO"));   //ì¥ì…ëŒ€ìœ„ LOTë²ˆí˜¸
 	 				}
 				}
     		} else if("CT".equals(planToLoc.substring(2, 4))) {
-				szDBLogMsg = "Çö ´ë»óÀç ÀåÀÔ¹øÈ£¸¦  CT¿¡ º¸±ŞÇÒ ¼ö ÀÖ´ÂÁö Ã¼Å©  À§Ä¡ :"+ planToLoc + "\r\n";
+				szDBLogMsg = "í˜„ ëŒ€ìƒì¬ ì¥ì…ë²ˆí˜¸ë¥¼  CTì— ë³´ê¸‰í•  ìˆ˜ ìˆëŠ”ì§€ ì²´í¬  ìœ„ì¹˜ :"+ planToLoc + "\r\n";
 
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCT 
-				--ÇöÀç CT º¸±ŞµÇ¾î¾ß ÇÒ ÀåÀÔLOT ¹øÈ£¸¦ °¡Á®¿Â´Ù.
+				--í˜„ì¬ CT ë³´ê¸‰ë˜ì–´ì•¼ í•  ì¥ì…LOT ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 				SELECT ( SELECT  ZOIN.CHARGE_LOT_NO
 				           FROM (
 				                  SELECT MIN(TO_NUMBER(NVL(A.CHARGE_LOT_NO,99999999))) AS CHARGE_LOT_NO
@@ -3982,61 +3982,61 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jrTemp.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 				jrTemp.setField("STACK_COL_GP"	, planToLoc);											
 
-				JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCT", logId, methodNm, "CT_TOSQL º£µå Á¶È¸");
+				JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCT", logId, methodNm, "CT_TOSQL ë² ë“œ ì¡°íšŒ");
  				if (outjsResult.size() <= 0) {
- 					szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+ 					szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
  					commUtils.printLog(logId, szLogMsg, "SL");
  					return YmConstant.RETN_CD_FAILURE;
  				} else {
- 					currLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("CURR_LOT_NO")); //ÇöÀç      LOT¹øÈ£
- 					wbLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("WB_LOT_NO"));   //ÀåÀÔ´ëÀ§ LOT¹øÈ£
+ 					currLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("CURR_LOT_NO")); //í˜„ì¬      LOTë²ˆí˜¸
+ 					wbLotNo 	= commUtils.trim(outjsResult.getRecord(0).getFieldString("WB_LOT_NO"));   //ì¥ì…ëŒ€ìœ„ LOTë²ˆí˜¸
  				}
     		}
 	    		
 			/*
-			 * sSlabLotNo = ÇöÀç ÀúÀåÇ° ÀåÀÔ¹øÈ£ sCurLotNo = ÇöÀç º¸±ŞÇØ¾ßÇÒ ÀåÀÔ¹øÈ£ sWbLotNo = ÇöÀç WB
-			 * 01¹øÁö¿¡ ÀÖ´Â ÀúÀåÇ°ÀÇ ÀåÀÔ¹øÈ£
+			 * sSlabLotNo = í˜„ì¬ ì €ì¥í’ˆ ì¥ì…ë²ˆí˜¸ sCurLotNo = í˜„ì¬ ë³´ê¸‰í•´ì•¼í•  ì¥ì…ë²ˆí˜¸ sWbLotNo = í˜„ì¬ WB
+			 * 01ë²ˆì§€ì— ìˆëŠ” ì €ì¥í’ˆì˜ ì¥ì…ë²ˆí˜¸
 			 * 
-			 * 3. ÇöÀç ÀÛ¾÷ÇÒ SLAB ÀÇ ÀåÀÔLOT¼ø¹ø°ú CTC,W/B¿¡ ÀÖ´Â ¶Ç´Â ¾øÀ¸¸é ÇöÀç º¸±ŞÇÒ ÀåÀÔLOT¼ø¹øÀ» ºñ±³ÇÑ´Ù. Áï,
-			 * °°À¸¸é TOÀ§Ä¡ ÀûÄ¡ °¡´ÉÇÏ´Ù.
+			 * 3. í˜„ì¬ ì‘ì—…í•  SLAB ì˜ ì¥ì…LOTìˆœë²ˆê³¼ CTC,W/Bì— ìˆëŠ” ë˜ëŠ” ì—†ìœ¼ë©´ í˜„ì¬ ë³´ê¸‰í•  ì¥ì…LOTìˆœë²ˆì„ ë¹„êµí•œë‹¤. ì¦‰,
+			 * ê°™ìœ¼ë©´ TOìœ„ì¹˜ ì ì¹˜ ê°€ëŠ¥í•˜ë‹¤.
 			 */
-    		commUtils.printLog(logId, "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo, "SL");
-    		commUtils.printLog(logId, "¼³ºñÀÇ ÀåÀÔ¹øÈ£ =>"+wbLotNo, "SL");
-    		commUtils.printLog(logId, "º¸±ŞÇÒ ÀåÀÔ¹øÈ£ =>"+currLotNo, "SL");
+    		commUtils.printLog(logId, "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo, "SL");
+    		commUtils.printLog(logId, "ì„¤ë¹„ì˜ ì¥ì…ë²ˆí˜¸ =>"+wbLotNo, "SL");
+    		commUtils.printLog(logId, "ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ =>"+currLotNo, "SL");
     		
-    		szDBLogMsg = szDBLogMsg + "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo + "\r\n";
-    		szDBLogMsg = szDBLogMsg + "¼³ºñÀÇ ÀåÀÔ¹øÈ£ =>"+wbLotNo    + "\r\n";
-    		szDBLogMsg = szDBLogMsg + "º¸±ŞÇÒ ÀåÀÔ¹øÈ£ =>"+currLotNo  + "\r\n";
+    		szDBLogMsg = szDBLogMsg + "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo + "\r\n";
+    		szDBLogMsg = szDBLogMsg + "ì„¤ë¹„ì˜ ì¥ì…ë²ˆí˜¸ =>"+wbLotNo    + "\r\n";
+    		szDBLogMsg = szDBLogMsg + "ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ =>"+currLotNo  + "\r\n";
 
     		
 			if (sSlabLotNo.equals(currLotNo)) {
 
 				if ("".equals(wbLotNo)) {
 					sWbCtYn = "1";
-					commUtils.printLog(logId, "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo+ "º¸±ŞÇÒ ÀåÀÔ¹øÈ£ =>"+currLotNo + "CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö 01´Ü¿¡ ÀûÄ¡°¡´É.", "SL");
-					szDBLogMsg = szDBLogMsg + "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo+ "º¸±ŞÇÒ ÀåÀÔ¹øÈ£ =>"+currLotNo + "CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö 01´Ü¿¡ ÀûÄ¡°¡´É." + "\r\n";
+					commUtils.printLog(logId, "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo+ "ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ =>"+currLotNo + "CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ 01ë‹¨ì— ì ì¹˜ê°€ëŠ¥.", "SL");
+					szDBLogMsg = szDBLogMsg + "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo+ "ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ =>"+currLotNo + "CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ 01ë‹¨ì— ì ì¹˜ê°€ëŠ¥." + "\r\n";
 				} else {
 					if (sSlabLotNo.equals(wbLotNo)) {
 						sWbCtYn = "1";
-						commUtils.printLog(logId, "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo+ "¼³ºñÀÇ ÀåÀÔ¹øÈ£ =>"+wbLotNo + "CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö 01´Ü¿¡ ÀûÄ¡°¡´É.", "SL");
-						szDBLogMsg = szDBLogMsg + "Àç·áÀÇ ÀåÀÔ¹øÈ£ =>"+sSlabLotNo+ "¼³ºñÀÇ ÀåÀÔ¹øÈ£ =>"+wbLotNo + "CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö 01´Ü¿¡ ÀûÄ¡°¡´É." + "\r\n";
+						commUtils.printLog(logId, "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo+ "ì„¤ë¹„ì˜ ì¥ì…ë²ˆí˜¸ =>"+wbLotNo + "CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ 01ë‹¨ì— ì ì¹˜ê°€ëŠ¥.", "SL");
+						szDBLogMsg = szDBLogMsg + "ì¬ë£Œì˜ ì¥ì…ë²ˆí˜¸ =>"+sSlabLotNo+ "ì„¤ë¹„ì˜ ì¥ì…ë²ˆí˜¸ =>"+wbLotNo + "CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ 01ë‹¨ì— ì ì¹˜ê°€ëŠ¥." + "\r\n";
 					} else {
 						sWbCtYn = "2";
-//±âÁ¸Àº ·ÎÁ÷ ´ë±â »óÅÂ·Î
+//ê¸°ì¡´ì€ ë¡œì§ ëŒ€ê¸° ìƒíƒœë¡œ
 						sWbCtYn = "1";
-						commUtils.printLog(logId, "°¡´É:CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö ÀåÀÔLOT ¹øÈ£¿Í ´Ù¸¨´Ï´Ù..", "SL");
-						szDBLogMsg = szDBLogMsg + "°¡´É:CHARGE_LOT_NO =>ÀåÀÔ´ë»ó=> WB 01¹øÁö ÀåÀÔLOT ¹øÈ£¿Í ´Ù¸¨´Ï´Ù.." + "\r\n";
+						commUtils.printLog(logId, "ê°€ëŠ¥:CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ ì¥ì…LOT ë²ˆí˜¸ì™€ ë‹¤ë¦…ë‹ˆë‹¤..", "SL");
+						szDBLogMsg = szDBLogMsg + "ê°€ëŠ¥:CHARGE_LOT_NO =>ì¥ì…ëŒ€ìƒ=> WB 01ë²ˆì§€ ì¥ì…LOT ë²ˆí˜¸ì™€ ë‹¤ë¦…ë‹ˆë‹¤.." + "\r\n";
 					}
 				}
 			} else {
 				sWbCtYn = "3";
-				commUtils.printLog(logId, "ºÒ°¡:CHARGE_LOT_NO =>º¸±ŞÇÒ ÀåÀÔ¹øÈ£ ´ë»ó ¾Æ´Ô=> ÀåÀÔLOT ¹øÈ£°¡ ´Ù¸¨´Ï´Ù.", "SL");
-				szDBLogMsg = szDBLogMsg + "ºÒ°¡:CHARGE_LOT_NO =>º¸±ŞÇÒ ÀåÀÔ¹øÈ£ ´ë»ó ¾Æ´Ô=> ÀåÀÔLOT ¹øÈ£°¡ ´Ù¸¨´Ï´Ù." + "\r\n";
+				commUtils.printLog(logId, "ë¶ˆê°€:CHARGE_LOT_NO =>ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ ëŒ€ìƒ ì•„ë‹˜=> ì¥ì…LOT ë²ˆí˜¸ê°€ ë‹¤ë¦…ë‹ˆë‹¤.", "SL");
+				szDBLogMsg = szDBLogMsg + "ë¶ˆê°€:CHARGE_LOT_NO =>ë³´ê¸‰í•  ì¥ì…ë²ˆí˜¸ ëŒ€ìƒ ì•„ë‹˜=> ì¥ì…LOT ë²ˆí˜¸ê°€ ë‹¤ë¦…ë‹ˆë‹¤." + "\r\n";
 			}
 		
 			
 			if(sWbCtYn.equals("1")) {
-				// ÀûÄ¡ °¡´É ¿©ºÎ °ËÅä
+				// ì ì¹˜ ê°€ëŠ¥ ì—¬ë¶€ ê²€í† 
 				jrTemp = JDTORecordFactory.getInstance().create();
 				jrTemp.setResultCode(logId);	//Log ID
 				jrTemp.setResultMsg(methodNm);	//Log Method Name
@@ -4054,16 +4054,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				        A.TO_LOC 
 				,        A.STOCK_ID
 				FROM    (
-						SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-						        CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-						        CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-						         SL1.STOCK_ID,  --ÀûÄ¡ ´Ü ±¸ºĞ
+						SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+						        CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+						        CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+						         SL1.STOCK_ID,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
 						
-						        CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-						        CUR.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-						        CUR.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-						        CUR.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-						        CUR.STACK_BED_ABLE_LEN,     --ÀûÄ¡ BED °¡´É ±æÀÌ
+						        CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+						        CUR.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+						        CUR.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+						        CUR.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+						        CUR.STACK_BED_ABLE_LEN,     --ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 						                
 						        NVL(CUR.STACK_COL_GP, '')    ||
 						        NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -4072,11 +4072,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						        NVL(CUR.STACK_BED_GP, '')    ||
 						        NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC
 						FROM    (
-						        SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-						                SK.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-						                SK.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-						                SK.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-						                SK.STACK_BED_ABLE_LEN,     --ÀûÄ¡ BED °¡´É ±æÀÌ
+						        SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+						                SK.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+						                SK.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+						                SK.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+						                SK.STACK_BED_ABLE_LEN,     --ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 						
 						                SL.STACK_COL_GP,
 						                SL.STACK_BED_GP,
@@ -4089,13 +4089,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						                            1, '0' || TO_CHAR(SL.STACK_LAYER_GP - 1),
 						                            TO_CHAR(SL.STACK_LAYER_GP - 1)))) AS PRE_LAYER_GP
 				                             
-						        FROM    (SELECT A.STACK_COL_GP,   		--ÀûÄ¡ ¿­ ±¸ºĞ
-				                                A.STACK_BED_GP,   		--ÀûÄ¡ BED ±¸ºĞ
-				                                A.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
-				                                A.STACK_BED_ABLE_WT,      --ÀûÄ¡ BED °¡´É Áß·®
-				                                A.STACK_BED_ABLE_HIGH,    --ÀûÄ¡ BED °¡´É ³ôÀÌ
-				                                A.STACK_BED_ABLE_W,       --ÀûÄ¡ BED °¡´É Æø
-				                                A.STACK_BED_ABLE_LEN  	--ÀûÄ¡ BED °¡´É ±æÀÌ
+						        FROM    (SELECT A.STACK_COL_GP,   		--ì ì¹˜ ì—´ êµ¬ë¶„
+				                                A.STACK_BED_GP,   		--ì ì¹˜ BED êµ¬ë¶„
+				                                A.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
+				                                A.STACK_BED_ABLE_WT,      --ì ì¹˜ BED ê°€ëŠ¥ ì¤‘ëŸ‰
+				                                A.STACK_BED_ABLE_HIGH,    --ì ì¹˜ BED ê°€ëŠ¥ ë†’ì´
+				                                A.STACK_BED_ABLE_W,       --ì ì¹˜ BED ê°€ëŠ¥ í­
+				                                A.STACK_BED_ABLE_LEN  	--ì ì¹˜ BED ê°€ëŠ¥ ê¸¸ì´
 				                              , (SELECT SUM(CASE WHEN substr(STACK_COL_GP,3,2) IN ( 'WB', 'CT' ) THEN 1
 				                                                 WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1
 				                                                 ELSE 0 END)
@@ -4106,13 +4106,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                          WHERE A.STACK_COL_GP            = :V_STACK_COL_GP
 				                            AND A.STACK_BED_GP            = :V_STACK_BED_GP
 				                            AND A.STACK_BED_ACTIVE_STAT   = 'L'
-				                            AND A.STACK_BED_ABLE_QNTY     >  0	 --ÀûÄ¡ BED °¡´É ¼ö·®
+				                            AND A.STACK_BED_ABLE_QNTY     >  0	 --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 				                          ORDER BY A.STACK_BED_GP ASC
 				                        ) SK,
 						                TB_YM_STACKLAYER SL
 						        WHERE   SK.STACK_COL_GP = SL.STACK_COL_GP
 						        AND     SK.STACK_BED_GP = SL.STACK_BED_GP
-				                -- ÀûÄ¡ »óÅÂ CHECK ¾ÈÇÔ ('WB','CT')
+				                -- ì ì¹˜ ìƒíƒœ CHECK ì•ˆí•¨ ('WB','CT')
 						        AND     1 = CASE WHEN SUBSTR(SK.STACK_COL_GP,3,2) IN (SELECT NVL(DTL_ITM1,'BBBB')
 				                                                                        FROM USRYMA.TB_YM_RULE 
 				                                                                       WHERE REPR_CD_GP = 'YM103'
@@ -4120,7 +4120,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                                                         AND DEL_YN = 'N')    THEN 1
 				                                 WHEN SL.STACK_LAYER_STAT IN ('E') AND  SL.STACK_LAYER_ACTIVE_STAT = 'E' THEN 1
 				                                 ELSE 2 END
-				               --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+				               --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 				                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2)               
 				                
 						        ) CUR,
@@ -4129,7 +4129,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 						AND     CUR.STACK_BED_GP = SL1.STACK_BED_GP
 						AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 						AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
-				        AND    CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ÀÛ¾÷¿¹¾à Æí¼ºÀ§Ä¡ Á¦¿Ü
+				        AND    CUR.STACK_COL_GP||CUR.STACK_BED_GP NOT IN ( --ì‘ì—…ì˜ˆì•½ í¸ì„±ìœ„ì¹˜ ì œì™¸
 				                                                          SELECT C.STACK_COL_GP || C.STACK_BED_GP
 				                                                            FROM TB_YM_WRKBOOK A 
 				                                                               , TB_YM_WRKBOOKMTL B
@@ -4145,84 +4145,84 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				     )A
 				WHERE  ROWNUM = 1                                        
 				*/
- 				JDTORecordSet jsBed = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColBed", logId, methodNm, "ÇØ´ç¿­ º£µå Á¶È¸");
+ 				JDTORecordSet jsBed = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColBed", logId, methodNm, "í•´ë‹¹ì—´ ë² ë“œ ì¡°íšŒ");
  				if (jsBed.size() <= 0) {
- 					szLogMsg = methodNm+ "ÀûÄ¡°¡´ÉÇÑ º£µå °Ë»ö ½ÇÆĞ ";
+ 					szLogMsg = methodNm+ "ì ì¹˜ê°€ëŠ¥í•œ ë² ë“œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
  					commUtils.printLog(logId, szLogMsg, "SL");
  					return YmConstant.RETN_CD_FAILURE;
  				}
  				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.selectEquipInfo
- 				--¼³ºñÅ×ÀÌºíÀÇ Á¤º¸¸¦ ¸®ÅÏÇÑ´Ù.
- 				SELECT	EQUIP_GP,		--¼³ºñ ±¸ºĞ
- 				        YD_GP,			--YARD ±¸ºĞ
- 				        BAY_GP,			--µ¿ ±¸ºĞ
- 				        EQUIP_KIND,		--¼³ºñ Á¾·ù
- 				        EQUIP_NO,		--¼³ºñ ¹øÈ£
- 				        EQUIP_NAME,		--¼³ºñ ¸í
- 				        EQUIP_ABB_NAME,	--¼³ºñ ¾à¾î ¸í
- 				        PALLET_NO,		--PALLET ¹øÈ£
- 				        EQUIP_STAT,		--¼³ºñ »óÅÂ
+ 				--ì„¤ë¹„í…Œì´ë¸”ì˜ ì •ë³´ë¥¼ ë¦¬í„´í•œë‹¤.
+ 				SELECT	EQUIP_GP,		--ì„¤ë¹„ êµ¬ë¶„
+ 				        YD_GP,			--YARD êµ¬ë¶„
+ 				        BAY_GP,			--ë™ êµ¬ë¶„
+ 				        EQUIP_KIND,		--ì„¤ë¹„ ì¢…ë¥˜
+ 				        EQUIP_NO,		--ì„¤ë¹„ ë²ˆí˜¸
+ 				        EQUIP_NAME,		--ì„¤ë¹„ ëª…
+ 				        EQUIP_ABB_NAME,	--ì„¤ë¹„ ì•½ì–´ ëª…
+ 				        PALLET_NO,		--PALLET ë²ˆí˜¸
+ 				        EQUIP_STAT,		--ì„¤ë¹„ ìƒíƒœ
  				        DECODE(EQUIP_STAT, 
- 				           'C','°íÀå','Á¤»ó') AS EQUIP_STAT1,
- 				        DOWN_CD,		--ÈŞÁö CODE
- 				        STACK_MAX_QNTY,		--ÀûÀç ÃÖ´ë ¼ö·®
- 				        STACK_MAX_WT,		--ÀûÀç ÃÖ´ë Áß·®
- 				        STACK_STAT,		--ÀûÀç »óÅÂ
- 				        WPROG_STAT,     --ÀÛ¾÷ÁøÇà »óÅÂ
- 				        DECODE(WPROG_STAT,'B','°íÀå','N','Á¤»ó','R','º¹±¸','W','´ë±â','1','±Ç»óÀÛ¾÷Áö½Ã','2','±Ç»óÁß','3','±ÇÇÏÀÛ¾÷Áö½Ã','4','±ÇÇÏ¿Ï·á') AS WPROG_STAT1,		
- 				        WBOOK_ID,		--ÀÛ¾÷¿¹¾à ID
- 				        WAIT_STOP_LOC,		--´ë±â Á¤Áö À§Ä¡
- 				        CURR_STOP_LOC,		--ÇöÀç Á¤Áö À§Ä¡
- 				        CARLOAD_STOP_LOC,		--»óÂ÷ Á¤Áö À§Ä¡
- 				        CARUNLOAD_STOP_LOC,		--ÇÏÂ÷ Á¤Áö À§Ä¡
- 				        CARLOAD_ASSIGN_YN,		--»óÂ÷ ÁöÁ¤ ±¸ºĞ
- 				        CARLOAD_SCH_WORK_KIND,		--»óÂ÷ SCHEDULE ÀÛ¾÷ Á¾·ù
- 				        CARUNLOAD_ASSIGN_YN,		--ÇÏÂ÷ ÁöÁ¤ ±¸ºĞ
- 				        CARUNLOAD_SCH_WORK_KIND,		--ÇÏÂ÷ SCHEDULE ÀÛ¾÷ Á¾·ù
- 				        WORK_MODE,		--ÀÛ¾÷ MODE
- 				        HMI_STAT,		--HMI »óÅÂ
+ 				           'C','ê³ ì¥','ì •ìƒ') AS EQUIP_STAT1,
+ 				        DOWN_CD,		--íœ´ì§€ CODE
+ 				        STACK_MAX_QNTY,		--ì ì¬ ìµœëŒ€ ìˆ˜ëŸ‰
+ 				        STACK_MAX_WT,		--ì ì¬ ìµœëŒ€ ì¤‘ëŸ‰
+ 				        STACK_STAT,		--ì ì¬ ìƒíƒœ
+ 				        WPROG_STAT,     --ì‘ì—…ì§„í–‰ ìƒíƒœ
+ 				        DECODE(WPROG_STAT,'B','ê³ ì¥','N','ì •ìƒ','R','ë³µêµ¬','W','ëŒ€ê¸°','1','ê¶Œìƒì‘ì—…ì§€ì‹œ','2','ê¶Œìƒì¤‘','3','ê¶Œí•˜ì‘ì—…ì§€ì‹œ','4','ê¶Œí•˜ì™„ë£Œ') AS WPROG_STAT1,		
+ 				        WBOOK_ID,		--ì‘ì—…ì˜ˆì•½ ID
+ 				        WAIT_STOP_LOC,		--ëŒ€ê¸° ì •ì§€ ìœ„ì¹˜
+ 				        CURR_STOP_LOC,		--í˜„ì¬ ì •ì§€ ìœ„ì¹˜
+ 				        CARLOAD_STOP_LOC,		--ìƒì°¨ ì •ì§€ ìœ„ì¹˜
+ 				        CARUNLOAD_STOP_LOC,		--í•˜ì°¨ ì •ì§€ ìœ„ì¹˜
+ 				        CARLOAD_ASSIGN_YN,		--ìƒì°¨ ì§€ì • êµ¬ë¶„
+ 				        CARLOAD_SCH_WORK_KIND,		--ìƒì°¨ SCHEDULE ì‘ì—… ì¢…ë¥˜
+ 				        CARUNLOAD_ASSIGN_YN,		--í•˜ì°¨ ì§€ì • êµ¬ë¶„
+ 				        CARUNLOAD_SCH_WORK_KIND,		--í•˜ì°¨ SCHEDULE ì‘ì—… ì¢…ë¥˜
+ 				        WORK_MODE,		--ì‘ì—… MODE
+ 				        HMI_STAT,		--HMI ìƒíƒœ
  				        DECODE(HMI_STAT,
- 				          'C','½ºÄÉÁì±İÁö','½ºÄÉÁì»ç¿ë') AS HMI_STAT1,
- 				        BACKUP_EQUIP_YN,		--BACKUP ¼³ºñ À¯¹«
- 				        BACKUP_EQUIP_KIND,		--BACKUP ¼³ºñ Á¾·ù
- 				        BACKUP_EQUIP_NO,		--BACKUP ¼³ºñ ¹øÈ£
- 				        CTS_RELAY_YN,		--CTS Áß°è ±¸¿ª »ç¿ë À¯¹«
- 				        CTS_RELAY_BAY,		--CTS Áß°è ±¸¿ª µ¿
- 				        REGISTER,		--µî·ÏÀÚ
- 				        REG_DDTT,		--µî·Ï ÀÏ½Ã
- 				        MODIFIER,		--¼öÁ¤ÀÚ
- 				        MOD_DDTT,		--¼öÁ¤ ÀÏ½Ã
- 				        DEL_YN		--»èÁ¦ À¯¹«
+ 				          'C','ìŠ¤ì¼€ì¥´ê¸ˆì§€','ìŠ¤ì¼€ì¥´ì‚¬ìš©') AS HMI_STAT1,
+ 				        BACKUP_EQUIP_YN,		--BACKUP ì„¤ë¹„ ìœ ë¬´
+ 				        BACKUP_EQUIP_KIND,		--BACKUP ì„¤ë¹„ ì¢…ë¥˜
+ 				        BACKUP_EQUIP_NO,		--BACKUP ì„¤ë¹„ ë²ˆí˜¸
+ 				        CTS_RELAY_YN,		--CTS ì¤‘ê³„ êµ¬ì—­ ì‚¬ìš© ìœ ë¬´
+ 				        CTS_RELAY_BAY,		--CTS ì¤‘ê³„ êµ¬ì—­ ë™
+ 				        REGISTER,		--ë“±ë¡ì
+ 				        REG_DDTT,		--ë“±ë¡ ì¼ì‹œ
+ 				        MODIFIER,		--ìˆ˜ì •ì
+ 				        MOD_DDTT,		--ìˆ˜ì • ì¼ì‹œ
+ 				        DEL_YN		--ì‚­ì œ ìœ ë¬´
  				FROM	TB_YM_EQUIP
  				WHERE	EQUIP_GP = :V_EQUIP_GP 
  				*/
- 				JDTORecordSet jsEquipOnOff = commDao.select(jrTemp, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.selectEquipInfo", logId, methodNm, "¼³ºñ»óÅÂ¿©ºÎ Á¶È¸");
+ 				JDTORecordSet jsEquipOnOff = commDao.select(jrTemp, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.selectEquipInfo", logId, methodNm, "ì„¤ë¹„ìƒíƒœì—¬ë¶€ ì¡°íšŒ");
  				if (jsEquipOnOff.size() <= 0) {
- 					szLogMsg = methodNm+ "¼³ºñÁ¤º¸ READ ½ÇÆĞ ";
+ 					szLogMsg = methodNm+ "ì„¤ë¹„ì •ë³´ READ ì‹¤íŒ¨ ";
  					commUtils.printLog(logId, szLogMsg, "SL");
  					return YmConstant.RETN_CD_FAILURE;
  				}
- 				//if("C".equals(commUtils.trim(jsEquipOnOff.getRecord(0).getFieldString("HMI_STAT"))) ||   //½ºÄÉÁÙ»ç¿ë±İÁö(C)
- 				//   "B".equals(commUtils.trim(jsEquipOnOff.getRecord(0).getFieldString("WPROG_STAT")))){  //°íÀå(B)
- 				//	szDBLogMsg = szDBLogMsg + "ºÒ°¡:¼³ºñ °íÀå ¶Ç´Â ½ºÄÉÁÙ»ç¿ë±İÁö ÀÓ :" + planToLoc + "\r\n";
+ 				//if("C".equals(commUtils.trim(jsEquipOnOff.getRecord(0).getFieldString("HMI_STAT"))) ||   //ìŠ¤ì¼€ì¤„ì‚¬ìš©ê¸ˆì§€(C)
+ 				//   "B".equals(commUtils.trim(jsEquipOnOff.getRecord(0).getFieldString("WPROG_STAT")))){  //ê³ ì¥(B)
+ 				//	szDBLogMsg = szDBLogMsg + "ë¶ˆê°€:ì„¤ë¹„ ê³ ì¥ ë˜ëŠ” ìŠ¤ì¼€ì¤„ì‚¬ìš©ê¸ˆì§€ ì„ :" + planToLoc + "\r\n";
  				//	if(sAPP005_YN.equals("Y")) {
  		    	//		JDTORecord jrLog  				= JDTORecordFactory.getInstance().create(); 
  		    	//		jrLog.setField("STOCK_ID"		, "SLAB");
  		    	//		jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
  		    	//		jrLog.setField("YD_GP"			, "2");
  		    	//		jrLog.setField("YD_SCH_CD"		, ydSchCd);
- 		    	//		jrLog.setField("SCH_CONTENTS"	, "º¸±Ş ½ÇÆĞ" + "\r\n"+ szDBLogMsg );
+ 		    	//		jrLog.setField("SCH_CONTENTS"	, "ë³´ê¸‰ ì‹¤íŒ¨" + "\r\n"+ szDBLogMsg );
  		    	//		EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
  		    	//		SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
  				//	}
  				//	return YmConstant.RETN_CD_FAILURE;
  				//}
- 				// ´ë»ó¼±ÅÃ
+ 				// ëŒ€ìƒì„ íƒ
  				sRtnBedDan = planToLoc + "01" + "01";
 			}
 
 			if(sRtnBedDan.length() < 10) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				
 				if(sAPP005_YN.equals("Y")) {
@@ -4231,7 +4231,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "º¸±Ş ½ÇÆĞ"+ "\r\n" + szDBLogMsg );
+	    			jrLog.setField("SCH_CONTENTS"	, "ë³´ê¸‰ ì‹¤íŒ¨"+ "\r\n" + szDBLogMsg );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -4244,7 +4244,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
     			jrLog.setField("YD_GP"			, "2");
     			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-    			jrLog.setField("SCH_CONTENTS"	, "º¸±Ş ¼º°ø" + "\r\n"+ szDBLogMsg );
+    			jrLog.setField("SCH_CONTENTS"	, "ë³´ê¸‰ ì„±ê³µ" + "\r\n"+ szDBLogMsg );
     			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
     			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 			}
@@ -4259,7 +4259,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		return sRtnBedDan;
 	}      
 	/**
-	 * ¼³ºñ(º¸¿ÂÄ«¹Ù) ÀÛ¾÷TOÀ§Ä¡°áÁ¤
+	 * ì„¤ë¹„(ë³´ì˜¨ì¹´ë°”) ì‘ì—…TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -4268,17 +4268,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocBk(String logId, String methodNms,String sAPP005_YN, String planToLoc, JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch, JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:º¸¿ÂÄ«¹Ù [BSlabSchSeEJB.procToLocBk] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ë³´ì˜¨ì¹´ë°” [BSlabSchSeEJB.procToLocBk] < " + methodNms;
     	String szLogMsg					= null;
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
-		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
+		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜
 		String sRtnBedDan       = "";
 		String szDBLogMsg   	= "";
 		
@@ -4290,51 +4290,51 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrInParam = JDTORecordFactory.getInstance().create();
 			jrInParam.setResultCode(logId);	//Log ID
 			jrInParam.setResultMsg(methodNm);	//Log Method Name
-			jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
-			jrInParam.setField("STACK_COL_GP"	, planToLoc);	//À§Ä¡
+			jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
+			jrInParam.setField("STACK_COL_GP"	, planToLoc);	//ìœ„ì¹˜
 			jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);	
 			
-			szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö =>À§Ä¡:" + planToLoc +"\r\n";
+			szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ =>ìœ„ì¹˜:" + planToLoc +"\r\n";
 			
 			
-			if ("BK".equals(planToLoc.substring(2, 4))) { // B¿­¿¬ Aµ¿ º¸¿ÂÄ«¹Ù
+			if ("BK".equals(planToLoc.substring(2, 4))) { // Bì—´ì—° Aë™ ë³´ì˜¨ì¹´ë°”
 
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºº¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => 01´Ü ÀÌ»ó µ¿ÀÏÀåÀÔ¼ø¹ø°Ë»ö ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => 01ë‹¨ ì´ìƒ ë™ì¼ì¥ì…ìˆœë²ˆê²€ìƒ‰ â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 				
-				jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocG", logId, methodNm, "ÀåÀÔLOT ¼øÀ§°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö");
+				jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocG", logId, methodNm, "ì¥ì…LOT ìˆœìœ„ê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰");
 				if(jsSearchLoc.size() > 0) {
 					jsSearchLoc.absolute(1);
 					jrSearchLoc  = jsSearchLoc.getRecord();
-					szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => 01´Ü ÀÌ»ó µ¿ÀÏÀåÀÔ¼ø¹ø°Ë»ö ¼º°ø." + "\r\n";
+					szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => 01ë‹¨ ì´ìƒ ë™ì¼ì¥ì…ìˆœë²ˆê²€ìƒ‰ ì„±ê³µ." + "\r\n";
 				} else {
-					szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => 01´Ü ÀÌ»ó µ¿ÀÏÀåÀÔ¼ø¹ø°Ë»ö ¾øÀ½." + "\r\n";
+					szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => 01ë‹¨ ì´ìƒ ë™ì¼ì¥ì…ìˆœë²ˆê²€ìƒ‰ ì—†ìŒ." + "\r\n";
 					
-					commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºº¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => »êÀûLOTÄÚµå·Î °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS", logId, methodNm, "»êÀûLOT°¡ µ¿ÀÏÇÑ TO À§Ä¡ °Ë»ö");
+					commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ì‚°ì LOTì½”ë“œë¡œ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+					jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocS", logId, methodNm, "ì‚°ì LOTê°€ ë™ì¼í•œ TO ìœ„ì¹˜ ê²€ìƒ‰");
 					if(jsSearchLoc.size() > 0) {
 						jsSearchLoc.absolute(1);
 						jrSearchLoc  = jsSearchLoc.getRecord();
-						szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => »êÀûLOTÄÚµå·Î °Ë»ö ¼º°ø." + "\r\n";
+						szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ì‚°ì LOTì½”ë“œë¡œ ê²€ìƒ‰ ì„±ê³µ." + "\r\n";
 					} else {
-						szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => »êÀûLOTÄÚµå·Î °Ë»ö ¾øÀ½." + "\r\n";
+						szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ì‚°ì LOTì½”ë“œë¡œ ê²€ìƒ‰ ì—†ìŒ." + "\r\n";
 						
-						commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºº¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => °ø bed ·Î °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocE", logId, methodNm, "°øBED  °Ë»ö");
+						commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ê³µ bed ë¡œ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+						jsSearchLoc = commDao.select(jrInParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocE", logId, methodNm, "ê³µBED  ê²€ìƒ‰");
 						if(jsSearchLoc.size() > 0) {
 							jsSearchLoc.absolute(1);
 							jrSearchLoc  = jsSearchLoc.getRecord();
-							szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => °ø bed ·Î °Ë»ö ¼º°ø.." + "\r\n";
+							szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ê³µ bed ë¡œ ê²€ìƒ‰ ì„±ê³µ.." + "\r\n";
 						} else {
-							szDBLogMsg = szDBLogMsg + "º¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => °ø bed ·Î °Ë»ö ¾øÀ½." + "\r\n";
+							szDBLogMsg = szDBLogMsg + "ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => ê³µ bed ë¡œ ê²€ìƒ‰ ì—†ìŒ." + "\r\n";
 							
-							commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢ºº¸¿ÂÄ«¹Ù TOÀ§Ä¡ °Ë»ö => Æø,±æÀÌ ÂüÁ¶ °Ë»ö   ¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+							commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ë³´ì˜¨ì¹´ë°” TOìœ„ì¹˜ ê²€ìƒ‰ => í­,ê¸¸ì´ ì°¸ì¡° ê²€ìƒ‰   â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 							jrSearchLoc = this.procOtherBk(logId, methodNms,jrWbook,jrCrnMtlSch,jrCrnSch, jsToLoc );
 							if(jrSearchLoc != null) {
 								
-								szDBLogMsg = szDBLogMsg + "TO À§Ä¡°áÁ¤:Áß·®,Æø,±æÀÌ,µÎ²²Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö ¼º°ø" + "\r\n";
+								szDBLogMsg = szDBLogMsg + "TO ìœ„ì¹˜ê²°ì •:ì¤‘ëŸ‰,í­,ê¸¸ì´,ë‘ê»˜í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰ ì„±ê³µ" + "\r\n";
 							}
 						}
 					}	
@@ -4353,21 +4353,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "º¸¿ÂÄ«¹Ù TO À§Ä¡°áÁ¤ ¼º°ø À§Ä¡:"+ sRtnBedDan + "\r\n" +szDBLogMsg+ "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ë³´ì˜¨ì¹´ë°” TO ìœ„ì¹˜ê²°ì • ì„±ê³µ ìœ„ì¹˜:"+ sRtnBedDan + "\r\n" +szDBLogMsg+ "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
 				
 				
 			} else {
-				szDBLogMsg = szDBLogMsg + "TO À§Ä¡°áÁ¤:Áß·®,Æø,±æÀÌ,µÎ²²Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö¾øÀ½" + "\r\n";
+				szDBLogMsg = szDBLogMsg + "TO ìœ„ì¹˜ê²°ì •:ì¤‘ëŸ‰,í­,ê¸¸ì´,ë‘ê»˜í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰ì—†ìŒ" + "\r\n";
 				if(sAPP005_YN.equals("Y")) {
 	    			JDTORecord jrLog  				= JDTORecordFactory.getInstance().create(); 
 	    			jrLog.setField("STOCK_ID"		, "SLAB");
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "º¸¿ÂÄ«¹Ù TO À§Ä¡°áÁ¤ ½ÇÆĞ :"+ "\r\n"+ szDBLogMsg + "\r\n" );
+	    			jrLog.setField("SCH_CONTENTS"	, "ë³´ì˜¨ì¹´ë°” TO ìœ„ì¹˜ê²°ì • ì‹¤íŒ¨ :"+ "\r\n"+ szDBLogMsg + "\r\n" );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -4384,7 +4384,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		return sRtnBedDan;
 	}      
 	/**
-	 * Â÷·® ¹× ´ëÂ÷ ÀÛ¾÷ TOÀ§Ä¡°áÁ¤
+	 * ì°¨ëŸ‰ ë° ëŒ€ì°¨ ì‘ì—… TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -4393,23 +4393,23 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public String procToLocPtTc(String logId, String methodNms,String sAPP005_YN,String planToLoc, JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch,JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:Â÷·® ¹× ´ëÂ÷ [BSlabSchSeEJB.procToLocPtTc] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì°¨ëŸ‰ ë° ëŒ€ì°¨ [BSlabSchSeEJB.procToLocPtTc] < " + methodNms;
     	String szLogMsg					= null;
 		JDTORecord		jrTemp			= JDTORecordFactory.getInstance().create();
 		String szDBLogMsg					= null;
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö
+		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜
 		String ydWrkPlanTcar    = commUtils.trim(jrWbook.getFieldString("YD_WRK_PLAN_TCAR"));
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ÀÛ¾÷¿¹¾à
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydWookId			= commUtils.trim(jrWbook.getFieldString("YD_WBOOK_ID"));		//ì‘ì—…ì˜ˆì•½
 
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 	
 		String sRtnBedDan       = "";
 		JDTORecord jrSearchLoc    = JDTORecordFactory.getInstance().create();
@@ -4421,7 +4421,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		try {
 			
 			if ("TC".equals(planToLoc.substring(2, 4))){
-				szDBLogMsg = szDBLogMsg + "´ëÂ÷ÀÎ °æ¿ì °Ë»ö" + "\r\n";
+				szDBLogMsg = szDBLogMsg + "ëŒ€ì°¨ì¸ ê²½ìš° ê²€ìƒ‰" + "\r\n";
 				jrTemp = JDTORecordFactory.getInstance().create();
 				jrTemp.setResultCode(logId);	//Log ID
 				jrTemp.setResultMsg(methodNm);	//Log Method Name
@@ -4438,14 +4438,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       (SELECT YD_CARLD_STOP_LOC
 				          FROM USRYMA.TB_YM_TCARSCH  
 				         WHERE DEL_YN = 'N'
-				           AND YD_EQP_ID = B.YD_WRK_PLAN_TCAR ) AS CARLOAD_STOP_LOC  --»óÂ÷À§Ä¡
+				           AND YD_EQP_ID = B.YD_WRK_PLAN_TCAR ) AS CARLOAD_STOP_LOC  --ìƒì°¨ìœ„ì¹˜
 				     , CASE WHEN PALLET_NO IN ( 1,3 ) AND SUBSTR(CARLD_SCH_CD,3,6) = SUBSTR(:V_YD_SCH_CD,3,6) THEN 'Y'
-				            ELSE 'N' END                        AS PRE_WRK_YN  --¼±ÀÛ¾÷ ¿©ºÎ
+				            ELSE 'N' END                        AS PRE_WRK_YN  --ì„ ì‘ì—… ì—¬ë¶€
 				     , B.YD_WRK_PLAN_TCAR                       AS YD_WRK_PLAN_TCAR        
 				  FROM TB_YM_EQUIP A 
 				--     , (SELECT '2XTC0'||SUBSTR(:V_STACK_COL_GP,5,1) AS YD_WRK_PLAN_TCAR
 				--          FROM TB_YM_WRKBOOK WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID) B
-				       , (SELECT CASE WHEN  -- ½ºÄÉÁìÀÌ ´ëÂ÷»óÂ÷ÀÌ°í  Àç·á°¡ ´ëÂ÷À§¿¡ ÀÖ´Â °æ¿ì 
+				       , (SELECT CASE WHEN  -- ìŠ¤ì¼€ì¥´ì´ ëŒ€ì°¨ìƒì°¨ì´ê³   ì¬ë£Œê°€ ëŒ€ì°¨ìœ„ì— ìˆëŠ” ê²½ìš° 
 				                         (SELECT MAX(SUBSTR(STACK_COL_GP,3,2))
 				                            FROM TB_YM_WRKBOOKMTL 
 				                           WHERE YD_WBOOK_ID =  A.YD_WBOOK_ID) = 'TC' 
@@ -4469,11 +4469,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 				 WHERE A.EQUIP_GP = B.YD_WRK_PLAN_TCAR
 				 */
-				outjsResult1 = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColTcLog", logId, methodNm, "ÇØ´ç¿­ Á¶È¸log");
+				outjsResult1 = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColTcLog", logId, methodNm, "í•´ë‹¹ì—´ ì¡°íšŒlog");
 				if(outjsResult1.size() > 0 ) {
 					
 					String carLoadStopLoc = commUtils.trim(outjsResult1.getRecord(0).getFieldString("CARLOAD_STOP_LOC"));
-					szLogMsg  =  "¡Ú¡Ú¡Ú  ´ëÂ÷½ºÄÉÁì  »óÂ÷À§Ä¡:" + carLoadStopLoc;
+					szLogMsg  =  "â˜…â˜…â˜…  ëŒ€ì°¨ìŠ¤ì¼€ì¥´  ìƒì°¨ìœ„ì¹˜:" + carLoadStopLoc;
 					commUtils.printLog(logId, szLogMsg, "SL");
 				}
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColTc 
@@ -4482,14 +4482,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       (SELECT YD_CARLD_STOP_LOC
 				          FROM USRYMA.TB_YM_TCARSCH  
 				         WHERE DEL_YN = 'N'
-				           AND YD_EQP_ID = B.YD_WRK_PLAN_TCAR ) AS CARLOAD_STOP_LOC  --»óÂ÷À§Ä¡
+				           AND YD_EQP_ID = B.YD_WRK_PLAN_TCAR ) AS CARLOAD_STOP_LOC  --ìƒì°¨ìœ„ì¹˜
 				     , CASE WHEN PALLET_NO IN ( 1,3 ) AND SUBSTR(CARLD_SCH_CD,3,6) = SUBSTR(:V_YD_SCH_CD,3,6) THEN 'Y'
-				            ELSE 'N' END                        AS PRE_WRK_YN  --¼±ÀÛ¾÷ ¿©ºÎ
+				            ELSE 'N' END                        AS PRE_WRK_YN  --ì„ ì‘ì—… ì—¬ë¶€
 				     , B.YD_WRK_PLAN_TCAR                       AS YD_WRK_PLAN_TCAR        
 				  FROM TB_YM_EQUIP A 
 				--     , (SELECT '2XTC0'||SUBSTR(:V_STACK_COL_GP,5,1) AS YD_WRK_PLAN_TCAR
 				--          FROM TB_YM_WRKBOOK WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID) B
-				       , (SELECT CASE WHEN  -- ½ºÄÉÁìÀÌ ´ëÂ÷»óÂ÷ÀÌ°í  Àç·á°¡ ´ëÂ÷À§¿¡ ÀÖ´Â °æ¿ì 
+				       , (SELECT CASE WHEN  -- ìŠ¤ì¼€ì¥´ì´ ëŒ€ì°¨ìƒì°¨ì´ê³   ì¬ë£Œê°€ ëŒ€ì°¨ìœ„ì— ìˆëŠ” ê²½ìš° 
 				                         (SELECT MAX(SUBSTR(STACK_COL_GP,3,2))
 				                            FROM TB_YM_WRKBOOKMTL 
 				                           WHERE YD_WBOOK_ID =  A.YD_WBOOK_ID) = 'TC' 
@@ -4520,9 +4520,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				     , A.ABLE_LOC_CNT
 				     , A.CARLOAD_STOP_LOC
 				  FROM ( 
-				        SELECT CUR.STACK_COL_GP     --ÀûÄ¡ ¿­ ±¸ºĞ 
-				             , CUR.STACK_BED_GP     --ÀûÄ¡ BED ±¸ºĞ 
-				             , CUR.STACK_LAYER_GP   --ÀûÄ¡ ´Ü ±¸ºĞ 
+				        SELECT CUR.STACK_COL_GP     --ì ì¹˜ ì—´ êµ¬ë¶„ 
+				             , CUR.STACK_BED_GP     --ì ì¹˜ BED êµ¬ë¶„ 
+				             , CUR.STACK_LAYER_GP   --ì ì¹˜ ë‹¨ êµ¬ë¶„ 
 				             , CUR.YD_WRK_PLAN_TCAR
 				             , CUR.ABLE_LOC_CNT
 				             , CUR.CARLOAD_STOP_LOC
@@ -4541,8 +4541,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                     , SK.ABLE_LOC_CNT  
 				                     , B.CARLOAD_STOP_LOC
 				                  FROM ( 
-				                         SELECT A.STACK_COL_GP   --ÀûÄ¡ ¿­ ±¸ºĞ 
-				                              , A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ 
+				                         SELECT A.STACK_COL_GP   --ì ì¹˜ ì—´ êµ¬ë¶„ 
+				                              , A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„ 
 				                              , B.YD_WRK_PLAN_TCAR
 				                              , (SELECT SUM(CASE WHEN B.PRE_WRK_YN     = 'Y'                                   THEN 1 
 				                                                 WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 
@@ -4570,7 +4570,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                WHEN SL.STACK_LAYER_ACTIVE_STAT = 'E' THEN 1
 				                                ELSE 2  END 
 				                   AND SL.STOCK_ID IS NULL 
-				                    --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+				                    --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 								   AND SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2) 
 				                ) CUR, 
 				                TB_YM_STACKLAYER SL1 
@@ -4584,13 +4584,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				WHERE  ROWNUM <= 1
 				*/
 				
-				outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColTc", logId, methodNm, "ÇØ´ç¿­ Á¶È¸");
+				outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocColTc", logId, methodNm, "í•´ë‹¹ì—´ ì¡°íšŒ");
 				if (outjsResult.size() <= 0) {
 					return YmConstant.RETN_CD_FAILURE;			
 				}
 			} else {
 				
-				szDBLogMsg = szDBLogMsg + "Â÷·®ÀÎ °æ¿ì °Ë»ö" + "\r\n";
+				szDBLogMsg = szDBLogMsg + "ì°¨ëŸ‰ì¸ ê²½ìš° ê²€ìƒ‰" + "\r\n";
 
 				jrTemp = JDTORecordFactory.getInstance().create();
 				jrTemp.setResultCode(logId);	//Log ID
@@ -4609,10 +4609,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				        A.TO_LOC,
 				        A.ABLE_LOC_CNT
 				FROM    (
-				        SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-				                CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-				                CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-				                CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+				        SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+				                CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+				                CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+				                CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 				                        
 				                NVL(CUR.STACK_COL_GP, '')    ||
 				                NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -4622,7 +4622,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC,
 				                CUR.ABLE_LOC_CNT
 				        FROM    (
-				                SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+				                SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 				                        SL.STACK_COL_GP,
 				                        SL.STACK_BED_GP,
 				                        SL.STACK_LAYER_GP,
@@ -4636,8 +4636,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                        ABLE_LOC_CNT                                    
 				                FROM    (
 				                         SELECT '1' AS STACK_BED_ABLE_QNTY, 
-				                                A.STACK_COL_GP,   --ÀûÄ¡ ¿­ ±¸ºĞ
-				                                A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ
+				                                A.STACK_COL_GP,   --ì ì¹˜ ì—´ êµ¬ë¶„
+				                                A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„
 				                                , (SELECT SUM(CASE WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 ELSE 0 END)
 				                                   FROM TB_YM_STACKLAYER 
 				                                  WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -4653,7 +4653,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                AND     SL.STACK_LAYER_STAT        = 'E'
 				                AND     SL.STACK_LAYER_ACTIVE_STAT = 'E'
 				                AND     SL.STOCK_ID IS NULL
-				                --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+				                --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 				                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2) 
 				                ) CUR,
 				                TB_YM_STACKLAYER SL1
@@ -4662,7 +4662,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				        AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 				        AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
 				        AND A.STACK_COL_GP||A.STACK_BED_GP NOT IN (
-				                                               -- TOÀ§Ä¡ °¡ÀÌµå Á¦¿Ü
+				                                               -- TOìœ„ì¹˜ ê°€ì´ë“œ ì œì™¸
 				                                              SELECT NVL(A1.YD_TO_LOC_GUIDE,'AAA')
 				                                                FROM TB_YM_WRKBOOK A1
 				                                                   , TB_YM_WRKBOOKMTL B1
@@ -4683,7 +4683,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                                 AND LENGTH(B1.MTL_YD_TO_LOC_GUIDE) = 8
 				                                               GROUP BY B1.MTL_YD_TO_LOC_GUIDE  
 				                                              UNION ALL   
-				                                               -- ÀÛ¾÷¿¹¾àµÈ BED Á¦¿Ü
+				                                               -- ì‘ì—…ì˜ˆì•½ëœ BED ì œì™¸
 				                                              SELECT NVL(C1.STACK_COL_GP || C1.STACK_BED_GP,'AAA')
 				                                                FROM TB_YM_WRKBOOK A1 
 				                                                   , TB_YM_WRKBOOKMTL B1
@@ -4702,7 +4702,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				WHERE  ROWNUM = 1
 				*/
 				
-				outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "ÇØ´ç¿­ Á¶È¸");
+				outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "í•´ë‹¹ì—´ ì¡°íšŒ");
 				if (outjsResult.size() <= 0) {
 					return YmConstant.RETN_CD_FAILURE;			
 				}				
@@ -4716,7 +4716,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				sRtnBedDan = szStackColGp+szStackBedGp+ szStackLayerGp ;
 			}
 			if(sRtnBedDan.length() < 10) {
-				szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÀÇ  Àç·áÁ¤º¸["+StockId+"]¿¡ ´ëÇÑ TOÀ§Ä¡ °áÁ¤ ½ÇÆĞ ";
+				szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì˜  ì¬ë£Œì •ë³´["+StockId+"]ì— ëŒ€í•œ TOìœ„ì¹˜ ê²°ì • ì‹¤íŒ¨ ";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				if(sAPP005_YN.equals("Y")) {
 	    		
@@ -4725,7 +4725,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "´ëÂ÷ ¹× Â÷·® °Ë»ö ½ÇÆĞ:"+szDBLogMsg + "\r\n"  );
+	    			jrLog.setField("SCH_CONTENTS"	, "ëŒ€ì°¨ ë° ì°¨ëŸ‰ ê²€ìƒ‰ ì‹¤íŒ¨:"+szDBLogMsg + "\r\n"  );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -4740,7 +4740,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			jrLog.setField("YD_CRN_SCH_ID"	, ydCrnSchId);
 	    			jrLog.setField("YD_GP"			, "2");
 	    			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-	    			jrLog.setField("SCH_CONTENTS"	, "´ëÂ÷ ¹× Â÷·® °Ë»ö ¼º°ø:"+sRtnBedDan + "\r\n"  );
+	    			jrLog.setField("SCH_CONTENTS"	, "ëŒ€ì°¨ ë° ì°¨ëŸ‰ ê²€ìƒ‰ ì„±ê³µ:"+sRtnBedDan + "\r\n"  );
 	    			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
 	    			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
 				}
@@ -4758,7 +4758,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
     
 	/**
-	 * Áß·®,Æø,±æÀÌ,µÎ²²Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö
+	 * ì¤‘ëŸ‰,í­,ê¸¸ì´,ë‘ê»˜í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -4767,7 +4767,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public JDTORecord procOtherBk(String logId, String methodNms,JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch , JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:Áß·®,Æø,±æÀÌ,µÎ²²Ç×¸ñÀ» °¡Áö°í ÀûÄ¡°¡´ÉÇÑ °÷À» °Ë»ö[BSlabSchSeEJB.procOtherBk] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì¤‘ëŸ‰,í­,ê¸¸ì´,ë‘ê»˜í•­ëª©ì„ ê°€ì§€ê³  ì ì¹˜ê°€ëŠ¥í•œ ê³³ì„ ê²€ìƒ‰[BSlabSchSeEJB.procOtherBk] < " + methodNms;
     	String szLogMsg					= null;
     	JDTORecord		jrTemp			= JDTORecordFactory.getInstance().create();
     	JDTORecord		jrInParam		= JDTORecordFactory.getInstance().create();
@@ -4775,17 +4775,17 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     	JDTORecord		jrSearchLoc		= JDTORecordFactory.getInstance().create();
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
 		//String sSlabT 		    = commUtils.trim(jrCrnMtlSch.getFieldString("SLAB_T")); 
 		String sSlabW 		    = commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_W")); 
 		String sSlabLen 		= commUtils.trim(jrCrnMtlSch.getFieldString("MAX_MTL_L")); 
-		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö
+		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜
 		
 		JDTORecord jrToLoc          = JDTORecordFactory.getInstance().create();
 		String planToLoc = "";
@@ -4795,31 +4795,31 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				jsToLoc.absolute(Loop_i);
 				jrToLoc  = jsToLoc.getRecord();
 	    		
-	    		//TO¿¹Á¤À§Ä¡
+	    		//TOì˜ˆì •ìœ„ì¹˜
 	    		planToLoc     = commUtils.trim(jrToLoc.getFieldString("STACK_COL_GP"));
 	    		if(!YmComm.chkEqpIdGp(ydSchCd,planToLoc)) {
 					
 					if("PT02LM".equals(ydSchCd.substring(2, 8))){
-						//½Å±Ô¹æ½Ä(µ¿ÀÏ°­Á¾1,2,3,4,5, ±âÁØ))
+						//ì‹ ê·œë°©ì‹(ë™ì¼ê°•ì¢…1,2,3,4,5, ê¸°ì¤€))
 						jrSearchLoc = this.procToLocPtToYd(logId, methodNms,jrWbook,jrCrnMtlSch,jrCrnSch, jsToLoc );
 					}else{
 						
-						commUtils.printLog(logId, "¢º¢º¢ºÆø,±æÀÌ Ç×¸ñÀ» °¡Áö°í °Ë»ö", "SL");
+						commUtils.printLog(logId, "â–¶â–¶â–¶í­,ê¸¸ì´ í•­ëª©ì„ ê°€ì§€ê³  ê²€ìƒ‰", "SL");
 						jrInParam = JDTORecordFactory.getInstance().create();
 						jrInParam.setResultCode(logId);	//Log ID
 						jrInParam.setResultMsg(methodNm);	//Log Method Name
-						jrInParam.setField("STOCK_ID"       , StockId);		//±Ç»ó STOCK
-						jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-						jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-						jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
-						jrInParam.setField("SELECT_GP"	, "WID/LEN");	//°Ë»öÀ§Ä¡
+						jrInParam.setField("STOCK_ID"       , StockId);		//ê¶Œìƒ STOCK
+						jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+						jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+						jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
+						jrInParam.setField("SELECT_GP"	, "WID/LEN");	//ê²€ìƒ‰ìœ„ì¹˜
 						jrInParam.setField("MAX_MTL_W"	, sSlabW);	
 						jrInParam.setField("MAX_MTL_L"	, sSlabLen);	
 						jrInParam.setField("CRN_WRK_SH"	, ydWrkSh);	
 						
 						jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 
-						//±âÁ¸ ¹æ½Ä(°¡¿ë Æø,±æÀÌ ¹üÀ§)
+						//ê¸°ì¡´ ë°©ì‹(ê°€ìš© í­,ê¸¸ì´ ë²”ìœ„)
 					}
 					
 					commUtils.printLog(logId, "SLAB SUB SUB TOLOC =>" + StockId + "=>" + planToLoc, "SL");
@@ -4842,10 +4842,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        A.TO_LOC,
 					        A.ABLE_LOC_CNT
 					FROM    (
-					        SELECT  CUR.STACK_COL_GP,    --ÀûÄ¡ ¿­ ±¸ºĞ
-					                CUR.STACK_BED_GP,    --ÀûÄ¡ BED ±¸ºĞ
-					                CUR.STACK_LAYER_GP,  --ÀûÄ¡ ´Ü ±¸ºĞ
-					                CUR.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					        SELECT  CUR.STACK_COL_GP,    --ì ì¹˜ ì—´ êµ¬ë¶„
+					                CUR.STACK_BED_GP,    --ì ì¹˜ BED êµ¬ë¶„
+					                CUR.STACK_LAYER_GP,  --ì ì¹˜ ë‹¨ êµ¬ë¶„
+					                CUR.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        
 					                NVL(CUR.STACK_COL_GP, '')    ||
 					                NVL(CUR.STACK_BED_GP, '') AS GRIP_TO,
@@ -4855,7 +4855,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                NVL(CUR.STACK_LAYER_GP, '') AS TO_LOC,
 					                CUR.ABLE_LOC_CNT
 					        FROM    (
-					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ÀûÄ¡ BED °¡´É ¼ö·®
+					                SELECT  SK.STACK_BED_ABLE_QNTY,    --ì ì¹˜ BED ê°€ëŠ¥ ìˆ˜ëŸ‰
 					                        SL.STACK_COL_GP,
 					                        SL.STACK_BED_GP,
 					                        SL.STACK_LAYER_GP,
@@ -4869,8 +4869,8 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                        ABLE_LOC_CNT                                    
 					                FROM    (
 					                         SELECT '1' AS STACK_BED_ABLE_QNTY, 
-					                                A.STACK_COL_GP,   --ÀûÄ¡ ¿­ ±¸ºĞ
-					                                A.STACK_BED_GP   --ÀûÄ¡ BED ±¸ºĞ
+					                                A.STACK_COL_GP,   --ì ì¹˜ ì—´ êµ¬ë¶„
+					                                A.STACK_BED_GP   --ì ì¹˜ BED êµ¬ë¶„
 					                                , (SELECT SUM(CASE WHEN STACK_LAYER_STAT = 'E' AND STACK_LAYER_ACTIVE_STAT = 'E' THEN 1 ELSE 0 END)
 					                                   FROM TB_YM_STACKLAYER 
 					                                  WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -4886,7 +4886,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                AND     SL.STACK_LAYER_STAT        = 'E'
 					                AND     SL.STACK_LAYER_ACTIVE_STAT = 'E'
 					                AND     SL.STOCK_ID IS NULL
-					                --ÀûÄ¡ °¡´É ¸Å¼ö ¹İµå½Ã                 
+					                --ì ì¹˜ ê°€ëŠ¥ ë§¤ìˆ˜ ë°˜ë“œì‹œ                 
 					                AND     SK.ABLE_LOC_CNT >= nvl(:V_CRN_WRK_SH,2) 
 					                ) CUR,
 					                TB_YM_STACKLAYER SL1
@@ -4895,7 +4895,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					        AND     CUR.PRE_LAYER_GP = SL1.STACK_LAYER_GP
 					        AND     SL1.STACK_LAYER_STAT   NOT IN ('U')
 					        AND A.STACK_COL_GP||A.STACK_BED_GP NOT IN (
-					                                               -- TOÀ§Ä¡ °¡ÀÌµå Á¦¿Ü
+					                                               -- TOìœ„ì¹˜ ê°€ì´ë“œ ì œì™¸
 					                                              SELECT NVL(A1.YD_TO_LOC_GUIDE,'AAA')
 					                                                FROM TB_YM_WRKBOOK A1
 					                                                   , TB_YM_WRKBOOKMTL B1
@@ -4916,7 +4916,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					                                                 AND LENGTH(B1.MTL_YD_TO_LOC_GUIDE) = 8
 					                                               GROUP BY B1.MTL_YD_TO_LOC_GUIDE  
 					                                              UNION ALL   
-					                                               -- ÀÛ¾÷¿¹¾àµÈ BED Á¦¿Ü
+					                                               -- ì‘ì—…ì˜ˆì•½ëœ BED ì œì™¸
 					                                              SELECT NVL(C1.STACK_COL_GP || C1.STACK_BED_GP,'AAA')
 					                                                FROM TB_YM_WRKBOOK A1 
 					                                                   , TB_YM_WRKBOOKMTL B1
@@ -4935,7 +4935,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					WHERE  ROWNUM = 1
 					*/
 					
-					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "ÇØ´ç¿­ Á¶È¸");
+					JDTORecordSet outjsResult = commDao.select(jrTemp, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabToLocCol", logId, methodNm, "í•´ë‹¹ì—´ ì¡°íšŒ");
  	 				if (outjsResult.size() > 0) {
  	 	 				outjsResult.absolute(1);
  						jrSearchLoc  = outjsResult.getRecord();
@@ -4946,7 +4946,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			}
 
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -4959,7 +4959,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}   
     
 	/**
-	 * ÀÌ¼ÛÇÏÂ÷ÀÛ¾÷ TOÀ§Ä¡°áÁ¤
+	 * ì´ì†¡í•˜ì°¨ì‘ì—… TOìœ„ì¹˜ê²°ì •
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -4968,19 +4968,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */
     public JDTORecord procToLocPtToYd(String logId, String methodNms,JDTORecord jrWbook, JDTORecord jrCrnMtlSch, JDTORecord jrCrnSch , JDTORecordSet jsToLoc) throws JDTOException {
-    	String methodNm = "TO À§Ä¡°áÁ¤:ÀÌ¼ÛÇÏÂ÷ ÀÛ¾÷[BSlabSchSeEJB.procToLocPtToYd] < " + methodNms;
+    	String methodNm = "TO ìœ„ì¹˜ê²°ì •:ì´ì†¡í•˜ì°¨ ì‘ì—…[BSlabSchSeEJB.procToLocPtToYd] < " + methodNms;
     	String szLogMsg					= null;
 		JDTORecord		jrTemp			= JDTORecordFactory.getInstance().create();;
 		
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 
-		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//Å©·¹ÀÎ½ºÄÉÁÙÄÚµå
-		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//Å©·¹ÀÎ½ºÄÉÁÙID
-		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+		String ydSchCd 	   		= commUtils.trim(jrWbook.getFieldString("YD_SCH_CD"));			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì½”ë“œ
+		String ydCrnSchId 		= commUtils.trim(jrCrnSch.getFieldString("YD_CRN_SCH_ID"));		//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
+		String ydEqpId     		= commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 		String StockId 	    	= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"));
-		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //±Ç»ó¸Å¼ö
+		String ydWrkSh 			= commUtils.trim(jrCrnMtlSch.getFieldString("CRN_WRK_SH")); //ê¶Œìƒë§¤ìˆ˜
 		
 		
 		JDTORecord jrSearchLoc          = JDTORecordFactory.getInstance().create();
@@ -4991,38 +4991,38 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrInParam = JDTORecordFactory.getInstance().create();
 			jrInParam.setResultCode(logId);	//Log ID
 			jrInParam.setResultMsg(methodNm);	//Log Method Name
-			jrInParam.setField("STOCK_ID"       , StockId);													//±Ç»ó STOCK
-			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//½ºÄÉÁÙ ÄÚµå
-			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//¼³ºñID
-			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//Å©·¹ÀÎ ½ºÄÉÁì ID
+			jrInParam.setField("STOCK_ID"       , StockId);													//ê¶Œìƒ STOCK
+			jrInParam.setField("YD_SCH_CD"		, ydSchCd);		//ìŠ¤ì¼€ì¤„ ì½”ë“œ
+			jrInParam.setField("YD_EQP_ID"		, ydEqpId);		//ì„¤ë¹„ID
+			jrInParam.setField("YD_CRN_SCH_ID"	, ydCrnSchId);	//í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ID
 			jrInParam.setField("CRN_WRK_SH"		, ydWrkSh);	
-			commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢º µ¿ÀÏ°­Á¾ , µ¿ÀÏ »ı»êÆø(30mmÀÌ³»), µ¿ÀÏ ÁÖ¹®µÎ²²,ÁÖ¹®Æø  TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
-			jrInParam.setField("SELECT_GP"	, "L");	//°Ë»öÀ§Ä¡
+			commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ ë™ì¼ê°•ì¢… , ë™ì¼ ìƒì‚°í­(30mmì´ë‚´), ë™ì¼ ì£¼ë¬¸ë‘ê»˜,ì£¼ë¬¸í­  TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
+			jrInParam.setField("SELECT_GP"	, "L");	//ê²€ìƒ‰ìœ„ì¹˜
 			jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			
 			if (jrSearchLoc == null) {
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢º °øBED  TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ ê³µBED  TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 				jrInParam.setField("SELECT_GP"	, "E");	
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			}
 			if (jrSearchLoc == null) {
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢º (µ¿ÀÏ°­Á¾,µ¿ÀÏ »ı»êÆø+-30 ) TOÀ§Ä¡ °Ë»ö/01´Ü TOÀ§Ä¡ °Ë»ö  TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ (ë™ì¼ê°•ì¢…,ë™ì¼ ìƒì‚°í­+-30 ) TOìœ„ì¹˜ ê²€ìƒ‰/01ë‹¨ TOìœ„ì¹˜ ê²€ìƒ‰  TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 				jrInParam.setField("SELECT_GP"	, "L2");	
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			}
 			if (jrSearchLoc == null) {
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢º (1´Ü¿¡ ÁÖ¹®µÎ²²¿Í ÆøÀÌ ÀÛÀº°Í ) TOÀ§Ä¡ °Ë»ö/01´Ü TOÀ§Ä¡ °Ë»ö  TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ (1ë‹¨ì— ì£¼ë¬¸ë‘ê»˜ì™€ í­ì´ ì‘ì€ê²ƒ ) TOìœ„ì¹˜ ê²€ìƒ‰/01ë‹¨ TOìœ„ì¹˜ ê²€ìƒ‰  TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 				jrInParam.setField("SELECT_GP"	, "M");	
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			}
 			if (jrSearchLoc == null) {
-				commUtils.printLog(logId, "¢º¢º¢º¢º¢º¢º¢º¢º¢º¢º (ÀûÄ¡°¡´ÉÇÑ 02´Ü ÀÌ»óÁ¤º¸¸¦ °Ë»ö ) TOÀ§Ä¡ °Ë»ö/01´Ü TOÀ§Ä¡ °Ë»ö  TOÀ§Ä¡ °Ë»ö¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸¢¸", "SL");
+				commUtils.printLog(logId, "â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶â–¶ (ì ì¹˜ê°€ëŠ¥í•œ 02ë‹¨ ì´ìƒì •ë³´ë¥¼ ê²€ìƒ‰ ) TOìœ„ì¹˜ ê²€ìƒ‰/01ë‹¨ TOìœ„ì¹˜ ê²€ìƒ‰  TOìœ„ì¹˜ ê²€ìƒ‰â—€â—€â—€â—€â—€â—€â—€â—€â—€â—€", "SL");
 				jrInParam.setField("SELECT_GP"	, "U");	
 				jrSearchLoc = this.procToLocBed (logId, methodNms, jrInParam ,jsToLoc);
 			}
 
 			//----------------------------------------------------------------------------------------------------------------------
-			// ERROR ¹ß»ı½Ã ?
+			// ERROR ë°œìƒì‹œ ?
 			//----------------------------------------------------------------------------------------------------------------------
 			commUtils.printLog(logId, methodNm, "S-");
 			
@@ -5038,7 +5038,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 
 	/**
-	 * TOÀ§Ä¡ UPDATE
+	 * TOìœ„ì¹˜ UPDATE
 	 * @param msgRecord
 	 * @param rsCrnwrkmtl
 	 * @param recCrnSch
@@ -5047,38 +5047,38 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	 * @throws JDTOException
 	 */	
 	public String procUpdateLoc(String logId, String methodNms, JDTORecord jrSetLoc, JDTORecord jrCrnSch, JDTORecord jrCrnMtlSch) throws JDTOException {
-		String methodNm = "TOÀ§Ä¡ UPDATE[BSlabSchSeEJB.procUpdateLoc] < " + methodNms;
-		String LocalmethodNm = "TOÀ§Ä¡ UPDATE[BSlabSchSeEJB.procUpdateLoc]" ;
+		String methodNm = "TOìœ„ì¹˜ UPDATE[BSlabSchSeEJB.procUpdateLoc] < " + methodNms;
+		String LocalmethodNm = "TOìœ„ì¹˜ UPDATE[BSlabSchSeEJB.procUpdateLoc]" ;
 		String szLogMsg					= null;
 		JDTORecord		recInBed		= null;
 		JDTORecord		jrParm		    = null;
 		
 		int intRtnVal					= 0;
 		//----------------------------------------------------------------------------------------------------------------------
-		//	Å©·¹ÀÎ ÀÛ¾÷Àç·áÁ¤º¸ READ
+		//	í¬ë ˆì¸ ì‘ì—…ì¬ë£Œì •ë³´ READ
 		//----------------------------------------------------------------------------------------------------------------------
 		commUtils.printLog(logId, methodNm, "S+");
 		try {
 
-//			int intYdEqpWrkWt    	= commUtils.paraRecChkNullInt(jrCrnSch,"SUM_MTL_WT");			//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑÁß·®
-//			double dblYdEqpWrkT     = commUtils.paraRecChkNullDouble(jrCrnSch,"SUM_MTL_T");			//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑ³ôÀÌ
-			String szYdEqpWrkMaxW 	= commUtils.trim(jrCrnSch.getFieldString("MAX_MTL_W"  ));		//Å©·¹ÀÎÀÛ¾÷Àç·á Áß ÃÖ´ë Æø
-			String szYdEqpWrkMaxL 	= commUtils.trim(jrCrnSch.getFieldString("MAX_MTL_L"  ));		//Å©·¹ÀÎÀÛ¾÷Àç·á Áß ÃÖ´ë ±æÀÌ
-			String ydToLocDcsnMtd 	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"  ));//ÁÖÀÛ¾÷¿©ºÎ
+//			int intYdEqpWrkWt    	= commUtils.paraRecChkNullInt(jrCrnSch,"SUM_MTL_WT");			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ì¤‘ëŸ‰
+//			double dblYdEqpWrkT     = commUtils.paraRecChkNullDouble(jrCrnSch,"SUM_MTL_T");			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ë†’ì´
+			String szYdEqpWrkMaxW 	= commUtils.trim(jrCrnSch.getFieldString("MAX_MTL_W"  ));		//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì¤‘ ìµœëŒ€ í­
+			String szYdEqpWrkMaxL 	= commUtils.trim(jrCrnSch.getFieldString("MAX_MTL_L"  ));		//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì¤‘ ìµœëŒ€ ê¸¸ì´
+			String ydToLocDcsnMtd 	= commUtils.trim(jrCrnSch.getFieldString("YD_TO_LOC_DCSN_MTD"  ));//ì£¼ì‘ì—…ì—¬ë¶€
 			
-			String ydCrnSchId  		= commUtils.trim(jrSetLoc.getFieldString("YD_CRN_SCH_ID"  ));	//Å©·¹ÀÎ½ºÄÉÁÙID
+			String ydCrnSchId  		= commUtils.trim(jrSetLoc.getFieldString("YD_CRN_SCH_ID"  ));	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
 			String ydSchCd  		= commUtils.trim(jrSetLoc.getFieldString("YD_SCH_CD"  ));	
-			String ydEqpId     		= commUtils.trim(jrSetLoc.getFieldString("YD_EQP_ID"));			//Å©·¹ÀÎ¼³ºñID
+			String ydEqpId     		= commUtils.trim(jrSetLoc.getFieldString("YD_EQP_ID"));			//í¬ë ˆì¸ì„¤ë¹„ID
 			String ydUpWoLoc		= commUtils.trim(jrSetLoc.getFieldString("YD_UP_WO_LOC"  ));			
 			String ydUpWoLayer		= commUtils.trim(jrSetLoc.getFieldString("YD_UP_WO_LAYER"  ));			
 			String ydDnWoLoc		= commUtils.trim(jrSetLoc.getFieldString("YD_DN_WO_LOC"  ));			
 			String ydDnWoLayer		= commUtils.trim(jrSetLoc.getFieldString("YD_DN_WO_LAYER"  ));			
 			String StockId 	   		= commUtils.trim(jrCrnMtlSch.getFieldString("STOCK_ID"  ));
-			String ydBendingYn      = commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ¿©ºÎ
+			String ydBendingYn      = commUtils.trim(jrCrnMtlSch.getFieldString("YD_RULE_PL_RS_GP"));  //BENDING ì—¬ë¶€
 			String modifier 		= commUtils.trim(jrCrnMtlSch.getFieldString("MODIFIER"  ));		//MODIFIER
-			int intYdEqpWrkSh       = commUtils.paraRecChkNullInt(jrCrnMtlSch,"CRN_WRK_SH");				//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑ¸Å¼ö
-			int intYdEqpWrkWt    	= commUtils.paraRecChkNullInt(jrCrnMtlSch,"SUM_MTL_WT");			//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑÁß·®
-			double dblYdEqpWrkT     = commUtils.paraRecChkNullDouble(jrCrnMtlSch,"SUM_MTL_T");			//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑ³ôÀÌ
+			int intYdEqpWrkSh       = commUtils.paraRecChkNullInt(jrCrnMtlSch,"CRN_WRK_SH");				//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ë§¤ìˆ˜
+			int intYdEqpWrkWt    	= commUtils.paraRecChkNullInt(jrCrnMtlSch,"SUM_MTL_WT");			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ì¤‘ëŸ‰
+			double dblYdEqpWrkT     = commUtils.paraRecChkNullDouble(jrCrnMtlSch,"SUM_MTL_T");			//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ë†’ì´
 					
 			if (ydDnWoLoc.equals("")) {
 				return YmConstant.RETN_CD_FAILURE;
@@ -5086,13 +5086,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			commUtils.printParam(logId, jrSetLoc);
 			//----------------------------------------------------------------------------------------------------------------------
-			// ±ÇÇÏÁö½ÃÀ§Ä¡ ¼öÁ¤
+			// ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ìˆ˜ì •
 			//----------------------------------------------------------------------------------------------------------------------
 			
 			JDTORecordSet jsLayerUpXy = JDTORecordFactory.getInstance().createRecordSet("");
 			recInBed= JDTORecordFactory.getInstance().create();
-			recInBed.setField("STACK_COL_GP", 			ydUpWoLoc.substring(0, 6)); //±Ç»óÁö½ÃÀ§Ä¡
-			recInBed.setField("STACK_BED_GP", 			ydUpWoLoc.substring(6));	 //±Ç»óÁö½ÃÀ§Ä¡
+			recInBed.setField("STACK_COL_GP", 			ydUpWoLoc.substring(0, 6)); //ê¶Œìƒì§€ì‹œìœ„ì¹˜
+			recInBed.setField("STACK_BED_GP", 			ydUpWoLoc.substring(6));	 //ê¶Œìƒì§€ì‹œìœ„ì¹˜
 			recInBed.setField("STACK_LAYER_GP", 		ydUpWoLayer);
 				
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerBybed 
@@ -5115,9 +5115,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			   AND A.DEL_YN ='N'
 			   AND B.DEL_YN ='N'
 			*/  
-			jsLayerUpXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerBybed", logId, methodNm, "±Ç»ó BED ÁÂÇ¥ Á¶È¸");
+			jsLayerUpXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerBybed", logId, methodNm, "ê¶Œìƒ BED ì¢Œí‘œ ì¡°íšŒ");
 			if (jsLayerUpXy.size() <= 0) {
-				szLogMsg =  "È®ÀÎ:"+StockId+"±Ç»ó Layer ÁÂÇ¥ Á¶È¸ °Ë»ö ½ÇÆĞ.";
+				szLogMsg =  "í™•ì¸:"+StockId+"ê¶Œìƒ Layer ì¢Œí‘œ ì¡°íšŒ ê²€ìƒ‰ ì‹¤íŒ¨.";
 				commUtils.printLog(logId, szLogMsg, "SL");
 				
 			}
@@ -5126,15 +5126,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	
 			JDTORecordSet jsDnLayerXy = JDTORecordFactory.getInstance().createRecordSet("");
 			recInBed= JDTORecordFactory.getInstance().create();
-			recInBed.setField("STACK_COL_GP", 			ydDnWoLoc.substring(0, 6));//±ÇÇÏÁö½ÃÀ§Ä¡
-			recInBed.setField("STACK_BED_GP", 			ydDnWoLoc.substring(6));	//±ÇÇÏÁö½ÃÀ§Ä¡
+			recInBed.setField("STACK_COL_GP", 			ydDnWoLoc.substring(0, 6));//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
+			recInBed.setField("STACK_BED_GP", 			ydDnWoLoc.substring(6));	//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			recInBed.setField("STACK_LAYER_GP", 		ydDnWoLayer);				
 			
 			if("PT02UM".equals(ydSchCd.substring(2,8)) && "PT".equals(ydDnWoLoc.substring(2, 4))) {
-				//ÀÌ¼Û»óÂ÷ÀÛ¾÷ÀÌ¸ç¼­ ±ÇÇÏÀ§Ä¡°¡ Â÷·®Æ÷ÀÎÆ®ÀÎ °æ¿ì 
-				jsDnLayerXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerByYm2019", logId, methodNm, "ÀÌ¼Û»óÂ÷ ±ÇÇÏ BED ÁÂÇ¥ Á¶È¸");
+				//ì´ì†¡ìƒì°¨ì‘ì—…ì´ë©°ì„œ ê¶Œí•˜ìœ„ì¹˜ê°€ ì°¨ëŸ‰í¬ì¸íŠ¸ì¸ ê²½ìš° 
+				jsDnLayerXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerByYm2019", logId, methodNm, "ì´ì†¡ìƒì°¨ ê¶Œí•˜ BED ì¢Œí‘œ ì¡°íšŒ");
 				if (jsDnLayerXy.size() <= 0) {
-					szLogMsg = LocalmethodNm +" ÀÌ¼ÛÇÏÂ÷ ±ÇÇÏ Layer YM2019  ÁÂÇ¥ °Ë»ö ½ÇÆĞ ";
+					szLogMsg = LocalmethodNm +" ì´ì†¡í•˜ì°¨ ê¶Œí•˜ Layer YM2019  ì¢Œí‘œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 					commUtils.printLog(logId, szLogMsg, "SL");
 					
 				}
@@ -5167,9 +5167,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				   AND A.DEL_YN ='N'
 				   AND B.DEL_YN ='N'
 				*/  
-				jsDnLayerXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerBybed", logId, methodNm, "±ÇÇÏ BED ÁÂÇ¥ Á¶È¸");
+				jsDnLayerXy = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayerBybed", logId, methodNm, "ê¶Œí•˜ BED ì¢Œí‘œ ì¡°íšŒ");
 				if (jsDnLayerXy.size() <= 0) {
-					szLogMsg = LocalmethodNm +" ±ÇÇÏ Layer ÁÂÇ¥ °Ë»ö ½ÇÆĞ ";
+					szLogMsg = LocalmethodNm +" ê¶Œí•˜ Layer ì¢Œí‘œ ê²€ìƒ‰ ì‹¤íŒ¨ ";
 					commUtils.printLog(logId, szLogMsg, "SL");
 					
 				}
@@ -5179,13 +5179,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrDnLayerXy = jsDnLayerXy.getRecord();
 			
 			JDTORecord jrUpCrnSch = JDTORecordFactory.getInstance().create();
-			jrUpCrnSch.setField("YD_CRN_SCH_ID", 			ydCrnSchId);										//Å©·¹ÀÎ½ºÄÉÁÙID
+			jrUpCrnSch.setField("YD_CRN_SCH_ID", 			ydCrnSchId);										//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
 			
-			//±Ç»óÁ¤º¸   					
-			jrUpCrnSch.setField("YD_UP_WO_LOC", 			ydUpWoLoc);										//±Ç»óÁö½ÃÀ§Ä¡
-			jrUpCrnSch.setField("YD_UP_WO_LAYER", 			ydUpWoLayer);										//±Ç»óÁö½Ã´Ü
-			jrUpCrnSch.setField("YD_UP_STK_COL_GP", 		ydUpWoLoc.substring(0, 6));						//±Ç»óÁö½ÃÀ§Ä¡ - ÀûÄ¡¿­
-			jrUpCrnSch.setField("YD_UP_STK_BED_NO", 		ydUpWoLoc.substring(6));							//±Ç»óÁö½ÃÀ§Ä¡ - ÀûÄ¡º£µå
+			//ê¶Œìƒì •ë³´   					
+			jrUpCrnSch.setField("YD_UP_WO_LOC", 			ydUpWoLoc);										//ê¶Œìƒì§€ì‹œìœ„ì¹˜
+			jrUpCrnSch.setField("YD_UP_WO_LAYER", 			ydUpWoLayer);										//ê¶Œìƒì§€ì‹œë‹¨
+			jrUpCrnSch.setField("YD_UP_STK_COL_GP", 		ydUpWoLoc.substring(0, 6));						//ê¶Œìƒì§€ì‹œìœ„ì¹˜ - ì ì¹˜ì—´
+			jrUpCrnSch.setField("YD_UP_STK_BED_NO", 		ydUpWoLoc.substring(6));							//ê¶Œìƒì§€ì‹œìœ„ì¹˜ - ì ì¹˜ë² ë“œ
 			jrUpCrnSch.setField("YD_UP_WO_LOC_XAXIS",  		commUtils.trim(jrUpLayerXy.getFieldString("STACK_LAYER_X_AXIS"  ))) ;
 			jrUpCrnSch.setField("YD_UP_WO_LOC_YAXIS",  		commUtils.trim(jrUpLayerXy.getFieldString("STACK_LAYER_Y_AXIS"  ))) ;
 			jrUpCrnSch.setField("YD_UP_WO_LOC_ZAXIS",  		commUtils.trim(jrUpLayerXy.getFieldString("STACK_LAYER_Z_AXIS"  )) ) ;
@@ -5198,16 +5198,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			jrUpCrnSch.setField("YD_UP_WO_ZAXIS_GAP_MAX",  	commUtils.trim(jrUpLayerXy.getFieldString("YD_STK_BED_ZAXIS_TOL"  )) ) ;
 			jrUpCrnSch.setField("YD_UP_WO_ZAXIS_GAP_MIN",  	commUtils.trim(jrUpLayerXy.getFieldString("YD_STK_BED_ZAXIS_TOL"  )) ) ;
 			jrUpCrnSch.setField("UP_ROTATION_ANGLE",  		commUtils.trim(jrUpLayerXy.getFieldString("ROTATION_ANGLE"  )) ) ;
-			//±ÇÇÏÁ¤º¸   					
-			jrUpCrnSch.setField("YD_DN_WO_LOC", 			ydDnWoLoc);											//±ÇÇÏÁö½ÃÀ§Ä¡
+			//ê¶Œí•˜ì •ë³´   					
+			jrUpCrnSch.setField("YD_DN_WO_LOC", 			ydDnWoLoc);											//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			if(intYdEqpWrkSh == 1) {
-				jrUpCrnSch.setField("YD_DN_WO_LAYER", 		ydDnWoLayer);										//±ÇÇÏÁö½Ã´Ü
+				jrUpCrnSch.setField("YD_DN_WO_LAYER", 		ydDnWoLayer);										//ê¶Œí•˜ì§€ì‹œë‹¨
 			} else {
-				jrUpCrnSch.setField("YD_DN_WO_LAYER", 		commUtils.stringPlusInt(ydDnWoLayer,1));										//±ÇÇÏÁö½Ã´Ü
+				jrUpCrnSch.setField("YD_DN_WO_LAYER", 		commUtils.stringPlusInt(ydDnWoLayer,1));										//ê¶Œí•˜ì§€ì‹œë‹¨
 				
 			}
-			jrUpCrnSch.setField("YD_DN_STK_COL_GP", 		ydDnWoLoc.substring(0, 6));							//±ÇÇÏÁö½ÃÀ§Ä¡ - ÀûÄ¡¿­
-			jrUpCrnSch.setField("YD_DN_STK_BED_NO", 		ydDnWoLoc.substring(6));							//±ÇÇÏÁö½ÃÀ§Ä¡ - ÀûÄ¡º£µå
+			jrUpCrnSch.setField("YD_DN_STK_COL_GP", 		ydDnWoLoc.substring(0, 6));							//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ - ì ì¹˜ì—´
+			jrUpCrnSch.setField("YD_DN_STK_BED_NO", 		ydDnWoLoc.substring(6));							//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ - ì ì¹˜ë² ë“œ
 			
 			
 			jrUpCrnSch.setField("YD_DN_WO_LOC_XAXIS",  		commUtils.trim(jrDnLayerXy.getFieldString("STACK_LAYER_X_AXIS"  )) ) ;
@@ -5224,15 +5224,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			jrUpCrnSch.setField("DOWN_ROTATION_ANGLE",  	commUtils.trim(jrDnLayerXy.getFieldString("ROTATION_ANGLE"  )) ) ;
 	
 	
-			//±âÅ¸   					
-			jrUpCrnSch.setField("YD_EQP_WRK_SH", 			String.valueOf(intYdEqpWrkSh));						//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑ¸Å¼ö
-			jrUpCrnSch.setField("YD_EQP_WRK_WT", 			String.valueOf(intYdEqpWrkWt));						//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑÁß·®
-			jrUpCrnSch.setField("YD_EQP_WRK_T", 			String.valueOf(dblYdEqpWrkT));						//Å©·¹ÀÎÀÛ¾÷Àç·á ÃÑ³ôÀÌ
-			jrUpCrnSch.setField("YD_EQP_WRK_MAX_W", 		szYdEqpWrkMaxW);									//Å©·¹ÀÎÀÛ¾÷Àç·á Áß ÃÖ´ë Æø
-			jrUpCrnSch.setField("YD_EQP_WRK_MAX_L", 		szYdEqpWrkMaxL);									//Å©·¹ÀÎÀÛ¾÷Àç·á Áß ÃÖ´ë ±æÀÌ
+			//ê¸°íƒ€   					
+			jrUpCrnSch.setField("YD_EQP_WRK_SH", 			String.valueOf(intYdEqpWrkSh));						//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ë§¤ìˆ˜
+			jrUpCrnSch.setField("YD_EQP_WRK_WT", 			String.valueOf(intYdEqpWrkWt));						//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ì¤‘ëŸ‰
+			jrUpCrnSch.setField("YD_EQP_WRK_T", 			String.valueOf(dblYdEqpWrkT));						//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì´ë†’ì´
+			jrUpCrnSch.setField("YD_EQP_WRK_MAX_W", 		szYdEqpWrkMaxW);									//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì¤‘ ìµœëŒ€ í­
+			jrUpCrnSch.setField("YD_EQP_WRK_MAX_L", 		szYdEqpWrkMaxL);									//í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì¤‘ ìµœëŒ€ ê¸¸ì´
 			jrUpCrnSch.setField("MODIFIER", 				modifier);
 			
-			szLogMsg =LocalmethodNm +" Å©·¹ÀÎ½ºÄÉÁì ID["+ydCrnSchId+"] ÀÛ¾÷¿¡ µû¸¥ ¼³ºñ¸í º¯°æÃ³¸®½ÃÀÛ ¢º¢º¢º¢º¢º ±ÇÇÏÁö½ÃÀ§Ä¡["+ydDnWoLoc+"], ±ÇÇÏÁö½Ã´Ü["+ydDnWoLayer+"]" ;
+			szLogMsg =LocalmethodNm +" í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ID["+ydCrnSchId+"] ì‘ì—…ì— ë”°ë¥¸ ì„¤ë¹„ëª… ë³€ê²½ì²˜ë¦¬ì‹œì‘ â–¶â–¶â–¶â–¶â–¶ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜["+ydDnWoLoc+"], ê¶Œí•˜ì§€ì‹œë‹¨["+ydDnWoLayer+"]" ;
 
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdEqpChange
 			WITH P_DATA AS 
@@ -5271,7 +5271,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			jrParm.setField("YD_TO_LOC_DCSN_MTD", 	ydToLocDcsnMtd);		
 			jrParm.setField("YD_CRN_SCH_ID", 		ydCrnSchId);			
 
-			JDTORecordSet jsEqpChange = commDao.select(jrParm, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdEqpChange", logId, methodNm, "¼³ºñ º¯°æ ¿©ºÎ ");
+			JDTORecordSet jsEqpChange = commDao.select(jrParm, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdEqpChange", logId, methodNm, "ì„¤ë¹„ ë³€ê²½ ì—¬ë¶€ ");
 			if (jsEqpChange.size() > 0) {
 				String tmpYdEqpId = commUtils.trim(jsEqpChange.getRecord(0).getFieldString("YD_EQP_ID"));
 				String tmpYdSchCd = commUtils.trim(jsEqpChange.getRecord(0).getFieldString("YD_SCH_CD"));
@@ -5283,11 +5283,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				}
 			}
 			
-			// ½ºÄ«ÇÎ 1¼øÀ§·Î º¯°æ
+			// ìŠ¤ì¹´í•‘ 1ìˆœìœ„ë¡œ ë³€ê²½
 			if(ydBendingYn.equals("S") && ("E".equals(ydEqpId.substring(1,1)))){			
 				jrUpCrnSch.setField("YD_SCH_PRIOR", 	    "1");		
 			}	
-			szLogMsg =LocalmethodNm +" Å©·¹ÀÎ½ºÄÉÁì ID["+ydCrnSchId+"] ÀÛ¾÷¿¡ µû¸¥ ¼³ºñ¸í º¯°æÃ³¸®¿Ï·á ¢º¢º¢º¢º¢º ±ÇÇÏÁö½ÃÀ§Ä¡["+ydDnWoLoc+"], ±ÇÇÏÁö½Ã´Ü["+ydDnWoLayer+"]" ;
+			szLogMsg =LocalmethodNm +" í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ID["+ydCrnSchId+"] ì‘ì—…ì— ë”°ë¥¸ ì„¤ë¹„ëª… ë³€ê²½ì²˜ë¦¬ì™„ë£Œ â–¶â–¶â–¶â–¶â–¶ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜["+ydDnWoLoc+"], ê¶Œí•˜ì§€ì‹œë‹¨["+ydDnWoLayer+"]" ;
 			
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCrnWrkSidedelyn
 			UPDATE TB_YM_CRNSCH
@@ -5352,10 +5352,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			 WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID
 			*/ 
 			
-			intRtnVal = commDao.update(jrUpCrnSch, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCrnWrkSidedelyn", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁì °»½Å");
+			intRtnVal = commDao.update(jrUpCrnSch, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCrnWrkSidedelyn", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê°±ì‹ ");
 			
 			if(intRtnVal <= 0) {
-				szLogMsg =  "È®ÀÎ:"+StockId+"±ÇÇÏÁö½ÃÀ§Ä¡["+ydDnWoLoc+"], ±ÇÇÏÁö½Ã´Ü[" +ydDnWoLayer +" ]À» Å©·¹ÀÎ½ºÄÉÁÙ¿¡ ¼öÁ¤ Áß ERROR ¹ß»ı";
+				szLogMsg =  "í™•ì¸:"+StockId+"ê¶Œí•˜ì§€ì‹œìœ„ì¹˜["+ydDnWoLoc+"], ê¶Œí•˜ì§€ì‹œë‹¨[" +ydDnWoLayer +" ]ì„ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì— ìˆ˜ì • ì¤‘ ERROR ë°œìƒ";
 
 				commUtils.printLog(logId, szLogMsg, "SL");
 				return YmConstant.RETN_CD_FAILURE;
@@ -5371,7 +5371,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			 */
 			recInBed.setField("YD_CRN_SCH_ID", 		ydCrnSchId);				
 			
-			JDTORecordSet jsOutBed = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayUpInfo", logId, methodNm, "±Ç»óÁ¤º¸ °Ë»ö");
+			JDTORecordSet jsOutBed = commDao.select(recInBed, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdStkLayUpInfo", logId, methodNm, "ê¶Œìƒì •ë³´ ê²€ìƒ‰");
 			JDTORecord jrOutBed	= JDTORecordFactory.getInstance().create(); 
 			JDTORecord jrParam	= JDTORecordFactory.getInstance().create(); 
 			for(int i = 1; i <= jsOutBed.size(); i++) {
@@ -5398,16 +5398,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				   AND STACK_LAYER_GP   = :V_STACK_LAYER_GP
 	  
 			    */  
-				intRtnVal = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "TB_YM_STKLYR °»½Å");
+				intRtnVal = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "TB_YM_STKLYR ê°±ì‹ ");
 			
-				//ÀúÀåÇ°¿¡ µî·ÏÇÒ À§Ä¡
+				//ì €ì¥í’ˆì— ë“±ë¡í•  ìœ„ì¹˜
 				if(intRtnVal <= 0) {
-					commUtils.printLog(logId,  "È®ÀÎ:"+StockId+"±ÇÇÏÁö½ÃÀ§Ä¡["+ydDnWoLoc+"], ±ÇÇÏÁö½Ã´Ü["+commUtils.stringPlusInt(ydDnWoLayer,i-1)+"] È°¼ºÈ­Áß ERROR ¹ß»ı", "SL");
+					commUtils.printLog(logId,  "í™•ì¸:"+StockId+"ê¶Œí•˜ì§€ì‹œìœ„ì¹˜["+ydDnWoLoc+"], ê¶Œí•˜ì§€ì‹œë‹¨["+commUtils.stringPlusInt(ydDnWoLayer,i-1)+"] í™œì„±í™”ì¤‘ ERROR ë°œìƒ", "SL");
 					return YmConstant.RETN_CD_FAILURE;
 				}
 			}	
 
-			szLogMsg =LocalmethodNm +" Å©·¹ÀÎ½ºÄÉÁì ID["+ydCrnSchId+"] TO À§Ä¡°áÁ¤¢º¢º¢º¢º¢º ±ÇÇÏÁö½ÃÀ§Ä¡["+ydDnWoLoc+"], ±ÇÇÏÁö½Ã´Ü["+ydDnWoLayer+"]" ;
+			szLogMsg =LocalmethodNm +" í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ID["+ydCrnSchId+"] TO ìœ„ì¹˜ê²°ì •â–¶â–¶â–¶â–¶â–¶ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜["+ydDnWoLoc+"], ê¶Œí•˜ì§€ì‹œë‹¨["+ydDnWoLayer+"]" ;
 			commUtils.printLog(logId, szLogMsg, "SL");
 
 			commUtils.printLog(logId, methodNm, "S-");
@@ -5426,16 +5426,16 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
   
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ½ºÄÉÁÙ ToÀ§Ä¡ ·Î±× Log
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìŠ¤ì¼€ì¤„ Toìœ„ì¹˜ ë¡œê·¸ Log
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return void
 	 *      @throws DAOException
 	 *      @ejb.transaction type="RequiresNew"
 	*/
 	public void insSchLog(JDTORecord jrParam) throws DAOException {
-		String methodNm = "½ºÄÉÁÙ ToÀ§Ä¡ ·Î±× Log[BSlabSchSeEJB.insSchLog] < " + jrParam.getResultMsg();
+		String methodNm = "ìŠ¤ì¼€ì¤„ Toìœ„ì¹˜ ë¡œê·¸ Log[BSlabSchSeEJB.insSchLog] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 
 		try {
@@ -5468,9 +5468,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			     )
 			*/     
 			String sAPP310_YN = YmComm.BCoilApplyYn("APP310","2","*");   
-			commUtils.printLog(logId,  "½ÇÁÂÇ¥Àû¿ë¿©ºÎ:" + sAPP310_YN, "SL");	
+			commUtils.printLog(logId,  "ì‹¤ì¢Œí‘œì ìš©ì—¬ë¶€:" + sAPP310_YN, "SL");	
 			if(sAPP310_YN.equals("Y") ) {
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insSchLog", logId, methodNm, "½ºÄÉÁÙ ToÀ§Ä¡ ·Î±×");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insSchLog", logId, methodNm, "ìŠ¤ì¼€ì¤„ Toìœ„ì¹˜ ë¡œê·¸");
 			}
 			 
 			
@@ -5484,20 +5484,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public JDTORecordSet CrnSchGrpHandling( String logId, String methodNms, String sFlag ,String ydSchCd, String sAPP005_YN, String ydWbookId,  JDTORecordSet jsWbBed,JDTORecord jrCrEquip) throws JDTOException  {
-    	String 	methodNm = "±×·ìÇÎ ÆÄ¶ó¹ÌÅÍ ¼ÂÆÃ [BSlabSchSeEJB.CrnSchGrpHandling] < " + methodNms;
+    	String 	methodNm = "ê·¸ë£¹í•‘ íŒŒë¼ë¯¸í„° ì…‹íŒ… [BSlabSchSeEJB.CrnSchGrpHandling] < " + methodNms;
     	
     	JDTORecordSet jsWbBedInfo = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsSpacChk   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsRtn   	  = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	 = "";
 		String 	szDBLogMsg	 = "";
 		String 	szParmLogMsg = "";
@@ -5508,11 +5508,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 
 			//------------------------------------------------------------------------------------------------------------
-			// ¿­º° º£µåº°·Î  ÃÖÇÏ´Ü Á¤º¸¸¦ Á¶È¸ÇØ¼­  
-			// °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			// ì—´ë³„ ë² ë“œë³„ë¡œ  ìµœí•˜ë‹¨ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  
+			// ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			//------------------------------------------------------------------------------------------------------------
 			/**********************************************************
-			*  °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			*  ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			**********************************************************/	
 			JDTORecord jrWbBed   	  = JDTORecordFactory.getInstance().create();
 			JDTORecord jrBedSpecOvGp  = JDTORecordFactory.getInstance().create();
@@ -5529,15 +5529,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				if(("3".equals(sFlag))||("TC".equals(ydSchCd.substring(2, 4))) && ("U".equals(ydSchCd.substring(6, 7)))){
 					jrWbBed.setField("FLAG", 		sFlag);
-					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChkTc", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChkTc", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 					
 				} else {
 	
 					jrWbBed.setField("FLAG", 		sFlag);
-					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChk", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChk", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				}
 				if (jsWbBedInfo.size() <= 0) {
-					szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÁ¶È¸ >> Á¶È¸ Data ¾øÀ½";
+					szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì¡°íšŒ >> ì¡°íšŒ Data ì—†ìŒ";
 					commUtils.printLog(logId, szLogMsg, "SL");    			
 	    			return jsRtn;				
 				}
@@ -5563,7 +5563,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrWbBedInfo.setResultCode(logId);		//Log ID
 					jrWbBedInfo.setResultMsg(methodNm);	//Log Method Name
 					
-	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ÁÖÀÛ¾÷ ,º¸Á¶ÀÛ¾÷ HandingCnt
+	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ì£¼ì‘ì—… ,ë³´ì¡°ì‘ì—… HandingCnt
 
 	    			sBEND_LOG				= commUtils.trim(jrWbBedInfo.getFieldString("BEND_LOG"));
 	    			sDCSN_MTD_LOG			= commUtils.trim(jrWbBedInfo.getFieldString("DCSN_MTD_LOG"));
@@ -5577,21 +5577,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			sSTACK_LAYER_GP			= commUtils.trim(jrWbBedInfo.getFieldString("STACK_LAYER_GP"));
 	    			
 	    			/**********************************************************
-	    			*  ¼³ºñSPEC ¿¡  µû¸¥ ºĞ¸® ÀÛ¾÷
-	    			*  -- µ¿ÀÏ  HandlingCnt ÀÎ °æ¿ì check
+	    			*  ì„¤ë¹„SPEC ì—  ë”°ë¥¸ ë¶„ë¦¬ ì‘ì—…
+	    			*  -- ë™ì¼  HandlingCnt ì¸ ê²½ìš° check
 	    			**********************************************************/	
 
 	    			if (iHandlingCntChk == iHandlingCnt) {
 	    			
-	    				jsSpacChk.addRecord(jrWbBedInfo);  // ºñ±³ JDTORECORD
+	    				jsSpacChk.addRecord(jrWbBedInfo);  // ë¹„êµ JDTORECORD
 	    				
 		    			jrBedSpecOvGp = this.chkHandledDataCrnSpec(logId,methodNms, ydSchCd, jrCrEquip, jsSpacChk ,szParmLogMsg);
      					String sHandleRtn 	 = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_RTN")) ;
      					String sHandleRtnMsg = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_CONTENTS")) ;
 
-		    			// °¡´É 
+		    			// ê°€ëŠ¥ 
 		    			if (sHandleRtn.equals("1")) {
-	    					szDBLogMsg = szDBLogMsg + "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING °¡´É"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ê°€ëŠ¥"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 		    				jrWbBedInfo.setField("HANDLING_CNT_SPEC", ""+iHandlingCntSpec);
 		    				
@@ -5601,7 +5601,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    				jsSpacChk = JDTORecordFactory.getInstance().createRecordSet("Temp");
 		    				jsSpacChk.addRecord(jrWbBedInfo);
 		    				szDBLogMsg = szDBLogMsg + sHandleRtnMsg + "\r\n" ;
-	    					szDBLogMsg = szDBLogMsg + "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡:"+sHandleRtnMsg + "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€:"+sHandleRtnMsg + "\r\n";
 		    			}
 		    			
 	    			} else {
@@ -5612,23 +5612,23 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    				jsSpacChk.addRecord(jrWbBedInfo);
 	    				
 	    				if("Y".equals(sBEND_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :¹êµùÀ¸·Î  ºĞ¸® µÊ[ " +sYD_RULE_PL_RS_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ë°´ë”©ìœ¼ë¡œ  ë¶„ë¦¬ ë¨[ " +sYD_RULE_PL_RS_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sDCSN_MTD_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :´ÙÀ½ ÀÛ¾÷ÀÌ ÁÖ/º¸Á¶ÀÛ¾÷À¸·Î ºĞ¸® µÊ[ " +sDCSN_MTD_LOG + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ë‹¤ìŒ ì‘ì—…ì´ ì£¼/ë³´ì¡°ì‘ì—…ìœ¼ë¡œ ë¶„ë¦¬ ë¨[ " +sDCSN_MTD_LOG + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sAIM_RT_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÁÖÀÛ¾÷ Çà¼±À¸·Î ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì£¼ì‘ì—… í–‰ì„ ìœ¼ë¡œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sYD_TO_LOC_GUIDE_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÀÌ¼ÛÇÏÂ÷ TOÀ§Ä¡ °¡ÀÌµå ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì´ì†¡í•˜ì°¨ TOìœ„ì¹˜ ê°€ì´ë“œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sCHARGE_LOT_NO_DIV_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÀåÀÔLOT·Î ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì¥ì…LOTë¡œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 		    			}
 	    			}
@@ -5637,7 +5637,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				} //for Loop_j
 			} //for Loop_i
 			
-			commUtils.printLog(logId, "HANDLING_¼ö:" +jsRtn.size() , "SL");
+			commUtils.printLog(logId, "HANDLING_ìˆ˜:" +jsRtn.size() , "SL");
 			
 			if(sAPP005_YN.equals("Y") && szDBLogMsg.length() > 0) {
 				
@@ -5646,7 +5646,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     			jrLog.setField("YD_CRN_SCH_ID"	, ydWbookId);
     			jrLog.setField("YD_GP"			, "2");
     			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-    			jrLog.setField("SCH_CONTENTS"	, "ÇÚµé¸µ ºĞ¸® »çÀ¯:"+ "\r\n" + szDBLogMsg + "\r\n" );
+    			jrLog.setField("SCH_CONTENTS"	, "í•¸ë“¤ë§ ë¶„ë¦¬ ì‚¬ìœ :"+ "\r\n" + szDBLogMsg + "\r\n" );
 
     			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
     			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
@@ -5664,20 +5664,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	} //end of 	
 	
 	/**
-	 * 		[A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ ÀÌ¼ÛÇÏÂ÷ ±×·ìÇÎ (ÆÈ·¹Æ® (B)¿¡¼­ »ç¿ë
+	 * 		[A] ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ì´ì†¡í•˜ì°¨ ê·¸ë£¹í•‘ (íŒ”ë ˆíŠ¸ (B)ì—ì„œ ì‚¬ìš©
 	 *  
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * 		@param JDTORecord 
 	 * 		@return JDTORecordSet
 	 *      @throws DAOException
 	 */
 	public JDTORecordSet CrnSchGrpPT( String logId, String methodNms, JDTORecord jrParamSet )throws JDTOException  {
-    	String 	methodNm = " ÀÌ¼ÛÇÏÂ÷ ±×·ìÇÎ [BSlabSchSeEJB.CrnSchGrpPT] < " + methodNms;
+    	String 	methodNm = " ì´ì†¡í•˜ì°¨ ê·¸ë£¹í•‘ [BSlabSchSeEJB.CrnSchGrpPT] < " + methodNms;
     	
     	JDTORecordSet jsHandling = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsReturn   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		
 		try {
 			
@@ -5691,32 +5691,32 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 			JDTORecord jrCrEquip = JDTORecordFactory.getInstance().create();		
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp 
-			--¼³ºñ»óÅÂÁ¶È¸ 
+			--ì„¤ë¹„ìƒíƒœì¡°íšŒ 
 			SELECT WPROG_STAT     AS YD_EQP_STAT
 			     , WORK_MODE      AS YD_EQP_WRK_MODE
-				 , STACK_MAX_QNTY	                  --ÀûÀç ÃÖ´ë ¼ö·®
-				 , STACK_MAX_WT		                  --ÀûÀç ÃÖ´ë Áß·®
+				 , STACK_MAX_QNTY	                  --ì ì¬ ìµœëŒ€ ìˆ˜ëŸ‰
+				 , STACK_MAX_WT		                  --ì ì¬ ìµœëŒ€ ì¤‘ëŸ‰
 			     , CURR_STOP_LOC
 			  FROM TB_YM_EQUIP EQ
 			 WHERE EQUIP_GP = :V_YD_EQP_ID
 			   AND DEL_YN    = 'N'
 			*/	   
-			JDTORecordSet jsCrEquip = commDao.select(jrParamSet, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "¼³ºñ»óÅÂÁ¶È¸");
+			JDTORecordSet jsCrEquip = commDao.select(jrParamSet, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "ì„¤ë¹„ìƒíƒœì¡°íšŒ");
 			
 			if (jsCrEquip.size() > 0) {
 				jrCrEquip = jsCrEquip.getRecord(0);
 			}			
 			
 			//------------------------------------------------------------------------------------------------------------
-			// ÀÛ¾÷ ¿¹¾àÀ» BEDº°·Î ºĞ¸®   
-			// ÃßÈÄ  BED¿ì¼±¼øÀ§ º¯°æ½Ã ¿ëÀÇ
+			// ì‘ì—… ì˜ˆì•½ì„ BEDë³„ë¡œ ë¶„ë¦¬   
+			// ì¶”í›„  BEDìš°ì„ ìˆœìœ„ ë³€ê²½ì‹œ ìš©ì˜
 			//------------------------------------------------------------------------------------------------------------			
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCarMtl
 			SELECT A.STACK_COL_GP 
 			     , A.STACK_BED_GP 
 			     , A.YD_SCH_CD
 			     , A.MIN_STACK_LAYER_GP 
-			     -- ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÏ´ÂÁö CHECK 
+			     -- ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•˜ëŠ”ì§€ CHECK 
 			     , (SELECT DECODE(COUNT(*),0,'N','Y')
 			          FROM TB_YM_EQUIP B
 			             , TB_YM_TCARSCH C
@@ -5748,19 +5748,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			          GROUP BY STACK_COL_GP, STACK_BED_GP
 				   ) A
 			*/	   
-			JDTORecordSet jsWbBed = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCarMtl", logId, methodNm, "ÀÛ¾÷¿¹¾à BED¿ì¼±¼ø Á¤º¸");
+			JDTORecordSet jsWbBed = commDao.select(jrParamSet, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCarMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ BEDìš°ì„ ìˆœ ì •ë³´");
 			commUtils.printParam(logId, jsWbBed);
 			
 			if(jsWbBed.size() > 0) {
 				
 				String sTcDownYn = commUtils.trim(jsWbBed.getRecord(0).getFieldString("TC_DOWN_YN"));
-				// ÀÌ¼ÛÇÏÂ÷¸¦ ´ëÂ÷·Î ÇÔ
+				// ì´ì†¡í•˜ì°¨ë¥¼ ëŒ€ì°¨ë¡œ í•¨
 				if("Y".equals(sTcDownYn)) {
 					jsHandling = this.CrnSchGrpHandling( logId, methodNms, "3", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed, jrCrEquip);
 				} else {
 					jsHandling = this.CrnSchGrpHandling( logId, methodNms, "2", ydSchCd, sAPP005_YN, ydWbookId, jsWbBed, jrCrEquip);
 				}
-				commUtils.printLog(logId, "HANDLING_¼ö:" +jsHandling.size() , "SL");
+				commUtils.printLog(logId, "HANDLING_ìˆ˜:" +jsHandling.size() , "SL");
 				
 				
 				JDTORecord jrReturn  = JDTORecordFactory.getInstance().create();
@@ -5785,19 +5785,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	
 
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public boolean CrnSchGrpHandlingAbleChk( String logId, String methodNms, String ydSchCd, JDTORecordSet jsWbBed,JDTORecord jrCrEquip) throws JDTOException  {
-    	String 	methodNm = "µ¿³»ÀÌÀû ±×·ìÇÎ °¡´É¿©ºÎ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChk] < " + methodNms;
+    	String 	methodNm = "ë™ë‚´ì´ì  ê·¸ë£¹í•‘ ê°€ëŠ¥ì—¬ë¶€ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChk] < " + methodNms;
     	
     	JDTORecordSet jsWbBedInfo = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsSpacChk   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	= "";
 		String 	szParmLogMsg	= "";
 		
@@ -5807,11 +5807,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 
 			//------------------------------------------------------------------------------------------------------------
-			// ¿­º° º£µåº°·Î  ÃÖÇÏ´Ü Á¤º¸¸¦ Á¶È¸ÇØ¼­  
-			// °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			// ì—´ë³„ ë² ë“œë³„ë¡œ  ìµœí•˜ë‹¨ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  
+			// ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			//------------------------------------------------------------------------------------------------------------
 			/**********************************************************
-			*  °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			*  ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			**********************************************************/	
 			JDTORecord jrWbBed   	  = JDTORecordFactory.getInstance().create();
 			JDTORecord jrBedSpecOvGp  = JDTORecordFactory.getInstance().create();
@@ -5853,7 +5853,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				         , C.SPEC_ABBSYM       
 				         , C.ORD_YEOJAE_GP       
 				         , NVL(B.YD_AIM_RT_GP,B.STOCK_MOVE_TERM)    AS YD_AIM_RT_GP
-				         , B.YD_RULE_PL_RS_GP                       AS YD_RULE_PL_RS_GP -- BENDING ±¸ºĞ
+				         , B.YD_RULE_PL_RS_GP                       AS YD_RULE_PL_RS_GP -- BENDING êµ¬ë¶„
 				         , :V_YD_SCH_CD                             AS YD_SCH_CD
 				         , NVL((SELECT WB.YD_TO_LOC_GUIDE
 				                  FROM TB_YM_WRKBOOK    WB
@@ -5907,31 +5907,31 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				            END ) - SUM(CNT) OVER()) + 1  
 				       AS HANDLING_CNT 
 				  FROM (
-				         --BENDING Àº 1¸Å¾¿
-				         --ÁÖ/º¸Á¶ºĞ¸®
-				         --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				         --BENDING ì€ 1ë§¤ì”©
+				         --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				         --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				        SELECT KK.* 
-				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') != 'Y'        --BENDING ¿©ºÎ:'Y'BENDING 'S':½ºÄ«ÇÎ
+				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') != 'Y'        --BENDING ì—¬ë¶€:'Y'BENDING 'S':ìŠ¤ì¹´í•‘
 				                     AND LEAD(YD_TO_LOC_DCSN_MTD) OVER (ORDER BY STACK_LAYER_GP DESC) 
-				                         = YD_TO_LOC_DCSN_MTD --ÁÖ/º¸Á¶ºĞ¸®
-				                     --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				                         = YD_TO_LOC_DCSN_MTD --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				                     --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'  
 				                              WHEN LEAD(YD_AIM_RT_GP)        OVER (ORDER BY  STACK_LAYER_GP DESC) 
-				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ¸ğÀ½
+				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ëª¨ìŒ
 				                              ELSE 'F' END  = 'T'        
-				                     --ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸®
-				                     --ÁÖÀÛ¾÷ÀÌ°í ÀåÀÔÀÌ¸é
+				                     --ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬
+				                     --ì£¼ì‘ì—…ì´ê³  ì¥ì…ì´ë©´
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD   = 'S' AND  SUBSTR(YD_SCH_CD,3,2) = 'WB'      THEN 'T'
 				                              WHEN DIV_CHARGE_LOT_NO_YN = 'N'                                        THEN 'T'
 				                              WHEN LEAD(CHK_CHARGE_LOT_NO)   OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = CHK_CHARGE_LOT_NO                                               THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				                     -- ÀÌ¼ÛÇÏÂ÷ TOÀ§Ä¡ °¡ÀÌµå ºĞ¸®
+				                     -- ì´ì†¡í•˜ì°¨ TOìœ„ì¹˜ ê°€ì´ë“œ ë¶„ë¦¬
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(CHK_YD_TO_LOC_GUIDE) OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                       = CHK_YD_TO_LOC_GUIDE                                         THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				                     -- ÁÖ¿© ºĞ¸®
+				                     -- ì£¼ì—¬ ë¶„ë¦¬
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN LEAD(ORD_YEOJAE_GP)       OVER (ORDER BY STACK_LAYER_GP DESC) 
@@ -5949,9 +5949,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       ) AA
 				 ORDER BY RNUM 
 				*/ 
-				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChk", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChk", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				if (jsWbBedInfo.size() <= 0) {
-					szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÁ¶È¸ >> Á¶È¸ Data ¾øÀ½";
+					szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì¡°íšŒ >> ì¡°íšŒ Data ì—†ìŒ";
 					commUtils.printLog(logId, szLogMsg, "SL");    			
 	    			return false;				
 				}
@@ -5970,32 +5970,32 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrWbBedInfo.setResultCode(logId);		//Log ID
 					jrWbBedInfo.setResultMsg(methodNm);	//Log Method Name
 					
-	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ÁÖÀÛ¾÷ ,º¸Á¶ÀÛ¾÷ HandingCnt
+	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ì£¼ì‘ì—… ,ë³´ì¡°ì‘ì—… HandingCnt
 
 	    			sSTOCK_ID				= commUtils.trim(jrWbBedInfo.getFieldString("STOCK_ID"));
 	    			sSTACK_LAYER_GP			= commUtils.trim(jrWbBedInfo.getFieldString("STACK_LAYER_GP"));
 	    			
 	    			/**********************************************************
-	    			*  ¼³ºñSPEC ¿¡  µû¸¥ ºĞ¸® ÀÛ¾÷
-	    			*  -- µ¿ÀÏ  HandlingCnt ÀÎ °æ¿ì check
+	    			*  ì„¤ë¹„SPEC ì—  ë”°ë¥¸ ë¶„ë¦¬ ì‘ì—…
+	    			*  -- ë™ì¼  HandlingCnt ì¸ ê²½ìš° check
 	    			**********************************************************/	
 
 	    			if (iHandlingCntChk == iHandlingCnt) {
 	    			
-	    				jsSpacChk.addRecord(jrWbBedInfo);  // ºñ±³ JDTORECORD
+	    				jsSpacChk.addRecord(jrWbBedInfo);  // ë¹„êµ JDTORECORD
 	    				
 		    			jrBedSpecOvGp = this.chkHandledDataCrnSpec(logId,methodNms, ydSchCd, jrCrEquip, jsSpacChk ,szParmLogMsg);
      					String sHandleRtn 	 = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_RTN")) ;
-		    			// °¡´É 
+		    			// ê°€ëŠ¥ 
 		    			if (sHandleRtn.equals("1")) {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING °¡´É", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ê°€ëŠ¥", "SL");
 		    				
 		    			} else {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€", "SL");
 		    				return false;
 		    			}
 	    			} else {
-    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡", "SL");
+    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€", "SL");
 	    				return false;
 	    			}
 				} 
@@ -6012,19 +6012,19 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 	} //end of 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public boolean CrnSchGrpHandlingAbleChkPT( String logId, String methodNms, String ydSchCd, JDTORecordSet jsWbBed,JDTORecord jrCrEquip) throws JDTOException  {
-    	String 	methodNm = "ÀÌ¼ÛÇÏÂ÷ ±×·ìÇÎ °¡´É¿©ºÎ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChkPT] < " + methodNms;
+    	String 	methodNm = "ì´ì†¡í•˜ì°¨ ê·¸ë£¹í•‘ ê°€ëŠ¥ì—¬ë¶€ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChkPT] < " + methodNms;
     	
     	JDTORecordSet jsWbBedInfo = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsSpacChk   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	= "";
 		String 	szParmLogMsg	= "";
 		
@@ -6032,14 +6032,14 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			commUtils.printLog(logId, methodNm, "S+");			
 
-			String sAPP021_YN = YmComm.BCoilApplyYn("APP021","2","1");   //slab_log¿©ºÎ
-			commUtils.printLog(logId,  "ÀÌ¼ÛÇÏÂ÷½Å±Ô Àû¿ë:" + sAPP021_YN, "SL");
+			String sAPP021_YN = YmComm.BCoilApplyYn("APP021","2","1");   //slab_logì—¬ë¶€
+			commUtils.printLog(logId,  "ì´ì†¡í•˜ì°¨ì‹ ê·œ ì ìš©:" + sAPP021_YN, "SL");
 			//------------------------------------------------------------------------------------------------------------
-			// ¿­º° º£µåº°·Î  ÃÖÇÏ´Ü Á¤º¸¸¦ Á¶È¸ÇØ¼­  
-			// °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			// ì—´ë³„ ë² ë“œë³„ë¡œ  ìµœí•˜ë‹¨ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  
+			// ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			//------------------------------------------------------------------------------------------------------------
 			/**********************************************************
-			*  °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			*  ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			**********************************************************/	
 			JDTORecord jrWbBed   	  = JDTORecordFactory.getInstance().create();
 			JDTORecord jrBedSpecOvGp  = JDTORecordFactory.getInstance().create();
@@ -6081,7 +6081,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				         , C.SPEC_ABBSYM       
 				         , C.ORD_YEOJAE_GP       
 				         , NVL(B.YD_AIM_RT_GP,B.STOCK_MOVE_TERM)    AS YD_AIM_RT_GP
-				         , B.YD_RULE_PL_RS_GP                       AS YD_RULE_PL_RS_GP -- BENDING ±¸ºĞ
+				         , B.YD_RULE_PL_RS_GP                       AS YD_RULE_PL_RS_GP -- BENDING êµ¬ë¶„
 				         , :V_YD_SCH_CD                             AS YD_SCH_CD
 				         , NVL((SELECT WB.YD_TO_LOC_GUIDE
 				                  FROM TB_YM_WRKBOOK    WB
@@ -6145,39 +6145,39 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				            END ) - SUM(CNT) OVER()) + 1  
 				       AS HANDLING_CNT 
 				  FROM (
-				         --BENDING Àº 1¸Å¾¿
-				         --ÁÖ/º¸Á¶ºĞ¸®
-				         --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				         --BENDING ì€ 1ë§¤ì”©
+				         --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				         --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				        SELECT KK.* 
-				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') = 'N' --BENDING ¿©ºÎ:'Y'BENDING 'S':½ºÄ«ÇÎ
+				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') = 'N' --BENDING ì—¬ë¶€:'Y'BENDING 'S':ìŠ¤ì¹´í•‘
 				                     AND LEAD(NVL(YD_RULE_PL_RS_GP,'N')) OVER (ORDER BY STACK_LAYER_GP DESC) = NVL(YD_RULE_PL_RS_GP,'N') 
-				                     AND LEAD(YD_TO_LOC_DCSN_MTD)        OVER (ORDER BY STACK_LAYER_GP DESC) = YD_TO_LOC_DCSN_MTD --ÁÖ/º¸Á¶ºĞ¸®
-				                     --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				                     AND LEAD(YD_TO_LOC_DCSN_MTD)        OVER (ORDER BY STACK_LAYER_GP DESC) = YD_TO_LOC_DCSN_MTD --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				                     --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(YD_AIM_RT_GP)            OVER (ORDER BY STACK_LAYER_GP DESC) 
-				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ¸ğÀ½
+				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ëª¨ìŒ
 				                              ELSE 'F' END  = 'T'        
-				                     --ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸®
-				                     --ÁÖÀÛ¾÷ÀÌ°í ÀåÀÔÀÌ¸é
+				                     --ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬
+				                     --ì£¼ì‘ì—…ì´ê³  ì¥ì…ì´ë©´
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'S' AND SUBSTR(YD_SCH_CD,3,2) = 'WB'         THEN 'T'
 				                              WHEN DIV_CHARGE_LOT_NO_YN = 'N'                                        THEN 'T'
 				                              WHEN LEAD(CHK_CHARGE_LOT_NO)       OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = CHK_CHARGE_LOT_NO                                               THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÀÌ¼ÛÇÏÂ÷ TOÀ§Ä¡ °¡ÀÌµå ºĞ¸®
+				--                    -- ì´ì†¡í•˜ì°¨ TOìœ„ì¹˜ ê°€ì´ë“œ ë¶„ë¦¬
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(NVL(CHK_YD_TO_LOC_GUIDE,'1'))     OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = NVL(CHK_YD_TO_LOC_GUIDE,'1')                                             THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÁÖ¿© ºĞ¸®
+				--                    -- ì£¼ì—¬ ë¶„ë¦¬
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(ORD_YEOJAE_GP)           OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = ORD_YEOJAE_GP                                                   THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÁÖ¹®µÎ²² Æø 
+				--                    -- ì£¼ë¬¸ë‘ê»˜ í­ 
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN YD_AIM_RT_GP  = 'D3'                                              THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'S' AND SUBSTR(YD_SCH_CD,3,2) = 'WB'         THEN 'T'
@@ -6197,12 +6197,12 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				 ORDER BY RNUM 
 				*/ 				
 				if(sAPP021_YN.equals("Y")) {
-					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkPTNew", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkPTNew", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				} else {
-					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkPT", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+					jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkPT", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				}
 				if (jsWbBedInfo.size() <= 0) {
-					szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÁ¶È¸ >> Á¶È¸ Data ¾øÀ½";
+					szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì¡°íšŒ >> ì¡°íšŒ Data ì—†ìŒ";
 					commUtils.printLog(logId, szLogMsg, "SL");    			
 	    			return false;				
 				}
@@ -6221,67 +6221,67 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrWbBedInfo.setResultCode(logId);		//Log ID
 					jrWbBedInfo.setResultMsg(methodNm);	//Log Method Name
 					
-	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ÁÖÀÛ¾÷ ,º¸Á¶ÀÛ¾÷ HandingCnt
+	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ì£¼ì‘ì—… ,ë³´ì¡°ì‘ì—… HandingCnt
 
 	    			sSTOCK_ID				= commUtils.trim(jrWbBedInfo.getFieldString("STOCK_ID"));
 	    			sSTACK_LAYER_GP			= commUtils.trim(jrWbBedInfo.getFieldString("STACK_LAYER_GP"));
 	    			
 	    			/**********************************************************
-	    			*  ¼³ºñSPEC ¿¡  µû¸¥ ºĞ¸® ÀÛ¾÷
-	    			*  -- µ¿ÀÏ  HandlingCnt ÀÎ °æ¿ì check
+	    			*  ì„¤ë¹„SPEC ì—  ë”°ë¥¸ ë¶„ë¦¬ ì‘ì—…
+	    			*  -- ë™ì¼  HandlingCnt ì¸ ê²½ìš° check
 	    			**********************************************************/	
 
 	    			if (iHandlingCntChk == iHandlingCnt) {
-	    				//»óÀ§ Äõ¸®¿¡¼­ HANDLING_CNT °ªÀÌ "1" ÀÎ °æ¿ì´Â Ãß°¡·Î 2¸Å ÀÛ¾÷ °¡´ÉÇÑÁö Ã¼Å©¸¦ ÇÑ´Ù.
-	    				// ÆøÀÌ 1750 ÀÌ»óÀÎÁö, ÁÙ¾çÀÌ 53200 ÃÊ°úÀÎÁö, »ó´Ü ÆøÀÌ ÇÏ´Ü Æø º¸´Ù 50 ÃÊ°úÇÏ¿© ³ĞÀ¸¸é 1¸Å ÀÛ¾÷ ÇÑ´Ù.
-	    				jsSpacChk.addRecord(jrWbBedInfo);  // ºñ±³ JDTORECORD
+	    				//ìƒìœ„ ì¿¼ë¦¬ì—ì„œ HANDLING_CNT ê°’ì´ "1" ì¸ ê²½ìš°ëŠ” ì¶”ê°€ë¡œ 2ë§¤ ì‘ì—… ê°€ëŠ¥í•œì§€ ì²´í¬ë¥¼ í•œë‹¤.
+	    				// í­ì´ 1750 ì´ìƒì¸ì§€, ì¤„ì–‘ì´ 53200 ì´ˆê³¼ì¸ì§€, ìƒë‹¨ í­ì´ í•˜ë‹¨ í­ ë³´ë‹¤ 50 ì´ˆê³¼í•˜ì—¬ ë„“ìœ¼ë©´ 1ë§¤ ì‘ì—… í•œë‹¤.
+	    				jsSpacChk.addRecord(jrWbBedInfo);  // ë¹„êµ JDTORECORD
 	    				
 		    			jrBedSpecOvGp = this.chkHandledDataCrnSpec(logId,methodNms, ydSchCd, jrCrEquip, jsSpacChk ,szParmLogMsg);
      					String sHandleRtn 	 = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_RTN")) ;
-		    			// °¡´É 
+		    			// ê°€ëŠ¥ 
 		    			if (sHandleRtn.equals("1")) {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING °¡´É", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ê°€ëŠ¥", "SL");
 		    				
 		    			} else {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€", "SL");
 		    				return false;
 		    			}
 	    			} else {
-	    				//»óÀ§ Äõ¸® ¿¡¼­ 2¸Å ÀÛ¾÷ ºÒ°¡·Î ÆÇ´ÜÇÑ °æ¿ì
-    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   Äõ¸®°á°ú HANDLING_CNT = "+ iHandlingCnt + "·Î HANDLING ºÒ°¡", "SL");
+	    				//ìƒìœ„ ì¿¼ë¦¬ ì—ì„œ 2ë§¤ ì‘ì—… ë¶ˆê°€ë¡œ íŒë‹¨í•œ ê²½ìš°
+    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   ì¿¼ë¦¬ê²°ê³¼ HANDLING_CNT = "+ iHandlingCnt + "ë¡œ HANDLING ë¶ˆê°€", "SL");
 	    				return false;
 	    			}
 				}
 				
-				//2¸ÅÀÛ¾÷ °¡´ÉÇÒ ¶§ »ó´Ü ÇÑ´Ü Áß½ÉÁ¡ Â÷ÀÌ¸¦ Ã¼Å©ÇÑ´Ù.
+				//2ë§¤ì‘ì—… ê°€ëŠ¥í•  ë•Œ ìƒë‹¨ í•œë‹¨ ì¤‘ì‹¬ì  ì°¨ì´ë¥¼ ì²´í¬í•œë‹¤.
 				if(jsWbBedInfo.size() > 1) {
 					
-					//ÀÌ¼ÛÇÏÂ÷ÀÌ°í ÇØ´ç µ¿ Çü»óÀåÄ¡ »ç¿ë±¸ºĞÀÌ 'Y' ÀÏ¶§¸¸ Ã¼Å©ÇÑ´Ù.
+					//ì´ì†¡í•˜ì°¨ì´ê³  í•´ë‹¹ ë™ í˜•ìƒì¥ì¹˜ ì‚¬ìš©êµ¬ë¶„ì´ 'Y' ì¼ë•Œë§Œ ì²´í¬í•œë‹¤.
 					String sYD_SCH_CD = jsWbBedInfo.getRecord(0).getFieldString("YD_SCH_CD");
 					String sBAY_GP 	  = sYD_SCH_CD.substring(1,2);
 					//String sDBAY_FS_YN = jsWbBedInfo.getRecord(0).getFieldString("DBAY_FS_YN");
 					String sYM2006_FA_YN = YmComm.BCoilApplyYn("YM2006","2",sBAY_GP);
 					
-					commUtils.printLog(logId, ">>> ½ºÄÉÁÙCD : " +  sYD_SCH_CD + " , " + sBAY_GP + " µ¿ Çü»óÀåÄ¡ »ç¿ë¿©ºÎ : " + sYM2006_FA_YN  , "SL");
+					commUtils.printLog(logId, ">>> ìŠ¤ì¼€ì¤„CD : " +  sYD_SCH_CD + " , " + sBAY_GP + " ë™ í˜•ìƒì¥ì¹˜ ì‚¬ìš©ì—¬ë¶€ : " + sYM2006_FA_YN  , "SL");
 					
 					if("Y".equals(sYM2006_FA_YN)) {
 					
 						String  sYM2012_2_WB_LEN_YN = YmComm.BCoilApplyYn("YM2012","2","WB_LEN");
 						String  sYM2012_2_WB_LEN_YN2  = YmComm.BCoilApplyYn("YM2012","2","WB_LEN2");
-						commUtils.printLog(logId,  "==========[[[ SLAB ÀÌ¼ÛÇÏÂ÷½Ã XÁÂÇ¥ Áß½É °ª Â÷ÀÌ¿Í ±æÀÌ¸¦ Ã¼Å©ÇÏ¿© 1¸ÅÀÛ¾÷ ½ÇÇà¿©ºÎ  :" + sYM2012_2_WB_LEN_YN + " ]]]============", "SL");
+						commUtils.printLog(logId,  "==========[[[ SLAB ì´ì†¡í•˜ì°¨ì‹œ Xì¢Œí‘œ ì¤‘ì‹¬ ê°’ ì°¨ì´ì™€ ê¸¸ì´ë¥¼ ì²´í¬í•˜ì—¬ 1ë§¤ì‘ì—… ì‹¤í–‰ì—¬ë¶€  :" + sYM2012_2_WB_LEN_YN + " ]]]============", "SL");
 						
 						if("Y".equals(sYM2012_2_WB_LEN_YN)) {
 							
-							double dUpperSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("SLAB_LEN"),"0")); //»ó´Ü Slab ±æÀÌ
-							double dLowerSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(1).getFieldString("SLAB_LEN"),"0")); //ÇÏ´Ü Slab ±æÀÌ
-							commUtils.printLog(logId, "=======:::: »ó´Ü SLAB ±æÀÌ : " +  dUpperSlabLen , "SL");
-							commUtils.printLog(logId, "=======:::: ÇÏ´Ü SLAB ±æÀÌ : " +  dLowerSlabLen , "SL");
-							double dUpperSlabXaxis = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("WGT_CENTER_XAXIS"),"0")); //»ó´Ü Slab XÁÂÇ¥
-							double dLowerSlabXaxis = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(1).getFieldString("WGT_CENTER_XAXIS"),"0")); //ÇÏ´Ü Slab XÁÂÇ¥
-							commUtils.printLog(logId, "=======:::: »ó´Ü SLAB XÃà : " +  dUpperSlabXaxis , "SL");
-							commUtils.printLog(logId, "=======:::: ÇÏ´Ü SLAB XÃà : " +  dLowerSlabXaxis , "SL");
-							double dRuleSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("WB_LEN"),"0")); //±æÀÌ±âÁØ
-							commUtils.printLog(logId, "=======:::: 2¸Å°¡´É±æÀÌ±âÁØ : " +  dRuleSlabLen , "SL");
+							double dUpperSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("SLAB_LEN"),"0")); //ìƒë‹¨ Slab ê¸¸ì´
+							double dLowerSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(1).getFieldString("SLAB_LEN"),"0")); //í•˜ë‹¨ Slab ê¸¸ì´
+							commUtils.printLog(logId, "=======:::: ìƒë‹¨ SLAB ê¸¸ì´ : " +  dUpperSlabLen , "SL");
+							commUtils.printLog(logId, "=======:::: í•˜ë‹¨ SLAB ê¸¸ì´ : " +  dLowerSlabLen , "SL");
+							double dUpperSlabXaxis = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("WGT_CENTER_XAXIS"),"0")); //ìƒë‹¨ Slab Xì¢Œí‘œ
+							double dLowerSlabXaxis = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(1).getFieldString("WGT_CENTER_XAXIS"),"0")); //í•˜ë‹¨ Slab Xì¢Œí‘œ
+							commUtils.printLog(logId, "=======:::: ìƒë‹¨ SLAB Xì¶• : " +  dUpperSlabXaxis , "SL");
+							commUtils.printLog(logId, "=======:::: í•˜ë‹¨ SLAB Xì¶• : " +  dLowerSlabXaxis , "SL");
+							double dRuleSlabLen = Double.parseDouble(commUtils.nvl(jsWbBedInfo.getRecord(0).getFieldString("WB_LEN"),"0")); //ê¸¸ì´ê¸°ì¤€
+							commUtils.printLog(logId, "=======:::: 2ë§¤ê°€ëŠ¥ê¸¸ì´ê¸°ì¤€ : " +  dRuleSlabLen , "SL");
 							
 							if(dUpperSlabLen > 0
 							&& dLowerSlabLen > 0
@@ -6294,13 +6294,13 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 								double dGapSlabLen = Math.abs(dUpperSlabLen - dLowerSlabLen);
 								
 								if(dHalfLen + dGapXaxis > dHalfRuleLen) {
-									commUtils.printLog(logId, "=======:::: ±æÀÌ/2(" + dHalfLen + ") + XÃà Â÷ÀÌ(" + dGapXaxis + ") < ±æÀÌ±âÁØ°ª/2(" +  dHalfRuleLen + ") ¿¡ ÀÇÇØ¼­ 1¸Å ÀÛ¾÷!!!", "SL");
+									commUtils.printLog(logId, "=======:::: ê¸¸ì´/2(" + dHalfLen + ") + Xì¶• ì°¨ì´(" + dGapXaxis + ") < ê¸¸ì´ê¸°ì¤€ê°’/2(" +  dHalfRuleLen + ") ì— ì˜í•´ì„œ 1ë§¤ ì‘ì—…!!!", "SL");
 									return false;
 								}
-								//2023.11.14 ¿­¿¬ ±è±âÈÆ ÁÖÀÓ´Ô ¿äÃ» --REQ202311508459
-								//½½¶óºê ±æÀÌÂ÷ÀÌ 1¹ÌÅÍ ÀÌ»ó½Ã Áß½ÉÁÂÇ¥Â÷ÀÌ 500 ÀÌ»ó ³ª¸é ÇÑ¸Å¾¿
+								//2023.11.14 ì—´ì—° ê¹€ê¸°í›ˆ ì£¼ì„ë‹˜ ìš”ì²­ --REQ202311508459
+								//ìŠ¬ë¼ë¸Œ ê¸¸ì´ì°¨ì´ 1ë¯¸í„° ì´ìƒì‹œ ì¤‘ì‹¬ì¢Œí‘œì°¨ì´ 500 ì´ìƒ ë‚˜ë©´ í•œë§¤ì”©
 								else if("Y".equals(sYM2012_2_WB_LEN_YN2) && dGapSlabLen >= 1000 && dGapXaxis >=500) {
-									commUtils.printLog(logId, "=======:::: ±æÀÌ Â÷ÀÌ(" + dGapSlabLen + ") + XÃà Â÷ÀÌ(" + dGapXaxis + ")  ¿¡ ÀÇÇØ¼­ 1¸Å ÀÛ¾÷!!!", "SL");
+									commUtils.printLog(logId, "=======:::: ê¸¸ì´ ì°¨ì´(" + dGapSlabLen + ") + Xì¶• ì°¨ì´(" + dGapXaxis + ")  ì— ì˜í•´ì„œ 1ë§¤ ì‘ì—…!!!", "SL");
 									return false;
 								}
 							}
@@ -6323,20 +6323,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	} //end of 	
 		
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public boolean CrnSchGrpHandlingAbleChkTC( String logId, String methodNms, String ydSchCd, JDTORecordSet jsWbBed,JDTORecord jrCrEquip) throws JDTOException  {
-    	String 	methodNm = "´ëÂ÷»óÂ÷ ±×·ìÇÎ °¡´É¿©ºÎ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChkTC] < " + methodNms;
+    	String 	methodNm = "ëŒ€ì°¨ìƒì°¨ ê·¸ë£¹í•‘ ê°€ëŠ¥ì—¬ë¶€ CHECK [BSlabSchSeEJB.CrnSchGrpHandlingAbleChkTC] < " + methodNms;
     	
     	JDTORecordSet jsWbBedInfo = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsSpacChk   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsRtn   	  = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	= "";
 		String 	szDBLogMsg	= "";
 		String 	szParmLogMsg	= "";
@@ -6347,11 +6347,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 
 			//------------------------------------------------------------------------------------------------------------
-			// ¿­º° º£µåº°·Î  ÃÖÇÏ´Ü Á¤º¸¸¦ Á¶È¸ÇØ¼­  
-			// °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			// ì—´ë³„ ë² ë“œë³„ë¡œ  ìµœí•˜ë‹¨ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  
+			// ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			//------------------------------------------------------------------------------------------------------------
 			/**********************************************************
-			*  °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			*  ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			**********************************************************/	
 			JDTORecord jrWbBed   	  = JDTORecordFactory.getInstance().create();
 			JDTORecord jrBedSpecOvGp  = JDTORecordFactory.getInstance().create();
@@ -6432,10 +6432,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                  AND STOCK_ID IS NOT NULL
 				                  AND DEL_YN = 'N'
 				                  AND STACK_LAYER_STAT = 'C' ) 
-				              AS TC_LYR_SH --ÇöÀç ´ëÂ÷ÀûÄ¡¸Å¼ö
+				              AS TC_LYR_SH --í˜„ì¬ ëŒ€ì°¨ì ì¹˜ë§¤ìˆ˜
 				                  
-				            , EQ.STACK_MAX_QNTY  AS TC_MAX_QNTY --¼³ºñ±âÁØ ¸Å¼ö 
-				            , EQ.CTS_RELAY_YN    AS TC_TIMES    --¼³ºñ±âÁØ È½¼ö
+				            , EQ.STACK_MAX_QNTY  AS TC_MAX_QNTY --ì„¤ë¹„ê¸°ì¤€ ë§¤ìˆ˜ 
+				            , EQ.CTS_RELAY_YN    AS TC_TIMES    --ì„¤ë¹„ê¸°ì¤€ íšŸìˆ˜
 
 				         FROM TB_YM_EQUIP   EQ 
 				        WHERE EQ.EQUIP_GP = :V_YD_WRK_PLAN_TCAR
@@ -6466,9 +6466,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				       ) AA
 				 ORDER BY RNUM 
 				*/ 
-				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkTC", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingAbleChkTC", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				if (jsWbBedInfo.size() <= 0) {
-					szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÁ¶È¸ >> Á¶È¸ Data ¾øÀ½";
+					szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì¡°íšŒ >> ì¡°íšŒ Data ì—†ìŒ";
 					commUtils.printLog(logId, szLogMsg, "SL");    			
 	    			return false;				
 				}
@@ -6487,32 +6487,32 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrWbBedInfo.setResultCode(logId);		//Log ID
 					jrWbBedInfo.setResultMsg(methodNm);	//Log Method Name
 					
-	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ÁÖÀÛ¾÷ ,º¸Á¶ÀÛ¾÷ HandingCnt
+	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ì£¼ì‘ì—… ,ë³´ì¡°ì‘ì—… HandingCnt
 
 	    			sSTOCK_ID				= commUtils.trim(jrWbBedInfo.getFieldString("STOCK_ID"));
 	    			sSTACK_LAYER_GP			= commUtils.trim(jrWbBedInfo.getFieldString("STACK_LAYER_GP"));
 	    			
 	    			/**********************************************************
-	    			*  ¼³ºñSPEC ¿¡  µû¸¥ ºĞ¸® ÀÛ¾÷
-	    			*  -- µ¿ÀÏ  HandlingCnt ÀÎ °æ¿ì check
+	    			*  ì„¤ë¹„SPEC ì—  ë”°ë¥¸ ë¶„ë¦¬ ì‘ì—…
+	    			*  -- ë™ì¼  HandlingCnt ì¸ ê²½ìš° check
 	    			**********************************************************/	
 
 	    			if (iHandlingCntChk == iHandlingCnt) {
 	    			
-	    				jsSpacChk.addRecord(jrWbBedInfo);  // ºñ±³ JDTORECORD
+	    				jsSpacChk.addRecord(jrWbBedInfo);  // ë¹„êµ JDTORECORD
 	    				
 		    			jrBedSpecOvGp = this.chkHandledDataCrnSpec(logId,methodNms, ydSchCd, jrCrEquip, jsSpacChk ,szParmLogMsg);
      					String sHandleRtn 	 = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_RTN")) ;
-		    			// °¡´É 
+		    			// ê°€ëŠ¥ 
 		    			if (sHandleRtn.equals("1")) {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING °¡´É", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ê°€ëŠ¥", "SL");
 		    				
 		    			} else {
-	    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡", "SL");
+	    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€", "SL");
 		    				return false;
 		    			}
 	    			} else {
-    					commUtils.printLog(logId,  "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡", "SL");
+    					commUtils.printLog(logId,  "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€", "SL");
 	    				return false;
 	    			}
 				} 
@@ -6530,21 +6530,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	} //end of 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÇ° Çà¼± µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥í’ˆ í–‰ì„  ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return void
 	 *      @throws DAOException
 	*/
 	public void updCrnSchStock(JDTORecord jrParam) throws DAOException {
-		String methodNm = "ÀúÀåÇ° Çà¼± µî·Ï[BSlabSchSeEJB.updCrnSchStock] < " + jrParam.getResultMsg();
+		String methodNm = "ì €ì¥í’ˆ í–‰ì„  ë“±ë¡[BSlabSchSeEJB.updCrnSchStock] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 		
-		String ydWbookId  = commUtils.trim(jrParam.getFieldString("YD_WBOOK_ID"  )); //¾ßµåÀÛ¾÷¿¹¾àID
-		String ydSchCd    = commUtils.trim(jrParam.getFieldString("YD_SCH_CD"    )); //¾ßµå½ºÄÉÁìÄÚµå
-		String ydEqpId    = commUtils.trim(jrParam.getFieldString("YD_EQP_ID"    )); //¾ßµå¼³ºñID
-		String modifier   = commUtils.trim(jrParam.getFieldString("MODIFIER"    )); //¾ßµå¼³ºñID
+		String ydWbookId  = commUtils.trim(jrParam.getFieldString("YD_WBOOK_ID"  )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+		String ydSchCd    = commUtils.trim(jrParam.getFieldString("YD_SCH_CD"    )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+		String ydEqpId    = commUtils.trim(jrParam.getFieldString("YD_EQP_ID"    )); //ì•¼ë“œì„¤ë¹„ID
+		String modifier   = commUtils.trim(jrParam.getFieldString("MODIFIER"    )); //ì•¼ë“œì„¤ë¹„ID
 
 		try {
 			
@@ -6562,7 +6562,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			   AND A.DEL_YN = 'N'      
 			   AND B.DEL_YN = 'N'   
 			*/
-			JDTORecordSet jsWbMtlInfo = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookMtl", logId, methodNm, "ÀÛ¾÷ Àç·á READ");
+			JDTORecordSet jsWbMtlInfo = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookMtl", logId, methodNm, "ì‘ì—… ì¬ë£Œ READ");
 			
 			JDTORecord jrWbMtlInfo  = JDTORecordFactory.getInstance().create();
 			
@@ -6591,7 +6591,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    				     , YD_AIM_RT_GP    = :V_YD_AIM_RT_GP
 	    				WHERE STOCK_ID = :V_STOCK_ID
 	    				*/
-	    				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockTransInfo", logId, methodNm, "TB_YM_STOCK °»½Å");
+	    				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockTransInfo", logId, methodNm, "TB_YM_STOCK ê°±ì‹ ");
     				}	
     			}
 			}
@@ -6603,20 +6603,20 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	}
 		
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB¾ßµå Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING PARAMETER DATA SETTING
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLABì•¼ë“œ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING PARAMETER DATA SETTING
 	 *  
 	 * @param  String     szEqpId, szSchCd, rsMinWrkBookMtl, rsReturn
-	 * @return boolean    intRtnVal 1: ¼º°ø, -1:½ÇÆĞ
+	 * @return boolean    intRtnVal 1: ì„±ê³µ, -1:ì‹¤íŒ¨
 	 * @throws JDTOException
 	 */
 	public JDTORecordSet CrnSchGrpHandlingPT( String logId, String methodNms, String sFlag ,String ydSchCd, String sAPP005_YN, String ydWbookId,  JDTORecordSet jsWbBed,JDTORecord jrCrEquip) throws JDTOException  {
-    	String 	methodNm = "ÀÌ¼ÛÇÏÂ÷ ÆÄ¶ó¹ÌÅÍ ¼ÂÆÃ [BSlabSchSeEJB.CrnSchGrpHandlingPT] < " + methodNms;
+    	String 	methodNm = "ì´ì†¡í•˜ì°¨ íŒŒë¼ë¯¸í„° ì…‹íŒ… [BSlabSchSeEJB.CrnSchGrpHandlingPT] < " + methodNms;
     	
     	JDTORecordSet jsWbBedInfo = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsSpacChk   = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	JDTORecordSet jsRtn   	  = JDTORecordFactory.getInstance().createRecordSet("Temp");
     	
-		//·¹ÄÚµå¼Â Á¤·Ä ½Ã
+		//ë ˆì½”ë“œì…‹ ì •ë ¬ ì‹œ
 		String 	szLogMsg	 = "";
 		String 	szDBLogMsg	 = "";
 		String 	szParmLogMsg = "";
@@ -6627,11 +6627,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 
 
 			//------------------------------------------------------------------------------------------------------------
-			// ¿­º° º£µåº°·Î  ÃÖÇÏ´Ü Á¤º¸¸¦ Á¶È¸ÇØ¼­  
-			// °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			// ì—´ë³„ ë² ë“œë³„ë¡œ  ìµœí•˜ë‹¨ ì •ë³´ë¥¼ ì¡°íšŒí•´ì„œ  
+			// ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			//------------------------------------------------------------------------------------------------------------
 			/**********************************************************
-			*  °¢ Àç·áÀÇ ·¹ÄÚµå¿¡ ÁÖÀÛ¾÷/º¸Á¶ÀÛ¾÷ ¿¡ µû¸¥ HANDLING_CNT ºĞ¸®ÀÛ¾÷
+			*  ê° ì¬ë£Œì˜ ë ˆì½”ë“œì— ì£¼ì‘ì—…/ë³´ì¡°ì‘ì—… ì— ë”°ë¥¸ HANDLING_CNT ë¶„ë¦¬ì‘ì—…
 			**********************************************************/	
 			JDTORecord jrWbBed   	  = JDTORecordFactory.getInstance().create();
 			JDTORecord jrBedSpecOvGp  = JDTORecordFactory.getInstance().create();
@@ -6649,10 +6649,10 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				
 				jrWbBed.setField("FLAG", 		sFlag);
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChkPT 
-				-- LEAD ÇÔ¼ö´Â ÇØ´ç ÆÄÆ¼¼Ç³»ÀÇ ¹Ù·Î ´ÙÀ½ Row ÀÇ µ¥ÀÌÅÍ¸¦ ÂüÁ¶
-				-- LAG  ÇÔ¼ö´Â ÇØ´ç ÆÄÆ¼¼Ç³»ÀÇ ¹Ù·Î À§ÀÇ Row µ¥ÀÌÅÍ¸¦ ÂüÁ¶
-				-- FLAG : 1 ½ºÄÉÁì °áÁ¤½Ã
-				-- FLAG : 2 ÀÌ¼ÛÇÏÂ÷½Ã 
+				-- LEAD í•¨ìˆ˜ëŠ” í•´ë‹¹ íŒŒí‹°ì…˜ë‚´ì˜ ë°”ë¡œ ë‹¤ìŒ Row ì˜ ë°ì´í„°ë¥¼ ì°¸ì¡°
+				-- LAG  í•¨ìˆ˜ëŠ” í•´ë‹¹ íŒŒí‹°ì…˜ë‚´ì˜ ë°”ë¡œ ìœ„ì˜ Row ë°ì´í„°ë¥¼ ì°¸ì¡°
+				-- FLAG : 1 ìŠ¤ì¼€ì¥´ ê²°ì •ì‹œ
+				-- FLAG : 2 ì´ì†¡í•˜ì°¨ì‹œ 
 				WITH TABLE_TMP AS (
 				SELECT A.*
 				     , ROWNUM AS RNUM
@@ -6688,7 +6688,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				         , ''               AS HCR_GP
 				         , ''               AS YD_MTL_ITEM
 				         , NVL(B.YD_AIM_RT_GP,B.STOCK_MOVE_TERM)   AS YD_AIM_RT_GP
-				         , B.YD_RULE_PL_RS_GP                      AS YD_RULE_PL_RS_GP -- BENDING ±¸ºĞ
+				         , B.YD_RULE_PL_RS_GP                      AS YD_RULE_PL_RS_GP -- BENDING êµ¬ë¶„
 				         , E.YD_SCH_CD     AS YD_SCH_CD
 				         , CASE WHEN NVL(:V_FLAG,'1') = '1' THEN
 				                NVL((SELECT WB.YD_TO_LOC_GUIDE
@@ -6701,7 +6701,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                        AND ROWNUM = 1
 				                   ),'Y') 
 				           ELSE
-				         -- ÀÌ¼ÛÇÏÂ÷½Ã 
+				         -- ì´ì†¡í•˜ì°¨ì‹œ 
 				                'K' 
 				           END  AS CHK_YD_TO_LOC_GUIDE
 
@@ -6716,7 +6716,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                   AND ROWNUM = 1
 				                )
 				           ELSE
-				         -- ÀÌ¼ÛÇÏÂ÷
+				         -- ì´ì†¡í•˜ì°¨
 				                '' 
 				           END  AS YD_TO_LOC_GUIDE
 
@@ -6753,7 +6753,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                 AND STACK_LAYER_STAT = 'E'
 				                               )
 				                ELSE 2 END CTC_LOC_CNT
-				-- OPEN µÈ BED °³¼ö
+				-- OPEN ëœ BED ê°œìˆ˜
 				         , (SELECT COUNT(DISTINCT(STACK_COL_GP||STACK_BED_GP))
 				              FROM TB_YM_STACKLAYER A1
 				             WHERE A1.STACK_COL_GP LIKE '2%'
@@ -6793,7 +6793,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                      )
 				                             )                                    
 				           ) OPEN_BED_CNT
-				           -- OPEN µÈ BEDÁß ÃÖ´ë°ª
+				           -- OPEN ëœ BEDì¤‘ ìµœëŒ€ê°’
 				         , (SELECT MAX(COUNT(*))
 				              FROM TB_YM_STACKLAYER A1
 				             WHERE A1.STACK_COL_GP LIKE '2%'
@@ -6858,27 +6858,27 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				            END ) - SUM(CNT) OVER()) + 1  
 				       AS HANDLING_CNT 
 				  FROM (
-				         --BENDING Àº 1¸Å¾¿
-				         --ÁÖ/º¸Á¶ºĞ¸®
-				         --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				         --BENDING ì€ 1ë§¤ì”©
+				         --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				         --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				        SELECT KK.* 
-				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') = 'N' --BENDING ¿©ºÎ:'Y'BENDING 'S':½ºÄ«ÇÎ
+				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') = 'N' --BENDING ì—¬ë¶€:'Y'BENDING 'S':ìŠ¤ì¹´í•‘
 				                     AND LEAD(NVL(YD_RULE_PL_RS_GP,'N')) OVER (ORDER BY STACK_LAYER_GP DESC) = NVL(YD_RULE_PL_RS_GP,'N') 
-				                     AND LEAD(YD_TO_LOC_DCSN_MTD)        OVER (ORDER BY STACK_LAYER_GP DESC) = YD_TO_LOC_DCSN_MTD --ÁÖ/º¸Á¶ºĞ¸®
-				                         -- ÀÌ¼ÛÇÏÂ÷ ½Ã OPEN MAX DAN  CHECK ÇÔ
+				                     AND LEAD(YD_TO_LOC_DCSN_MTD)        OVER (ORDER BY STACK_LAYER_GP DESC) = YD_TO_LOC_DCSN_MTD --ì£¼/ë³´ì¡°ë¶„ë¦¬
+				                         -- ì´ì†¡í•˜ì°¨ ì‹œ OPEN MAX DAN  CHECK í•¨
 				                     AND CASE WHEN SUBSTR(YD_SCH_CD,3,6) IN ('PT02LM','TR02LM') AND OPEN_MAX_DAN = 1 THEN 'F'
 				                              ELSE 'T' END  = 'T'   
-				                     --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
+				                     --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN SUBSTR(YD_SCH_CD,3,6) IN ('PT02LM','TR02LM') AND OPEN_BED_CNT = 1 THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(YD_AIM_RT_GP)            OVER (ORDER BY STACK_LAYER_GP DESC) 
-				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ¸ğÀ½
+				                                   = YD_AIM_RT_GP                                                    THEN 'T' -- ëª¨ìŒ
 				                              ELSE 'F' END  = 'T'        
-				                     --ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸®
-				                     --ÁÖÀÛ¾÷ÀÌ°í ÀåÀÔÀÌ¸é
+				                     --ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬
+				                     --ì£¼ì‘ì—…ì´ê³  ì¥ì…ì´ë©´
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'S' AND SUBSTR(YD_SCH_CD,3,2) = 'WB'         THEN 'T'
-				                              -- 8ÀÚ¸® ÀÎ °æ¿ì A,C µ¿ ´ëÂ÷ÇÏÂ÷ÀÏ °æ¿ì ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸® 
+				                              -- 8ìë¦¬ ì¸ ê²½ìš° A,C ë™ ëŒ€ì°¨í•˜ì°¨ì¼ ê²½ìš° ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬ 
 				                              WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8 THEN
 				                                   CASE WHEN SUBSTR(YD_SCH_CD,2,1) IN ('A', 'C' )
 				                                         AND SUBSTR(YD_SCH_CD,3,6) IN ('TC11LM', 'TC22LM' )
@@ -6890,29 +6890,29 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                              WHEN LEAD(CHK_CHARGE_LOT_NO)       OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = CHK_CHARGE_LOT_NO                                               THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÀÌ¼ÛÇÏÂ÷ TOÀ§Ä¡ °¡ÀÌµå ºĞ¸®
+				--                    -- ì´ì†¡í•˜ì°¨ TOìœ„ì¹˜ ê°€ì´ë“œ ë¶„ë¦¬
 				                     AND CASE WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(CHK_YD_TO_LOC_GUIDE)     OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = CHK_YD_TO_LOC_GUIDE                                             THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÁÖ¿© ºĞ¸®
+				--                    -- ì£¼ì—¬ ë¶„ë¦¬
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN SUBSTR(YD_SCH_CD,3,6) IN ('PT02LM','TR02LM') AND OPEN_BED_CNT = 1 THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'W'                                          THEN 'T'
 				                              WHEN LEAD(ORD_YEOJAE_GP)           OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = ORD_YEOJAE_GP                                                   THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- ÁÖ¹®µÎ²² Æø (ÇÚµå ½ºÄ«ÇÎÀç Á¦¿Ü)
+				--                    -- ì£¼ë¬¸ë‘ê»˜ í­ (í•¸ë“œ ìŠ¤ì¹´í•‘ì¬ ì œì™¸)
 				                     AND CASE WHEN LENGTH(CHK_YD_TO_LOC_GUIDE) = 8                                   THEN 'T'
 				                              WHEN SUBSTR(YD_SCH_CD,3,6) IN ('PT02LM','TR02LM') AND OPEN_BED_CNT = 1 THEN 'T'
 				                              WHEN YD_TO_LOC_DCSN_MTD = 'S' AND SUBSTR(YD_SCH_CD,3,2) = 'WB'         THEN 'T'
 				                              WHEN YD_AIM_RT_GP       = 'D3'                                         THEN 'T'
-				                              --ÀÌ¼Û»óÂ÷ Á¦¿Ü
+				                              --ì´ì†¡ìƒì°¨ ì œì™¸
 				                              WHEN SUBSTR(YD_SCH_CD,3,6) = 'PT02UM'                                  THEN 'T'
 				                              WHEN LEAD(ORD_CONV_T||ORD_CONV_W)  OVER (ORDER BY STACK_LAYER_GP DESC) 
 				                                   = ORD_CONV_T||ORD_CONV_W                                          THEN 'T'
 				                              ELSE 'F' END  = 'T'        
-				--                    -- CTC À§Ä¡´Â TO_À§Ä¡ ¸Å¼ö CHECK
+				--                    -- CTC ìœ„ì¹˜ëŠ” TO_ìœ„ì¹˜ ë§¤ìˆ˜ CHECK
 				                     AND CASE WHEN CTC_LOC_CNT = 2                                                   THEN 'T'
 				                              ELSE 'F' END  = 'T'        
 				                    THEN 0
@@ -6925,31 +6925,31 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				                                  ELSE 'YD' END 
 				                ) AS WID_DIF 
 				 
-				   -- LOG ¿ë
+				   -- LOG ìš©
 				             , CASE WHEN NVL(YD_RULE_PL_RS_GP,'N') = 'Y' 
-				                    THEN 'Y' ELSE 'N' END BEND_LOG      --BENDING ¿©ºÎ:'Y'BENDING 'S':½ºÄ«ÇÎ
+				                    THEN 'Y' ELSE 'N' END BEND_LOG      --BENDING ì—¬ë¶€:'Y'BENDING 'S':ìŠ¤ì¹´í•‘
 				             , CASE WHEN LEAD(YD_TO_LOC_DCSN_MTD) OVER (ORDER BY STACK_LAYER_GP DESC) <> YD_TO_LOC_DCSN_MTD 
-				                    THEN 'Y' ELSE 'N' END DCSN_MTD_LOG  --ÁÖ/º¸Á¶ºĞ¸®
+				                    THEN 'Y' ELSE 'N' END DCSN_MTD_LOG  --ì£¼/ë³´ì¡°ë¶„ë¦¬
 				             , CASE WHEN YD_TO_LOC_DCSN_MTD != 'W'  AND LEAD(YD_AIM_RT_GP) OVER (ORDER BY  STACK_LAYER_GP DESC) != YD_AIM_RT_GP
-				                    THEN 'Y' ELSE 'N' END AIM_RT_LOG    --Çà¼±ºĞ¸®:ÁÖÀÛ¾÷¸¸ Çà¼± ºĞ¸® ÇÑ´Ù
-				              --ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸®
+				                    THEN 'Y' ELSE 'N' END AIM_RT_LOG    --í–‰ì„ ë¶„ë¦¬:ì£¼ì‘ì—…ë§Œ í–‰ì„  ë¶„ë¦¬ í•œë‹¤
+				              --ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬
 				             , CASE WHEN LEAD(CHK_CHARGE_LOT_NO) OVER (ORDER BY  STACK_LAYER_GP DESC)   != CHK_CHARGE_LOT_NO THEN 'Y'
 				                    WHEN DIV_CHARGE_LOT_NO_YN = 'Y'  
-				                    THEN 'Y' ELSE 'N' END CHARGE_LOT_NO_DIV_LOG   --ÀåÀÔ¼ø¹øÀÌ Æ²¸®¸é ºĞ¸®
-				              --ÀÌ¼ÛÇÏÂ÷ TO À§Ä¡ °¡ÀÌµå°¡ Æ²¸®¸é ºĞ¸®
+				                    THEN 'Y' ELSE 'N' END CHARGE_LOT_NO_DIV_LOG   --ì¥ì…ìˆœë²ˆì´ í‹€ë¦¬ë©´ ë¶„ë¦¬
+				              --ì´ì†¡í•˜ì°¨ TO ìœ„ì¹˜ ê°€ì´ë“œê°€ í‹€ë¦¬ë©´ ë¶„ë¦¬
 				             , CASE WHEN LEAD(CHK_YD_TO_LOC_GUIDE) OVER (ORDER BY  STACK_LAYER_GP DESC) != CHK_YD_TO_LOC_GUIDE 
 				                    THEN 'Y' ELSE 'N' END YD_TO_LOC_GUIDE_LOG    
-				              --ÁÖ¿©°¡ Æ²¸®¸é ºĞ¸®
+				              --ì£¼ì—¬ê°€ í‹€ë¦¬ë©´ ë¶„ë¦¬
 				             , CASE WHEN LEAD(ORD_YEOJAE_GP) OVER (ORDER BY  STACK_LAYER_GP DESC) != ORD_YEOJAE_GP 
 				                    THEN 'Y' ELSE 'N' END ORD_YEOJAE_GP_LOG    
 				          FROM TABLE_TMP KK
 				       ) AA
 				 ORDER BY RNUM 
 				 */
-				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChkPT", logId, methodNm, "ÁÖº¸Á¶ºĞ¸® ´ë»ó");
+				jsWbBedInfo = commDao.select(jrWbBed, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getHandlingChkPT", logId, methodNm, "ì£¼ë³´ì¡°ë¶„ë¦¬ ëŒ€ìƒ");
 				
 				if (jsWbBedInfo.size() <= 0) {
-					szLogMsg = methodNm+ "Å©·¹ÀÎÀÛ¾÷Àç·áÁ¶È¸ >> Á¶È¸ Data ¾øÀ½";
+					szLogMsg = methodNm+ "í¬ë ˆì¸ì‘ì—…ì¬ë£Œì¡°íšŒ >> ì¡°íšŒ Data ì—†ìŒ";
 					commUtils.printLog(logId, szLogMsg, "SL");    			
 	    			return jsRtn;				
 				}
@@ -6975,7 +6975,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 					jrWbBedInfo.setResultCode(logId);		//Log ID
 					jrWbBedInfo.setResultMsg(methodNm);	//Log Method Name
 					
-	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ÁÖÀÛ¾÷ ,º¸Á¶ÀÛ¾÷ HandingCnt
+	    			iHandlingCnt   			= commUtils.paraRecChkNullInt(jrWbBedInfo, "HANDLING_CNT" );    //ì£¼ì‘ì—… ,ë³´ì¡°ì‘ì—… HandingCnt
 
 	    			sBEND_LOG				= commUtils.trim(jrWbBedInfo.getFieldString("BEND_LOG"));
 	    			sDCSN_MTD_LOG			= commUtils.trim(jrWbBedInfo.getFieldString("DCSN_MTD_LOG"));
@@ -6989,21 +6989,21 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    			sSTACK_LAYER_GP			= commUtils.trim(jrWbBedInfo.getFieldString("STACK_LAYER_GP"));
 	    			
 	    			/**********************************************************
-	    			*  ¼³ºñSPEC ¿¡  µû¸¥ ºĞ¸® ÀÛ¾÷
-	    			*  -- µ¿ÀÏ  HandlingCnt ÀÎ °æ¿ì check
+	    			*  ì„¤ë¹„SPEC ì—  ë”°ë¥¸ ë¶„ë¦¬ ì‘ì—…
+	    			*  -- ë™ì¼  HandlingCnt ì¸ ê²½ìš° check
 	    			**********************************************************/	
 
 	    			if (iHandlingCntChk == iHandlingCnt) {
 	    			
-	    				jsSpacChk.addRecord(jrWbBedInfo);  // ºñ±³ JDTORECORD
+	    				jsSpacChk.addRecord(jrWbBedInfo);  // ë¹„êµ JDTORECORD
 	    				
 		    			jrBedSpecOvGp = this.chkHandledDataCrnSpec(logId,methodNms, ydSchCd, jrCrEquip, jsSpacChk ,szParmLogMsg);
      					String sHandleRtn 	 = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_RTN")) ;
      					String sHandleRtnMsg = commUtils.trim(jrBedSpecOvGp.getFieldString("HANDLE_CONTENTS")) ;
 
-		    			// °¡´É 
+		    			// ê°€ëŠ¥ 
 		    			if (sHandleRtn.equals("1")) {
-	    					szDBLogMsg = szDBLogMsg + "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING °¡´É"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ê°€ëŠ¥"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 		    				jrWbBedInfo.setField("HANDLING_CNT_SPEC", ""+iHandlingCntSpec);
 		    				
@@ -7013,7 +7013,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 		    				jsSpacChk = JDTORecordFactory.getInstance().createRecordSet("Temp");
 		    				jsSpacChk.addRecord(jrWbBedInfo);
 		    				szDBLogMsg = szDBLogMsg + sHandleRtnMsg + "\r\n" ;
-	    					szDBLogMsg = szDBLogMsg + "´Ü[" +sSTACK_LAYER_GP + "] "+ "Àç·á¹øÈ£[" +sSTOCK_ID + "]   "+ "HANDLING ºÒ°¡:"+sHandleRtnMsg + "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë‹¨[" +sSTACK_LAYER_GP + "] "+ "ì¬ë£Œë²ˆí˜¸[" +sSTOCK_ID + "]   "+ "HANDLING ë¶ˆê°€:"+sHandleRtnMsg + "\r\n";
 		    			}
 		    			
 	    			} else {
@@ -7024,23 +7024,23 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	    				jsSpacChk.addRecord(jrWbBedInfo);
 	    				
 	    				if("Y".equals(sBEND_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :¹êµùÀ¸·Î  ºĞ¸® µÊ[ " +sYD_RULE_PL_RS_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ë°´ë”©ìœ¼ë¡œ  ë¶„ë¦¬ ë¨[ " +sYD_RULE_PL_RS_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sDCSN_MTD_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :´ÙÀ½ ÀÛ¾÷ÀÌ ÁÖ/º¸Á¶ÀÛ¾÷À¸·Î ºĞ¸® µÊ[ " +sDCSN_MTD_LOG + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ë‹¤ìŒ ì‘ì—…ì´ ì£¼/ë³´ì¡°ì‘ì—…ìœ¼ë¡œ ë¶„ë¦¬ ë¨[ " +sDCSN_MTD_LOG + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sAIM_RT_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÁÖÀÛ¾÷ Çà¼±À¸·Î ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì£¼ì‘ì—… í–‰ì„ ìœ¼ë¡œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sYD_TO_LOC_GUIDE_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÀÌ¼ÛÇÏÂ÷ TOÀ§Ä¡ °¡ÀÌµå ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì´ì†¡í•˜ì°¨ TOìœ„ì¹˜ ê°€ì´ë“œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 	    				} else
 	    				if("Y".equals(sCHARGE_LOT_NO_DIV_LOG)) {
-	    					szDBLogMsg = szDBLogMsg + "ºĞ¸® »çÀ¯ :ÀåÀÔLOT·Î ºĞ¸® µÊ[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
+	    					szDBLogMsg = szDBLogMsg + "ë¶„ë¦¬ ì‚¬ìœ  :ì¥ì…LOTë¡œ ë¶„ë¦¬ ë¨[ " +sYD_AIM_RT_GP + " ]"+ "\r\n";
 	    					commUtils.printLog(logId, szDBLogMsg, "SL");
 		    			}
 	    			}
@@ -7049,7 +7049,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 				} //for Loop_j
 			} //for Loop_i
 			
-			commUtils.printLog(logId, "HANDLING_¼ö:" +jsRtn.size() , "SL");
+			commUtils.printLog(logId, "HANDLING_ìˆ˜:" +jsRtn.size() , "SL");
 			
 			if(sAPP005_YN.equals("Y") && szDBLogMsg.length() > 0) {
 				
@@ -7058,7 +7058,7 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
     			jrLog.setField("YD_CRN_SCH_ID"	, ydWbookId);
     			jrLog.setField("YD_GP"			, "2");
     			jrLog.setField("YD_SCH_CD"		, ydSchCd);
-    			jrLog.setField("SCH_CONTENTS"	, "ÇÚµé¸µ ºĞ¸® »çÀ¯:"+ "\r\n" + szDBLogMsg + "\r\n" );
+    			jrLog.setField("SCH_CONTENTS"	, "í•¸ë“¤ë§ ë¶„ë¦¬ ì‚¬ìœ :"+ "\r\n" + szDBLogMsg + "\r\n" );
 
     			EJBConnector SchLog = new EJBConnector("default", "BSlabSchSeEJB", this);
     			SchLog.trx( "insSchLog" , new Class[] { JDTORecord.class }, new Object[] { jrLog });
@@ -7076,15 +7076,15 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 	} //end of 			
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à ¾ÆÀÌµğ·Î Áßº¹ÀûÄ¡ ¿©ºÎ Á¶È¸ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ ì•„ì´ë””ë¡œ ì¤‘ë³µì ì¹˜ ì—¬ë¶€ ì¡°íšŒ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public boolean chkDupStkByWBookId(String ydWbookId, String logId) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à ¾ÆÀÌµğ·Î Áßº¹ÀûÄ¡ ¿©ºÎ Á¶È¸ [SlabYdSchSeEJB.chkDupStkByWBookId] < " + logId;
+		String methodNm = "ì‘ì—…ì˜ˆì•½ ì•„ì´ë””ë¡œ ì¤‘ë³µì ì¹˜ ì—¬ë¶€ ì¡°íšŒ [SlabYdSchSeEJB.chkDupStkByWBookId] < " + logId;
 		
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
@@ -7093,11 +7093,11 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			
 			jrParam.setField("YD_WBOOK_ID",ydWbookId);
 			
-			JDTORecordSet recSetRes = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.chkDupStkByWBookId", logId, methodNm, "Áßº¹ÀûÄ¡ Á¶È¸"); 
+			JDTORecordSet recSetRes = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.chkDupStkByWBookId", logId, methodNm, "ì¤‘ë³µì ì¹˜ ì¡°íšŒ"); 
 			
 			
 			if(recSetRes == null || recSetRes.size() <=0 ) {
-				commUtils.printLog(logId,"ÀÛ¾÷¿¹¾à ["+ydWbookId+"] Àç·á¿¡ ´ëÇØ Áßº¹ÀûÄ¡ ¹ß»ı ¾ÈÇÔ", "SL");
+				commUtils.printLog(logId,"ì‘ì—…ì˜ˆì•½ ["+ydWbookId+"] ì¬ë£Œì— ëŒ€í•´ ì¤‘ë³µì ì¹˜ ë°œìƒ ì•ˆí•¨", "SL");
 				commUtils.printLog(logId, methodNm, "S-");
 				return false;
 			} 
@@ -7105,9 +7105,9 @@ public class BSlabSchSeEJBSBean extends BaseSessionBean {
 			for(int ii=0; ii<recSetRes.size() ; ii++){
 				int stkCnt = Integer.parseInt(commUtils.trim(recSetRes.getRecord(ii).getFieldString("STK_CNT")));
 				String stlNo = commUtils.trim(recSetRes.getRecord(ii).getFieldString("STOCK_ID"));
-				//Áßº¹ÀûÄ¡µÈ Àç·á ¹ß°ß 
+				//ì¤‘ë³µì ì¹˜ëœ ì¬ë£Œ ë°œê²¬ 
 				if(stkCnt > 1) {
-					commUtils.printLog(logId,"Àç·á¹øÈ£ ["+stlNo+"] Áßº¹ÀûÄ¡ ¹ß»ı", "SL");
+					commUtils.printLog(logId,"ì¬ë£Œë²ˆí˜¸ ["+stlNo+"] ì¤‘ë³µì ì¹˜ ë°œìƒ", "SL");
 					return true;
 				}
 			}

@@ -2,14 +2,14 @@
  * @(#)BSlabDAO
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  *
- * @description      B¿­¿¬ SLAB ¾ßµå  DAO
+ * @description      Bì—´ì—° SLAB ì•¼ë“œ  DAO
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.bslab.dao;
@@ -31,11 +31,11 @@ public class BSlabDAO extends DBAssistantDAO {
 	private YmCommUtils commUtils = new YmCommUtils();
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : conversionFieldname 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : conversionFieldname 
 	 * 
-	 * @param  JDTORecord recPara    // ÆÄ¶ó¹ÌÅÍ ·¹ÄÚµå
-	 *         int intGp             // ±¸ºĞ(0:"V_" Ãß°¡, 1:"V_" Á¦°Å
-	 * @return JDTORecord			 // ÇÊµå¸íÀ» º¯È¯ÇÑ °á°ú·¹ÄÚµå
+	 * @param  JDTORecord recPara    // íŒŒë¼ë¯¸í„° ë ˆì½”ë“œ
+	 *         int intGp             // êµ¬ë¶„(0:"V_" ì¶”ê°€, 1:"V_" ì œê±°
+	 * @return JDTORecord			 // í•„ë“œëª…ì„ ë³€í™˜í•œ ê²°ê³¼ë ˆì½”ë“œ
 	 * @throws JDTOException 
 	 */
 	public JDTORecord conversionFieldname(JDTORecord recPara, int intGp) throws JDTOException {
@@ -43,17 +43,17 @@ public class BSlabDAO extends DBAssistantDAO {
 		String szFieldName = null;
 		Iterator itrFieldName = null;
 		
-		//ÇÊµå¸íÀ» °¡Á®¿Â´Ù.
+		//í•„ë“œëª…ì„ ê°€ì ¸ì˜¨ë‹¤.
 		itrFieldName = recPara.iterateName();
 		
-		//ÇÊµå¸í °¹¼ö¸¸Å­ ·çÇÁ¸¦ µ·´Ù.
+		//í•„ë“œëª… ê°¯ìˆ˜ë§Œí¼ ë£¨í”„ë¥¼ ëˆë‹¤.
 		while(itrFieldName.hasNext()) {
 			
 			szFieldName = (String)itrFieldName.next();
-			//"V_" Ãß°¡
+			//"V_" ì¶”ê°€
 			if (intGp == 0) {
 				recRtnVal.setField("V_" + szFieldName, recPara.getField(szFieldName));
-			//"V_" Á¦°Å
+			//"V_" ì œê±°
 			} else {
 				recRtnVal.setField(szFieldName.substring(2), recPara.getField(szFieldName));
 			}
@@ -63,7 +63,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Jsp È­¸é¿ë SELECT ¸Ş¼Òµå 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Jsp í™”ë©´ìš© SELECT ë©”ì†Œë“œ 
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
@@ -76,21 +76,21 @@ public class BSlabDAO extends DBAssistantDAO {
 	 */	
 	public int jspSelect(JDTORecord inRec, JDTORecordSet outRecSet, String queryId, String logId, String mthdNm) throws DAOException, JDTOException {
 		
-		String methodNm = "Á¶È¸[BSlabDAO.jspSelect] < " + mthdNm;
+		String methodNm = "ì¡°íšŒ[BSlabDAO.jspSelect] < " + mthdNm;
 		
 		JDTORecord recPara = null;	
 		JDTORecordSet rsTemp = null;
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, "Á¶È¸[BSlabDAO.jspSelect] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, "ì¡°íšŒ[BSlabDAO.jspSelect] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			if (rsTemp.size() > 0) {
 				outRecSet.addAll(rsTemp);
@@ -106,7 +106,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         String        queryId    QueryId 
@@ -121,7 +121,7 @@ public class BSlabDAO extends DBAssistantDAO {
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
@@ -136,7 +136,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SELECT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SELECT ë©”ì†Œë“œ
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         String        queryId    QueryId 
@@ -155,14 +155,14 @@ public class BSlabDAO extends DBAssistantDAO {
 		
 		try {
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			JDTORecordSet rsTemp = getRecordSet(recPara);
 			
-			commUtils.printLog(logId, "Á¶È¸[BSlabDAO.select] °á°ú °Ç¼ö: " + rsTemp.size() , "DB");
+			commUtils.printLog(logId, "ì¡°íšŒ[BSlabDAO.select] ê²°ê³¼ ê±´ìˆ˜: " + rsTemp.size() , "DB");
 			
 			return rsTemp;
 			
@@ -173,7 +173,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : UPDATE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : UPDATE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -187,7 +187,7 @@ public class BSlabDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
@@ -202,7 +202,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	} 
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : UPDATE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : UPDATE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -221,14 +221,14 @@ public class BSlabDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[BSlabDAO.update] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[BSlabDAO.update] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -238,7 +238,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	} 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : INSERT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : INSERT ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -252,7 +252,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	} 	
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : INSERT ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : INSERT ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -271,14 +271,14 @@ public class BSlabDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[BSlabDAO.insert] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[BSlabDAO.insert] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -288,7 +288,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : DELETE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : DELETE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -302,7 +302,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	} 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : DELETE ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : DELETE ë©”ì†Œë“œ
 	 * 
 	 * @param  JDTORecord inRec 		parameter record
 	 *         String     queryId   	QueryId 
@@ -321,14 +321,14 @@ public class BSlabDAO extends DBAssistantDAO {
 		JDTORecord recPara = null;
 
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = conversionFieldname(inRec, 0);
 			//query id setting
 			recPara.setField("JSPEED_QUERY_ID", queryId);
 			//query execute
 			intRtnVal = trtProcess(recPara);
 			
-			commUtils.printLog(logId, trtNm + "[BSlabDAO.delete] °á°ú °Ç¼ö: " + intRtnVal , "DB");
+			commUtils.printLog(logId, trtNm + "[BSlabDAO.delete] ê²°ê³¼ ê±´ìˆ˜: " + intRtnVal , "DB");
 			
 		} catch (Exception e) {
 
@@ -338,7 +338,7 @@ public class BSlabDAO extends DBAssistantDAO {
 	} 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Procesure È£Ãâ ¸Ş¼Òµå
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Procesure í˜¸ì¶œ ë©”ì†Œë“œ
 	 * 
 	 * @param  Object[] 		inParam 		procedure input parameter array
 	 *         int[]   	 		inParamIndex   	procedure input parameter seq array 

@@ -2,14 +2,14 @@
  * @(#)BCoilComm
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  *
- * @description      B¿­¿¬ COIL ¾ßµå °øÅë Ã³¸® EJB
+ * @description      Bì—´ì—° COIL ì•¼ë“œ ê³µí†µ ì²˜ë¦¬ EJB
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.bcoil.session;
@@ -26,7 +26,7 @@ import com.inisteel.cim.ym.bcommon.session.YmComm;
 import com.inisteel.cim.ym.bcommon.util.YmConstant;
 import com.inisteel.cim.common.exception.EJBServiceException;
 /**
- *      [A] Å¬·¡½º¸í : B¿­¿¬ COIL ¾ßµå °øÅë Ã³¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Bì—´ì—° COIL ì•¼ë“œ ê³µí†µ ì²˜ë¦¬
  *
 */
 
@@ -37,27 +37,27 @@ public class BCoilComm {
 	private YmComm commComm = new YmComm();
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä(YMA7L005) Àü¹® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—°í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ(YMA7L005) ì „ë¬¸ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord getYMA7L005(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Á¶È¸[BCoilComm.getYMA7L005] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì¡°íšŒ[BCoilComm.getYMA7L005] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
-			//¼ö½Å Ç×¸ñ °ª
-			String msgId      = ""; //Àü¹®ID
-			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //¾ßµå¼³ºñID
-			String ydL2WrGp   = commUtils.trim(rcvMsg.getFieldString("YD_L2_WR_GP"   )); //¾ßµåL2½ÇÀû±¸ºĞ
-			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD")); //¾ßµåL3Ã³¸®°á°úÄÚµå
-			String ydL3Msg    = commUtils.trim(rcvMsg.getFieldString("YD_L3_MSG"     )); //¾ßµåL3MESSAGE
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			String msgId      = ""; //ì „ë¬¸ID
+			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //ì•¼ë“œì„¤ë¹„ID
+			String ydL2WrGp   = commUtils.trim(rcvMsg.getFieldString("YD_L2_WR_GP"   )); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD")); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			String ydL3Msg    = commUtils.trim(rcvMsg.getFieldString("YD_L3_MSG"     )); //ì•¼ë“œL3MESSAGE
 
 			/**********************************************************
-			* 1. ¼ö½Å Ç×¸ñ °ª Check
+			* 1. ìˆ˜ì‹  í•­ëª© ê°’ Check
 			**********************************************************/
 			if ("".equals(ydEqpId)) {
 				return null;
@@ -70,63 +70,63 @@ public class BCoilComm {
 			}
 
 			/**********************************************************
-			* 2. Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º
+			* 2. í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//¾ßµåL3Message°¡ ¾øÀ¸¸é »ı¼º
+			//ì•¼ë“œL3Messageê°€ ì—†ìœ¼ë©´ ìƒì„±
 			if ("".equals(ydL3Msg)) {
 				if ("U".equals(ydL2WrGp)) {
-					ydL3Msg = "±Ç»ó½ÇÀû";
+					ydL3Msg = "ê¶Œìƒì‹¤ì ";
 				} else if ("D".equals(ydL2WrGp)) {
-					ydL3Msg = "±ÇÇÏ½ÇÀû";
+					ydL3Msg = "ê¶Œí•˜ì‹¤ì ";
 				} else if ("E".equals(ydL2WrGp)) {
-					ydL3Msg = "ºñ»óÁ¶¾÷½ÇÀû";
+					ydL3Msg = "ë¹„ìƒì¡°ì—…ì‹¤ì ";
 				} else if ("R".equals(ydL2WrGp)) {
-					ydL3Msg = "°íÀåº¹±¸½ÇÀû";
+					ydL3Msg = "ê³ ì¥ë³µêµ¬ì‹¤ì ";
 				} else if ("M".equals(ydL2WrGp)) {
-					ydL3Msg = "¿îÀü¸ğµåÀüÈ¯";
+					ydL3Msg = "ìš´ì „ëª¨ë“œì „í™˜";
 				} else if ("J".equals(ydL2WrGp)) {
-					ydL3Msg = "Áö½Ã¿ä±¸";
+					ydL3Msg = "ì§€ì‹œìš”êµ¬";
 				} else if ("F".equals(ydL2WrGp)) {
-					ydL3Msg = "°­Á¦±ÇÇÏ";
+					ydL3Msg = "ê°•ì œê¶Œí•˜";
 				} else if ("G".equals(ydL2WrGp)) {
-					ydL3Msg = "°­Á¦±Ç»ó¿ä±¸";
+					ydL3Msg = "ê°•ì œê¶Œìƒìš”êµ¬";
 				} else {
 					ydL3Msg = ydL2WrGp;
 				}
 
 				if ("0000".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + " Á¤»ó Ã³¸®";
+					ydL3Msg = ydL3Msg + " ì •ìƒ ì²˜ë¦¬";
 				} else if ("9999".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + " Á¤º¸ ¾øÀ½";
+					ydL3Msg = ydL3Msg + " ì •ë³´ ì—†ìŒ";
 				} else {
-					ydL3Msg = ydL3Msg + " ¿À·ù <" + logId + ">";
+					ydL3Msg = ydL3Msg + " ì˜¤ë¥˜ <" + logId + ">";
 				}
 			}
 
 			StringBuffer sbMsg = new StringBuffer();
 
-			sbMsg = sbMsg.append(msgId                                 ); //Àü¹®ID
-			sbMsg = sbMsg.append(commUtils.getDateTime18()             ); //»ı¼ºÀÏ,»ı¼º½Ã°£(yyyy-MM-ddHH:mm:ss)
-			sbMsg = sbMsg.append("I"                                   ); //Àü¹®±¸ºĞ
-			sbMsg = sbMsg.append("0078"                                ); //Àü¹®±æÀÌ
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 29, " ")); //ÀÓ½Ã
-			sbMsg = sbMsg.append(commUtils.getRPad(ydEqpId   ,  6, " ")); //¾ßµå¼³ºñID
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")),  1, " ")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )),  8, " ")); //¾ßµå½ºÄÉÁìÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )), 18, " ")); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL2WrGp  ,  1, " ")); //¾ßµåL2½ÇÀû±¸ºĞ
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")); //¾ßµåL3Ã³¸®°á°úÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")); //¾ßµåL3Message
+			sbMsg = sbMsg.append(msgId                                 ); //ì „ë¬¸ID
+			sbMsg = sbMsg.append(commUtils.getDateTime18()             ); //ìƒì„±ì¼,ìƒì„±ì‹œê°„(yyyy-MM-ddHH:mm:ss)
+			sbMsg = sbMsg.append("I"                                   ); //ì „ë¬¸êµ¬ë¶„
+			sbMsg = sbMsg.append("0078"                                ); //ì „ë¬¸ê¸¸ì´
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 29, " ")); //ì„ì‹œ
+			sbMsg = sbMsg.append(commUtils.getRPad(ydEqpId   ,  6, " ")); //ì•¼ë“œì„¤ë¹„ID
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")),  1, " ")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )),  8, " ")); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )), 18, " ")); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL2WrGp  ,  1, " ")); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")); //ì•¼ë“œL3Message
 
 			JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
 
 			sndL2Msg.setResultCode(logId);	//Log ID
 			sndL2Msg.setResultMsg(methodNm);	//Log Method Name
-			sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCÄÚµå
-			sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã(yyyyMMddHHmmss)
+			sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCì½”ë“œ
+			sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ(yyyyMMddHHmmss)
 			sndL2Msg.addField("JMS_TC_MESSAGE"     , sbMsg.toString()         ); //JMSTCMessage
 
-			//Àü¼Û Data Return
+			//ì „ì†¡ Data Return
 			return commUtils.addSndData(sndL2Msg);
 		} catch (Exception e) {
 			commUtils.printErrorLog(commUtils.makeErrorLog(logId, methodNm, e), this, e);
@@ -136,24 +136,24 @@ public class BCoilComm {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 */  
     public JDTORecord setInnerIFCoilInfo_01(JDTORecord rcvMsg) throws DAOException {
-    	String methodNm = "¾Ğ¿¬½ÇÀû Ã³¸®[BCoilComm.setInnerIFCoilInfo_01] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ì••ì—°ì‹¤ì  ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_01] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); 
     	JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
     	try{
     		commUtils.printLog(logId, methodNm, "S+");
     		
     		String sStockMoveTerm = "";
-    		String coilNo    	= commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
+    		String coilNo    	= commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
 			String yardId   	= commUtils.trim(rcvMsg.getFieldString("YARD_ID")); //
 			String processId   	= commUtils.trim(rcvMsg.getFieldString("PROCESS_ID")); //
-			String modifier     = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String modifier     = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			//ProcessID
 			
 			
@@ -164,43 +164,43 @@ public class BCoilComm {
 			jrParam1.setField("COIL_NO"    , coilNo);
 			jrParam1.setField("MODIFIER"   , modifier);
 			
-			commUtils.printLog(logId, "=============¾Ğ¿¬½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "=============ì••ì—°ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 
 		    /*************************************
-		     *	1.	°øÅë CoilÁ¤º¸¸¦ °¡Á®¿Â´Ù.
+		     *	1.	ê³µí†µ Coilì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		     *************************************/
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	if("91".equals(processId)){	
-		    		throw new EJBServiceException("=¾Ğ¿¬½ÇÀû=>Á¶¾÷ 91 NO HAVE COMMON COIL DATA");
+		    		throw new EJBServiceException("=ì••ì—°ì‹¤ì =>ì¡°ì—… 91 NO HAVE COMMON COIL DATA");
 		    	}
 			} else {
 		    
@@ -221,27 +221,27 @@ public class BCoilComm {
 		    	
 		    	} else if(YmConstant.CURR_PROG_CD_COIL_3.equals(sProgCd)) {
 				
-					commUtils.printLog(logId, methodNm+ "¢º¢º¢º["+coilNo+"]===¾Ğ¿¬½ÇÀû Ã³¸® Á¾·á(»ı»êÁ¾·áµÈ Á¤º¸ÀÔ´Ï´Ù)========", "SL");
+					commUtils.printLog(logId, methodNm+ "â–¶â–¶â–¶["+coilNo+"]===ì••ì—°ì‹¤ì  ì²˜ë¦¬ ì¢…ë£Œ(ìƒì‚°ì¢…ë£Œëœ ì •ë³´ì…ë‹ˆë‹¤)========", "SL");
 					return jrRtn;			
 					
 				} else {
-		    		if("5K".equals(sCoilProc)){		 //B¿­¿¬ SPM
-						sStockMoveTerm = "A2";		//SPM ÃßÃâ
+		    		if("5K".equals(sCoilProc)){		 //Bì—´ì—° SPM
+						sStockMoveTerm = "A2";		//SPM ì¶”ì¶œ
 						
-					}else if("5H".equals(sCoilProc)){//B¿­¿¬ HFL
-						sStockMoveTerm = "A1";		//HFL ÃßÃâ
+					}else if("5H".equals(sCoilProc)){//Bì—´ì—° HFL
+						sStockMoveTerm = "A1";		//HFL ì¶”ì¶œ
 						
-					}else if("5T".equals(sCoilProc)){//B¿­¿¬ ¼ö³ÃÀç
-						sStockMoveTerm = "A3";		//¼ö³ÃÀç ÃßÃâ
+					}else if("5T".equals(sCoilProc)){//Bì—´ì—° ìˆ˜ëƒ‰ì¬
+						sStockMoveTerm = "A3";		//ìˆ˜ëƒ‰ì¬ ì¶”ì¶œ
 						
-					}else if("5A".equals(sCoilProc)){//B¿­¿¬ °ø³ÃÀç
-						sStockMoveTerm = "A4";		//°ø³ÃÀç ÃßÃâ
+					}else if("5A".equals(sCoilProc)){//Bì—´ì—° ê³µëƒ‰ì¬
+						sStockMoveTerm = "A4";		//ê³µëƒ‰ì¬ ì¶”ì¶œ
 						
-					}else if("6K".equals(sCoilProc)){//B¿­¿¬ SPM2
-						sStockMoveTerm = "A6";		// SPM2 ÃßÃâ
+					}else if("6K".equals(sCoilProc)){//Bì—´ì—° SPM2
+						sStockMoveTerm = "A6";		// SPM2 ì¶”ì¶œ
 						
-					}else if("6H".equals(sCoilProc)){//B¿­¿¬ HFL°á¼ÓÀå
-						sStockMoveTerm = "A7";		// B¿­¿¬ HFL°á¼ÓÀå ÃßÃâ
+					}else if("6H".equals(sCoilProc)){//Bì—´ì—° HFLê²°ì†ì¥
+						sStockMoveTerm = "A7";		// Bì—´ì—° HFLê²°ì†ì¥ ì¶”ì¶œ
 					}
 				}
 			}
@@ -254,17 +254,17 @@ public class BCoilComm {
 			jrParam1.setField("STOCK_MOVE_TERM" , sStockMoveTerm);
 			
 	    	/****************************************************
-		     *	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
-		     *		ÃÖÃÊ ¹ß»ı½Ã µî·Ï, Àç ½ÇÀû¹ß»ı½Ã ¼öÁ¤
+		     *	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
+		     *		ìµœì´ˆ ë°œìƒì‹œ ë“±ë¡, ì¬ ì‹¤ì ë°œìƒì‹œ ìˆ˜ì •
 		     *****************************************************/				
 			/* com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStock 
 			MERGE INTO TB_YM_STOCK ST USING (
-			    SELECT :V_STOCK_ID          AS STOCK_ID                                 --Àç·á¹øÈ£
-			         , :V_MODIFIER          AS MODIFIER         --¼öÁ¤ÀÚ
-			         , SYSDATE              AS MOD_DDTT         --¼öÁ¤ÀÏ½Ã
-			         , 'N'                  AS DEL_YN           --»èÁ¦À¯¹«
-			         , :V_STOCK_ITEM        AS STOCK_ITEM       --ÀúÀåÇ° Ç°¸ñ
-			         , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ÀúÀåÇ° ÀÌµ¿ Á¶°Ç
+			    SELECT :V_STOCK_ID          AS STOCK_ID                                 --ì¬ë£Œë²ˆí˜¸
+			         , :V_MODIFIER          AS MODIFIER         --ìˆ˜ì •ì
+			         , SYSDATE              AS MOD_DDTT         --ìˆ˜ì •ì¼ì‹œ
+			         , 'N'                  AS DEL_YN           --ì‚­ì œìœ ë¬´
+			         , :V_STOCK_ITEM        AS STOCK_ITEM       --ì €ì¥í’ˆ í’ˆëª©
+			         , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ì €ì¥í’ˆ ì´ë™ ì¡°ê±´
 			      FROM DUAL
 			) DD ON ( ST.STOCK_ID = DD.STOCK_ID)
 
@@ -289,7 +289,7 @@ public class BCoilComm {
 			commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStock");
 			
 		    /****************************************
-		     *	5.	¾Ğ¿¬½ÇÀûÀü¹®À» ¼Û½ÅÇÑ´Ù.
+		     *	5.	ì••ì—°ì‹¤ì ì „ë¬¸ì„ ì†¡ì‹ í•œë‹¤.
 		     ****************************************/	
 		    
 		    if(jsCoilCom.size() > 0){
@@ -311,21 +311,21 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 */  
     public boolean setInnerIFCoilInfo_02(JDTORecord rcvMsg) throws DAOException {
-    	String methodNm = "Á¤Á¤½ÇÀû Ã³¸®[BCoilComm.setInnerIFCoilInfo_02] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ì •ì •ì‹¤ì  ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_02] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); //String sGoodsNo, String sGbnWork){
 		boolean blRtn = false;
 		try{
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String coilNo    = commUtils.trim(rcvMsg.getFieldString("COIL_NO"     )); //ÄÚÀÏ¹øÈ£ 
-			String workChk   = commUtils.trim(rcvMsg.getFieldString("WORK_CHK"    )); //ÀÛ¾÷±¸ºĞ HFL,SPM
+			String coilNo    = commUtils.trim(rcvMsg.getFieldString("COIL_NO"     )); //ì½”ì¼ë²ˆí˜¸ 
+			String workChk   = commUtils.trim(rcvMsg.getFieldString("WORK_CHK"    )); //ì‘ì—…êµ¬ë¶„ HFL,SPM
 			
 			JDTORecord jrParam1 = JDTORecordFactory.getInstance().create();
 			jrParam1.setResultCode(logId);	//Log ID
@@ -333,49 +333,49 @@ public class BCoilComm {
 			jrParam1.setField("COIL_NO"   , coilNo);
 			jrParam1.setField("STOCK_ID"  , coilNo);
 			
-			commUtils.printLog(logId, "=============Á¤Á¤½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "=============ì •ì •ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	blRtn;
 			}
-		    String ydPlntGp   = commUtils.trim(jsCoilCom.getRecord(0).getFieldString("PLNT_GP")); //°øÀå±¸ºĞ
+		    String ydPlntGp   = commUtils.trim(jsCoilCom.getRecord(0).getFieldString("PLNT_GP")); //ê³µì¥êµ¬ë¶„
 			
 			String sTotalPassProc = "";
 			String sFinalPassProc = "";
 			
     		/**
-    		2. Åë°ú°øÁ¤ÀÇ Á¤º¸¸¦ ºñ±³ÇÑ´Ù.
+    		2. í†µê³¼ê³µì •ì˜ ì •ë³´ë¥¼ ë¹„êµí•œë‹¤.
     		*/
-    		// COILCOMM TBLÀÇ Åë°ú°øÁ¤ 1~5 Áß °¡Àå ¸¶Áö¸·¿¡ ÀÔ·ÂµÈ Åë°ú°øÁ¤À» ºñ±³ÇÏ¿©¾ß ÇÑ´Ù. ÃÖ±Ô¼º. 
+    		// COILCOMM TBLì˜ í†µê³¼ê³µì • 1~5 ì¤‘ ê°€ì¥ ë§ˆì§€ë§‰ì— ì…ë ¥ëœ í†µê³¼ê³µì •ì„ ë¹„êµí•˜ì—¬ì•¼ í•œë‹¤. ìµœê·œì„±. 
     		for(int i=0; i < 5; i++)
     		{	 
     			sTotalPassProc = commUtils.nvl(jsCoilCom.getRecord(0).getFieldString("PLAN_PROC"+String.valueOf(i+1)),"-");
@@ -391,7 +391,7 @@ public class BCoilComm {
     		}
 
       		/**
-		     *	2.	ÄÚÀÏ°øÅë ÁøµµÄÚµå Table ÂüÁ¶.
+		     *	2.	ì½”ì¼ê³µí†µ ì§„ë„ì½”ë“œ Table ì°¸ì¡°.
 		     */
     		
     		JDTORecord jrRtnProg = commComm.getCoilCurrProgCd(jrParam1);
@@ -416,14 +416,14 @@ public class BCoilComm {
     		     , STOCK_MOVE_TERM  = :V_STOCK_MOVE_TERM
     		WHERE STOCK_ID = :V_STOCK_ID
     		*/
-    		commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStockTransInfo_06", logId, methodNm, "TB_YM_STOCK ¼öÁ¤");
+    		commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStockTransInfo_06", logId, methodNm, "TB_YM_STOCK ìˆ˜ì •");
     		
     		/*********************** 
-    		 *  LAYOUT »ı¼º ¾ÈÇØµµ µÊ
-    		 *  ÃßÃâ½Ã ¾øÀ» °æ¿ì »ı¼º Ã³¸® µÊ
+    		 *  LAYOUT ìƒì„± ì•ˆí•´ë„ ë¨
+    		 *  ì¶”ì¶œì‹œ ì—†ì„ ê²½ìš° ìƒì„± ì²˜ë¦¬ ë¨
     		 ************************************/
 
-			commUtils.printLog(logId, "=============Á¤Á¤½ÇÀû Ã³¸® Á¾·á========", "SL");
+			commUtils.printLog(logId, "=============ì •ì •ì‹¤ì  ì²˜ë¦¬ ì¢…ë£Œ========", "SL");
 	
 			commUtils.printLog(logId, methodNm, "S+");		            
 			blRtn = true; 
@@ -438,21 +438,21 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 */  
     public boolean setInnerIFCoilInfo_03(JDTORecord rcvMsg) throws DAOException {
     	boolean blRtn = false;
-    	String methodNm = "º¸·ùÀç Ã³¸®[BCoilComm.setInnerIFCoilInfo_03] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ë³´ë¥˜ì¬ ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_03] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
     	
     	try{
-    		String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String yardId   = commUtils.trim(rcvMsg.getFieldString("YARD_ID")); //¾ßµå±¸ºĞ
-			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+    		String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String yardId   = commUtils.trim(rcvMsg.getFieldString("YARD_ID")); //ì•¼ë“œêµ¬ë¶„
+			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			
 			
 			JDTORecord jrParam1 = JDTORecordFactory.getInstance().create();
@@ -462,36 +462,36 @@ public class BCoilComm {
 			jrParam1.setField("STOCK_ID"   , coilNo);
 			jrParam1.setField("MODIFIER"   , modifier);
 			
-			commUtils.printLog(logId, "=============º¸·ùÀç½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "=============ë³´ë¥˜ì¬ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	blRtn;
@@ -503,7 +503,7 @@ public class BCoilComm {
 		    jrParam1.setField("STOCK_MOVE_TERM", sStockMoveTerm);
     		
 		    /**
-		     *	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
+		     *	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
 		     */
 		    /*
 		     * UPDATE TB_YM_STOCK
@@ -513,7 +513,7 @@ public class BCoilComm {
 				     , MOD_DDTT   = SYSDATE           
 				 WHERE STOCK_ID = :V_STOCK_ID
 		     */
-		    commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStockTransInfo_06", logId, methodNm, "ÀúÀåÇ°Table ¼öÁ¤");	
+		    commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStockTransInfo_06", logId, methodNm, "ì €ì¥í’ˆTable ìˆ˜ì •");	
     		
     		blRtn = true; 
 		}catch(DAOException daoe){
@@ -526,20 +526,20 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-        * ¹İ³³ ½ÇÀû Ã³¸®
+        * ë°˜ë‚© ì‹¤ì  ì²˜ë¦¬
         *
-        * param String	: ÀúÀåÇ°ID
+        * param String	: ì €ì¥í’ˆID
         *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */    
     public boolean setInnerIFCoilInfo_04(JDTORecord rcvMsg){
 		
-		String methodNm = "¹İ³³ ½ÇÀû Ã³¸®[BCoilComm.setInnerIFCoilInfo_04] < " + rcvMsg.getResultMsg();
+		String methodNm = "ë°˜ë‚© ì‹¤ì  ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_04] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); 
 		boolean blRtn = false;
 
@@ -547,8 +547,8 @@ public class BCoilComm {
 		try{
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			
 			JDTORecord jrParam1 = JDTORecordFactory.getInstance().create();
 			jrParam1.setResultCode(logId);	//Log ID
@@ -557,20 +557,20 @@ public class BCoilComm {
 			jrParam1.setField("STOCK_ID"   , coilNo);
 			jrParam1.setField("MODIFIER"   , modifier);
 			
-			commUtils.printLog(logId, "============¹İ³³½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "============ë°˜ë‚©ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 		    /**
-		     *	1.	°øÅë CoilÁ¤º¸¸¦ °¡Á®¿Â´Ù.
+		     *	1.	ê³µí†µ Coilì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		     */
 			
-			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 	    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	blRtn;
 			}
 		    
 	    	/**  stock_move_term
-		     *	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
-		     *		ÃÖÃÊ ¹ß»ı½Ã µî·Ï, Àç ½ÇÀû¹ß»ı½Ã ¼öÁ¤
+		     *	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
+		     *		ìµœì´ˆ ë°œìƒì‹œ ë“±ë¡, ì¬ ì‹¤ì ë°œìƒì‹œ ìˆ˜ì •
 		     */
 		    jrParam1.setField("STOCK_MOVE_TERM", YmConstant.NEW_STOCK_MOVE_TERM_JR);
 		    
@@ -583,7 +583,7 @@ public class BCoilComm {
 		     */
 		    commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStockTransInfo");
 
-		    commUtils.printLog(logId, "============¹İ³³½ÇÀû Ã³¸® Á¾·á========", "SL");
+		    commUtils.printLog(logId, "============ë°˜ë‚©ì‹¤ì  ì²˜ë¦¬ ì¢…ë£Œ========", "SL");
 		    blRtn = true; 
 		}catch(DAOException daoe){
 	        throw daoe;
@@ -596,14 +596,14 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 */  
     public JDTORecord setInnerIFCoilInfo_05(JDTORecord rcvMsg) throws DAOException {
-    	String methodNm = "¸ğÄÚÀÏÁ¾·á Ã³¸®[BCoilComm.setInnerIFCoilInfo_05] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ëª¨ì½”ì¼ì¢…ë£Œ ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_05] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); 
 		boolean blRtn = false;
 		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
@@ -612,10 +612,10 @@ public class BCoilComm {
 			
 			String workChk = "";
 			
-			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 
-			//TODO ¿­¿¬ÄÚÀÏ? HR-PLATE?? ÀÓ°¡°ø»çÄÚµå??
+			//TODO ì—´ì—°ì½”ì¼? HR-PLATE?? ì„ê°€ê³µì‚¬ì½”ë“œ??
 // PIDEV			
 //			String sApplyYnPI = commDao.ApplyYnPI("", "", "APPPI0", "*", "*");
 			
@@ -627,36 +627,36 @@ public class BCoilComm {
 			jrParam1.setField("MODIFIER"   , modifier);
 			
 			
-			commUtils.printLog(logId, "=============Á¤Á¤½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "=============ì •ì •ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 
 			/*
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+		    JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	jrRtn;
@@ -665,9 +665,9 @@ public class BCoilComm {
 			String sFinalPassProc = "";
 			
     		/**
-    		2. Åë°ú°øÁ¤ÀÇ Á¤º¸¸¦ ºñ±³ÇÑ´Ù.
+    		2. í†µê³¼ê³µì •ì˜ ì •ë³´ë¥¼ ë¹„êµí•œë‹¤.
     		*/
-    		// COILCOMM TBLÀÇ Åë°ú°øÁ¤ 1~5 Áß °¡Àå ¸¶Áö¸·¿¡ ÀÔ·ÂµÈ Åë°ú°øÁ¤À» ºñ±³ÇÏ¿©¾ß ÇÑ´Ù. checkCoilCommonInfo
+    		// COILCOMM TBLì˜ í†µê³¼ê³µì • 1~5 ì¤‘ ê°€ì¥ ë§ˆì§€ë§‰ì— ì…ë ¥ëœ í†µê³¼ê³µì •ì„ ë¹„êµí•˜ì—¬ì•¼ í•œë‹¤. checkCoilCommonInfo
 			//sFinalPassProc = checkCoilCommonInfo(sGoodsNo);
     		for (int i = 0; i < 5; i++) {	 
     			sTotalPassProc = commUtils.nvl(jsCoilCom.getRecord(0).getFieldString("PASS_PROC"+String.valueOf(i+1)),"-");
@@ -685,8 +685,8 @@ public class BCoilComm {
     		}
       		
       		/**
-			 * 2. Coil ÀÔ°í½ÇÀû (ÃâÇÏ·Î Á¦Ç°ÀÔ°í½ÇÀû ¼Û½Å YMDM001) °øÅë Áøµµ Code°¡ ÀÔ°í´ë±â H ÀÌ¸é ÃâÇÏ·Î
-			 * ÀÔ°í½ÇÀû¼Û½Å
+			 * 2. Coil ì…ê³ ì‹¤ì  (ì¶œí•˜ë¡œ ì œí’ˆì…ê³ ì‹¤ì  ì†¡ì‹  YMDM001) ê³µí†µ ì§„ë„ Codeê°€ ì…ê³ ëŒ€ê¸° H ì´ë©´ ì¶œí•˜ë¡œ
+			 * ì…ê³ ì‹¤ì ì†¡ì‹ 
 			 */
       		/*com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist
       		SELECT A.COIL_NO
@@ -700,15 +700,15 @@ public class BCoilComm {
       		   AND A.PARENT_COIL_NO = :V_COIL_NO
       		 ORDER BY A.COIL_NO
 			*/		   		
-      		JDTORecordSet StockList = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist", logId, methodNm, "°øÅë HRPlateÁ¤º¸ Á¶È¸");
+      		JDTORecordSet StockList = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist", logId, methodNm, "ê³µí†µ HRPlateì •ë³´ ì¡°íšŒ");
 //PIDEV
 //      		if ("Y".equals(sApplyYnPI)) {
       			
       			if (StockList.size() > 0 ) {
       				/**********************************************
-      				   * ÀÓ°¡°ø ½ÇÀûµî·Ï
+      				   * ì„ê°€ê³µ ì‹¤ì ë“±ë¡
       				   **********************************************/
-      				//ÁøµµÄÚµå°¡ H(ÀÔ°í´ë±â) »óÅÂ¸¸ ÃâÇÏ·Î Àü¼Û ÇÔ 
+      				//ì§„ë„ì½”ë“œê°€ H(ì…ê³ ëŒ€ê¸°) ìƒíƒœë§Œ ì¶œí•˜ë¡œ ì „ì†¡ í•¨ 
       				/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlistNew_PIDEV 
       				SELECT A.COIL_NO
       				     , TO_CHAR(SYSDATE ,'YYYYMMDD')           AS RECEIPT_DATE  
@@ -726,7 +726,7 @@ public class BCoilComm {
       				   AND A.CURR_PROG_CD ='H'
       				 ORDER BY A.COIL_NO
       				*/
-      				JDTORecordSet jsStockList2 = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlistNew_PIDEV", logId, methodNm, "°øÅë HRPlateÁ¤º¸ Á¶È¸2");
+      				JDTORecordSet jsStockList2 = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlistNew_PIDEV", logId, methodNm, "ê³µí†µ HRPlateì •ë³´ ì¡°íšŒ2");
       				 
       				JDTORecord 	jrStockList2 = JDTORecordFactory.getInstance().create();
       				JDTORecord 	tcRecord1 = JDTORecordFactory.getInstance().create();
@@ -747,7 +747,7 @@ public class BCoilComm {
   						tcRecord1.setField("YD_GP"				, commUtils.trim(jrStockList2.getFieldString("YD_GP")));
   						tcRecord1.setField("STORE_LOC"			, commUtils.trim(jrStockList2.getFieldString("STORE_LOC")));
       					
-      					//³»ºÎÀÎÅÍÆäÀÌ½º ¼Û½Å¸ğµâ È£Ãâ 
+      					//ë‚´ë¶€ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹ ëª¨ë“ˆ í˜¸ì¶œ 
       					jrRtn = commUtils.addSndData(jrRtn, tcRecord1);	
       		   		} //for end 
       			blRtn = true;
@@ -756,7 +756,7 @@ public class BCoilComm {
       			} 
 //      		}
       		
-			//¾Ğ¿¬½ÇÀûÃ³¸®
+			//ì••ì—°ì‹¤ì ì²˜ë¦¬
 			for (int i = 0; i < StockList.size(); i++) {
 				rcvMsg.setField("COIL_NO" , StockList.getRecord(i).getFieldString("COIL_NO"));
 				rcvMsg.setField("YARD_ID" , StockList.getRecord(i).getFieldString("YD_GP"));
@@ -765,7 +765,7 @@ public class BCoilComm {
 				
 		   	} //for end 
 			
-			//ÁøµµÄÚµå°¡ H(ÀÔ°í´ë±â) »óÅÂ¸¸ ÃâÇÏ·Î Àü¼Û ÇÔ 
+			//ì§„ë„ì½”ë“œê°€ H(ì…ê³ ëŒ€ê¸°) ìƒíƒœë§Œ ì¶œí•˜ë¡œ ì „ì†¡ í•¨ 
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist2 
 			SELECT A.COIL_NO
 			     , TO_CHAR(SYSDATE ,'YYYYMMDD')           AS RECEIPT_DATE  
@@ -779,7 +779,7 @@ public class BCoilComm {
 			   AND A.CURR_PROG_CD ='H'
 			 ORDER BY A.COIL_NO
 			*/
-			JDTORecordSet jsStockList2 = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist2_PIDEV", logId, methodNm, "°øÅë HRPlateÁ¤º¸ Á¶È¸2");
+			JDTORecordSet jsStockList2 = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.HRPlatecommlist2_PIDEV", logId, methodNm, "ê³µí†µ HRPlateì •ë³´ ì¡°íšŒ2");
 			 
 			JDTORecord 	jrStockList2 = JDTORecordFactory.getInstance().create();
 			JDTORecord 	tcRecord1 = JDTORecordFactory.getInstance().create();
@@ -795,7 +795,7 @@ public class BCoilComm {
 					tcRecord1.setField("MQ_TC_CD"    		, "M10YDLMJ1015");
 					tcRecord1.setField("MQ_TC_CREATE_DDTT"  , commUtils.getDateTime14());
 					tcRecord1.setField("DIST_GOODS_GP"      , "H");
-					tcRecord1.setField("YARD_GP"            , ""); //ÀÓ°¡°ø»ç ÄÚµå
+					tcRecord1.setField("YARD_GP"            , ""); //ì„ê°€ê³µì‚¬ ì½”ë“œ
 					tcRecord1.setField("GOODS_NO"			, commUtils.trim(jrStockList2.getFieldString("COIL_NO")));
 					tcRecord1.setField("RECEIPT_DATE"		, commUtils.trim(jrStockList2.getFieldString("RECEIPT_DATE")));
 					tcRecord1.setField("RECEIPT_TIME"		, commUtils.trim(jrStockList2.getFieldString("RECEIPT_TIME")));
@@ -814,7 +814,7 @@ public class BCoilComm {
 //					tcRecord1.setField("PROD_ITEM_CODE"		, "");
 //				}
 				
-				//³»ºÎÀÎÅÍÆäÀÌ½º ¼Û½Å¸ğµâ È£Ãâ 
+				//ë‚´ë¶€ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹ ëª¨ë“ˆ í˜¸ì¶œ 
 				jrRtn = commUtils.addSndData(jrRtn, tcRecord1);	
 	   		} //for end 
 	   		
@@ -831,7 +831,7 @@ public class BCoilComm {
 	   		*/
 	   		commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStockDelYnInfo");
 			/**
-		     *	3.	SPM ¾ßµå MAP clear Á¤º¸ ¼ÂÆÃ
+		     *	3.	SPM ì•¼ë“œ MAP clear ì •ë³´ ì…‹íŒ…
 		     */
 	   		/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayer
 	   		UPDATE TB_YM_STACKLAYER
@@ -845,8 +845,8 @@ public class BCoilComm {
 	   		 commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayer");
 
 			/**
-		   	 * ¸ğ Coil Á¾·á Ã³¸® Á¾·á ¹ß»ı½Ã¿¡ ¾ßµå¿¡ Á¸ÀçÇÏ´Â 
-		   	 * ÄÚÀÏÁ¤º¸°¡ ÀÖÀ¸¸é »èÁ¦ÇÑ´Ù.
+		   	 * ëª¨ Coil ì¢…ë£Œ ì²˜ë¦¬ ì¢…ë£Œ ë°œìƒì‹œì— ì•¼ë“œì— ì¡´ì¬í•˜ëŠ” 
+		   	 * ì½”ì¼ì •ë³´ê°€ ìˆìœ¼ë©´ ì‚­ì œí•œë‹¤.
 		   	 */
 				/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdWrkbookDelChk2 
 			 SELECT (SELECT A.YD_CRN_SCH_ID
@@ -869,12 +869,12 @@ public class BCoilComm {
 			   FROM DUAL
 			*/	   
 			
-			JDTORecordSet jsCrnSch = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdWrkbookDelChk2", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙÀç·á Á¶È¸");
+			JDTORecordSet jsCrnSch = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdWrkbookDelChk2", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì¬ë£Œ ì¡°íšŒ");
 
-			String ydCrnSchId = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //Å©·¹ÀÎ ÀÛ¾÷Áö½Ã
-			String ydWbookId  = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_WBOOK_ID"));  //ÀÛ¾÷¿¹¾àID
+			String ydCrnSchId = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //í¬ë ˆì¸ ì‘ì—…ì§€ì‹œ
+			String ydWbookId  = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_WBOOK_ID"));  //ì‘ì—…ì˜ˆì•½ID
 
-			commUtils.printLog(logId, "ÀÛ¾÷Ãë¼Ò [ " + ydCrnSchId + " - " + ydWbookId + " ]", "SL");
+			commUtils.printLog(logId, "ì‘ì—…ì·¨ì†Œ [ " + ydCrnSchId + " - " + ydWbookId + " ]", "SL");
 			
 			jrParam1.setField("YD_WBOOK_ID"  , ydWbookId );
 			jrParam1.setField("YD_CRN_SCH_ID", ydCrnSchId);
@@ -884,7 +884,7 @@ public class BCoilComm {
 			EJBConnector ejbConn = new EJBConnector("default", "BCoilJspSeEJB", this);
 			if(!ydCrnSchId.equals("")) {
 				/**********************************************************
-				* 1.1 Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼Ò
+				* 1.1 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 				**********************************************************/
 				jrRst = (JDTORecord)ejbConn.trx("trtCrnSchCncl", new Class[] { JDTORecord.class }, new Object[] { jrParam1 });
 				jrRtn = commUtils.addSndData(jrRtn, jrRst);
@@ -892,14 +892,14 @@ public class BCoilComm {
 			
 			if(!ydWbookId.equals("")) {
 				/**********************************************************
-				* 2.1 ÀÛ¾÷¿¹¾à Ãë¼Ò
+				* 2.1 ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ
 				**********************************************************/
 				jrRst = (JDTORecord)ejbConn.trx("trtWrkBookCncl", new Class[] { JDTORecord.class }, new Object[] { jrParam1 });
 				jrRtn = commUtils.addSndData(jrRtn, jrRst);
 			}	
 
 			/**********************************************************
-			* 6. ÀúÀåÇ°Á¦¿øÁ¤º¸ (YMA7L002) ¼Û½Å
+			* 6. ì €ì¥í’ˆì œì›ì •ë³´ (YMA7L002) ì†¡ì‹ 
 			**********************************************************/
 			JDTORecord recInTemp  = JDTORecordFactory.getInstance().create();
 			recInTemp.setResultCode(logId);	    //Log ID
@@ -909,11 +909,11 @@ public class BCoilComm {
 			recInTemp.setField("YD_INFO_SYNC_CD", "5");
 			recInTemp.setField("STOCK_ID"       , coilNo);
 			
-			//Àü¼Û Data »ı¼º
+			//ì „ì†¡ Data ìƒì„±
 			jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA7L002", recInTemp));
 			
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getselectStackColGp1 
-			-- STACK_COL_GP(ÀûÄ¡¿­:Ã¹¹øÂ°ÀÚ¸® ¾ßµå±¸ºĞ, µÎ¹øÂ° ÀÚ¸® µ¿±¸ºĞ), STACK_LAYER_STAT(ÀûÄ¡´Ü »óÅÂ L:ÀûÄ¡Áß)
+			-- STACK_COL_GP(ì ì¹˜ì—´:ì²«ë²ˆì§¸ìë¦¬ ì•¼ë“œêµ¬ë¶„, ë‘ë²ˆì§¸ ìë¦¬ ë™êµ¬ë¶„), STACK_LAYER_STAT(ì ì¹˜ë‹¨ ìƒíƒœ L:ì ì¹˜ì¤‘)
 			SELECT STACK_COL_GP
 			     , SUBSTR(STACK_COL_GP,1,1) STACK_COL_GP1
 			     , SUBSTR(STACK_COL_GP,2,1) STACK_COL_GP2
@@ -924,9 +924,9 @@ public class BCoilComm {
 			WHERE STOCK_ID = :V_STOCK_ID
 			*/
 			
-			JDTORecordSet jsStackLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getselectStackColGp1", logId, methodNm, "TB_YM_STACKLAYER Á¤º¸");
+			JDTORecordSet jsStackLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getselectStackColGp1", logId, methodNm, "TB_YM_STACKLAYER ì •ë³´");
 			if (jsStackLayer.size() < 1) {
-				commUtils.printLog(logId, "StackColGp ÀÌ»ó: "+ coilNo, "SL");
+				commUtils.printLog(logId, "StackColGp ì´ìƒ: "+ coilNo, "SL");
 				return jrRtn;				
 	    	} 			
 
@@ -1000,8 +1000,8 @@ public class BCoilComm {
 			jrParam1.setField("SCRANE_WORK_PARTY"	, YmCommUtils.getWorkParty());
 			jrParam1.setField("SCH_WDEMAND_DUTY"	, YmCommUtils.getWorkDuty());
 			jrParam1.setField("SCH_WDEMAND_PARTY"	, YmCommUtils.getWorkParty());
-			jrParam1.setField("UP_LOC"				, "¸ğ Á¾·á");
-			jrParam1.setField("PUT_LOC"				, "¸ğ Á¾·á");
+			jrParam1.setField("UP_LOC"				, "ëª¨ ì¢…ë£Œ");
+			jrParam1.setField("PUT_LOC"				, "ëª¨ ì¢…ë£Œ");
 			jrParam1.setField("UP_FUNC"				, YmConstant.CRANE_FUNC_N);
 			jrParam1.setField("PUT_FUNC"			, YmConstant.CRANE_FUNC_N);
 			jrParam1.setField("REGISTER"			, "SYSTEM");
@@ -1012,12 +1012,12 @@ public class BCoilComm {
 				if(ydBayGp.equals("E") || ydBayGp.equals("D")){
 					jrParam1.setField("YD_SCH_CD", "3"+ydBayGp+"KE02UM");
 				}
-				//3EKE02UM 3DKE02UM - SPM2 º¸±Ş
+				//3EKE02UM 3DKE02UM - SPM2 ë³´ê¸‰
 			}else{
 				if(ydBayGp.equals("B") || ydBayGp.equals("C")){
 					jrParam1.setField("YD_SCH_CD", "3"+ydBayGp+"KE01UM");
 				}
-				//3BKE01UM 3CKE01UM - SPM º¸±Ş
+				//3BKE01UM 3CKE01UM - SPM ë³´ê¸‰
 			}	
 			
 			commDao.insert(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.insertCraneWrsltSanJuk");
@@ -1035,20 +1035,20 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-     * ÀÚ Coil ½ÇÀûÀ» Ã³¸®
+     * ì Coil ì‹¤ì ì„ ì²˜ë¦¬
      *
-     * param String	: ÀúÀåÇ°ID
-     * param String	: ¾ßµå±¸ºĞ
+     * param String	: ì €ì¥í’ˆID
+     * param String	: ì•¼ë“œêµ¬ë¶„
      *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */      
     public JDTORecord setInnerIFCoilInfo_06(JDTORecord rcvMsg){
-    	String methodNm = "ÀÚ Coil ½ÇÀûÀ» Ã³¸®[BCoilComm.setInnerIFCoilInfo_06] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ì Coil ì‹¤ì ì„ ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_06] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); //String sGoodsNo, String sGbnWork){
 		boolean blRtn = false;
 		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
@@ -1056,8 +1056,8 @@ public class BCoilComm {
 		try{
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String coilNo   = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			
 	    	// PIDEV
 //	    	String sApplyYnPI = commDao.ApplyYnPI("", methodNm, "APPPI0", "*", "*");			
@@ -1069,47 +1069,47 @@ public class BCoilComm {
 			jrParam1.setField("STOCK_ID"   , coilNo);
 			jrParam1.setField("MODIFIER"   , modifier);
 			
-			commUtils.printLog(logId, "============Coil ½ÇÀû Ã³¸® ½ÃÀÛ========", "SL");
+			commUtils.printLog(logId, "============Coil ì‹¤ì  ì²˜ë¦¬ ì‹œì‘========", "SL");
 		    /**
-		     *	1.	°øÅë CoilÁ¤º¸¸¦ °¡Á®¿Â´Ù.
+		     *	1.	ê³µí†µ Coilì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		     */
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 	    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	jrRtn;
 			}
     	/**
-	     *	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
-	     *		ÃÖÃÊ ¹ß»ı½Ã µî·Ï, Àç ½ÇÀû¹ß»ı½Ã ¼öÁ¤
+	     *	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
+	     *		ìµœì´ˆ ë°œìƒì‹œ ë“±ë¡, ì¬ ì‹¤ì ë°œìƒì‹œ ìˆ˜ì •
 	     */
-		    JDTORecordSet jsExist = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getByPrimaryKey", logId, methodNm, "ÀúÀåÇ°Table Á¶È¸");
+		    JDTORecordSet jsExist = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getByPrimaryKey", logId, methodNm, "ì €ì¥í’ˆTable ì¡°íšŒ");
 			
 	    	if(jsExist == null || jsExist.size() == 0){
 				JDTORecord jrRtnProg = commComm.getCoilCurrProgCd(jrParam1);
@@ -1136,18 +1136,18 @@ public class BCoilComm {
 				
 				/* com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStockTransInfo_PIDEV
 				MERGE INTO TB_YM_STOCK ST USING (
-				    SELECT :V_STOCK_ID          AS STOCK_ID                                 --Àç·á¹øÈ£
-				         , :V_MODIFIER          AS MODIFIER         --¼öÁ¤ÀÚ
-				         , SYSDATE              AS MOD_DDTT         --¼öÁ¤ÀÏ½Ã
-				         , 'N'                  AS DEL_YN           --»èÁ¦À¯¹«
-				         , :V_STOCK_ITEM        AS STOCK_ITEM       --ÀúÀåÇ° Ç°¸ñ
-				         , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ÀúÀåÇ° ÀÌµ¿ Á¶°Ç
-				         , :V_SHEAR_SUPPLY_SEQ  AS SHEAR_SUPPLY_SEQ --Â÷»óÀ§Ä¡
-				         , :V_TRANS_ORD_DT      AS TRANS_ORD_DATE2   --¿î¼ÛÁö½Ã
-				         , :V_TRANS_ORD_SEQNO   AS TRANS_ORD_SEQNO2 --¿î¼ÛÁö½Ã¼ø¹ø
-				         , :V_CAR_CARD_NO       AS CAR_CARD_NO      --Ä«µå¹øÈ£
-				         , :V_CAR_NO2           AS CAR_NO2          --Â÷·®¹øÈ£
-				         , :V_CR_FRTOMOVE_GP    AS CR_FRTOMOVE_GP   --³Ã¿¬ÀÌ¼Û±¸ºĞ
+				    SELECT :V_STOCK_ID          AS STOCK_ID                                 --ì¬ë£Œë²ˆí˜¸
+				         , :V_MODIFIER          AS MODIFIER         --ìˆ˜ì •ì
+				         , SYSDATE              AS MOD_DDTT         --ìˆ˜ì •ì¼ì‹œ
+				         , 'N'                  AS DEL_YN           --ì‚­ì œìœ ë¬´
+				         , :V_STOCK_ITEM        AS STOCK_ITEM       --ì €ì¥í’ˆ í’ˆëª©
+				         , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ì €ì¥í’ˆ ì´ë™ ì¡°ê±´
+				         , :V_SHEAR_SUPPLY_SEQ  AS SHEAR_SUPPLY_SEQ --ì°¨ìƒìœ„ì¹˜
+				         , :V_TRANS_ORD_DT      AS TRANS_ORD_DATE2   --ìš´ì†¡ì§€ì‹œ
+				         , :V_TRANS_ORD_SEQNO   AS TRANS_ORD_SEQNO2 --ìš´ì†¡ì§€ì‹œìˆœë²ˆ
+				         , :V_CAR_CARD_NO       AS CAR_CARD_NO      --ì¹´ë“œë²ˆí˜¸
+				         , :V_CAR_NO2           AS CAR_NO2          --ì°¨ëŸ‰ë²ˆí˜¸
+				         , :V_CR_FRTOMOVE_GP    AS CR_FRTOMOVE_GP   --ëƒ‰ì—°ì´ì†¡êµ¬ë¶„
 				         , :V_TRANS_WORD_NO     AS TRANS_WORD_NO
 				      FROM DUAL
 				) DD ON ( ST.STOCK_ID = DD.STOCK_ID)
@@ -1184,12 +1184,12 @@ public class BCoilComm {
 
 		    	// PIDEV
 //				if("Y".equals(sApplyYnPI)) {
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStockTransInfo_PIDEV", logId, methodNm, "TB_YM_STOCK »ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStockTransInfo_PIDEV", logId, methodNm, "TB_YM_STOCK ìƒì„±");
 //				} else {
-//					commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStockTransInfo", logId, methodNm, "TB_YM_STOCK »ı¼º");
+//					commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStockTransInfo", logId, methodNm, "TB_YM_STOCK ìƒì„±");
 //				}
 				/**********************************************************
-				* 6. ÀúÀåÇ°Á¦¿øÁ¤º¸ (YMA7L002) ¼Û½Å
+				* 6. ì €ì¥í’ˆì œì›ì •ë³´ (YMA7L002) ì†¡ì‹ 
 				**********************************************************/
 				JDTORecord recInTemp  = JDTORecordFactory.getInstance().create();
 				recInTemp.setResultCode(logId);	    //Log ID
@@ -1199,11 +1199,11 @@ public class BCoilComm {
 				recInTemp.setField("YD_INFO_SYNC_CD", "R");
 				recInTemp.setField("STOCK_ID"       , coilNo);
 				
-				//Àü¼Û Data »ı¼º
+				//ì „ì†¡ Data ìƒì„±
 				jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA7L002", recInTemp));
 			}
 	    	else{
-				//throw new EJBServiceException("=ÀÚ Coil ½ÇÀû=>EXIST STOCK TABLE COIL DATA");
+				//throw new EJBServiceException("=ì Coil ì‹¤ì =>EXIST STOCK TABLE COIL DATA");
 	    		return 	jrRtn;
 			}
 
@@ -1221,24 +1221,24 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-     * SPM ÀçÀÛ¾÷
+     * SPM ì¬ì‘ì—…
      *
-     * param String	: ÀúÀåÇ°ID
-     * param String	: ¾ßµå±¸ºĞ
+     * param String	: ì €ì¥í’ˆID
+     * param String	: ì•¼ë“œêµ¬ë¶„
      *
-     *	¼ö½ÅÀÌ µÇ¸é ´ë»óÀç°¡ ÃâÃø¿¡ ÀÖ´Ù¸é 
-	 *	ÀÔÃø D5·Î º¸³»°í Á¶¾÷À¸·Î º¸±Ş¿Ï·á½ÇÀûÀ» ¼Û½Å
-	 *     ´ë»óÀç°¡ ÀÔÃø¿¡ ÀÖ´Ù¸é ±×´ë·Î µÎ°í º¸±Ş¿Ï·á½ÇÀûÀ» ¼Û½Å
+     *	ìˆ˜ì‹ ì´ ë˜ë©´ ëŒ€ìƒì¬ê°€ ì¶œì¸¡ì— ìˆë‹¤ë©´ 
+	 *	ì…ì¸¡ D5ë¡œ ë³´ë‚´ê³  ì¡°ì—…ìœ¼ë¡œ ë³´ê¸‰ì™„ë£Œì‹¤ì ì„ ì†¡ì‹ 
+	 *     ëŒ€ìƒì¬ê°€ ì…ì¸¡ì— ìˆë‹¤ë©´ ê·¸ëŒ€ë¡œ ë‘ê³  ë³´ê¸‰ì™„ë£Œì‹¤ì ì„ ì†¡ì‹ 
      *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */       
     public JDTORecord setInnerIFCoilInfo_07(JDTORecord rcvMsg) {
-    	String methodNm = "SPM ÀçÀÛ¾÷[BCoilComm.setInnerIFCoilInfo_07] < " + rcvMsg.getResultMsg();
+    	String methodNm = "SPM ì¬ì‘ì—…[BCoilComm.setInnerIFCoilInfo_07] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); //String sGoodsNo, String sGbnWork){
 		boolean blRtn = false;
 		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
@@ -1246,9 +1246,9 @@ public class BCoilComm {
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String coilNo      = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier    = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
-			String sPROCESS_ID = commUtils.trim(rcvMsg.getFieldString("PROCESS_ID")); //J3 : Á¤º¸»óÀÇ ÀçÀÛ¾÷
+			String coilNo      = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier    = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
+			String sPROCESS_ID = commUtils.trim(rcvMsg.getFieldString("PROCESS_ID")); //J3 : ì •ë³´ìƒì˜ ì¬ì‘ì—…
 			
 			JDTORecord jrParam1 = JDTORecordFactory.getInstance().create();
 			jrParam1.setResultCode(logId);	//Log ID
@@ -1259,42 +1259,42 @@ public class BCoilComm {
 			
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 			*/
-			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	return 	jrRtn;
-		    	//throw new EJBServiceException("°øÅë CoilÁ¤º¸ NULL");
+		    	//throw new EJBServiceException("ê³µí†µ Coilì •ë³´ NULL");
 			}
 
-		    commUtils.printLog(logId, "============SPM ÀçÀÛ¾÷ Ã³¸® ½ÃÀÛ========", "SL");
+		    commUtils.printLog(logId, "============SPM ì¬ì‘ì—… ì²˜ë¦¬ ì‹œì‘========", "SL");
 		    
 		    /**
-		     *	1.	B¿­¿¬ SPM ÀÔ,ÃâÃø ¼ÂÆÃ
+		     *	1.	Bì—´ì—° SPM ì…,ì¶œì¸¡ ì…‹íŒ…
 		     */
 			String sIStackColGp   = "";
 			String sOStackColGp1  = "";
@@ -1307,10 +1307,10 @@ public class BCoilComm {
 		    sPlntGp = jsCoilCom.getRecord(0).getFieldString("HR_PLNT_GP");
 		    
 		    //===============================================================================
-		    // SPM2 °ü·Ã °Ë»ç ÄÚµå Ãß°¡. .
+		    // SPM2 ê´€ë ¨ ê²€ì‚¬ ì½”ë“œ ì¶”ê°€. .
 //			sFinalPassProc = checkCoilCommonInfo(sGoodsNo);
 		   //===============================================================================
-		    // COILCOMM TBLÀÇ Åë°ú°øÁ¤ 1~5 Áß °¡Àå ¸¶Áö¸·¿¡ ÀÔ·ÂµÈ Åë°ú°øÁ¤À» ºñ±³ÇÏ¿©¾ß ÇÑ´Ù. . 
+		    // COILCOMM TBLì˜ í†µê³¼ê³µì • 1~5 ì¤‘ ê°€ì¥ ë§ˆì§€ë§‰ì— ì…ë ¥ëœ í†µê³¼ê³µì •ì„ ë¹„êµí•˜ì—¬ì•¼ í•œë‹¤. . 
     		for (int i = 0; i < 5; i++) {	 
     			sTotalPassProc = commUtils.nvl(jsCoilCom.getRecord(0).getFieldString("PASS_PROC"+String.valueOf(i+1)),"-");
     			if (sTotalPassProc.equals("-") || sTotalPassProc.equals("")) {
@@ -1320,26 +1320,26 @@ public class BCoilComm {
     			}
     		}
     		
-    		if (sFinalPassProc.equals("5K")) {  //SPM1 ¼öÀÛ¾÷Ã³¸®
+    		if (sFinalPassProc.equals("5K")) {  //SPM1 ìˆ˜ì‘ì—…ì²˜ë¦¬
 				sIStackColGp   = YmConstant.SPM_COL_3BKE+YmConstant.STACK_BED_GP_01;
 				sOStackColGp1  = YmConstant.SPM_COL_3BKD+YmConstant.STACK_BED_GP_01;
 				sOStackColGp2  = YmConstant.SPM_COL_3AKD+YmConstant.STACK_BED_GP_01;
 				
-    		} else if( sFinalPassProc.equals("6K")) {// SPM2 ½ºÄÉÁì »ı¼º
+    		} else if( sFinalPassProc.equals("6K")) {// SPM2 ìŠ¤ì¼€ì¥´ ìƒì„±
     			
-				commUtils.printLog(logId, "============SPM2 À§Ä¡ ¼±Á¤========", "SL");
+				commUtils.printLog(logId, "============SPM2 ìœ„ì¹˜ ì„ ì •========", "SL");
 				sIStackColGp   = YmConstant.SPM_COL_3DKE+YmConstant.STACK_BED_GP_01;
 				sOStackColGp1  = YmConstant.SPM_COL_3EKD+YmConstant.STACK_BED_GP_01;
 				sOStackColGp2  = YmConstant.SPM_COL_3EKD+YmConstant.STACK_BED_GP_01;
 			
 			} else {
-				commUtils.printLog(logId, "SPMÀçÀÛ¾÷. SPM Åë°ú°øÁ¤ ÀÌ»ó=> Àß¸øµÈ Åë°ú°øÁ¤", "[INFO]");
+				commUtils.printLog(logId, "SPMì¬ì‘ì—…. SPM í†µê³¼ê³µì • ì´ìƒ=> ì˜ëª»ëœ í†µê³¼ê³µì •", "[INFO]");
 				return 	jrRtn;
 			}
 		
     		if (sFinalPassProc.equals("5K")) { 
 				/**
-				 *	2.	ÃâÃø¿¡ ÀúÀåÇ°ÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å©
+				 *	2.	ì¶œì¸¡ì— ì €ì¥í’ˆì´ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬
 				 */
 				jrParam1.setField("STACK_COL_GP", sOStackColGp1);
 				/*com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId
@@ -1354,9 +1354,9 @@ public class BCoilComm {
 					jrParam1.setField("STACK_COL_GP", sOStackColGp2);
 					jsOutLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId");
 					
-					//ÃâÃø¿¡ Á¸Àç¸¦ ¾ÈÇÏ´Â °æ¿ì
+					//ì¶œì¸¡ì— ì¡´ì¬ë¥¼ ì•ˆí•˜ëŠ” ê²½ìš°
 					if(jsOutLayer.size() == 0 ){						
-						//Á¤Á¤½ÇÀû Ã³¸®
+						//ì •ì •ì‹¤ì  ì²˜ë¦¬
 			    		rcvMsg.setField("WORK_CHK"   , "SPM");
 			    		blRtn = setInnerIFCoilInfo_02(rcvMsg); 
 			    		return 	jrRtn;
@@ -1364,8 +1364,8 @@ public class BCoilComm {
 				} 
 				
 				/**
-				 *	3.	ÃâÃø¿¡ ÀúÀåÇ°ÀÌ ÀÖÀ¸¸é
-				 *		ÃâÃøÁ¤º¸ »èÁ¦ ÈÄ º¸±Ş¿Ï·á ½ÇÀû ¼Û½Å
+				 *	3.	ì¶œì¸¡ì— ì €ì¥í’ˆì´ ìˆìœ¼ë©´
+				 *		ì¶œì¸¡ì •ë³´ ì‚­ì œ í›„ ë³´ê¸‰ì™„ë£Œ ì‹¤ì  ì†¡ì‹ 
 				 */ 
 				if (jsOutLayer.size() > 0) {
 				
@@ -1379,43 +1379,43 @@ public class BCoilComm {
 					 WHERE STOCK_ID = :V_STOCK_ID
 					   AND SUBSTR(STACK_COL_GP,1,1) = '3'
 					*/
-					commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayer", logId, methodNm, "TB_YM_STACKLAYER »èÁ¦");
+					commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayer", logId, methodNm, "TB_YM_STACKLAYER ì‚­ì œ");
 							  				 				  			 			  			 
 					/**
-					 *	4.	º¸±Ş¿Ï·á ½ÇÀûÀ» ¼Û½Å
+					 *	4.	ë³´ê¸‰ì™„ë£Œ ì‹¤ì ì„ ì†¡ì‹ 
 					 */  
 						
 					//-----------------------
-					//ÄÚÀÏº¸±Ş ¹× º¸±ŞÃë¼Ò(YMPOJ161)
+					//ì½”ì¼ë³´ê¸‰ ë° ë³´ê¸‰ì·¨ì†Œ(YMPOJ161)
 					JDTORecord tcRecord2 = JDTORecordFactory.getInstance().create();
 	
 					tcRecord2.setField("JMS_TC_CD"         	, "YMPOJ161");
 					tcRecord2.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14());
 					
 					tcRecord2.setField("tcCode"          	, "YMPOJ161");// TC Code
-					tcRecord2.setField("tcDate"          	, commUtils.getDate10());// ¹ß»ıÀÏÀÚ
-					tcRecord2.setField("tcTime"          	, commUtils.getTime8());// ¹ß»ı½Ã°¢
-					tcRecord2.setField("plantGbn"           , "B");// °øÀå±¸ºĞ
-					tcRecord2.setField("procGbn"          	, "S");// °øÁ¤±¸ºĞ
+					tcRecord2.setField("tcDate"          	, commUtils.getDate10());// ë°œìƒì¼ì
+					tcRecord2.setField("tcTime"          	, commUtils.getTime8());// ë°œìƒì‹œê°
+					tcRecord2.setField("plantGbn"           , "B");// ê³µì¥êµ¬ë¶„
+					tcRecord2.setField("procGbn"          	, "S");// ê³µì •êµ¬ë¶„
 					tcRecord2.setField("coilNo"          	, coilNo);// COIL_NO
-					tcRecord2.setField("processId"          , "5");// Ã³¸®±¸ºĞ
-					tcRecord2.setField("downDate"          	, commUtils.getDate8());// ±ÇÇÏÀÏÀÚ 
-					tcRecord2.setField("downTime"          	, commUtils.getTime6());// ±ÇÇÏ½Ã°¢
-					tcRecord2.setField("positionNo"         , YmConstant.PO_POSITION_D5);// À§Ä¡
+					tcRecord2.setField("processId"          , "5");// ì²˜ë¦¬êµ¬ë¶„
+					tcRecord2.setField("downDate"          	, commUtils.getDate8());// ê¶Œí•˜ì¼ì 
+					tcRecord2.setField("downTime"          	, commUtils.getTime6());// ê¶Œí•˜ì‹œê°
+					tcRecord2.setField("positionNo"         , YmConstant.PO_POSITION_D5);// ìœ„ì¹˜
 				
-				    //³»ºÎÀÎÅÍÆäÀÌ½º ¼Û½Å¸ğµâ È£Ãâ 
+				    //ë‚´ë¶€ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹ ëª¨ë“ˆ í˜¸ì¶œ 
 					jrRtn = commUtils.addSndData(jrRtn, tcRecord2);	
 			
-				    commUtils.printLog(logId, "³»ºÎIFÈ£Ãâ=YMPOJ161 ÄÚÀÏº¸±Ş ¹× º¸±ŞÃë¼ÒBACKUPÃ³¸®", "[INFO]");
+				    commUtils.printLog(logId, "ë‚´ë¶€IFí˜¸ì¶œ=YMPOJ161 ì½”ì¼ë³´ê¸‰ ë° ë³´ê¸‰ì·¨ì†ŒBACKUPì²˜ë¦¬", "[INFO]");
 					
-				  //Ç°ÁúL3¿­¿¬Á¤Á¤ÀÔÃøº¸±Ş½ÇÀû
+				  //í’ˆì§ˆL3ì—´ì—°ì •ì •ì…ì¸¡ë³´ê¸‰ì‹¤ì 
 				    JDTORecord tcParam = JDTORecordFactory.getInstance().create();
 					tcParam.setField("JMS_TC_CD"         , "YDQMJ002");
 					tcParam.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14());
 					tcParam.setField("STL_NO"            , coilNo.trim());
 					jrRtn = commUtils.addSndData(jrRtn, tcParam);		    
 				}
-    		} else if ( sFinalPassProc.equals("6K")) { //spm2 ÀçÃ³¸®
+    		} else if ( sFinalPassProc.equals("6K")) { //spm2 ì¬ì²˜ë¦¬
     			
     			/* com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockIdRe 
     			SELECT '3EKD02'     AS STACK_COL_GP 
@@ -1427,7 +1427,7 @@ public class BCoilComm {
 				JDTORecordSet jsParaLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockIdRe", logId, methodNm, "");
     			
 				///**************************************
-				// * ÀÔÃø¿¡ ÀúÀåÇ° Á¸ÀçÇÏ¸é ¾ßµå¸Ê Á¤¸® 20180314
+				// * ì…ì¸¡ì— ì €ì¥í’ˆ ì¡´ì¬í•˜ë©´ ì•¼ë“œë§µ ì •ë¦¬ 20180314
 				// **************************************/
 				///*
 				//SELECT *
@@ -1435,8 +1435,8 @@ public class BCoilComm {
 				// WHERE STACK_COL_GP  = :V_STACK_COL_GP
 				//   AND STOCK_ID      = :V_STOCK_ID 
 				//*/
-				//jrParam1.setField("STACK_COL_GP", commUtils.trim(jsParaLayer.getRecord(0).getFieldString("YD_TO_LOC_GUIDE")).substring(0, 6)); //"3EKD02");  // ÀçÀÛ¾÷ Á¸
-				//JDTORecordSet jsInLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId", logId, methodNm, "ÀÔÃø ÀúÀåÇ° Á¸Àç Ã¼Å©");
+				//jrParam1.setField("STACK_COL_GP", commUtils.trim(jsParaLayer.getRecord(0).getFieldString("YD_TO_LOC_GUIDE")).substring(0, 6)); //"3EKD02");  // ì¬ì‘ì—… ì¡´
+				//JDTORecordSet jsInLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId", logId, methodNm, "ì…ì¸¡ ì €ì¥í’ˆ ì¡´ì¬ ì²´í¬");
 				//if (jsInLayer.size() > 0) {
 				//	/*
 				//	UPDATE TB_YM_STACKLAYER
@@ -1446,11 +1446,11 @@ public class BCoilComm {
 				//	     , STACK_LAYER_STAT	= 'E'
 				//	WHERE STOCK_ID   = :V_STOCK_ID
 				//	 */
-				//	commDao.update(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStackLayerByStockId", logId, methodNm, "ÀÔÃø ¾ßµå¸Ê ¼öÁ¤");
+				//	commDao.update(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStackLayerByStockId", logId, methodNm, "ì…ì¸¡ ì•¼ë“œë§µ ìˆ˜ì •");
 				//}
 				
 				/**************************************
-				 * ÀÔÃø¿¡ ÀúÀåÇ° Á¸ÀçÇÏ¸é ¾ßµå¸Ê Á¤¸® 20190909
+				 * ì…ì¸¡ì— ì €ì¥í’ˆ ì¡´ì¬í•˜ë©´ ì•¼ë“œë§µ ì •ë¦¬ 20190909
 				 **************************************/
 				/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayerBySectGp
 				UPDATE TB_YM_STACKLAYER
@@ -1463,20 +1463,20 @@ public class BCoilComm {
 				   AND SUBSTR(STACK_COL_GP,1,1) = '3'
 				   AND SUBSTR(STACK_COL_GP,3,2) LIKE :V_SECT_GP
 		   		 */  
-				jrParam1.setField("SECT_GP", "KE"); //SPM2 ¼³ºñ ÀÔÃø
-		   		commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayerBySectGp", logId, methodNm, "±âÁ¸ À§Ä¡ »èÁ¦-SPM2 ¼³ºñ ÀÔÃø");
+				jrParam1.setField("SECT_GP", "KE"); //SPM2 ì„¤ë¹„ ì…ì¸¡
+		   		commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStackLayerBySectGp", logId, methodNm, "ê¸°ì¡´ ìœ„ì¹˜ ì‚­ì œ-SPM2 ì„¤ë¹„ ì…ì¸¡");
 				
 				/***************************************
-				 *	2.	ÃâÃø¿¡ ÀúÀåÇ°ÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å©
+				 *	2.	ì¶œì¸¡ì— ì €ì¥í’ˆì´ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬
 				 ***************************************/
-    			jrParam1.setField("STACK_COL_GP", commUtils.trim(jsParaLayer.getRecord(0).getFieldString("STACK_COL_GP"))); //"3EKD02");  // ÀçÀÛ¾÷ Á¸ 
+    			jrParam1.setField("STACK_COL_GP", commUtils.trim(jsParaLayer.getRecord(0).getFieldString("STACK_COL_GP"))); //"3EKD02");  // ì¬ì‘ì—… ì¡´ 
 				/*
 				SELECT *
 				  FROM TB_YM_STACKLAYER
 				 WHERE STACK_COL_GP  = :V_STACK_COL_GP
 				   AND STOCK_ID      = :V_STOCK_ID 
 				*/
-				JDTORecordSet jsOutLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId", logId, methodNm, "ÃâÃø ÀúÀåÇ° Á¸Àç Ã¼Å©");
+				JDTORecordSet jsOutLayer = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getStackLayerInfoWithStockId", logId, methodNm, "ì¶œì¸¡ ì €ì¥í’ˆ ì¡´ì¬ ì²´í¬");
 				
 				if (jsOutLayer.size() == 0) {
 					/*  
@@ -1499,11 +1499,11 @@ public class BCoilComm {
 					    ,SL.STACK_LAYER_STAT        = DD.STACK_LAYER_STAT
 					    ,SL.STOCK_ID                = DD.STOCK_ID
 					 */	        
-					int updCnt = commDao.update(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTrkStackColGplayerRe", logId, methodNm, "TRACKING LAYER µî·Ï");
+					int updCnt = commDao.update(jrParam1, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTrkStackColGplayerRe", logId, methodNm, "TRACKING LAYER ë“±ë¡");
 					
 					if (updCnt == 0) {
-						commUtils.printLog(logId, "ÀûÄ¡´Ü(TB_YM_STACKLAYER) Table Read Error : "+ coilNo, "SL");
-						//Á¤Á¤½ÇÀû Ã³¸®
+						commUtils.printLog(logId, "ì ì¹˜ë‹¨(TB_YM_STACKLAYER) Table Read Error : "+ coilNo, "SL");
+						//ì •ì •ì‹¤ì  ì²˜ë¦¬
 			    		rcvMsg.setField("WORK_CHK"   , "SPM");
 			    		blRtn = setInnerIFCoilInfo_02(rcvMsg); 
 			    		return 	jrRtn;
@@ -1511,46 +1511,46 @@ public class BCoilComm {
 				} 
 
 				/**********************************************************
-				 * J3ÀÎ °æ¿ì ½ºÄÉÁÙ ¾øÀÌ Á¤º¸»óÀ¸·Î¸¸ ÀçÀÛ¾÷Ã³¸®µÇ¹Ç·Î Á¾·á
+				 * J3ì¸ ê²½ìš° ìŠ¤ì¼€ì¤„ ì—†ì´ ì •ë³´ìƒìœ¼ë¡œë§Œ ì¬ì‘ì—…ì²˜ë¦¬ë˜ë¯€ë¡œ ì¢…ë£Œ
 				 **********************************************************/
 				if ("J3".equals(sPROCESS_ID)) {
 					return jrRtn;
 				}
 				
 				/*************************************** 
-				 * 	1.ÀÛ¾÷¿¹¾àÀÌ »ı¼º 
-                 *  2.STOCK UPDATE(ÀÛ¾÷Çà¼±)  
-                 *  3.½ºÄÉÁì È£Ãâ
+				 * 	1.ì‘ì—…ì˜ˆì•½ì´ ìƒì„± 
+                 *  2.STOCK UPDATE(ì‘ì—…í–‰ì„ )  
+                 *  3.ìŠ¤ì¼€ì¥´ í˜¸ì¶œ
 				 **************************************/	
-				//ÀÛ¾÷¿¹¾à,ÀÛ¾÷Àç·á µî·Ï		
-				String ydSchCd = "3EKE05UM"; //SPM2 ÀçÀÛ¾÷
+				//ì‘ì—…ì˜ˆì•½,ì‘ì—…ì¬ë£Œ ë“±ë¡		
+				String ydSchCd = "3EKE05UM"; //SPM2 ì¬ì‘ì—…
     			JDTORecord jrOutTemp = JDTORecordFactory.getInstance().create();
-    			jrOutTemp.setField("STL_NO"           , coilNo); //Àç·á¹øÈ£
+    			jrOutTemp.setField("STL_NO"           , coilNo); //ì¬ë£Œë²ˆí˜¸
     			jrOutTemp.setField("STACK_COL_GP"     , commUtils.trim(jrParam1.getFieldString("STACK_COL_GP"))); 
     			jrOutTemp.setField("STACK_BED_GP"     , commUtils.trim(jsParaLayer.getRecord(0).getFieldString("STACK_BED_GP"))  ); 
     			jrOutTemp.setField("STACK_LAYER_GP"   , "01" ); 
-    			jrOutTemp.setField("YD_SCH_CD"        , ydSchCd ); //SPM2 ÀçÃ³¸® 
-    			jrOutTemp.setField("MODIFIER"         , modifier   ); //¼öÁ¤ÀÚ
-    			jrOutTemp.setField("YD_TO_LOC_GUIDE"  , commUtils.trim(jsParaLayer.getRecord(0).getFieldString("YD_TO_LOC_GUIDE")));//3EKE010701" ); //TOÀ§Ä¡°¡ÀÌµå
+    			jrOutTemp.setField("YD_SCH_CD"        , ydSchCd ); //SPM2 ì¬ì²˜ë¦¬ 
+    			jrOutTemp.setField("MODIFIER"         , modifier   ); //ìˆ˜ì •ì
+    			jrOutTemp.setField("YD_TO_LOC_GUIDE"  , commUtils.trim(jsParaLayer.getRecord(0).getFieldString("YD_TO_LOC_GUIDE")));//3EKE010701" ); //TOìœ„ì¹˜ê°€ì´ë“œ
     			
     			String ydWbookId = commComm.procWkBookInsert(jrOutTemp);
     			
     			if (ydWbookId.equals(YmConstant.RETN_CD_FAILURE)) {
-    				throw new Exception("ÀÛ¾÷¿¹¾àID »ı¼º ½ÇÆĞ"); 				
+    				throw new Exception("ì‘ì—…ì˜ˆì•½ID ìƒì„± ì‹¤íŒ¨"); 				
     			}
 				
 				/**********************************************************
-				* 2.2 Å©·¹ÀÎ½ºÄÉÁÙ Àü¹® È£Ãâ
+				* 2.2 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ë¬¸ í˜¸ì¶œ
 				**********************************************************/
 				JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 				jrYdMsg.setResultCode(logId);	//Log ID
 				jrYdMsg.setResultMsg(methodNm);	//Log Method Name
 
-				jrYdMsg.setField("YD_WBOOK_ID"  , ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrYdMsg.setField("YD_SCH_CD"    , ydSchCd  ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_SCH_ST_GP" , "O"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ
-				jrYdMsg.setField("YD_SCH_REQ_GP", "L"      ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÎÃâ)
-				jrYdMsg.setField("MODIFIER"     , modifier ); //¼öÁ¤ÀÚ
+				jrYdMsg.setField("YD_WBOOK_ID"  , ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrYdMsg.setField("YD_SCH_CD"    , ydSchCd  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_SCH_ST_GP" , "O"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„
+				jrYdMsg.setField("YD_SCH_REQ_GP", "L"      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì¸ì¶œ)
+				jrYdMsg.setField("MODIFIER"     , modifier ); //ìˆ˜ì •ì
 
 				jrRtn = commUtils.addSndData(commComm.getCrnSchMsg(jrYdMsg));				
 				
@@ -1569,27 +1569,27 @@ public class BCoilComm {
     
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-        * ¿ä±¸Â÷ °øÁ¤ º¯°æ
+        * ìš”êµ¬ì°¨ ê³µì • ë³€ê²½
         *
-        * param String	: ÀúÀåÇ°ID
+        * param String	: ì €ì¥í’ˆID
         *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */        
     public boolean setInnerIFCoilInfo_11(JDTORecord rcvMsg){
-    	String methodNm = "¿ä±¸Â÷ °øÁ¤ º¯°æ[BCoilComm.setInnerIFCoilInfo_11] < " + rcvMsg.getResultMsg();
+    	String methodNm = "ìš”êµ¬ì°¨ ê³µì • ë³€ê²½[BCoilComm.setInnerIFCoilInfo_11] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); //String sGoodsNo, String sGbnWork){
 		boolean blRtn = false;
 		boolean isVal = false;
 		try{
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String coilNo    	= commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier 	= commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String coilNo    	= commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier 	= commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			String processCode 	= commUtils.trim(rcvMsg.getFieldString("PROCESS_CODE"));
 			
 			JDTORecord jrParam1 = JDTORecordFactory.getInstance().create();
@@ -1600,7 +1600,7 @@ public class BCoilComm {
 			jrParam1.setField("MODIFIER"   , modifier);
 			
 		    /**
-		     *	1.	ÀúÀåÇ°ÀÇ MAPÁ¤º¸¸¦ °¡Á®¿Â´Ù.
+		     *	1.	ì €ì¥í’ˆì˜ MAPì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		     */
 			/*  
 			SELECT STL_NO   AS STOCK_ID
@@ -1614,7 +1614,7 @@ public class BCoilComm {
 			   AND STACK_LAYER_STAT IN ('C','U')
 			   AND STOCK_ID = :V_STOCK_ID
 			 */
-		    JDTORecordSet jsMap = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getEqpTracking", logId, methodNm, "MAP/TRACKING Á¤º¸ Á¶È¸");
+		    JDTORecordSet jsMap = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getEqpTracking", logId, methodNm, "MAP/TRACKING ì •ë³´ ì¡°íšŒ");
 		    
 			if(jsMap.size() == 0 || jsMap == null){ 
 				return 	blRtn;
@@ -1622,26 +1622,26 @@ public class BCoilComm {
 		    	
 		    	String sStockMoveTerm 	= "";  		
 	    		/**
-			     *	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
-			     *		ÃÖÃÊ ¹ß»ı½Ã µî·Ï, Àç ½ÇÀû¹ß»ı½Ã ¼öÁ¤
+			     *	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
+			     *		ìµœì´ˆ ë°œìƒì‹œ ë“±ë¡, ì¬ ì‹¤ì ë°œìƒì‹œ ìˆ˜ì •
 			     */
-			    if(YmConstant.SHEAR_SUPPLY_GP_5K.equals(processCode)){		 //B¿­¿¬ SPM
+			    if(YmConstant.SHEAR_SUPPLY_GP_5K.equals(processCode)){		 //Bì—´ì—° SPM
 								
-			    	sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A2;		//SPM ÃßÃâ
-				} else if(YmConstant.SHEAR_SUPPLY_GP_5H.equals(processCode)){//B¿­¿¬ HFL
+			    	sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A2;		//SPM ì¶”ì¶œ
+				} else if(YmConstant.SHEAR_SUPPLY_GP_5H.equals(processCode)){//Bì—´ì—° HFL
 					
-					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A1;		//HFL ÃßÃâ
-				} else if(YmConstant.SHEAR_SUPPLY_GP_5T.equals(processCode)){//B¿­¿¬ ¼ö³ÃÀç
+					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A1;		//HFL ì¶”ì¶œ
+				} else if(YmConstant.SHEAR_SUPPLY_GP_5T.equals(processCode)){//Bì—´ì—° ìˆ˜ëƒ‰ì¬
 					
-					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A3;		//¼ö³ÃÀç ÃßÃâ
-				} else if(YmConstant.SHEAR_SUPPLY_GP_5A.equals(processCode)){//B¿­¿¬ °ø³ÃÀç
+					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A3;		//ìˆ˜ëƒ‰ì¬ ì¶”ì¶œ
+				} else if(YmConstant.SHEAR_SUPPLY_GP_5A.equals(processCode)){//Bì—´ì—° ê³µëƒ‰ì¬
 					
-					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A4;		//°ø³ÃÀç ÃßÃâ
-				} else if(YmConstant.SHEAR_SUPPLY_GP_6K.equals(processCode)){// B¿­¿¬ SPM2  
-					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A6;		// SPM2 ÃßÃâ
+					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A4;		//ê³µëƒ‰ì¬ ì¶”ì¶œ
+				} else if(YmConstant.SHEAR_SUPPLY_GP_6K.equals(processCode)){// Bì—´ì—° SPM2  
+					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A6;		// SPM2 ì¶”ì¶œ
 					
-				} else if(YmConstant.SHEAR_SUPPLY_GP_6H.equals(processCode)){// B¿­¿¬ HFL°á¼ÓÀå 
-					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A7;		// HFL°á¼ÓÀå  ÃßÃâ
+				} else if(YmConstant.SHEAR_SUPPLY_GP_6H.equals(processCode)){// Bì—´ì—° HFLê²°ì†ì¥ 
+					sStockMoveTerm = YmConstant.NEW_STOCK_MOVE_TERM_A7;		// HFLê²°ì†ì¥  ì¶”ì¶œ
 				}
 			    jrParam1.setField("STOCK_MOVE_TERM", sStockMoveTerm);
 		     	/*
@@ -1657,7 +1657,7 @@ public class BCoilComm {
 		    }
 		    
 
-//			logger.println(LogLevel.DEBUG,this,"=============¿ä±¸°øÁ¤ º¯°æ Ã³¸® Á¾·á========");				            
+//			logger.println(LogLevel.DEBUG,this,"=============ìš”êµ¬ê³µì • ë³€ê²½ ì²˜ë¦¬ ì¢…ë£Œ========");				            
 			isVal = true; 
 		}catch(DAOException daoe){
 	        throw daoe;
@@ -1669,22 +1669,22 @@ public class BCoilComm {
 	}
     
     /**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *  
-        * ¾Ğ¿¬½ÇÀûÀ» Ã³¸®
+        * ì••ì—°ì‹¤ì ì„ ì²˜ë¦¬
         *
-        * param String	: ÀúÀåÇ°ID
-        * param String	: ¾ßµå±¸ºĞ
-        * param String	: Ã³¸®±¸ºĞ
+        * param String	: ì €ì¥í’ˆID
+        * param String	: ì•¼ë“œêµ¬ë¶„
+        * param String	: ì²˜ë¦¬êµ¬ë¶„
         *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws 
 	 */ 
 	public JDTORecord setInnerIFCoilInfo_HP(JDTORecord rcvMsg){
 		
-		String methodNm = "¾Ğ¿¬½ÇÀû Ã³¸®[BCoilComm.setInnerIFCoilInfo_HP] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì••ì—°ì‹¤ì  ì²˜ë¦¬[BCoilComm.setInnerIFCoilInfo_HP] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode(); 
 		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 		boolean blRtn = false;
@@ -1692,8 +1692,8 @@ public class BCoilComm {
 		try{
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String coilNo    = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ÄÚÀÏ¹øÈ£ 
-			String modifier  = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//¼öÁ¤ÀÚ(Backup Only)
+			String coilNo    = commUtils.trim(rcvMsg.getFieldString("COIL_NO")); //ì½”ì¼ë²ˆí˜¸ 
+			String modifier  = commUtils.trim(rcvMsg.getFieldString("MODIFIER"));//ìˆ˜ì •ì(Backup Only)
 			String processId = commUtils.trim(rcvMsg.getFieldString("PROCESS_ID"));
 			String yardId    = commUtils.trim(rcvMsg.getFieldString("YARD_ID"));
 			
@@ -1707,40 +1707,40 @@ public class BCoilComm {
 			String sStockMoveTerm = "";
 
 			/**
-			*	1.	°øÅë CoilÁ¤º¸¸¦ °¡Á®¿Â´Ù.
+			*	1.	ê³µí†µ Coilì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 			*/
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo
 			SELECT (CASE WHEN YD_GP ='1' THEN 'A' ELSE HR_PLNT_GP END) 		AS PLNT_GP
-			     , HR_PLNT_GP                                       -- °øÀå±¸ºĞ
+			     , HR_PLNT_GP                                       -- ê³µì¥êµ¬ë¶„
 				 , REPLACE(PASS_PROC1,'6R','6K')        AS PASS_PROC1   
 				 , REPLACE(PASS_PROC2,'6R','6K')        AS PASS_PROC2   
 				 , REPLACE(PASS_PROC3,'6R','6K')        AS PASS_PROC3   
 				 , REPLACE(PASS_PROC4,'6R','6K')        AS PASS_PROC4   
 				 , REPLACE(PASS_PROC5,'6R','6K')        AS PASS_PROC5   
-			     , ORD_NO 		                                    -- Á¦ÀÛ¹øÈ£
-			     , ORD_DTL 		                                    -- Á¦ÀÛÇà¹ø
-			     , COIL_T 			                                -- ÄÚÀÏµÎ²²
-			     , COIL_W 			                                -- ÄÚÀÏÆø
-			     , CURR_COIL_LEN	                                -- ÄÚÀÏ±æÀÌ
-			     , COIL_INDIA 		                                -- ÄÚÀÏ³»°æ
-			     , COIL_OUTDIA 	                                    -- ÄÚÀÏ¿Ü°æ
-			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ÄÚÀÏÁß·®
-			     , NEXT_PROC 		                                -- Â÷°øÁ¤
-			     , PLAN_PROC1                                       -- °èÈ¹°øÁ¤
-			     , BRANCH_CD 		                                -- ºĞ±âÀ§Ä¡ÄÚµå
-			     , EXTEND_CONVEYOR_BRANCH_CD                        -- È®ÀåºĞ±âÀ§Ä¡ÄÚµå
-			     , HYSCO_TRANS_GP 	                                -- HYSCOÀÌ¼Û¼ö´Ü
-			     , COOL_METHOD 	                                    -- ³Ã°¢¹æ¹ı
+			     , ORD_NO 		                                    -- ì œì‘ë²ˆí˜¸
+			     , ORD_DTL 		                                    -- ì œì‘í–‰ë²ˆ
+			     , COIL_T 			                                -- ì½”ì¼ë‘ê»˜
+			     , COIL_W 			                                -- ì½”ì¼í­
+			     , CURR_COIL_LEN	                                -- ì½”ì¼ê¸¸ì´
+			     , COIL_INDIA 		                                -- ì½”ì¼ë‚´ê²½
+			     , COIL_OUTDIA 	                                    -- ì½”ì¼ì™¸ê²½
+			     , DECODE(COIL_WT,0,NET_CAL_WT,COIL_WT) AS COIL_WT  -- ì½”ì¼ì¤‘ëŸ‰
+			     , NEXT_PROC 		                                -- ì°¨ê³µì •
+			     , PLAN_PROC1                                       -- ê³„íšê³µì •
+			     , BRANCH_CD 		                                -- ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , EXTEND_CONVEYOR_BRANCH_CD                        -- í™•ì¥ë¶„ê¸°ìœ„ì¹˜ì½”ë“œ
+			     , HYSCO_TRANS_GP 	                                -- HYSCOì´ì†¡ìˆ˜ë‹¨
+			     , COOL_METHOD 	                                    -- ëƒ‰ê°ë°©ë²•
 			     , DECODE(CURR_PROG_CD,'2','H','3','D','4','E','6','L','7','K',CURR_PROG_CD) AS CURR_PROG_CD
 			     , RETURN_GP
 			FROM  TB_PT_COILCOMM 
 			WHERE COIL_NO = :V_COIL_NO
 		*/	 
-			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "°øÅë CoilÁ¤º¸ Á¶È¸");
+			JDTORecordSet jsCoilCom = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCoilCommonInfo", logId, methodNm, "ê³µí†µ Coilì •ë³´ ì¡°íšŒ");
 		    
 		    if(jsCoilCom == null || jsCoilCom.size() == 0){ 
 		    	if("91".equals(processId)){	
-					throw new EJBServiceException("=Plate½ÇÀû=>Á¶¾÷ 91 NO HAVE COMMON COIL DATA");
+					throw new EJBServiceException("=Plateì‹¤ì =>ì¡°ì—… 91 NO HAVE COMMON COIL DATA");
 					//return 	blRtn;
 				}
 			}
@@ -1749,18 +1749,18 @@ public class BCoilComm {
 				sStockMoveTerm =  YmConstant.NEW_STOCK_MOVE_TERM_A2;
 			}
 			/**
-			*	2.	ÀúÀåÇ°Table¿¡ Á¤º¸¸¦ µî·Ï,¼öÁ¤ÇÑ´Ù.
-			*		ÃÖÃÊ ¹ß»ı½Ã µî·Ï, Àç ½ÇÀû¹ß»ı½Ã ¼öÁ¤
+			*	2.	ì €ì¥í’ˆTableì— ì •ë³´ë¥¼ ë“±ë¡,ìˆ˜ì •í•œë‹¤.
+			*		ìµœì´ˆ ë°œìƒì‹œ ë“±ë¡, ì¬ ì‹¤ì ë°œìƒì‹œ ìˆ˜ì •
 			*/
 				
 		    /* com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStock 
 		    MERGE INTO TB_YM_STOCK ST USING (
-		        SELECT :V_STOCK_ID          AS STOCK_ID                                 --Àç·á¹øÈ£
-		             , :V_MODIFIER          AS MODIFIER         --¼öÁ¤ÀÚ
-		             , SYSDATE              AS MOD_DDTT         --¼öÁ¤ÀÏ½Ã
-		             , 'N'                  AS DEL_YN           --»èÁ¦À¯¹«
-		             , :V_STOCK_ITEM        AS STOCK_ITEM       --ÀúÀåÇ° Ç°¸ñ
-		             , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ÀúÀåÇ° ÀÌµ¿ Á¶°Ç
+		        SELECT :V_STOCK_ID          AS STOCK_ID                                 --ì¬ë£Œë²ˆí˜¸
+		             , :V_MODIFIER          AS MODIFIER         --ìˆ˜ì •ì
+		             , SYSDATE              AS MOD_DDTT         --ìˆ˜ì •ì¼ì‹œ
+		             , 'N'                  AS DEL_YN           --ì‚­ì œìœ ë¬´
+		             , :V_STOCK_ITEM        AS STOCK_ITEM       --ì €ì¥í’ˆ í’ˆëª©
+		             , :V_STOCK_MOVE_TERM   AS STOCK_MOVE_TERM  --ì €ì¥í’ˆ ì´ë™ ì¡°ê±´
 		          FROM DUAL
 		    ) DD ON ( ST.STOCK_ID = DD.STOCK_ID)
 
@@ -1784,10 +1784,10 @@ public class BCoilComm {
 		   */          
 		    jrParam1.setField("STOCK_ITEM END" , YmConstant.ITEM_HP);
 		    jrParam1.setField("STOCK_MOVE_TERM", sStockMoveTerm);
-		    commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStock", logId, methodNm, "ÀúÀåÇ°Table ¼öÁ¤");
+		    commDao.update(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.insStock", logId, methodNm, "ì €ì¥í’ˆTable ìˆ˜ì •");
 		    
 			/*
-			 * ¾ßµå ¸Ê È®ÀÎ ¹× ¼öÁ¤
+			 * ì•¼ë“œ ë§µ í™•ì¸ ë° ìˆ˜ì •
 			 */
 		    /* com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getEmptyLoc 
 		    SELECT STACK_COL_GP||STACK_BED_GP||STACK_LAYER_GP AS LOCATION
@@ -1799,7 +1799,7 @@ public class BCoilComm {
 		    */   
 		    String putPosition = "";
 		    jrParam1.setField("YD_GP"	, yardId);
-		    JDTORecordSet jsEmptyloc = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getEmptyLoc", logId, methodNm, "ÀúÀåÇ°Table Á¶È¸");
+		    JDTORecordSet jsEmptyloc = commDao.select(jrParam1, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getEmptyLoc", logId, methodNm, "ì €ì¥í’ˆTable ì¡°íšŒ");
 		    if (jsEmptyloc.size() > 0 ) {
 		    	putPosition = jsEmptyloc.getRecord(0).getFieldString("LOCATION");
 		    } else {
@@ -1810,7 +1810,7 @@ public class BCoilComm {
 		    jrParam1.setField("YD_STR_LOC"	, putPosition);
 		
 		    /*********************************
-		     * »êÀûÀ§Ä¡ ¼öÁ¤ ·ÎÁ÷ È£Ãâ
+		     * ì‚°ì ìœ„ì¹˜ ìˆ˜ì • ë¡œì§ í˜¸ì¶œ
 		     *********************************/
 		    
 		    EJBConnector ejbConn1 = new EJBConnector("default", "BCoilJspSeEJB", this);
@@ -1829,86 +1829,86 @@ public class BCoilComm {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬Å©·¹ÀÎÁÖÇà±İÁö±¸°£ÀÛ¾÷½ÇÀûÀÀ´ä(getYMA7L005_recv) Àü¹® Á¶È¸
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—°í¬ë ˆì¸ì£¼í–‰ê¸ˆì§€êµ¬ê°„ì‘ì—…ì‹¤ì ì‘ë‹µ(getYMA7L005_recv) ì „ë¬¸ ì¡°íšŒ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord getYMA7L005_recv(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÁÖÇà±İÁö±¸°£ÀÛ¾÷½ÇÀûÀÀ´ä Á¶È¸[BCoilComm.getYMA7L005_recv] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ì£¼í–‰ê¸ˆì§€êµ¬ê°„ì‘ì—…ì‹¤ì ì‘ë‹µ ì¡°íšŒ[BCoilComm.getYMA7L005_recv] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 		 
 		try {
-			//¼ö½Å Ç×¸ñ °ª 
-			String msgId      = "YMA7L005"; //Àü¹®ID
+			//ìˆ˜ì‹  í•­ëª© ê°’ 
+			String msgId      = "YMA7L005"; //ì „ë¬¸ID
 			
-			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD"));//¾ßµåL3Ã³¸®°á°úÄÚµå
-			String ydL3Msg    = "";														//¾ßµåL3Ã³¸®°á°ú¸Ş¼¼Áö
+			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD"));//ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			String ydL3Msg    = "";														//ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ë©”ì„¸ì§€
 			
 			String ydBayGP = commUtils.trim(rcvMsg.getFieldString("BAY_GP"));
-			String ydRepA     = commUtils.trim(rcvMsg.getFieldString("A"        ));//Aµ¿ ´ëÇ¥Å©·¹ÀÎ
-			String ydRepB     = commUtils.trim(rcvMsg.getFieldString("B"        ));//Bµ¿ ´ëÇ¥Å©·¹ÀÎ
-			String ydRepC     = commUtils.trim(rcvMsg.getFieldString("C"        ));//Cµ¿ ´ëÇ¥Å©·¹ÀÎ
-			String ydRepD     = commUtils.trim(rcvMsg.getFieldString("D"        ));//Dµ¿ ´ëÇ¥Å©·¹ÀÎ
-			String ydRepE     = commUtils.trim(rcvMsg.getFieldString("E"        ));//Eµ¿ ´ëÇ¥Å©·¹ÀÎ
+			String ydRepA     = commUtils.trim(rcvMsg.getFieldString("A"        ));//Aë™ ëŒ€í‘œí¬ë ˆì¸
+			String ydRepB     = commUtils.trim(rcvMsg.getFieldString("B"        ));//Bë™ ëŒ€í‘œí¬ë ˆì¸
+			String ydRepC     = commUtils.trim(rcvMsg.getFieldString("C"        ));//Cë™ ëŒ€í‘œí¬ë ˆì¸
+			String ydRepD     = commUtils.trim(rcvMsg.getFieldString("D"        ));//Dë™ ëŒ€í‘œí¬ë ˆì¸
+			String ydRepE     = commUtils.trim(rcvMsg.getFieldString("E"        ));//Eë™ ëŒ€í‘œí¬ë ˆì¸
 			
 			
 			if ("0000".equals(ydL3HdRsCd)) {
-				ydL3Msg = ydL3Msg + "ÁÖÇà±İÁö±¸¿ª ¼³Á¤ Ã³¸®¿Ï·á";
+				ydL3Msg = ydL3Msg + "ì£¼í–‰ê¸ˆì§€êµ¬ì—­ ì„¤ì • ì²˜ë¦¬ì™„ë£Œ";
 			} else {
-				ydL3Msg = ydL3Msg + " ¿À·ù <" + logId + ">";
+				ydL3Msg = ydL3Msg + " ì˜¤ë¥˜ <" + logId + ">";
 			}
 			
 			
 			/**********************************************************
-			* 1. ¼ö½Å Ç×¸ñ °ª Check
+			* 1. ìˆ˜ì‹  í•­ëª© ê°’ Check
 			**********************************************************/
-			// ¾øÀ½
+			// ì—†ìŒ
 			
 			
 			/**********************************************************
-			* 2. Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º
+			* 2. í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//¾ßµåL3Message°¡ ¾øÀ¸¸é »ı¼º
+			//ì•¼ë“œL3Messageê°€ ì—†ìœ¼ë©´ ìƒì„±
 			
 
 			StringBuffer sbMsg = new StringBuffer();
 
-			sbMsg = sbMsg.append(msgId                                      ); //Àü¹®ID
-			sbMsg = sbMsg.append(commUtils.getDateTime18()                  ); //»ı¼ºÀÏ,»ı¼º½Ã°£(yyyy-MM-ddHH:mm:ss)
-			sbMsg = sbMsg.append("I"                                        ); //Àü¹®±¸ºĞ
-			sbMsg = sbMsg.append("0078"                                     ); //Àü¹®±æÀÌ
-			sbMsg = sbMsg.append(commUtils.getRPad(" "	     , 29, " ")     ); //ÀÓ½Ã
+			sbMsg = sbMsg.append(msgId                                      ); //ì „ë¬¸ID
+			sbMsg = sbMsg.append(commUtils.getDateTime18()                  ); //ìƒì„±ì¼,ìƒì„±ì‹œê°„(yyyy-MM-ddHH:mm:ss)
+			sbMsg = sbMsg.append("I"                                        ); //ì „ë¬¸êµ¬ë¶„
+			sbMsg = sbMsg.append("0078"                                     ); //ì „ë¬¸ê¸¸ì´
+			sbMsg = sbMsg.append(commUtils.getRPad(" "	     , 29, " ")     ); //ì„ì‹œ
 			if("A".equals(ydBayGP)){
-				sbMsg = sbMsg.append(commUtils.getRPad(ydRepA	     ,  6, " ")     ); //Aµ¿ ´ëÇ¥Å©·¹ÀÎ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydRepA	     ,  6, " ")     ); //Aë™ ëŒ€í‘œí¬ë ˆì¸
 			}else if("B".equals(ydBayGP)){
-				sbMsg = sbMsg.append(commUtils.getRPad(ydRepB	     ,  6, " ")     ); //Bµ¿ ´ëÇ¥Å©·¹ÀÎ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydRepB	     ,  6, " ")     ); //Bë™ ëŒ€í‘œí¬ë ˆì¸
 			}else if("C".equals(ydBayGP)){
-				sbMsg = sbMsg.append(commUtils.getRPad(ydRepC	     ,  6, " ")     ); //Cµ¿ ´ëÇ¥Å©·¹ÀÎ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydRepC	     ,  6, " ")     ); //Cë™ ëŒ€í‘œí¬ë ˆì¸
 			}else if("D".equals(ydBayGP)){
-				sbMsg = sbMsg.append(commUtils.getRPad(ydRepD	     ,  6, " ")     ); //Dµ¿ ´ëÇ¥Å©·¹ÀÎ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydRepD	     ,  6, " ")     ); //Dë™ ëŒ€í‘œí¬ë ˆì¸
 			}else if("E".equals(ydBayGP)){
-				sbMsg = sbMsg.append(commUtils.getRPad(ydRepE	     ,  6, " ")     ); //Eµ¿ ´ëÇ¥Å©·¹ÀÎ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydRepE	     ,  6, " ")     ); //Eë™ ëŒ€í‘œí¬ë ˆì¸
 			}
 			
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  8, " ")     ); //¾ßµå½ºÄÉÁìÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 18, " ")     ); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //¾ßµåL2½ÇÀû±¸ºĞ
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")     ); //¾ßµåL3Ã³¸®°á°úÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")     ); //¾ßµåL3Message
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  8, " ")     ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 18, " ")     ); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")     ); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")     ); //ì•¼ë“œL3Message
 
 			JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
 
 			sndL2Msg.setResultCode(logId);		//Log ID
 			sndL2Msg.setResultMsg(methodNm);	//Log Method Name
-			sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCÄÚµå
-			sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã(yyyyMMddHHmmss)
+			sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCì½”ë“œ
+			sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ(yyyyMMddHHmmss)
 			sndL2Msg.addField("JMS_TC_MESSAGE"     , sbMsg.toString()         ); //JMSTCMessage
 
-			//Àü¼Û Data Return
+			//ì „ì†¡ Data Return
 			return commUtils.addSndData(sndL2Msg);
 		} catch (Exception e) {
 			commUtils.printErrorLog(commUtils.makeErrorLog(logId, methodNm, e), this, e);

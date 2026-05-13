@@ -1,13 +1,13 @@
 /*****************************************************************************
-** ÇÁ·Î±×·¥ ID	: /po/jungjung/result/dao/ABReceiveRollingInfoDAO.java
-** ÀÛ ¼º ÀÏ ÀÚ	: 2005/09/28
-** ÀÛ  ¼º   ÀÚ	: ÃÖ¿õÁÖ
-** ¼³       ¸í	: 
+** í”„ë¡œê·¸ë¨ ID	: /po/jungjung/result/dao/ABReceiveRollingInfoDAO.java
+** ì‘ ì„± ì¼ ì	: 2005/09/28
+** ì‘  ì„±   ì	: ìµœì›…ì£¼
+** ì„¤       ëª…	: 
 ** --------------------------------------------------------------------------
-** ¼öÁ¤ÀÌ·Â
-** ¼öÁ¤ÀÏÀÚ		: 
-** ¼ö Á¤ ÀÚ		: 
-** ¼³    ¸í		: 
+** ìˆ˜ì •ì´ë ¥
+** ìˆ˜ì •ì¼ì		: 
+** ìˆ˜ ì • ì		: 
+** ì„¤    ëª…		: 
 *****************************************************************************/
 /*
  * Created on 2005. 7. 28.
@@ -45,7 +45,7 @@ public class ABReceiveRollingInfoDAO extends CommonDAO {
 		log = LogService.getInstance().getLogServiceContext().getLogger( "template" );
 	}
 	
-	/* COIL°øÅë Á¶È¸(TB_PM_COILCOMM)*/     		
+	/* COILê³µí†µ ì¡°íšŒ(TB_PM_COILCOMM)*/     		
 	public List getCoilCommDtl(String coilNo) throws DAOException {
 		/*  ----------------------------------------------------------
 			SELECT * FROM TB_PM_COILCOMM  WHERE COIL_NO = ?
@@ -57,7 +57,7 @@ public class ABReceiveRollingInfoDAO extends CommonDAO {
 	    return super.findList(queryCode, ParamList.toArray());
     }
 	
-	/* ÁÖ¹®ÁøÇàÀÚ·áÁ¶È¸(TB_PM_ORDPROG)*/     		
+	/* ì£¼ë¬¸ì§„í–‰ìë£Œì¡°íšŒ(TB_PM_ORDPROG)*/     		
 	public List getOrdProgDtl(List ParamList) throws DAOException {
 		/*  ----------------------------------------------------------
 			SELECT * FROM TB_PM_ORDPROG
@@ -69,7 +69,7 @@ public class ABReceiveRollingInfoDAO extends CommonDAO {
 	    return super.findList(queryCode, ParamList.toArray());
     }
 	
-	/* ÁÖ¹®°øÅë(TB_SM_ORDCOMM)*/     		
+	/* ì£¼ë¬¸ê³µí†µ(TB_SM_ORDCOMM)*/     		
 	public List getOrdComm(List ParamList) throws DAOException {
 		/*  ----------------------------------------------------------
 		 	SELECT * FROM TB_SM_ORDCOMM

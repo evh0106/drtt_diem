@@ -2,14 +2,14 @@
  * @(#)BSlabComm
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  *
- * @description      B¿­¿¬ SLAB ¾ßµå °øÅë Ã³¸® EJB
+ * @description      Bì—´ì—° SLAB ì•¼ë“œ ê³µí†µ ì²˜ë¦¬ EJB
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡
  * 
  */
 package com.inisteel.cim.ym.bslab.session;
@@ -41,7 +41,7 @@ import com.metis.rapi4j.RuleException;
 import com.metis.rapi5j.RAPI5J;
 
 /**
- *      [A] Å¬·¡½º¸í : B¿­¿¬ SLAB ¾ßµå °øÅë Ã³¸®
+ *      [A] í´ë˜ìŠ¤ëª… : Bì—´ì—° SLAB ì•¼ë“œ ê³µí†µ ì²˜ë¦¬
  *
 */
 
@@ -55,16 +55,16 @@ public class BSlabComm {
 	private static Logger logger = new Logger("ym");
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÇ° ÀÌµ¿ Á¶°Ç (ÇöÀçÁøµµÄÚµå¿Í Scarfing Pattern À¸·Î ÀÌµ¿Á¶°Ç ÆÇ´Ü) 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ (í˜„ì¬ì§„ë„ì½”ë“œì™€ Scarfing Pattern ìœ¼ë¡œ ì´ë™ì¡°ê±´ íŒë‹¨) 
 	 *
-	 *      @param  sCURR_PROG_CD : ÇöÀçÁøµµÄÚµå
+	 *      @param  sCURR_PROG_CD : í˜„ì¬ì§„ë„ì½”ë“œ
 	 *      @param  sWO_MSLAB_RPR_MTD : Scarfing Pattern
 	 *      @return String
 	 *      @throws DAOException
 	*/
 	public String getStockMoveTerm(String sCURR_PROG_CD, String sWO_MSLAB_RPR_MTD) throws DAOException {
 		
-		String sSTOCK_MOVE_TERM = ""; //°á°ú 
+		String sSTOCK_MOVE_TERM = ""; //ê²°ê³¼ 
 
 		try {
 
@@ -120,19 +120,19 @@ public class BSlabComm {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÇ° ÀÌµ¿ Á¶°Ç  
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥í’ˆ ì´ë™ ì¡°ê±´  
 	 *
-	 *      @param  sSLAB_NO : SLAB¹øÈ£
+	 *      @param  sSLAB_NO : SLABë²ˆí˜¸
 	 *      @return String
 	 *      @throws DAOException
 	*/
 	public String getStockMoveTerm(String sSLAB_NO) throws DAOException {
 		
-		JDTORecord jrParam			= null;	//Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord
+		JDTORecord jrParam			= null;	//Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord
 	    JDTORecordSet rsResult    	= null;
 
-		String sSTOCK_MOVE_TERM = ""; //°á°ú 
-	    String sCURR_PROG_CD = ""; //ÇöÀçÁøµµÄÚµå
+		String sSTOCK_MOVE_TERM = ""; //ê²°ê³¼ 
+	    String sCURR_PROG_CD = ""; //í˜„ì¬ì§„ë„ì½”ë“œ
 	    String sWO_MSLAB_RPR_MTD = ""; //Scarfing Pattern
 
 		try {
@@ -140,14 +140,14 @@ public class BSlabComm {
 			jrParam = JDTORecordFactory.getInstance().create();
 			
 			/**********************************************************
-			* 2. VW_YD_SLABCOMM ¿¡¼­  STL_NO·Î ÇÊ¿äÁ¤º¸ Á¶È¸
+			* 2. VW_YD_SLABCOMM ì—ì„œ  STL_NOë¡œ í•„ìš”ì •ë³´ ì¡°íšŒ
 			**********************************************************/
 			jrParam.setField("SLAB_NO"	, sSLAB_NO);
 			
 			rsResult = bSlabDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getInitSlabInfo");
 			
 			if(rsResult.size() > 0) {
-				sCURR_PROG_CD 		= commUtils.trim(rsResult.getRecord(0).getFieldString("CURR_PROG_CD")); //ÇöÀçÁøµµÄÚµå
+				sCURR_PROG_CD 		= commUtils.trim(rsResult.getRecord(0).getFieldString("CURR_PROG_CD")); //í˜„ì¬ì§„ë„ì½”ë“œ
 				sWO_MSLAB_RPR_MTD	= commUtils.trim(rsResult.getRecord(0).getFieldString("WO_MSLAB_RPR_MTD")); //Scarfing Pattern
 			}
 			sSTOCK_MOVE_TERM = getStockMoveTerm(sCURR_PROG_CD, sWO_MSLAB_RPR_MTD);
@@ -164,27 +164,27 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬ SLAB Å©·¹ÀÎÀÛ¾÷½ÇÀû ÀÀ´ä(YMA8L005)Àü¹® »ı¼º 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—° SLAB í¬ë ˆì¸ì‘ì—…ì‹¤ì  ì‘ë‹µ(YMA8L005)ì „ë¬¸ ìƒì„± 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord getYMA8L005(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB Å©·¹ÀÎÀÛ¾÷½ÇÀû ÀÀ´ä Àü¹® »ı¼º[BCoilComm.getYMA8L005] < " + rcvMsg.getResultMsg();
+		String methodNm = "Bì—´ì—° SLAB í¬ë ˆì¸ì‘ì—…ì‹¤ì  ì‘ë‹µ ì „ë¬¸ ìƒì„±[BCoilComm.getYMA8L005] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
-			//¼ö½Å Ç×¸ñ °ª
-			String msgId      = ""; //Àü¹®ID
-			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //¾ßµå¼³ºñID
-			String ydL2WrGp   = commUtils.trim(rcvMsg.getFieldString("YD_L2_WR_GP"   )); //¾ßµåL2½ÇÀû±¸ºĞ
-			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD")); //¾ßµåL3Ã³¸®°á°úÄÚµå
-			String ydL3Msg    = commUtils.trim(rcvMsg.getFieldString("YD_L3_MSG"     )); //¾ßµåL3MESSAGE
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			String msgId      = ""; //ì „ë¬¸ID
+			String ydEqpId    = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"     )); //ì•¼ë“œì„¤ë¹„ID
+			String ydL2WrGp   = commUtils.trim(rcvMsg.getFieldString("YD_L2_WR_GP"   )); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+			String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD")); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			String ydL3Msg    = commUtils.trim(rcvMsg.getFieldString("YD_L3_MSG"     )); //ì•¼ë“œL3MESSAGE
 
 			/**********************************************************
-			* 1. ¼ö½Å Ç×¸ñ °ª Check
+			* 1. ìˆ˜ì‹  í•­ëª© ê°’ Check
 			**********************************************************/
 			if ("".equals(ydEqpId)) {
 				return null;
@@ -197,63 +197,63 @@ public class BSlabComm {
 			}
 
 			/**********************************************************
-			* 2. Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º
+			* 2. í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//¾ßµåL3Message°¡ ¾øÀ¸¸é »ı¼º
+			//ì•¼ë“œL3Messageê°€ ì—†ìœ¼ë©´ ìƒì„±
 			if ("".equals(ydL3Msg)) {
 				if ("U".equals(ydL2WrGp)) {
-					ydL3Msg = "±Ç»ó½ÇÀû";
+					ydL3Msg = "ê¶Œìƒì‹¤ì ";
 				} else if ("D".equals(ydL2WrGp)) {
-					ydL3Msg = "±ÇÇÏ½ÇÀû";
+					ydL3Msg = "ê¶Œí•˜ì‹¤ì ";
 				} else if ("E".equals(ydL2WrGp)) {
-					ydL3Msg = "ºñ»óÁ¶¾÷½ÇÀû";
+					ydL3Msg = "ë¹„ìƒì¡°ì—…ì‹¤ì ";
 				} else if ("R".equals(ydL2WrGp)) {
-					ydL3Msg = "°íÀåº¹±¸½ÇÀû";
+					ydL3Msg = "ê³ ì¥ë³µêµ¬ì‹¤ì ";
 				} else if ("M".equals(ydL2WrGp)) {
-					ydL3Msg = "¿îÀü¸ğµåÀüÈ¯";
+					ydL3Msg = "ìš´ì „ëª¨ë“œì „í™˜";
 				} else if ("J".equals(ydL2WrGp)) {
-					ydL3Msg = "Áö½Ã¿ä±¸";
+					ydL3Msg = "ì§€ì‹œìš”êµ¬";
 				} else if ("F".equals(ydL2WrGp)) {
-					ydL3Msg = "°­Á¦±ÇÇÏ";
+					ydL3Msg = "ê°•ì œê¶Œí•˜";
 				} else if ("G".equals(ydL2WrGp)) {
-					ydL3Msg = "°­Á¦±Ç»ó¿ä±¸";
+					ydL3Msg = "ê°•ì œê¶Œìƒìš”êµ¬";
 				} else {
 					ydL3Msg = ydL2WrGp;
 				}
 
 				if ("0000".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + " Á¤»ó Ã³¸®";
+					ydL3Msg = ydL3Msg + " ì •ìƒ ì²˜ë¦¬";
 				} else if ("9999".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + " Á¤º¸ ¾øÀ½";
+					ydL3Msg = ydL3Msg + " ì •ë³´ ì—†ìŒ";
 				} else {
-					ydL3Msg = ydL3Msg + " ¿À·ù <" + logId + ">";
+					ydL3Msg = ydL3Msg + " ì˜¤ë¥˜ <" + logId + ">";
 				}
 			}
 
 			StringBuffer sbMsg = new StringBuffer();
 
-			sbMsg = sbMsg.append(msgId                                 ); //Àü¹®ID
-			sbMsg = sbMsg.append(commUtils.getDateTime18()             ); //»ı¼ºÀÏ,»ı¼º½Ã°£(yyyy-MM-ddHH:mm:ss)
-			sbMsg = sbMsg.append("I"                                   ); //Àü¹®±¸ºĞ
-			sbMsg = sbMsg.append("0078"                                ); //Àü¹®±æÀÌ
-			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 29, " ")); //ÀÓ½Ã
-			sbMsg = sbMsg.append(commUtils.getRPad(ydEqpId   ,  6, " ")); //¾ßµå¼³ºñID
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")),  1, " ")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )),  8, " ")); //¾ßµå½ºÄÉÁìÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )), 18, " ")); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL2WrGp  ,  1, " ")); //¾ßµåL2½ÇÀû±¸ºĞ
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")); //¾ßµåL3Ã³¸®°á°úÄÚµå
-			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")); //¾ßµåL3Message
+			sbMsg = sbMsg.append(msgId                                 ); //ì „ë¬¸ID
+			sbMsg = sbMsg.append(commUtils.getDateTime18()             ); //ìƒì„±ì¼,ìƒì„±ì‹œê°„(yyyy-MM-ddHH:mm:ss)
+			sbMsg = sbMsg.append("I"                                   ); //ì „ë¬¸êµ¬ë¶„
+			sbMsg = sbMsg.append("0078"                                ); //ì „ë¬¸ê¸¸ì´
+			sbMsg = sbMsg.append(commUtils.getRPad(" "       , 29, " ")); //ì„ì‹œ
+			sbMsg = sbMsg.append(commUtils.getRPad(ydEqpId   ,  6, " ")); //ì•¼ë“œì„¤ë¹„ID
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")),  1, " ")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )),  8, " ")); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )), 18, " ")); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL2WrGp  ,  1, " ")); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+			sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")); //ì•¼ë“œL3Message
 
 			JDTORecord sndMsg = JDTORecordFactory.getInstance().create();
 
 			sndMsg.setResultCode(logId);	//Log ID
 			sndMsg.setResultMsg(methodNm);	//Log Method Name
-			sndMsg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCÄÚµå
-			sndMsg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã(yyyyMMddHHmmss)
+			sndMsg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCì½”ë“œ
+			sndMsg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ(yyyyMMddHHmmss)
 			sndMsg.addField("JMS_TC_MESSAGE"     , sbMsg.toString()         ); //JMSTCMessage
 
-			//Àü¼Û Data Return
+			//ì „ì†¡ Data Return
 			return commUtils.addSndData(sndMsg);
 		} catch (Exception e) {
 			commUtils.printErrorLog(commUtils.makeErrorLog(logId, methodNm, e), this, e);
@@ -263,9 +263,9 @@ public class BSlabComm {
 
 
 	/**
-	 *      SLAB¹Ù·Î À§ »ó´Ü »óÅÂÁ¤º¸¸¦ 'ÀûÄ¡ºÒ°¡' À¸·Î UPDATE
+	 *      SLABë°”ë¡œ ìœ„ ìƒë‹¨ ìƒíƒœì •ë³´ë¥¼ 'ì ì¹˜ë¶ˆê°€' ìœ¼ë¡œ UPDATE
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
@@ -274,7 +274,7 @@ public class BSlabComm {
 							   	   String sStackBedGp,
 							 	   String sStackLayerGp,
 							 	   String logId) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB »ó´Ü »óÅÂÁ¤º¸¸¦ 'ÀûÄ¡ºÒ°¡[BCoilComm.gsetSlabUpperState] < " ;
+		String methodNm = "Bì—´ì—° SLAB ìƒë‹¨ ìƒíƒœì •ë³´ë¥¼ 'ì ì¹˜ë¶ˆê°€[BCoilComm.gsetSlabUpperState] < " ;
 		 
 		int iSeq = 0;
 		try {
@@ -292,18 +292,18 @@ public class BSlabComm {
 			   AND STACK_LAYER_GP	= :V_STACK_LAYER_GP 
 		    */	
 			
-			JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "ÀûÄ¡´ëÁ¤º¸Á¶È¸");
+			JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "ì ì¹˜ëŒ€ì •ë³´ì¡°íšŒ");
 			if (jsChk != null &&  jsChk.size()> 0) {
 				
 				/**
-	    		 * »ó´ÜÁ¤º¸ ¼öÁ¤½Ã¿¡ ÇÏ´ÜÀÌ ÀûÄ¡°¡´ÉÀÌ¸é('E')
-	    		 * ÇöÀ§Ä¡Á¤º¸µµ ÀûÄ¡ºÒ°¡('V')·Î ¼ÂÆÃÇÑ´Ù.
+	    		 * ìƒë‹¨ì •ë³´ ìˆ˜ì •ì‹œì— í•˜ë‹¨ì´ ì ì¹˜ê°€ëŠ¥ì´ë©´('E')
+	    		 * í˜„ìœ„ì¹˜ì •ë³´ë„ ì ì¹˜ë¶ˆê°€('V')ë¡œ ì…‹íŒ…í•œë‹¤.
 	    		 */
 	    		if("".equals(commUtils.trim(jsChk.getRecord(0).getFieldString("STOCK_ID")))){ 	
 					/*
-					 * ÀûÄ¡´Ü UPÀ§Ä¡ÀÇ ¹Ù·Î À§ »ó´Ü ¹øÁö Clear
+					 * ì ì¹˜ë‹¨ UPìœ„ì¹˜ì˜ ë°”ë¡œ ìœ„ ìƒë‹¨ ë²ˆì§€ Clear
 					 * tb_ym_stacklayer Table : stock_id = ''(Empty)
-					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'X'(ÇÏ´Ü¿¡ ÀûÄ¡µÇÁö ¾ÊÀº À§Ä¡)
+					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'X'(í•˜ë‹¨ì— ì ì¹˜ë˜ì§€ ì•Šì€ ìœ„ì¹˜)
 					 */	
 					jrParam.setField("STOCK_ID"                  , "");								
 					jrParam.setField("STACK_LAYER_STAT"          , YmConstant.STACK_LAYER_STAT_X);  	    	
@@ -320,7 +320,7 @@ public class BSlabComm {
 					   AND STACK_BED_GP   = :V_STACK_BED_GP 
 					   AND STACK_LAYER_GP = :V_STACK_LAYER_GP  
 					*/
-					iSeq = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ÀûÄ¡´Ü ¼öÁ¤");	
+					iSeq = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ì ì¹˜ë‹¨ ìˆ˜ì •");	
 				}
 			}
 			jrParam.setField("STACK_LAYER_GP"    , YmCommUtils.changeLayerFormat(sStackLayerGp  , "P") );  
@@ -333,18 +333,18 @@ public class BSlabComm {
 			   AND STACK_LAYER_GP	= :V_STACK_LAYER_GP 
 			*/	
 		
-			JDTORecordSet jsChk1 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "ÀûÄ¡´ëÁ¤º¸Á¶È¸");
+			JDTORecordSet jsChk1 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "ì ì¹˜ëŒ€ì •ë³´ì¡°íšŒ");
 			if (jsChk1 != null &&  jsChk1.size()> 0) {
 			
 				/**
-				 * »ó´ÜÁ¤º¸ ¼öÁ¤½Ã¿¡ ÇÏ´ÜÀÌ ÀûÄ¡°¡´ÉÀÌ¸é('E')
-				 * ÇöÀ§Ä¡Á¤º¸µµ ÀûÄ¡ºÒ°¡('V')·Î ¼ÂÆÃÇÑ´Ù.
+				 * ìƒë‹¨ì •ë³´ ìˆ˜ì •ì‹œì— í•˜ë‹¨ì´ ì ì¹˜ê°€ëŠ¥ì´ë©´('E')
+				 * í˜„ìœ„ì¹˜ì •ë³´ë„ ì ì¹˜ë¶ˆê°€('V')ë¡œ ì…‹íŒ…í•œë‹¤.
 				 */
 				if("".equals(commUtils.trim(jsChk1.getRecord(0).getFieldString("STOCK_ID")))){ 	
 					/*
-					 * ÀûÄ¡´Ü UPÀ§Ä¡ÀÇ ¹Ù·Î À§ »ó´Ü ¹øÁö Clear
+					 * ì ì¹˜ë‹¨ UPìœ„ì¹˜ì˜ ë°”ë¡œ ìœ„ ìƒë‹¨ ë²ˆì§€ Clear
 					 * tb_ym_stacklayer Table : stock_id = ''(Empty)
-					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'X'(ÇÏ´Ü¿¡ ÀûÄ¡µÇÁö ¾ÊÀº À§Ä¡)
+					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'X'(í•˜ë‹¨ì— ì ì¹˜ë˜ì§€ ì•Šì€ ìœ„ì¹˜)
 					 */	
 					jrParam.setField("STOCK_ID"                  , "");								
 					jrParam.setField("STACK_LAYER_STAT"          , YmConstant.STACK_LAYER_STAT_X);  	    	
@@ -361,10 +361,10 @@ public class BSlabComm {
 					   AND STACK_BED_GP   = :V_STACK_BED_GP 
 					   AND STACK_LAYER_GP = :V_STACK_LAYER_GP  
 					*/
-					iSeq = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ÀûÄ¡´Ü ¼öÁ¤");	
+					iSeq = commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ì ì¹˜ë‹¨ ìˆ˜ì •");	
 				}
 			}
-			//Àü¼Û Data Return
+			//ì „ì†¡ Data Return
 			return iSeq;
 		} catch (Exception e) {
 			commUtils.printErrorLog(commUtils.makeErrorLog(logId, methodNm, e), this, e);
@@ -373,23 +373,23 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : MSLAB°øÅë Table ÀúÀåÀ§Ä¡ UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : MSLABê³µí†µ Table ì €ì¥ìœ„ì¹˜ UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updMSlabCommLocInfo(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÁÖÆí°øÅë ÀúÀåÀ§Ä¡ update[BSlabComm.updMSlabCommLocInfo] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì£¼í¸ê³µí†µ ì €ì¥ìœ„ì¹˜ update[BSlabComm.updMSlabCommLocInfo] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// YD_LOC : ¾ßµå±¸ºĞ(1)+µ¿(1)+SPAN(1)+ÀûÄ¡¿­(2)+Bed(2)+ÀûÄ¡´Ü(2)
-			// STOCK_ID : SLAB¹øÈ£ or ÁÖÆí¹øÈ£
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// YD_LOC : ì•¼ë“œêµ¬ë¶„(1)+ë™(1)+SPAN(1)+ì ì¹˜ì—´(2)+Bed(2)+ì ì¹˜ë‹¨(2)
+			// STOCK_ID : SLABë²ˆí˜¸ or ì£¼í¸ë²ˆí˜¸
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updMSlabCommLocInfoTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -405,22 +405,22 @@ public class BSlabComm {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : MSLAB°øÅë Table ÁøµµÄÚµå UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : MSLABê³µí†µ Table ì§„ë„ì½”ë“œ UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updMSlabCommCurrProgCd(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÁÖÆí°øÅë ÁøµµÄÚµå update[BSlabComm.updMSlabCommCurrProgCd] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì£¼í¸ê³µí†µ ì§„ë„ì½”ë“œ update[BSlabComm.updMSlabCommCurrProgCd] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// STOCK_ID : SLAB¹øÈ£ or ÁÖÆí¹øÈ£
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// STOCK_ID : SLABë²ˆí˜¸ or ì£¼í¸ë²ˆí˜¸
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updMSlabCommCurrProgCdTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -436,22 +436,22 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : MSLAB°øÅë Table º¸¿Â¹ğÅ©(BK)ÃßÃâ½Ã°£  UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : MSLABê³µí†µ Table ë³´ì˜¨ë±…í¬(BK)ì¶”ì¶œì‹œê°„  UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updMSlabCommBkTimeEnd(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÁÖÆí°øÅë º¸¿Â¹ğÅ©(BK)ÃßÃâ½Ã°£  update[BSlabComm.updMSlabCommBkTimeEnd] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì£¼í¸ê³µí†µ ë³´ì˜¨ë±…í¬(BK)ì¶”ì¶œì‹œê°„  update[BSlabComm.updMSlabCommBkTimeEnd] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// YD_CRN_SCH_ID : Crane ½ºÄÉÁÙID
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// YD_CRN_SCH_ID : Crane ìŠ¤ì¼€ì¤„ID
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updMSlabCommBkTimeEndTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -467,22 +467,22 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : MSLAB°øÅë Table º¸¿Â¹ğÅ©(BK)ÀåÀÔ½Ã°£  UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : MSLABê³µí†µ Table ë³´ì˜¨ë±…í¬(BK)ì¥ì…ì‹œê°„  UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updMSlabCommBkTimeStart(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÁÖÆí°øÅë º¸¿Â¹ğÅ©(BK)ÀåÀÔ½Ã°£  update[BSlabComm.updMSlabCommBkTimeStart] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì£¼í¸ê³µí†µ ë³´ì˜¨ë±…í¬(BK)ì¥ì…ì‹œê°„  update[BSlabComm.updMSlabCommBkTimeStart] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// YD_CRN_SCH_ID : Crane ½ºÄÉÁÙID
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// YD_CRN_SCH_ID : Crane ìŠ¤ì¼€ì¤„ID
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updMSlabCommBkTimeStartTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -498,22 +498,22 @@ public class BSlabComm {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SLAB°øÅë Table º¸¿Â¹ğÅ©(BK)ÀåÀÔ½Ã°£  UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SLABê³µí†µ Table ë³´ì˜¨ë±…í¬(BK)ì¥ì…ì‹œê°„  UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updSlabCommBkTimeStart(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "SLAB°øÅë º¸¿Â¹ğÅ©(BK)ÀåÀÔ½Ã°£  update[BSlabComm.updSlabCommBkTimeStart] < " + rcvMsg.getResultMsg();
+		String methodNm = "SLABê³µí†µ ë³´ì˜¨ë±…í¬(BK)ì¥ì…ì‹œê°„  update[BSlabComm.updSlabCommBkTimeStart] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// YD_CRN_SCH_ID : Crane ½ºÄÉÁÙID
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// YD_CRN_SCH_ID : Crane ìŠ¤ì¼€ì¤„ID
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updSlabCommBkTimeStartTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -529,23 +529,23 @@ public class BSlabComm {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SLAB°øÅë Table ÀúÀåÀ§Ä¡ UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SLABê³µí†µ Table ì €ì¥ìœ„ì¹˜ UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updSlabCommLocInfo(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "SLAB°øÅë ÀúÀåÀ§Ä¡ update[BSlabComm.updSlabCommLocInfo] < " + rcvMsg.getResultMsg();
+		String methodNm = "SLABê³µí†µ ì €ì¥ìœ„ì¹˜ update[BSlabComm.updSlabCommLocInfo] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// YD_LOC : ¾ßµå±¸ºĞ(1)+µ¿(1)+SPAN(1)+ÀûÄ¡¿­(2)+Bed(2)+ÀûÄ¡´Ü(2)
-			// STOCK_ID : SLAB¹øÈ£ or ÁÖÆí¹øÈ£
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// YD_LOC : ì•¼ë“œêµ¬ë¶„(1)+ë™(1)+SPAN(1)+ì ì¹˜ì—´(2)+Bed(2)+ì ì¹˜ë‹¨(2)
+			// STOCK_ID : SLABë²ˆí˜¸ or ì£¼í¸ë²ˆí˜¸
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updSlabCommLocInfoTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -561,22 +561,22 @@ public class BSlabComm {
 	}
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SLAB°øÅë Table ÁøµµÄÚµå UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SLABê³µí†µ Table ì§„ë„ì½”ë“œ UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean updSlabCommCurrProgCd(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "SLAB°øÅë ÁøµµÄÚµå update[BSlabComm.updSlabCommCurrProgCd] < " + rcvMsg.getResultMsg();
+		String methodNm = "SLABê³µí†µ ì§„ë„ì½”ë“œ update[BSlabComm.updSlabCommCurrProgCd] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			//¼ö½Å Ç×¸ñ °ª
-			// STOCK_ID : SLAB¹øÈ£ or ÁÖÆí¹øÈ£
+			//ìˆ˜ì‹  í•­ëª© ê°’
+			// STOCK_ID : SLABë²ˆí˜¸ or ì£¼í¸ë²ˆí˜¸
 
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			ejbConn1.trx("updSlabCommCurrProgCdTx", new Class[] { JDTORecord.class }, new Object[] { rcvMsg });
@@ -592,15 +592,15 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à INSERT Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ INSERT Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean insWrkBook(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à INSERT[BSlabComm.insWrkBook] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ INSERT[BSlabComm.insWrkBook] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
@@ -620,15 +620,15 @@ public class BSlabComm {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾àÀç·á INSERT Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ì¬ë£Œ INSERT Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean insWrkBookMtl(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾àÀç·á INSERT[BSlabComm.insWrkBookMtl] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ì¬ë£Œ INSERT[BSlabComm.insWrkBookMtl] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
@@ -648,15 +648,15 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀûÄ¡´Ü(TB_YM_STACKLAYER) INSERT Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì ì¹˜ë‹¨(TB_YM_STACKLAYER) INSERT Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean insStackLayer(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÀûÄ¡´Ü(TB_YM_STACKLAYER) INSERT[BSlabComm.insStackLayer] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì ì¹˜ë‹¨(TB_YM_STACKLAYER) INSERT[BSlabComm.insStackLayer] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
@@ -676,15 +676,15 @@ public class BSlabComm {
 	}		
 
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : INSERT,UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : INSERT,UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean execQueryId(JDTORecord rcvMsg,String queryId) throws DAOException {
-		String methodNm = "INSERT,UPDATE Transaction ºĞ¸®¸Ş¼Òµå È£Ãâ[BSlabComm.execQueryId] < " + rcvMsg.getResultMsg();
+		String methodNm = "INSERT,UPDATE Transaction ë¶„ë¦¬ë©”ì†Œë“œ í˜¸ì¶œ[BSlabComm.execQueryId] < " + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 	
 		try {
@@ -705,15 +705,15 @@ public class BSlabComm {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : W/B ÀûÄ¡´Ü Á¤º¸¸¦ One Pitch Shift ÇÑ´Ù. 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : W/B ì ì¹˜ë‹¨ ì •ë³´ë¥¼ One Pitch Shift í•œë‹¤. 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
      */			
 	public boolean shiftWbLayer(String sSTACK_COL_GP, String sSTACK_BED_GP, String sSTACK_LAYER_GP, String logId, String mthdNm, String modifier) throws DAOException {
-		String methodNm = "W/B ÀûÄ¡´Ü Á¤º¸ One Pitch Shift[BSlabComm.shiftWbLayer] < " + mthdNm;
+		String methodNm = "W/B ì ì¹˜ë‹¨ ì •ë³´ One Pitch Shift[BSlabComm.shiftWbLayer] < " + mthdNm;
 		
 	
 		try {
@@ -725,12 +725,12 @@ public class BSlabComm {
 			String sNEXT_BED_GP = null;
 			
 			JDTORecordSet rsResult 	= null;
-			JDTORecord jrParam	 	= JDTORecordFactory.getInstance().create(); //Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord
-			jrParam.setField("MODIFIER", modifier); //¼öÁ¤ÀÚ
-			jrParam.setResultCode(logId);	//Logging À» À§ÇÑ ID
-			jrParam.setResultMsg(methodNm);	//»óÀ§ Method ¸í
+			JDTORecord jrParam	 	= JDTORecordFactory.getInstance().create(); //Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord
+			jrParam.setField("MODIFIER", modifier); //ìˆ˜ì •ì
+			jrParam.setResultCode(logId);	//Logging ì„ ìœ„í•œ ID
+			jrParam.setResultMsg(methodNm);	//ìƒìœ„ Method ëª…
 			
-			//W/BÀÇ sSTACK_BED_GP, sSTACK_LAYER_GP ÀÇ ÀûÄ¡Á¤º¸¸¦ ÀĞ¾î¿Â´Ù.
+			//W/Bì˜ sSTACK_BED_GP, sSTACK_LAYER_GP ì˜ ì ì¹˜ì •ë³´ë¥¼ ì½ì–´ì˜¨ë‹¤.
 			jrParam.setField("STACK_COL_GP"		, sSTACK_COL_GP); 
 			jrParam.setField("STACK_BED_GP"		, sSTACK_BED_GP); 
 			jrParam.setField("STACK_LAYER_GP"	, sSTACK_LAYER_GP); 
@@ -743,7 +743,7 @@ public class BSlabComm {
 			 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 			   AND  STACK_BED_GP = :V_STACK_BED_GP
 			   AND  STACK_LAYER_GP LIKE :V_STACK_LAYER_GP || '%' */
-			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdByLoc", logId, methodNm, "W/B ÁöÁ¤À§Ä¡ Á¤º¸ Á¶È¸ "); 
+			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdByLoc", logId, methodNm, "W/B ì§€ì •ìœ„ì¹˜ ì •ë³´ ì¡°íšŒ "); 
 			if(rsResult.size() > 0) {
 				
 				sSTOCK_ID 				 = rsResult.getRecord(0).getFieldString("STOCK_ID");	
@@ -751,7 +751,7 @@ public class BSlabComm {
 				sSTACK_LAYER_ACTIVE_STAT = rsResult.getRecord(0).getFieldString("STACK_LAYER_ACTIVE_STAT");	
 				sNEXT_BED_GP 			 = rsResult.getRecord(0).getFieldString("NEXT_BED_GP");	
 				
-				//W/BÀÇ sNEXT_BED_GP, sSTACK_LAYER_GP ÀÇ ÀûÄ¡Á¤º¸¸¦ ¼³Á¤ÇÑ´Ù.
+				//W/Bì˜ sNEXT_BED_GP, sSTACK_LAYER_GP ì˜ ì ì¹˜ì •ë³´ë¥¼ ì„¤ì •í•œë‹¤.
 				jrParam.setField("STOCK_ID"					, sSTOCK_ID); 
 				jrParam.setField("STACK_LAYER_STAT"			, sSTACK_LAYER_STAT); 
 				jrParam.setField("STACK_LAYER_ACTIVE_STAT"	, sSTACK_LAYER_ACTIVE_STAT); 
@@ -769,35 +769,35 @@ public class BSlabComm {
 				 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 				   AND  STACK_BED_GP = :V_STACK_BED_GP
 				   AND  STACK_LAYER_GP = :V_STACK_LAYER_GP  */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "W/B ÁöÁ¤À§Ä¡ Á¤º¸ ¼³Á¤ ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "W/B ì§€ì •ìœ„ì¹˜ ì •ë³´ ì„¤ì • ");
 
 				if(!"".equals(sSTOCK_ID)) {
 					
-					//ÁÖÆí°øÅë ÁøÇà »óÅÂ°¡ ÁøÇàÁß(2)ÀÎ °æ¿ì ÁÖÆí°øÅëÀ» update 
+					//ì£¼í¸ê³µí†µ ì§„í–‰ ìƒíƒœê°€ ì§„í–‰ì¤‘(2)ì¸ ê²½ìš° ì£¼í¸ê³µí†µì„ update 
 					jrParam.setField("RECORD_PROG_STAT"	, "2"); 
 					jrParam.setField("MSLAB_NO"			, sSTOCK_ID); 
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMSlabByRecordProgStat 
 					SELECT MSLAB_NO
 					  FROM TB_PT_MSLABCOMM
-					 WHERE RECORD_PROG_STAT = :V_RECORD_PROG_STAT --ÁøÇàÁß:2
+					 WHERE RECORD_PROG_STAT = :V_RECORD_PROG_STAT --ì§„í–‰ì¤‘:2
 					   AND MSLAB_NO= :V_MSLAB_NO */
-					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMSlabByRecordProgStat", logId, methodNm, "ÁÖÆí°øÅë¿¡ ·¹ÄÚµå»óÅÂ°¡ ÁøÇàÁß(2)ÀÎÁö È®ÀÎ "); 
+					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMSlabByRecordProgStat", logId, methodNm, "ì£¼í¸ê³µí†µì— ë ˆì½”ë“œìƒíƒœê°€ ì§„í–‰ì¤‘(2)ì¸ì§€ í™•ì¸ "); 
 					if(rsResult.size() > 0) {
-						//ÁÖÆí°øÅëÀÇ LOC Á¤º¸¸¦ Transaction ºĞ¸® ÇÏ¿© º¯°æÃ³¸® ÇÑ´Ù.
+						//ì£¼í¸ê³µí†µì˜ LOC ì •ë³´ë¥¼ Transaction ë¶„ë¦¬ í•˜ì—¬ ë³€ê²½ì²˜ë¦¬ í•œë‹¤.
 						jrParam.setField("STOCK_ID"	, sSTOCK_ID);
 						jrParam.setField("YD_LOC"	, sSTACK_COL_GP + sNEXT_BED_GP + sSTACK_LAYER_GP);
 						this.updMSlabCommLocInfo(jrParam);
 					}
 					
-					//SLAB°øÅëÀÌ Á¸Àç ÇÏ´Â °æ¿ì SLAB°øÅë update 
+					//SLABê³µí†µì´ ì¡´ì¬ í•˜ëŠ” ê²½ìš° SLABê³µí†µ update 
 					jrParam.setField("SLAB_NO"	, sSTOCK_ID); 
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabNoBySlabNo 
 					SELECT SLAB_NO
 					  FROM TB_PT_SLABCOMM
 					 WHERE SLAB_NO= :V_SLAB_NO */
-					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabNoBySlabNo", logId, methodNm, "SLAB°øÅë¿¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ "); 
+					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabNoBySlabNo", logId, methodNm, "SLABê³µí†µì— ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸ "); 
 					if(rsResult.size() > 0) {
-						//SLAB°øÅëÀÇ LOC Á¤º¸¸¦ Transaction ºĞ¸® ÇÏ¿© º¯°æÃ³¸® ÇÑ´Ù.
+						//SLABê³µí†µì˜ LOC ì •ë³´ë¥¼ Transaction ë¶„ë¦¬ í•˜ì—¬ ë³€ê²½ì²˜ë¦¬ í•œë‹¤.
 						jrParam.setField("STOCK_ID"	, sSTOCK_ID);
 						jrParam.setField("YD_LOC"	, sSTACK_COL_GP + sNEXT_BED_GP + sSTACK_LAYER_GP);
 						this.updSlabCommLocInfo(jrParam);
@@ -816,17 +816,17 @@ public class BSlabComm {
 	}
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : »ı»êÅëÁ¦ÀåÀÔ½ÇÀû Àü¹® »ı¼º
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ìƒì‚°í†µì œì¥ì…ì‹¤ì  ì „ë¬¸ ìƒì„±
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord makeYDCTJ032(String szSTOCK_ID, String szCHG_SUP_PROG_STAT, String logId)throws DAOException  {
-		String methodNm = "ÀåÀÔÁøÇà½ÇÀû(YDCTJ032)Àü¹® »ı¼º[BSlabComm.makeYDCTJ032] ";
+		String methodNm = "ì¥ì…ì§„í–‰ì‹¤ì (YDCTJ032)ì „ë¬¸ ìƒì„±[BSlabComm.makeYDCTJ032] ";
 	    
-	    JDTORecord jrParam			= JDTORecordFactory.getInstance().create();	//Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord 
+	    JDTORecord jrParam			= JDTORecordFactory.getInstance().create();	//Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord 
 		JDTORecord jrTemp			= null;
 		
 	    try{
@@ -838,7 +838,7 @@ public class BSlabComm {
 			jrTemp.setResultCode(logId);	//Log ID
 			jrTemp.setResultMsg(methodNm);	//Log Method Name
 			jrTemp.setField("JMS_TC_CD"				, "YDCTJ032");
-			jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
+			jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
 			jrTemp.setField("PTOP_PLNT_GP"			, "HB");
 			jrTemp.setField("STL_APPEAR_GP"			, "C");
 			jrTemp.setField("CHG_SUP_PROG_STAT"		, szCHG_SUP_PROG_STAT);
@@ -861,11 +861,11 @@ public class BSlabComm {
 	 *
 	 **import com.metis.rapi4j.*; 
 	 **import java.util.*; 
-	 * itemÄÚµåÇã¿ë°ª :
-	 * @ÀÛ¼º ³¯Â¥: (2009-07-10 11:46:19)
-	 * @param	scarfing_pattern	ÁÖÆí¼ÕÁú¹æ¹ı
-	 * @param	table ÀÎ¼ö°ª È¤Àº °á°ú°ª(¸®ÅÏÁ¤º¸)
-	 * @return Á¤»óÃ³¸® ¿©ºÎ
+	 * itemì½”ë“œí—ˆìš©ê°’ :
+	 * @ì‘ì„± ë‚ ì§œ: (2009-07-10 11:46:19)
+	 * @param	scarfing_pattern	ì£¼í¸ì†ì§ˆë°©ë²•
+	 * @param	table ì¸ìˆ˜ê°’ í˜¹ì€ ê²°ê³¼ê°’(ë¦¬í„´ì •ë³´)
+	 * @return ì •ìƒì²˜ë¦¬ ì—¬ë¶€
 	 */
 	public JDTORecord getRuleQMB518(String scarfing_pattern) throws DAOException {
 		JDTORecord jrReturn = JDTORecordFactory.getInstance().create();
@@ -883,17 +883,17 @@ public class BSlabComm {
 					,"SCARFING_ORD_LEFT_CORNER"	
 					,"SCARFING_ORD_RIGHT_CORNER"	
 	
-//					 *			<li>QMB518[0] :Scarfing±íÀÌ
-//					 *			<li>QMB518[1] :Scarfing¿Âµµ
-//					 *			<li>QMB518[2] :ScarfingÁö½Ã»ó
-//					 *			<li>QMB518[3] :ScarfingÁö½ÃÇÏ
-//					 *			<li>QMB518[4] :ScarfingÁö½ÃÁÂ
-//					 *			<li>QMB518[5] :ScarfingÁö½Ã¿ì
-//					 *			<li>QMB518[6] :ScarfingÁö½ÃÁÂCorner
-//					 *			<li>QMB518[7] :ScarfingÁö½Ã¿ìCorner
+//					 *			<li>QMB518[0] :Scarfingê¹Šì´
+//					 *			<li>QMB518[1] :Scarfingì˜¨ë„
+//					 *			<li>QMB518[2] :Scarfingì§€ì‹œìƒ
+//					 *			<li>QMB518[3] :Scarfingì§€ì‹œí•˜
+//					 *			<li>QMB518[4] :Scarfingì§€ì‹œì¢Œ
+//					 *			<li>QMB518[5] :Scarfingì§€ì‹œìš°
+//					 *			<li>QMB518[6] :Scarfingì§€ì‹œì¢ŒCorner
+//					 *			<li>QMB518[7] :Scarfingì§€ì‹œìš°Corner
 			};
 			
-			// BRE È£Ãâ 
+			// BRE í˜¸ì¶œ 
 			PropertyService jprop = PropertyService.getInstance();			
 			String javaVersion = jprop.getProperty("cm.properties","java.version");
 			
@@ -919,26 +919,26 @@ public class BSlabComm {
 	 *
 	 **import com.metis.rapi4j.*; 
 	 **import java.util.*; 
-	 * itemÄÚµåÇã¿ë°ª :
-	 * @ÀÛ¼º ³¯Â¥: (2009-07-10 11:46:19)
-	 * @param	item1	ÁÖÆí¼ÕÁú¹æ¹ı
-	 * @param	table ÀÎ¼ö°ª È¤Àº °á°ú°ª(¸®ÅÏÁ¤º¸)
+	 * itemì½”ë“œí—ˆìš©ê°’ :
+	 * @ì‘ì„± ë‚ ì§œ: (2009-07-10 11:46:19)
+	 * @param	item1	ì£¼í¸ì†ì§ˆë°©ë²•
+	 * @param	table ì¸ìˆ˜ê°’ í˜¹ì€ ê²°ê³¼ê°’(ë¦¬í„´ì •ë³´)
 	 *		<ul>
-	 *			<li>CHECK_VAL : ÇÁ·Î¼¼½º Áß°£¿¡ ¹ß»ıÇÏ´Â ¿À·ù È®ÀÎ¿ëA, ....
-	 *			<li>QMB518[0] :Scarfing±íÀÌ
-	 *			<li>QMB518[1] :Scarfing¿Âµµ
-	 *			<li>QMB518[2] :ScarfingÁö½Ã»ó
-	 *			<li>QMB518[3] :ScarfingÁö½ÃÇÏ
-	 *			<li>QMB518[4] :ScarfingÁö½ÃÁÂ
-	 *			<li>QMB518[5] :ScarfingÁö½Ã¿ì
-	 *			<li>QMB518[6] :ScarfingÁö½ÃÁÂCorner
-	 *			<li>QMB518[7] :ScarfingÁö½Ã¿ìCorner
+	 *			<li>CHECK_VAL : í”„ë¡œì„¸ìŠ¤ ì¤‘ê°„ì— ë°œìƒí•˜ëŠ” ì˜¤ë¥˜ í™•ì¸ìš©A, ....
+	 *			<li>QMB518[0] :Scarfingê¹Šì´
+	 *			<li>QMB518[1] :Scarfingì˜¨ë„
+	 *			<li>QMB518[2] :Scarfingì§€ì‹œìƒ
+	 *			<li>QMB518[3] :Scarfingì§€ì‹œí•˜
+	 *			<li>QMB518[4] :Scarfingì§€ì‹œì¢Œ
+	 *			<li>QMB518[5] :Scarfingì§€ì‹œìš°
+	 *			<li>QMB518[6] :Scarfingì§€ì‹œì¢ŒCorner
+	 *			<li>QMB518[7] :Scarfingì§€ì‹œìš°Corner
 	 *			<li>QMB518_ColCnt :8
 	 *		<ul>
-	 * @return Á¤»óÃ³¸® ¿©ºÎ
+	 * @return ì •ìƒì²˜ë¦¬ ì—¬ë¶€
 	 */
 	    public boolean QMB518(Hashtable table,
-	                        String item1 // ÁÖÆí¼ÕÁú¹æ¹ı
+	                        String item1 // ì£¼í¸ì†ì§ˆë°©ë²•
 	                      ) throws RuleException {     
 	        Vector vt = new Vector();
 	        int rc = 0;
@@ -947,10 +947,10 @@ public class BSlabComm {
 	        try {
 	           RCaller = new RAPI4J( false,  "" );
 	            RCaller.Initialize("QMB518");
-	            /* »ç¿ëÀÚ ÀÔ·Â°ª ¼³Á¤ ½ÃÀÛ */ 
+	            /* ì‚¬ìš©ì ì…ë ¥ê°’ ì„¤ì • ì‹œì‘ */ 
 	            RCaller.AddItemCount(1); 
 	            RCaller.AddItemString( item1);
-	            /* »ç¿ëÀÚ ÀÔ·Â°ª ¼³Á¤  */ 
+	            /* ì‚¬ìš©ì ì…ë ¥ê°’ ì„¤ì •  */ 
 	            if (!RCaller.MBRS_Call(2)){                                                    						
 	               	throw new RuleException(RCaller.getErrorCode(),RCaller.getErrorMessage());
 	            }																		 									
@@ -961,27 +961,27 @@ public class BSlabComm {
 	            ResultData    result=new ResultData();	
 	            result.setRowCol(RCaller.getRowCount() , RCaller.getColCount()); 
 	            for (int i = 0; i < RCaller.getRowCount(); i++) { 
-	                //System.out.println("  ROW[" + i + "] COL[1]:"+ RCaller.ReadString());	//Scarfing±íÀÌ
-	                result.add( i ,RCaller.ReadString() );	//Scarfing±íÀÌ
-	                //System.out.println("  ROW[" + i + "] COL[2]:"+ RCaller.ReadInt() );	//Scarfing¿Âµµ
-	                result.add(  i ,new Integer(RCaller.ReadInt()) );	//Scarfing¿Âµµ
-	                //System.out.println("  ROW[" + i + "] COL[3]:"+ RCaller.ReadString());	//ScarfingÁö½Ã»ó
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½Ã»ó
-	                //System.out.println("  ROW[" + i + "] COL[4]:"+ RCaller.ReadString());	//ScarfingÁö½ÃÇÏ
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½ÃÇÏ
-	                //System.out.println("  ROW[" + i + "] COL[5]:"+ RCaller.ReadString());	//ScarfingÁö½ÃÁÂ
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½ÃÁÂ
-	                //System.out.println("  ROW[" + i + "] COL[6]:"+ RCaller.ReadString());	//ScarfingÁö½Ã¿ì
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½Ã¿ì
-	                //System.out.println("  ROW[" + i + "] COL[7]:"+ RCaller.ReadString());	//ScarfingÁö½ÃÁÂCorner
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½ÃÁÂCorner
-	                //System.out.println("  ROW[" + i + "] COL[8]:"+ RCaller.ReadString());	//ScarfingÁö½Ã¿ìCorner
-	                result.add( i ,RCaller.ReadString() );	//ScarfingÁö½Ã¿ìCorner
+	                //System.out.println("  ROW[" + i + "] COL[1]:"+ RCaller.ReadString());	//Scarfingê¹Šì´
+	                result.add( i ,RCaller.ReadString() );	//Scarfingê¹Šì´
+	                //System.out.println("  ROW[" + i + "] COL[2]:"+ RCaller.ReadInt() );	//Scarfingì˜¨ë„
+	                result.add(  i ,new Integer(RCaller.ReadInt()) );	//Scarfingì˜¨ë„
+	                //System.out.println("  ROW[" + i + "] COL[3]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œìƒ
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œìƒ
+	                //System.out.println("  ROW[" + i + "] COL[4]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œí•˜
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œí•˜
+	                //System.out.println("  ROW[" + i + "] COL[5]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œì¢Œ
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œì¢Œ
+	                //System.out.println("  ROW[" + i + "] COL[6]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œìš°
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œìš°
+	                //System.out.println("  ROW[" + i + "] COL[7]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œì¢ŒCorner
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œì¢ŒCorner
+	                //System.out.println("  ROW[" + i + "] COL[8]:"+ RCaller.ReadString());	//Scarfingì§€ì‹œìš°Corner
+	                result.add( i ,RCaller.ReadString() );	//Scarfingì§€ì‹œìš°Corner
 	            } 
 	            table.put("QMB518_ColCnt", new Integer(resColTypes.length));					
 	            table.put("QMB518", result);																					
 	            if (result.size() == 0) {																								
-	                table.put("CHECK_VAL", "È£ÃâÇÑ Rule Á¤º¸°¡ ¾ø½À´Ï´Ù.");						
+	                table.put("CHECK_VAL", "í˜¸ì¶œí•œ Rule ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");						
 	            }																															
 	            return true;																										
 	        } catch (Exception e) {																						
@@ -995,54 +995,54 @@ public class BSlabComm {
 	    *
 	    import com.metis.rapi5j.*; 
 	    import java.util.*; 
-	    * itemÄÚµåÇã¿ë°ª :
-	    * @ÀÛ¼º ³¯Â¥: (2022-03-17 10:13:55)
-	    * @param	item1	ÁÖÆí¼ÕÁú¹æ¹ı
-	    * @param	table ÀÎ¼ö°ª È¤Àº °á°ú°ª(¸®ÅÏÁ¤º¸)
+	    * itemì½”ë“œí—ˆìš©ê°’ :
+	    * @ì‘ì„± ë‚ ì§œ: (2022-03-17 10:13:55)
+	    * @param	item1	ì£¼í¸ì†ì§ˆë°©ë²•
+	    * @param	table ì¸ìˆ˜ê°’ í˜¹ì€ ê²°ê³¼ê°’(ë¦¬í„´ì •ë³´)
 	    *		<ul>
-	    *			<li>CHECK_VAL : ÇÁ·Î¼¼½º Áß°£¿¡ ¹ß»ıÇÏ´Â ¿À·ù È®ÀÎ¿ë, ....
-	    *			<li>QMB518[0] :Scarfing±íÀÌ
-	    *			<li>QMB518[1] :Scarfing¿Âµµ
-	    *			<li>QMB518[2] :ScarfingÁö½Ã»ó
-	    *			<li>QMB518[3] :ScarfingÁö½ÃÇÏ
-	    *			<li>QMB518[4] :ScarfingÁö½ÃÁÂ
-	    *			<li>QMB518[5] :ScarfingÁö½Ã¿ì
-	    *			<li>QMB518[6] :ScarfingÁö½ÃÁÂCorner
-	    *			<li>QMB518[7] :ScarfingÁö½Ã¿ìCorner
+	    *			<li>CHECK_VAL : í”„ë¡œì„¸ìŠ¤ ì¤‘ê°„ì— ë°œìƒí•˜ëŠ” ì˜¤ë¥˜ í™•ì¸ìš©, ....
+	    *			<li>QMB518[0] :Scarfingê¹Šì´
+	    *			<li>QMB518[1] :Scarfingì˜¨ë„
+	    *			<li>QMB518[2] :Scarfingì§€ì‹œìƒ
+	    *			<li>QMB518[3] :Scarfingì§€ì‹œí•˜
+	    *			<li>QMB518[4] :Scarfingì§€ì‹œì¢Œ
+	    *			<li>QMB518[5] :Scarfingì§€ì‹œìš°
+	    *			<li>QMB518[6] :Scarfingì§€ì‹œì¢ŒCorner
+	    *			<li>QMB518[7] :Scarfingì§€ì‹œìš°Corner
 	    *			<li>QMB518_ColCnt :8
 	    *		<ul>
-	    * @return Á¤»óÃ³¸® ¿©ºÎ
+	    * @return ì •ìƒì²˜ë¦¬ ì—¬ë¶€
 	    */
 	       public boolean QMB518_NEW(Hashtable table,
-	                           String item1 // ÁÖÆí¼ÕÁú¹æ¹ı
+	                           String item1 // ì£¼í¸ì†ì§ˆë°©ë²•
 	                         ) throws RuleException {     
 	           Vector vt = new Vector();
 	           int rc = 0;
 
 	           RAPI5J  RCaller=new RAPI5J() ;
 	           RCaller.Initialize("QMB518");
-	           /* »ç¿ëÀÚ ÀÔ·Â°ª ¼³Á¤ ½ÃÀÛ */ 
+	           /* ì‚¬ìš©ì ì…ë ¥ê°’ ì„¤ì • ì‹œì‘ */ 
 	           RCaller.AddItemCount(1); 
 	           RCaller.AddItemString( item1);
-	           /* »ç¿ëÀÚ ÀÔ·Â°ª ¼³Á¤  */ 
+	           /* ì‚¬ìš©ì ì…ë ¥ê°’ ì„¤ì •  */ 
 	          try{                                                    						
 	               RCaller.MBRS_Run();                                                      
 	               ResultData    result=new ResultData();	
 	               result.setRowCol(RCaller.getRowCount() , RCaller.getColCount()); 
 	               for (int i = 0; i < RCaller.getRowCount(); i++) { 
-	                   result.add( i , RCaller.ReadString() );	//Scarfing±íÀÌ
-	                   result.add(  i ,new Integer(RCaller.ReadInt()) );	//Scarfing¿Âµµ
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½Ã»ó
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½ÃÇÏ
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½ÃÁÂ
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½Ã¿ì
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½ÃÁÂCorner
-	                   result.add( i , RCaller.ReadString() );	//ScarfingÁö½Ã¿ìCorner
+	                   result.add( i , RCaller.ReadString() );	//Scarfingê¹Šì´
+	                   result.add(  i ,new Integer(RCaller.ReadInt()) );	//Scarfingì˜¨ë„
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œìƒ
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œí•˜
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œì¢Œ
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œìš°
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œì¢ŒCorner
+	                   result.add( i , RCaller.ReadString() );	//Scarfingì§€ì‹œìš°Corner
 	               } 
 	               table.put("QMB518_ColCnt", new Integer( RCaller.getColCount() ));					
 	               table.put("QMB518", result);																					
 	               if (result.size() == 0) {
-	                   table.put("CHECK_VAL", "È£ÃâÇÑ Rule Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+	                   table.put("CHECK_VAL", "í˜¸ì¶œí•œ Rule ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 	               }																															
 	               return true;																										
 	           } catch (Exception e) {																						
@@ -1087,91 +1087,91 @@ public class BSlabComm {
 			
 		}
 		 
-		//2018³â 2¿ù 9ÀÏ Å©·¹ÀÎÁÖÇà±İÁö±¸°£ I/FÀ» À§ÇÑ Å©·¹ÀÎÀÛ¾÷½ÇÀû ÀÀ´ä(I/F) javaÃ³¸®
+		//2018ë…„ 2ì›” 9ì¼ í¬ë ˆì¸ì£¼í–‰ê¸ˆì§€êµ¬ê°„ I/Fì„ ìœ„í•œ í¬ë ˆì¸ì‘ì—…ì‹¤ì  ì‘ë‹µ(I/F) javaì²˜ë¦¬
 		/**
-		 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : B¿­¿¬Å©·¹ÀÎÁÖÇà±İÁö±¸°£ÀÛ¾÷½ÇÀûÀÀ´ä(getYMA8L005_recv) Àü¹® Á¶È¸
+		 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Bì—´ì—°í¬ë ˆì¸ì£¼í–‰ê¸ˆì§€êµ¬ê°„ì‘ì—…ì‹¤ì ì‘ë‹µ(getYMA8L005_recv) ì „ë¬¸ ì¡°íšŒ
 		 *
-		 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+		 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 		 *      @param JDTORecord rcvMsg
 		 *      @return JDTORecord
 		 *      @throws DAOException
 		*/
 		public JDTORecord getYMA8L005_recv(JDTORecord rcvMsg) throws DAOException {
-			String methodNm = "Å©·¹ÀÎÁÖÇà±İÁö±¸°£ÀÛ¾÷½ÇÀûÀÀ´ä Á¶È¸[BCoilComm.getYMA8L005_recv] < " + rcvMsg.getResultMsg();
+			String methodNm = "í¬ë ˆì¸ì£¼í–‰ê¸ˆì§€êµ¬ê°„ì‘ì—…ì‹¤ì ì‘ë‹µ ì¡°íšŒ[BCoilComm.getYMA8L005_recv] < " + rcvMsg.getResultMsg();
 			String logId = rcvMsg.getResultCode();
 			
 			try {
-				//¼ö½Å Ç×¸ñ °ª
-				String msgId      = "YMA8L005"; //Àü¹®ID
+				//ìˆ˜ì‹  í•­ëª© ê°’
+				String msgId      = "YMA8L005"; //ì „ë¬¸ID
 				
-				String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD"));//¾ßµåL3Ã³¸®°á°úÄÚµå
-				String ydL3Msg    = "";														//¾ßµåL3Ã³¸®°á°ú¸Ş¼¼Áö
+				String ydL3HdRsCd = commUtils.trim(rcvMsg.getFieldString("YD_L3_HD_RS_CD"));//ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+				String ydL3Msg    = "";														//ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ë©”ì„¸ì§€
 				
 				String ydBayGP = commUtils.trim(rcvMsg.getFieldString("BAY_GP"));
-				String ydRepA     = commUtils.trim(rcvMsg.getFieldString("A"        ));//Aµ¿ ´ëÇ¥Å©·¹ÀÎ
-				String ydRepB     = commUtils.trim(rcvMsg.getFieldString("B"        ));//Bµ¿ ´ëÇ¥Å©·¹ÀÎ
-				String ydRepC     = commUtils.trim(rcvMsg.getFieldString("C"        ));//Cµ¿ ´ëÇ¥Å©·¹ÀÎ
-				String ydRepD     = commUtils.trim(rcvMsg.getFieldString("D"        ));//Dµ¿ ´ëÇ¥Å©·¹ÀÎ
-				String ydRepE     = commUtils.trim(rcvMsg.getFieldString("E"        ));//Eµ¿ ´ëÇ¥Å©·¹ÀÎ
+				String ydRepA     = commUtils.trim(rcvMsg.getFieldString("A"        ));//Aë™ ëŒ€í‘œí¬ë ˆì¸
+				String ydRepB     = commUtils.trim(rcvMsg.getFieldString("B"        ));//Bë™ ëŒ€í‘œí¬ë ˆì¸
+				String ydRepC     = commUtils.trim(rcvMsg.getFieldString("C"        ));//Cë™ ëŒ€í‘œí¬ë ˆì¸
+				String ydRepD     = commUtils.trim(rcvMsg.getFieldString("D"        ));//Dë™ ëŒ€í‘œí¬ë ˆì¸
+				String ydRepE     = commUtils.trim(rcvMsg.getFieldString("E"        ));//Eë™ ëŒ€í‘œí¬ë ˆì¸
 				
 				
 				
 				if ("0000".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + "ÁÖÇà±İÁö±¸¿ª ¼³Á¤ Ã³¸®¿Ï·á";
+					ydL3Msg = ydL3Msg + "ì£¼í–‰ê¸ˆì§€êµ¬ì—­ ì„¤ì • ì²˜ë¦¬ì™„ë£Œ";
 				} /*else if ("9999".equals(ydL3HdRsCd)) {
-					ydL3Msg = ydL3Msg + "ÁÖÇà°Å¸®¿À·ù¹ß»ı";
+					ydL3Msg = ydL3Msg + "ì£¼í–‰ê±°ë¦¬ì˜¤ë¥˜ë°œìƒ";
 				}*/ else {
-					ydL3Msg = ydL3Msg + " ¿À·ù <" + logId + ">";
+					ydL3Msg = ydL3Msg + " ì˜¤ë¥˜ <" + logId + ">";
 				}
 				
 				
 				/**********************************************************
-				* 1. ¼ö½Å Ç×¸ñ °ª Check
+				* 1. ìˆ˜ì‹  í•­ëª© ê°’ Check
 				**********************************************************/
-				// ¾øÀ½
+				// ì—†ìŒ
 				
 				
 				/**********************************************************
-				* 2. Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º
+				* 2. í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±
 				**********************************************************/
-				//¾ßµåL3Message°¡ ¾øÀ¸¸é »ı¼º
+				//ì•¼ë“œL3Messageê°€ ì—†ìœ¼ë©´ ìƒì„±
 				
 
 				StringBuffer sbMsg = new StringBuffer();
 
-				sbMsg = sbMsg.append(msgId                                      ); //Àü¹®ID
-				sbMsg = sbMsg.append(commUtils.getDateTime18()                  ); //»ı¼ºÀÏ,»ı¼º½Ã°£(yyyy-MM-ddHH:mm:ss)
-				sbMsg = sbMsg.append("I"                                        ); //Àü¹®±¸ºĞ
-				sbMsg = sbMsg.append("0078"                                     ); //Àü¹®±æÀÌ
-				sbMsg = sbMsg.append(commUtils.getRPad(" "	     , 29, " ")     ); //ÀÓ½Ã
+				sbMsg = sbMsg.append(msgId                                      ); //ì „ë¬¸ID
+				sbMsg = sbMsg.append(commUtils.getDateTime18()                  ); //ìƒì„±ì¼,ìƒì„±ì‹œê°„(yyyy-MM-ddHH:mm:ss)
+				sbMsg = sbMsg.append("I"                                        ); //ì „ë¬¸êµ¬ë¶„
+				sbMsg = sbMsg.append("0078"                                     ); //ì „ë¬¸ê¸¸ì´
+				sbMsg = sbMsg.append(commUtils.getRPad(" "	     , 29, " ")     ); //ì„ì‹œ
 				if("A".equals(ydBayGP)){
-					sbMsg = sbMsg.append(commUtils.getRPad(ydRepA	     ,  6, " ")     ); //Aµ¿ ´ëÇ¥Å©·¹ÀÎ
+					sbMsg = sbMsg.append(commUtils.getRPad(ydRepA	     ,  6, " ")     ); //Aë™ ëŒ€í‘œí¬ë ˆì¸
 				}else if("B".equals(ydBayGP)){
-					sbMsg = sbMsg.append(commUtils.getRPad(ydRepB	     ,  6, " ")     ); //Bµ¿ ´ëÇ¥Å©·¹ÀÎ
+					sbMsg = sbMsg.append(commUtils.getRPad(ydRepB	     ,  6, " ")     ); //Bë™ ëŒ€í‘œí¬ë ˆì¸
 				}else if("C".equals(ydBayGP)){
-					sbMsg = sbMsg.append(commUtils.getRPad(ydRepC	     ,  6, " ")     ); //Cµ¿ ´ëÇ¥Å©·¹ÀÎ
+					sbMsg = sbMsg.append(commUtils.getRPad(ydRepC	     ,  6, " ")     ); //Cë™ ëŒ€í‘œí¬ë ˆì¸
 				}else if("D".equals(ydBayGP)){
-					sbMsg = sbMsg.append(commUtils.getRPad(ydRepD	     ,  6, " ")     ); //Dµ¿ ´ëÇ¥Å©·¹ÀÎ
+					sbMsg = sbMsg.append(commUtils.getRPad(ydRepD	     ,  6, " ")     ); //Dë™ ëŒ€í‘œí¬ë ˆì¸
 				}else if("E".equals(ydBayGP)){
-					sbMsg = sbMsg.append(commUtils.getRPad(ydRepE	     ,  6, " ")     ); //Eµ¿ ´ëÇ¥Å©·¹ÀÎ
+					sbMsg = sbMsg.append(commUtils.getRPad(ydRepE	     ,  6, " ")     ); //Eë™ ëŒ€í‘œí¬ë ˆì¸
 				}
 				
-				sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  8, " ")     ); //¾ßµå½ºÄÉÁìÄÚµå
-				sbMsg = sbMsg.append(commUtils.getRPad(" "       , 18, " ")     ); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				sbMsg = sbMsg.append(commUtils.getRPad("X"       ,  1, " ")     ); //¾ßµåL2½ÇÀû±¸ºĞ
-				sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")     ); //¾ßµåL3Ã³¸®°á°úÄÚµå
-				sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")     ); //¾ßµåL3Message
+				sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  1, " ")     ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				sbMsg = sbMsg.append(commUtils.getRPad(" "       ,  8, " ")     ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				sbMsg = sbMsg.append(commUtils.getRPad(" "       , 18, " ")     ); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				sbMsg = sbMsg.append(commUtils.getRPad("X"       ,  1, " ")     ); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„
+				sbMsg = sbMsg.append(commUtils.getRPad(ydL3HdRsCd,  4, " ")     ); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ
+				sbMsg = sbMsg.append(commUtils.getRPad(ydL3Msg   , 40, " ")     ); //ì•¼ë“œL3Message
 
 				JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
 
 				sndL2Msg.setResultCode(logId);		//Log ID
 				sndL2Msg.setResultMsg(methodNm);	//Log Method Name
-				sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCÄÚµå
-				sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã(yyyyMMddHHmmss)
+				sndL2Msg.addField("JMS_TC_CD"          , msgId                    ); //JMSTCì½”ë“œ
+				sndL2Msg.addField("JMS_TC_CREATE_DDTT" , commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ(yyyyMMddHHmmss)
 				sndL2Msg.addField("JMS_TC_MESSAGE"     , sbMsg.toString()         ); //JMSTCMessage
 
-				//Àü¼Û Data Return
+				//ì „ì†¡ Data Return
 				return commUtils.addSndData(sndL2Msg);
 			} catch (Exception e) {
 				commUtils.printErrorLog(commUtils.makeErrorLog(logId, methodNm, e), this, e);
@@ -1181,15 +1181,15 @@ public class BSlabComm {
 		
 		
 		/**
-		 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : °íµµÈ­ ·Î±× Àü¹® »ı¼º
+		 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ê³ ë„í™” ë¡œê·¸ ì „ë¬¸ ìƒì„±
 		 *
-		 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+		 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 		 *      @param JDTORecord rcvMsg
 		 *      @return JDTORecord
 		 *      @throws DAOException
 		*/
 		public JDTORecord makeYMYMJ204(String szMSG, String szCONTENTS, String szTYPE, String szTYPE_CONTENTS, String logId)throws DAOException  {
-			String methodNm = "°íµµÈ­ ·Î±×(YMYMJ204)Àü¹® »ı¼º[BSlabComm.makeYMYMJ204] ";
+			String methodNm = "ê³ ë„í™” ë¡œê·¸(YMYMJ204)ì „ë¬¸ ìƒì„±[BSlabComm.makeYMYMJ204] ";
 		    
 			JDTORecord jrTemp			= null;
 			
@@ -1215,7 +1215,7 @@ public class BSlabComm {
 				jrTemp.setResultCode(logId);	//Log ID
 				jrTemp.setResultMsg(methodNm);	//Log Method Name
 				jrTemp.setField("JMS_TC_CD"				, "YMYMJ204");
-				jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
+				jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
 				jrTemp.setField("YD_GP"					, "2");
 				jrTemp.setField("TC_CD"					, "YMYM204");
 				jrTemp.setField("CONTENTS"				, szCONTENTS);

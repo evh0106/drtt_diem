@@ -2,14 +2,14 @@
  * @(#)BSlabJspSeEJBSBean
  *
  * @version          V1.00
- * @author           Çö´ëÁ¦Ã¶
+ * @author           í˜„ëŒ€ì œì² 
  * @date             2017/02/02
  *
- * @description      B¿­¿¬ SLAB ¾ßµå È­¸é °ü¸® Session EJB
+ * @description      Bì—´ì—° SLAB ì•¼ë“œ í™”ë©´ ê´€ë¦¬ Session EJB
  * ------------------------------------------------------------------------------
- * Ver.   ¼öÁ¤ÀÏÀÚ              ¿äÃ»ÀÚ       ¼öÁ¤ÀÚ      ³»¿ë
+ * Ver.   ìˆ˜ì •ì¼ì              ìš”ì²­ì       ìˆ˜ì •ì      ë‚´ìš©
  * =====  ===========  ======  ======  ==========================================
- * V1.00  2017/02/02   Á¤Á¾±Õ      Á¶º´±â      ÃÖÃÊ µî·Ï 
+ * V1.00  2017/02/02   ì •ì¢…ê·       ì¡°ë³‘ê¸°      ìµœì´ˆ ë“±ë¡ 
  *   
  */
 package com.inisteel.cim.ym.bslab.session; 
@@ -41,7 +41,7 @@ import jspeed.base.util.StringHelper;
 
 
 /**
- *      [A] Å¬·¡½º¸í : B¿­¿¬ SLAB ¾ßµå È­¸é°ü¸® Session EJB 
+ *      [A] í´ë˜ìŠ¤ëª… : Bì—´ì—° SLAB ì•¼ë“œ í™”ë©´ê´€ë¦¬ Session EJB 
  *
  * @ejb.bean name="BSlabJspSeEJB" jndi-name="BSlabJspSeEJB" type="Stateless"
  *           view-type="remote" display-name="" description=""
@@ -68,21 +68,21 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * GridData - ´Ü¼ø Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * GridData - ë‹¨ìˆœ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public GridData getSelectData(GridData gdReq) throws DAOException {
-		String methodNm = "Á¶È¸[BSlabJspSeEJB.getSelectData] < " + gdReq.getNavigateValue();
+		String methodNm = "ì¡°íšŒ[BSlabJspSeEJB.getSelectData] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//Grid date ¸¦ JDTORecord data ·Î º¯È¯
+			//Grid date ë¥¼ JDTORecord data ë¡œ ë³€í™˜
 			JDTORecord inRecord = CmUtil.genJDTORecord(gdReq);
 			
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
@@ -90,7 +90,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			commDao.jspSelect(inRecord, outRecSet, inRecord.getFieldString("QUERY_ID"), logId, methodNm);	
 			
 			
-			//UI·Î ¹İÈ¯ ÇÒ Grid data ¸¦ »ı¼º 
+			//UIë¡œ ë°˜í™˜ í•  Grid data ë¥¼ ìƒì„± 
 			//GridData gdRet = CmUtil.genGridData(gdReq, outRecSet); -- old version
 			GridData gdRtn = OperateGridData.cloneResponseGridData(gdReq);
 			GridData gdRet = commUtils.jdtoRecordToGridData(gdRtn, outRecSet.toList(), gdReq);
@@ -107,14 +107,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of getSelectData		
 
 	/**
-	 * ´Ü¼ø Á¶È¸
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ë‹¨ìˆœ ì¡°íšŒ
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecordSet getSelectData(JDTORecord recPara) throws DAOException {
-		String methodNm = "Á¶È¸[BSlabJspSeEJB.getSelectData] < " + recPara.getResultMsg();
+		String methodNm = "ì¡°íšŒ[BSlabJspSeEJB.getSelectData] < " + recPara.getResultMsg();
 		String logId = recPara.getResultCode();
 		
 		try {
@@ -137,15 +137,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of getSelectData		
 	
 	/**
-	 * IFTest Layout º¯°æ
+	 * IFTest Layout ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updIfTestData(GridData gdReq) throws DAOException {
-		String methodNm = "IFTest Layout º¯°æ[BSlabJspSeEJB.updIfTestData] < " + gdReq.getNavigateValue();
+		String methodNm = "IFTest Layout ë³€ê²½[BSlabJspSeEJB.updIfTestData] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -154,10 +154,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -166,7 +166,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("IF_ID"	,gdReq.getParam("IF_ID")); 
 				jrParam.setField("ITM_SEQ"	,commUtils.getValue(gdReq, "ITM_SEQ", ii) ); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updIfTestData", logId, methodNm, "IFTest Ç×¸ñ°ª ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updIfTestData", logId, methodNm, "IFTest í•­ëª©ê°’ ìˆ˜ì •");
 								
 			}
 
@@ -181,15 +181,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updIfTestData
 	
 	/**
-	 * IFTest Àü¼Û
+	 * IFTest ì „ì†¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord sndIfTest(GridData gdReq) throws DAOException {
-		String methodNm = "IFTest Àü¼Û[BSlabJspSeEJB.sndIfTest] < " + gdReq.getNavigateValue();
+		String methodNm = "IFTest ì „ì†¡[BSlabJspSeEJB.sndIfTest] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -198,10 +198,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//·¹ÄÚµå ¼ö
+			//ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			String msgId = commUtils.trim(gdReq.getParam("IF_ID")); //IFID
@@ -212,18 +212,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("IF_ID"	,msgId); 
 				jrParam.setField("ITM_SEQ"	,commUtils.getValue(gdReq, "ITM_SEQ", ii) ); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updIfTestData", logId, methodNm, "IFTest Ç×¸ñ°ª ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updIfTestData", logId, methodNm, "IFTest í•­ëª©ê°’ ìˆ˜ì •");
 			}
 
 			
-			//String ifMthGp    = msgId.substring(4, 5); //IF¹æ¹ı±¸ºĞ(L:EAI, ±âÅ¸:JMS)
+			//String ifMthGp    = msgId.substring(4, 5); //IFë°©ë²•êµ¬ë¶„(L:EAI, ê¸°íƒ€:JMS)
 			String ifMthGp    = gdReq.getParam("MTH_GP");
 			String ifClassNm  = null;
 			String ifMthNm    = null;
-			//String ifSndRcvGp = "YM".equals(msgId.substring(0, 2)) ? "S" : "R"; //IF¼Û¼ö½Å±¸ºĞ(¼Û½Å, ¼ö½Å)
+			//String ifSndRcvGp = "YM".equals(msgId.substring(0, 2)) ? "S" : "R"; //IFì†¡ìˆ˜ì‹ êµ¬ë¶„(ì†¡ì‹ , ìˆ˜ì‹ )
 			String ifSndRcvGp = gdReq.getParam("SNDRCV_GP");
 
-			//Å¥¿¡ ³ÖÀ» µ¥ÀÌÅÍ¸¦ »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//íì— ë„£ì„ ë°ì´í„°ë¥¼ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord sndData = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			sndData.setResultCode(logId);	//Log ID
@@ -232,11 +232,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			sndData.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14());
 			
 			if ("E".equals(ifMthGp) && "S".equals(ifSndRcvGp)) {
-				//EAI¼Û½ÅÃ³¸® ÀÏ °æ¿ì
+				//EAIì†¡ì‹ ì²˜ë¦¬ ì¼ ê²½ìš°
 				ifClassNm = "YmCommEJB";
 				ifMthNm = "sndToEAI";
 
-				//EAIÀü¹® Message
+				//EAIì „ë¬¸ Message
 				StringBuffer sbMsg = new StringBuffer();
 
 				for (int ii = 0; ii < rowCnt; ii++) {
@@ -248,7 +248,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("Y".equals(gdReq.getParam("EFF_YN_TEST"))) {
 
-					//½Å±Ô¸ğµâ Àû¿ë¿©ºÎ Å×½ºÆ® CheckBox Ã¼Å©½Ã TB_YM_Z_IF Å×ÀÌºíÀÇ BEF_PGM_NM1, BEF_PGM_NM2 À» ÀĞ¾î È£Ãâ ÇÑ´Ù.
+					//ì‹ ê·œëª¨ë“ˆ ì ìš©ì—¬ë¶€ í…ŒìŠ¤íŠ¸ CheckBox ì²´í¬ì‹œ TB_YM_Z_IF í…Œì´ë¸”ì˜ BEF_PGM_NM1, BEF_PGM_NM2 ì„ ì½ì–´ í˜¸ì¶œ í•œë‹¤.
 					ifClassNm = gdReq.getParam("BEF_PGM_NM1");
 					ifMthNm = gdReq.getParam("BEF_PGM_NM2");	//EJB Call
 					
@@ -257,23 +257,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 				} else {
 				
-					//¼ö½Å Ã³¸®¹æ¹ı(Q:JMS Queue, E:EJB Call)ÀÌ 'E'ÀÌ°í ¼ö½ÅÃ³°¡ ¾ßµåÀÌ¸é
+					//ìˆ˜ì‹  ì²˜ë¦¬ë°©ë²•(Q:JMS Queue, E:EJB Call)ì´ 'E'ì´ê³  ìˆ˜ì‹ ì²˜ê°€ ì•¼ë“œì´ë©´
 					if ("E".equals(gdReq.getParam("TRT_MTH")) ) {
 						ifClassNm = "YmCommEJB";
 						ifMthNm = "rcvInterface";	//EJB Call
 					} else {
 						ifClassNm = "YmCommEJB";
-						ifMthNm = "sndToJMS";		//JMS¼Û½Å
+						ifMthNm = "sndToJMS";		//JMSì†¡ì‹ 
 					}
 				}
 
-				//EAI¼Û½Å ¿Ü Ã³¸® ÀÏ °æ¿ì
+				//EAIì†¡ì‹  ì™¸ ì²˜ë¦¬ ì¼ ê²½ìš°
 				for (int ii = 0; ii < rowCnt; ii++) {
 					sndData.setField(commUtils.trim(gdReq.getHeader("ITM_ID" ).getValue(ii)), commUtils.trim(gdReq.getHeader("ITM_VAL").getValue(ii)));
 				}
 			}
 			
-			//¼Û½Å °øÅë EJB¸¦ ÀÌ¿ëÇÏ¿© Àü¼Û
+			//ì†¡ì‹  ê³µí†µ EJBë¥¼ ì´ìš©í•˜ì—¬ ì „ì†¡
 			EJBConnector ejbConn = new EJBConnector("default", ifClassNm, this);
 			ejbConn.trx(ifMthNm, new Class[] { JDTORecord.class }, new Object[] { sndData });
 			
@@ -288,23 +288,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of sndIfTest
 	
 	/**
-	 * IFTest EAIÀü¼Û
+	 * IFTest EAIì „ì†¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public GridData sndIfTestEAI(GridData gdReq) throws DAOException {
-		String methodNm = "IFTest EAIÀü¼Û[BSlabJspSeEJB.sndIfTestEAI] < " + gdReq.getNavigateValue();
+		String methodNm = "IFTest EAIì „ì†¡[BSlabJspSeEJB.sndIfTestEAI] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String tcList = gdReq.getParam("TC_LIST"); //Àü¼ÛList
-			String tcMsg  = ""; //Àü¼ÛData
-			int sndCnt = 0; //Àü¼Û°Ç¼ö
+			String tcList = gdReq.getParam("TC_LIST"); //ì „ì†¡List
+			String tcMsg  = ""; //ì „ì†¡Data
+			int sndCnt = 0; //ì „ì†¡ê±´ìˆ˜
 
 			while (tcList.length() > 0) {
 				int idx = tcList.indexOf("\r\n");
@@ -317,19 +317,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					tcList = "";
 				}
 
-				//ÇÑ°Ç Àü¼Û
+				//í•œê±´ ì „ì†¡
 				if (!"".equals(tcMsg) && tcMsg.length() > 60) {
-					//Å¥¿¡ ³ÖÀ» µ¥ÀÌÅÍ¸¦ »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//íì— ë„£ì„ ë°ì´í„°ë¥¼ ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord sndData = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 					sndData.setResultCode(logId);	//Log ID
 					sndData.setResultMsg(methodNm);	//Log Method Name
-					//EAI¼Û½ÅÃ³¸® ÀÏ °æ¿ì
+					//EAIì†¡ì‹ ì²˜ë¦¬ ì¼ ê²½ìš°
 					sndData.setField("JMS_TC_CD"         , tcMsg.substring(0, 8));
 					sndData.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14());
 					sndData.setField("JMS_TC_MESSAGE"    , tcMsg);
 
-					//¼Û½Å °øÅë EJB¸¦ ÀÌ¿ëÇÏ¿© L2·Î Àü¼Û
+					//ì†¡ì‹  ê³µí†µ EJBë¥¼ ì´ìš©í•˜ì—¬ L2ë¡œ ì „ì†¡
 					EJBConnector ejbConn = new EJBConnector("default", "YmCommEJB", this);
 					ejbConn.trx("sndToEAI", new Class[] { JDTORecord.class }, new Object[] { sndData });
 
@@ -351,15 +351,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of sndIfTestEAI
 	
 	/**
-	 * B¿­¿¬ SLAB À§Ä¡º°ÀûÄ¡ÇöÈ²Á¶È¸ - LAYERÈ°¼º»óÅÂ º¯°æ
+	 * Bì—´ì—° SLAB ìœ„ì¹˜ë³„ì ì¹˜í˜„í™©ì¡°íšŒ - LAYERí™œì„±ìƒíƒœ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updLayerActStat(GridData gdReq) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB À§Ä¡º°ÀûÄ¡ÇöÈ²Á¶È¸ - LAYERÈ°¼º»óÅÂ º¯°æ[BSlabJspSeEJB.updBedActStat] < " + gdReq.getNavigateValue();
+		String methodNm = "Bì—´ì—° SLAB ìœ„ì¹˜ë³„ì ì¹˜í˜„í™©ì¡°íšŒ - LAYERí™œì„±ìƒíƒœ ë³€ê²½[BSlabJspSeEJB.updBedActStat] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -368,7 +368,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("STACK_COL_GP"		, gdReq.getParam("STACK_COL_GP"));
@@ -378,7 +378,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			jrParam.setField("NEW_ACTIVE_STAT"	, gdReq.getParam("NEW_ACTIVE_STAT")); 
 			jrParam.setField("OLD_ACTIVE_STAT"	, gdReq.getParam("OLD_ACTIVE_STAT")); 
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabLocStkStatjv.updLayerActStat", logId, methodNm, "LAYERÈ°¼º»óÅÂ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabLocStkStatjv.updLayerActStat", logId, methodNm, "LAYERí™œì„±ìƒíƒœ ë³€ê²½");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -391,15 +391,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updLayerActStat
 	
 	/**
-	 * Â÷·®¿¹Á¤Á¤º¸ Àü¼Û
+	 * ì°¨ëŸ‰ì˜ˆì •ì •ë³´ ì „ì†¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord regCarUdExplainInfo(GridData gdReq) throws DAOException {
-		String methodNm = "Â÷·®¿¹Á¤Á¤º¸ Àü¼Û[BSlabJspSeEJB.regCarUdExplainInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "ì°¨ëŸ‰ì˜ˆì •ì •ë³´ ì „ì†¡[BSlabJspSeEJB.regCarUdExplainInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 	    String szMsg           		= "";
@@ -411,16 +411,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//Â÷·®À§Ä¡Á¶È¸
+			//ì°¨ëŸ‰ìœ„ì¹˜ì¡°íšŒ
 			jrParam.setField("PT_LOAD_LOC"		, gdReq.getParam("YD_CARPNT_CD"));
-			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdGetCarNoByLoc", logId, methodNm, "Â÷·®À§Ä¡Á¶È¸"); 
+			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdGetCarNoByLoc", logId, methodNm, "ì°¨ëŸ‰ìœ„ì¹˜ì¡°íšŒ"); 
 			
 	    	if(rsResult == null || rsResult.size() <= 0) {
 	    		
-	    		szMsg = gdReq.getParam("YD_CARPNT_CD") + " ÇØ´ç À§Ä¡¿¡ Â÷·®ÀÌ ¾ø½À´Ï´Ù.";
+	    		szMsg = gdReq.getParam("YD_CARPNT_CD") + " í•´ë‹¹ ìœ„ì¹˜ì— ì°¨ëŸ‰ì´ ì—†ìŠµë‹ˆë‹¤.";
 	    		jrRtn.setField("RTN_MSG", szMsg);
 	    		
 				szMsg="["+methodNm+"] " + szMsg;
@@ -430,7 +430,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 	    	if(!gdReq.getParam("CAR_NO").equals(rsResult.getRecord(0).getFieldString("CAR_NO"))) {
 	    		
-	    		szMsg = "ÇØ´çÀ§Ä¡¿¡ Â÷·®Á¤º¸°¡ Æ²¸³´Ï´Ù. ÀÔ·ÂÂ÷·®¹øÈ£:" + gdReq.getParam("CAR_NO") + ",°Ë»ö°á°úÂ÷·®¹øÈ£:"+rsResult.getRecord(0).getFieldString("CAR_NO");
+	    		szMsg = "í•´ë‹¹ìœ„ì¹˜ì— ì°¨ëŸ‰ì •ë³´ê°€ í‹€ë¦½ë‹ˆë‹¤. ì…ë ¥ì°¨ëŸ‰ë²ˆí˜¸:" + gdReq.getParam("CAR_NO") + ",ê²€ìƒ‰ê²°ê³¼ì°¨ëŸ‰ë²ˆí˜¸:"+rsResult.getRecord(0).getFieldString("CAR_NO");
 	    		jrRtn.setField("RTN_MSG", szMsg);
 	    		
 				szMsg="["+methodNm+"] " + szMsg;
@@ -439,34 +439,34 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				return jrRtn;
 	    	}
 			
-	    	//Àü¼Û µ¥ÀÌÅÍ ¼³Á¤
-	    	jrParam.setField("PT_LOAD_LOC"			, gdReq.getParam("YD_CARPNT_CD")); //»óÂ÷µµ À§Ä¡
-	    	jrParam.setField("CAR_NO"				, gdReq.getParam("CAR_NO")); //Â÷·®¹øÈ£	
-	    	jrParam.setField("CARD_NO"				, ""); //Â÷·®¹øÈ£	
-	    	jrParam.setField("PT_CLS"				, gdReq.getParam("CAR_WK_GP")); //Â÷·®±¸ºĞ "TT":TTcar, "TR":Æ®·¹ÀÏ·¯
-	    	jrParam.setField("WORK_CLS"				, gdReq.getParam("RETN_WK_GP")); //ÀÛ¾÷±¸ºĞ 1:ÃâÇÏÀÔ°í,2:ÃâÇÏÃâ°í,3:±¸³»ÀÔ°í,4:±¸³»Ãâ°í
+	    	//ì „ì†¡ ë°ì´í„° ì„¤ì •
+	    	jrParam.setField("PT_LOAD_LOC"			, gdReq.getParam("YD_CARPNT_CD")); //ìƒì°¨ë„ ìœ„ì¹˜
+	    	jrParam.setField("CAR_NO"				, gdReq.getParam("CAR_NO")); //ì°¨ëŸ‰ë²ˆí˜¸	
+	    	jrParam.setField("CARD_NO"				, ""); //ì°¨ëŸ‰ë²ˆí˜¸	
+	    	jrParam.setField("PT_CLS"				, gdReq.getParam("CAR_WK_GP")); //ì°¨ëŸ‰êµ¬ë¶„ "TT":TTcar, "TR":íŠ¸ë ˆì¼ëŸ¬
+	    	jrParam.setField("WORK_CLS"				, gdReq.getParam("RETN_WK_GP")); //ì‘ì—…êµ¬ë¶„ 1:ì¶œí•˜ì…ê³ ,2:ì¶œí•˜ì¶œê³ ,3:êµ¬ë‚´ì…ê³ ,4:êµ¬ë‚´ì¶œê³ 
 			
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
-	    	jrParam.setField("WORK_COIL_MAX_CNT"	, Integer.toString(rowCnt)); //ÀÛ¾÷ÃÑ¼ö·®	
+	    	jrParam.setField("WORK_COIL_MAX_CNT"	, Integer.toString(rowCnt)); //ì‘ì—…ì´ìˆ˜ëŸ‰	
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				jrParam.setField("STOCK_ID_"+ii			,commUtils.getValue(gdReq, "YD_STL_NO"			, ii)); //Àç·á¹øÈ£
-				jrParam.setField("LOAD_LOC_CD_"+ii		,commUtils.getValue(gdReq, "YD_CAR_UPP_LOC_CD"	, ii)); //Â÷·®ÀûÀçÀ§Ä¡
-				//jrParam.setField("MAT_WGT_"+ii			,commUtils.getValue(gdReq, "YD_COIL_WT"			, ii)); //Àç·áÁß·®
-				//jrParam.setField("MAT_THK_"+ii			,commUtils.getValue(gdReq, "YD_COIL_T"			, ii)); //Àç·áµÎ²²
-				//jrParam.setField("MAT_WTH_"+ii			,commUtils.getValue(gdReq, "YD_COIL_W"			, ii)); //Àç·áÆø
-				//jrParam.setField("MAT_LEN_"+ii			,commUtils.getValue(gdReq, "YD_COIL_LEN"		, ii)); //Àç·á±æÀÌ
-				//jrParam.setField("MAT_ODIA_"+ii			,commUtils.getValue(gdReq, "YD_COIL_OUTDIA"		, ii)); //Àç·á¿Ü°æ
-				//jrParam.setField("MAT_IDIA_"+ii			,commUtils.getValue(gdReq, "YD_COIL_INDIA"		, ii)); //Àç·á³»°æ
-				jrParam.setField("WORK_STATE_"+ii		,commUtils.getValue(gdReq, "YD_WORK_STATE"		, ii)); //ÀÛ¾÷»óÅÂ
-				//jrParam.setField("YD_CURR_BAY_GP_"+ii	,gdReq.getParam("YD_CARPNT_CD")); //µ¿¹øÈ£?? 
+				jrParam.setField("STOCK_ID_"+ii			,commUtils.getValue(gdReq, "YD_STL_NO"			, ii)); //ì¬ë£Œë²ˆí˜¸
+				jrParam.setField("LOAD_LOC_CD_"+ii		,commUtils.getValue(gdReq, "YD_CAR_UPP_LOC_CD"	, ii)); //ì°¨ëŸ‰ì ì¬ìœ„ì¹˜
+				//jrParam.setField("MAT_WGT_"+ii			,commUtils.getValue(gdReq, "YD_COIL_WT"			, ii)); //ì¬ë£Œì¤‘ëŸ‰
+				//jrParam.setField("MAT_THK_"+ii			,commUtils.getValue(gdReq, "YD_COIL_T"			, ii)); //ì¬ë£Œë‘ê»˜
+				//jrParam.setField("MAT_WTH_"+ii			,commUtils.getValue(gdReq, "YD_COIL_W"			, ii)); //ì¬ë£Œí­
+				//jrParam.setField("MAT_LEN_"+ii			,commUtils.getValue(gdReq, "YD_COIL_LEN"		, ii)); //ì¬ë£Œê¸¸ì´
+				//jrParam.setField("MAT_ODIA_"+ii			,commUtils.getValue(gdReq, "YD_COIL_OUTDIA"		, ii)); //ì¬ë£Œì™¸ê²½
+				//jrParam.setField("MAT_IDIA_"+ii			,commUtils.getValue(gdReq, "YD_COIL_INDIA"		, ii)); //ì¬ë£Œë‚´ê²½
+				jrParam.setField("WORK_STATE_"+ii		,commUtils.getValue(gdReq, "YD_WORK_STATE"		, ii)); //ì‘ì—…ìƒíƒœ
+				//jrParam.setField("YD_CURR_BAY_GP_"+ii	,gdReq.getParam("YD_CARPNT_CD")); //ë™ë²ˆí˜¸?? 
 				
-				//ÁÖ¼®Ã³¸®µÈ Á¤º¸´Â SLAB°øÅë Å×ÀÌºí¿¡¼­ °¡Á®¿Àµµ·Ï Äõ¸® ÀÛ¼ºÇÔ..
+				//ì£¼ì„ì²˜ë¦¬ëœ ì •ë³´ëŠ” SLABê³µí†µ í…Œì´ë¸”ì—ì„œ ê°€ì ¸ì˜¤ë„ë¡ ì¿¼ë¦¬ ì‘ì„±í•¨..
 			}
 
-			//Â÷·®¿¹Á¤Á¤º¸ ¹é¾÷ ¼Û½Å
+			//ì°¨ëŸ‰ì˜ˆì •ì •ë³´ ë°±ì—… ì†¡ì‹ 
 			jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L008BackUp", jrParam));
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -482,15 +482,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * SLAB Àç¿­Àç Á¶È¸ - ÀÛ¾÷¿ä±¸
+	 * SLAB ì¬ì—´ì¬ ì¡°íšŒ - ì‘ì—…ìš”êµ¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord reHtWrkDmd(GridData gdReq) throws DAOException {
-		String methodNm = "SLAB Àç¿­Àç Á¶È¸ - ÀÛ¾÷¿ä±¸[BSlabJspSeEJB.reHtWrkDmd] < " + gdReq.getNavigateValue();
+		String methodNm = "SLAB ì¬ì—´ì¬ ì¡°íšŒ - ì‘ì—…ìš”êµ¬[BSlabJspSeEJB.reHtWrkDmd] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -504,18 +504,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecord    jrRtn    = null;
 			JDTORecordSet rsResult = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 //			jrParam.setField("STOCK_ID", gdReq.getParam("STOCK_ID"));
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				sHB_GP     = commUtils.getValue(gdReq, "HB_GP"   , ii);
 				sYD_SCH_CD = sYD_GP+sHB_GP+"HB01LM";
 				/************************************
-				 *  0.LAYER Á¤º¸ »èÁ¦ 20171114
+				 *  0.LAYER ì •ë³´ ì‚­ì œ 20171114
 				 ***********************************/
 				/*
 				UPDATE TB_YM_STACKLAYER
@@ -533,8 +533,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updClearLyrCtcByStockId");
 				
 				/************************************
-				 *** 1. M Table ÀúÀåÇ° Á¤º¸ ¼ÂÆÃ
-				 ***    M Table ÀúÀåÇ° Á¤º¸ 'C' ¼ÂÆÃ
+				 *** 1. M Table ì €ì¥í’ˆ ì •ë³´ ì…‹íŒ…
+				 ***    M Table ì €ì¥í’ˆ ì •ë³´ 'C' ì…‹íŒ…
 				 ************************************/
 				jrParam.setField("STACK_LAYER_STAT", "C");
 				jrParam.setField("STACK_COL_GP"  , sYD_GP+sHB_GP+"MT01");
@@ -550,39 +550,39 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STACK_BED_GP   = :V_STACK_BED_GP 
 				   AND STACK_LAYER_GP = :V_STACK_LAYER_GP 
 				 */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ÀúÀåÇ° Á¤º¸ ¼¼ÆÃ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat", logId, methodNm, "ì €ì¥í’ˆ ì •ë³´ ì„¸íŒ…");
 				
 				/********************************************
-				 *** 2. ÀÛ¾÷¿ä±¸(Holding Bed Line Off) »ı¼º TODO
+				 *** 2. ì‘ì—…ìš”êµ¬(Holding Bed Line Off) ìƒì„± TODO
 				 ********************************************/
 				/*
 				INSERT INTO TB_YM_WRKBOOK (
-				       YD_WBOOK_ID        --¾ßµåÀÛ¾÷¿¹¾àID
-				     , YD_GP              --¾ßµå±¸ºĞ
-				     , YD_BAY_GP          --¾ßµåµ¿±¸ºĞ
-				     , YD_SCH_CD          --¾ßµå½ºÄÉÁìÄÚµå
-				     , YD_SCH_PRIOR       --¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				     , YD_SCH_PROG_STAT   --¾ßµå½ºÄÉÁìÁøÇà»óÅÂ
-				     , YD_SCH_ST_GP       --¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ
-				     , YD_SCH_REQ_GP      --¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ
-				     , YD_AIM_YD_GP       --¾ßµå¸ñÇ¥¾ßµå±¸ºĞ
-				     , YD_AIM_BAY_GP      --¾ßµå¸ñÇ¥µ¿±¸ºĞ
-				     , YD_TO_LOC_DCSN_MTD --¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-				     , YD_TO_LOC_GUIDE    --¾ßµåToÀ§Ä¡Guide
-				     , YD_WRK_PLAN_TCAR   --¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-				     , YD_CAR_USE_GP      --¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-				     , TRN_EQP_CD         --¿î¼ÛÀåºñÄÚµå
-				     , CAR_NO             --Â÷·®¹øÈ£
-				     , CARD_NO            --Ä«µå¹øÈ£
-				     , PTOP_PLNT_GP       --Á¶¾÷°øÀå±¸ºĞ
-				     , DEST_TEL_NO        --¸ñÀûÁöÀüÈ­¹øÈ£
-				     , DIST_SHIPASSIGN_GP --ÃâÇÏ¹è¼±Áö½Ã±¸ºĞ 
-				     , YD_WRK_PLAN_CRN    --¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-				     , REGISTER           --µî·ÏÀÚ
-				     , REG_DDTT           --µî·ÏÀÏ½Ã
-				     , MODIFIER           --¼öÁ¤ÀÚ
-				     , MOD_DDTT           --¼öÁ¤ÀÏ½Ã
-				     , DEL_YN             --»èÁ¦À¯¹«
+				       YD_WBOOK_ID        --ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				     , YD_GP              --ì•¼ë“œêµ¬ë¶„
+				     , YD_BAY_GP          --ì•¼ë“œë™êµ¬ë¶„
+				     , YD_SCH_CD          --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				     , YD_SCH_PRIOR       --ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				     , YD_SCH_PROG_STAT   --ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ
+				     , YD_SCH_ST_GP       --ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„
+				     , YD_SCH_REQ_GP      --ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„
+				     , YD_AIM_YD_GP       --ì•¼ë“œëª©í‘œì•¼ë“œêµ¬ë¶„
+				     , YD_AIM_BAY_GP      --ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+				     , YD_TO_LOC_DCSN_MTD --ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+				     , YD_TO_LOC_GUIDE    --ì•¼ë“œToìœ„ì¹˜Guide
+				     , YD_WRK_PLAN_TCAR   --ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+				     , YD_CAR_USE_GP      --ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+				     , TRN_EQP_CD         --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				     , CAR_NO             --ì°¨ëŸ‰ë²ˆí˜¸
+				     , CARD_NO            --ì¹´ë“œë²ˆí˜¸
+				     , PTOP_PLNT_GP       --ì¡°ì—…ê³µì¥êµ¬ë¶„
+				     , DEST_TEL_NO        --ëª©ì ì§€ì „í™”ë²ˆí˜¸
+				     , DIST_SHIPASSIGN_GP --ì¶œí•˜ë°°ì„ ì§€ì‹œêµ¬ë¶„ 
+				     , YD_WRK_PLAN_CRN    --ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+				     , REGISTER           --ë“±ë¡ì
+				     , REG_DDTT           --ë“±ë¡ì¼ì‹œ
+				     , MODIFIER           --ìˆ˜ì •ì
+				     , MOD_DDTT           --ìˆ˜ì •ì¼ì‹œ
+				     , DEL_YN             --ì‚­ì œìœ ë¬´
 				) VALUES (
 				      :V_YD_WBOOK_ID
 				     ,:V_YD_GP
@@ -619,9 +619,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_BAY_GP"  , sHB_GP);
 				jrParam.setField("YD_SCH_CD"         , sYD_SCH_CD);
 				jrParam.setField("YD_SCH_PRIOR"      , "");
-				jrParam.setField("YD_SCH_PROG_STAT"  , "W");//¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(½ºÄÉÁÙ¼öÇà´ë±â)
-				jrParam.setField("YD_SCH_ST_GP"      , "O");//¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-				jrParam.setField("YD_SCH_REQ_GP"     , "M");//¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
+				jrParam.setField("YD_SCH_PROG_STAT"  , "W");//ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+				jrParam.setField("YD_SCH_ST_GP"      , "O");//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+				jrParam.setField("YD_SCH_REQ_GP"     , "M");//ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
 				jrParam.setField("YD_AIM_YD_GP"      , "");
 				jrParam.setField("YD_AIM_BAY_GP"     , "");
 				jrParam.setField("YD_TO_LOC_DCSN_MTD", "O"); 
@@ -644,16 +644,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				*/   
-				JDTORecordSet jsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+				JDTORecordSet jsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 				if (jsResult != null && jsResult.size() > 0) {
-					String sYD_SCH_PRIOR = jsResult.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+					String sYD_SCH_PRIOR = jsResult.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 					jrParam.setField("YD_SCH_PRIOR"      , sYD_SCH_PRIOR);
 				} 
 				
 				//commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook");
-				bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook"); //ÀÛ¾÷¿¹¾à »ı¼º	
+				bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook"); //ì‘ì—…ì˜ˆì•½ ìƒì„±	
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+				* 2. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 				**********************************************************/
 				
 				jrParam.setField("YD_WBOOK_ID"		, ydWbookId);
@@ -666,33 +666,33 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("STACK_BED_GP"  , "01");
 				jrParam.setField("STACK_LAYER_GP", "01");*/
 				
-				//commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+				//commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 				bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl");			
 				/**********************************************************
-				* 3. Å©·¹ÀÎ ½ºÄÉÁÙ È£Ãâ
+				* 3. í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ
 				**********************************************************/		
 				jrParam.setField("JMS_TC_CD"    , "YMYMJ202"); 
-				jrParam.setField("YD_WBOOK_ID"  , ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_SCH_CD"    , ""  ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_EQP_ID"    , ""  ); //¾ßµå¼³ºñID
+				jrParam.setField("YD_WBOOK_ID"  , ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_SCH_CD"    , ""  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_EQP_ID"    , ""  ); //ì•¼ë“œì„¤ë¹„ID
 				
 				EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
 				jrRtn = (JDTORecord)ejbConn.trx("procYMYMJ202",new Class[]{JDTORecord.class},new Object[]{ jrParam });				
 					
 				/*JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 				jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-				jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-				jrCrnSchMsg.setField("YD_WBOOK_ID"  		, ydWbookId); //ÀÛ¾÷¿¹¾àID
-				jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-				jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+				jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+				jrCrnSchMsg.setField("YD_WBOOK_ID"  		, ydWbookId); //ì‘ì—…ì˜ˆì•½ID
+				jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 				jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);	*/
 				
 				/**********************************************************
-				* 4. Àç¿­Àç ÀúÀåÇ°Á¦¿ø(YMA8L002) ¼Û½Å
+				* 4. ì¬ì—´ì¬ ì €ì¥í’ˆì œì›(YMA8L002) ì†¡ì‹ 
 				**********************************************************/	
 
-				jrParam.setField("MSG_GP"			, "I" 		); //Àü¹®±¸ºĞ(U:¼öÁ¤)
-				jrParam.setField("YD_INFO_SYNC_CD"	, "5" 		); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(ÁöÁ¤ÀúÀåÇ°)
+				jrParam.setField("MSG_GP"			, "I" 		); //ì „ë¬¸êµ¬ë¶„(U:ìˆ˜ì •)
+				jrParam.setField("YD_INFO_SYNC_CD"	, "5" 		); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(ì§€ì •ì €ì¥í’ˆ)
 				jrParam.setField("STOCK_ID"		 	, commUtils.getValue(gdReq, "SLAB_NO" , ii)); 
 				
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L002", jrParam));
@@ -712,15 +712,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * SLAB Àç¿­Àç Á¶È¸ - ±¸ºĞº¯°æ
+	 * SLAB ì¬ì—´ì¬ ì¡°íšŒ - êµ¬ë¶„ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updReheatSlabGp(GridData gdReq) throws DAOException {
-		String methodNm = "SLAB Àç¿­Àç Á¶È¸ - ±¸ºĞº¯°æ[BSlabJspSeEJB.updReheatSlabGp] < " + gdReq.getNavigateValue();
+		String methodNm = "SLAB ì¬ì—´ì¬ ì¡°íšŒ - êµ¬ë¶„ë³€ê²½[BSlabJspSeEJB.updReheatSlabGp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -731,10 +731,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord    jrRtn    = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -742,7 +742,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				sGUNBUN = commUtils.getValue(gdReq, "GUNBUN"  , ii);
 				
 				/************************************
-				 *  1.SLABCOMM Á¤º¸ UPDATE
+				 *  1.SLABCOMM ì •ë³´ UPDATE
 				 ***********************************/
 				if("B".equals(sGUNBUN)) {
 					jrParam.setField("SLAB_NO"        , commUtils.getValue(gdReq, "SLAB_NO" , ii));
@@ -755,11 +755,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 				
 				/**********************************************************
-				* 2. Àç¿­Àç ÀúÀåÇ°Á¦¿ø(YMA8L002) ¼Û½Å
+				* 2. ì¬ì—´ì¬ ì €ì¥í’ˆì œì›(YMA8L002) ì†¡ì‹ 
 				**********************************************************/	
 
-				jrParam.setField("MSG_GP"			, "U" 		); //Àü¹®±¸ºĞ(U:¼öÁ¤)
-				jrParam.setField("YD_INFO_SYNC_CD"	, "5" 		); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(ÁöÁ¤ÀúÀåÇ°)
+				jrParam.setField("MSG_GP"			, "U" 		); //ì „ë¬¸êµ¬ë¶„(U:ìˆ˜ì •)
+				jrParam.setField("YD_INFO_SYNC_CD"	, "5" 		); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(ì§€ì •ì €ì¥í’ˆ)
 				jrParam.setField("STOCK_ID"		 	, commUtils.getValue(gdReq, "SLAB_NO" , ii)); 
 				
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L002", jrParam));
@@ -779,27 +779,27 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¾ßµå¼³ºñÁ¤ºñµî·Ï
+	 * ì•¼ë“œì„¤ë¹„ì •ë¹„ë“±ë¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord insEqpTrblReg(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµå¼³ºñÁ¤ºñµî·Ï[BSlabJspFaEJB.insEqpTrblReg] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œì„¤ë¹„ì •ë¹„ë“±ë¡[BSlabJspFaEJB.insEqpTrblReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//Grid date ¸¦ JDTORecord data ·Î º¯È¯
+			//Grid date ë¥¼ JDTORecord data ë¡œ ë³€í™˜
 			JDTORecord inRecord = CmUtil.genJDTORecord(gdReq);
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			//gdReq.getParam("TRT_MTH")
@@ -812,7 +812,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			jrParam.setField("DOWN_RECOVER_CONTENTS"	,gdReq.getParam("DOWN_RECOVER_CONTENTS"));
 			jrParam.setField("REGISTER"	,gdReq.getParam("REGISTER"));
 			
-			commDao.insert(jrParam, inRecord.getFieldString("QUERY_ID"), logId, methodNm, "¾ßµå¼³ºñÁ¤ºñµî·Ï");
+			commDao.insert(jrParam, inRecord.getFieldString("QUERY_ID"), logId, methodNm, "ì•¼ë“œì„¤ë¹„ì •ë¹„ë“±ë¡");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -825,15 +825,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of insEqpTrblReg
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙ±âµ¿
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ê¸°ë™
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord procCrnWrkBookStart(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿¹¾à°ü¸® ½ºÄÉÁÙ±âµ¿[BSlabJspSeEJB.procCrnWrkBookStart] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ì˜ˆì•½ê´€ë¦¬ ìŠ¤ì¼€ì¤„ê¸°ë™[BSlabJspSeEJB.procCrnWrkBookStart] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -841,15 +841,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			//Return Value
 			JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
 			String sFLAG            = commUtils.nvl(gdReq.getParam("FLAG"           ), "N"); //
 			String sARR_YD_WBOOK_ID = commUtils.trim(gdReq.getParam("ARR_YD_WBOOK_ID")); //
-			String sDIST_SHIPASSIGN_GP = commUtils.nvl(gdReq.getParam("DIST_SHIPASSIGN_GP"           ), ""); //1¸Å ½ºÄÉÁÙ±âµ¿
+			String sDIST_SHIPASSIGN_GP = commUtils.nvl(gdReq.getParam("DIST_SHIPASSIGN_GP"           ), ""); //1ë§¤ ìŠ¤ì¼€ì¤„ê¸°ë™
 			
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			//ÀÛ¾÷¿¹¾à »ó´Ü½ºÄÉÁÙ ÀüºÎ ±âµ¿
+			//ì‘ì—…ì˜ˆì•½ ìƒë‹¨ìŠ¤ì¼€ì¤„ ì „ë¶€ ê¸°ë™
 			if ("Y".equals(sFLAG)) {
 				/*
 				SELECT DISTINCT WB.YD_WBOOK_ID
@@ -884,21 +884,21 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				JDTORecordSet jrSchList = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPreGoWBookIdStList");
 				
 				for (int idx = 0; idx < jrSchList.size(); ++idx) {
-					//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord jrTcParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 					jrTcParam.setResultCode(logId);	//Log ID
 					jrTcParam.setResultMsg(methodNm);	//Log Method Name
 	
-					jrTcParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-					jrTcParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+					jrTcParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					jrTcParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 					
-					jrTcParam.setField("YD_WBOOK_ID", jrSchList.getRecord(idx).getFieldString("YD_WBOOK_ID")); //¾ßµåÀÛ¾÷¿¹¾àID
-					jrTcParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-					jrTcParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
-					jrTcParam.setField("DIST_SHIPASSIGN_GP"  , sDIST_SHIPASSIGN_GP); //1¸Å ½ºÄÉÁÙ±âµ¿¿©ºÎ
+					jrTcParam.setField("YD_WBOOK_ID", jrSchList.getRecord(idx).getFieldString("YD_WBOOK_ID")); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					jrTcParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrTcParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
+					jrTcParam.setField("DIST_SHIPASSIGN_GP"  , sDIST_SHIPASSIGN_GP); //1ë§¤ ìŠ¤ì¼€ì¤„ê¸°ë™ì—¬ë¶€
 					jrTcParam.setField("YD_TO_LOC_GUIDE_FNL" , "");
 					
-					//ÀÛ¾÷¿¹¾à È­¸é¿¡¼­ ÀÛ¾÷¿¹¾à 1¸Å¾¿ ½ÇÇà¿©ºÎ Update
+					//ì‘ì—…ì˜ˆì•½ í™”ë©´ì—ì„œ ì‘ì—…ì˜ˆì•½ 1ë§¤ì”© ì‹¤í–‰ì—¬ë¶€ Update
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook 
 						UPDATE TB_YM_WRKBOOK
 						   SET DIST_SHIPASSIGN_GP = :V_DIST_SHIPASSIGN_GP
@@ -907,36 +907,36 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						      ,YD_TO_LOC_GUIDE_FNL = :V_YD_TO_LOC_GUIDE_FNL
 						WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 					 */
-					commDao.update(jrTcParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à 1¸Å¾¿ ½ÇÇà¿©ºÎ Update");
+					commDao.update(jrTcParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½ 1ë§¤ì”© ì‹¤í–‰ì—¬ë¶€ Update");
 					
 					
-					//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 					EJBConnector sndConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 					JDTORecord jrRtn1 = (JDTORecord)sndConn.trx("rcvYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jrTcParam });
 					jrRtn = commUtils.addSndData(jrRtn, jrRtn1);
 				}
 			}
 			
-			//¼±ÅÃµÈ ½ºÄÉÁÙ¸¸ ±âµ¿
+			//ì„ íƒëœ ìŠ¤ì¼€ì¤„ë§Œ ê¸°ë™
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			if ("N".equals(sFLAG)) {
 				for (int ii = 0; ii < rowCnt; ii++) {
-					//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord jrTcParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 					jrTcParam.setResultCode(logId);	//Log ID
 					jrTcParam.setResultMsg(methodNm);	//Log Method Name
 	
-					jrTcParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-					jrTcParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+					jrTcParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					jrTcParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 					
-					jrTcParam.setField("YD_WBOOK_ID", commUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii))); //¾ßµåÀÛ¾÷¿¹¾àID
-					jrTcParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-					jrTcParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
-					jrTcParam.setField("DIST_SHIPASSIGN_GP"  , sDIST_SHIPASSIGN_GP); //1¸Å ½ºÄÉÁÙ±âµ¿¿©ºÎ
+					jrTcParam.setField("YD_WBOOK_ID", commUtils.trim(gdReq.getHeader("YD_WBOOK_ID").getValue(ii))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					jrTcParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrTcParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
+					jrTcParam.setField("DIST_SHIPASSIGN_GP"  , sDIST_SHIPASSIGN_GP); //1ë§¤ ìŠ¤ì¼€ì¤„ê¸°ë™ì—¬ë¶€
 					jrTcParam.setField("YD_TO_LOC_GUIDE_FNL" , "");
 					
-					//ÀÛ¾÷¿¹¾à È­¸é¿¡¼­ ÀÛ¾÷¿¹¾à 1¸Å¾¿ ½ÇÇà¿©ºÎ Update
+					//ì‘ì—…ì˜ˆì•½ í™”ë©´ì—ì„œ ì‘ì—…ì˜ˆì•½ 1ë§¤ì”© ì‹¤í–‰ì—¬ë¶€ Update
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook 
 						UPDATE TB_YM_WRKBOOK
 						   SET DIST_SHIPASSIGN_GP = :V_DIST_SHIPASSIGN_GP
@@ -945,9 +945,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						      ,YD_TO_LOC_GUIDE_FNL = :V_YD_TO_LOC_GUIDE_FNL
 						WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 					 */
-					commDao.update(jrTcParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à 1¸Å¾¿ ½ÇÇà¿©ºÎ Update");
+					commDao.update(jrTcParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDistShipassWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½ 1ë§¤ì”© ì‹¤í–‰ì—¬ë¶€ Update");
 
-					//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 					EJBConnector sndConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 					JDTORecord jrRtn2 = (JDTORecord)sndConn.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jrTcParam });
 					jrRtn = commUtils.addSndData(jrRtn, jrRtn2);
@@ -965,15 +965,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}
 		
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à°ü¸®-»èÁ¦
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ê´€ë¦¬-ì‚­ì œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord delWrkBook(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à°ü¸®-»èÁ¦[BSlabJspSeEJB.delWrkBook] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ê´€ë¦¬-ì‚­ì œ[BSlabJspSeEJB.delWrkBook] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -982,16 +982,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydEqpId    = ""; //¾ßµå¼³ºñID
-		    String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydEqpId    = ""; //ì•¼ë“œì„¤ë¹„ID
+		    String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 			
 			
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 				jrParam.setResultCode(logId);	//Log ID
 				jrParam.setResultMsg(methodNm);	//Log Method Name
@@ -1005,7 +1005,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_SCH_CD"    , ydSchCd   );
 				
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à Ãë¼Ò
+				* 2. ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = commUtils.addSndData(jrRtn, this.trtWrkBookCncl(jrParam));
 			}
@@ -1022,40 +1022,40 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÛ¾÷¿¹¾à Ãë¼ÒÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì‘ì—…ì˜ˆì•½ ì·¨ì†Œì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtWrkBookCncl(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾à Ãë¼ÒÃ³¸®[BSlabJspSeEJB.trtWrkBookCncl] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì‘ì—…ì˜ˆì•½ ì·¨ì†Œì²˜ë¦¬[BSlabJspSeEJB.trtWrkBookCncl] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String ydCrnSchId= commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")); //¾ßµå¼³ºñID
-			String ydWbookId = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID")); //¾ßµåÀÛ¾÷¿¹¾àID
-		    String ydEqpId   = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"  )); //¾ßµå¼³ºñID
-		    String ydSchCd   = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"  )); //¾ßµå½ºÄÉÁìÄÚµå
-			String modifier  = commUtils.trim(rcvMsg.getFieldString("MODIFIER"   )); //¼öÁ¤ÀÚ
+			String ydCrnSchId= commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")); //ì•¼ë“œì„¤ë¹„ID
+			String ydWbookId = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID")); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+		    String ydEqpId   = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"  )); //ì•¼ë“œì„¤ë¹„ID
+		    String ydSchCd   = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"  )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String modifier  = commUtils.trim(rcvMsg.getFieldString("MODIFIER"   )); //ìˆ˜ì •ì
 			
 			if ("".equals(ydWbookId)) {
-				throw new Exception("ÀÛ¾÷¿¹¾àID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, modifier);
 
 			jrParam.setField("YD_WBOOK_ID", ydWbookId);
 			
 			/**********************************************************
-			* 1. Å©·¹ÀÎ½ºÄÉÁÙ Á¸Àç¿©ºÎ Check
+			* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¡´ì¬ì—¬ë¶€ Check
 			**********************************************************/
 			/*
 			SELECT YD_CRN_SCH_ID
@@ -1063,15 +1063,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 			   AND DEL_YN      = 'N'
 			 */
-			JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCommWbCrnSch", logId, methodNm, "Å©·¹ÀÎÀÛ¾÷Áö½Ãread");
+			JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCommWbCrnSch", logId, methodNm, "í¬ë ˆì¸ì‘ì—…ì§€ì‹œread");
 			if (jsCrnSch != null && jsCrnSch.size() > 0) {				
-				throw new Exception("ÀÛ¾÷¿¹¾àID[" + ydWbookId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ " + jsCrnSch.size() + " °Ç Á¸ÀçÇÕ´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ " + jsCrnSch.size() + " ê±´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 		    }
 			
 			/**********************************************************
-			* 3. Â÷·®/´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			* 3. ì°¨ëŸ‰/ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			**********************************************************/
-			//Â÷·®½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			/*
 			UPDATE USRYDA.TB_YD_CARSCH
 			   SET MODIFIER              = :V_MODIFIER
@@ -1083,7 +1083,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCommCarSchWbDel", logId, methodNm, "TB_YD_CARSCH");				
 		
-			//´ëÂ÷½ºÄÉÁÙ ¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID, ¾ßµåÇÏÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID, ì•¼ë“œí•˜ì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			/*
 			UPDATE USRYDA.TB_YD_TCARSCH
 			   SET MODIFIER              = :V_MODIFIER
@@ -1096,9 +1096,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCommTcarSchWbDel", logId, methodNm, "TB_YM_TCARSCH");				
 
 		    /**********************************************************
-			* 4. ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦
+			* 4. ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ
 			**********************************************************/
-			//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 			/*
 			UPDATE TB_YM_WRKBOOKMTL
 			   SET MODIFIER    = :V_MODIFIER
@@ -1109,7 +1109,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");				
 
-			//ÀÛ¾÷¿¹¾à »èÁ¦
+			//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 			/*
 			UPDATE TB_YM_WRKBOOK
 			   SET MODIFIER    = :V_MODIFIER
@@ -1135,22 +1135,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸-½ºÄÉÁÙÃë¼Ò
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ-ìŠ¤ì¼€ì¤„ì·¨ì†Œ
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return GridData
 	 * @throws DAOException
 	 */	
 	public JDTORecord updCraneSchCancel(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ½ºÄÉÁÙÃë¼Ò[BSlabJspSeEJB.updCraneSchCancel] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ìŠ¤ì¼€ì¤„ì·¨ì†Œ[BSlabJspSeEJB.updCraneSchCancel] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String sTRT_DTL_GP = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//Ã³¸®»ó¼¼±¸ºĞ RS½ºÄÉÁÙÀç±âµ¿ SC, MC ½ºÄÉÁÙ Ãë¼Ò
-//			String sIS_SCH_MTL = StringHelper.evl(commUtils.trim(gdReq.getParam("IS_SCH_MTL")), "N"); // Àç·á´ÜÀ§ ½ºÄÉÁÙ Ãë¼Ò¿©ºÎ
+			String sTRT_DTL_GP = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//ì²˜ë¦¬ìƒì„¸êµ¬ë¶„ RSìŠ¤ì¼€ì¤„ì¬ê¸°ë™ SC, MC ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
+//			String sIS_SCH_MTL = StringHelper.evl(commUtils.trim(gdReq.getParam("IS_SCH_MTL")), "N"); // ì¬ë£Œë‹¨ìœ„ ìŠ¤ì¼€ì¤„ ì·¨ì†Œì—¬ë¶€
 			String sYD_GP      = StringHelper.evl(commUtils.trim(gdReq.getParam("YD_GP")), "2");
 			
 			//Return Value
@@ -1178,18 +1178,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			String sYD_WRK_PROG_STAT_FLAG = "W";
 			
-			String sYD_DN_WO_LOC    = ""; //±ÇÇÏÁö½ÃÀ§Ä¡ java¿¡¼­ Ã¼Å©
-			String sYD_TO_LOC_GUIDE = ""; //ToÀ§Ä¡ °¡ÀÌµå
+			String sYD_DN_WO_LOC    = ""; //ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ javaì—ì„œ ì²´í¬
+			String sYD_TO_LOC_GUIDE = ""; //Toìœ„ì¹˜ ê°€ì´ë“œ
 			
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
-			commUtils.printLog(logId, "¡Û¡Û¡Û ½ºÄÉÁÙÃë¼Ò ¸®½ºÆ® = " + rowCnt + " °Ç", "[info]");
+			commUtils.printLog(logId, "â—‹â—‹â—‹ ìŠ¤ì¼€ì¤„ì·¨ì†Œ ë¦¬ìŠ¤íŠ¸ = " + rowCnt + " ê±´", "[info]");
 			
 			for (int i = 0; i < rowCnt; i++) {
 				
 				sSTACK_COL_GP     = commUtils.getValue(gdReq, "YD_UP_WO_LOC_LAYER", i).substring(0, 6);
 				sYD_BED_GP        = commUtils.getValue(gdReq, "YD_UP_WO_LOC_LAYER", i).substring(6, 8);
-				sYD_TO_LOC_GUIDE  = commUtils.getValue(gdReq, "YD_TO_LOC_GUIDE"   , i); //toÀ§Ä¡ °¡ÀÌµå
+				sYD_TO_LOC_GUIDE  = commUtils.getValue(gdReq, "YD_TO_LOC_GUIDE"   , i); //toìœ„ì¹˜ ê°€ì´ë“œ
 				sYD_WRK_PROG_STAT = commUtils.getValue(gdReq, "YD_WRK_PROG_STAT", i);
 				sYD_EQP_ID        = commUtils.getValue(gdReq, "YD_EQP_ID"       , i);
 				sYD_CRN_SCH_ID    = commUtils.getValue(gdReq, "YD_CRN_SCH_ID"   , i);
@@ -1200,7 +1200,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("STACK_BED_GP", sYD_BED_GP);
 				
 				/*************************************
-				 * Å©·¹ÀÎ »óÅÂ Ã¼Å©
+				 * í¬ë ˆì¸ ìƒíƒœ ì²´í¬
 				 ************************************/
 				/*
 				SELECT *
@@ -1215,18 +1215,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					rsResult.first();
 					jrEqpInfo = rsResult.getRecord();
 					
-					szydEqpStat      = jrEqpInfo.getFieldString("WPROG_STAT");          // ¼³ºñ »óÅÂ
-					szEqpAutoCrnMode = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn »óÅÂ
-					szEqpAutoCrnYN   = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	// AutoCrn ¿©ºÎ
+					szydEqpStat      = jrEqpInfo.getFieldString("WPROG_STAT");          // ì„¤ë¹„ ìƒíƒœ
+					szEqpAutoCrnMode = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn ìƒíƒœ
+					szEqpAutoCrnYN   = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	// AutoCrn ì—¬ë¶€
 					sWORK_MODE       = jrEqpInfo.getFieldString("WORK_MODE");
 					
-					if ("A".equals(szEqpAutoCrnYN)) {// A:¹«ÀÎ
+					if ("A".equals(szEqpAutoCrnYN)) {// A:ë¬´ì¸
 						autoFlag = true; 
 					}
 				}
 				
 				/*********************************************
-				 * ¾ßµåÀÛ¾÷ÁøÇà»óÅÂ  JAVA´Ü¿¡¼­ ÇÑ¹ø ´õ Ã¼Å©
+				 * ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ  JAVAë‹¨ì—ì„œ í•œë²ˆ ë” ì²´í¬
 				 *********************************************/
 				/*
 				 SELECT *
@@ -1237,25 +1237,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				JDTORecordSet rstCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYmCrnsch");
 				
 				if (rstCrnSch == null || rstCrnSch.size() <= 0) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙÀÌ ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ì—†ìŠµë‹ˆë‹¤.");
 				} else {
 					sYD_WRK_PROG_STAT = rstCrnSch.getRecord(0).getFieldString("YD_WRK_PROG_STAT");
 					sYD_DN_WO_LOC     = rstCrnSch.getRecord(0).getFieldString("YD_DN_WO_LOC");
 				}
 				
 				/*********************************************
-				 *  ±ÇÇÏÁö½Ã(±Ç»ó)»óÅÂ¿¡¼­´Â ½ºÄÉÁÙÃë¼Ò ½ºÅµ
-				 *  ±Ç»ó Àü¿¡¸¸ ½ºÄÉÁÙ Ãë¼Ò°¡ °¡´ÉÇÔ
+				 *  ê¶Œí•˜ì§€ì‹œ(ê¶Œìƒ)ìƒíƒœì—ì„œëŠ” ìŠ¤ì¼€ì¤„ì·¨ì†Œ ìŠ¤í‚µ
+				 *  ê¶Œìƒ ì „ì—ë§Œ ìŠ¤ì¼€ì¤„ ì·¨ì†Œê°€ ê°€ëŠ¥í•¨
 				 *********************************************/
-				if (!"W".equals(sYD_WRK_PROG_STAT)   //´ë±â
-				  &&!"S".equals(sYD_WRK_PROG_STAT)   //´ë±â
-				  &&!"1".equals(sYD_WRK_PROG_STAT)) {//¼±ÅÃ(±Ç»óÁö½Ã)
+				if (!"W".equals(sYD_WRK_PROG_STAT)   //ëŒ€ê¸°
+				  &&!"S".equals(sYD_WRK_PROG_STAT)   //ëŒ€ê¸°
+				  &&!"1".equals(sYD_WRK_PROG_STAT)) {//ì„ íƒ(ê¶Œìƒì§€ì‹œ)
 					//continue;
-					throw new Exception("±Ç»óÇÑ ÀÛ¾÷½ºÄÉÁÙÀº ½ºÄÉÁÙ Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ê¶Œìƒí•œ ì‘ì—…ìŠ¤ì¼€ì¤„ì€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
 				
 				/******************************************
-				 * ÀÛ¾÷¿¹¾àÀº °°µÇ Å©·¹ÀÎ½ºÄÉÁÙÀÌ ºĞ¸®µÈ°æ¿ì ±Ç»óÇÒ °æ¿ì Ãë¼ÒÇÏÁö ¸øÇÔ
+				 * ì‘ì—…ì˜ˆì•½ì€ ê°™ë˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ë¶„ë¦¬ëœê²½ìš° ê¶Œìƒí•  ê²½ìš° ì·¨ì†Œí•˜ì§€ ëª»í•¨
 				 ******************************************/
 				/*
 				SELECT YD_WRK_PROG_STAT
@@ -1283,10 +1283,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					sMAX_YD_WRK_PROG_STAT = jrWrkProg.getRecord(0).getFieldString("YD_WRK_PROG_STAT");
 					sMAX_YD_CRN_SCH_ID = jrWrkProg.getRecord(0).getFieldString("YD_CRN_SCH_ID");
 					//if ("2".equals(sMAX_YD_WRK_PROG_STAT)) {
-					//	throw new Exception("±Ç»óÇÑ ½ºÄÉÁÙÀ» Æ÷ÇÔÇÑ ÀÛ¾÷¿¹¾àÀº ½ºÄÉÁÙ Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù.");
+					//	throw new Exception("ê¶Œìƒí•œ ìŠ¤ì¼€ì¤„ì„ í¬í•¨í•œ ì‘ì—…ì˜ˆì•½ì€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 					//}
 					
-					String sIS_TC_LM = "N"; //´ëÂ÷ ÇÏÂ÷ ÀÛ¾÷ FLAG (´ëÂ÷ÇÏÂ÷ ÀÛ¾÷ÀÌ¸é 'Y')
+					String sIS_TC_LM = "N"; //ëŒ€ì°¨ í•˜ì°¨ ì‘ì—… FLAG (ëŒ€ì°¨í•˜ì°¨ ì‘ì—…ì´ë©´ 'Y')
 					
 					if(sYD_SCH_CD.length() == 8) {
 						if("TC".equals(sYD_SCH_CD.substring(2, 4)) && "LM".equals(sYD_SCH_CD.substring(6, 8))) {
@@ -1295,39 +1295,39 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 					
 					if ("N".equals(sIS_TC_LM)) {
-						//´ëÂ÷ ÇÏÂ÷ÀÛ¾÷ÀÌ ¾Æ´Ò °æ¿ì
+						//ëŒ€ì°¨ í•˜ì°¨ì‘ì—…ì´ ì•„ë‹ ê²½ìš°
 						if ("S".equals(sMAX_YD_WRK_PROG_STAT) || "1".equals(sMAX_YD_WRK_PROG_STAT)) {
 							if(!sYD_CRN_SCH_ID.equals(sMAX_YD_CRN_SCH_ID)) {
-								throw new Exception("±Ç»óÁö½Ã°¡ L2·Î Àü¼ÛµÈ ½ºÄÉÁÙÀ» Æ÷ÇÔÇÑ ÀÛ¾÷¿¹¾àÀº ½ºÄÉÁÙ Ãë¼Ò½Ã L2·Î Àü¼ÛµÈ Å©·¹ÀÎ½ºÄÉÁÙID¸¦ ¼±ÅÃÇÏ¿© Ãë¼ÒÇÏ½Ê½Ã¿ä!");
+								throw new Exception("ê¶Œìƒì§€ì‹œê°€ L2ë¡œ ì „ì†¡ëœ ìŠ¤ì¼€ì¤„ì„ í¬í•¨í•œ ì‘ì—…ì˜ˆì•½ì€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œì‹œ L2ë¡œ ì „ì†¡ëœ í¬ë ˆì¸ìŠ¤ì¼€ì¤„IDë¥¼ ì„ íƒí•˜ì—¬ ì·¨ì†Œí•˜ì‹­ì‹œìš”!");
 							}
 						} else if ("2".equals(sMAX_YD_WRK_PROG_STAT)) {
-							throw new Exception("±Ç»óÇÑ ½ºÄÉÁÙÀ» Æ÷ÇÔÇÑ ÀÛ¾÷¿¹¾àÀº ½ºÄÉÁÙ Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù.");
+							throw new Exception("ê¶Œìƒí•œ ìŠ¤ì¼€ì¤„ì„ í¬í•¨í•œ ì‘ì—…ì˜ˆì•½ì€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						}
 					}
 				}
 				
-				commUtils.printLog(logId, "[¹«ÀÎÅ©·¹ÀÎ ¿©ºÎ]="+ autoFlag + "[YD_EQP_AUTO_CRN_MODE]="+szEqpAutoCrnMode , "[INFO]");
+				commUtils.printLog(logId, "[ë¬´ì¸í¬ë ˆì¸ ì—¬ë¶€]="+ autoFlag + "[YD_EQP_AUTO_CRN_MODE]="+szEqpAutoCrnMode , "[INFO]");
 				commUtils.printLog(logId, "[YD_EQP_WRK_MODE2]="+ szEqpAutoCrnYN + "[YD_WRK_PROG_STAT]="+sYD_WRK_PROG_STAT , "[INFO]");
 				
 
-				// À§Ä¡°Ë»ö½ÇÆĞÀÎ °æ¿ì À¯ÀÎÀ¸·Î Ã³¸®
+				// ìœ„ì¹˜ê²€ìƒ‰ì‹¤íŒ¨ì¸ ê²½ìš° ìœ ì¸ìœ¼ë¡œ ì²˜ë¦¬
 				if ("XX010101".equals(sYD_DN_WO_LOC)) {
 					autoFlag = false;
 				} 
 				
 				
 				/*********************************
-				 * ¹«ÀÎ Å©·¹ÀÎ ÀÛ¾÷ÀÏ °æ¿ì 
+				 * ë¬´ì¸ í¬ë ˆì¸ ì‘ì—…ì¼ ê²½ìš° 
 				 *********************************/
-				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)) { //W:¸í·É¼±ÅÃ´ë±â
+				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)) { //W:ëª…ë ¹ì„ íƒëŒ€ê¸°
 					
-					//¼³ºñ»óÅÂ Ã¼Å©ÇÏ¿© AutoÀÏ°æ¿ì ÀÏ½ÃÁ¤Áö »óÅÂ¿¡¼­¸¸ °¡´ÉÇÏ°Ô ¼öÁ¤
-					//4: ÀÏ½ÃÁ¤Áö B:°íÀå
+					//ì„¤ë¹„ìƒíƒœ ì²´í¬í•˜ì—¬ Autoì¼ê²½ìš° ì¼ì‹œì •ì§€ ìƒíƒœì—ì„œë§Œ ê°€ëŠ¥í•˜ê²Œ ìˆ˜ì •
+					//4: ì¼ì‹œì •ì§€ B:ê³ ì¥
 					if (!"4".equals(szEqpAutoCrnMode) && !"B".equals(szydEqpStat)) { 
-						throw new Exception("¹«ÀÎÅ©·¹ÀÎ [" + sYD_EQP_ID + "]ÀÌ ÀÏ½ÃÁ¤ÁöÀÌ°Å³ª °íÀå»óÅÂ°¡ ¾Æ´Ï¸é Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						throw new Exception("ë¬´ì¸í¬ë ˆì¸ [" + sYD_EQP_ID + "]ì´ ì¼ì‹œì •ì§€ì´ê±°ë‚˜ ê³ ì¥ìƒíƒœê°€ ì•„ë‹ˆë©´ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 					}
 					
-					commUtils.printLog(logId, "¡Û¡Û¡Û ½ºÄÉÁÙÃë¼Ò ¸®½ºÆ® Á¶È¸(ÇØ´ç ¹øÁöÀÇ ÇÏ´Ü ÀüºÎ ½ºÄÉÁÙ Ãë¼Ò)", "[info]");
+					commUtils.printLog(logId, "â—‹â—‹â—‹ ìŠ¤ì¼€ì¤„ì·¨ì†Œ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ(í•´ë‹¹ ë²ˆì§€ì˜ í•˜ë‹¨ ì „ë¶€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ)", "[info]");
 					/*
 					SELECT CS.YD_WBOOK_ID
 					     , MIN(CM.YD_CRN_SCH_ID) AS YD_CRN_SCH_ID
@@ -1359,22 +1359,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 */
 					jrParam.setField("YD_CRN_SCH_ID"	,sYD_CRN_SCH_ID);
 					jrParam.setField("YD_WBOOK_ID"		,sYD_WBOOK_ID  );
-					JDTORecordSet jrSchCnclList = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSchCnclList", logId, methodNm, "½ºÄÉÁÙÃë¼Ò¸ñ·Ï");
+					JDTORecordSet jrSchCnclList = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSchCnclList", logId, methodNm, "ìŠ¤ì¼€ì¤„ì·¨ì†Œëª©ë¡");
 					
 
-					//Å©·¹ÀÎ ½ºÄÉÁÙÀÇ Ãë¼Ò Àü¹® Àü¼Û
+					//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì˜ ì·¨ì†Œ ì „ë¬¸ ì „ì†¡
 					JDTORecord tcRecord = JDTORecordFactory.getInstance().create();
 					tcRecord.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);
 					tcRecord.setField("MSG_GP"          , "D");
 
 					jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L004", tcRecord));
 					
-					commUtils.printLog(logId, "["+szSessionName+"] ½ºÄÉÁÙ["+sYD_CRN_SCH_ID+"]À» ½ºÄÉÁì Ãë¼Ò ¿äÃ» Àü¼Û", "S+");
+					commUtils.printLog(logId, "["+szSessionName+"] ìŠ¤ì¼€ì¤„["+sYD_CRN_SCH_ID+"]ì„ ìŠ¤ì¼€ì¥´ ì·¨ì†Œ ìš”ì²­ ì „ì†¡", "S+");
 		        	
 					/**
-					 * ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò
+					 * ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 					 */
-					commUtils.printLog(logId, "¢¹¢¹¢¹["+sYD_CRN_SCH_ID+"] ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò START = "+jrSchCnclList.size()+" °Ç", "[info]");
+					commUtils.printLog(logId, "â–·â–·â–·["+sYD_CRN_SCH_ID+"] ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ START = "+jrSchCnclList.size()+" ê±´", "[info]");
 					if (jrSchCnclList.size() > 0) {
 						for (int ii = 0; ii < jrSchCnclList.size(); ++ii) {
 							JDTORecord jParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
@@ -1386,9 +1386,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							jrRtn = commUtils.addSndData(jrRtn, this.trtCrnSchCncl(jParam));
 						}
 					}
-					commUtils.printLog(logId, "¢¹¢¹¢¹["+sYD_CRN_SCH_ID+"] ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò END", "[info]");
+					commUtils.printLog(logId, "â–·â–·â–·["+sYD_CRN_SCH_ID+"] ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ END", "[info]");
 					
-					// ÀÛ¾÷´ë±â»óÅÂ update : ÀÛ¾÷Ãë¼Ò¿Í ±¸ºĞµÇ°Ô D ·Î »óÅÂ ¾øµ¥ÀÌÆ® ÇÔ...
+					// ì‘ì—…ëŒ€ê¸°ìƒíƒœ update : ì‘ì—…ì·¨ì†Œì™€ êµ¬ë¶„ë˜ê²Œ D ë¡œ ìƒíƒœ ì—†ë°ì´íŠ¸ í•¨...
 					/*
 					UPDATE TB_YM_CRNSCH  
 					   SET YD_WRK_PROG_STAT   = :V_YD_WRK_PROG_STAT
@@ -1403,7 +1403,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdCrnSchProgStat");
 					
 					/**
-					 * ½ºÄÉÁÙ Ãë¼Ò½Ã ÀÛ¾÷¿¹¾àÅ×ÀÌºí¿¡ ½ºÄÉÁÙÃë¼Ò ÄÃ·³ UPDATE
+					 * ìŠ¤ì¼€ì¤„ ì·¨ì†Œì‹œ ì‘ì—…ì˜ˆì•½í…Œì´ë¸”ì— ìŠ¤ì¼€ì¤„ì·¨ì†Œ ì»¬ëŸ¼ UPDATE
 					 */
 					/*
 					UPDATE TB_YM_WRKBOOK
@@ -1416,12 +1416,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.bcoilTcarDistCarldjl.updSchCnclYn");
 					
 					/**
-					 * ¹«ÀÎÅ©·¹ÀÎÀÌ¸é Á¾·á
+					 * ë¬´ì¸í¬ë ˆì¸ì´ë©´ ì¢…ë£Œ
 					 */
 					return jrRtn;
 					
 				} else {
-					commUtils.printLog(logId, "¡Û¡Û¡Û ½ºÄÉÁÙÃë¼Ò ¸®½ºÆ® Á¶È¸(ÇØ´ç ¹øÁöÀÇ ÇÏ´Ü ÀüºÎ ½ºÄÉÁÙ Ãë¼Ò)", "[info]");
+					commUtils.printLog(logId, "â—‹â—‹â—‹ ìŠ¤ì¼€ì¤„ì·¨ì†Œ ë¦¬ìŠ¤íŠ¸ ì¡°íšŒ(í•´ë‹¹ ë²ˆì§€ì˜ í•˜ë‹¨ ì „ë¶€ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ)", "[info]");
 					/*
 					SELECT CS.YD_WBOOK_ID
 					     , MIN(CM.YD_CRN_SCH_ID) AS YD_CRN_SCH_ID
@@ -1453,10 +1453,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 */
 					jrParam.setField("YD_CRN_SCH_ID"	,sYD_CRN_SCH_ID);
 					jrParam.setField("YD_WBOOK_ID"		,sYD_WBOOK_ID  );
-					JDTORecordSet jrSchCnclList = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSchCnclList", logId, methodNm, "½ºÄÉÁÙÃë¼Ò¸ñ·Ï");
+					JDTORecordSet jrSchCnclList = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSchCnclList", logId, methodNm, "ìŠ¤ì¼€ì¤„ì·¨ì†Œëª©ë¡");
 					
 
-					commUtils.printLog(logId, "¡Û¡Û¡Û ÇØ´ç ½ºÄÉÁÙ Ãë¼Ò", "[info]");
+					commUtils.printLog(logId, "â—‹â—‹â—‹ í•´ë‹¹ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ", "[info]");
 					JDTORecord inRecord = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 					inRecord.setField("YD_CRN_SCH_ID"	,sYD_CRN_SCH_ID);
 					inRecord.setField("YD_SCH_CD"		,sYD_SCH_CD);
@@ -1466,9 +1466,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrRtn = commUtils.addSndData(jrRtn, this.trtCrnSchCncl(inRecord));
 					
 					/**
-					 * ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò
+					 * ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 					 */
-					commUtils.printLog(logId, "¢¹¢¹¢¹["+sYD_CRN_SCH_ID+"] ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò START = "+jrSchCnclList.size()+" °Ç", "[info]");
+					commUtils.printLog(logId, "â–·â–·â–·["+sYD_CRN_SCH_ID+"] ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ START = "+jrSchCnclList.size()+" ê±´", "[info]");
 					if (jrSchCnclList.size() > 0) {
 						for (int ii = 0; ii < jrSchCnclList.size(); ++ii) {
 							JDTORecord jParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
@@ -1480,10 +1480,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							jrRtn = commUtils.addSndData(jrRtn, this.trtCrnSchCncl(jParam));
 						}
 					}
-					commUtils.printLog(logId, "¢¹¢¹¢¹["+sYD_CRN_SCH_ID+"] ±Ç»óÀ§Ä¡ ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò END", "[info]");
+					commUtils.printLog(logId, "â–·â–·â–·["+sYD_CRN_SCH_ID+"] ê¶Œìƒìœ„ì¹˜ í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†Œ END", "[info]");
 					
 					/**
-					 * ½ºÄÉÁÙ Ãë¼Ò½Ã ÀÛ¾÷¿¹¾àÅ×ÀÌºí¿¡ ½ºÄÉÁÙÃë¼Ò ÄÃ·³ UPDATE
+					 * ìŠ¤ì¼€ì¤„ ì·¨ì†Œì‹œ ì‘ì—…ì˜ˆì•½í…Œì´ë¸”ì— ìŠ¤ì¼€ì¤„ì·¨ì†Œ ì»¬ëŸ¼ UPDATE
 					 */
 					/*
 					UPDATE TB_YM_WRKBOOK
@@ -1497,7 +1497,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					
 					/****************************
-					 * ½ºÄÉÁÙ Àç±âµ¿
+					 * ìŠ¤ì¼€ì¤„ ì¬ê¸°ë™
 					 ****************************/
 					if ("RS".equals(sTRT_DTL_GP)) {
 						
@@ -1514,43 +1514,43 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							JDTORecordSet jrAbleLoc = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCntStkAlbeLoc");
 							
 							if (jrAbleLoc.size() == 0) {
-								throw new Exception("TOÀ§Ä¡°¡ÀÌµå·Î ÁöÁ¤µÈ ¹øÁö°¡ ´İÇôÀÖ½À´Ï´Ù.");
+								throw new Exception("TOìœ„ì¹˜ê°€ì´ë“œë¡œ ì§€ì •ëœ ë²ˆì§€ê°€ ë‹«í˜€ìˆìŠµë‹ˆë‹¤.");
 							}
 						}
 						
-						commUtils.printLog(logId, "¡Û¡Û¡Û ÇØ´ç ½ºÄÉÁÙ Àç±âµ¿", "[info]");
+						commUtils.printLog(logId, "â—‹â—‹â—‹ í•´ë‹¹ ìŠ¤ì¼€ì¤„ ì¬ê¸°ë™", "[info]");
 						JDTORecord jParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 						jParam.setResultCode(logId);	//Log ID
 						jParam.setResultMsg(methodNm);	//Log Method Name
 	
-						jParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-						jParam.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
+						jParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+						jParam.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
 						
 						jParam.setField("YD_WBOOK_ID"	, sYD_WBOOK_ID);
-						jParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-						jParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+						jParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 						
-						//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+						//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 						EJBConnector sndConnD = new EJBConnector("default", "BSlabSchSeEJB", this);
 						JDTORecord jrRtnD = (JDTORecord)sndConnD.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jParam });
 						jrRtn = commUtils.addSndData(jrRtn, jrRtnD);
 						
 						/**
-						 * ÇÏ´Ü ½ºÄÉÁÙ Ãë¼Ò´ë»ó ½ºÄÉÁÙ Àç±âµ¿
+						 * í•˜ë‹¨ ìŠ¤ì¼€ì¤„ ì·¨ì†ŒëŒ€ìƒ ìŠ¤ì¼€ì¤„ ì¬ê¸°ë™
 						 */
 						for (int ii = 0; ii < jrSchCnclList.size(); ++ii) {
 							JDTORecord jParamD = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 							jParamD.setResultCode(logId);	//Log ID
 							jParamD.setResultMsg(methodNm);	//Log Method Name
 		
-							jParamD.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-							jParamD.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
+							jParamD.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+							jParamD.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
 							
 							jParamD.setField("YD_WBOOK_ID"	, jrSchCnclList.getRecord(ii).getFieldString("YD_WBOOK_ID"));
-							jParamD.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-							jParamD.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+							jParamD.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+							jParamD.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 							
-							//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+							//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 							EJBConnector sndConnSt = new EJBConnector("default", "BSlabSchSeEJB", this);
 							JDTORecord jrRtnSt = (JDTORecord)sndConnSt.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jParamD });
 							jrRtn = commUtils.addSndData(jrRtn, jrRtnSt);
@@ -1561,7 +1561,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				} // end if
 				
 				/***************************************************
-				 * ÇØ´ç Å©·¹ÀÎÀÇ ¸¶Áö¸· ÀÛ¾÷ÀÏ ¶§ ½ºÄÉÁÙ Ãë¼Ò¸¸ ½ÃÅ°°í ¸í·É ¼±ÅÃÀº ÇÏÁö ¾Ê´Â´Ù.
+				 * í•´ë‹¹ í¬ë ˆì¸ì˜ ë§ˆì§€ë§‰ ì‘ì—…ì¼ ë•Œ ìŠ¤ì¼€ì¤„ ì·¨ì†Œë§Œ ì‹œí‚¤ê³  ëª…ë ¹ ì„ íƒì€ í•˜ì§€ ì•ŠëŠ”ë‹¤.
 				 ****************************************************/
 				/*
 				SELECT *
@@ -1575,14 +1575,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				JDTORecordSet rsWrkBookList = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getWrkBookCntByEqpId");
 				
 				if (rsWrkBookList.size() == 1) {
-					commUtils.printLog(logId, "¡Û¡Û¡Û ÇØ´ç ½ºÄÉÁÙÀÇ ¸¶Áö¸· ÀÛ¾÷ Ãë¼Ò -> ¸í·É ¼±ÅÃ ¾ÈÇÔ", "[info]");
+					commUtils.printLog(logId, "â—‹â—‹â—‹ í•´ë‹¹ ìŠ¤ì¼€ì¤„ì˜ ë§ˆì§€ë§‰ ì‘ì—… ì·¨ì†Œ -> ëª…ë ¹ ì„ íƒ ì•ˆí•¨", "[info]");
 					return jrRtn;
 				}
 				
 			} // end for
 			
 			/*********************************************
-			 * ÇØ´ç Å©·¹ÀÎ ½ºÄÉÁÙÀÌ ¾øÀ¸¸é Á¾·á
+			 * í•´ë‹¹ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì´ ì—†ìœ¼ë©´ ì¢…ë£Œ
 			 *********************************************/
 			/*
 			SELECT CS.*
@@ -1600,7 +1600,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/************************************
-			 * ½ºÄÉÁÙ Ãë¼Ò½Ã ¸í·É ¼±ÅÃ ±âµ¿
+			 * ìŠ¤ì¼€ì¤„ ì·¨ì†Œì‹œ ëª…ë ¹ ì„ íƒ ê¸°ë™
 			 ************************************/
 			/*
 			SELECT *
@@ -1614,19 +1614,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			if (rsResult.size() > 0) {
 				rsResult.first();
 				jrEqpInfo   = rsResult.getRecord();
-				szydEqpStat = jrEqpInfo.getFieldString("WPROG_STAT");          // ¼³ºñ »óÅÂ
+				szydEqpStat = jrEqpInfo.getFieldString("WPROG_STAT");          // ì„¤ë¹„ ìƒíƒœ
 			}
 			
-			// ½ºÄÉÁÙÃë¼Ò½Ã ¼³ºñ°¡ offline, °íÀåÀÌ ¾Æ´Ï°í ´ë±â ÀÏ¶§  ¸í·É ¼±ÅÃ
+			// ìŠ¤ì¼€ì¤„ì·¨ì†Œì‹œ ì„¤ë¹„ê°€ offline, ê³ ì¥ì´ ì•„ë‹ˆê³  ëŒ€ê¸° ì¼ë•Œ  ëª…ë ¹ ì„ íƒ
 			if (!"B".equals(szydEqpStat) && !"2".equals(sWORK_MODE) && "W".equals(szydEqpStat)) { 
 
 					JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, "A8YML007");
 
-					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-					jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID    );	//¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_WRK_PROG_STAT", "4"           );	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏ¿Ï·á)
-					jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD    );	//¾ßµå½ºÄÉÁìÄÚµå
-					jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+					jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID    );	//ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_WRK_PROG_STAT", "4"           );	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ì™„ë£Œ)
+					jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD    );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 					EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 					JDTORecord jrRtn1 = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -1646,15 +1646,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ½ºÄÉÁÙÀçÀü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ìŠ¤ì¼€ì¤„ì¬ì „ì†¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord reSndCrnSch(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ½ºÄÉÁÙÀçÀü¼Û[BSlabJspSeEJB.reSndCrnSch] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ìŠ¤ì¼€ì¤„ì¬ì „ì†¡[BSlabJspSeEJB.reSndCrnSch] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1663,7 +1663,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			String sYD_CRN_SCH_ID = "";
@@ -1680,27 +1680,27 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   FROM TB_YM_CRNSCH
 				  WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID 			
 				 */
-				JDTORecordSet jsCrnResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYmCrnsch", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁì °Ë»ö");
+				JDTORecordSet jsCrnResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYmCrnsch", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ê²€ìƒ‰");
 				
 				if (jsCrnResult.size() <= 0) {
-					throw new Exception("ÇØ´ç ½ºÄÉÁÙÅ©·¹ÀÎ½ºÄÉÁÙ ID  Á¤º¸: ["+ commUtils.getValue(gdReq, "YD_CRN_SCH_ID", i) + "] °¡ Á¸ÀçÇÏÁö¾Ê½À´Ï´Ù");
+					throw new Exception("í•´ë‹¹ ìŠ¤ì¼€ì¤„í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ID  ì •ë³´: ["+ commUtils.getValue(gdReq, "YD_CRN_SCH_ID", i) + "] ê°€ ì¡´ì¬í•˜ì§€ì•ŠìŠµë‹ˆë‹¤");
 				}
 				
-               // TOÀ§Ä¡ Àç Á¡°Ë
+               // TOìœ„ì¹˜ ì¬ ì ê²€
 				
 				String ydDnWrLoc   = jsCrnResult.getRecord(0).getFieldString("YD_DN_WO_LOC");
 				
 				if(!"XX010101".equals(ydDnWrLoc)) {
 					/*****************************************************
-					 **  ´ÜÀÌ»ó ¿©ºÎ CHECK
-					 *   Á¤»óÀÌ¸é Àç¼Û½Å
-					 *   ÀÌ»óÀÌ¸é LAYER TABLE º¯°æ
-					 *   °øÅë UPDATE      
+					 **  ë‹¨ì´ìƒ ì—¬ë¶€ CHECK
+					 *   ì •ìƒì´ë©´ ì¬ì†¡ì‹ 
+					 *   ì´ìƒì´ë©´ LAYER TABLE ë³€ê²½
+					 *   ê³µí†µ UPDATE      
 					 *****************************************************/					
 					/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getDanErrChk 
 					WITH LOC_DAN AS (
 					SELECT A.*
-					     --±ÇÇÏÇÒ Àç·á ´Ü À§Ä¡
+					     --ê¶Œí•˜í•  ì¬ë£Œ ë‹¨ ìœ„ì¹˜
 					     , (SELECT STACK_LAYER_GP 
 					          FROM TB_YM_STACKLAYER 
 					         WHERE STACK_COL_GP = :V_STACK_COL_GP
@@ -1722,7 +1722,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					)
 					SELECT * 
 					  FROM (SELECT CASE WHEN 
-					                    -- Àç·á¸Å¼ö¿Í ÇÏ´Ü ±ÇÇÏÇÒ Àç·áÀÇ ´Ü-1 µ¿ÀÏ¿©ºÎ  
+					                    -- ì¬ë£Œë§¤ìˆ˜ì™€ í•˜ë‹¨ ê¶Œí•˜í•  ì¬ë£Œì˜ ë‹¨-1 ë™ì¼ì—¬ë¶€  
 					                    SUM(CASE WHEN A.STOCK_ID IS NOT NULL THEN 1 ELSE 0 END) OVER() = B.LOC_STACK_LAYER_GP -1 THEN 'N'
 					                    ELSE 'Y' END DAN_ERR_YN
 					             , B.LOC_STACK_LAYER_GP   
@@ -1739,16 +1739,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("STACK_COL_GP" , ydDnWrLoc.substring(0,6)); 
 					jrParam.setField("STACK_BED_GP" , ydDnWrLoc.substring(6,8)); 
 				
-					JDTORecordSet jsDanErr = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getDanErrChk", logId, methodNm, "´Ü ÀÌ»ó¿©ºÎ °Ë»ö");	
+					JDTORecordSet jsDanErr = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getDanErrChk", logId, methodNm, "ë‹¨ ì´ìƒì—¬ë¶€ ê²€ìƒ‰");	
 					if (jsDanErr.size() <= 0) {
-						throw new Exception("ÇØ´ç ½ºÄÉÁÙ¿¡ ±ÇÇÏÀ§Ä¡ Á¤º¸È®ÀÎ.");
+						throw new Exception("í•´ë‹¹ ìŠ¤ì¼€ì¤„ì— ê¶Œí•˜ìœ„ì¹˜ ì •ë³´í™•ì¸.");
 					}
 					String sDanErrYn   = jsDanErr.getRecord(0).getFieldString("DAN_ERR_YN");
 					String sWrkMaxDan  = jsDanErr.getRecord(0).getFieldString("WRK_MAX_DAN");
 					String sWrkMinDan  = jsDanErr.getRecord(0).getFieldString("WRK_MIN_DAN");
 					
 					if(sDanErrYn.equals("Y")) {
-						//ERROR ÀÎ °æ¿ì
+						//ERROR ì¸ ê²½ìš°
 						
 						/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStackLayerZip
 						MERGE INTO TB_YM_STACKLAYER SL USING (
@@ -1814,7 +1814,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						
 						*/
 						jrParam.setField("WRK_MAX_DAN" , sWrkMaxDan); 
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStackLayerZip", logId, methodNm, "´ÜÁ¤º¸ ¾ĞÃà");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStackLayerZip", logId, methodNm, "ë‹¨ì •ë³´ ì••ì¶•");
 						
 						/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarSchDnDan 
 						UPDATE TB_YM_CRNSCH 
@@ -1825,10 +1825,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND A.DEL_YN = 'N'
 						*/   
 						jrParam.setField("WRK_MIN_DAN" , sWrkMinDan); 
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarSchDnDan", logId, methodNm, "Å©·¹ÀÎ ½ºÄÉÁì ´Ü °»½Å");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarSchDnDan", logId, methodNm, "í¬ë ˆì¸ ìŠ¤ì¼€ì¥´ ë‹¨ ê°±ì‹ ");
 						
 						/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMtlChangStock 
-						SELECT A.STOCK_ID         -- ±âÁ¸ Àç·áÁ¤º¸ 
+						SELECT A.STOCK_ID         -- ê¸°ì¡´ ì¬ë£Œì •ë³´ 
 						     , A.STACK_COL_GP
 						     , A.STACK_BED_GP
 						     , A.STACK_LAYER_GP
@@ -1840,10 +1840,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND A.STOCK_ID NOT IN (SELECT STOCK_ID FROM TB_YM_CRNWRKMTL WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID)
 						 ORDER BY A.STACK_LAYER_GP
 						*/
-						JDTORecordSet jsCrnMtlResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMtlChangStock", logId, methodNm, "°øÅë °»½Å ´ë»ó °Ë»ö");
+						JDTORecordSet jsCrnMtlResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMtlChangStock", logId, methodNm, "ê³µí†µ ê°±ì‹  ëŒ€ìƒ ê²€ìƒ‰");
 						
 						if (jsCrnMtlResult.size() <= 0) {
-							throw new Exception("ÇØ´ç ½ºÄÉÁÙ¿¡ ÇØ´çµÇ´Â Å©·¹ÀÎ ÀÛ¾÷ Àç·á°¡ ¾ø½À´Ï´Ù");
+							throw new Exception("í•´ë‹¹ ìŠ¤ì¼€ì¤„ì— í•´ë‹¹ë˜ëŠ” í¬ë ˆì¸ ì‘ì—… ì¬ë£Œê°€ ì—†ìŠµë‹ˆë‹¤");
 						} else {
 							JDTORecord recOutTemp = JDTORecordFactory.getInstance().create();
 							
@@ -1860,9 +1860,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 				}
 				/*****************************************************
-				 **  Å©·¹ÀÎ½ºÄÉÁÙ ÀçÀü¼Û
+				 **  í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì¬ì „ì†¡
 				 *****************************************************/
-				//Å©·¹ÀÎ ½ºÄÉÁÙÀÇ Ãë¼Ò Àü¹® Àü¼Û
+				//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì˜ ì·¨ì†Œ ì „ë¬¸ ì „ì†¡
 				JDTORecord tcRecord = JDTORecordFactory.getInstance().create();
 				tcRecord.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);
 				tcRecord.setField("MSG_GP"          , "R");
@@ -1870,20 +1870,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 //SJH				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L004", tcRecord));
         		JDTORecordSet jsRtn1 = commDao.getMsgL2("YMA8L004", tcRecord);
 				jrRtn = commUtils.addSndData(jrRtn , jsRtn1);
-				//Å©·¹ÀÎÀÛ¾÷Áö½Ã Z°ª °»½Å Ã³¸®
+				//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ Zê°’ ê°±ì‹  ì²˜ë¦¬
         		if(jsRtn1.size() > 0 ) {
         			
         			tcRecord.setField("YD_UP_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_UP_WO_LOC_ZAXIS"));	
         			tcRecord.setField("YD_DN_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_DN_WO_LOC_ZAXIS"));	
         			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS 
-    				--Å©·¹ÀÎ½ºÄÉÁÙ z°ª °»½Å
+    				--í¬ë ˆì¸ìŠ¤ì¼€ì¤„ zê°’ ê°±ì‹ 
     				UPDATE TB_YM_CRNSCH
     				   SET YD_UP_WO_LOC_ZAXIS = :V_YD_UP_WO_LOC_ZAXIS
     				     , YD_DN_WO_LOC_ZAXIS = :V_YD_DN_WO_LOC_ZAXIS
     				 WHERE YD_CRN_SCH_ID    = :V_YD_CRN_SCH_ID
     				   AND DEL_YN           = 'N' 
     				*/
-            		commDao.update(tcRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABÅ©·¹ÀÎ½ºÄÉÁÙ Z°ª ¼öÁ¤");
+            		commDao.update(tcRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABí¬ë ˆì¸ìŠ¤ì¼€ì¤„ Zê°’ ìˆ˜ì •");
         			
         			
 //        			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
@@ -1904,15 +1904,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ - ±Ç»ó±ÇÇÏÃ³¸® 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ - ê¶Œìƒê¶Œí•˜ì²˜ë¦¬ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updbtCrnStsSetPp(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® »óÅÂ ¼³Á¤º¯°æ[BSlabJspSeEJB.updbtCrnStsSetPp] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ìƒíƒœ ì„¤ì •ë³€ê²½[BSlabJspSeEJB.updbtCrnStsSetPp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -1921,25 +1921,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-			String trtDtlGp = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//Ã³¸®»ó¼¼±¸ºĞ
-			String currDate = commUtils.getDateTime14();						//ÇöÀç½Ã°¢
-			String ydEqpId  = commUtils.trim(gdReq.getParam("W_YD_EQP_ID" ));	//¾ßµå¼³ºñID(Å©·¹ÀÎ)
+			String trtDtlGp = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//ì²˜ë¦¬ìƒì„¸êµ¬ë¶„
+			String currDate = commUtils.getDateTime14();						//í˜„ì¬ì‹œê°
+			String ydEqpId  = commUtils.trim(gdReq.getParam("W_YD_EQP_ID" ));	//ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
 			
-			String sYD_CRN_ANSWER    = commUtils.trim(gdReq.getParam("YD_CRN_ANSWER" )); //ÀÛ¾÷½ÇÀûÀÀ´ä
+			String sYD_CRN_ANSWER    = commUtils.trim(gdReq.getParam("YD_CRN_ANSWER" )); //ì‘ì—…ì‹¤ì ì‘ë‹µ
 			String sYD_SCH_CD        = StringHelper.evl(commUtils.getValue(gdReq, "YD_SCH_CD"    , 0), ""); 
 			String sYD_CRN_SCH_ID    = commUtils.nvl(commUtils.getValue(gdReq, "YD_CRN_SCH_ID", 0), "");
 			
 			if ("".equals(ydEqpId)) {
-				throw new Exception("Å©·¹ÀÎ¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			jrParam.setField("YD_EQP_ID"    , ydEqpId); //¾ßµå¼³ºñID
-			jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID); // Å©·¹ÀÎ½ºÄÉÁÙID
+			jrParam.setField("YD_EQP_ID"    , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
+			jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID); // í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
 			
 			/****************************************************
-			 * ¾ßµåÀÛ¾÷ÁøÇà»óÅÂ  JAVA´Ü¿¡¼­ ÇÑ¹ø ´õ Ã¼Å© TODO
+			 * ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ  JAVAë‹¨ì—ì„œ í•œë²ˆ ë” ì²´í¬ TODO
 			 ****************************************************/
 			/*
 			 SELECT *
@@ -1951,93 +1951,93 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			if (rstCrnSch == null || rstCrnSch.size() <= 0) {
 				if ("WU".equals(trtDtlGp) || "WD".equals(trtDtlGp) || "DL".equals(trtDtlGp) || "XX".equals(trtDtlGp)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙÀÌ ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			} else {
 				sYD_WRK_PROG_STAT = rstCrnSch.getRecord(0).getFieldString("YD_WRK_PROG_STAT");
 			}
 			
 			if ("ST".equals(trtDtlGp)) {
-				//¼³ºñ»óÅÂ º¯°æ
-				jrParam.setField("JMS_TC_CD"          , "A8YML004"); //¼³ºñ°íÀåº¹±¸½ÇÀû
-				jrParam.setField("YD_EQP_STAT"        , commUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //¾ßµå¼³ºñ»óÅÂ(B:°íÀå, N:Á¤»ó)
-				jrParam.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //¾ßµå¼³ºñÈŞÁöÄÚµå
-				jrParam.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //¾ßµå¼³ºñ°íÀåº¹±¸ÀÏ½Ã
+				//ì„¤ë¹„ìƒíƒœ ë³€ê²½
+				jrParam.setField("JMS_TC_CD"          , "A8YML004"); //ì„¤ë¹„ê³ ì¥ë³µêµ¬ì‹¤ì 
+				jrParam.setField("YD_EQP_STAT"        , commUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //ì•¼ë“œì„¤ë¹„ìƒíƒœ(B:ê³ ì¥, N:ì •ìƒ)
+				jrParam.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //ì•¼ë“œì„¤ë¹„íœ´ì§€ì½”ë“œ
+				jrParam.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //ì•¼ë“œì„¤ë¹„ê³ ì¥ë³µêµ¬ì¼ì‹œ
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML004", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				
 			} else if ("MD".equals(trtDtlGp)) {
-				//ÀÛ¾÷Mode º¯°æ
-				jrParam.setField("JMS_TC_CD"      , "A8YML003"); //¼³ºñ¿îÀü¸ğµåÀüÈ¯
-				jrParam.setField("YD_EQP_WRK_MODE", commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //¾ßµå¼³ºñÀÛ¾÷Mode(1:On-Line, 0:Off-Line)
+				//ì‘ì—…Mode ë³€ê²½
+				jrParam.setField("JMS_TC_CD"      , "A8YML003"); //ì„¤ë¹„ìš´ì „ëª¨ë“œì „í™˜
+				jrParam.setField("YD_EQP_WRK_MODE", commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(1:On-Line, 0:Off-Line)
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML003", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				
 			} else if ("WO".equals(trtDtlGp)) {
-				//¸í·É¼±ÅÃ±âµ¿
-				jrParam.setField("JMS_TC_CD"       , "A8YML007"); //Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-				jrParam.setField("YD_WRK_PROG_STAT", "W"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(¸í·É¼±ÅÃ´ë±â)
-				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"     ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID" ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+				//ëª…ë ¹ì„ íƒê¸°ë™
+				jrParam.setField("JMS_TC_CD"       , "A8YML007"); //í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+				jrParam.setField("YD_WRK_PROG_STAT", "W"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ëª…ë ¹ì„ íƒëŒ€ê¸°)
+				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"     ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID" ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			} else if ("WU".equals(trtDtlGp)) {
 				if (!"1".equals(sYD_WRK_PROG_STAT)) {
-					throw new Exception("["+sYD_WRK_PROG_STAT+"]ÇØ´ç ÀÛ¾÷ÁøÇà»óÅÂ´Â ±Ç»óÁö½Ã »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.");
+					throw new Exception("["+sYD_WRK_PROG_STAT+"]í•´ë‹¹ ì‘ì—…ì§„í–‰ìƒíƒœëŠ” ê¶Œìƒì§€ì‹œ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				}
-				//±Ç»ó½ÇÀûÃ³¸®
-				jrParam.setField("JMS_TC_CD"       , "A8YML008"); //Å©·¹ÀÎ±Ç»ó½ÇÀû
-				jrParam.setField("YD_EQP_WRK_MODE" , "9"       ); //¾ßµå¼³ºñÀÛ¾÷Mode(Backup)
-				jrParam.setField("YD_WRK_PROG_STAT", "2"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±Ç»ó¿Ï·á)
-				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrParam.setField("YD_UP_WR_LOC"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"      ).getValue(0))); //¾ßµå±Ç»ó½ÇÀûÀ§Ä¡
-				jrParam.setField("YD_UP_WR_LAYER"  , commUtils.trim(gdReq.getHeader("YD_UP_WO_LAYER"    ).getValue(0))); //¾ßµå±Ç»ó½ÇÀû´Ü
-				jrParam.setField("YD_CRN_XAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_XAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎXÃà
-				jrParam.setField("YD_CRN_YAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_YAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎYÃà
-				jrParam.setField("YD_CRN_ZAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_ZAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎZÃà
+				//ê¶Œìƒì‹¤ì ì²˜ë¦¬
+				jrParam.setField("JMS_TC_CD"       , "A8YML008"); //í¬ë ˆì¸ê¶Œìƒì‹¤ì 
+				jrParam.setField("YD_EQP_WRK_MODE" , "9"       ); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(Backup)
+				jrParam.setField("YD_WRK_PROG_STAT", "2"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œìƒì™„ë£Œ)
+				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("YD_UP_WR_LOC"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC"      ).getValue(0))); //ì•¼ë“œê¶Œìƒì‹¤ì ìœ„ì¹˜
+				jrParam.setField("YD_UP_WR_LAYER"  , commUtils.trim(gdReq.getHeader("YD_UP_WO_LAYER"    ).getValue(0))); //ì•¼ë“œê¶Œìƒì‹¤ì ë‹¨
+				jrParam.setField("YD_CRN_XAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_XAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Xì¶•
+				jrParam.setField("YD_CRN_YAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_YAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Yì¶•
+				jrParam.setField("YD_CRN_ZAXIS"    , commUtils.trim(gdReq.getHeader("YD_UP_WO_LOC_ZAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Zì¶•
 				
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML008", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			} else if ("WD".equals(trtDtlGp)) {
 				if (!"2".equals(sYD_WRK_PROG_STAT)) {
-					throw new Exception("["+sYD_WRK_PROG_STAT+"]ÇØ´ç ÀÛ¾÷ÁøÇà»óÅÂ´Â ±Ç»ó¿Ï·á »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.");
+					throw new Exception("["+sYD_WRK_PROG_STAT+"]í•´ë‹¹ ì‘ì—…ì§„í–‰ìƒíƒœëŠ” ê¶Œìƒì™„ë£Œ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				}
-				//±ÇÇÏ½ÇÀûÃ³¸®
-				jrParam.setField("JMS_TC_CD"       , "A8YML009"); //Å©·¹ÀÎ±ÇÇÏ½ÇÀû
-				jrParam.setField("YD_EQP_WRK_MODE" , "9"       ); //¾ßµå¼³ºñÀÛ¾÷Mode(Backup)
-				jrParam.setField("YD_WRK_PROG_STAT", "4"       ); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏ¿Ï·á)
-				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrParam.setField("YD_DN_WR_LOC"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"      ).getValue(0))); //¾ßµå±ÇÇÏ½ÇÀûÀ§Ä¡
-				jrParam.setField("YD_DN_WR_LAYER"  , commUtils.trim(gdReq.getHeader("YD_DN_WO_LAYER"    ).getValue(0))); //¾ßµå±ÇÇÏ½ÇÀû´Ü
-				jrParam.setField("YD_CRN_XAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_XAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎXÃà
-				jrParam.setField("YD_CRN_YAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_YAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎYÃà
-				jrParam.setField("YD_CRN_ZAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ZAXIS").getValue(0))); //¾ßµåÅ©·¹ÀÎZÃà
+				//ê¶Œí•˜ì‹¤ì ì²˜ë¦¬
+				jrParam.setField("JMS_TC_CD"       , "A8YML009"); //í¬ë ˆì¸ê¶Œí•˜ì‹¤ì 
+				jrParam.setField("YD_EQP_WRK_MODE" , "9"       ); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(Backup)
+				jrParam.setField("YD_WRK_PROG_STAT", "4"       ); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ì™„ë£Œ)
+				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"         ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"     ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("YD_DN_WR_LOC"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"      ).getValue(0))); //ì•¼ë“œê¶Œí•˜ì‹¤ì ìœ„ì¹˜
+				jrParam.setField("YD_DN_WR_LAYER"  , commUtils.trim(gdReq.getHeader("YD_DN_WO_LAYER"    ).getValue(0))); //ì•¼ë“œê¶Œí•˜ì‹¤ì ë‹¨
+				jrParam.setField("YD_CRN_XAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_XAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Xì¶•
+				jrParam.setField("YD_CRN_YAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_YAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Yì¶•
+				jrParam.setField("YD_CRN_ZAXIS"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ZAXIS").getValue(0))); //ì•¼ë“œí¬ë ˆì¸Zì¶•
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				JDTORecord rst = (JDTORecord)sndConn.trx("rcvA8YML009", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				jrRtn = commUtils.addSndData(jrRtn, rst);
 				
 			} else if ("DL".equals(trtDtlGp)) {
 				if ("4".equals(sYD_WRK_PROG_STAT)) {
-					throw new Exception("["+sYD_WRK_PROG_STAT+"]ÇØ´ç ÀÛ¾÷ÁøÇà»óÅÂ´Â ±ÇÇÏÀ§Ä¡º¯°æÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("["+sYD_WRK_PROG_STAT+"]í•´ë‹¹ ì‘ì—…ì§„í–‰ìƒíƒœëŠ” ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
-				//±ÇÇÏÀ§Ä¡º¯°æ
-				jrParam.setField("YD_WRK_PROG_STAT", commUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(0))); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(0))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(0))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrParam.setField("YD_WBOOK_ID"     , commUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(0))); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_DN_WO_LOC"    , commUtils.trim(gdReq.getParam("YD_DN_WO_LOC"))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
+				//ê¶Œí•˜ìœ„ì¹˜ë³€ê²½
+				jrParam.setField("YD_WRK_PROG_STAT", commUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(0))); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				jrParam.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(0))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(0))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("YD_WBOOK_ID"     , commUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(0))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_DN_WO_LOC"    , commUtils.trim(gdReq.getParam("YD_DN_WO_LOC"))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
 
 				jrRtn = this.updCrnSchDnWoLoc(jrParam);
 				
 			} else if ("WM".equals(trtDtlGp)) {
-				//¿îÀü¸ğµå º¯°æ
-				jrParam.setField("JMS_TC_CD"      , "A8YML003"); //¿îÀü¸ğµåÀüÈ¯
-				jrParam.setField("YD_EQP_WRK_MODE" , commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //¾ßµå¼³ºñÀÛ¾÷Mode(1:On-Line, 2:Off-Line)
+				//ìš´ì „ëª¨ë“œ ë³€ê²½
+				jrParam.setField("JMS_TC_CD"      , "A8YML003"); //ìš´ì „ëª¨ë“œì „í™˜
+				jrParam.setField("YD_EQP_WRK_MODE" , commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(1:On-Line, 2:Off-Line)
 				jrParam.setField("YD_EQP_WRK_MODE2", commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE2"))); //
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
@@ -2045,8 +2045,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			} else if ("WR".equals(trtDtlGp)) {
 				
-				String sSTOCK_ID = commUtils.nvl(gdReq.getParam("STOCK_ID" ),"");//ÀÀ´ä½ÇÀû ÄÚÀÏ¹øÈ£
-				if(sSTOCK_ID.length() < 12){//Àç·á¹øÈ£·Î ½ºÄÉÁÙ Á¶È¸
+				String sSTOCK_ID = commUtils.nvl(gdReq.getParam("STOCK_ID" ),"");//ì‘ë‹µì‹¤ì  ì½”ì¼ë²ˆí˜¸
+				if(sSTOCK_ID.length() < 12){//ì¬ë£Œë²ˆí˜¸ë¡œ ìŠ¤ì¼€ì¤„ ì¡°íšŒ
 					if (!"".equals(sSTOCK_ID)) {
 						jrParam.setField("STOCK_ID"    , sSTOCK_ID);
 						/*
@@ -2077,11 +2077,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							  ) A
 							  WHERE ROWNUM = 1
 						 */
-						JDTORecordSet wrCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYmCrnStsSchStock", logId, methodNm,  "½ÇÀûÀÀ´ä´ë»ó ½ºÄÉÁÙ Á¶È¸");
+						JDTORecordSet wrCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYmCrnStsSchStock", logId, methodNm,  "ì‹¤ì ì‘ë‹µëŒ€ìƒ ìŠ¤ì¼€ì¤„ ì¡°íšŒ");
 						
 						if (wrCrnSch == null || wrCrnSch.size() <= 0) {
 							
-							throw new Exception("ÇØ´çÀç·áÀÇ ½ºÄÉÁÙ ½ÇÀûÀÌ ¾ø½À´Ï´Ù.");
+							throw new Exception("í•´ë‹¹ì¬ë£Œì˜ ìŠ¤ì¼€ì¤„ ì‹¤ì ì´ ì—†ìŠµë‹ˆë‹¤.");
 							
 						} else {
 							sYD_CRN_SCH_ID = wrCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID");
@@ -2089,7 +2089,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							ydEqpId	       = wrCrnSch.getRecord(0).getFieldString("YD_EQP_ID");
 						}
 					}
-				}else{//½ºÄÉÁÙID·Î ½ºÄÉÁÙ Á¤º¸ Á¶È¸
+				}else{//ìŠ¤ì¼€ì¤„IDë¡œ ìŠ¤ì¼€ì¤„ ì •ë³´ ì¡°íšŒ
 					jrParam.setField("YD_CRN_SCH_ID"    , sSTOCK_ID);
 					/*
 						-- com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdCrnSchLocLog
@@ -2111,11 +2111,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						 WHERE YD_EQP_ID = :V_YD_EQP_ID
 						   AND YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID
 					 */
-					JDTORecordSet wrCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdCrnSchLocLog", logId, methodNm,  "½ÇÀûÀÀ´ä´ë»ó ½ºÄÉÁÙ Á¶È¸");
+					JDTORecordSet wrCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdCrnSchLocLog", logId, methodNm,  "ì‹¤ì ì‘ë‹µëŒ€ìƒ ìŠ¤ì¼€ì¤„ ì¡°íšŒ");
 					
 					if (wrCrnSch == null || wrCrnSch.size() <= 0) {
 						
-						throw new Exception("ÇØ´çÀç·áÀÇ ½ºÄÉÁÙ ½ÇÀûÀÌ ¾ø½À´Ï´Ù.");
+						throw new Exception("í•´ë‹¹ì¬ë£Œì˜ ìŠ¤ì¼€ì¤„ ì‹¤ì ì´ ì—†ìŠµë‹ˆë‹¤.");
 						
 					} else {
 						sYD_CRN_SCH_ID = wrCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID");
@@ -2125,40 +2125,40 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 				
 				
-				//ÀÛ¾÷½ÇÀûÀÀ´ä
-				if (YmConstant.CRN_WRK_RE_LD_WR.equals(sYD_CRN_ANSWER)) { //±Ç»ó
+				//ì‘ì—…ì‹¤ì ì‘ë‹µ
+				if (YmConstant.CRN_WRK_RE_LD_WR.equals(sYD_CRN_ANSWER)) { //ê¶Œìƒ
 					jrParam.setResultCode(logId);	//Log ID
 					jrParam.setResultMsg(methodNm);	//Log Method Name
-					jrParam.setField("JMS_TC_CD"       , "YMA8L005"); //ÀÛ¾÷½ÇÀûÀÀ´ä
-					jrParam.setField("YD_EQP_ID"       , ydEqpId); //¾ßµå¼³ºñID
+					jrParam.setField("JMS_TC_CD"       , "YMA8L005"); //ì‘ì—…ì‹¤ì ì‘ë‹µ
+					jrParam.setField("YD_EQP_ID"       , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 					jrParam.setField("YD_WRK_PROG_STAT", YmConstant.YD_EQP_STAT_UP_CMPL);
 					jrParam.setField("YD_SCH_CD"       , sYD_SCH_CD);
 					jrParam.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);
-					jrParam.setField("YD_L2_WR_GP"     , YmConstant.CRN_WRK_RE_LD_WR); //¾ßµåL2½ÇÀû±¸ºĞ(Áö½Ã¿ä±¸)
-					jrParam.setField("YD_L3_HD_RS_CD"  , YmConstant.CRN_WRK_RE_CD_NORMAL_HD); //¾ßµåL3Ã³¸®°á°úÄÚµå(Error)
-					jrParam.setField("YD_L3_MSG"       , "ÀÛ¾÷½ÇÀûÀÀ´ä" ); //¾ßµåL3MESSAGE
+					jrParam.setField("YD_L2_WR_GP"     , YmConstant.CRN_WRK_RE_LD_WR); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„(ì§€ì‹œìš”êµ¬)
+					jrParam.setField("YD_L3_HD_RS_CD"  , YmConstant.CRN_WRK_RE_CD_NORMAL_HD); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ(Error)
+					jrParam.setField("YD_L3_MSG"       , "ì‘ì—…ì‹¤ì ì‘ë‹µ" ); //ì•¼ë“œL3MESSAGE
 
 					jrRtn = commUtils.addSndData(jrRtn, bSlabComm.getYMA8L005(jrParam));
 				} else {
 					jrParam.setResultCode(logId);	//Log ID
 					jrParam.setResultMsg(methodNm);	//Log Method Name
-					jrParam.setField("JMS_TC_CD"       , "YMA8L005"); //ÀÛ¾÷½ÇÀûÀÀ´ä
-					jrParam.setField("YD_EQP_ID"       , ydEqpId); //¾ßµå¼³ºñID
+					jrParam.setField("JMS_TC_CD"       , "YMA8L005"); //ì‘ì—…ì‹¤ì ì‘ë‹µ
+					jrParam.setField("YD_EQP_ID"       , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 					jrParam.setField("YD_WRK_PROG_STAT", YmConstant.YD_EQP_STAT_DN_CMPL);
 					jrParam.setField("YD_SCH_CD"       , sYD_SCH_CD);
 					jrParam.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID);
-					jrParam.setField("YD_L2_WR_GP"     , YmConstant.CRN_WRK_RE_DN_WR    ); //¾ßµåL2½ÇÀû±¸ºĞ(Áö½Ã¿ä±¸)
-					jrParam.setField("YD_L3_HD_RS_CD"  , YmConstant.CRN_WRK_RE_CD_NORMAL_HD); //¾ßµåL3Ã³¸®°á°úÄÚµå(Error)
-					jrParam.setField("YD_L3_MSG"       , "ÀÛ¾÷½ÇÀûÀÀ´ä" ); //¾ßµåL3MESSAGE
+					jrParam.setField("YD_L2_WR_GP"     , YmConstant.CRN_WRK_RE_DN_WR    ); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„(ì§€ì‹œìš”êµ¬)
+					jrParam.setField("YD_L3_HD_RS_CD"  , YmConstant.CRN_WRK_RE_CD_NORMAL_HD); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ(Error)
+					jrParam.setField("YD_L3_MSG"       , "ì‘ì—…ì‹¤ì ì‘ë‹µ" ); //ì•¼ë“œL3MESSAGE
 
 					jrRtn = commUtils.addSndData(jrRtn, bSlabComm.getYMA8L005(jrParam));
 				}
 				
 			} else if ("XX".equals(trtDtlGp)) {
 				if (!"S".equals(sYD_WRK_PROG_STAT)) {
-					throw new Exception("["+sYD_WRK_PROG_STAT+"]ÇØ´ç ÀÛ¾÷ÁøÇà»óÅÂ´Â ÀÀ´ä´ë±â »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.");
+					throw new Exception("["+sYD_WRK_PROG_STAT+"]í•´ë‹¹ ì‘ì—…ì§„í–‰ìƒíƒœëŠ” ì‘ë‹µëŒ€ê¸° ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				}
-				//ÀÀ´ä ¹é¾÷(°³¹ß¿ë)
+				//ì‘ë‹µ ë°±ì—…(ê°œë°œìš©)
 				jrParam.setField("MSG_ID"	        , "A8YML015" );
 				jrParam.setField("MSG_GP"		    , "I" );
 				jrParam.setField("YD_EQP_ID"		, ydEqpId );
@@ -2170,7 +2170,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				EJBConnector ejbConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)ejbConn.trx("rcvA8YML015", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtDtlGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtDtlGp + "] ì…ë‹ˆë‹¤.");
 			}
 			
 			
@@ -2186,62 +2186,62 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙ ±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updCrnSchDnWoLoc(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙ ±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ[BSlabJspSeEJB.updCrnSchDnWoLoc] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½[BSlabJspSeEJB.updCrnSchDnWoLoc] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String sSTOCK_ID         = commUtils.trim(rcvMsg.getFieldString("STOCK_ID"        )); //ÀúÀåÇ°
-			String sYD_EQP_ID        = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"       )); //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String sYD_SCH_CD        = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )); //¾ßµå½ºÄÉÁìÄÚµå
-			String sYD_CRN_SCH_ID    = commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String sYD_WBOOK_ID      = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"     )); //¾ßµåÀÛ¾÷¿¹¾àID
-			String sYD_DN_WO_LOC     = commUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC"    )); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
-			String sYD_WRK_PROG_STAT = commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			String sMODIFIER         = commUtils.trim(rcvMsg.getFieldString("MODIFIER"        )); //¼öÁ¤ÀÚ
-			String sYD_DN_WO_LOC_ORG = commUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC_ORG")); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(±âÁ¸)
+			String sSTOCK_ID         = commUtils.trim(rcvMsg.getFieldString("STOCK_ID"        )); //ì €ì¥í’ˆ
+			String sYD_EQP_ID        = commUtils.trim(rcvMsg.getFieldString("YD_EQP_ID"       )); //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String sYD_SCH_CD        = commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD"       )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String sYD_CRN_SCH_ID    = commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID"   )); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String sYD_WBOOK_ID      = commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"     )); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String sYD_DN_WO_LOC     = commUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC"    )); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
+			String sYD_WRK_PROG_STAT = commUtils.trim(rcvMsg.getFieldString("YD_WRK_PROG_STAT")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			String sMODIFIER         = commUtils.trim(rcvMsg.getFieldString("MODIFIER"        )); //ìˆ˜ì •ì
+			String sYD_DN_WO_LOC_ORG = commUtils.trim(rcvMsg.getFieldString("YD_DN_WO_LOC_ORG")); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ê¸°ì¡´)
 			
 			if ("".equals(sYD_CRN_SCH_ID)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(sYD_DN_WO_LOC)) {
-				throw new Exception("º¯°æÇÒ ±ÇÇÏÁö½ÃÀ§Ä¡°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} 
 
 			//Return Value
 			JDTORecord sndRecord = JDTORecordFactory.getInstance().create();
 
-			String sSTACK_COL_GP   = sYD_DN_WO_LOC.substring(0,  6); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			String sSTACK_BED_GP   = sYD_DN_WO_LOC.substring(6,  8); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡
+			String sSTACK_COL_GP   = sYD_DN_WO_LOC.substring(0,  6); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			String sSTACK_BED_GP   = sYD_DN_WO_LOC.substring(6,  8); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			String sSTACK_LAYER_GP = "";
 			if (sYD_DN_WO_LOC.length() == 10) {
 				sSTACK_LAYER_GP = sYD_DN_WO_LOC.substring(8, 10);
 			}
-			 //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡
-			String ydDnWoLocOld   = ""; //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(±âÁ¸)
-			String ydDnWoLayerOld = ""; //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(±âÁ¸)
-			String ydDnWoLayer    = ""; //¾ßµå±ÇÇÏÁö½Ã´Ü(½Å±Ô)
-			String ydDnWoLocXaxis = ""; //¾ßµå±ÇÇÏÁö½ÃXÃà(½Å±Ô)
-			String ydDnWoLocYaxis = ""; //¾ßµå±ÇÇÏÁö½ÃYÃà(½Å±Ô)
-			String ydDnWoLocZaxis = ""; //¾ßµå±ÇÇÏÁö½ÃZÃà(½Å±Ô)
+			 //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜
+			String ydDnWoLocOld   = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ê¸°ì¡´)
+			String ydDnWoLayerOld = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ê¸°ì¡´)
+			String ydDnWoLayer    = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œë‹¨(ì‹ ê·œ)
+			String ydDnWoLocXaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œXì¶•(ì‹ ê·œ)
+			String ydDnWoLocYaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œYì¶•(ì‹ ê·œ)
+			String ydDnWoLocZaxis = ""; //ì•¼ë“œê¶Œí•˜ì§€ì‹œZì¶•(ì‹ ê·œ)
 			String sSTACK_LAYER_GP_SCH = "";
 			
 			JDTORecordSet jsCrnSch = JDTORecordFactory.getInstance().createRecordSet("Temp");
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, sMODIFIER);
 			
 			
 			/*********************************************
-			 * ¾ßµåÀÛ¾÷ÁøÇà»óÅÂ  JAVA´Ü¿¡¼­ ÇÑ¹ø ´õ Ã¼Å©
+			 * ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ  JAVAë‹¨ì—ì„œ í•œë²ˆ ë” ì²´í¬
 			 *********************************************/
 			/*
 			 SELECT *
@@ -2252,25 +2252,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecordSet rstCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYmCrnsch");
 			
 			if (rstCrnSch == null || rstCrnSch.size() <= 0) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ì—†ìŠµë‹ˆë‹¤.");
 			} else {
-				commUtils.printLog(logId, ">>> È­¸é¿¡¼­ ¹ŞÀº YD_WRK_PROG_STAT °ª : " + sYD_WRK_PROG_STAT + " <<<", "SL");
+				commUtils.printLog(logId, ">>> í™”ë©´ì—ì„œ ë°›ì€ YD_WRK_PROG_STAT ê°’ : " + sYD_WRK_PROG_STAT + " <<<", "SL");
 				
 				sYD_WRK_PROG_STAT = rstCrnSch.getRecord(0).getFieldString("YD_WRK_PROG_STAT");
 				
-				commUtils.printLog(logId, ">>> DB¿¡¼­ ÀĞÀº YD_WRK_PROG_STAT °ª : " + sYD_WRK_PROG_STAT + " <<<", "SL");
+				commUtils.printLog(logId, ">>> DBì—ì„œ ì½ì€ YD_WRK_PROG_STAT ê°’ : " + sYD_WRK_PROG_STAT + " <<<", "SL");
 			}
 			
 			
 			jrParam.setField("YD_EQP_ID"            , sYD_EQP_ID);
 			jrParam.setField("YD_SCH_CD"            , sYD_SCH_CD);
 			jrParam.setField("YD_CRN_SCH_ID"       	, sYD_CRN_SCH_ID);
-			jrParam.setField("YD_CARLD_WRK_BOOK_ID"	, sYD_WBOOK_ID );	//¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID
+			jrParam.setField("YD_CARLD_WRK_BOOK_ID"	, sYD_WBOOK_ID );	//ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID
 			jrParam.setField("STACK_COL_GP"       	, sSTACK_COL_GP);
 			jrParam.setField("STACK_BED_GP"       	, sSTACK_BED_GP);
 			
 			/*********************************
-			 * ¹«ÀÎÈ­ °ü·Ã À§Ä¡º¯°æ Á¶°Ç Ã¼Å©
+			 * ë¬´ì¸í™” ê´€ë ¨ ìœ„ì¹˜ë³€ê²½ ì¡°ê±´ ì²´í¬
 			 ********************************/
 			boolean autoFlag       = false;
 			JDTORecordSet rsResult = null;
@@ -2294,47 +2294,47 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				rsResult.first();
 				jrEqpInfo = rsResult.getRecord();
 				
-				sWPROG_STAT           = jrEqpInfo.getFieldString("WPROG_STAT");          // ¼³ºñ »óÅÂ
-				sYD_EQP_AUTO_CRN_MODE = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn »óÅÂ
-				sYD_EQP_WRK_MODE2     = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	 // AutoCrn ¿©ºÎ
+				sWPROG_STAT           = jrEqpInfo.getFieldString("WPROG_STAT");          // ì„¤ë¹„ ìƒíƒœ
+				sYD_EQP_AUTO_CRN_MODE = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn ìƒíƒœ
+				sYD_EQP_WRK_MODE2     = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	 // AutoCrn ì—¬ë¶€
 				sWORK_MODE            = jrEqpInfo.getFieldString("WORK_MODE");
 				
-				if ("A".equals(sYD_EQP_WRK_MODE2)) {// A:¹«ÀÎ R:¸®¸ğÄÁ
+				if ("A".equals(sYD_EQP_WRK_MODE2)) {// A:ë¬´ì¸ R:ë¦¬ëª¨ì»¨
 					autoFlag = true; 
 				}
 			}
 			
-			//W:¸í·É¼±ÅÃ´ë±â S:½ºÄÉÁÙÀÛ¼ºÁß 
+			//W:ëª…ë ¹ì„ íƒëŒ€ê¸° S:ìŠ¤ì¼€ì¤„ì‘ì„±ì¤‘ 
 			if ("W".equals(sYD_WRK_PROG_STAT)) {
 				autoFlag = false;
 			}
 			
 			if ("XX010101".equals(sYD_DN_WO_LOC_ORG)) {
-				// À§Ä¡°Ë»ö½ÇÆĞÀÎ °æ¿ì À¯ÀÎÀ¸·Î Ã³¸®
+				// ìœ„ì¹˜ê²€ìƒ‰ì‹¤íŒ¨ì¸ ê²½ìš° ìœ ì¸ìœ¼ë¡œ ì²˜ë¦¬
 				autoFlag = false;
 			} 
 			
-			// ÀÏ½ÃÁ¤Áö-±ÇÇÏÀ§Ä¡º¯°æ Àû¿ë¿©ºÎ
+			// ì¼ì‹œì •ì§€-ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ ì ìš©ì—¬ë¶€
 			String sAPP030 = ymComm.BCoilApplyYn("APP030","2","S5");
 			
 			if (autoFlag && !"Y".equals(sAPP030)) { 
 			
 				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)){ 
-					//W:¸í·É¼±ÅÃ´ë±â S:½ºÄÉÁÙÀÛ¼ºÁß 1:±Ç»ó
+					//W:ëª…ë ¹ì„ íƒëŒ€ê¸° S:ìŠ¤ì¼€ì¤„ì‘ì„±ì¤‘ 1:ê¶Œìƒ
 					
-					//¼³ºñ»óÅÂ Ã¼Å©ÇÏ¿© AutoÀÏ°æ¿ì ÀÏ½ÃÁ¤Áö »óÅÂ¿¡¼­¸¸ °¡´ÉÇÏ°Ô ¼öÁ¤
-					if (!"4".equals(sYD_EQP_AUTO_CRN_MODE) && !"B".equals(sWPROG_STAT)) { //4: ÀÏ½ÃÁ¤Áö B:°íÀå
+					//ì„¤ë¹„ìƒíƒœ ì²´í¬í•˜ì—¬ Autoì¼ê²½ìš° ì¼ì‹œì •ì§€ ìƒíƒœì—ì„œë§Œ ê°€ëŠ¥í•˜ê²Œ ìˆ˜ì •
+					if (!"4".equals(sYD_EQP_AUTO_CRN_MODE) && !"B".equals(sWPROG_STAT)) { //4: ì¼ì‹œì •ì§€ B:ê³ ì¥
 						if ("R".equals(sYD_EQP_WRK_MODE2)) {
-							//¸®¸ğÄÁÀÌ°Å³ª À§Ä¡°Ë»ö ½ÇÆĞ¸é ±ÇÇÏÀ§Ä¡ º¯°æÀÌ °¡´ÉÇÔ
+							//ë¦¬ëª¨ì»¨ì´ê±°ë‚˜ ìœ„ì¹˜ê²€ìƒ‰ ì‹¤íŒ¨ë©´ ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½ì´ ê°€ëŠ¥í•¨
 						} else {
-							throw new Exception("¹«ÀÎÅ©·¹ÀÎ [" + sYD_EQP_ID + "]ÀÌ ÀÏ½ÃÁ¤ÁöÀÌ°Å³ª °íÀå»óÅÂ°¡ ¾Æ´Ï¸é ±ÇÇÏÀ§Ä¡¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.");
+							throw new Exception("ë¬´ì¸í¬ë ˆì¸ [" + sYD_EQP_ID + "]ì´ ì¼ì‹œì •ì§€ì´ê±°ë‚˜ ê³ ì¥ìƒíƒœê°€ ì•„ë‹ˆë©´ ê¶Œí•˜ìœ„ì¹˜ë¥¼ ë³€ê²½í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						}
 					}
 				}
 			}
 			
 			/********************************************
-			 * ÀûÄ¡À§Ä¡ º¯°æ¿¡ µû¸¥ À§Ä¡ Á¤ÇÕ¼º Ã¼Å©
+			 * ì ì¹˜ìœ„ì¹˜ ë³€ê²½ì— ë”°ë¥¸ ìœ„ì¹˜ ì •í•©ì„± ì²´í¬
 			 *******************************************/
 			jrParam.setField("YD_CRN_SCH_ID"       	, sYD_CRN_SCH_ID);
 			jrParam.setField("STOCK_ID"      , sSTOCK_ID);
@@ -2351,9 +2351,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			     , YD_DN_WO_LOC_ZAXIS
 			     , YD_DN_WO_LOC_OLD
 			     , YD_DN_WO_LAYER_OLD
-			     , (SELECT CASE WHEN SUM(DECODE(STACK_LAYER_STAT,'U',1,0)) > 0 THEN 'UP' --±Ç»ó´ë±â ÀÖÀ½
-			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'D',1,0)) > 0 THEN 'DW' --±ÇÇÏ´ë±â ÀÖÀ½
-			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'E',1,0)) > 0 THEN 'ET' --¾Æ·§´Ü °ø¹éÀÖÀ½
+			     , (SELECT CASE WHEN SUM(DECODE(STACK_LAYER_STAT,'U',1,0)) > 0 THEN 'UP' --ê¶ŒìƒëŒ€ê¸° ìˆìŒ
+			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'D',1,0)) > 0 THEN 'DW' --ê¶Œí•˜ëŒ€ê¸° ìˆìŒ
+			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'E',1,0)) > 0 THEN 'ET' --ì•„ë«ë‹¨ ê³µë°±ìˆìŒ
 			               ELSE '' END 
 			          FROM TB_YM_STACKLAYER 
 			         WHERE STACK_COL_GP = A.STACK_COL_GP 
@@ -2364,7 +2364,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			     , YD_STK_BED_YAXIS_TOL
 			     , YD_STK_BED_ZAXIS_TOL     
 			     , (SELECT CASE WHEN SUM(DECODE(STACK_LAYER_STAT,'U',1,0)) > 0 THEN 'UP'
-			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'D',1,0)) > 0 THEN 'DW' --±ÇÇÏ´ë±â ÀÖÀ½
+			                    WHEN SUM(DECODE(STACK_LAYER_STAT,'D',1,0)) > 0 THEN 'DW' --ê¶Œí•˜ëŒ€ê¸° ìˆìŒ
 			               ELSE '' END 
 			          FROM TB_YM_STACKLAYER
 			         WHERE STACK_COL_GP||STACK_BED_GP = A.YD_DN_WO_LOC_OLD 
@@ -2435,10 +2435,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 			
 			//com.inisteel.cim.yd.slabyd.dao.SlabYdJspDAO.getCrnWrkMgtDMBed
-			jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchDnWoLocCurLyr", logId, methodNm, "½Å±Ô±ÇÇÏÀ§Ä¡ Á¶È¸");
+			jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnSchDnWoLocCurLyr", logId, methodNm, "ì‹ ê·œê¶Œí•˜ìœ„ì¹˜ ì¡°íšŒ");
 			
 			if (jsCrnSch == null || jsCrnSch.size() <= 0) {
-				throw new Exception("º¯°æÇÒ ±ÇÇÏÁö½ÃÀ§Ä¡[" + sYD_DN_WO_LOC + "] Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  ê¶Œí•˜ì§€ì‹œìœ„ì¹˜[" + sYD_DN_WO_LOC + "] ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else {
 			
 		    	JDTORecord jrCrnSch = jsCrnSch.getRecord(0);
@@ -2455,18 +2455,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	            sSTACK_LAYER_GP_SCH     = commUtils.trim(jrCrnSch.getFieldString("STACK_LAYER_GP_SCH"));
 
 			    if ("UP".equals(dlLocChkRst)) {
-					throw new Exception("º¯°æÇÒ À§Ä¡¿¡ ±Ç»ó´ë±â(U) Àç·á°¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½í•  ìœ„ì¹˜ì— ê¶ŒìƒëŒ€ê¸°(U) ì¬ë£Œê°€ ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				} else if ("DW".equals(dlLocChkRst)) {
-					throw new Exception("º¯°æÇÒ À§Ä¡¿¡ ±ÇÇÏ´ë±â(D) Àç·á°¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½í•  ìœ„ì¹˜ì— ê¶Œí•˜ëŒ€ê¸°(D) ì¬ë£Œê°€ ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				} else if ("ET".equals(dlLocChkRst)) {
-					throw new Exception("Áö½ÃÀ§Ä¡ ÇÏ´Ü¿¡ °ø¹éÀÌ Á¸ÀçÇÕ´Ï´Ù.");
+					throw new Exception("ì§€ì‹œìœ„ì¹˜ í•˜ë‹¨ì— ê³µë°±ì´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 				} 
 			    
 			    if ("DW".equals(sOLD_LOC_CHK_RST)){
-			    	throw new Exception("±âÁ¸ ±ÇÇÏÀ§Ä¡ »ó´Ü¿¡ ±ÇÇÏ½ºÄÉÁÙÀÌ Á¸ÀçÇÕ´Ï´Ù.");
+			    	throw new Exception("ê¸°ì¡´ ê¶Œí•˜ìœ„ì¹˜ ìƒë‹¨ì— ê¶Œí•˜ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 			    }
 
-			    //È¤½Ã ±ÇÇÏÁö½ÃÀ§Ä¡°¡ Àß¸ø µî·ÏµÇ¾î ÀÖÀ¸¸é
+			    //í˜¹ì‹œ ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ê°€ ì˜ëª» ë“±ë¡ë˜ì–´ ìˆìœ¼ë©´
 			    if (ydDnWoLocOld.length() != 8) {
 			    	ydDnWoLocOld = "XX010101";
 				}
@@ -2474,10 +2474,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			
 			/**************************************
-			 * ¹«ÀÎÈ­ ÀÏ¶§ Ã³¸®
+			 * ë¬´ì¸í™” ì¼ë•Œ ì²˜ë¦¬
 			 **************************************/
 			if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)) {
-				//º¯°æÀ§Ä¡ ÀÓ½Ã ÀúÀå
+				//ë³€ê²½ìœ„ì¹˜ ì„ì‹œ ì €ì¥
 				/*
 				UPDATE TB_YM_CRNSCH
 				   SET YD_DN_WO_LOC_TO    = :V_YD_DN_WO_LOC_TO
@@ -2495,31 +2495,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID);
 				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.upYmCrnSchLocStat");
 				/**********************************************************
-				* Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸
+				* í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ
 				**********************************************************/
-				// ÀÏ½ÃÁ¤Áö-±ÇÇÏÀ§Ä¡º¯°æ Àû¿ë¿©ºÎ
+				// ì¼ì‹œì •ì§€-ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ ì ìš©ì—¬ë¶€
 				if ("Y".equals(sAPP030)) {
 					JDTORecord jrS5Msg = commUtils.getParam(logId, methodNm, sMODIFIER);
 					
-					jrS5Msg.setField("JMS_TC_CD"         , YmConstant.YMA8L004); //Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-					jrS5Msg.setField("YD_CRN_SCH_ID"     , sYD_CRN_SCH_ID     ); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-					jrS5Msg.setField("MSG_GP"            , "U"   ); //Àü¹®±¸ºĞ - ÀçÁö½Ã
-					jrS5Msg.setField("YD_CRN_SCH_RMD_CNT", "S5"  ); //S5 ÀÏ½ÃÁ¤Áö ÈÄ ±ÇÇÏÀ§Ä¡ º¯°æ
+					jrS5Msg.setField("JMS_TC_CD"         , YmConstant.YMA8L004); //í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+					jrS5Msg.setField("YD_CRN_SCH_ID"     , sYD_CRN_SCH_ID     ); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+					jrS5Msg.setField("MSG_GP"            , "U"   ); //ì „ë¬¸êµ¬ë¶„ - ì¬ì§€ì‹œ
+					jrS5Msg.setField("YD_CRN_SCH_RMD_CNT", "S5"  ); //S5 ì¼ì‹œì •ì§€ í›„ ê¶Œí•˜ìœ„ì¹˜ ë³€ê²½
 	
 					sndRecord = commUtils.addSndData(commDao.getMsgL2("YMA8L004", jrS5Msg));
 					
 					return sndRecord;
 				}
 				
-				//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, sMODIFIER);
 				
-				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-				jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID       );	//¾ßµå¼³ºñID
-				jrYdMsg.setField("YD_WRK_PROG_STAT", "2".equals(sYD_WRK_PROG_STAT) ? "5" : sYD_WRK_PROG_STAT);	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏÀ§Ä¡º¯°æ ¿ä±¸»óÅÂ)
-				jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD       );	//¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID   );	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("MODIFIER"        , sMODIFIER        );	//¼öÁ¤ÀÚ
+				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+				jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID       );	//ì•¼ë“œì„¤ë¹„ID
+				jrYdMsg.setField("YD_WRK_PROG_STAT", "2".equals(sYD_WRK_PROG_STAT) ? "5" : sYD_WRK_PROG_STAT);	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ ìš”êµ¬ìƒíƒœ)
+				jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD       );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID   );	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("MODIFIER"        , sMODIFIER        );	//ìˆ˜ì •ì
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				JDTORecord jrRtn = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -2531,13 +2531,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			
 			/*************************************
-			 * À¯ÀÎÅ©·¹ÀÎ(ÇöÇà)ÀÏ ¶§ Ã³¸®
+			 * ìœ ì¸í¬ë ˆì¸(í˜„í–‰)ì¼ ë•Œ ì²˜ë¦¬
 			 *************************************/
-			//W»óÅÂ´Â À¯ÀÎÅ©·¹ÀÎ°ú °°Àº ¹æ¹ıÀ¸·Î Ã³¸® 
+			//WìƒíƒœëŠ” ìœ ì¸í¬ë ˆì¸ê³¼ ê°™ì€ ë°©ë²•ìœ¼ë¡œ ì²˜ë¦¬ 
 			
 			
 			/**********************************************************
-			* 2. ±ÇÇÏÁö½ÃÀ§Ä¡ ¼öÁ¤
+			* 2. ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ìˆ˜ì •
 			**********************************************************/
 			jrParam.setField("STACK_COL_GP_OLD"   , ydDnWoLocOld.substring(0, 6));
 			jrParam.setField("STACK_BED_GP_OLD"   , ydDnWoLocOld.substring(6, 8));
@@ -2558,7 +2558,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			jrParam.setField("YD_DN_WO_LOC_ZAXIS", ydDnWoLocZaxis);
 			jrParam.setField("STACK_LAYER_GP_SCH", sSTACK_LAYER_GP_SCH);
 			
-			//±âÁ¸ ±ÇÇÏÁö½Ã À§Ä¡ ¼öÁ¤
+			//ê¸°ì¡´ ê¶Œí•˜ì§€ì‹œ ìœ„ì¹˜ ìˆ˜ì •
 			/*
 			UPDATE TB_YM_STACKLAYER
 			   SET STOCK_ID = NULL
@@ -2573,23 +2573,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			   AND STACK_BED_GP = :V_STACK_BED_GP_OLD   
 			   AND STACK_LAYER_STAT = 'D'     
 			 */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getBfCrnDnWoLoc", logId, methodNm, "±âÁ¸±ÇÇÏÀ§Ä¡ CLEAR");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getBfCrnDnWoLoc", logId, methodNm, "ê¸°ì¡´ê¶Œí•˜ìœ„ì¹˜ CLEAR");
 			
-			//½Å±Ô ±ÇÇÏÁö½Ã À§Ä¡ ¼öÁ¤
+			//ì‹ ê·œ ê¶Œí•˜ì§€ì‹œ ìœ„ì¹˜ ìˆ˜ì •
 //			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getAfCrnDnWoLoc");
 			
 			
-			//½Å±Ô ÀûÄ¡´Ü Àç·áÁ¤º¸READ
+			//ì‹ ê·œ ì ì¹˜ë‹¨ ì¬ë£Œì •ë³´READ
 			/*
 			SELECT YD_CRN_SCH_ID
-			     , STOCK_ID         -- ±âÁ¸ Àç·áÁ¤º¸ 
+			     , STOCK_ID         -- ê¸°ì¡´ ì¬ë£Œì •ë³´ 
 			     , STACK_LAYER_GP
 			  FROM TB_YM_CRNWRKMTL A
 			 WHERE YD_CRN_SCH_ID = :V_YD_CRN_SCH_ID
 			   AND DEL_YN = 'N'
 			 ORDER BY STACK_LAYER_GP
 			 */
-			JDTORecordSet jsCrnSchMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMtlBySchId", logId, methodNm, "±âÁ¸±ÇÇÏÀ§Ä¡ Á¶È¸");
+			JDTORecordSet jsCrnSchMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMtlBySchId", logId, methodNm, "ê¸°ì¡´ê¶Œí•˜ìœ„ì¹˜ ì¡°íšŒ");
 
 			JDTORecord recOutTemp = null;
 			JDTORecord recInTemp = null;
@@ -2599,7 +2599,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			int intRtnVal = 0; 
 			
 			//----------------------------------------------------------------------------------------------------------
-			//½Å±ÔÀûÄ¡´Ü È°¼ºÈ­
+			//ì‹ ê·œì ì¹˜ë‹¨ í™œì„±í™”
 			//----------------------------------------------------------------------------------------------------------
 			String sLYR_GP = "";
 			for(int i = 0; i < jsCrnSchMtl.size(); i++) {
@@ -2632,16 +2632,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STACK_BED_GP   = :V_STACK_BED_GP
 				   AND STACK_LAYER_GP = :V_STACK_LAYER_GP 
 		    	 */
-				intRtnVal = commDao.update(recInTemp, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "TB_YM_STACKLAYER µî·Ï");
+				intRtnVal = commDao.update(recInTemp, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "TB_YM_STACKLAYER ë“±ë¡");
 				
 				if (intRtnVal <= 0) {
-					commUtils.printLog(logId, "[" + methodNm + "] ÀûÄ¡´Ü[" + sSTACK_COL_GP + "]È°¼ºÈ­Áß ERROR ¹ß»ı", "SL");
-					throw new Exception("ÀûÄ¡´Üº¯°æ½Ã ¿À·ù ¹ß»ı.");
+					commUtils.printLog(logId, "[" + methodNm + "] ì ì¹˜ë‹¨[" + sSTACK_COL_GP + "]í™œì„±í™”ì¤‘ ERROR ë°œìƒ", "SL");
+					throw new Exception("ì ì¹˜ë‹¨ë³€ê²½ì‹œ ì˜¤ë¥˜ ë°œìƒ.");
 				}
 			}
 			
 
-			//Å©·¹ÀÎ½ºÄÉÁÙ ¼öÁ¤ - ±Ç»ó, ±ÇÇÏÁö½ÃÀ§Ä¡
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ê¶Œìƒ, ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			/*
 			MERGE INTO TB_YM_CRNSCH CS USING (
 			WITH TEMP_TABLE AS (
@@ -2728,33 +2728,33 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCrnSchDnWoLocCrnSch", logId, methodNm, "TB_YM_CRNSCH");				
 
-			//±âÁ¸ ´ëÂ÷, Â÷·® ±ÇÇÏÀ§Ä¡¿¡¼­ ÀÏ¹İ¾ßµå·Î º¯°æ ½Ã ´ëÂ÷ or Â÷·®½ºÄÉÁÙ ÀÛ¾÷¿¹¾àID »èÁ¦
+			//ê¸°ì¡´ ëŒ€ì°¨, ì°¨ëŸ‰ ê¶Œí•˜ìœ„ì¹˜ì—ì„œ ì¼ë°˜ì•¼ë“œë¡œ ë³€ê²½ ì‹œ ëŒ€ì°¨ or ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
 			ydDnWoLocOld = ydDnWoLocOld.substring(2, 4);
 			if (("TC".equals(ydDnWoLocOld) || "TR".equals(ydDnWoLocOld)) && !ydDnWoLocOld.equals(sYD_DN_WO_LOC.substring(2, 4))) {
 				if ("TC".equals(ydDnWoLocOld)) {
-					//´ëÂ÷½ºÄÉÁÙ ¼öÁ¤ - »óÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
-					//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+					//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ìƒì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
+					//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updCrnSchDnWoLocTCarSch", logId, methodNm, "TB_YM_TCARSCH");				
 					
 				} else {
-					//Â÷·®½ºÄÉÁÙ ¼öÁ¤ - »óÂ÷ÀÛ¾÷¿¹¾àID »èÁ¦
-					//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+					//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì • - ìƒì°¨ì‘ì—…ì˜ˆì•½ID ì‚­ì œ
+					//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updCrnSchDnWoLocCarSch", logId, methodNm, "TB_YD_CARSCH");				
 				}
 			}
 			
 			/**********************************************************
-			* 3. Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸
+			* 3. í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
-			//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, sMODIFIER);
 
-			jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-			jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID      );	//¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_WRK_PROG_STAT", sYD_WRK_PROG_STAT);	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD      );	//¾ßµå½ºÄÉÁìÄÚµå
-			jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID   );	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			jrYdMsg.setField("MODIFIER"        , sMODIFIER     );	//¼öÁ¤ÀÚ
+			jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+			jrYdMsg.setField("YD_EQP_ID"       , sYD_EQP_ID      );	//ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_WRK_PROG_STAT", sYD_WRK_PROG_STAT);	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			jrYdMsg.setField("YD_SCH_CD"       , sYD_SCH_CD      );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrYdMsg.setField("YD_CRN_SCH_ID"   , sYD_CRN_SCH_ID   );	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			jrYdMsg.setField("MODIFIER"        , sMODIFIER     );	//ìˆ˜ì •ì
 
 			EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 			JDTORecord jrRtn = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -2775,15 +2775,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ
+	 * í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSchRuleMgt(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ º¯°æ[BSlabJspSeEJB.updSchRuleMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ë³€ê²½[BSlabJspSeEJB.updSchRuleMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -2792,31 +2792,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				//jrParam.setField("MODIFIER"            , commUtils.getValue(gdReq, "MODIFIER"            , ii)); //¼öÁ¤ÀÚ              
-				jrParam.setField("YD_SCH_RNG_CD"       , commUtils.getValue(gdReq, "YD_SCH_RNG_CD"       , ii)); //½ºÄÉÁÙ¹üÀ§ÄÚµå      
-				jrParam.setField("YD_SCH_WHIO_GP"      , commUtils.getValue(gdReq, "YD_SCH_WHIO_GP"      , ii)); //½ºÄÉÁÙÀÔÃâ°í±¸ºĞ    
-				jrParam.setField("YD_SCH_DIV_GP"       , commUtils.getValue(gdReq, "YD_SCH_DIV_GP"       , ii)); //½ºÄÉÁÙºĞÇÒ±¸ºĞ      
-				jrParam.setField("YD_SCH_RULE_ACT_STAT", commUtils.getValue(gdReq, "YD_SCH_RULE_ACT_STAT", ii)); //½ºÄÉÁÙ±âÁØÈ°¼º»óÅÂ  
-				jrParam.setField("YD_WRK_CRN"          , commUtils.getValue(gdReq, "YD_WRK_CRN"          , ii)); //ÀÛ¾÷Å©·¹ÀÎ          
-				jrParam.setField("YD_WRK_CRN_PRIOR"    , commUtils.getValue(gdReq, "YD_WRK_CRN_PRIOR"    , ii)); //ÀÛ¾÷Å©·¹ÀÎ¿ì¼±¼øÀ§  
-				jrParam.setField("YD_ALT_CRN_YN"       , commUtils.getValue(gdReq, "YD_ALT_CRN_YN"       , ii)); //´ëÃ¼Å©·¹ÀÎÀ¯¹«      
-				jrParam.setField("YD_ALT_CRN"          , commUtils.getValue(gdReq, "YD_ALT_CRN"          , ii)); //¾ßµå´ëÃ¼Å©·¹ÀÎ      
-				jrParam.setField("YD_ALT_CRN_PRIOR"    , commUtils.getValue(gdReq, "YD_ALT_CRN_PRIOR"    , ii)); //´ëÃ¼Å©·¹ÀÎ¿ì¼±¼øÀ§  
-				jrParam.setField("CD_CONTENTS"         , commUtils.getValue(gdReq, "CD_CONTENTS"         , ii)); //ÄÚµå¼³¸í            
-				jrParam.setField("YD_SCH_PROH_EXN"     , commUtils.getValue(gdReq, "YD_SCH_PROH_EXN"     , ii)); //¾ßµå½ºÄÉÁÙ±İÁöÀ¯¹«  
-				jrParam.setField("YD_SCH_CD"           , commUtils.getValue(gdReq, "YD_SCH_CD"           , ii)); //½ºÄÉÁÙÄÚµå
-				jrParam.setField("DAN_PRIOR"           , commUtils.getValue(gdReq, "DAN_PRIOR"           , ii)); //´Ü¿ì¼±¼øÀ§
-				jrParam.setField("YD_SCH_AUTO_ST_YN"   , commUtils.getValue(gdReq, "YD_SCH_AUTO_ST_YN"   , ii)); //½ºÄÉÁÙÀÚµ¿±âµ¿¿©ºÎ
+				//jrParam.setField("MODIFIER"            , commUtils.getValue(gdReq, "MODIFIER"            , ii)); //ìˆ˜ì •ì              
+				jrParam.setField("YD_SCH_RNG_CD"       , commUtils.getValue(gdReq, "YD_SCH_RNG_CD"       , ii)); //ìŠ¤ì¼€ì¤„ë²”ìœ„ì½”ë“œ      
+				jrParam.setField("YD_SCH_WHIO_GP"      , commUtils.getValue(gdReq, "YD_SCH_WHIO_GP"      , ii)); //ìŠ¤ì¼€ì¤„ì…ì¶œê³ êµ¬ë¶„    
+				jrParam.setField("YD_SCH_DIV_GP"       , commUtils.getValue(gdReq, "YD_SCH_DIV_GP"       , ii)); //ìŠ¤ì¼€ì¤„ë¶„í• êµ¬ë¶„      
+				jrParam.setField("YD_SCH_RULE_ACT_STAT", commUtils.getValue(gdReq, "YD_SCH_RULE_ACT_STAT", ii)); //ìŠ¤ì¼€ì¤„ê¸°ì¤€í™œì„±ìƒíƒœ  
+				jrParam.setField("YD_WRK_CRN"          , commUtils.getValue(gdReq, "YD_WRK_CRN"          , ii)); //ì‘ì—…í¬ë ˆì¸          
+				jrParam.setField("YD_WRK_CRN_PRIOR"    , commUtils.getValue(gdReq, "YD_WRK_CRN_PRIOR"    , ii)); //ì‘ì—…í¬ë ˆì¸ìš°ì„ ìˆœìœ„  
+				jrParam.setField("YD_ALT_CRN_YN"       , commUtils.getValue(gdReq, "YD_ALT_CRN_YN"       , ii)); //ëŒ€ì²´í¬ë ˆì¸ìœ ë¬´      
+				jrParam.setField("YD_ALT_CRN"          , commUtils.getValue(gdReq, "YD_ALT_CRN"          , ii)); //ì•¼ë“œëŒ€ì²´í¬ë ˆì¸      
+				jrParam.setField("YD_ALT_CRN_PRIOR"    , commUtils.getValue(gdReq, "YD_ALT_CRN_PRIOR"    , ii)); //ëŒ€ì²´í¬ë ˆì¸ìš°ì„ ìˆœìœ„  
+				jrParam.setField("CD_CONTENTS"         , commUtils.getValue(gdReq, "CD_CONTENTS"         , ii)); //ì½”ë“œì„¤ëª…            
+				jrParam.setField("YD_SCH_PROH_EXN"     , commUtils.getValue(gdReq, "YD_SCH_PROH_EXN"     , ii)); //ì•¼ë“œìŠ¤ì¼€ì¤„ê¸ˆì§€ìœ ë¬´  
+				jrParam.setField("YD_SCH_CD"           , commUtils.getValue(gdReq, "YD_SCH_CD"           , ii)); //ìŠ¤ì¼€ì¤„ì½”ë“œ
+				jrParam.setField("DAN_PRIOR"           , commUtils.getValue(gdReq, "DAN_PRIOR"           , ii)); //ë‹¨ìš°ì„ ìˆœìœ„
+				jrParam.setField("YD_SCH_AUTO_ST_YN"   , commUtils.getValue(gdReq, "YD_SCH_AUTO_ST_YN"   , ii)); //ìŠ¤ì¼€ì¤„ìë™ê¸°ë™ì—¬ë¶€
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleInfo", logId, methodNm, "Å©·¹ÀÎ½ºÄÉÁÙ ±âÁØ ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleInfo", logId, methodNm, "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ìˆ˜ì •");
 								
 			}
 
@@ -2830,14 +2830,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of updSchRuleMgt
 	/**
-	 * ¾ßµå¹×¼³ºñ ¿­Á¤º¸¼öÁ¤
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œë°ì„¤ë¹„ ì—´ì •ë³´ìˆ˜ì •
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecord updSlabYdStkPosSet(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµå¹×¼³ºñ ¿­Á¤º¸¼öÁ¤[BSlabJspSeEJB.updSlabYdStkPosSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œë°ì„¤ë¹„ ì—´ì •ë³´ìˆ˜ì •[BSlabJspSeEJB.updSlabYdStkPosSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		//String StackLayerActiveStat = "";
 		JDTORecord sndRecord = JDTORecordFactory.getInstance().create();
@@ -2866,7 +2866,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//inRecord.setField("STACK_LAYER_Z_AXIS"	        ,commUtils.getValue(gdReq, "STACK_COL_RULE_Z_AXIS", 0));
 			//inRecord.setField("STACK_COL_RULE_Z_AXIS"	    ,commUtils.getValue(gdReq, "STACK_COL_RULE_Z_AXIS", 0));
 			
-			//ÀûÄ¡ º£µå Á¤º¸ÀÇ  UPDATE
+			//ì ì¹˜ ë² ë“œ ì •ë³´ì˜  UPDATE
 			/*
 			UPDATE TB_YM_STACKER
 			      SET STACK_BED_ACTIVE_STAT = :V_STACK_BED_ACTIVE_STAT
@@ -2876,7 +2876,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 //			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabYdNEqpXyaxisSet.updYmStkbedYmStrActStat");
 			
-			//TB_YD_STKLYR ÀûÄ¡ º£µå Á¤º¸ÀÇ  UPDATE
+			//TB_YD_STKLYR ì ì¹˜ ë² ë“œ ì •ë³´ì˜  UPDATE
 			/*
 			UPDATE TB_YM_STACKLAYER            
 			   SET STACK_LAYER_ACTIVE_STAT = :V_STACK_LAYER_ACTIVE_STAT
@@ -2887,7 +2887,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 //			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabYdNEqpXyaxisSet.updYmStklyrColActStat");
 			
-			//TB_YD_STKBED ÀûÄ¡ º£µå Á¤º¸ÀÇ  UPDATE
+			//TB_YD_STKBED ì ì¹˜ ë² ë“œ ì •ë³´ì˜  UPDATE
 			/*
 			UPDATE TB_YM_STACKER
 			   SET STACK_BED_X_AXIS = :V_STACK_BED_X_AXIS
@@ -2899,7 +2899,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 //			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabYdNEqpXyaxisSet.updYmStkbedYmStrX");
 
-			//¾ßµåÀûÄ¡´Ü ÁÂÇ¥¸¸  UPDATE
+			//ì•¼ë“œì ì¹˜ë‹¨ ì¢Œí‘œë§Œ  UPDATE
 			/*
 			UPDATE TB_YM_STACKLAYER            
 			   SET STACK_LAYER_X_AXIS = :V_STACK_LAYER_X_AXIS
@@ -2911,7 +2911,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 //			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabYdNEqpXyaxisSet.updYmStklyrX");
 			
-			//ÀûÄ¡¿­ Á¤º¸ UPDATE
+			//ì ì¹˜ì—´ ì •ë³´ UPDATE
 			/*
 			UPDATE TB_YM_STACKCOL
 			   SET STACK_COL_ACTIVE_STAT = :V_STACK_COL_ACTIVE_STAT  
@@ -2931,7 +2931,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			jDrd.setField("TIME"				, commUtils.getTime8());
 			jDrd.setField("MSG_GP"				, "");
 			jDrd.setField("MSG_LEN"				, "0089");
-			jDrd.setField("YD_INFO_SYNC_CD"		, "3");						//1:µ¿,2:SPAN,3:¿­,4:BED
+			jDrd.setField("YD_INFO_SYNC_CD"		, "3");						//1:ë™,2:SPAN,3:ì—´,4:BED
 			jDrd.setField("YD_GP"				, inRecord.getFieldString("STACK_COL_GP").substring(0, 1));
 			jDrd.setField("COL_GP"				, inRecord.getFieldString("STACK_COL_GP").substring(5, 6));
 			jDrd.setField("STACK_COL_GP"		, inRecord.getFieldString("STACK_COL_GP"));
@@ -2950,14 +2950,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSlabYdStkPosSet	
 	
 	/**
-	 * ¾ßµå¹×¼³ºñ º£µåÁ¤º¸¼öÁ¤
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì•¼ë“œë°ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì •
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecord updSlabYdStkPosSetBed(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµå¹×¼³ºñ º£µåÁ¤º¸¼öÁ¤[BSlabJspSeEJB.updSlabYdStkPosSetBed] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œë°ì„¤ë¹„ ë² ë“œì •ë³´ìˆ˜ì •[BSlabJspSeEJB.updSlabYdStkPosSetBed] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		JDTORecord sndRecord = JDTORecordFactory.getInstance().create();
@@ -2970,7 +2970,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			JDTORecord jDrd = JDTORecordFactory.getInstance().create();
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -2987,7 +2987,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				inRecord.setField("YD_STK_BED_YAXIS_TOL"	    ,commUtils.getValue(gdReq, "YD_STK_BED_YAXIS_TOL", ii));
 				inRecord.setField("YD_STK_BED_ZAXIS_TOL"	    ,commUtils.getValue(gdReq, "YD_STK_BED_ZAXIS_TOL", ii));
 				
-				//ÀûÄ¡ ´Ü Á¤º¸ÀÇ  UPDATE 
+				//ì ì¹˜ ë‹¨ ì •ë³´ì˜  UPDATE 
 				/*
 				UPDATE TB_YM_STACKLAYER
 				   SET MODIFIER = :V_MODIFIER
@@ -3001,7 +3001,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabYdStkPosSetBed.updYdStklyrDan");
 				
-				//ÀûÄ¡ º£µå Á¤º¸ÀÇ  UPDATE 
+				//ì ì¹˜ ë² ë“œ ì •ë³´ì˜  UPDATE 
 				/*
 				UPDATE TB_YM_STACKER
 				   SET MODIFIER = :V_MODIFIER
@@ -3022,7 +3022,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jDrd.setField("TIME"				, commUtils.getTime8());
 				jDrd.setField("MSG_GP"				, "");
 				jDrd.setField("MSG_LEN"				, "0089");
-				jDrd.setField("YD_INFO_SYNC_CD"		, "4");						//1:µ¿,2:SPAN,3:¿­,4:BED
+				jDrd.setField("YD_INFO_SYNC_CD"		, "4");						//1:ë™,2:SPAN,3:ì—´,4:BED
 				jDrd.setField("YD_GP"				, "2");
 				jDrd.setField("STACK_BED_GP"		, commUtils.getValue(gdReq, "STACK_BED_GP", ii));
 				jDrd.setField("STACK_COL_GP"		, commUtils.getValue(gdReq, "STACK_COL_GP", ii));
@@ -3041,15 +3041,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}
 	} // end of updSlabYdStkPosSetBed		
 	/**
-	 * ¼³ºñ»óÅÂ (º¯°æ ¼³ºñ±âÁØÁ¶È¸ )
+	 * ì„¤ë¹„ìƒíƒœ (ë³€ê²½ ì„¤ë¹„ê¸°ì¤€ì¡°íšŒ )
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updEqpOprnStat(GridData gdReq) throws DAOException {
-		String methodNm = "¼³ºñ»óÅÂ º¯°æ[BSlabJspFaEJB.updEqpOprnStat] < " + gdReq.getNavigateValue();
+		String methodNm = "ì„¤ë¹„ìƒíƒœ ë³€ê²½[BSlabJspFaEJB.updEqpOprnStat] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3058,35 +3058,35 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				//¼³ºñÅ×ÀÌºí(TB_YM_EQUIP) ¼³ºñ»óÅÂ°¡ °íÀåÀÌ ¾Æ´Ï¸é ÀÛ¾÷ÁøÇà »óÅÂ °ªÀ¸·Î º¯°æ
-				if(!"°íÀå".equals(commUtils.getValue(gdReq, "EQUIP_STATE", ii))) {
+				//ì„¤ë¹„í…Œì´ë¸”(TB_YM_EQUIP) ì„¤ë¹„ìƒíƒœê°€ ê³ ì¥ì´ ì•„ë‹ˆë©´ ì‘ì—…ì§„í–‰ ìƒíƒœ ê°’ìœ¼ë¡œ ë³€ê²½
+				if(!"ê³ ì¥".equals(commUtils.getValue(gdReq, "EQUIP_STATE", ii))) {
 					
 					if("S".equals(commUtils.getValue(gdReq, "WPROG_STAT", ii))) {
-						//S ÀÏ°æ¿ì ¼³ºñ´Â W ·Î ¼³Á¤
+						//S ì¼ê²½ìš° ì„¤ë¹„ëŠ” W ë¡œ ì„¤ì •
 						jrParam.setField("WPROG_STAT"	,"W"); 
 					} else {
 						jrParam.setField("WPROG_STAT"	,commUtils.getValue(gdReq, "WPROG_STAT", ii)); 
 					}
 					jrParam.setField("EQUIP_GP"		,commUtils.getValue(gdReq, "EQUIP_GP", ii)); 
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEqpOprnStat", logId, methodNm, "¼³ºñ»óÅÂ º¯°æ");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEqpOprnStat", logId, methodNm, "ì„¤ë¹„ìƒíƒœ ë³€ê²½");
 				}
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ ID°¡ ÀÖ´Ù¸é Å©·¹ÀÎ½ºÄÉÁì »óÅÂ º¯°æ
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ IDê°€ ìˆë‹¤ë©´ í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ìƒíƒœ ë³€ê²½
 				if(!"".equals(commUtils.getValue(gdReq, "YD_CRN_SCH_ID", ii))) {
 				
 					jrParam.setField("WPROG_STAT"		,commUtils.getValue(gdReq, "WPROG_STAT", ii)); 
 					jrParam.setField("YD_CRN_SCH_ID"	,commUtils.getValue(gdReq, "YD_CRN_SCH_ID", ii)); 
 				
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCreSchOprnStat", logId, methodNm, "Å©·¹ÀÎ»óÅÂ º¯°æ");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCreSchOprnStat", logId, methodNm, "í¬ë ˆì¸ìƒíƒœ ë³€ê²½");
 				}
 			}
 
@@ -3102,15 +3102,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ - ÀúÀå
+	 * ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ - ì €ì¥
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updStrAreaSrchSeq(GridData gdReq) throws DAOException {
-		String methodNm = "ÀúÀå¿µ¿ªº°°Ë»ö¼ø¼­Á¶È¸ ÀúÀå[BSlabJspSeEJB.updStrAreaSrchSeq] < " + gdReq.getNavigateValue();
+		String methodNm = "ì €ì¥ì˜ì—­ë³„ê²€ìƒ‰ìˆœì„œì¡°íšŒ ì €ì¥[BSlabJspSeEJB.updStrAreaSrchSeq] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3125,15 +3125,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYARD_PRIOR = gdReq.getParam("YARD_PRIOR");
 			String sCAR_PRIOR  = gdReq.getParam("CAR_PRIOR");
 			
-			String sSORT       = gdReq.getParam("SORT"); //Àû¿ëÀ¯¹«
+			String sSORT       = gdReq.getParam("SORT"); //ì ìš©ìœ ë¬´
 			
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-			jrParam.setField("YD_SCH_CD"  , gdReq.getParam("YD_SCH_CD"));   //½ºÄÉÁÙÄÚµå
-			jrParam.setField("YD_ROUTE_GP", gdReq.getParam("YD_ROUTE_GP")); //Çà¼±
+			jrParam.setField("YD_SCH_CD"  , gdReq.getParam("YD_SCH_CD"));   //ìŠ¤ì¼€ì¤„ì½”ë“œ
+			jrParam.setField("YD_ROUTE_GP", gdReq.getParam("YD_ROUTE_GP")); //í–‰ì„ 
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö(ÀüÃ¼·Î ³Ñ¾î¿È)
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜(ì „ì²´ë¡œ ë„˜ì–´ì˜´)
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			 
 			String sSPAN_CD = "";
@@ -3143,7 +3143,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			int nMaxCAR  = 0;
 			boolean bSortGp = false;
 			 
-			// ¿ì¼±¼øÀ§º° °³¼ö Á¶È¸
+			// ìš°ì„ ìˆœìœ„ë³„ ê°œìˆ˜ ì¡°íšŒ
 			for (int idx = 0; idx < rowCnt; ++idx) {
 				sSPAN_CD = commUtils.getValue(gdReq, "STACK_COL_GP", idx).substring(2, 4);
 				bSortGp  = Pattern.matches("^[a-zA-Z]*$", sSPAN_CD);
@@ -3228,14 +3228,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				    , SP.YD_SCH_PRFR_PRIOR = DD.YD_SCH_PRFR_PRIOR
 				 */
 				jrParam.setField("YD_SCH_PRFR_PRIOR" , sYARD_PRIOR+sEQP_PRIOR+sCAR_PRIOR);
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updSchPrfrPrior", logId, methodNm, "½ºÄÉÁÙ¿ì¼±¼øÀ§ ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updSchPrfrPrior", logId, methodNm, "ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„ ìˆ˜ì •");
 			}
 			commUtils.printLog(logId, "[EQP ] : "+sEQP_PRIOR +" MAX:"+nMaxEQP +" START:"+nStartEQP , "[info]");
 			commUtils.printLog(logId, "[YARD] : "+sYARD_PRIOR+" MAX:"+nMaxYARD+" START:"+nStartYARD, "[info]");
 			commUtils.printLog(logId, "[CAR ] : "+sCAR_PRIOR +" MAX:"+nMaxCAR +" START:"+nStartCAR , "[info]");
 			
 			
-			//ÀüÃ¼ »èÁ¦
+			//ì „ì²´ ì‚­ì œ
 			/*
 			UPDATE TB_YM_SCHLOCSRCH
 			   SET DEL_YN   = 'Y'
@@ -3353,15 +3353,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updStrAreaSrchSeq
 
 	/**
-	 * ±âÁØ°ü¸® - ¼¼ºÎÇ×¸ñ¼öÁ¤
+	 * ê¸°ì¤€ê´€ë¦¬ - ì„¸ë¶€í•­ëª©ìˆ˜ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updYmRule(GridData gdReq) throws DAOException {
-		String methodNm = "±âÁØ°ü¸® - ¼¼ºÎÇ×¸ñ¼öÁ¤[BSlabJspSeEJB.updYmRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ê¸°ì¤€ê´€ë¦¬ - ì„¸ë¶€í•­ëª©ìˆ˜ì •[BSlabJspSeEJB.updYmRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3370,14 +3370,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//¼¼ºÎÇ×¸ñ¼öÁ¤
+				//ì„¸ë¶€í•­ëª©ìˆ˜ì •
 				//if(!commUtils.getValue(gdReq, "DTL_ITM1", ii).equals("")){
 					jrParam.setField("DTL_ITM1"		, commUtils.getValue(gdReq, "DTL_ITM1", ii) );
 				//}
@@ -3412,7 +3412,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("REPR_CD_GP"	, commUtils.getValue(gdReq, "REPR_CD_GP", ii) );
 				jrParam.setField("CD_GP"		, commUtils.getValue(gdReq, "CD_GP", ii) );
 				jrParam.setField("ITEM"			, commUtils.getValue(gdReq, "ITEM", ii));
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRule", logId, methodNm, "±âÁØ°ü¸® ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRule", logId, methodNm, "ê¸°ì¤€ê´€ë¦¬ ìˆ˜ì •");
 			}
 
 			commUtils.printLog(logId, methodNm, "S-");
@@ -3426,20 +3426,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updYmRule
 	
 	/**
-	 * Æø, ¿Ü°æ±âÁØ ¼öÁ¤
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * í­, ì™¸ê²½ê¸°ì¤€ ìˆ˜ì •
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public GridData updateStackRuleInfo(GridData gdReq) throws DAOException {
-		String methodNm = "Æø, ¿Ü°æ±âÁØ º¯°æ[BSlabJspSeEJB.updateStackRuleInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "í­, ì™¸ê²½ê¸°ì¤€ ë³€ê²½[BSlabJspSeEJB.updateStackRuleInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
-			//Grid date ¸¦ JDTORecord data ·Î º¯È¯
+			//Grid date ë¥¼ JDTORecord data ë¡œ ë³€í™˜
 			JDTORecord inRecord = CmUtil.genJDTORecord(gdReq);
 			
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
@@ -3447,14 +3447,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			inRecord.setField("SCH_CD", inRecord.getFieldString("P_WIDTH"));
 			inRecord.setField("SCH_RULE_VAL", "1");
 			
-			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabStkPrfrPriorjl.updStackRuleInfo_02"); //Æø±âÁØ ¼öÁ¤
+			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabStkPrfrPriorjl.updStackRuleInfo_02"); //í­ê¸°ì¤€ ìˆ˜ì •
 			
 			inRecord.setField("SCH_CD", inRecord.getFieldString("P_LENGTH"));
 			inRecord.setField("SCH_RULE_VAL", "2");
 			
-			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabStkPrfrPriorjl.updStackRuleInfo_02"); //¿Ü°æ±âÁØ ¼öÁ¤
+			commDao.update(inRecord, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabStkPrfrPriorjl.updStackRuleInfo_02"); //ì™¸ê²½ê¸°ì¤€ ìˆ˜ì •
 			
-			//UI·Î ¹İÈ¯ ÇÒ Grid data ¸¦ »ı¼º 
+			//UIë¡œ ë°˜í™˜ í•  Grid data ë¥¼ ìƒì„± 
 			GridData gdRtn = OperateGridData.cloneResponseGridData(gdReq);
 			GridData gdRet = commUtils.jdtoRecordToGridData(gdRtn, outRecSet.toList(), gdReq);
 			
@@ -3470,15 +3470,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updateStackRuleInfo
 	
 	/**
-	 * ¸ñÀûµ¿¼øÀ§
+	 * ëª©ì ë™ìˆœìœ„
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updateSlabMoveBayRank(GridData gdReq) throws DAOException {
-		String methodNm = "¸ñÀûµ¿¼øÀ§[BSlabJspSeEJB.updateSlabMoveBayRank] < " + gdReq.getNavigateValue();
+		String methodNm = "ëª©ì ë™ìˆœìœ„[BSlabJspSeEJB.updateSlabMoveBayRank] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3487,10 +3487,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -3511,7 +3511,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					REG_DD 		  = SYSDATE
 				WHERE ORD_YEOJAE_GP = :V_ORD_YEOJAE_GP 
 				  AND SLAB_GP 	    = :V_SLAB_GP */				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateSlabMoveBayRanking", logId, methodNm, "¸ñÀûµ¿¼øÀ§ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateSlabMoveBayRanking", logId, methodNm, "ëª©ì ë™ìˆœìœ„ ë³€ê²½");
 								
 			}
 			if(!(commUtils.trim(gdReq.getParam("COOL_TIME"))).equals(commUtils.trim(gdReq.getParam("STACK_RULE_MIN")))){
@@ -3528,7 +3528,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			                                         ,'K','M'
 			                                         ,'')
 			    and REPR_CD_GP = 'CLHR' */
-			   commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateListTimeSLAB", logId, methodNm, "³Ã°¢½Ã°£ º¯°æ");
+			   commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateListTimeSLAB", logId, methodNm, "ëƒ‰ê°ì‹œê°„ ë³€ê²½");
 			}
 			   
 			   
@@ -3545,54 +3545,54 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ ½ºÄÉÁÙÃë¼ÒÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì·¨ì†Œì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtCrnSchCncl(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ ½ºÄÉÁÙÃë¼Ò[BSlabJspSeEJB.trtCrnSchCncl] < " + rcvMsg.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì·¨ì†Œ[BSlabJspSeEJB.trtCrnSchCncl] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try { 
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String sYD_CRN_SCH_ID     = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")),""); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String sYD_WBOOK_ID       = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )),""); //¾ßµåÀÛ¾÷¿¹¾àID
+			String sYD_CRN_SCH_ID     = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_CRN_SCH_ID")),""); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String sYD_WBOOK_ID       = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_WBOOK_ID"  )),""); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			String sYD_L2_RETURN_FLAG = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_L2_RETURN_FLAG")),""); //
-			String sYD_SCH_CD         = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD")),"");  // ½ºÄÉÁÙÄÚµå 
-			String sCNCL_BY_WHO       = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("CNCL_BY_WHO")),"");  // ½ºÄÉÁÙÃë¼Ò°¡ L2 ¼­Æ÷ÆÃºí·Ï ÀÌ»óÀ¸·Î ¹ß»ıÇÑ°Í ÀÎÁö È®ÀÎ º¯¼ö [E100]
+			String sYD_SCH_CD         = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("YD_SCH_CD")),"");  // ìŠ¤ì¼€ì¤„ì½”ë“œ 
+			String sCNCL_BY_WHO       = StringHelper.evl(commUtils.trim(rcvMsg.getFieldString("CNCL_BY_WHO")),"");  // ìŠ¤ì¼€ì¤„ì·¨ì†Œê°€ L2 ì„œí¬íŒ…ë¸”ë¡ ì´ìƒìœ¼ë¡œ ë°œìƒí•œê²ƒ ì¸ì§€ í™•ì¸ ë³€ìˆ˜ [E100]
 
 			if ("".equals(sYD_CRN_SCH_ID)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(sYD_WBOOK_ID)) {
-				throw new Exception("ÀÛ¾÷¿¹¾àID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì‘ì—…ì˜ˆì•½IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(sYD_SCH_CD)) {
-				throw new Exception("½ºÄÉÁÙÄÚµå°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìŠ¤ì¼€ì¤„ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
  
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(rcvMsg.getFieldString("MODIFIER")));
 			jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID);
 			jrParam.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID );
 			
 		
 			/**********************************************************
-			* 1. Å©·¹ÀÎ½ºÄÉÁì Á¤º¸ Check
+			* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¥´ ì •ë³´ Check
 			**********************************************************/
 			/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCrnWrkMgtSCSch 
-			--Å©·¹ÀÎÀÛ¾÷°ü¸® Å©·¹ÀÎ½ºÄÉÁÙÃë¼Ò Á¶È¸ 
+			--í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì·¨ì†Œ ì¡°íšŒ 
 			SELECT CS.YD_WRK_PROG_STAT
 			      ,CS.YD_EQP_ID
 			      ,CS.YD_EQP_STAT
 			      ,EQ.WPROG_STAT
 			      ,CASE WHEN EQ.WPROG_STAT IN ('B',CS.YD_EQP_STAT) OR EQ.WORK_MODE  != '1'
-			            THEN 'N' ELSE 'Y' END AS EQP_UPD_YN --¼³ºñ»óÅÂ¼öÁ¤¿©ºÎ
+			            THEN 'N' ELSE 'Y' END AS EQP_UPD_YN --ì„¤ë¹„ìƒíƒœìˆ˜ì •ì—¬ë¶€
 			      ,(SELECT YD_DN_WO_LOC||YD_DN_WO_LAYER 
 			          FROM TB_YM_CRNSCH
 			         WHERE YD_CRN_SCH_ID = CS.YD_CRN_SCH_ID 
@@ -3605,54 +3605,54 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			          FROM (SELECT YD_CRN_SCH_ID
 			                      ,YD_WRK_PROG_STAT
 			                      ,YD_EQP_ID
-			                      ,:V_YD_CRN_SCH_ID AS SC_YD_CRN_SCH_ID --Ãë¼Ò Å©·¹ÀÎ½ºÄÉÁÙID
+			                      ,:V_YD_CRN_SCH_ID AS SC_YD_CRN_SCH_ID --ì·¨ì†Œ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ID
 			                      ,ROW_NUMBER() OVER (ORDER BY YD_CRN_SCH_ID) AS RN
 			                  FROM TB_YM_CRNSCH
 			                 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 			                   AND DEL_YN      = 'N')) CS
 			 WHERE CS.YD_EQP_ID = EQ.EQUIP_GP(+);
 			*/ 
-			JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCrnWrkMgtSCSch", logId, methodNm, "Å©·¹ÀÎÀÛ¾÷Áö½Ãread");
+			JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCrnWrkMgtSCSch", logId, methodNm, "í¬ë ˆì¸ì‘ì—…ì§€ì‹œread");
 			if (jsCrnSch == null || jsCrnSch.size() <= 0) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID[" + sYD_CRN_SCH_ID + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´ID[" + sYD_CRN_SCH_ID + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		    }
 			
 			JDTORecord jrCrnSch = jsCrnSch.getRecord(0);
 			
-		    String ydWrkProgStat = commUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT")); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-		    String eqpUpdYn      = commUtils.trim(jrCrnSch.getFieldString("EQP_UPD_YN"      )); //¼³ºñ»óÅÂ¼öÁ¤¿©ºÎ
-		    String ydEqpId       = commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"       )); //¾ßµå¼³ºñID
-		    String ydEqpStat     = commUtils.trim(jrCrnSch.getFieldString("YD_EQP_STAT"     )); //¾ßµå¼³ºñ»óÅÂ
+		    String ydWrkProgStat = commUtils.trim(jrCrnSch.getFieldString("YD_WRK_PROG_STAT")); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+		    String eqpUpdYn      = commUtils.trim(jrCrnSch.getFieldString("EQP_UPD_YN"      )); //ì„¤ë¹„ìƒíƒœìˆ˜ì •ì—¬ë¶€
+		    String ydEqpId       = commUtils.trim(jrCrnSch.getFieldString("YD_EQP_ID"       )); //ì•¼ë“œì„¤ë¹„ID
+		    String ydEqpStat     = commUtils.trim(jrCrnSch.getFieldString("YD_EQP_STAT"     )); //ì•¼ë“œì„¤ë¹„ìƒíƒœ
 
 			if ("2".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + sYD_CRN_SCH_ID + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [2:±Ç»ó¿Ï·á]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + sYD_CRN_SCH_ID + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [2:ê¶Œìƒì™„ë£Œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("3".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + sYD_CRN_SCH_ID + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [3:±ÇÇÏÁö½Ã]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + sYD_CRN_SCH_ID + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [3:ê¶Œí•˜ì§€ì‹œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("4".equals(ydWrkProgStat)) {
-				throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + sYD_CRN_SCH_ID + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [4:±ÇÇÏ¿Ï·á]ÀÌ¹Ç·Î Ãë¼ÒÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + sYD_CRN_SCH_ID + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [4:ê¶Œí•˜ì™„ë£Œ]ì´ë¯€ë¡œ ì·¨ì†Œí•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
 			/**********************************************************
-			* 2. ÀÛ¾÷ÁøÇà»óÅÂ°¡ [1:±Ç»óÁö½Ã] ÀÌ¸é ÀÛ¾÷Áö½ÃÃë¼Ò Àü¹® Àü¼Û
+			* 2. ì‘ì—…ì§„í–‰ìƒíƒœê°€ [1:ê¶Œìƒì§€ì‹œ] ì´ë©´ ì‘ì—…ì§€ì‹œì·¨ì†Œ ì „ë¬¸ ì „ì†¡
 			**********************************************************/
 			if ("1".equals(ydWrkProgStat) && !"Y".equals(sYD_L2_RETURN_FLAG)) {
 				
-				jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrParam.setField("MSG_GP"       , "D"       ); //Àü¹®±¸ºĞ(Ãë¼Ò)
+				jrParam.setField("YD_CRN_SCH_ID", sYD_CRN_SCH_ID); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrParam.setField("MSG_GP"       , "D"       ); //ì „ë¬¸êµ¬ë¶„(ì·¨ì†Œ)
 
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L004", jrParam));
 			}
 			
-			//2024.04.17 Å©·¹ÀÎ ±ÇÇÏ½ÇÀû°ú °ãÄ¥½Ã, deadlock ¹ß»ıÇÏ´Â Çö»ó ÇØ°áÀ» À§ÇØ º¯°æ(ora- ¿¡·¯ ¼öÁ¤)
-			//Å©·¹ÀÎ½ºÄÉÁÙ¼öÁ¤ ÈÄ ¼³ºñ»óÅÂ ¼öÁ¤  -> ¼³ºñ»óÅÂ ¼öÁ¤ ÈÄ Å©·¹ÀÎ½ºÄÉÁÙ ¼öÁ¤ 
+			//2024.04.17 í¬ë ˆì¸ ê¶Œí•˜ì‹¤ì ê³¼ ê²¹ì¹ ì‹œ, deadlock ë°œìƒí•˜ëŠ” í˜„ìƒ í•´ê²°ì„ ìœ„í•´ ë³€ê²½(ora- ì—ëŸ¬ ìˆ˜ì •)
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ìˆ˜ì • í›„ ì„¤ë¹„ìƒíƒœ ìˆ˜ì •  -> ì„¤ë¹„ìƒíƒœ ìˆ˜ì • í›„ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìˆ˜ì • 
 			/**********************************************************
-			* 5. ¼³ºñ»óÅÂ ¼öÁ¤ - Å©·¹ÀÎÀÌ °íÀå ¶Ç´Â Off-LineÀÌ ¾Æ´Ï°í »óÅÂ°¡ ´Ù¸£¸é
+			* 5. ì„¤ë¹„ìƒíƒœ ìˆ˜ì • - í¬ë ˆì¸ì´ ê³ ì¥ ë˜ëŠ” Off-Lineì´ ì•„ë‹ˆê³  ìƒíƒœê°€ ë‹¤ë¥´ë©´
 			**********************************************************/
 			if ("Y".equals(eqpUpdYn)) {
-				jrParam.setField("EQUIP_GP"  , ydEqpId  ); //¾ßµå¼³ºñID
-				jrParam.setField("EQUIP_STAT", ydEqpStat); //¾ßµå¼³ºñ»óÅÂ
+				jrParam.setField("EQUIP_GP"  , ydEqpId  ); //ì•¼ë“œì„¤ë¹„ID
+				jrParam.setField("EQUIP_STAT", ydEqpStat); //ì•¼ë“œì„¤ë¹„ìƒíƒœ
 				/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updStatEqp 
-				--¼³ºñ »óÅÂ ¼öÁ¤ 
+				--ì„¤ë¹„ ìƒíƒœ ìˆ˜ì • 
 				UPDATE TB_YM_EQUIP
 				   SET MODIFIER   = :V_MODIFIER
 				      ,MOD_DDTT   = SYSDATE
@@ -3665,12 +3665,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
  
 			/**********************************************************
-			* 3-1. ´ëÂ÷ÇÏÂ÷ÀÛ¾÷ ÆÇ´Ü
-			*      - ´ëÂ÷ ÇÏÂ÷ ÀÛ¾÷ ÀÏ °æ¿ì ÇÏ´Ü¿¡¼­ Äõ¸® º¯°æ
-			*      - ´ëÂ÷ ÇÏÂ÷ ÀÛ¾÷Àº ÀÛ¾÷¿¹¾àID+Å©·¹ÀÎ½ºÄÉÁÙID·Î Á¶È¸
-			*        Å©·¹ÀÎ ½ºÄÉÁÙID º¸´Ù Å©°Å³ª °°Àº ´ë»ó¸¸ Ãë¼ÒÃ³¸®
+			* 3-1. ëŒ€ì°¨í•˜ì°¨ì‘ì—… íŒë‹¨
+			*      - ëŒ€ì°¨ í•˜ì°¨ ì‘ì—… ì¼ ê²½ìš° í•˜ë‹¨ì—ì„œ ì¿¼ë¦¬ ë³€ê²½
+			*      - ëŒ€ì°¨ í•˜ì°¨ ì‘ì—…ì€ ì‘ì—…ì˜ˆì•½ID+í¬ë ˆì¸ìŠ¤ì¼€ì¤„IDë¡œ ì¡°íšŒ
+			*        í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ID ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì€ ëŒ€ìƒë§Œ ì·¨ì†Œì²˜ë¦¬
 			**********************************************************/
-			String sIS_TC_LM = "N"; //´ëÂ÷ ÇÏÂ÷ ÀÛ¾÷ FLAG (´ëÂ÷ÇÏÂ÷ ÀÛ¾÷ÀÌ¸é 'Y')
+			String sIS_TC_LM = "N"; //ëŒ€ì°¨ í•˜ì°¨ ì‘ì—… FLAG (ëŒ€ì°¨í•˜ì°¨ ì‘ì—…ì´ë©´ 'Y')
 			
 			if(sYD_SCH_CD.length() == 8) {
 				if("TC".equals(sYD_SCH_CD.substring(2, 4)) && "LM".equals(sYD_SCH_CD.substring(6, 8))) {
@@ -3679,10 +3679,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			* 3-2. ±Ç»ó, ±ÇÇÏÀ§Ä¡ ¿øº¹ - ÀûÄ¡´Ü, ÀûÄ¡Bed
+			* 3-2. ê¶Œìƒ, ê¶Œí•˜ìœ„ì¹˜ ì›ë³µ - ì ì¹˜ë‹¨, ì ì¹˜Bed
 			**********************************************************/
-			commUtils.printLog(logId, "¡Û¡Û¡Û ±Ç»ó, ±ÇÇÏÀ§Ä¡ ¿øº¹", "[info]");
-			//ÀûÄ¡´Ü ¼öÁ¤ - ±Ç»óÀ§Ä¡(U -> C), ±ÇÇÏÀ§Ä¡(D -> E)
+			commUtils.printLog(logId, "â—‹â—‹â—‹ ê¶Œìƒ, ê¶Œí•˜ìœ„ì¹˜ ì›ë³µ", "[info]");
+			//ì ì¹˜ë‹¨ ìˆ˜ì • - ê¶Œìƒìœ„ì¹˜(U -> C), ê¶Œí•˜ìœ„ì¹˜(D -> E)
 			//commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updCrnWrkMgtSCStkLyr", logId, methodNm, "TB_YM_STACKLAYER");
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMgtSCStkLyr
 			WITH CSM AS ( 
@@ -3718,31 +3718,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			     , MAX(STOCK_ID        ) AS STOCK_ID
 			     , MIN(STACK_LAYER_STAT) AS STACK_LAYER_STAT
 			  FROM (
-			        --¿ø·¡À§Ä¡
+			        --ì›ë˜ìœ„ì¹˜
 			        SELECT SL.STACK_COL_GP
 			             , SL.STACK_BED_GP
 			             , SL.STACK_LAYER_GP
 			             , SL.STOCK_ID
-			             , 'C' AS STACK_LAYER_STAT --ÀûÄ¡Áß
+			             , 'C' AS STACK_LAYER_STAT --ì ì¹˜ì¤‘
 			          FROM TB_YM_STACKLAYER SL
 			             , CSM
 			         WHERE SL.STOCK_ID     = CSM.STOCK_ID
 			           AND SL.STACK_COL_GP = CSM.STACK_COL_GP_UP
-			           AND SL.STACK_LAYER_STAT = 'U' --±Ç»ó´ë±â
+			           AND SL.STACK_LAYER_STAT = 'U' --ê¶ŒìƒëŒ€ê¸°
 			--           AND CSM.RNUM = '1'
 			         UNION ALL 
-			        --±ÇÇÏÁö½ÃÀ§Ä¡
+			        --ê¶Œí•˜ì§€ì‹œìœ„ì¹˜
 			        SELECT SL.STACK_COL_GP
 			             , SL.STACK_BED_GP
 			             , SL.STACK_LAYER_GP
 			             , NULL AS STOCK_ID
-			             , 'E'  AS STACK_LAYER_STAT --ÀûÄ¡°¡´É
+			             , 'E'  AS STACK_LAYER_STAT --ì ì¹˜ê°€ëŠ¥
 			          FROM TB_YM_STACKLAYER SL
 			             , CSM
 			         WHERE SL.STOCK_ID     = CSM.STOCK_ID 
 			           AND SL.STACK_COL_GP = CSM.STACK_COL_GP_DN
 			           AND SL.STACK_BED_GP = CSM.STACK_BED_GP_DN
-			--           AND SL.STACK_LAYER_STAT = 'D' --±ÇÇÏ´ë±â
+			--           AND SL.STACK_LAYER_STAT = 'D' --ê¶Œí•˜ëŒ€ê¸°
 			--           AND CSM.RNUM = '1'
 			       )
 			 GROUP BY STACK_COL_GP, STACK_BED_GP, STACK_LAYER_GP
@@ -3752,7 +3752,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			if ("Y".equals(sIS_TC_LM)) {
 				sQueryId = "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getCrnWrkMgtSCStkLyrMtl";
 			}
-			JDTORecordSet rsResult = commDao.select(jrParam, sQueryId, logId, methodNm, "TB_YM_STACKLAYER ¡Û¡Û¡Û ±Ç»ó, ±ÇÇÏÀ§Ä¡ ¿øº¹ ´ë»ó Á¶È¸");
+			JDTORecordSet rsResult = commDao.select(jrParam, sQueryId, logId, methodNm, "TB_YM_STACKLAYER â—‹â—‹â—‹ ê¶Œìƒ, ê¶Œí•˜ìœ„ì¹˜ ì›ë³µ ëŒ€ìƒ ì¡°íšŒ");
 			
 			for (int i = 0; i < rsResult.size(); ++i) {
 				
@@ -3772,14 +3772,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STACK_BED_GP   = :V_STACK_BED_GP
 				   AND STACK_LAYER_GP = :V_STACK_LAYER_GP 
 				 */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "ÀûÄ¡´Ü ¼öÁ¤ - ±Ç»óÀ§Ä¡(U -> C), ±ÇÇÏÀ§Ä¡(D -> E)");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdStkLyrYdStkColBedGp", logId, methodNm, "ì ì¹˜ë‹¨ ìˆ˜ì • - ê¶Œìƒìœ„ì¹˜(U -> C), ê¶Œí•˜ìœ„ì¹˜(D -> E)");
 			}
 			
 			/**********************************************************
-			* 4. Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦
+			* 4. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			**********************************************************/
-			commUtils.printLog(logId, "¡Û¡Û¡Û Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦", "[info]");
-			/*Å©·¹ÀÎÀÛ¾÷Àç·á »èÁ¦
+			commUtils.printLog(logId, "â—‹â—‹â—‹ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ", "[info]");
+			/*í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì‚­ì œ
 			UPDATE TB_YM_CRNWRKMTL
 			   SET MODIFIER = :V_MODIFIER
 			      ,MOD_DDTT = SYSDATE
@@ -3803,9 +3803,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				sQueryId = "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCrnWrkMgtSCCrnMtlUnitMtl";
 			}
-			commDao.update(jrParam, sQueryId, logId, methodNm, "TB_YM_CRNWRKMTL - Å©·¹ÀÎÀÛ¾÷Àç·á »èÁ¦");				
+			commDao.update(jrParam, sQueryId, logId, methodNm, "TB_YM_CRNWRKMTL - í¬ë ˆì¸ì‘ì—…ì¬ë£Œ ì‚­ì œ");				
 			
-			/*Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦
+			/*í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			UPDATE TB_YM_CRNSCH
 			   SET MODIFIER = :V_MODIFIER
 			      ,MOD_DDTT = SYSDATE
@@ -3827,17 +3827,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				sQueryId = "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCrnWrkMgtSCCrnSchUnitMtl";
 			}
-			commDao.update(jrParam, sQueryId, logId, methodNm, "TB_YM_CRNSCH - Å©·¹ÀÎ½ºÄÉÁÙ »èÁ¦");				
+			commDao.update(jrParam, sQueryId, logId, methodNm, "TB_YM_CRNSCH - í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì‚­ì œ");				
 			
 			
 			/**********************************************************
-			* ÀÌ¼ÛÇÏÂ÷ÀÏ °æ¿ì ÀÛ¾÷¿¹¾à »èÁ¦
+			* ì´ì†¡í•˜ì°¨ì¼ ê²½ìš° ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 			**********************************************************/
 			
 			if ("PT02LM".equals(sYD_SCH_CD.substring(2, 8)) && !"E100".equals(sCNCL_BY_WHO)){
 				
-				commUtils.printLog(logId, "¡Û¡Û¡Û ÀÌ¼ÛÇÏÂ÷ÀÏ °æ¿ì ÀÛ¾÷¿¹¾à Ãë¼Ò START ¡Û¡Û¡Û"+sYD_SCH_CD, "[info]");
-				//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+				commUtils.printLog(logId, "â—‹â—‹â—‹ ì´ì†¡í•˜ì°¨ì¼ ê²½ìš° ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ START â—‹â—‹â—‹"+sYD_SCH_CD, "[info]");
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 				/*
 				UPDATE TB_YM_WRKBOOKMTL
 				   SET MODIFIER    = :V_MODIFIER
@@ -3849,7 +3849,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("sYD_WBOOK_ID", sYD_WBOOK_ID);
 				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");				
 
-				//ÀÛ¾÷¿¹¾à »èÁ¦
+				//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 				/*
 				UPDATE TB_YM_WRKBOOK
 				   SET MODIFIER    = :V_MODIFIER
@@ -3860,10 +3860,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBook", logId, methodNm, "TB_YM_WRKBOOK");
 				
-				commUtils.printLog(logId, "¡Û¡Û¡Û ÀÌ¼ÛÇÏÂ÷ÀÏ °æ¿ì ÀÛ¾÷¿¹¾à Ãë¼Ò END ¡Û¡Û¡Û"+sYD_SCH_CD, "[info]");
+				commUtils.printLog(logId, "â—‹â—‹â—‹ ì´ì†¡í•˜ì°¨ì¼ ê²½ìš° ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ END â—‹â—‹â—‹"+sYD_SCH_CD, "[info]");
 				
 			}else{
-				commUtils.printLog(logId, "¡Û¡Û¡Û Grouping´ë»ó ÀÛ¾÷¿¹¾à Ãë¼Ò START ¡Û¡Û¡Û"+sYD_WBOOK_ID, "[info]");
+				commUtils.printLog(logId, "â—‹â—‹â—‹ GroupingëŒ€ìƒ ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ START â—‹â—‹â—‹"+sYD_WBOOK_ID, "[info]");
 				/*com.inisteel.cim.ym.bslab.dao.BSlabDAO.getGrpSlabWrkBookMtl
 				SELECT A.YD_WBOOK_ID
 				      ,A.YD_GP
@@ -3894,7 +3894,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				WHERE  A.YD_WBOOK_ID = B.YD_WBOOK_ID
 				  AND  A.YD_WBOOK_ID = :V_YD_WBOOK_ID
 				 */
-				JDTORecordSet rsGrpResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getGrpSlabWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOK ÀÛ¾÷Ãë¼Ò ´ë»óÀç Á¶È¸");
+				JDTORecordSet rsGrpResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getGrpSlabWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOK ì‘ì—…ì·¨ì†Œ ëŒ€ìƒì¬ ì¡°íšŒ");
 				
 				for (int i = 0; i < rsGrpResult.size(); ++i) {
 					
@@ -3904,7 +3904,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("STOCK_ID"		, rsGrpResult.getRecord(i).getFieldString("STOCK_ID"));
 						jrParam.setField("OLD_WBOOK_ID"	, rsGrpResult.getRecord(i).getFieldString("YD_TAKE_OUT_CD"));
 						
-						//grouping ÀÛ¾÷¿¹¾à º¹±¸
+						//grouping ì‘ì—…ì˜ˆì•½ ë³µêµ¬
 						/*com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBook
 						UPDATE TB_YM_WRKBOOK
 						   SET MODIFIER    = :V_MODIFIER
@@ -3914,9 +3914,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						 WHERE YD_WBOOK_ID = :V_OLD_WBOOK_ID
 						   AND DEL_YN      = 'Y'
 						 */
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBook", logId, methodNm, "Grouping TB_YM_WRKBOOK º¹±¸");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBook", logId, methodNm, "Grouping TB_YM_WRKBOOK ë³µêµ¬");
 
-						//grouping ÀÛ¾÷¿¹¾àÀç·á º¹±¸
+						//grouping ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë³µêµ¬
 						/*com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBookMtl
 						UPDATE TB_YM_WRKBOOKMTL
 						   SET MODIFIER    = :V_MODIFIER
@@ -3926,19 +3926,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND STOCK_ID    = :V_STOCK_ID
 						   AND DEL_YN      = 'Y'
 						 */
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOKMtl º¹±¸");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updGrpCnclYnWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOKMtl ë³µêµ¬");
 						
-						//grouping ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+						//grouping ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 						/*com.inisteel.cim.ym.bslab.dao.BSlabDAO.delGrpCnclYnWrkBookMtl
 						DELETE TB_YM_WRKBOOKMTL
 						 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 						   AND STOCK_ID = :V_STOCK_ID
 						 */
-						commDao.delete(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.delGrpCnclYnWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOKMTL »èÁ¦");
+						commDao.delete(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.delGrpCnclYnWrkBookMtl", logId, methodNm, "Grouping TB_YM_WRKBOOKMTL ì‚­ì œ");
 					}
 					
 				}
-				commUtils.printLog(logId, "¡Û¡Û¡Û Grouping´ë»ó ÀÛ¾÷¿¹¾à Ãë¼Ò END ¡Û¡Û¡Û"+sYD_WBOOK_ID, "[info]");
+				commUtils.printLog(logId, "â—‹â—‹â—‹ GroupingëŒ€ìƒ ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ END â—‹â—‹â—‹"+sYD_WBOOK_ID, "[info]");
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -3953,15 +3953,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updSlabMvStkWrkBook(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï[BSalbJspSeEJB.updSlabMvStkWrkBook] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡[BSalbJspSeEJB.updSlabMvStkWrkBook] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -3969,77 +3969,77 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			//Return Value
 			JDTORecord jrRtn = null;
-			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//Å©·¹ÀÎ½ºÄÉÁÙ Á¤¸®¸¦ À§ÇÔ
+			JDTORecordSet jsMsg = JDTORecordFactory.getInstance().createRecordSet("");	//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë¦¬ë¥¼ ìœ„í•¨
 
-			String sYD_GP        = commUtils.trim(gdReq.getParam("YD_GP"           )); //¾ßµå±¸ºĞ
-			String stlNos        = commUtils.trim(gdReq.getParam("ARR_STOCK_ID"    )); //Àç·á¹øÈ£µé
-			String sSTACK_COL_GP = commUtils.trim(gdReq.getParam("STACK_COL_GP"    )); //¾ßµåÀûÄ¡¿­±¸ºĞ(4ÀÚ¸® ÀÌ»ó)
-			String ydToLocGuide  = commUtils.trim(gdReq.getParam("YD_TO_LOC_GUIDE" )); //¾ßµåToÀ§Ä¡Guide
-			String ydWrkPlanTcar = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_TCAR")); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			String ydWrkPlanCrn  = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_CRN" )); //¾ßµåÁöÁ¤Å©·¹ÀÎ
-			String ydWrkPlanCrn2 = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_CRN2")); //¾ßµåÁöÁ¤Å©·¹ÀÎ(¸ÖÆ¼Å©·¹ÀÎÀÏ °æ¿ì »ç¿ë)
-			String sCHARGE_LOT_NO_DIV_YN = commUtils.trim(gdReq.getParam("CHARGE_LOT_NO_DIV_YN")); //ÀåÀÔ¼ø¹ø ºĞ¸®¿©ºÎ
+			String sYD_GP        = commUtils.trim(gdReq.getParam("YD_GP"           )); //ì•¼ë“œêµ¬ë¶„
+			String stlNos        = commUtils.trim(gdReq.getParam("ARR_STOCK_ID"    )); //ì¬ë£Œë²ˆí˜¸ë“¤
+			String sSTACK_COL_GP = commUtils.trim(gdReq.getParam("STACK_COL_GP"    )); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(4ìë¦¬ ì´ìƒ)
+			String ydToLocGuide  = commUtils.trim(gdReq.getParam("YD_TO_LOC_GUIDE" )); //ì•¼ë“œToìœ„ì¹˜Guide
+			String ydWrkPlanTcar = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_TCAR")); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			String ydWrkPlanCrn  = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_CRN" )); //ì•¼ë“œì§€ì •í¬ë ˆì¸
+			String ydWrkPlanCrn2 = commUtils.trim(gdReq.getParam("YD_WRK_PLAN_CRN2")); //ì•¼ë“œì§€ì •í¬ë ˆì¸(ë©€í‹°í¬ë ˆì¸ì¼ ê²½ìš° ì‚¬ìš©)
+			String sCHARGE_LOT_NO_DIV_YN = commUtils.trim(gdReq.getParam("CHARGE_LOT_NO_DIV_YN")); //ì¥ì…ìˆœë²ˆ ë¶„ë¦¬ì—¬ë¶€
 			
 			
 			String sTO_YD_BAY_GP = "";
 			String sTO_SECT_GP   = "";  
 			
 			if (sSTACK_COL_GP.length() < 4) {
-				//È¤½Ã ÀÌÀû ÀûÄ¡¿­±¸ºĞ °ªÀÌ Àß¸øµÇ¾î ÀÖÀ¸¸é ¹«Á¶°Ç 01 Span À¸·Î Ã³¸®
+				//í˜¹ì‹œ ì´ì  ì ì¹˜ì—´êµ¬ë¶„ ê°’ì´ ì˜ëª»ë˜ì–´ ìˆìœ¼ë©´ ë¬´ì¡°ê±´ 01 Span ìœ¼ë¡œ ì²˜ë¦¬
 				sSTACK_COL_GP = sSTACK_COL_GP.substring(0, 2) + "01";
 			} else if (sSTACK_COL_GP.length() > 6) {
 				sSTACK_COL_GP = sSTACK_COL_GP.substring(0, 6);
 			}
 
 			if ("".equals(stlNos)) {
-				throw new Exception("ÀÌÀû Àç·á¹øÈ£°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì´ì  ì¬ë£Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(sSTACK_COL_GP) || sSTACK_COL_GP.length() < 4) {
-				throw new Exception("Span[" + sSTACK_COL_GP + "] Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("Span[" + sSTACK_COL_GP + "] ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} 
 //			else if ("".equals(ydWrkPlanCrn)) {
-//				throw new Exception("ÁöÁ¤µÈ Å©·¹ÀÎÀÌ ¾ø½À´Ï´Ù.");
+//				throw new Exception("ì§€ì •ëœ í¬ë ˆì¸ì´ ì—†ìŠµë‹ˆë‹¤.");
 //			}
 			
-			//Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡BED Á¶È¸ TB_YM_RULE : YM2021
+			//í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜BED ì¡°íšŒ TB_YM_RULE : YM2021
 			int gRowCnt = gdReq.getHeader("CHECK").getRowCount();
 			for (int ii = 0; ii < gRowCnt; ii++) {
-				String sSTACK_COL_BED_GP 		= commUtils.getValue(gdReq, "YM_STR_LOC"         , ii).substring(0, 8);//¾ßµåÀûÄ¡¿­BED±¸ºĞ(8ÀÚ¸®)
+				String sSTACK_COL_BED_GP 		= commUtils.getValue(gdReq, "YM_STR_LOC"         , ii).substring(0, 8);//ì•¼ë“œì ì¹˜ì—´BEDêµ¬ë¶„(8ìë¦¬)
 			
 				JDTORecord jrYmParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-				jrYmParam.setField("YD_EQP_ID"       , ydWrkPlanCrn); //Å©·¹ÀÎÁ¤º¸
-				jrYmParam.setField("STACK_COL_BED_GP", sSTACK_COL_BED_GP); //ÀûÄ¡À§Ä¡
-				JDTORecordSet ym2021Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2021Crn", logId, methodNm, "SLAB Å©·¹ÀÎÀÛ¾÷ºÒ°¡ ÀûÄ¡±İÁö BED Á¶°ÇÁ¶È¸");
+				jrYmParam.setField("YD_EQP_ID"       , ydWrkPlanCrn); //í¬ë ˆì¸ì •ë³´
+				jrYmParam.setField("STACK_COL_BED_GP", sSTACK_COL_BED_GP); //ì ì¹˜ìœ„ì¹˜
+				JDTORecordSet ym2021Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2021Crn", logId, methodNm, "SLAB í¬ë ˆì¸ì‘ì—…ë¶ˆê°€ ì ì¹˜ê¸ˆì§€ BED ì¡°ê±´ì¡°íšŒ");
 				
 				if (ym2021Rule.size() > 0) {
-					throw new Exception("ÀÌÀû´ë»óÀçÀÇ À§Ä¡°¡ ["+ydWrkPlanCrn.substring(4, 6)+"]Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡BED¿¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ì´ì ëŒ€ìƒì¬ì˜ ìœ„ì¹˜ê°€ ["+ydWrkPlanCrn.substring(4, 6)+"]í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜BEDì— ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				}
 				
-				jrYmParam.setField("STACK_COL_GP", sSTACK_COL_GP); //ÀûÄ¡À§Ä¡
-				JDTORecordSet ym2010Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2010Crn", logId, methodNm, "SLAB Å©·¹ÀÎÀÛ¾÷ºÒ°¡ ÀûÄ¡¿­±İÁö Á¶°ÇÁ¶È¸");
+				jrYmParam.setField("STACK_COL_GP", sSTACK_COL_GP); //ì ì¹˜ìœ„ì¹˜
+				JDTORecordSet ym2010Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2010Crn", logId, methodNm, "SLAB í¬ë ˆì¸ì‘ì—…ë¶ˆê°€ ì ì¹˜ì—´ê¸ˆì§€ ì¡°ê±´ì¡°íšŒ");
 				
 				if (ym2010Rule.size() > 0) {
-					throw new Exception("ÀÌÀû´ë»óÀçÀÇ À§Ä¡°¡ ["+ydWrkPlanCrn.substring(4, 6)+"]Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡¿­¿¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+					throw new Exception("ì´ì ëŒ€ìƒì¬ì˜ ìœ„ì¹˜ê°€ ["+ydWrkPlanCrn.substring(4, 6)+"]í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜ì—´ì— ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 				}
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			JDTORecordSet rsResult = null;
 			
 			/**********************************************************
-			* 1. ½ºÄÉÁÙÄÚµå ¼³Á¤
+			* 1. ìŠ¤ì¼€ì¤„ì½”ë“œ ì„¤ì •
 			**********************************************************/
-			String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
-			String ydBayGp    = sSTACK_COL_GP.substring(1, 2); //¾ßµåµ¿±¸ºĞ
-			String ydAimBayGp = ""; //¾ßµå¸ñÇ¥µ¿±¸ºĞ
+			String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydBayGp    = sSTACK_COL_GP.substring(1, 2); //ì•¼ë“œë™êµ¬ë¶„
+			String ydAimBayGp = ""; //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
 
 			if ("".equals(ydToLocGuide)) {
-				//À§Ä¡°Ë»öBed±âÁØ Àû¿ë
+				//ìœ„ì¹˜ê²€ìƒ‰Bedê¸°ì¤€ ì ìš©
 				ydAimBayGp = sSTACK_COL_GP.substring(1, 2);
 			} else {
-				//ToÀ§Ä¡ÁöÁ¤
+				//Toìœ„ì¹˜ì§€ì •
 				ydAimBayGp = ydToLocGuide.substring(1, 2);
-				//ToÀ§Ä¡°¡ µ¿±îÁö¸¸ ÀÖÀ¸¸é À§Ä¡°Ë»öBed ±âÁØ Àû¿ë
+				//Toìœ„ì¹˜ê°€ ë™ê¹Œì§€ë§Œ ìˆìœ¼ë©´ ìœ„ì¹˜ê²€ìƒ‰Bed ê¸°ì¤€ ì ìš©
 				if (ydToLocGuide.length() < 4) {
 					ydToLocGuide = "";
 				} else {
@@ -4048,13 +4048,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 			}
 
-			//½ºÄÉÁìÄÚµå
+			//ìŠ¤ì¼€ì¥´ì½”ë“œ
 			String sCraneNo = ydWrkPlanCrn.substring(5, 6);
 			
 			if (ydBayGp.equals(ydAimBayGp)) {  
 				
-				//µ¿³»ÀÌÀû
-				if (!"".equals(ydWrkPlanCrn)) { //ÁöÁ¤Å©·¹ÀÎ À¯¹«
+				//ë™ë‚´ì´ì 
+				if (!"".equals(ydWrkPlanCrn)) { //ì§€ì •í¬ë ˆì¸ ìœ ë¬´
 					ydSchCd = sSTACK_COL_GP.substring(0, 2) + "YD" + sCraneNo + "1MM";	
 				} else {
 					ydSchCd = sSTACK_COL_GP.substring(0, 2) + "YD11MM";
@@ -4065,11 +4065,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			} else {
 				
 				if ("".equals(ydWrkPlanTcar)) {
-					throw new Exception("ToÀ§Ä¡ÁöÁ¤ µ¿°£ÀÌÀû ´ëÂ÷ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("Toìœ„ì¹˜ì§€ì • ë™ê°„ì´ì  ëŒ€ì°¨ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 				
-				//µ¿°£ÀÌÀû
-				if (!"".equals(ydWrkPlanCrn)) { //ÁöÁ¤Å©·¹ÀÎ À¯¹«
+				//ë™ê°„ì´ì 
+				if (!"".equals(ydWrkPlanCrn)) { //ì§€ì •í¬ë ˆì¸ ìœ ë¬´
 					if ("1".equals(ydWrkPlanCrn.substring(5, 6))) {
 						ydSchCd = sSTACK_COL_GP.substring(0, 2) + "TC11UM";
 					} else if ("2".equals(ydWrkPlanCrn.substring(5, 6))) {
@@ -4085,28 +4085,28 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			} 
 			
 			/**********************************************************
-			 * 2. µ¿°£ÀÌÀûÀÏ °æ¿ì ´ëÂ÷±âÁØ º¯°æ ¹× ´ëÂ÷½ºÄÉÁÙ ¼öÁ¤
+			 * 2. ë™ê°„ì´ì ì¼ ê²½ìš° ëŒ€ì°¨ê¸°ì¤€ ë³€ê²½ ë° ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìˆ˜ì •
 			 **********************************************************/
 			if (!ydBayGp.equals(ydAimBayGp)) {  
 				
-				jrParam.setField("EQUIP_GP"        , ydWrkPlanTcar); //´ëÂ÷¹øÈ£
-				jrParam.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //´ëÂ÷¹øÈ£
+				jrParam.setField("EQUIP_GP"        , ydWrkPlanTcar); //ëŒ€ì°¨ë²ˆí˜¸
+				jrParam.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //ëŒ€ì°¨ë²ˆí˜¸
 				JDTORecordSet equipInfo = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectEquipInfo");
 				
 				if (equipInfo.size() <= 0) {
-					throw new Exception("ÁöÁ¤µÈ ´ëÂ÷¼³ºñ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+					throw new Exception("ì§€ì •ëœ ëŒ€ì°¨ì„¤ë¹„ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				} 
 				
-				String sL_BAY              = commUtils.trim(equipInfo.getRecord(0).getFieldString("L_BAY"             )); //»óÂ÷µ¿
-				String sU_BAY              = commUtils.trim(equipInfo.getRecord(0).getFieldString("U_BAY"             )); //ÇÏÂ÷µ¿
-				String sWPROG_STAT         = commUtils.trim(equipInfo.getRecord(0).getFieldString("WPROG_STAT"        )); //ÀÛ¾÷ÁøÇà»óÅÂ
-				String sCURR_STOP_LOC      = commUtils.trim(equipInfo.getRecord(0).getFieldString("CURR_STOP_LOC"     )); //ÇöÀç Á¤Áö À§Ä¡  
-				String sCARLOAD_STOP_LOC   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARLOAD_STOP_LO"   )); //»óÂ÷ Á¤Áö À§Ä¡  
-				String sCARUNLOAD_STOP_LOC = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARUNLOAD_STOP_LOC")); //ÇÏÂ÷ Á¤Áö À§Ä¡  
-				String sCARLD_SCH_CD	   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARLD_SCH_CD"	  )); //»óÂ÷½ºÄÉÁÙÄÚµå
-				String sCARUD_SCH_CD	   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARUD_SCH_CD"	  )); //ÇÏÂ÷½ºÄÉÁÙÄÚµå
+				String sL_BAY              = commUtils.trim(equipInfo.getRecord(0).getFieldString("L_BAY"             )); //ìƒì°¨ë™
+				String sU_BAY              = commUtils.trim(equipInfo.getRecord(0).getFieldString("U_BAY"             )); //í•˜ì°¨ë™
+				String sWPROG_STAT         = commUtils.trim(equipInfo.getRecord(0).getFieldString("WPROG_STAT"        )); //ì‘ì—…ì§„í–‰ìƒíƒœ
+				String sCURR_STOP_LOC      = commUtils.trim(equipInfo.getRecord(0).getFieldString("CURR_STOP_LOC"     )); //í˜„ì¬ ì •ì§€ ìœ„ì¹˜  
+				String sCARLOAD_STOP_LOC   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARLOAD_STOP_LO"   )); //ìƒì°¨ ì •ì§€ ìœ„ì¹˜  
+				String sCARUNLOAD_STOP_LOC = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARUNLOAD_STOP_LOC")); //í•˜ì°¨ ì •ì§€ ìœ„ì¹˜  
+				String sCARLD_SCH_CD	   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARLD_SCH_CD"	  )); //ìƒì°¨ìŠ¤ì¼€ì¤„ì½”ë“œ
+				String sCARUD_SCH_CD	   = commUtils.trim(equipInfo.getRecord(0).getFieldString("CARUD_SCH_CD"	  )); //í•˜ì°¨ìŠ¤ì¼€ì¤„ì½”ë“œ
 				
-				String sCURR_BAY = sCURR_STOP_LOC.substring(1, 2); //´ëÂ÷ÇöÀçÀ§Ä¡µ¿
+				String sCURR_BAY = sCURR_STOP_LOC.substring(1, 2); //ëŒ€ì°¨í˜„ì¬ìœ„ì¹˜ë™
 				
 				/*
 				SELECT COUNT(*) AS WRK_CNT
@@ -4115,7 +4115,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND DEL_YN = 'N'
 				   AND YD_WRK_PLAN_TCAR = :V_YD_WRK_PLAN_TCAR
 				 */
-				JDTORecordSet jrWbCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookCntByTcar", logId, methodNm, "´ëÂ÷º° ÀÛ¾÷¿¹¾à °³¼ö");
+				JDTORecordSet jrWbCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookCntByTcar", logId, methodNm, "ëŒ€ì°¨ë³„ ì‘ì—…ì˜ˆì•½ ê°œìˆ˜");
 				
 				int nWRK_CNT = 99;
 				if (jrWbCnt.size() > 0) {
@@ -4125,9 +4125,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				if (nWRK_CNT == 0) {
 					
 					if(!sCARLD_SCH_CD.equals(sCARUD_SCH_CD)) {
-						//»óÂ÷½ºÄÉÁÙ°ú ÇÏÂ÷½ºÄÉÁÙÀÌ ´Ù¸¦ °æ¿ì¸¸
+						//ìƒì°¨ìŠ¤ì¼€ì¤„ê³¼ í•˜ì°¨ìŠ¤ì¼€ì¤„ì´ ë‹¤ë¥¼ ê²½ìš°ë§Œ
 						
-						//ÇØ´ç ´ëÂ÷ÀÇ ÀÛ¾÷ÀÌ Á¸Àç ÇÏÁö ¾ÊÀ» °æ¿ì ´ëÂ÷±âÁØ »óÇÏÂ÷µ¿ ¼öÁ¤ 
+						//í•´ë‹¹ ëŒ€ì°¨ì˜ ì‘ì—…ì´ ì¡´ì¬ í•˜ì§€ ì•Šì„ ê²½ìš° ëŒ€ì°¨ê¸°ì¤€ ìƒí•˜ì°¨ë™ ìˆ˜ì • 
 						/*
 						UPDATE TB_YM_EQUIP
 						   SET MODIFIER          = :V_MODIFIER
@@ -4149,12 +4149,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						 WHERE YD_GP = '2'
 						   AND EQUIP_GP = :V_EQUIP_GP
 						 */
-						jrParam.setField("CARLOAD_STOP_LOC"  , ydBayGp); // »óÂ÷µ¿
-						jrParam.setField("CARUNLOAD_STOP_LOC", ydAimBayGp); // ÇÏÂ÷µ¿
+						jrParam.setField("CARLOAD_STOP_LOC"  , ydBayGp); // ìƒì°¨ë™
+						jrParam.setField("CARUNLOAD_STOP_LOC", ydAimBayGp); // í•˜ì°¨ë™
 						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updTcarInfo");
 					}
 					
-					//´ëÂ÷°¡ ÇöÀçµ¿¿¡ ÀÖÀ¸¸é ´ëÂ÷½ºÄÉÁÙ »ó/ÇÏÂ÷À§Ä¡ ¼öÁ¤
+					//ëŒ€ì°¨ê°€ í˜„ì¬ë™ì— ìˆìœ¼ë©´ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìƒ/í•˜ì°¨ìœ„ì¹˜ ìˆ˜ì •
 					if (ydBayGp.equals(sCURR_BAY)) {
 						/*
 						UPDATE TB_YM_TCARSCH
@@ -4179,26 +4179,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						 */
 						jrParam.setField("YD_CARLD_STOP_LOC", ydBayGp); //
 						jrParam.setField("YD_CARUD_STOP_LOC", ydAimBayGp); //
-						jrParam.setField("YD_EQP_ID"        , ydWrkPlanTcar); //´ëÂ÷¹øÈ£
+						jrParam.setField("YD_EQP_ID"        , ydWrkPlanTcar); //ëŒ€ì°¨ë²ˆí˜¸
 						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updTcarSch");
 					}
 				}
 			}			
 			
 			/**********************************************************
-			* 3. ÀÌÀû ÀÛ¾÷¿¹¾à µî·Ï
+			* 3. ì´ì  ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			**********************************************************/
-			jrParam.setField("ARR_STOCK_ID", stlNos    ); //Àç·á¹øÈ£µé
-			jrParam.setField("STACK_COL_GP", sSTACK_COL_GP); //¾ßµåÀûÄ¡¿­±¸ºĞ
+			jrParam.setField("ARR_STOCK_ID", stlNos    ); //ì¬ë£Œë²ˆí˜¸ë“¤
+			jrParam.setField("STACK_COL_GP", sSTACK_COL_GP); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 			
-			//SLAB ÀÌÀû´ë»óÀç Á¶È¸ ÀåÀÔ¼ø¹ø °íµµÈ­ Àû¿ë¿©ºÎ
+			//SLAB ì´ì ëŒ€ìƒì¬ ì¡°íšŒ ì¥ì…ìˆœë²ˆ ê³ ë„í™” ì ìš©ì—¬ë¶€
 			String sAPP100_Z02_YN = ymComm.BCoilApplyYn("APP100","2","Z02_YN");
 			JDTORecordSet jsWbMtl = null;
 			if("Y".equals(sAPP100_Z02_YN)) {
-				//ÇÑ BED¾È¿¡ ¼­·Î ´Ù¸¥ ÀåÀÔ¹øÈ£°¡ ÀÖÀ»°æ¿ì ÀåÀÔ¼ø¹øÀ» ÇÕÄ£¼øÀ¸·Î Á¤·Ä
-				//ÀÛ¾÷¿¹¾à ´ë»óÀç·á Á¶È¸
+				//í•œ BEDì•ˆì— ì„œë¡œ ë‹¤ë¥¸ ì¥ì…ë²ˆí˜¸ê°€ ìˆì„ê²½ìš° ì¥ì…ìˆœë²ˆì„ í•©ì¹œìˆœìœ¼ë¡œ ì •ë ¬
+				//ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ë£Œ ì¡°íšŒ
 				/*
-				--ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï ÀÌÀûÀç·áÁ¶È¸
+				--ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡ ì´ì ì¬ë£Œì¡°íšŒ
 				SELECT SL.STOCK_ID
 				     , SL.STACK_COL_GP
 				     , SL.STACK_BED_GP
@@ -4209,13 +4209,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				     , SC.SLAB_LEN
 				     , TO_CHAR(SC.SLAB_T)||' X '||TO_CHAR(SC.SLAB_W,'FM9,999') || ' X '||TO_CHAR(SC.SLAB_LEN,'FM99,999') AS MTL_SIZE
 				     , SL.STACK_COL_GP||SL.STACK_BED_GP||'-'||SL.STACK_LAYER_GP AS YM_STR_LOC
-				     , MIN(NVL(CHARGE_LOT_NO, '999999')) OVER(PARTITION BY STACK_COL_GP, STACK_BED_GP) AS MIN_CHARGE_LOT_NO --ÀûÄ¡bedº° ÀåÀÔ¼ø¹ø MIN
-				     , MAX(NVL(CHARGE_LOT_NO, '999999')) OVER(PARTITION BY STACK_COL_GP, STACK_BED_GP) AS MAX_CHARGE_LOT_NO --ÀûÄ¡bedº° ÀåÀÔ¼ø¹ø MAX
+				     , MIN(NVL(CHARGE_LOT_NO, '999999')) OVER(PARTITION BY STACK_COL_GP, STACK_BED_GP) AS MIN_CHARGE_LOT_NO --ì ì¹˜bedë³„ ì¥ì…ìˆœë²ˆ MIN
+				     , MAX(NVL(CHARGE_LOT_NO, '999999')) OVER(PARTITION BY STACK_COL_GP, STACK_BED_GP) AS MAX_CHARGE_LOT_NO --ì ì¹˜bedë³„ ì¥ì…ìˆœë²ˆ MAX
 				  FROM TB_YM_STACKLAYER SL
 				     , TB_YM_STOCK      ST
 				     ,(SELECT REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) AS STOCK_ID
 				         FROM (SELECT :V_ARR_STOCK_ID AS SSTL_NOS FROM DUAL)
-				      CONNECT BY REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) IS NOT NULL) SN  -- ÀÔ·Â ¹è¿­
+				      CONNECT BY REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) IS NOT NULL) SN  -- ì…ë ¥ ë°°ì—´
 				     , VW_YD_SLABCOMM   SC
 				 WHERE SL.STOCK_ID = SN.STOCK_ID
 				   AND SL.STOCK_ID = ST.STOCK_ID
@@ -4230,14 +4230,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				                              AND WB.YD_WBOOK_ID = WM.YD_WBOOK_ID
 				                              AND WB.YD_GP       = '2'
 				                          )
-				 ORDER BY MIN_CHARGE_LOT_NO||MAX_CHARGE_LOT_NO DESC --µ¿ÀÏBED ÀåÀÔ¼ø¹ø MIN,MAX ¿ª¼øÀ¸·Î Á¤·Ä
+				 ORDER BY MIN_CHARGE_LOT_NO||MAX_CHARGE_LOT_NO DESC --ë™ì¼BED ì¥ì…ìˆœë²ˆ MIN,MAX ì—­ìˆœìœ¼ë¡œ ì •ë ¬
 				        , SL.STACK_COL_GP
 				        , SL.STACK_BED_GP
 				        , SL.STACK_LAYER_GP DESC
 				 */
-				jsWbMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMvStkWrkBookMtlNew", logId, methodNm, "Àç·á¹øÈ£·Î Á¶È¸");
+				jsWbMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMvStkWrkBookMtlNew", logId, methodNm, "ì¬ë£Œë²ˆí˜¸ë¡œ ì¡°íšŒ");
 			}else{
-				//ÀÛ¾÷¿¹¾à ´ë»óÀç·á Á¶È¸
+				//ì‘ì—…ì˜ˆì•½ ëŒ€ìƒì¬ë£Œ ì¡°íšŒ
 				/*
 				SELECT SL.STOCK_ID
 				     , SL.STACK_COL_GP
@@ -4254,7 +4254,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				     , TB_YM_STOCK      ST
 				     ,(SELECT REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) AS STOCK_ID
 				         FROM (SELECT :V_ARR_STOCK_ID AS SSTL_NOS FROM DUAL)
-				      CONNECT BY REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) IS NOT NULL) SN  -- ÀÔ·Â ¹è¿­
+				      CONNECT BY REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) IS NOT NULL) SN  -- ì…ë ¥ ë°°ì—´
 				     , VW_YD_SLABCOMM   SC
 				 WHERE SL.STOCK_ID = SN.STOCK_ID
 				   AND SL.STOCK_ID = ST.STOCK_ID
@@ -4266,56 +4266,56 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				        , SL.STACK_BED_GP
 				        , SL.STACK_LAYER_GP DESC
 				 */
-				jsWbMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMvStkWrkBookMtl", logId, methodNm, "Àç·á¹øÈ£·Î Á¶È¸");
+				jsWbMtl = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getMvStkWrkBookMtl", logId, methodNm, "ì¬ë£Œë²ˆí˜¸ë¡œ ì¡°íšŒ");
 
 			}
 			
 			int rowCnt = jsWbMtl.size();
 
 			if (rowCnt <= 0) {
-				throw new Exception("ÀÌÀû Àç·á Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì´ì  ì¬ë£Œ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			jrParam.setField("YD_SCH_CD"           , ydSchCd              ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("YD_AIM_BAY_GP"       , ydAimBayGp           ); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-			jrParam.setField("YD_TO_LOC_GUIDE"     , ydToLocGuide         ); //¾ßµåToÀ§Ä¡Guide
-			jrParam.setField("YD_WRK_PLAN_TCAR"    , ydWrkPlanTcar        ); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			jrParam.setField("YD_WRK_PLAN_CRN"     , ydWrkPlanCrn         ); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-			jrParam.setField("CHARGE_LOT_NO_DIV_YN", sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹ø ºĞ¸®¿©ºÎ
-			jrParam.setField("YD_WRK_PLAN_CRN2"    , ydWrkPlanCrn2        ); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
+			jrParam.setField("YD_SCH_CD"           , ydSchCd              ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("YD_AIM_BAY_GP"       , ydAimBayGp           ); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+			jrParam.setField("YD_TO_LOC_GUIDE"     , ydToLocGuide         ); //ì•¼ë“œToìœ„ì¹˜Guide
+			jrParam.setField("YD_WRK_PLAN_TCAR"    , ydWrkPlanTcar        ); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			jrParam.setField("YD_WRK_PLAN_CRN"     , ydWrkPlanCrn         ); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+			jrParam.setField("CHARGE_LOT_NO_DIV_YN", sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆ ë¶„ë¦¬ì—¬ë¶€
+			jrParam.setField("YD_WRK_PLAN_CRN2"    , ydWrkPlanCrn2        ); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
 			
-			//ÀÛ¾÷¿¹¾àµî·Ï
+			//ì‘ì—…ì˜ˆì•½ë“±ë¡
 			jsMsg.addRecord(this.insMvstkWrkBook(jrParam, jsWbMtl));
 			
 			/**********************************************************
-			* 4. ´ëÂ÷ÀÛ¾÷ÀÌ ÀÖÀ¸¸é °ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®
+			* 4. ëŒ€ì°¨ì‘ì—…ì´ ìˆìœ¼ë©´ ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬
 			**********************************************************/
 			if (!"".equals(ydWrkPlanTcar)) {
 				
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®½Ã ExceptionÀ» ¹ß»ı½ÃÅ°Áö ¾Ê±âÀ§ÇØ ¹Ì¸® Check
-				String msgTcar = ""; //°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸® ¸Ş¼¼Áö
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬ì‹œ Exceptionì„ ë°œìƒì‹œí‚¤ì§€ ì•Šê¸°ìœ„í•´ ë¯¸ë¦¬ Check
+				String msgTcar = ""; //ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬ ë©”ì„¸ì§€
 			 			
-				//´ëÂ÷½ºÄÉÁìÁ¤º¸(°ø´ëÂ÷Ãâ¹ßÁö½Ã) Á¶È¸
-				jrParam.setField("YD_EQP_ID", ydWrkPlanTcar);	//¾ßµå¼³ºñID(´ëÂ÷)
+				//ëŒ€ì°¨ìŠ¤ì¼€ì¥´ì •ë³´(ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ) ì¡°íšŒ
+				jrParam.setField("YD_EQP_ID", ydWrkPlanTcar);	//ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
 				
 				/*
 				SELECT TS.YD_TCAR_SCH_ID
 				      ,EQ.WPROG_STAT                AS YD_EQP_STAT
 				      ,EQ.WORK_MODE                 AS YD_EQP_WRK_MODE
 				      ,NVL(SUBSTR(CURR_STOP_LOC,2,1),WB.YD_BAY_GP) 
-				                                    AS YD_CURR_BAY_GP --ÀÌµ¿ÁßÀÌ¸é »óÂ÷µ¿À» ÇöÀçµ¿À¸·Î
+				                                    AS YD_CURR_BAY_GP --ì´ë™ì¤‘ì´ë©´ ìƒì°¨ë™ì„ í˜„ì¬ë™ìœ¼ë¡œ
 				      ,SUBSTR(EQ.WAIT_STOP_LOC,2,1) AS YD_HOME_BAY_GP
-				      ,WB.YD_WBOOK_ID               AS YD_WBOOK_ID_CURR   --ÇöÀç ´ëÂ÷½ºÄÉÁÙ »óÂ÷ÀÛ¾÷¿¹¾àID
-				      ,WB.YD_BAY_GP                 AS YD_BAY_GP_CURR     --ÇöÀç ´ëÂ÷½ºÄÉÁÙ »óÂ÷µ¿
-				      ,WB.YD_AIM_BAY_GP             AS YD_AIM_BAY_GP_CURR --ÇöÀç ´ëÂ÷½ºÄÉÁÙ ÇÏÂ÷µ¿
-				      ,XB.YD_WBOOK_ID               AS YD_WBOOK_ID_NEXT   --´ÙÀ½ »óÂ÷ÀÛ¾÷¿¹¾àID
-				      ,XB.YD_BAY_GP                 AS YD_BAY_GP_NEXT     --´ÙÀ½ »óÂ÷µ¿
-				      ,XB.YD_AIM_BAY_GP             AS YD_AIM_BAY_GP_NEXT --´ÙÀ½ ÇÏÂ÷µ¿
+				      ,WB.YD_WBOOK_ID               AS YD_WBOOK_ID_CURR   --í˜„ì¬ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìƒì°¨ì‘ì—…ì˜ˆì•½ID
+				      ,WB.YD_BAY_GP                 AS YD_BAY_GP_CURR     --í˜„ì¬ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ìƒì°¨ë™
+				      ,WB.YD_AIM_BAY_GP             AS YD_AIM_BAY_GP_CURR --í˜„ì¬ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ í•˜ì°¨ë™
+				      ,XB.YD_WBOOK_ID               AS YD_WBOOK_ID_NEXT   --ë‹¤ìŒ ìƒì°¨ì‘ì—…ì˜ˆì•½ID
+				      ,XB.YD_BAY_GP                 AS YD_BAY_GP_NEXT     --ë‹¤ìŒ ìƒì°¨ë™
+				      ,XB.YD_AIM_BAY_GP             AS YD_AIM_BAY_GP_NEXT --ë‹¤ìŒ í•˜ì°¨ë™
 				      ,(SELECT CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END
 				          FROM TB_YM_TCARFTMVMTL TM
 				         WHERE TM.YD_TCAR_SCH_ID = TS.YD_TCAR_SCH_ID
 				           AND TM.DEL_YN = 'N')     AS TC_MTL_YN
-				--      ,NVL(EQ.AUTO_TCAR_SCH_YN,'N') AS AUTO_TCAR_SCH_YN   --ÀÚµ¿´ëÂ÷½ºÄÉÁÙ¿©ºÎ
+				--      ,NVL(EQ.AUTO_TCAR_SCH_YN,'N') AS AUTO_TCAR_SCH_YN   --ìë™ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì—¬ë¶€
 				  FROM TB_YM_EQUIP   EQ
 				      ,TB_YM_TCARSCH TS
 				      ,TB_YM_WRKBOOK WB
@@ -4346,7 +4346,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND 'N'                     = WB.DEL_YN(+)
 				   AND EQ.EQUIP_GP             = :V_YD_EQP_ID
 				 */
-				JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getTcarSchLevWoSlab", logId, methodNm, "°ø´ëÂ÷Ãâ¹ßÁö½Ã Á¶È¸");
+				JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getTcarSchLevWoSlab", logId, methodNm, "ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì¡°íšŒ");
 				
 				if (jsChk != null && jsChk.size() > 0) {
 					JDTORecord jrChk = jsChk.getRecord(0);
@@ -4355,34 +4355,34 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					String ydWbookIdCurr = commUtils.trim(jrChk.getFieldString("YD_WBOOK_ID_CURR"));
 
 					if ("B".equals(commUtils.trim(jrChk.getFieldString("YD_EQP_STAT")))) {
-						msgTcar = "°íÀå";
+						msgTcar = "ê³ ì¥";
 					} else if (!"1".equals(commUtils.trim(jrChk.getFieldString("YD_EQP_WRK_MODE")))) {
 						msgTcar = "Off-Line";
 					} else if ("Y".equals(commUtils.trim(jrChk.getFieldString("TC_MTL_YN")))) {
-						msgTcar = "´ëÂ÷½ºÄÉÁÙ[" + ydTcarSchId + "] ÀÌ¼ÛÀç·á Á¸Àç";
+						msgTcar = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„[" + ydTcarSchId + "] ì´ì†¡ì¬ë£Œ ì¡´ì¬";
 					} else if (!"".equals(ydWbookIdCurr)) {
-						msgTcar = "´ëÂ÷½ºÄÉÁÙ[" + ydTcarSchId + "] »óÂ÷ÀÛ¾÷¿¹¾à[" + ydWbookIdCurr + "] Á¸Àç";
+						msgTcar = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„[" + ydTcarSchId + "] ìƒì°¨ì‘ì—…ì˜ˆì•½[" + ydWbookIdCurr + "] ì¡´ì¬";
 					}
 				} else {
-					msgTcar = "Á¤º¸ ¾øÀ½";
+					msgTcar = "ì •ë³´ ì—†ìŒ";
 			    }
 				
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã Ã³¸®
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ì²˜ë¦¬
 				if ("".equals(msgTcar)) {
-					jrParam.setField("YD_EQP_ID", ydWrkPlanTcar); //¾ßµå¼³ºñID(´ëÂ÷)
-					jrParam.setField("YD_BAY_GP", ydBayGp      ); //¾ßµåµ¿±¸ºĞ(»óÂ÷µ¿)
-					jrParam.setField("OPR_YN"   , "Y"          ); //È­¸é¿¡¼­ ÀÛ¾÷¿¹¾à »ı¼º
+					jrParam.setField("YD_EQP_ID", ydWrkPlanTcar); //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+					jrParam.setField("YD_BAY_GP", ydBayGp      ); //ì•¼ë“œë™êµ¬ë¶„(ìƒì°¨ë™)
+					jrParam.setField("OPR_YN"   , "Y"          ); //í™”ë©´ì—ì„œ ì‘ì—…ì˜ˆì•½ ìƒì„±
 					
 					jrRtn = ymComm.trtTcarSchLevWo_Slab(jrParam);
 				} else {
-					commUtils.printLog(logId, "´ëÂ÷[" + ydWrkPlanTcar + "] °ø´ëÂ÷Ãâ¹ßÁö½Ã ºÒ°¡ : " + msgTcar, "SL");
+					commUtils.printLog(logId, "ëŒ€ì°¨[" + ydWrkPlanTcar + "] ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ë¶ˆê°€ : " + msgTcar, "SL");
 				}
 			}
 
 			/**********************************************************
-			* 4. µ¿³»ÀÌÀû(´ëÂ÷ÀÛ¾÷ÀÌ ¾øÀ½)ÀÛ¾÷ Å©·¹ÀÎº° Ã¹¹øÂ° ½ºÄÉÁÙ Àü¼Û
+			* 4. ë™ë‚´ì´ì (ëŒ€ì°¨ì‘ì—…ì´ ì—†ìŒ)ì‘ì—… í¬ë ˆì¸ë³„ ì²«ë²ˆì§¸ ìŠ¤ì¼€ì¤„ ì „ì†¡
 			**********************************************************/
-			// 202171030 Çö¾÷¿äÃ» ½ºÄÉÁÙ ±âµ¿ ±İÁö
+			// 202171030 í˜„ì—…ìš”ì²­ ìŠ¤ì¼€ì¤„ ê¸°ë™ ê¸ˆì§€
 			//jrRtn = commUtils.addSndData(jrRtn, this.setCrnSchMsg(jsMsg, logId, methodNm)); 
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -4397,9 +4397,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ½ºÄÉÁÙÀü¹®Á¤¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì „ë¬¸ì •ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecordSet jsMsg
 	 *      @param String logId
 	 *      @param String mthdNm
@@ -4407,7 +4407,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	 *      @throws DAOException
 	*/
 	public JDTORecord setCrnSchMsg(JDTORecordSet jsMsg, String logId, String mthdNm) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ½ºÄÉÁÙÀü¹®Á¤¸®[BSlabJspSeEJB.setCrnSchMsg] < " + mthdNm;
+		String methodNm = "í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì „ë¬¸ì •ë¦¬[BSlabJspSeEJB.setCrnSchMsg] < " + mthdNm;
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
@@ -4416,12 +4416,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecord jrRtn = null;
 
 			if (!commUtils.isEmpty(jsMsg)) {
-				String ydEqpId   = ""; //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-				String ydEqpStat = ""; //¾ßµå¼³ºñ»óÅÂ
+				String ydEqpId   = ""; //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+				String ydEqpStat = ""; //ì•¼ë“œì„¤ë¹„ìƒíƒœ
 				String sYD_SCH_CD   = "";
 				String sYD_WBOOK_ID = "";
-				boolean fstYn = false; //µ¿ÀÏÅ©·¹ÀÎ¿¡¼­ Ã¹¹øÂ° ¿©ºÎ
-				//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+				boolean fstYn = false; //ë™ì¼í¬ë ˆì¸ì—ì„œ ì²«ë²ˆì§¸ ì—¬ë¶€
+				//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = commUtils.getParam(logId, methodNm, "");
 				JDTORecord jrRow = null;
 				JDTORecordSet jsChk = null;
@@ -4432,7 +4432,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrRow = jsMsg.getRecord(ii);
 					
 					if (!"".equals(commUtils.trim(jrRow.getFieldString("YD_WRK_PLAN_TCAR")))) {
-						//¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷°¡ ÀÖÀ¸¸é ´ëÂ÷»óÂ÷ Å©·¹ÀÎ½ºÄÉÁÙÀÌ¹Ç·Î ¹«Á¶°Ç ½ºÄÉÁÙ±âµ¿
+						//ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨ê°€ ìˆìœ¼ë©´ ëŒ€ì°¨ìƒì°¨ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ë¯€ë¡œ ë¬´ì¡°ê±´ ìŠ¤ì¼€ì¤„ê¸°ë™
 						ydEqpId      = commUtils.trim(jrRow.getFieldString("YD_EQP_ID"));
 						sYD_SCH_CD   = commUtils.trim(jrRow.getFieldString("YD_SCH_CD"));
 						sYD_WBOOK_ID = commUtils.trim(jrRow.getFieldString("YD_WBOOK_ID"));
@@ -4453,23 +4453,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							}
 						}
 						
-						//µ¿ÀÏÅ©·¹ÀÎ¿¡¼­ Ã¹¹øÂ° ÀÌ¸é
+						//ë™ì¼í¬ë ˆì¸ì—ì„œ ì²«ë²ˆì§¸ ì´ë©´
 						if (fstYn) {
-							//Å©·¹ÀÎ »óÅÂ È®ÀÎ
-							jrParam.setField("YD_EQP_ID", ydEqpId); //¾ßµå¼³ºñID
+							//í¬ë ˆì¸ ìƒíƒœ í™•ì¸
+							jrParam.setField("YD_EQP_ID", ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 
 							/*
-							--¼³ºñ»óÅÂÁ¶È¸ 
+							--ì„¤ë¹„ìƒíƒœì¡°íšŒ 
 							SELECT WPROG_STAT     AS YD_EQP_STAT
 							     , WORK_MODE      AS YD_EQP_WRK_MODE
-								 , STACK_MAX_QNTY	                  --ÀûÀç ÃÖ´ë ¼ö·®
-								 , STACK_MAX_WT		                  --ÀûÀç ÃÖ´ë Áß·®
+								 , STACK_MAX_QNTY	                  --ì ì¬ ìµœëŒ€ ìˆ˜ëŸ‰
+								 , STACK_MAX_WT		                  --ì ì¬ ìµœëŒ€ ì¤‘ëŸ‰
 							     , CURR_STOP_LOC
 							  FROM TB_YM_EQUIP EQ
 							 WHERE EQUIP_GP = :V_YD_EQP_ID
 							   AND DEL_YN    = 'N'  
 							 */
-							jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "¼³ºñ»óÅÂÁ¶È¸");
+							jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "ì„¤ë¹„ìƒíƒœì¡°íšŒ");
 							
 							ydEqpStat = "";
 
@@ -4478,7 +4478,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							}
 
 							if ("W".equals(ydEqpStat)) {
-								//Å©·¹ÀÎÀÌ ÀÛ¾÷´ë±â »óÅÂÀÌ¸é Å©·¹ÀÎ½ºÄÉÁÙ Àü¼Û
+								//í¬ë ˆì¸ì´ ì‘ì—…ëŒ€ê¸° ìƒíƒœì´ë©´ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ì†¡
 								jrRtn = commUtils.addSndData(jrRtn, ymComm.getCrnSchMsg(jrRow));
 							}
 							
@@ -4492,11 +4492,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							   AND YD_SCH_CD = :V_YD_SCH_CD
 							 */
 //							JDTORecordSet rst = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getIsSchKind");
-//							commUtils.printLog(logId, "¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á", "[info]");
-//							commUtils.printLog(logId, "¡á¡á¡á¡á¡á"+ sYD_WBOOK_ID + " " + ydEqpId + " "+sYD_SCH_CD, "[info]");
-//							commUtils.printLog(logId, "¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á", "[info]");
+//							commUtils.printLog(logId, "â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ", "[info]");
+//							commUtils.printLog(logId, "â– â– â– â– â– "+ sYD_WBOOK_ID + " " + ydEqpId + " "+sYD_SCH_CD, "[info]");
+//							commUtils.printLog(logId, "â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ", "[info]");
 //							if ("N".equals(rst.getRecord(0).getFieldString("IS_SCH"))) {
-//								//Å©·¹ÀÎ½ºÄÉÁÙ Àü¼ÛYMYMJ302
+//								//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ì†¡YMYMJ302
 //								jrRtn = commUtils.addSndData(jrRtn, ymComm.getCrnSchMsg(jrRow));
 //							}
 							
@@ -4517,30 +4517,30 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord insMvstkWrkBook(JDTORecord jrParam, JDTORecordSet jsWbMtl) throws DAOException {
-		String methodNm = "ÀÌÀûÀÛ¾÷¿¹¾àµî·Ï[BSlabJspSeEJB.insMvstkWrkBook] < " + jrParam.getResultMsg();
+		String methodNm = "ì´ì ì‘ì—…ì˜ˆì•½ë“±ë¡[BSlabJspSeEJB.insMvstkWrkBook] < " + jrParam.getResultMsg();
 		String logId = jrParam.getResultCode();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String ydSchCd       = commUtils.trim(jrParam.getFieldString("YD_SCH_CD"       )); //¾ßµå½ºÄÉÁìÄÚµå
-			String ydAimBayGp    = commUtils.trim(jrParam.getFieldString("YD_AIM_BAY_GP"   )); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-			String ydToLocGuide  = commUtils.trim(jrParam.getFieldString("YD_TO_LOC_GUIDE" )); //¾ßµåToÀ§Ä¡Guide
-			String ydWrkPlanTcar = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_TCAR")); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-			String modifier      = commUtils.trim(jrParam.getFieldString("MODIFIER"        )); //¼öÁ¤ÀÚ
-			String ydWrkPlanCrn  = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_CRN" )); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-			String ydWrkPlanCrn2 = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_CRN2")); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-			String sCHARGE_LOT_NO_DIV_YN = commUtils.trim(jrParam.getFieldString("CHARGE_LOT_NO_DIV_YN")); //ÀåÀÔ¼ø¹ø ºĞ¸®¿©ºÎ
+			String ydSchCd       = commUtils.trim(jrParam.getFieldString("YD_SCH_CD"       )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydAimBayGp    = commUtils.trim(jrParam.getFieldString("YD_AIM_BAY_GP"   )); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+			String ydToLocGuide  = commUtils.trim(jrParam.getFieldString("YD_TO_LOC_GUIDE" )); //ì•¼ë“œToìœ„ì¹˜Guide
+			String ydWrkPlanTcar = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_TCAR")); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+			String modifier      = commUtils.trim(jrParam.getFieldString("MODIFIER"        )); //ìˆ˜ì •ì
+			String ydWrkPlanCrn  = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_CRN" )); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+			String ydWrkPlanCrn2 = commUtils.trim(jrParam.getFieldString("YD_WRK_PLAN_CRN2")); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+			String sCHARGE_LOT_NO_DIV_YN = commUtils.trim(jrParam.getFieldString("CHARGE_LOT_NO_DIV_YN")); //ì¥ì…ìˆœë²ˆ ë¶„ë¦¬ì—¬ë¶€
 			
-			// ¸ÖÆ¼Å©·¹ÀÎ
+			// ë©€í‹°í¬ë ˆì¸
 			if (!"".equals(ydWrkPlanCrn)) {
 				if ("7".equals(ydWrkPlanCrn.substring(5, 6))) {
 					ydWrkPlanCrn  = ydWrkPlanCrn.substring(0, 5) + "1";
@@ -4555,7 +4555,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			* 1. ¾ßµå½ºÄÉÁìÄÚµå Check
+			* 1. ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ Check
 			**********************************************************/
 			/*
 			SELECT YD_SCH_CD
@@ -4573,18 +4573,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			if ("".equals(sYD_WRK_CRN)) {
-				throw new Exception("½ºÄÉÁìÄÚµå[" + ydSchCd + "] ÀÛ¾÷°¡´É Å©·¹ÀÎ ¾øÀ½");
+				throw new Exception("ìŠ¤ì¼€ì¥´ì½”ë“œ[" + ydSchCd + "] ì‘ì—…ê°€ëŠ¥ í¬ë ˆì¸ ì—†ìŒ");
 			}
 			
 			JDTORecord jrCrnSpec = jsChk.getRecord(0);
 			
-			String ydGp       = ydSchCd.substring(0, 1);	//¾ßµå±¸ºĞ
-			String ydBayGp    = ydSchCd.substring(1, 2);	//¾ßµåµ¿±¸ºĞ
-			String ydEqpId    = commUtils.trim(jrCrnSpec.getFieldString("YD_WRK_CRN"   ));	  //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String ydSchPrior = commUtils.trim(jrCrnSpec.getFieldString("YD_WRK_CRN_PRIOR")); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			String ydToLocDcsnMtd = "S"; //¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı(½ºÄÉÁÙÁöÁ¤)
+			String ydGp       = ydSchCd.substring(0, 1);	//ì•¼ë“œêµ¬ë¶„
+			String ydBayGp    = ydSchCd.substring(1, 2);	//ì•¼ë“œë™êµ¬ë¶„
+			String ydEqpId    = commUtils.trim(jrCrnSpec.getFieldString("YD_WRK_CRN"   ));	  //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String ydSchPrior = commUtils.trim(jrCrnSpec.getFieldString("YD_WRK_CRN_PRIOR")); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			String ydToLocDcsnMtd = "S"; //ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•(ìŠ¤ì¼€ì¤„ì§€ì •)
 
-			// ÁöÁ¤Å©·¹ÀÎÀÏ °æ¿ì ÁöÁ¤Å©·¹ÀÎÀ¸·Î ½ºÄÉÁÙ ±âµ¿
+			// ì§€ì •í¬ë ˆì¸ì¼ ê²½ìš° ì§€ì •í¬ë ˆì¸ìœ¼ë¡œ ìŠ¤ì¼€ì¤„ ê¸°ë™
 			if (!"".equals(ydWrkPlanCrn)) {
 				ydEqpId = ydWrkPlanCrn;
 			}			
@@ -4598,11 +4598,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 
 			if (!"".equals(ydToLocGuide)) {
-				ydToLocDcsnMtd = "F";	//¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı(ÁöÁ¤À§Ä¡)
+				ydToLocDcsnMtd = "F";	//ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•(ì§€ì •ìœ„ì¹˜)
 			}
 			
 			/****************************************
-			 * 0. µ¿°£ ÀÌÀûÀÇ °æ¿ì ´ëÂ÷ ¸Å¼ö Ã¼Å©
+			 * 0. ë™ê°„ ì´ì ì˜ ê²½ìš° ëŒ€ì°¨ ë§¤ìˆ˜ ì²´í¬
 			 ****************************************/
 			int nSTACK_MAX_QNTY = 0;
 			if (!"".equals(ydWrkPlanTcar)) {
@@ -4618,7 +4618,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			* 2. Å©·¹ÀÎ»ç¾ç ºĞ¸®
+			* 2. í¬ë ˆì¸ì‚¬ì–‘ ë¶„ë¦¬
 			**********************************************************/
 			jrCrnSpec.setResultCode(logId);  	//Log ID
 			jrCrnSpec.setResultMsg(methodNm);	//Log Method Name
@@ -4626,18 +4626,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			Vector vcLot = this.setCrnSpecSpr(jrCrnSpec, jsWbMtl);//, nSTACK_MAX_QNTY);
 
 			JDTORecordSet jsLotMtl = null;
-			int lotCnt   = vcLot.size();	//Å©·¹ÀÎ»ç¾ç ºĞ¸® ÀÛ¾÷¿¹¾à¼ö
-			int lotMtlSh = 0;				//ÀÛ¾÷¿¹¾àÀç·á¸Å¼ö
-			String ydWbookId = "";			//¾ßµåÀÛ¾÷¿¹¾àID
-			String ydWbookIdFst = "";		//¾ßµåÀÛ¾÷¿¹¾àID(Ã¹¹øÂ°)
+			int lotCnt   = vcLot.size();	//í¬ë ˆì¸ì‚¬ì–‘ ë¶„ë¦¬ ì‘ì—…ì˜ˆì•½ìˆ˜
+			int lotMtlSh = 0;				//ì‘ì—…ì˜ˆì•½ì¬ë£Œë§¤ìˆ˜
+			String ydWbookId = "";			//ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydWbookIdFst = "";		//ì•¼ë“œì‘ì—…ì˜ˆì•½ID(ì²«ë²ˆì§¸)
 			JDTORecord jrRow = null;
 			commUtils.printLog(logId, "lotCnt:"+lotCnt, "SL");
 			
 			/**********************************************************
-			* 3. ÀÛ¾÷¿¹¾à µî·Ï
+			* 3. ì‘ì—…ì˜ˆì•½ ë“±ë¡
 			**********************************************************/
 			for (int ii = 0; ii < lotCnt; ii++) {
-				//ÀÛ¾÷¿¹¾àÀç·á
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ
 				jsLotMtl = (JDTORecordSet)vcLot.get(ii);
 				lotMtlSh = jsLotMtl.size();
 
@@ -4645,71 +4645,71 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					continue;
 				}
 
-				//ÀÛ¾÷¿¹¾àID Á¶È¸
+				//ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ
 				ydWbookId = commDao.getSeqId(logId, methodNm, "WrkBook");
 
 				if ("".equals(ydWbookId)) {
-					throw new Exception("ÀÛ¾÷¿¹¾àID »ı¼º ½ÇÆĞ");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ID ìƒì„± ì‹¤íŒ¨");
 				}
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ ±âµ¿¿ë
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ê¸°ë™ìš©
 				if (ii == 0) {
 					ydWbookIdFst = ydWbookId;
 				}
 				
-				//ÀÛ¾÷¿¹¾à µî·Ï
-				jrParam.setField("YD_WBOOK_ID"       , ydWbookId     ); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("MODIFIER"          , modifier      ); //¼öÁ¤ÀÚ
-				jrParam.setField("YD_GP"             , ydGp          ); //¾ßµå±¸ºĞ
-				jrParam.setField("YD_BAY_GP"         , ydBayGp       ); //¾ßµåµ¿±¸ºĞ
-				jrParam.setField("YD_SCH_CD"         , ydSchCd       ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_SCH_PRIOR"      , ydSchPrior    ); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				jrParam.setField("YD_SCH_PROG_STAT"  , "W"           ); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(½ºÄÉÁÙ¼öÇà´ë±â)
-				jrParam.setField("YD_SCH_ST_GP"      , "M"           ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-				jrParam.setField("YD_SCH_REQ_GP"     , "M"           ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
-				jrParam.setField("YD_AIM_YD_GP"      , ydGp          ); //¾ßµå¸ñÇ¥¾ßµå±¸ºĞ
-				jrParam.setField("YD_AIM_BAY_GP"     , ydAimBayGp    ); //¾ßµå¸ñÇ¥µ¿±¸ºĞ
-				jrParam.setField("YD_TO_LOC_DCSN_MTD", ydToLocDcsnMtd); //¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı
-				jrParam.setField("YD_TO_LOC_GUIDE"   , ydToLocGuide  ); //¾ßµåToÀ§Ä¡Guide
-				jrParam.setField("YD_WRK_PLAN_TCAR"  , ydWrkPlanTcar ); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
+				//ì‘ì—…ì˜ˆì•½ ë“±ë¡
+				jrParam.setField("YD_WBOOK_ID"       , ydWbookId     ); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("MODIFIER"          , modifier      ); //ìˆ˜ì •ì
+				jrParam.setField("YD_GP"             , ydGp          ); //ì•¼ë“œêµ¬ë¶„
+				jrParam.setField("YD_BAY_GP"         , ydBayGp       ); //ì•¼ë“œë™êµ¬ë¶„
+				jrParam.setField("YD_SCH_CD"         , ydSchCd       ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_SCH_PRIOR"      , ydSchPrior    ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				jrParam.setField("YD_SCH_PROG_STAT"  , "W"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+				jrParam.setField("YD_SCH_ST_GP"      , "M"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+				jrParam.setField("YD_SCH_REQ_GP"     , "M"           ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
+				jrParam.setField("YD_AIM_YD_GP"      , ydGp          ); //ì•¼ë“œëª©í‘œì•¼ë“œêµ¬ë¶„
+				jrParam.setField("YD_AIM_BAY_GP"     , ydAimBayGp    ); //ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+				jrParam.setField("YD_TO_LOC_DCSN_MTD", ydToLocDcsnMtd); //ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•
+				jrParam.setField("YD_TO_LOC_GUIDE"   , ydToLocGuide  ); //ì•¼ë“œToìœ„ì¹˜Guide
+				jrParam.setField("YD_WRK_PLAN_TCAR"  , ydWrkPlanTcar ); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
 				
-				jrParam.setField("YD_WRK_PLAN_CRN"   , ydWrkPlanCrn  ); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-				jrParam.setField("YD_WRK_PLAN_CRN2"  , ydWrkPlanCrn2 ); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+				jrParam.setField("YD_WRK_PLAN_CRN"   , ydWrkPlanCrn  ); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+				jrParam.setField("YD_WRK_PLAN_CRN2"  , ydWrkPlanCrn2 ); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 				
-				jrParam.setField("CHARGE_LOT_NO_DIV_YN", sCHARGE_LOT_NO_DIV_YN ); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+				jrParam.setField("CHARGE_LOT_NO_DIV_YN", sCHARGE_LOT_NO_DIV_YN ); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 
 				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "TB_YM_WRKBOOK");
 
-				//ÀÛ¾÷¿¹¾àÀç·á µî·Ï
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë“±ë¡
 				
 				for (int jj = 0; jj < lotMtlSh; jj++) {
 					jrRow = jsLotMtl.getRecord(jj);
 					
 					JDTORecord jrRtn1 = JDTORecordFactory.getInstance().create();
 					
-					jrRtn1.setField("YD_WBOOK_ID"   , ydWbookId     ); //¾ßµåÀÛ¾÷¿¹¾àID
-					jrRtn1.setField("STOCK_ID"      , commUtils.trim(jrRow.getFieldString("STOCK_ID"       )));	//Àç·á¹øÈ£
-					jrRtn1.setField("STACK_COL_GP"  , commUtils.trim(jrRow.getFieldString("STACK_COL_GP")));	//¾ßµåÀûÄ¡¿­±¸ºĞ
-					jrRtn1.setField("STACK_BED_GP"  , commUtils.trim(jrRow.getFieldString("STACK_BED_GP")));	//¾ßµåÀûÄ¡Bed¹øÈ£
-					jrRtn1.setField("STACK_LAYER_GP", commUtils.trim(jrRow.getFieldString("STACK_LAYER_GP")));	//¾ßµåÀûÄ¡´Ü¹øÈ£
-					jrRtn1.setField("MODIFIER"     	, modifier      );												//µî·ÏÀÚ
+					jrRtn1.setField("YD_WBOOK_ID"   , ydWbookId     ); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+					jrRtn1.setField("STOCK_ID"      , commUtils.trim(jrRow.getFieldString("STOCK_ID"       )));	//ì¬ë£Œë²ˆí˜¸
+					jrRtn1.setField("STACK_COL_GP"  , commUtils.trim(jrRow.getFieldString("STACK_COL_GP")));	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+					jrRtn1.setField("STACK_BED_GP"  , commUtils.trim(jrRow.getFieldString("STACK_BED_GP")));	//ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+					jrRtn1.setField("STACK_LAYER_GP", commUtils.trim(jrRow.getFieldString("STACK_LAYER_GP")));	//ì•¼ë“œì ì¹˜ë‹¨ë²ˆí˜¸
+					jrRtn1.setField("MODIFIER"     	, modifier      );												//ë“±ë¡ì
 					commDao.insert(jrRtn1, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.insWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");
 				}
 			}
 			
 
 			/**********************************************************
-			* 4. Å©·¹ÀÎ½ºÄÉÁÙ(YMYMJ302) Àü¼Û¿ë ±âÃÊ Àü¹® »ı¼º
+			* 4. í¬ë ˆì¸ìŠ¤ì¼€ì¤„(YMYMJ302) ì „ì†¡ìš© ê¸°ì´ˆ ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//Å©·¹ÀÎ½ºÄÉÁÙ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, modifier);
 
-			jrYdMsg.setField("YD_WBOOK_ID"     , ydWbookIdFst ); //¾ßµåÀÛ¾÷¿¹¾àID(Ã¹¹øÂ°²¨¸¸)
-			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      ); //¾ßµå¼³ºñID
-			jrYdMsg.setField("YD_SCH_ST_GP"    , "M"          ); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-			jrYdMsg.setField("YD_SCH_REQ_GP"   , "M"          ); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
-			jrYdMsg.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷(´ëÂ÷»óÂ÷ Å©·¹ÀÎ½ºÄÉÁÙÀ» Àü¼ÛÇÏÁö ¾Ê±â À§ÇØ Ãß°¡)
+			jrYdMsg.setField("YD_WBOOK_ID"     , ydWbookIdFst ); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID(ì²«ë²ˆì§¸êº¼ë§Œ)
+			jrYdMsg.setField("YD_SCH_CD"       , ydSchCd      ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrYdMsg.setField("YD_EQP_ID"       , ydEqpId      ); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("YD_SCH_ST_GP"    , "M"          ); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+			jrYdMsg.setField("YD_SCH_REQ_GP"   , "M"          ); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
+			jrYdMsg.setField("YD_WRK_PLAN_TCAR", ydWrkPlanTcar); //ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨(ëŒ€ì°¨ìƒì°¨ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì„ ì „ì†¡í•˜ì§€ ì•Šê¸° ìœ„í•´ ì¶”ê°€)
 
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -4723,23 +4723,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎ»ç¾çºĞ¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord jrCrnSpec
 	 *      @param JDTORecordSet jsWrkMtl
 	 *      @return Vector
 	 *      @throws DAOException
 	*/
 	public Vector setCrnSpecSpr(JDTORecord jrCrnSpec, JDTORecordSet jsWrkMtl) throws DAOException {
-		String methodNm = "Å©·¹ÀÎ»ç¾çºĞ¸®[BSlabJspSeEJB.setCrnSpecSpr] < " + jrCrnSpec.getResultMsg();
+		String methodNm = "í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬[BSlabJspSeEJB.setCrnSpecSpr] < " + jrCrnSpec.getResultMsg();
 		String logId = jrCrnSpec.getResultCode();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			Vector vcLot = new Vector();	//Å©·¹ÀÎ»ç¾çºĞ¸®°á°ú
-			JDTORecord    jrRow = null;		//ÇöÀç Row
+			Vector vcLot = new Vector();	//í¬ë ˆì¸ì‚¬ì–‘ë¶„ë¦¬ê²°ê³¼
+			JDTORecord    jrRow = null;		//í˜„ì¬ Row
 			JDTORecordSet jsLot = JDTORecordFactory.getInstance().createRecordSet("");	//Lot
 			String sSTACK_COL_GP    = "";	
 			String sSTACK_BED_GP    = "";	
@@ -4752,9 +4752,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			int tmp = 0;
 			
-//			if (nSTACK_MAX_QNTY > 0) { //´ëÂ÷ÀÏ°æ¿ì
+//			if (nSTACK_MAX_QNTY > 0) { //ëŒ€ì°¨ì¼ê²½ìš°
 //				
-//				commUtils.printLog(logId, "¡á µ¿°£ÀÌÀû(nSTACK_MAX_QNTY) : "+ nSTACK_MAX_QNTY, "[info]");
+//				commUtils.printLog(logId, "â–  ë™ê°„ì´ì (nSTACK_MAX_QNTY) : "+ nSTACK_MAX_QNTY, "[info]");
 //				
 //				for (int ii = 0; ii < rowCnt; ii++) {
 //					jrRow = jsWrkMtl.getRecord(ii);
@@ -4764,7 +4764,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 //					
 //					if (ii > 0) {
 //						if (!(szCHK_STACK_COL_GP+szCHK_STACK_BED_GP).equals(sSTACK_COL_GP+sSTACK_BED_GP) || tmp == nSTACK_MAX_QNTY) {
-//							//ÀÌÀü Lot Ãß°¡
+//							//ì´ì „ Lot ì¶”ê°€
 //							vcLot.add(jsLot);
 //
 //							jsLot = JDTORecordFactory.getInstance().createRecordSet("");
@@ -4776,7 +4776,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 //						szCHK_STACK_COL_GP   = sSTACK_COL_GP;
 //						szCHK_STACK_BED_GP   = sSTACK_BED_GP;
 //					}
-//					commUtils.printLog(logId, "¡á tmp : "+ tmp, "[info]");
+//					commUtils.printLog(logId, "â–  tmp : "+ tmp, "[info]");
 //					tmp++;
 //					jsLot.addRecord(jrRow);
 //				}
@@ -4791,7 +4791,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					if (ii > 0) {
 						if (!(szCHK_STACK_COL_GP+szCHK_STACK_BED_GP+szCHK_STACK_LAYER_GP).equals(sSTACK_COL_GP+sSTACK_BED_GP+sSTACK_LAYER_GP)) {
-							//ÀÌÀü Lot Ãß°¡
+							//ì´ì „ Lot ì¶”ê°€
 							vcLot.add(jsLot);
 
 							jsLot = JDTORecordFactory.getInstance().createRecordSet("");
@@ -4808,7 +4808,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 //			}
 			
-			//¸¶Áö¸· Lot Ãß°¡
+			//ë§ˆì§€ë§‰ Lot ì¶”ê°€
 			vcLot.add(jsLot);
 			commUtils.printParam(logId, vcLot);
 			commUtils.printLog(logId, methodNm, "S-");
@@ -4822,15 +4822,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}				
 
 	/**
-	 * SLAB  STACK_LAYER_ACTIVE_STAT  È°¼º ºñÇÒ¼ºÀ» Toggle Ã³¸®
+	 * SLAB  STACK_LAYER_ACTIVE_STAT  í™œì„± ë¹„í• ì„±ì„ Toggle ì²˜ë¦¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updActiveStat(GridData gdReq) throws DAOException {
-		String methodNm = "SLAB Walking Beam Á¶È¸[BSlabJspSeEJB.updActiveStat] < " + gdReq.getNavigateValue();
+		String methodNm = "SLAB Walking Beam ì¡°íšŒ[BSlabJspSeEJB.updActiveStat] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4839,10 +4839,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			String sActiveStat ="";
 			String sActiveStatParm ="";
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
@@ -4862,14 +4862,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STACK_LAYER_GP	= :V_STACK_LAYER_GP 
 		    	*/
 				
-				JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "Crane UP½ÇÀû ÀûÄ¡´ÜÁ¤º¸Á¶È¸");
+				JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackLayerInfoWithPk", logId, methodNm, "Crane UPì‹¤ì  ì ì¹˜ë‹¨ì •ë³´ì¡°íšŒ");
 				
 				if (jsChk != null &&  jsChk.size() > 0) {
 					
-					sActiveStat 	= commUtils.trim(jsChk.getRecord(0).getFieldString("STACK_LAYER_ACTIVE_STAT")); // ÀûÄ¡´ÜÈ°¼ºÈ­ »óÅÂ
+					sActiveStat 	= commUtils.trim(jsChk.getRecord(0).getFieldString("STACK_LAYER_ACTIVE_STAT")); // ì ì¹˜ë‹¨í™œì„±í™” ìƒíƒœ
 					
 					sActiveStatParm = sActiveStat.equals("E") ?   "C" :   
-						              sActiveStat.equals("C") ?   "E" : sActiveStat ;  //"È°¼º ºñÇÒ¼ºÀ» Toggle";
+						              sActiveStat.equals("C") ?   "E" : sActiveStat ;  //"í™œì„± ë¹„í• ì„±ì„ Toggle";
 					
 					jrParam.setField("STACK_LAYER_ACTIVE_STAT" 	        ,sActiveStatParm); 
 					
@@ -4884,7 +4884,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					 */
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateCraneStackLayerActivStat", logId, methodNm, "LayerActStatº¯°æ");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateCraneStackLayerActivStat", logId, methodNm, "LayerActStatë³€ê²½");
 					
 				}
 				
@@ -4902,15 +4902,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updIfTestData	
 	
 	/**
-	 * B¿­¿¬ SLAB ¼³ºñ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ
+	 * Bì—´ì—° SLAB ì„¤ë¹„ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updEquipUseSch(GridData gdReq) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB ¼³ºñ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ[BSlabJspSeEJB.updEquipUseSch] < " + gdReq.getNavigateValue();
+		String methodNm = "Bì—´ì—° SLAB ì„¤ë¹„ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½[BSlabJspSeEJB.updEquipUseSch] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4919,13 +4919,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("HMI_STAT"		, gdReq.getParam("HMI_STAT"));
 			jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP")); 
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStat", logId, methodNm, "B¿­¿¬ SLAB ¼³ºñ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStat", logId, methodNm, "Bì—´ì—° SLAB ì„¤ë¹„ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -4938,15 +4938,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updEquipUseSch
 	
 	/**
-	 * B¿­¿¬ SLAB ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ
+	 * Bì—´ì—° SLAB ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updEquipBefWork(GridData gdReq) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ[BSlabJspSeEJB.updEquipBefWork] < " + gdReq.getNavigateValue();
+		String methodNm = "Bì—´ì—° SLAB ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½[BSlabJspSeEJB.updEquipBefWork] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4955,13 +4955,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("WORK_MODE"	, gdReq.getParam("WORK_MODE"));
 			jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP")); 
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWork", logId, methodNm, "B¿­¿¬ SLAB ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWork", logId, methodNm, "Bì—´ì—° SLAB ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -4973,18 +4973,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of updEquipBefWork
 	
-	//2017³â 9¿ù 5ÀÏ È­¿äÀÏ - CTC1, 2, 4(Aµ¿, Cµ¿)
+	//2017ë…„ 9ì›” 5ì¼ í™”ìš”ì¼ - CTC1, 2, 4(Aë™, Cë™)
 	
-	/** 2017³â 9¿ù 5ÀÏ È­¿äÀÏ CTCº¸±Ş¿ä±¸ ±â´É - SCP
-	 * Aµ¿ #1, 2, 4 CTCº¸±Ş¿ä±¸  ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ
+	/** 2017ë…„ 9ì›” 5ì¼ í™”ìš”ì¼ CTCë³´ê¸‰ìš”êµ¬ ê¸°ëŠ¥ - SCP
+	 * Aë™ #1, 2, 4 CTCë³´ê¸‰ìš”êµ¬  ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updEquipUseSchAC(GridData gdReq) throws DAOException {
-		String methodNm = "A, Cµ¿ CTCº¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ[BSlabJspSeEJB.updEquipUseSchAC] < " + gdReq.getNavigateValue();
+		String methodNm = "A, Cë™ CTCë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½[BSlabJspSeEJB.updEquipUseSchAC] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -4993,13 +4993,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			//Aµ¿ 01 => 2ACT01 (EQUIP_GP) => radio A =>	ExecObj.SetParam("EQUIP_GP" , "2ACT01")
-			//Aµ¿ 02 => 2ACT02 (EQUIP_GP) => radio A =>  ExecObj.SetParam("EQUIP_GP" , "2ACT02")
+			//Aë™ 01 => 2ACT01 (EQUIP_GP) => radio A =>	ExecObj.SetParam("EQUIP_GP" , "2ACT01")
+			//Aë™ 02 => 2ACT02 (EQUIP_GP) => radio A =>  ExecObj.SetParam("EQUIP_GP" , "2ACT02")
 			
-			//Cµ¿ 04 => 2CCT04 (EQUIP_GP) => radio C =>  ExecObj.SetParam("EQUIP_GP" , "2CCT04")
+			//Cë™ 04 => 2CCT04 (EQUIP_GP) => radio C =>  ExecObj.SetParam("EQUIP_GP" , "2CCT04")
 			/*
 			 	UPDATE TB_YM_EQUIP
 			       SET HMI_STAT = :V_HMI_STAT,
@@ -5009,25 +5009,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 */
 			/*jrParam.setField("HMI_STAT"		, gdReq.getParam("HMI_STAT"));
 			jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP1")); 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 º¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 ë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			
 			jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP2")); 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC2 º¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC2 ë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			*/
 			
-			String sFlag = gdReq.getParam("flag");// Aµ¿ or Cµ¿
+			String sFlag = gdReq.getParam("flag");// Aë™ or Cë™
 			
 			if("A".equals(sFlag)){
 				jrParam.setField("HMI_STAT"		, gdReq.getParam("HMI_STAT"));
 				jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP1")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 º¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 ë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 				
 				jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP2")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 º¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 ë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			}else{
 				jrParam.setField("HMI_STAT"		, gdReq.getParam("HMI_STAT"));
 				jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 º¸±Ş¿ä±¸ ½ºÄÉÁÙ»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipHmiStatListAC", logId, methodNm, "A CTC1 ë³´ê¸‰ìš”êµ¬ ìŠ¤ì¼€ì¤„ì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			}
 				
 			
@@ -5042,16 +5042,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} 
 	
 	
-	/** 2017³â 9¿ù 5ÀÏ È­¿äÀÏ CTCº¸±Ş¿ä±¸ ±â´É - SCP
-	 * Aµ¿ #1, 2, 4 CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ
+	/** 2017ë…„ 9ì›” 5ì¼ í™”ìš”ì¼ CTCë³´ê¸‰ìš”êµ¬ ê¸°ëŠ¥ - SCP
+	 * Aë™ #1, 2, 4 CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updEquipBefWorkAC(GridData gdReq) throws DAOException {
-		String methodNm = "A, Cµ¿  CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ[BSlabJspSeEJB.updEquipBefWorkAC] < " + gdReq.getNavigateValue();
+		String methodNm = "A, Cë™  CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½[BSlabJspSeEJB.updEquipBefWorkAC] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -5060,29 +5060,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			
-			String sFlagWrk = gdReq.getParam("flagWkr");// Aµ¿ or Cµ¿
+			String sFlagWrk = gdReq.getParam("flagWkr");// Aë™ or Cë™
 			
 			if("A".equals(sFlagWrk)){
 				jrParam.setField("WORK_MODE"		, gdReq.getParam("WORK_MODE"));
 				jrParam.setField("EQUIP_GP"		    , gdReq.getParam("EQUIP_GP01")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cµ¿  CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cë™  CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 				
 				jrParam.setField("EQUIP_GP"		    , gdReq.getParam("EQUIP_GP02")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cµ¿  CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cë™  CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			}else{
 				jrParam.setField("WORK_MODE"		, gdReq.getParam("WORK_MODE"));
 				jrParam.setField("EQUIP_GP"		    , gdReq.getParam("EQUIP_GP")); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cµ¿  CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cë™  CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½");
 			}
 			
 			/*jrParam.setField("WORK_MODE"	, gdReq.getParam("WORK_MODE"));
 			jrParam.setField("EQUIP_GP"		, gdReq.getParam("EQUIP_GP")); 
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cµ¿  CTCº¸±Ş¿ä±¸ ¼±ÀÛ¾÷Áö½Ã»ç¿ë¿©ºÎ º¯°æ");*/
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updEquipBefWorkListAC", logId, methodNm, "A, Cë™  CTCë³´ê¸‰ìš”êµ¬ ì„ ì‘ì—…ì§€ì‹œì‚¬ìš©ì—¬ë¶€ ë³€ê²½");*/
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -5095,8 +5095,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}
 	
 	/**
-	 * »êÀûÀ§Ä¡¼öÁ¤ - ÀúÀåÇ° »ı¼º
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * ì‚°ì ìœ„ì¹˜ìˆ˜ì • - ì €ì¥í’ˆ ìƒì„±
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
@@ -5104,7 +5104,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	 */
 	public JDTORecord insStockInfo(JDTORecord rcvMsg) throws DAOException {
 		
-		String methodNm = "»êÀûÀ§Ä¡¼öÁ¤-ÀúÀåÇ°»ı¼º[BSlabJspSeEJB.insStockInfo] <" + rcvMsg.getResultMsg();
+		String methodNm = "ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ì €ì¥í’ˆìƒì„±[BSlabJspSeEJB.insStockInfo] <" + rcvMsg.getResultMsg();
 		String logId 	= rcvMsg.getResultCode();
 		
 		try {
@@ -5117,7 +5117,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_GP       = rcvMsg.getFieldString("YD_GP");
 			String sSTOCK_ID    = rcvMsg.getFieldString("STOCK_ID");
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(rcvMsg.getFieldString("MODIFIER")));
 			jrParam.setField("YD_GP"	      , sYD_GP   );
 			jrParam.setField("STOCK_ID"       , sSTOCK_ID);		
@@ -5125,16 +5125,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			/*
 			MERGE INTO TB_YM_STOCK ST USING (
-			    SELECT :V_STOCK_ID      AS STOCK_ID    --Àç·á¹øÈ£
-			         , :V_MODIFIER      AS MODIFIER    --¼öÁ¤ÀÚ
-			         , SYSDATE          AS MOD_DDTT    --¼öÁ¤ÀÏ½Ã
-			         , 'N'              AS DEL_YN      --»èÁ¦À¯¹«
+			    SELECT :V_STOCK_ID      AS STOCK_ID    --ì¬ë£Œë²ˆí˜¸
+			         , :V_MODIFIER      AS MODIFIER    --ìˆ˜ì •ì
+			         , SYSDATE          AS MOD_DDTT    --ìˆ˜ì •ì¼ì‹œ
+			         , 'N'              AS DEL_YN      --ì‚­ì œìœ ë¬´
 			         , :V_STOCK_MOVE_TERM AS STOCK_MOVE_TERM
 			      FROM DUAL
 			) DD ON ( ST.STOCK_ID = DD.STOCK_ID)
 			WHEN NOT MATCHED THEN
 			    INSERT (
-			           STOCK_ID     , STOCK_ITEM    , STOCK_MOVE_TERM  --ÀúÀåÇ°ÀÌµ¿Á¶°Ç
+			           STOCK_ID     , STOCK_ITEM    , STOCK_MOVE_TERM  --ì €ì¥í’ˆì´ë™ì¡°ê±´
 			         , REGISTER     , REG_DDTT      , MODIFIER         -- 'SYSTEM'
 			         , MOD_DDTT     , DEL_YN        , YD_AIM_RT_GP)
 			    VALUES (:V_STOCK_ID , 'SM'          , DD.STOCK_MOVE_TERM
@@ -5162,16 +5162,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * »êÀûÀ§Ä¡¼öÁ¤ - ¼öÁ¤ TODO
+	 * ì‚°ì ìœ„ì¹˜ìˆ˜ì • - ìˆ˜ì • TODO
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return JDTORecord
 	 * @throws DAOException
 	 */
 	public JDTORecord updStkLoc(GridData gdReq) throws DAOException {
 		
-		String methodNm = "»êÀûÀ§Ä¡¼öÁ¤-¼öÁ¤[BSlabJspSeEJB.updStkLoc] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ìˆ˜ì •[BSlabJspSeEJB.updStkLoc] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		JDTORecordSet dmRc = null;
 		
@@ -5187,9 +5187,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_BAY_GP   = gdReq.getParam("YD_BAY_GP"); 
 
 			String sSTOCK_ID    = gdReq.getParam("STOCK_ID"  ).toUpperCase();
-			String sFROM_ADDR   = gdReq.getParam("FROM_ADDR" ).toUpperCase(); //from À§Ä¡
-			String sYD_STR_LOC  = gdReq.getParam("YD_STR_LOC").toUpperCase(); //TO À§Ä¡
-			String sFTMV_BKUP   = ""; //gdReq.getParam("FTMV_BKUP");  //ÀÌ¼ÛÀ¯¹«
+			String sFROM_ADDR   = gdReq.getParam("FROM_ADDR" ).toUpperCase(); //from ìœ„ì¹˜
+			String sYD_STR_LOC  = gdReq.getParam("YD_STR_LOC").toUpperCase(); //TO ìœ„ì¹˜
+			String sFTMV_BKUP   = ""; //gdReq.getParam("FTMV_BKUP");  //ì´ì†¡ìœ ë¬´
 			
 			String sYD_SECT_GP = StringHelper.evl(gdReq.getParam("YD_SECT_GP"), sYD_STR_LOC.substring(2,  4));
 			String sYD_COL_GP  = StringHelper.evl(gdReq.getParam("YD_COL_GP") , sYD_STR_LOC.substring(4,  6));
@@ -5205,10 +5205,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_CARSCH_YN     = gdReq.getParam("YD_CARSCH_YN"    );
 			String sYD_TCARSCH_YN    = gdReq.getParam("YD_TCARSCH_YN"   );   
 			
-			String sPUT_BETWEEN_YN   = gdReq.getParam("PUT_BETWEEN_YN"  ); //³¢¿ö³Ö±â¿©ºÎ
+			String sPUT_BETWEEN_YN   = gdReq.getParam("PUT_BETWEEN_YN"  ); //ë¼ì›Œë„£ê¸°ì—¬ë¶€
 			
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			jrParam.setField("YD_GP"	 , sYD_GP   );
 			jrParam.setField("STOCK_ID"  , sSTOCK_ID);
@@ -5217,15 +5217,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//String sYD_STOCK_YN = 
 			String errMsg   = "";
 			
-			// ÀúÀåÇ° »ı¼º
+			// ì €ì¥í’ˆ ìƒì„±
 			if ("N".equals(sYD_STOCK_YN)) {
 				EJBConnector ejbConnS = new EJBConnector("default", "BSlabJspSeEJB", this);
 				jrRtn = (JDTORecord)ejbConnS.trx("insStockInfo", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			}
 			
 			/**************************************************
-			 *** FROMÀ§Ä¡¿Í TOÀ§Ä¡°¡ °°Àº °æ¿ì Á¾·á 
-			 *** (ÀúÀåÇ°ÀÌ »ç¶óÁ³À» °æ¿ì »ı¼ºÈÄ Á¾·á)
+			 *** FROMìœ„ì¹˜ì™€ TOìœ„ì¹˜ê°€ ê°™ì€ ê²½ìš° ì¢…ë£Œ 
+			 *** (ì €ì¥í’ˆì´ ì‚¬ë¼ì¡Œì„ ê²½ìš° ìƒì„±í›„ ì¢…ë£Œ)
 			 **************************************************/
 			if (sFROM_ADDR.equals(sYD_STR_LOC)) {
 				return jrRtn;
@@ -5259,25 +5259,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/************************************************
-			 ******  SLAB »êÀûÀ§Ä¡ ¼öÁ¤  ********************
+			 ******  SLAB ì‚°ì ìœ„ì¹˜ ìˆ˜ì •  ********************
 			 ************************************************/
 			JDTORecord jparam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-			jparam.setField("STOCK_ID"      , sSTOCK_ID      ); //ÀúÀåÇ°
-			jparam.setField("FROM_ADDR"     , sFROM_ADDR     ); //fromÀ§Ä¡
-			jparam.setField("YD_STR_LOC"    , sYD_STR_LOC    ); //toÀ§Ä¡
-			jparam.setField("FTMV_BKUP"     , sFTMV_BKUP     ); //ÀÌ¼Û¹é¾÷¿©ºÎ
+			jparam.setField("STOCK_ID"      , sSTOCK_ID      ); //ì €ì¥í’ˆ
+			jparam.setField("FROM_ADDR"     , sFROM_ADDR     ); //fromìœ„ì¹˜
+			jparam.setField("YD_STR_LOC"    , sYD_STR_LOC    ); //toìœ„ì¹˜
+			jparam.setField("FTMV_BKUP"     , sFTMV_BKUP     ); //ì´ì†¡ë°±ì—…ì—¬ë¶€
 			jparam.setField("PUT_BETWEEN_YN", sPUT_BETWEEN_YN);
 			
-			// SLAB »êÀûÀ§Ä¡ ¼öÁ¤ ¸Ş¼Òµå(Æ®·£Á§¼Ç ºĞ¸® ÀÛ¾÷)
-			commUtils.printLog(logId, "SLAB »êÀûÀ§Ä¡ ¼öÁ¤ START", "[INFO]+");
+			// SLAB ì‚°ì ìœ„ì¹˜ ìˆ˜ì • ë©”ì†Œë“œ(íŠ¸ëœì ì…˜ ë¶„ë¦¬ ì‘ì—…)
+			commUtils.printLog(logId, "SLAB ì‚°ì ìœ„ì¹˜ ìˆ˜ì • START", "[INFO]+");
 			
 			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabJspSeEJB", this);
 			jrRtn = (JDTORecord)ejbConn1.trx("changeSlabLocationInfo", new Class[] { JDTORecord.class }, new Object[] { jparam });
 			
-			commUtils.printLog(logId, "SLAB »êÀûÀ§Ä¡ ¼öÁ¤ END", "[INFO]-");
+			commUtils.printLog(logId, "SLAB ì‚°ì ìœ„ì¹˜ ìˆ˜ì • END", "[INFO]-");
 			
 			/************************************************
-			 ** ÀÌ¼Û¹é¾÷ START
+			 ** ì´ì†¡ë°±ì—… START
 			 ************************************************/
 			/*
 			SELECT CASE WHEN COUNT(*) > 0 THEN 'Y' ELSE 'N' END AS IS_FTMV_BKUP
@@ -5298,25 +5298,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			if ("Y".equals(sFTMV_BKUP)) { 
-				commUtils.printLog(logId, "ÀÌ¼Û¹é¾÷ ½ÇÀûÃ³¸® START", "[INFO]+");
+				commUtils.printLog(logId, "ì´ì†¡ë°±ì—… ì‹¤ì ì²˜ë¦¬ START", "[INFO]+");
 				JDTORecord tcRecord = JDTORecordFactory.getInstance().create(); 
 	     
 			    /*********************
-			     * ½ÇÀûBACKUPÃ³¸® CALL
+			     * ì‹¤ì BACKUPì²˜ë¦¬ CALL
 			     *********************/
 			    tcRecord.setField("STOCK_ID", sSTOCK_ID);
-			    tcRecord.setField("YD_LOC"  , sYD_STR_LOC    ); //toÀ§Ä¡
+			    tcRecord.setField("YD_LOC"  , sYD_STR_LOC    ); //toìœ„ì¹˜
 			    
-				//Slab°øÅë Å×ÀÌºí ¾÷µ¥ÀÌÆ®
+				//Slabê³µí†µ í…Œì´ë¸” ì—…ë°ì´íŠ¸
 				EJBConnector ejbConnPT = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				ejbConnPT.trx("UpdSlabComLoc", new Class[] { JDTORecord.class }, new Object[] { tcRecord });
 				
 				
 				//======================================================
-				// ÀúÀåÇ°Á¦¿ø : ½½¶óºê¾ßµåL2·Î ¼Û½Å(YMA8L002)
+				// ì €ì¥í’ˆì œì› : ìŠ¬ë¼ë¸Œì•¼ë“œL2ë¡œ ì†¡ì‹ (YMA8L002)
 				//======================================================
-				// »êÀûÀ§Ä¡ ¼öÁ¤½Ã ÇØ´ç ¹øÁö Á¤º¸¸¦ ÀüºÎ L2·Î ¼Û½ÅÇÏ¹Ç·Î µû·Î Àü¹® ¼Û½Å ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
-/*				commUtils.printLog(logId, "YMA8L002 JMSÀü¼Û", "[INFO]");
+				// ì‚°ì ìœ„ì¹˜ ìˆ˜ì •ì‹œ í•´ë‹¹ ë²ˆì§€ ì •ë³´ë¥¼ ì „ë¶€ L2ë¡œ ì†¡ì‹ í•˜ë¯€ë¡œ ë”°ë¡œ ì „ë¬¸ ì†¡ì‹  í•  í•„ìš”ê°€ ì—†ë‹¤.
+/*				commUtils.printLog(logId, "YMA8L002 JMSì „ì†¡", "[INFO]");
 				*//******************************************************************************//*
 				JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 				jrYdMsg.setField("TC_CD"          , "YMA8L002");
@@ -5325,7 +5325,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L002", jrYdMsg));
 				*//*******************************************************************************//*
 				*/
-			    //ÀúÀåÇ° ÀÌµ¿Á¶°Ç ¾÷µ¥ÀÌÆ® 
+			    //ì €ì¥í’ˆ ì´ë™ì¡°ê±´ ì—…ë°ì´íŠ¸ 
 			    //JDTORecord rVal = this.getSlabCurrProgCd(sSTOCK_ID);
 				JDTORecord rVal = ymComm.getSlabYdAimRtGp(jrParam);
 			    String sYD_AIM_RT_GP  = rVal.getFieldString("YD_AIM_RT_GP");
@@ -5359,7 +5359,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					     , MODIFIER = 'SYSTEM'
 					     , MOD_DDTT =  SYSDATE
 					 WHERE STL_NO = :V_STL_NO
-					   AND FRTOMOVE_STAT_CD <> '*'  --ÀÌ¹Ì ½ÇÀûÃ³¸®°¡ µÈ °æ¿ì
+					   AND FRTOMOVE_STAT_CD <> '*'  --ì´ë¯¸ ì‹¤ì ì²˜ë¦¬ê°€ ëœ ê²½ìš°
 					   AND TRANSWORD_SEQNO = (SELECT MAX(TRANSWORD_SEQNO)
 					                            FROM TB_PT_STLFRTOMOVE
 					                           WHERE STL_NO = :V_STL_NO
@@ -5368,45 +5368,45 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    	 */
 					jparam.setField("STL_NO", sSTOCK_ID);
 			    	
-			    	//TB_PT_STLFRTOMOVE Å×ÀÌºí ¾÷µ¥ÀÌÆ®
+			    	//TB_PT_STLFRTOMOVE í…Œì´ë¸” ì—…ë°ì´íŠ¸
 				    EJBConnector ejbConnPT2 = new EJBConnector("default", "YmCommSeEJB", this);
 					ejbConnPT2.trx("updProcStlFrToMove", new Class[] { JDTORecord.class }, new Object[] { jparam });
 					
-				    //½½¶óºê¼ÒÀç ÀÌ¼Û¿Ï·á½ÇÀû(YDPTJ001)
+				    //ìŠ¬ë¼ë¸Œì†Œì¬ ì´ì†¡ì™„ë£Œì‹¤ì (YDPTJ001)
 					JDTORecord tcRecord2 = JDTORecordFactory.getInstance().create();
 
 					tcRecord2.setField("JMS_TC_CD"         , "YDPTJ001");
 					tcRecord2.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14());
 					
 				    tcRecord2.setField("STL_NO"             , StringHelper.evl(stlRecord.getFieldString("SLAB_NO"), ""));
-				    tcRecord2.setField("ORD_NO"             , StringHelper.evl(stlRecord.getFieldString("ORD_NO"), ""));// ÁÖ¹®¹øÈ£
-				    tcRecord2.setField("ORD_DTL"            , StringHelper.evl(stlRecord.getFieldString("ORD_DTL"), ""));// ÁÖ¹®Çà¹ø
-				    tcRecord2.setField("PLNT_PROC_CD"       , StringHelper.evl(stlRecord.getFieldString("PLNT_PROC_CD"), ""));// °øÀå°øÁ¤ÄÚµå
-				    tcRecord2.setField("STL_APPEAR_GP"      , StringHelper.evl(stlRecord.getFieldString("STL_APPEAR_GP"), ""));// Àç·á¿ÜÇü±¸ºĞ
-				    tcRecord2.setField("CURR_PROG_CD"       , StringHelper.evl(stlRecord.getFieldString("CURR_PROG_CD"), ""));// ÇöÀçÁøµµÄÚµå
-				    tcRecord2.setField("ORD_YEOJAE_GP"      , StringHelper.evl(stlRecord.getFieldString("ORD_YEOJAE_GP"), ""));// ÁÖ¹®¿©Àç±¸ºĞ
-				    tcRecord2.setField("STL_WT"             , StringHelper.evl(stlRecord.getFieldString("SLAB_WT"), ""));// Àç·áÁß·® (SLABÁß·®)
-			    	tcRecord2.setField("DS_MTL_WT"          , "");// ¼³°èÀç·áÁß·®
-				    tcRecord2.setField("MTL_STAT_GP"        , StringHelper.evl(stlRecord.getFieldString("RECORD_PROG_STAT"), ""));// Àç·á»óÅÂ±¸ºĞ
-				    tcRecord2.setField("RECORD_END_GP"      , StringHelper.evl(stlRecord.getFieldString("RECORD_END_GP"), ""));// Record Á¾·á±¸ºĞ
-				    tcRecord2.setField("RECORD_END_GP1"     , "");//Record Á¾·á±¸ºĞ 1
-				    tcRecord2.setField("BEFO_PROG_CD"       , StringHelper.evl(stlRecord.getFieldString("BEFO_PROG_CD"), ""));//ÀüÁøµµ ÄÚµå
-				    tcRecord2.setField("BEF_ORD_NO"         , StringHelper.evl(stlRecord.getFieldString("BEF_ORD_NO"), ""));// ÀüÁÖ¹® ¹øÈ£
-				    tcRecord2.setField("BEF_ORD_DTL"        , StringHelper.evl(stlRecord.getFieldString("BEF_ORD_DTL"), ""));// ÀüÁÖ¹® Çà¹ø
-				    tcRecord2.setField("MMATL_FEE_NO"       , StringHelper.evl(stlRecord.getFieldString("MMATL_FEE_NO"), ""));// ¸ğÀç·á¹øÈ£
-				    tcRecord2.setField("ORDERTRANS_MATCH_GP", StringHelper.evl(stlRecord.getFieldString("MATCH_ORDERTRANS_GP"), ""));// ¸ñÀüÃæ´ç±¸ºĞ	
+				    tcRecord2.setField("ORD_NO"             , StringHelper.evl(stlRecord.getFieldString("ORD_NO"), ""));// ì£¼ë¬¸ë²ˆí˜¸
+				    tcRecord2.setField("ORD_DTL"            , StringHelper.evl(stlRecord.getFieldString("ORD_DTL"), ""));// ì£¼ë¬¸í–‰ë²ˆ
+				    tcRecord2.setField("PLNT_PROC_CD"       , StringHelper.evl(stlRecord.getFieldString("PLNT_PROC_CD"), ""));// ê³µì¥ê³µì •ì½”ë“œ
+				    tcRecord2.setField("STL_APPEAR_GP"      , StringHelper.evl(stlRecord.getFieldString("STL_APPEAR_GP"), ""));// ì¬ë£Œì™¸í˜•êµ¬ë¶„
+				    tcRecord2.setField("CURR_PROG_CD"       , StringHelper.evl(stlRecord.getFieldString("CURR_PROG_CD"), ""));// í˜„ì¬ì§„ë„ì½”ë“œ
+				    tcRecord2.setField("ORD_YEOJAE_GP"      , StringHelper.evl(stlRecord.getFieldString("ORD_YEOJAE_GP"), ""));// ì£¼ë¬¸ì—¬ì¬êµ¬ë¶„
+				    tcRecord2.setField("STL_WT"             , StringHelper.evl(stlRecord.getFieldString("SLAB_WT"), ""));// ì¬ë£Œì¤‘ëŸ‰ (SLABì¤‘ëŸ‰)
+			    	tcRecord2.setField("DS_MTL_WT"          , "");// ì„¤ê³„ì¬ë£Œì¤‘ëŸ‰
+				    tcRecord2.setField("MTL_STAT_GP"        , StringHelper.evl(stlRecord.getFieldString("RECORD_PROG_STAT"), ""));// ì¬ë£Œìƒíƒœêµ¬ë¶„
+				    tcRecord2.setField("RECORD_END_GP"      , StringHelper.evl(stlRecord.getFieldString("RECORD_END_GP"), ""));// Record ì¢…ë£Œêµ¬ë¶„
+				    tcRecord2.setField("RECORD_END_GP1"     , "");//Record ì¢…ë£Œêµ¬ë¶„ 1
+				    tcRecord2.setField("BEFO_PROG_CD"       , StringHelper.evl(stlRecord.getFieldString("BEFO_PROG_CD"), ""));//ì „ì§„ë„ ì½”ë“œ
+				    tcRecord2.setField("BEF_ORD_NO"         , StringHelper.evl(stlRecord.getFieldString("BEF_ORD_NO"), ""));// ì „ì£¼ë¬¸ ë²ˆí˜¸
+				    tcRecord2.setField("BEF_ORD_DTL"        , StringHelper.evl(stlRecord.getFieldString("BEF_ORD_DTL"), ""));// ì „ì£¼ë¬¸ í–‰ë²ˆ
+				    tcRecord2.setField("MMATL_FEE_NO"       , StringHelper.evl(stlRecord.getFieldString("MMATL_FEE_NO"), ""));// ëª¨ì¬ë£Œë²ˆí˜¸
+				    tcRecord2.setField("ORDERTRANS_MATCH_GP", StringHelper.evl(stlRecord.getFieldString("MATCH_ORDERTRANS_GP"), ""));// ëª©ì „ì¶©ë‹¹êµ¬ë¶„	
 				
-				    //³»ºÎÀÎÅÍÆäÀÌ½º ¼Û½Å¸ğµâ È£Ãâ 
+				    //ë‚´ë¶€ì¸í„°í˜ì´ìŠ¤ ì†¡ì‹ ëª¨ë“ˆ í˜¸ì¶œ 
 //					jrRtn = commUtils.addSndData(jrRtn, tcRecord2);	
 				    
-				    commUtils.printLog(logId, "³»ºÎIFÈ£Ãâ=YDPTJ001 ½½¶óºê¼ÒÀç ÀÌ¼Û¿Ï·á½ÇÀûBACKUPÃ³¸®", "[INFO]");
+				    commUtils.printLog(logId, "ë‚´ë¶€IFí˜¸ì¶œ=YDPTJ001 ìŠ¬ë¼ë¸Œì†Œì¬ ì´ì†¡ì™„ë£Œì‹¤ì BACKUPì²˜ë¦¬", "[INFO]");
 				}
 			    
 			    // /*********************************
-			    //  * ÁÖÆí°øÅë ÁøµµÄÚµå UPDATE
+			    //  * ì£¼í¸ê³µí†µ ì§„ë„ì½”ë“œ UPDATE
 			    //  *********************************/
 				//jrParam.setField("MSLAB_NO", sSTOCK_ID);  
-				//JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcd", logId, methodNm, "°øÁ¤ ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ÁøµµÄÚµå °¡Á®¿À±â "); 
+				//JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcd", logId, methodNm, "ê³µì • í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ì§„ë„ì½”ë“œ ê°€ì ¸ì˜¤ê¸° "); 
 				//String szCurrProgCd = "";
 				
 				//if (rsResult.size() > 0) {
@@ -5419,16 +5419,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				
 				/**********************************************************
-				* ÁÖÆí°øÅë Áøµµ¿¡ µû¶ó ÁÖÆí°øÅë, SLAB°øÅë UPDATE
+				* ì£¼í¸ê³µí†µ ì§„ë„ì— ë”°ë¼ ì£¼í¸ê³µí†µ, SLABê³µí†µ UPDATE
 				**********************************************************/
-				//ÁÖÆí°øÅë ÁøÇà »óÅÂ°¡ ÁøÇàÁß(3)ÀÎ °æ¿ì SLAB°øÅëÀ» update 
-				String sRECORD_PROG_STAT = "3"; // 2018.02.28 ÁÖÆí°øÅë¿¡ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì ·¹ÄÚµåÁøÇà»óÅÂ¸¦ '3'À¸·Î º»´Ù.
+				//ì£¼í¸ê³µí†µ ì§„í–‰ ìƒíƒœê°€ ì§„í–‰ì¤‘(3)ì¸ ê²½ìš° SLABê³µí†µì„ update 
+				String sRECORD_PROG_STAT = "3"; // 2018.02.28 ì£¼í¸ê³µí†µì— ì¡´ì¬í•˜ì§€ ì•Šì„ ê²½ìš° ë ˆì½”ë“œì§„í–‰ìƒíƒœë¥¼ '3'ìœ¼ë¡œ ë³¸ë‹¤.
 				JDTORecordSet rsResult;
 				String szCurrProgCd = "";
 				
-				// ÁÖÆí °øÅë¿¡¼­ Á¶È¸
+				// ì£¼í¸ ê³µí†µì—ì„œ ì¡°íšŒ
 				jrParam.setField("STOCK_ID"		, sSTOCK_ID		);  
-				JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabCommDtlInqjl.getMSlabComm", logId, methodNm, "ÁÖÆí °øÅë¿¡¼­ Á¶È¸"); 
+				JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.bslabCommDtlInqjl.getMSlabComm", logId, methodNm, "ì£¼í¸ ê³µí†µì—ì„œ ì¡°íšŒ"); 
 				
 				if(rsResult2.size() > 0) {
 					
@@ -5438,29 +5438,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("3".equals(sRECORD_PROG_STAT)) {
 					//RECORD_PROG_STAT == '3'
-					//°øÁ¤ ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ÁøµµÄÚµå °¡Á®¿À±â
+					//ê³µì • í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ì§„ë„ì½”ë“œ ê°€ì ¸ì˜¤ê¸°
 					jrParam.setField("SLAB_NO"		, sSTOCK_ID		);  
-					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcdSlab", logId, methodNm, "°øÁ¤ ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ÁøµµÄÚµå °¡Á®¿À±â "); 
+					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcdSlab", logId, methodNm, "ê³µì • í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ì§„ë„ì½”ë“œ ê°€ì ¸ì˜¤ê¸° "); 
 					
 					if(rsResult.size() > 0) {
 						szCurrProgCd = rsResult.getRecord(0).getFieldString("CURR_PROG_CD");
 					}
 					
-					//SLAB°øÅë ÁøµµÄÚµå UPDATE
+					//SLABê³µí†µ ì§„ë„ì½”ë“œ UPDATE
 					jrParam.setField("CURR_PROG_CD"		, szCurrProgCd		); 
 					bSlabComm.updSlabCommCurrProgCd(jrParam);
 					
 				} else {
 					//RECORD_PROG_STAT != '3'
-					//°øÁ¤ ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ÁøµµÄÚµå °¡Á®¿À±â
+					//ê³µì • í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ì§„ë„ì½”ë“œ ê°€ì ¸ì˜¤ê¸°
 					jrParam.setField("MSLAB_NO"		, sSTOCK_ID		);  
-					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcd", logId, methodNm, "°øÁ¤ ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ÁøµµÄÚµå °¡Á®¿À±â "); 
+					rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getListcurrprogcd", logId, methodNm, "ê³µì • í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ì§„ë„ì½”ë“œ ê°€ì ¸ì˜¤ê¸° "); 
 					
 					if(rsResult.size() > 0) {
 						szCurrProgCd = rsResult.getRecord(0).getFieldString("CURR_PROG_CD");
 					}
 					
-					//ÁÖÆí°øÅë ÁøµµÄÚµå UPDATE
+					//ì£¼í¸ê³µí†µ ì§„ë„ì½”ë“œ UPDATE
 					jrParam.setField("CURR_PROG_CD"		, szCurrProgCd		); 
 					bSlabComm.updMSlabCommCurrProgCd(jrParam);
 					
@@ -5469,7 +5469,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				
 			    
-			    commUtils.printLog(logId, "ÀÌ¼Û¹é¾÷ ½ÇÀûÃ³¸® END", "[INFO]-");
+			    commUtils.printLog(logId, "ì´ì†¡ë°±ì—… ì‹¤ì ì²˜ë¦¬ END", "[INFO]-");
 			} // end if ("Y".equals(sFTMV_BKUP))
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -5484,15 +5484,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 	
 	/**
-	 * »êÀûÀ§Ä¡¼öÁ¤ - »èÁ¦
+	 * ì‚°ì ìœ„ì¹˜ìˆ˜ì • - ì‚­ì œ
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord delStkLoc(GridData gdReq) throws DAOException {
-		String methodNm = "»êÀûÀ§Ä¡¼öÁ¤-»èÁ¦[BSlabJspSeEJB.delStkLoc] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ì‚­ì œ[BSlabJspSeEJB.delStkLoc] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -5503,31 +5503,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_WRKBOOK_YN    = gdReq.getParam("YD_WRKBOOK_YN"   );
 			String sYD_CARSCH_YN     = gdReq.getParam("YD_CARSCH_YN"    );
 			String sYD_TCARSCH_YN    = gdReq.getParam("YD_TCARSCH_YN"   );
-			String sFROM_ADDR        = gdReq.getParam("FROM_ADDR");  //from À§Ä¡
+			String sFROM_ADDR        = gdReq.getParam("FROM_ADDR");  //from ìœ„ì¹˜
 			String sMODIFIER         = gdReq.getParam("userid"          );
-			String sDEL_RST          = gdReq.getParam("DEL_RST"         ); // »èÁ¦ÀÌÀ¯
+			String sDEL_RST          = gdReq.getParam("DEL_RST"         ); // ì‚­ì œì´ìœ 
 			
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			/*****************************************************
-			 * ÀúÀåÇ°Á¦¿ø : ¾ßµåL2·Î ¼Û½Å(YMA8L002)
+			 * ì €ì¥í’ˆì œì› : ì•¼ë“œL2ë¡œ ì†¡ì‹ (YMA8L002)
 			 ******************************************************/
-			commUtils.printLog(logId, "YMA8L002 JMSÀü¼Û", "[INFO]");
+			commUtils.printLog(logId, "YMA8L002 JMSì „ì†¡", "[INFO]");
 			
 			JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 			jrYdMsg.setField("TC_CD"          , "YMA8L002");
-			jrYdMsg.setField("MSG_GP"         , "D"); //»èÁ¦ÀÏ°æ¿ì D·Î º¸³¿ 20170904
+			jrYdMsg.setField("MSG_GP"         , "D"); //ì‚­ì œì¼ê²½ìš° Dë¡œ ë³´ëƒ„ 20170904
 			jrYdMsg.setField("YD_INFO_SYNC_CD", "5");
 			jrYdMsg.setField("STOCK_ID"       , sSTOCK_ID);
 
 			jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L002Del", jrYdMsg));
 			
 			
-			//»êÀûÀ§Ä¡¼öÁ¤-»èÁ¦
+			//ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ì‚­ì œ
 			/*
 			UPDATE TB_YM_STACKLAYER
 			   SET STOCK_ID         = NULL
@@ -5537,9 +5537,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE STOCK_ID = :V_STOCK_ID
 			 */
 			jrParam.setField("STOCK_ID", sSTOCK_ID);
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStackLayer", logId, methodNm, "»êÀûÀ§Ä¡¼öÁ¤-»èÁ¦");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStackLayer", logId, methodNm, "ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ì‚­ì œ");
 			
-			/* »èÁ¦ÀÌÀ¯ 
+			/* ì‚­ì œì´ìœ  
 			UPDATE TB_YM_STOCK
 			   SET DEL_RST = :V_DEL_RST
 			     , MODIFIER = :V_MODIFIER
@@ -5550,7 +5550,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelRst");
 			
 			/*************************
-			 * ÀÛ¾÷¿¹¾à »èÁ¦
+			 * ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 			 ***************************/
 			if ("Y".equals(sYD_WRKBOOK_YN)) {
 				/*  
@@ -5584,7 +5584,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 			}
 			/*******************
-			 * ´ëÂ÷½ºÄÉÁÙ »èÁ¦
+			 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			 ********************/
 			if ("Y".equals(sYD_TCARSCH_YN)) {
 				/*
@@ -5628,7 +5628,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 			}
 			/**************************
-			 * Â÷·®½ºÄÉÁÙ »èÁ¦
+			 * ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì‚­ì œ
 			 ***************************/
 			if ("Y".equals(sYD_CARSCH_YN)) {
 				/*
@@ -5673,14 +5673,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 				
 			/**************************
-			 * ½ÇÀûÅ×ÀÌºí¿¡ ÀúÀå
+			 * ì‹¤ì í…Œì´ë¸”ì— ì €ì¥
 			 **************************/
 			this.insertUpPutWrslRtData(sSTOCK_ID, sFROM_ADDR, "", "3X9999", sYD_GP, sMODIFIER);//
 			
 			/*****************************************************
-			 * ÀúÀåÀ§Ä¡Á¦¿ø : ÄÚÀÏ¾ßµåL2·Î ¼Û½Å(YMA8L001)
+			 * ì €ì¥ìœ„ì¹˜ì œì› : ì½”ì¼ì•¼ë“œL2ë¡œ ì†¡ì‹ (YMA8L001)
 			 ******************************************************/
-			commUtils.printLog(logId, "YMA8L001 JMSÀü¼Û", "[INFO]");
+			commUtils.printLog(logId, "YMA8L001 JMSì „ì†¡", "[INFO]");
 			
 			JDTORecord jrYdMsg1 = JDTORecordFactory.getInstance().create();
 			jrYdMsg1.setField("TC_CD"          , "YMA8L001");
@@ -5703,9 +5703,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * »êÀûÀ§Ä¡¼öÁ¤ - Àü¹®¹é¾÷ TODO
+	 * ì‚°ì ìœ„ì¹˜ìˆ˜ì • - ì „ë¬¸ë°±ì—… TODO
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData
 	 * @return JDTORecord
 	 * @throws DAOException
@@ -5713,7 +5713,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 	public JDTORecord updStkLocBackUp(GridData gdReq) throws DAOException {
 		
-		String methodNm = "»êÀûÀ§Ä¡¼öÁ¤-¹é¾÷[BSlabJspSeEJB.updStkLocBackUp] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‚°ì ìœ„ì¹˜ìˆ˜ì •-ë°±ì—…[BSlabJspSeEJB.updStkLocBackUp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		JDTORecordSet dmRc = null;
 		
@@ -5723,29 +5723,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			jrParam.setField("YD_GP"	 , gdReq.getParam("YD_GP"));
 
-			String sSTOCK_ID  = commUtils.getValue(gdReq, "STOCK_ID", 0); //Àç·á¹øÈ£
-			String sINPUT_DATA1 = gdReq.getParam("PARA_INPUT_DATA1");	//¼³ºñID
+			String sSTOCK_ID  = commUtils.getValue(gdReq, "STOCK_ID", 0); //ì¬ë£Œë²ˆí˜¸
+			String sINPUT_DATA1 = gdReq.getParam("PARA_INPUT_DATA1");	//ì„¤ë¹„ID
 			
-			String sSND_FLAG  = gdReq.getParam("SND_FLAG");	// ¹é¾÷Á¾·ù
+			String sSND_FLAG  = gdReq.getParam("SND_FLAG");	// ë°±ì—…ì¢…ë¥˜
 			
 			/******************************
-			 *** ÀúÀåÇ°
+			 *** ì €ì¥í’ˆ
 			 ******************************/
 			if ("STOCK".equals(sSND_FLAG)) {
 				
 				jrParam.setField("STOCK_ID"  , sSTOCK_ID);
 				
-				// ÀúÀåÇ° »ı¼º
+				// ì €ì¥í’ˆ ìƒì„±
 				EJBConnector ejbConnS = new EJBConnector("default", "BSlabJspSeEJB", this);
 				jrRtn = (JDTORecord)ejbConnS.trx("insStockInfo", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				
 				//======================================================
-				// ÀúÀåÇ°Á¦¿ø : ÄÚÀÏ¾ßµåL2·Î ¼Û½Å(YMA8L002)
+				// ì €ì¥í’ˆì œì› : ì½”ì¼ì•¼ë“œL2ë¡œ ì†¡ì‹ (YMA8L002)
 				//======================================================
 				JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 				jrYdMsg.setField("TC_CD"          , "YMA8L002");
@@ -5756,16 +5756,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/******************************
-			 *** ½ºÄ«ÇÎº¸±Ş
+			 *** ìŠ¤ì¹´í•‘ë³´ê¸‰
 			 ******************************/
 			if ("SCARFING_IN".equals(sSND_FLAG)) { //CS1PB02
-				//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
-				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML022);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-				jrYdMsg.setField("WRK_GP"          , "1"      );	//ÀÛ¾÷Ã³¸®±¸ºĞ '1¡¯ : Line In (º¸±Ş), ¡®2¡¯ : Take Out, ¡®3¡¯ : Line Off (ÃßÃâ)
+				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML022);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+				jrYdMsg.setField("WRK_GP"          , "1"      );	//ì‘ì—…ì²˜ë¦¬êµ¬ë¶„ '1â€™ : Line In (ë³´ê¸‰), â€˜2â€™ : Take Out, â€˜3â€™ : Line Off (ì¶”ì¶œ)
 				jrYdMsg.setField("SLAB_NO"         , sSTOCK_ID);	//SLAB_NO
 				jrYdMsg.setField("POSITION"        , ""       );	//POSITION
-				jrYdMsg.setField("CAU_CD"          , ""       );	//¿øÀÎÄÚµå
+				jrYdMsg.setField("CAU_CD"          , ""       );	//ì›ì¸ì½”ë“œ
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				JDTORecord jrSnd = (JDTORecord)sndConn.trx("rcvA8YML022", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -5774,18 +5774,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			} //end if
 			
 			/******************************
-			 *** ÀåÀÔ½ÇÀû
+			 *** ì¥ì…ì‹¤ì 
 			 ******************************/
 			if (sSND_FLAG.equals("SND_YDCTJ032")) { 
 				
-				//»ı»êÅëÁ¦ ÀåÀÔÁøÇà½ÇÀû ¼Û½Å 
+				//ìƒì‚°í†µì œ ì¥ì…ì§„í–‰ì‹¤ì  ì†¡ì‹  
 //				jrRtn = commUtils.addSndData(jrRtn, bSlabComm.makeYDCTJ032(sSTOCK_ID, YmConstant.TC_YMPC030, logId ));
 				JDTORecord jrYdMsgH2LINE = JDTORecordFactory.getInstance().create();
 				
-				//¾Ğ¿¬L2LINE OFF½ÇÀû¼Û½Å
+				//ì••ì—°L2LINE OFFì‹¤ì ì†¡ì‹ 
 				jrYdMsgH2LINE.setField("STOCK_ID"         , sSTOCK_ID);
-				jrYdMsgH2LINE.setField("CHG_SUP_PROG_STAT", YmConstant.TC_YMPC030); //TODO ¸ğ¸£°ÚÀ½!!
-				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YDCTJ032BackUp", jrYdMsgH2LINE)); // Àü¹®Äõ¸® »ı¼º ÇØ¾ßÇÔ
+				jrYdMsgH2LINE.setField("CHG_SUP_PROG_STAT", YmConstant.TC_YMPC030); //TODO ëª¨ë¥´ê² ìŒ!!
+				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YDCTJ032BackUp", jrYdMsgH2LINE)); // ì „ë¬¸ì¿¼ë¦¬ ìƒì„± í•´ì•¼í•¨
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -5800,11 +5800,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 
+	 * ì˜¤í¼ë ˆì´ì…˜ëª… : 
 	 *
-	 * SLAB »êÀûÀ§Ä¡ ¼öÁ¤ ¸Ş¼Òµå TODO
+	 * SLAB ì‚°ì ìœ„ì¹˜ ìˆ˜ì • ë©”ì†Œë“œ TODO
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param 
 	 * @return
 	 * @throws Exception 
@@ -5815,10 +5815,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		String logId = jparam.getResultCode();
 		
 		String sSTOCK_ID = jparam.getFieldString("STOCK_ID"); 
-		String sUpLoc    = jparam.getFieldString("FROM_ADDR"); // FROMÀ§Ä¡
-		String sPutLoc   = jparam.getFieldString("YD_STR_LOC");// TOÀ§Ä¡
+		String sUpLoc    = jparam.getFieldString("FROM_ADDR"); // FROMìœ„ì¹˜
+		String sPutLoc   = jparam.getFieldString("YD_STR_LOC");// TOìœ„ì¹˜
 		String sMODIFIER = StringHelper.evl(jparam.getFieldString("MODIFIER"), "SYSTEM");
-		String sPUT_BETWEEN_YN = commUtils.nvl(jparam.getFieldString("PUT_BETWEEN_YN"), "N");// ³¢¿ö³Ö±â¿©ºÎ
+		String sPUT_BETWEEN_YN = commUtils.nvl(jparam.getFieldString("PUT_BETWEEN_YN"), "N");// ë¼ì›Œë„£ê¸°ì—¬ë¶€
 		
 		JDTORecord jrRtn = null;
 		
@@ -5846,26 +5846,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_AIM_RT_GP = sStockInfo.getFieldString("YD_AIM_RT_GP");
 			
 			if (sUpLoc.length() > 1) {
-				sUpYardGp = sUpLoc.substring(0, 1); //from ¾ßµå±¸ºĞ
+				sUpYardGp = sUpLoc.substring(0, 1); //from ì•¼ë“œêµ¬ë¶„
 			}
 
 			if (sPutLoc.length() > 1) {
-				sPutYardGp = sPutLoc.substring(0, 1); //to ¾ßµå±¸ºĞ
+				sPutYardGp = sPutLoc.substring(0, 1); //to ì•¼ë“œêµ¬ë¶„
 			}
 
-			if (sCURR_PROG_CD.equals(YmConstant.CURR_PROG_CD_SLAB_3)) { //»ı»êÁ¾·á
-				throw new Exception("»êÀûÀ§Ä¡ ¼öÁ¤=> »ı»êÁ¾·áµÈ ÀúÀåÇ°Àº ¼öÁ¤À» ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			if (sCURR_PROG_CD.equals(YmConstant.CURR_PROG_CD_SLAB_3)) { //ìƒì‚°ì¢…ë£Œ
+				throw new Exception("ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ìƒì‚°ì¢…ë£Œëœ ì €ì¥í’ˆì€ ìˆ˜ì •ì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			if (!"".equals(sUpYardGp) && !"".equals(sPutYardGp)	&& !sUpYardGp.equals(sPutYardGp)) {
 				if (!sCURR_PROG_CD.equals(YmConstant.CURR_PROG_CD_SLAB_C)) {
-					throw new Exception("»êÀûÀ§Ä¡ ¼öÁ¤=> °øÀå°£ »êÀûÀ§Ä¡ ¼öÁ¤Àº ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ê³µì¥ê°„ ì‚°ì ìœ„ì¹˜ ìˆ˜ì •ì€ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			}
 
 			
 			/**
-			 * 0. ÀÔ·ÂÇÑ To À§Ä¡ Á¤ÇÕ¼º Á¡°Ë  
+			 * 0. ì…ë ¥í•œ To ìœ„ì¹˜ ì •í•©ì„± ì ê²€  
 			 */
 			if (sPutLoc.length() == 10) {
 				sPutStackColGp   = sPutLoc.substring(0, 6);
@@ -5882,11 +5882,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecordSet vColGp = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStackColInfoWithPk");
 
 			if (vColGp.size() <= 0) {
-				throw new Exception("»êÀûÀ§Ä¡ ¼öÁ¤=> ToÀ§Ä¡Á¤º¸°¡ Àß¸ø ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+				throw new Exception("ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> Toìœ„ì¹˜ì •ë³´ê°€ ì˜ëª» ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			
 			/********************************
-			 * 1. ÀÛ¾÷¿¹¾à À¯¹« Ã¼Å©
+			 * 1. ì‘ì—…ì˜ˆì•½ ìœ ë¬´ ì²´í¬
 			 ********************************/
 			/*
 			WITH PARAM AS (
@@ -5915,15 +5915,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				sWbookId = StringHelper.evl(stockV.getRecord(0).getFieldString("WBOOK_ID"), "");
 				sDelYn   = StringHelper.evl(stockV.getRecord(0).getFieldString("DEL_YN"), "");
 			} else {
-//				throw new Exception("»êÀûÀ§Ä¡ ¼öÁ¤=> ÀúÀåÇ°Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+//				throw new Exception("ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ì €ì¥í’ˆì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			}
 			
-			commUtils.printLog(logId, "»êÀûÀ§Ä¡ ¼öÁ¤=> ÀÛ¾÷¿¹¾àID = " + sWbookId, "[INFO]");
-			commUtils.printLog(logId, "»êÀûÀ§Ä¡ ¼öÁ¤=> »èÁ¦À¯¹«   = " + sDelYn  , "[INFO]");
+			commUtils.printLog(logId, "ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ì‘ì—…ì˜ˆì•½ID = " + sWbookId, "[INFO]");
+			commUtils.printLog(logId, "ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ì‚­ì œìœ ë¬´   = " + sDelYn  , "[INFO]");
 			
 			if (!"".equals(sWbookId)) {
 				
-				/* ÀÛ¾÷¿¹¾à Àç·á À§Ä¡ ¼öÁ¤ */
+				/* ì‘ì—…ì˜ˆì•½ ì¬ë£Œ ìœ„ì¹˜ ìˆ˜ì • */
 				jrParam.setField("STOCK_ID"   , sSTOCK_ID);
 				jrParam.setField("MODIFIER"   , sMODIFIER);
 				jrParam.setField("YD_WBOOK_ID", sWbookId);
@@ -5974,9 +5974,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				//commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWmStrLoc");
 			    /**********************************************************
-				* ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦ 
+				* ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ 
 				**********************************************************/
-				//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+				//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 				/*
 				UPDATE TB_YM_WRKBOOKMTL
 				   SET MODIFIER    = :V_MODIFIER
@@ -5987,7 +5987,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl");				
 
-				//ÀÛ¾÷¿¹¾à »èÁ¦
+				//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 				/*
 				UPDATE TB_YM_WRKBOOK
 				   SET MODIFIER    = :V_MODIFIER
@@ -6007,20 +6007,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				JDTORecordSet wbookV = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getWbookInfo");
 				
 				/**
-				 * 1.2 ÀÛ¾÷¿¹¾à ½ºÄÉÁì ÄÚµå Ã¼Å©
+				 * 1.2 ì‘ì—…ì˜ˆì•½ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì²´í¬
 				 */
 				if (wbookV.size() > 0) {
 					sCurSchCode = StringHelper.evl(wbookV.getRecord(0).getFieldString("YD_SCH_CD"), "");
 					sCurBayGp 	= StringHelper.evl(wbookV.getRecord(0).getFieldString("YD_BAY_GP"), "");
 				}
-				commUtils.printLog(logId, "»êÀûÀ§Ä¡ ¼öÁ¤=> ½ºÄÉÁìÄÚµå=" + sCurSchCode, "[INFO]");
+				commUtils.printLog(logId, "ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> ìŠ¤ì¼€ì¥´ì½”ë“œ=" + sCurSchCode, "[INFO]");
 
-				// Áï »óÂ÷Áö½Ã Æí¼ºµÈ ½ÃÁ¡ÀÇ ÀÛ¾÷¿¹¾àÀº »èÁ¦ÇÏÁö ¾Ê´Â´Ù.
+				// ì¦‰ ìƒì°¨ì§€ì‹œ í¸ì„±ëœ ì‹œì ì˜ ì‘ì—…ì˜ˆì•½ì€ ì‚­ì œí•˜ì§€ ì•ŠëŠ”ë‹¤.
 				if (sCurBayGp.equals(sPutStackColGp.substring(1, 2))) {
-					// °°Àº µ¿¿¡ »êÀûÀ§Ä¡ ¼öÁ¤À» ÇÑ °æ¿ì
+					// ê°™ì€ ë™ì— ì‚°ì ìœ„ì¹˜ ìˆ˜ì •ì„ í•œ ê²½ìš°
 				} else {
-					// ´Ù¸¥ µ¿À¸·Î »êÀûÀ§Ä¡ ¼öÁ¤À» ÇÑ °æ¿ì.
-					// ÀÌ °æ¿ì¿¡ ÀÛ¾÷¿¹¾à µ¿±¸ºĞ Ç×¸ñµµ ¼öÁ¤À» ÇØÁØ´Ù.
+					// ë‹¤ë¥¸ ë™ìœ¼ë¡œ ì‚°ì ìœ„ì¹˜ ìˆ˜ì •ì„ í•œ ê²½ìš°.
+					// ì´ ê²½ìš°ì— ì‘ì—…ì˜ˆì•½ ë™êµ¬ë¶„ í•­ëª©ë„ ìˆ˜ì •ì„ í•´ì¤€ë‹¤.
 					/*
 					UPDATE TB_YM_WRKBOOK
 					   SET YD_BAY_GP   = :V_YD_BAY_GP
@@ -6040,9 +6040,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sUP_SECT_GP = "";
 
 			/********************************************************
-			 * 2. ÀúÀåÇ°ÀÇ MAPÁ¤º¸¸¦ °¡Á®¿Â´Ù. Áßº¹À§Ä¡µµ Ã¼Å©ÇÑ´Ù.
+			 * 2. ì €ì¥í’ˆì˜ MAPì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤. ì¤‘ë³µìœ„ì¹˜ë„ ì²´í¬í•œë‹¤.
 			 ********************************************************/
-			commUtils.printLog(logId, "ÀúÀåÇ°ÀÇ MAPÁ¤º¸¸¦ °¡Á®¿Â´Ù. Áßº¹À§Ä¡µµ Ã¼Å©ÇÑ´Ù", "[INFO]");
+			commUtils.printLog(logId, "ì €ì¥í’ˆì˜ MAPì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤. ì¤‘ë³µìœ„ì¹˜ë„ ì²´í¬í•œë‹¤", "[INFO]");
 			/*
 			SELECT * 
 			  FROM TB_YM_STACKLAYER
@@ -6063,24 +6063,24 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 					sUP_SECT_GP = sUP_STACK_COL_GP.substring(2, 4);
 					
-					if ("XX".equals(sUP_SECT_GP)// SALB ºñ»óÀûÄ¡À§Ä¡
-					 || "SE".equals(sUP_SECT_GP)// SALB Scarfing ÀÔÃø
-					 || "SD".equals(sUP_SECT_GP)// SALB Scarfing ÃâÃø
+					if ("XX".equals(sUP_SECT_GP)// SALB ë¹„ìƒì ì¹˜ìœ„ì¹˜
+					 || "SE".equals(sUP_SECT_GP)// SALB Scarfing ì…ì¸¡
+					 || "SD".equals(sUP_SECT_GP)// SALB Scarfing ì¶œì¸¡
 					 ) {
 						/**
-						 * ÄÁº£ÀÌ¾îÁ¤º¸»èÁ¦ 
+						 * ì»¨ë² ì´ì–´ì •ë³´ì‚­ì œ 
 						 */
 						//this.deleteConveyorInfo(sUpStackColGp,sStockId); 
 
 					} else {
 
 						/***************************
-						 * FROMÀ§Ä¡°¡ ´ëÂ÷ÀÏ °æ¿ì 
+						 * FROMìœ„ì¹˜ê°€ ëŒ€ì°¨ì¼ ê²½ìš° 
 						 ***************************/
 						if ("TC".equals(sUP_SECT_GP)) {
 
 							/**
-							 * ´ëÂ÷À§Ä¡ CLEAR
+							 * ëŒ€ì°¨ìœ„ì¹˜ CLEAR
 							 */
 							String sCurrQty = "0";
 							sCurrQty = "-1";
@@ -6097,10 +6097,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							         SELECT 
 							                CASE WHEN TO_NUMBER(NVL(STACK_BED_QNTY_CURR,0) + :V_QTY) < 0
 							                     THEN 0 ELSE TO_NUMBER(NVL(STACK_BED_QNTY_CURR,0) + :V_QTY
-							                END AS CUR_QNT,-- ÀûÄ¡BED¼ö·®ÇöÀç
+							                END AS CUR_QNT,-- ì ì¹˜BEDìˆ˜ëŸ‰í˜„ì¬
 							                CASE WHEN TO_NUMBER(NVL(STACK_BED_ABLE_QNTY,0) + (:V_QTY*-1)) < 0
 							                     THEN 0 ELSE TO_NUMBER(NVL(STACK_BED_ABLE_QNTY,0) + (:V_QTY*-1))
-							                END AS ABLE_QNT,-- ÀûÄ¡BED°¡´É¼ö·®
+							                END AS ABLE_QNT,-- ì ì¹˜BEDê°€ëŠ¥ìˆ˜ëŸ‰
 							                'SYSTEM',
 							                SYSDATE     
 							           FROM TB_YM_STACKER
@@ -6116,7 +6116,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStackerQtyInfo");
 							
 							/*********************************
-							 * ´ëÂ÷Àç·á »èÁ¦
+							 * ëŒ€ì°¨ì¬ë£Œ ì‚­ì œ
 							 ********************************/
 							/*
 							SELECT YD_TCAR_SCH_ID
@@ -6134,7 +6134,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							if (rst.size() > 0) {
 								String sYD_TCAR_SCH_ID = rst.getRecord(0).getFieldString("YD_TCAR_SCH_ID");
 								jrParam.setField("YD_TCAR_SCH_ID", sYD_TCAR_SCH_ID);
-								/* ´ëÂ÷Àç·á »èÁ¦
+								/* ëŒ€ì°¨ì¬ë£Œ ì‚­ì œ
 								UPDATE TB_YM_TCARFTMVMTL
 								   SET MODIFIER    = :V_MODIFIER
 								      ,MOD_DDTT    = SYSDATE
@@ -6145,7 +6145,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 								 */
 								commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updDelTcarFtMvMtl");
 								
-								/* ´ëÂ÷Àç·á °³¼ö Á¶È¸
+								/* ëŒ€ì°¨ì¬ë£Œ ê°œìˆ˜ ì¡°íšŒ
 								SELECT COUNT(*) AS TCAR_CNT
 								  FROM TB_YM_TCARFTMVMTL
 								 WHERE DEL_YN = 'N'
@@ -6159,7 +6159,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 								JDTORecordSet rstCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCntTcarMtlCntByStockId");
 								
 								if ("0".equals(rstCnt.getRecord(0).getField("TCAR_CNT"))){ 
-									// ´ëÂ÷¿¡ ³²¾ÆÀÖ´Â Àç·á°¡ ¾øÀ» ¶§ ´ëÂ÷½ºÄÉÁÙµµ »èÁ¦
+									// ëŒ€ì°¨ì— ë‚¨ì•„ìˆëŠ” ì¬ë£Œê°€ ì—†ì„ ë•Œ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ë„ ì‚­ì œ
 									/*
 									UPDATE TB_YM_TCARSCH
 									   SET MODIFIER    = :V_MODIFIER
@@ -6196,9 +6196,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updateStockMoveEquipInfo");
 						
 						/**
-						 * ÀûÄ¡´Ü UPÀ§Ä¡ Clear tb_ym_stacklayer Table : stock_id =
+						 * ì ì¹˜ë‹¨ UPìœ„ì¹˜ Clear tb_ym_stacklayer Table : stock_id =
 						 * ''(Empty) tb_ym_stacklayer Table : stack_layer_stat =
-						 * 'E'(ÀûÄ¡°¡´É)
+						 * 'E'(ì ì¹˜ê°€ëŠ¥)
 						 */
 						/*
 						UPDATE TB_YM_STACKLAYER
@@ -6219,35 +6219,35 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat");
 						
 						/**
-						 * FROM À§Ä¡ »ó´Ü ÀûÄ¡»óÅÂ ¼öÁ¤
+						 * FROM ìœ„ì¹˜ ìƒë‹¨ ì ì¹˜ìƒíƒœ ìˆ˜ì •
 						 */
 						/*
-						 * B¿­¿¬ Slab ¹Ù·Î À§ »ó´Ü »óÅÂÁ¤º¸¸¦ UPDATE
+						 * Bì—´ì—° Slab ë°”ë¡œ ìœ„ ìƒë‹¨ ìƒíƒœì •ë³´ë¥¼ UPDATE
 						 */
 						//this.setSlabUpperState_V(jrParam); TODO
 					}
 
 					
-					//commUtils.printLog(logId, "»êÀûÀ§Ä¡ ¼öÁ¤=> FROM À§Ä¡ ¼öÁ¤ = " + iReq, "[INFO]");
+					//commUtils.printLog(logId, "ì‚°ì ìœ„ì¹˜ ìˆ˜ì •=> FROM ìœ„ì¹˜ ìˆ˜ì • = " + iReq, "[INFO]");
 				
 				}
 			}
 
 			/********************************
-			 * 4. TO À§Ä¡ ¼öÁ¤
+			 * 4. TO ìœ„ì¹˜ ìˆ˜ì •
 			 ********************************/
 			String sPUT_SECT_GP = sPutStackColGp.substring(2, 4); //SECT_GP
 
-			if ("XX".equals(sPUT_SECT_GP) || // SLAB ºñ»óÀûÄ¡À§Ä¡
-				"SE".equals(sPUT_SECT_GP) || // SLAB ½ºÄ«ÇÎ ÀÔÃø
-				"SD".equals(sPUT_SECT_GP)) { // SLAB ½ºÄ«ÇÎ ÃâÃø
+			if ("XX".equals(sPUT_SECT_GP) || // SLAB ë¹„ìƒì ì¹˜ìœ„ì¹˜
+				"SE".equals(sPUT_SECT_GP) || // SLAB ìŠ¤ì¹´í•‘ ì…ì¸¡
+				"SD".equals(sPUT_SECT_GP)) { // SLAB ìŠ¤ì¹´í•‘ ì¶œì¸¡
 
 				//this.insertConveyorInfo(sPutStackColGp, sStockId, sPutStackBedGp);
 
 			} else {
 
 				/**
-				 * 3. TO À§Ä¡ Á¤º¸ Ã¼Å©
+				 * 3. TO ìœ„ì¹˜ ì •ë³´ ì²´í¬
 				 */
 
 				jrParam.setField("STACK_COL_GP"  , sPutStackColGp);
@@ -6256,16 +6256,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("STOCK_ID"      , sSTOCK_ID);
 				jrParam.setField("YD_STR_LOC"    , sPutLoc);
 				
-				commUtils.printLog(logId, "»êÀûÀ§Ä¡ ¼öÁ¤ => ³¢¿ö³Ö±â¿©ºÎ : " + sPUT_BETWEEN_YN, "[INFO]");
-				if ("Y".equals(sPUT_BETWEEN_YN)) { //³¢¿ö³Ö±â TODO
+				commUtils.printLog(logId, "ì‚°ì ìœ„ì¹˜ ìˆ˜ì • => ë¼ì›Œë„£ê¸°ì—¬ë¶€ : " + sPUT_BETWEEN_YN, "[INFO]");
+				if ("Y".equals(sPUT_BETWEEN_YN)) { //ë¼ì›Œë„£ê¸° TODO
 					/*
-					 * ÀûÄ¡´Ü PutÀ§Ä¡Á¤º¸ºÎÅÍ »ó´ÜÀ¸·Î Á¤º¸¸¦ SHIFTÇÑ´Ù.
+					 * ì ì¹˜ë‹¨ Putìœ„ì¹˜ì •ë³´ë¶€í„° ìƒë‹¨ìœ¼ë¡œ ì •ë³´ë¥¼ SHIFTí•œë‹¤.
 					 */
 					//this.updateLegacyStockId_Slab_01(jrParam);
 					this.updPutBetweenSlab(jrParam);
 				} else if ("N".equals(sPUT_BETWEEN_YN)) {
 					/*
-					 * ÀûÄ¡´Ü PutÀ§Ä¡¿¡ ´Ù¸¥ SLAB°¡ ÀÖÀ» °æ¿ì. ÇØ´çµ¿ÀÇ XX¹øÁö·Î ÀúÀåÇ° MAPÀ» ¼öÁ¤ÇÑ´Ù.
+					 * ì ì¹˜ë‹¨ Putìœ„ì¹˜ì— ë‹¤ë¥¸ SLABê°€ ìˆì„ ê²½ìš°. í•´ë‹¹ë™ì˜ XXë²ˆì§€ë¡œ ì €ì¥í’ˆ MAPì„ ìˆ˜ì •í•œë‹¤.
 					 */
 					this.updateLegacyStockId_Slab(jrParam);
 				}
@@ -6274,7 +6274,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				if ("TC".equals(sPUT_SECT_GP)) {
 									
 					/***************************
-					 * ´ëÂ÷À§Ä¡ CLEAR
+					 * ëŒ€ì°¨ìœ„ì¹˜ CLEAR
 					 ***************************/
 					String sCurrQty = "0";
 					sCurrQty = "1";
@@ -6294,10 +6294,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					         SELECT 
 					                CASE WHEN TO_NUMBER(NVL(STACK_BED_QNTY_CURR,0) + :V_QTY) < 0
 					                     THEN 0 ELSE TO_NUMBER(NVL(STACK_BED_QNTY_CURR,0) + :V_QTY
-					                END AS CUR_QNT,-- ÀûÄ¡BED¼ö·®ÇöÀç
+					                END AS CUR_QNT,-- ì ì¹˜BEDìˆ˜ëŸ‰í˜„ì¬
 					                CASE WHEN TO_NUMBER(NVL(STACK_BED_ABLE_QNTY,0) + (:V_QTY*-1)) < 0
 					                     THEN 0 ELSE TO_NUMBER(NVL(STACK_BED_ABLE_QNTY,0) + (:V_QTY*-1))
-					                END AS ABLE_QNT,-- ÀûÄ¡BED°¡´É¼ö·®
+					                END AS ABLE_QNT,-- ì ì¹˜BEDê°€ëŠ¥ìˆ˜ëŸ‰
 					                'SYSTEM',
 					                SYSDATE     
 					           FROM TB_YM_STACKER
@@ -6332,8 +6332,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				} //END if ("TC".equals(sPUT_SECT_GP))
 
 				/*
-				 * ÀûÄ¡´Ü PutÀ§Ä¡¸¦ ÀûÄ¡»óÅÂ·Î º¯°æ tb_ym_stacklayer Table : stock_id = Coil
-				 * No tb_ym_stacklayer Table : stack_layer_stat = 'C'(ÀûÄ¡Áß)
+				 * ì ì¹˜ë‹¨ Putìœ„ì¹˜ë¥¼ ì ì¹˜ìƒíƒœë¡œ ë³€ê²½ tb_ym_stacklayer Table : stock_id = Coil
+				 * No tb_ym_stacklayer Table : stack_layer_stat = 'C'(ì ì¹˜ì¤‘)
 				 */
 				jrParam.setField("STOCK_ID"        , sSTOCK_ID);
 				jrParam.setField("STACK_LAYER_STAT", YmConstant.YD_STK_LYR_MTL_STAT_C);
@@ -6354,7 +6354,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat");
 				
 				/*
-				 * B¿­¿¬ Slab ¹Ù·Î À§ »ó´Ü »óÅÂÁ¤º¸¸¦ UPDATE
+				 * Bì—´ì—° Slab ë°”ë¡œ ìœ„ ìƒë‹¨ ìƒíƒœì •ë³´ë¥¼ UPDATE
 				 */
 
 				//this.setSlabUpperState_E(jrParam); // TODO
@@ -6362,12 +6362,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 
 			/**
-			 * 5.2 ÀåÀÔ´ë»óÀç »êÀûÀ§Ä¡ ¼öÁ¤À¸·Î º¸±Ş½Ã ÀåÀÔ¼ø¹øÀ» CLEARÇÑ´Ù.
+			 * 5.2 ì¥ì…ëŒ€ìƒì¬ ì‚°ì ìœ„ì¹˜ ìˆ˜ì •ìœ¼ë¡œ ë³´ê¸‰ì‹œ ì¥ì…ìˆœë²ˆì„ CLEARí•œë‹¤.
 			 */
 			if (YmConstant.STACK_COL_USAGE_CD_WB.equals(sPUT_SECT_GP) || // W/B
 					YmConstant.STACK_COL_USAGE_CD_CT.equals(sPUT_SECT_GP)) {// CTC
 
-				// ÀúÀåÇ° TABLE CHARGE_LOT_NO Ç×¸ñ CLEAR
+				// ì €ì¥í’ˆ TABLE CHARGE_LOT_NO í•­ëª© CLEAR
 				/*
 				UPDATE TB_YM_STOCK
 				   SET CHARGE_LOT_NO = :V_CHARGE_LOT_NO	
@@ -6377,8 +6377,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateStockLotNoWithStockId");
 				
-				//¾ßµå L2 Àü¼Û ÀåÀÔ¼ø¹ø Clear CALL
-				//ÀúÀåÇ° Á¦¿ø ¼Û½Å CM1BP02 -> YMA8L002   R
+				//ì•¼ë“œ L2 ì „ì†¡ ì¥ì…ìˆœë²ˆ Clear CALL
+				//ì €ì¥í’ˆ ì œì› ì†¡ì‹  CM1BP02 -> YMA8L002   R
 				//boolean isTrue = callL2LotEndInfo_Slab(sSTOCK_ID);	
 				JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 				jrYdMsg.setField("TC_CD"          , "YMA8L002");
@@ -6390,7 +6390,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 
 			/**
-			 * 5.3 SLABÀÌ¼ÛÀÇ »óÂ÷ ½ÇÀûÀ» ¼Û½Å
+			 * 5.3 SLABì´ì†¡ì˜ ìƒì°¨ ì‹¤ì ì„ ì†¡ì‹ 
 			 */
 			if (sPutLoc.startsWith(YmConstant.YD_GP_2)
 					&& sCURR_PROG_CD.equals(YmConstant.CURR_PROG_CD_SLAB_C)) {
@@ -6399,19 +6399,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				tcParam.setField("JMS_TC_CD"         , "YMPOJ155");
 				tcParam.setField("JMS_TC_CREATE_DDTT", commUtils.getDateTime14());
 				tcParam.setField("tcCode"          	 , "YMPOJ155");           // TC Code
-				tcParam.setField("tcDate"            , commUtils.getDate10());// ¹ß»ıÀÏÀÚ
-				tcParam.setField("tcTime"            , commUtils.getTime8()); // ¹ß»ı½Ã°¢
-				tcParam.setField("slabNo"            , sSTOCK_ID);            // SLAB¹øÈ£
-				tcParam.setField("upDownGbn"         , YmConstant.CAR_GP_D);  // U»óÂ÷ DÇÏÂ÷
+				tcParam.setField("tcDate"            , commUtils.getDate10());// ë°œìƒì¼ì
+				tcParam.setField("tcTime"            , commUtils.getTime8()); // ë°œìƒì‹œê°
+				tcParam.setField("slabNo"            , sSTOCK_ID);            // SLABë²ˆí˜¸
+				tcParam.setField("upDownGbn"         , YmConstant.CAR_GP_D);  // Uìƒì°¨ Dí•˜ì°¨
 				tcParam.setField("upDownDate"        , commUtils.getDate8()); // yyymmdd
-				tcParam.setField("upDownLoc"         , sPutLoc);              // »óÂ÷ÇÏÂ÷ »êÀûÀ§Ä¡
+				tcParam.setField("upDownLoc"         , sPutLoc);              // ìƒì°¨í•˜ì°¨ ì‚°ì ìœ„ì¹˜
 
 				jrRtn = commUtils.addSndData(jrRtn, tcParam);
 			}
 			
 			
 			/**
-			 * 4. SLAB °øÅë TABLE ¼öÁ¤
+			 * 4. SLAB ê³µí†µ TABLE ìˆ˜ì •
 			 */
 			jrParam.setField("STOCK_ID"   , sSTOCK_ID);
 			jrParam.setField("YD_LOC"     , sPutLoc);
@@ -6419,12 +6419,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			ejbConn1.trx("UpdSlabComLoc", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
 			/*
-			 * ÀúÀåÇ° ¿¹»óPUT À§Ä¡ CLEAR ÀúÀåÇ°ÁöÁ¤Á¶È¸È­¸é¿¡¼­ ¿¹¾à»óÅÂ·Î ³²¾ÆÀÖ´Â°ÍÀ» ¹æÁöÇÏ±â À§ÇØ
+			 * ì €ì¥í’ˆ ì˜ˆìƒPUT ìœ„ì¹˜ CLEAR ì €ì¥í’ˆì§€ì •ì¡°íšŒí™”ë©´ì—ì„œ ì˜ˆì•½ìƒíƒœë¡œ ë‚¨ì•„ìˆëŠ”ê²ƒì„ ë°©ì§€í•˜ê¸° ìœ„í•´
 			 */
 			JDTORecordSet stockRc = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getStockInfo");
 			
 			if (stockRc.size() > 0) {
-				String sCarunloadBay = StringHelper.evl(stockRc.getRecord(0).getFieldString("CARUNLOAD_PUT_LOC"), "");// ÇÏÂ÷PUTÀ§Ä¡
+				String sCarunloadBay = StringHelper.evl(stockRc.getRecord(0).getFieldString("CARUNLOAD_PUT_LOC"), "");// í•˜ì°¨PUTìœ„ì¹˜
 				if (sPutLoc.equals(sCarunloadBay)) {
 					/*
 					UPDATE TB_YM_STOCK
@@ -6440,7 +6440,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 
 			/**
-			 * 6. ÀúÀåÇ°ÀÌµ¿Á¶°Ç ¼öÁ¤
+			 * 6. ì €ì¥í’ˆì´ë™ì¡°ê±´ ìˆ˜ì •
 			 */
 			/*
 			UPDATE TB_YM_STOCK
@@ -6457,17 +6457,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 
 			/**
-			 * 7. Crane ÀÛ¾÷ ½ÇÀû µî·Ï
+			 * 7. Crane ì‘ì—… ì‹¤ì  ë“±ë¡
 			 */
 			this.insertUpPutWrslRtData(sSTOCK_ID.trim(), sUpLoc.trim(), sPutLoc.trim(), sCurSchCode, sPutYardGp ,sMODIFIER);
 
 
 			/**
-			 * 9. YARD MAP Á¤º¸ ½ÇÀû µî·Ï  YMA8L002
+			 * 9. YARD MAP ì •ë³´ ì‹¤ì  ë“±ë¡  YMA8L002
 			 */
 			/**
-			 * 9. YARD MAP Á¤º¸ ½ÇÀû µî·Ï  YMA8L002
-			 * --> FROM À§Ä¡ TOÀ§Ä¡ ¹øÁö ÀúÀåÀ§Ä¡Á¦¿ø, ÀúÀåÇ°Á¦¿ø Á¤º¸ ÀüºÎ ¼Û½Å
+			 * 9. YARD MAP ì •ë³´ ì‹¤ì  ë“±ë¡  YMA8L002
+			 * --> FROM ìœ„ì¹˜ TOìœ„ì¹˜ ë²ˆì§€ ì €ì¥ìœ„ì¹˜ì œì›, ì €ì¥í’ˆì œì› ì •ë³´ ì „ë¶€ ì†¡ì‹ 
 			 */
 //			JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 //			jrYdMsg.setField("TC_CD"          , "YMA8L001");
@@ -6480,7 +6480,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 //			jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L001", jrYdMsg));
 			
 			
-			// º¯°æÀü ÀúÀåÀ§Ä¡ Á¦¿ø ¼Û½Å
+			// ë³€ê²½ì „ ì €ì¥ìœ„ì¹˜ ì œì› ì†¡ì‹ 
 			if (!"".equals(sUpLoc)) {
 				JDTORecord jrYMA8L001 = JDTORecordFactory.getInstance().create();              
 				jrYMA8L001.setField("TC_CD"          , "YMA8L001");                            
@@ -6501,7 +6501,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L002", jrYMA8L002));
 			}
 			
-			//º¯°æÈÄ ÀúÀåÀ§Ä¡ Á¦¿ø ¼Û½Å
+			//ë³€ê²½í›„ ì €ì¥ìœ„ì¹˜ ì œì› ì†¡ì‹ 
 			if (!"".equals(sPutLoc)) {
 				JDTORecord jrYMA8L001 = JDTORecordFactory.getInstance().create();              
 				jrYMA8L001.setField("TC_CD"          , "YMA8L001");                            
@@ -6533,7 +6533,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	/*
 	 * SLAB
-	 * ¹Ù·Î À§ »ó´Ü »óÅÂÁ¤º¸¸¦ 'ÀûÄ¡ºÒ°¡' À¸·Î UPDATE
+	 * ë°”ë¡œ ìœ„ ìƒë‹¨ ìƒíƒœì •ë³´ë¥¼ 'ì ì¹˜ë¶ˆê°€' ìœ¼ë¡œ UPDATE
 	 */
 	public void setSlabUpperState_V(JDTORecord rcvParam) throws JDTOException {
 		
@@ -6563,14 +6563,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		 	
     		if (lyrJr.size() > 0) {
     			/**
-	    		 * »ó´ÜÁ¤º¸ ¼öÁ¤½Ã¿¡ ÇÏ´ÜÀÌ ÀûÄ¡°¡´ÉÀÌ¸é('E')
-	    		 * ÇöÀ§Ä¡Á¤º¸µµ ÀûÄ¡ºÒ°¡('V')·Î ¼ÂÆÃÇÑ´Ù.
+	    		 * ìƒë‹¨ì •ë³´ ìˆ˜ì •ì‹œì— í•˜ë‹¨ì´ ì ì¹˜ê°€ëŠ¥ì´ë©´('E')
+	    		 * í˜„ìœ„ì¹˜ì •ë³´ë„ ì ì¹˜ë¶ˆê°€('V')ë¡œ ì…‹íŒ…í•œë‹¤.
 	    		 */
 	    		if ("".equals(StringHelper.evl(lyrJr.getRecord(0).getFieldString("STOCK_ID"), ""))){ 	
 		    		/* 
-					 * ÀûÄ¡´Ü UPÀ§Ä¡ÀÇ 2´Ü -1¹øÁö Clear
+					 * ì ì¹˜ë‹¨ UPìœ„ì¹˜ì˜ 2ë‹¨ -1ë²ˆì§€ Clear
 					 * tb_ym_stacklayer Table : stock_id = ''(Empty)
-					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'V'(ÇÏ´Ü¿¡ ÀûÄ¡µÇÁö ¾ÊÀº À§Ä¡)
+					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'V'(í•˜ë‹¨ì— ì ì¹˜ë˜ì§€ ì•Šì€ ìœ„ì¹˜)
 					 */	
 					/*
 					UPDATE TB_YM_STACKLAYER
@@ -6603,14 +6603,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		 	
     		if (lyrJr.size() > 0) {							 
 		    	/**
-	    		 * ÀÛ¾÷Ãæµ¹·Î ÀúÀåÇ° Á¤º¸°¡ Á¸ÀçÇÏ¸é 
-	    		 * ±Ç»ó½ÃÁ¡¿¡¼­ ¼ÂÆÃÇÏÁö ¾Ê´Â´Ù.
+	    		 * ì‘ì—…ì¶©ëŒë¡œ ì €ì¥í’ˆ ì •ë³´ê°€ ì¡´ì¬í•˜ë©´ 
+	    		 * ê¶Œìƒì‹œì ì—ì„œ ì…‹íŒ…í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	    		 */
 	    		if ("".equals(StringHelper.evl(lyrJr.getRecord(0).getFieldString("STOCK_ID"), ""))) { 	
 			    	/* 
-					 * ÀûÄ¡´Ü UPÀ§Ä¡ÀÇ 2´Ü µ¿ÀÏ¹øÁö Clear
+					 * ì ì¹˜ë‹¨ UPìœ„ì¹˜ì˜ 2ë‹¨ ë™ì¼ë²ˆì§€ Clear
 					 * tb_ym_stacklayer Table : stock_id = ''(Empty)
-					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'V'(ÇÏ´Ü¿¡ ÀûÄ¡µÇÁö ¾ÊÀº À§Ä¡)
+					 * tb_ym_stacklayer Table : stack_layer_stat	   = 'V'(í•˜ë‹¨ì— ì ì¹˜ë˜ì§€ ì•Šì€ ìœ„ì¹˜)
 					 */	
 					jparam.setField("STOCK_ID"        , "");
 					jparam.setField("STACK_LAYER_STAT", YmConstant.YD_STK_LYR_MTL_STAT_E);
@@ -6690,11 +6690,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/* 
-	 * ÀûÄ¡´Ü PutÀ§Ä¡Á¤º¸ºÎÅÍ »ó´ÜÀ¸·Î Á¤º¸¸¦ SHIFTÇÑ´Ù.
+	 * ì ì¹˜ë‹¨ Putìœ„ì¹˜ì •ë³´ë¶€í„° ìƒë‹¨ìœ¼ë¡œ ì •ë³´ë¥¼ SHIFTí•œë‹¤.
 	 */	
 	public void updPutBetweenSlab(JDTORecord rcvParam) throws JDTOException {
 		
-		commUtils.printLog("", "»êÀûÀ§Ä¡ ¼öÁ¤ => ³¢¿ö³Ö±â ·ÎÁ÷ = updPutBetweenSlab", "[INFO]");
+		commUtils.printLog("", "ì‚°ì ìœ„ì¹˜ ìˆ˜ì • => ë¼ì›Œë„£ê¸° ë¡œì§ = updPutBetweenSlab", "[INFO]");
 		
 		String sSTACK_COL_GP   = commUtils.nvl(rcvParam.getFieldString("STACK_COL_GP"  ), ""); 
 		String sSTACK_BED_GP   = commUtils.nvl(rcvParam.getFieldString("STACK_BED_GP"  ), "");
@@ -6736,7 +6736,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		 	 */
 		 	commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateCraneStackLayerStat");
 		 	
-		 	// TODO ÀúÀåÇ° Á¦¿ø º¸³»Áà¾ß ÇÑ´Ù¸é ÀÌºÎºĞ¿¡ ³ÖÀ»°Í..20171014
+		 	// TODO ì €ì¥í’ˆ ì œì› ë³´ë‚´ì¤˜ì•¼ í•œë‹¤ë©´ ì´ë¶€ë¶„ì— ë„£ì„ê²ƒ..20171014
 		}
 		
 		if (!"".equals(sSTOCK_ID)) {
@@ -6760,8 +6760,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}	
 	
 	/* 
-	 * ÀûÄ¡´Ü PutÀ§Ä¡¿¡ ´Ù¸¥ SLAB°¡ ÀÖÀ» °æ¿ì.
-	 * ÇØ´çµ¿ÀÇ XX¹øÁö·Î ÀúÀåÇ° MAPÀ» ¼öÁ¤ÇÑ´Ù.
+	 * ì ì¹˜ë‹¨ Putìœ„ì¹˜ì— ë‹¤ë¥¸ SLABê°€ ìˆì„ ê²½ìš°.
+	 * í•´ë‹¹ë™ì˜ XXë²ˆì§€ë¡œ ì €ì¥í’ˆ MAPì„ ìˆ˜ì •í•œë‹¤.
 	 */	
 	public void updateLegacyStockId_Slab(JDTORecord rcvParam) throws Exception {
 		
@@ -6775,10 +6775,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		String sTempLayer = sSTACK_COL_GP.substring(0,2) 
 					      + YmConstant.STACK_COL_USAGE_CD_XX
 					      + YmConstant.STACK_BED_GP_01 +"0101";;
-	    //»êÀûÀ§Ä¡¼öÁ¤ ÀÓÀÇ ½ºÄÉÁÙÄÚµå
+	    //ì‚°ì ìœ„ì¹˜ìˆ˜ì • ì„ì˜ ìŠ¤ì¼€ì¤„ì½”ë“œ
 		String sSchCd = "3X9999";
 		
-		//W/BÀÎ °æ¿ì »ı·« 
+		//W/Bì¸ ê²½ìš° ìƒëµ 
 		if (sSTACK_COL_GP.substring(2,4).equals("WB")) {
 			return;
 		}
@@ -6798,14 +6798,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}
 		
 		/******************************************************
-		 *** »êÀûÀ§Ä¡¼öÁ¤À§Ä¡¿¡ Á¸ÀçÇÏ´ø ±âÁ¸ ÀúÀåÇ° ÀÌ·Â ÀúÀå 
+		 *** ì‚°ì ìœ„ì¹˜ìˆ˜ì •ìœ„ì¹˜ì— ì¡´ì¬í•˜ë˜ ê¸°ì¡´ ì €ì¥í’ˆ ì´ë ¥ ì €ì¥ 
 		 ******************************************************/
 		if (!"".equals(sToStockId) && !sSTOCK_ID.equals(sToStockId)) { 	
 			
-			// ÀÌ·Â ÀúÀå
+			// ì´ë ¥ ì €ì¥
 			this.insertUpPutWrslRtData(sToStockId, sYD_STR_LOC, sTempLayer, sSchCd, "2", sMODIFIER);
 			/***************************************
-			 * SALB °øÅë Table ÀúÀåÀ§Ä¡ Update 
+			 * SALB ê³µí†µ Table ì €ì¥ìœ„ì¹˜ Update 
 			 ***************************************/	 
 //			JDTORecord jrParam = JDTORecordFactory.getInstance().create();
 //  			jrParam.setField("STOCK_ID"   , sSTOCK_ID);
@@ -6818,13 +6818,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * »êÀûÀ§Ä¡ ¼öÁ¤ È­¸é¿¡¼­ From À§Ä¡¿Í To À§Ä¡ Á¤º¸¸¦ ½ÇÀû Ã³¸®ÇÑ´Ù. TODO
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
-	 * @param String :  ÀúÀåÇ°ID
+	 * ì‚°ì ìœ„ì¹˜ ìˆ˜ì • í™”ë©´ì—ì„œ From ìœ„ì¹˜ì™€ To ìœ„ì¹˜ ì •ë³´ë¥¼ ì‹¤ì  ì²˜ë¦¬í•œë‹¤. TODO
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
+	 * @param String :  ì €ì¥í’ˆID
 	 * @param String :  UP LOC
 	 * @param String :  PUT LOC
-	 * @param String :  ½ºÄÉÁì ÄÚµå
-	 * @param String :  ¾ßµå±¸ºĞ
+	 * @param String :  ìŠ¤ì¼€ì¥´ ì½”ë“œ
+	 * @param String :  ì•¼ë“œêµ¬ë¶„
 	 * @throws Exception 
 	 * 
 	 */
@@ -6861,7 +6861,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sUpBay  = sUpLoc.length()  > 2 ? sUpLoc.substring(1, 2) : "";
 			String sPutBay = sPutLoc.length() > 2 ? sPutLoc.substring(1, 2)	: "";
 			
-			scrane_sch_code = "3X9999"; //»êÀûÀ§Ä¡¼öÁ¤ ÀÓÀÇ½ºÄÉÁÙ
+			scrane_sch_code = "3X9999"; //ì‚°ì ìœ„ì¹˜ìˆ˜ì • ì„ì˜ìŠ¤ì¼€ì¤„
 			scrane_equip_gp = sYdGp + sPutBay + YmConstant.EQUIP_KIND_CR + "00";
 	
 			scrane_work_duty  = YmCommUtils.getWorkDuty();
@@ -6959,15 +6959,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀÛ¾÷¿¹¾àÇöÈ² - TOÁöÁ¤À§Ä¡ ¼öÁ¤
+	 * ì‘ì—…ì˜ˆì•½í˜„í™© - TOì§€ì •ìœ„ì¹˜ ìˆ˜ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updWrkDmdMgt(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÛ¾÷¿¹¾àÇöÈ² - TOÁöÁ¤À§Ä¡ ¼öÁ¤[BSlabJspSeEJB.updWrkDmdMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ì‘ì—…ì˜ˆì•½í˜„í™© - TOì§€ì •ìœ„ì¹˜ ìˆ˜ì •[BSlabJspSeEJB.updWrkDmdMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -6976,10 +6976,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -6994,7 +6994,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID 
 				   AND DEL_YN      = 'N'
 				 */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdToLocGuide", logId, methodNm, "ÀÛ¾÷¿¹¾à YD_TO_LOC_GUIDE ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdToLocGuide", logId, methodNm, "ì‘ì—…ì˜ˆì•½ YD_TO_LOC_GUIDE ìˆ˜ì •");
 			}
 
 			commUtils.printLog(logId, methodNm, "S-");
@@ -7008,19 +7008,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updWrkDmdMgt	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : W/B º¸±Ş(wbSupply)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : W/B ë³´ê¸‰(wbSupply)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord wbSupply(GridData gdReq) throws DAOException {
-		String methodNm = "W/B º¸±Ş[BSlabJspSeEJB.wbSupply] < " + gdReq.getNavigateValue();
+		String methodNm = "W/B ë³´ê¸‰[BSlabJspSeEJB.wbSupply] < " + gdReq.getNavigateValue();
 		 
 		
 		JDTORecord jrRtn 		= JDTORecordFactory.getInstance().create();
-	    JDTORecord jrParam		= JDTORecordFactory.getInstance().create(); //Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord 
+	    JDTORecord jrParam		= JDTORecordFactory.getInstance().create(); //Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord 
 	    JDTORecordSet rsResult  = null;
 	    JDTORecordSet rsResult2 = null;
 		String logId = gdReq.getIPAddress();
@@ -7032,16 +7032,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			commUtils.printLog(logId, methodNm, "S+");
 	    	
  		   jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
- 		   jrParam.setResultMsg(methodNm);	//»óÀ§ Method ¸í
+ 		   jrParam.setResultMsg(methodNm);	//ìƒìœ„ Method ëª…
 
 
 			
 			
 			/**********************************************************
-			* 1. W/B 01Bed¿¡ ±ÇÇÏÁö½Ã(D) ¿¹¾àÀÌ ÀâÇôÀÖÀ¸¸é 01 Bed Á¤º¸ Clear
+			* 1. W/B 01Bedì— ê¶Œí•˜ì§€ì‹œ(D) ì˜ˆì•½ì´ ì¡í˜€ìˆìœ¼ë©´ 01 Bed ì •ë³´ Clear
 			**********************************************************/
 			
-			//ÀûÄ¡´Ü Å×ÀÌºí¿¡¼­ W/B 01Bed ¿¡ ±ÇÇÏÁö½Ã(D) ¿¹¾àÀÌ ÀâÇô ÀÖ´ÂÁö È®ÀÎ
+			//ì ì¹˜ë‹¨ í…Œì´ë¸”ì—ì„œ W/B 01Bed ì— ê¶Œí•˜ì§€ì‹œ(D) ì˜ˆì•½ì´ ì¡í˜€ ìˆëŠ”ì§€ í™•ì¸
 			jrParam.setField("STACK_COL_GP"		, "2CWB01"); 
 			jrParam.setField("STACK_BED_GP"		, "01"); 
 			jrParam.setField("STACK_LAYER_STAT"	, "D");
@@ -7067,10 +7067,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			   AND  LYR.STACK_LAYER_STAT LIKE :V_STACK_LAYER_STAT || '%'
 			   AND  LYR.STOCK_ID IS NOT NULL
 			  ORDER BY LYR.STACK_LAYER_GP DESC */
-			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPutStockIdByBedNo", logId, methodNm, "W/B 01Bed ±ÇÇÏÁö½Ã ¿¹¾à È®ÀÎ "); 
+			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPutStockIdByBedNo", logId, methodNm, "W/B 01Bed ê¶Œí•˜ì§€ì‹œ ì˜ˆì•½ í™•ì¸ "); 
 			
 			if(rsResult.size() > 0) {
-				// W/B 01 Bed ±ÇÇÏÁö½Ã ¿¹¾à À§Ä¡ Clear
+				// W/B 01 Bed ê¶Œí•˜ì§€ì‹œ ì˜ˆì•½ ìœ„ì¹˜ Clear
 				jrParam.setField("STOCK_ID", ""); 
 				jrParam.setField("STACK_LAYER_STAT2", "E"); 
 				jrParam.setField("STACK_COL_GP"		, "2CWB01"); 
@@ -7086,7 +7086,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 				   AND  STACK_BED_GP = :V_STACK_BED_GP
 				   AND  STACK_LAYER_STAT LIKE :V_STACK_LAYER_STAT1 || '%' */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByBedNo", logId, methodNm, "W/B 01 Bed ±ÇÇÏÁö½Ã ¿¹¾à À§Ä¡ Clear");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByBedNo", logId, methodNm, "W/B 01 Bed ê¶Œí•˜ì§€ì‹œ ì˜ˆì•½ ìœ„ì¹˜ Clear");
 			}			
 			
 
@@ -7097,11 +7097,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
  
 					
-					//½ºÄÉÁÙÄÚµå, ToÀ§Ä¡ Guide 
+					//ìŠ¤ì¼€ì¤„ì½”ë“œ, Toìœ„ì¹˜ Guide 
 					sYD_SCH_CD = "2CWB01UM";
 					sYD_TO_LOC_GUIDE = "";
 				
-					//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+					//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 					jrParam.setField("YD_SCH_CD", sYD_SCH_CD);
 			    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 					SELECT YD_SCH_CD
@@ -7111,35 +7111,35 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 WHERE DEL_YN = 'N'
 					   AND YD_SCH_CD = :V_YD_SCH_CD
 					*/   
-					rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+					rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 			    	
 					if (rsResult2 != null && rsResult2.size() > 0) {
-						sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+						sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 					} else {
-						throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sYD_SCH_CD + "]");
+						throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sYD_SCH_CD + "]");
 					}			
 					
-					//ÀÛ¾÷¿¹¾àID»ı¼º
+					//ì‘ì—…ì˜ˆì•½IDìƒì„±
 					sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 				
 					/**********************************************************
-					* 2-1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+					* 2-1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 					**********************************************************/
 					jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 					jrParam.setField("YD_GP"			, YmConstant.YD_GP_2);
 					jrParam.setField("YD_BAY_GP"		, sYD_SCH_CD.substring(1,2));
-					jrParam.setField("YD_SCH_CD"		, sYD_SCH_CD); //¾ßµå½ºÄÉÁìÄÚµå
-					jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-					jrParam.setField("YD_SCH_ST_GP"		, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷)
-					jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //¾ßµåToÀ§Ä¡Guide
+					jrParam.setField("YD_SCH_CD"		, sYD_SCH_CD); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+					jrParam.setField("YD_SCH_ST_GP"		, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…)
+					jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //ì•¼ë“œToìœ„ì¹˜Guide
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 					
 					/**********************************************************
-					* 2-2. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+					* 2-2. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 					**********************************************************/
-					//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+					//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 					int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 					for(int ii = 0; ii < rowCnt; ii++) {
 						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
@@ -7148,32 +7148,32 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("STACK_BED_GP"		, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(7,9));
 						jrParam.setField("STACK_LAYER_GP"	, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(10));
 						
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 						
 						/**********************************************************
-						* 2-3. TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿Á¶°Ç µî·Ï
+						* 2-3. TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ì¡°ê±´ ë“±ë¡
 						**********************************************************/
 						jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "STOCK_ID", ii));
-						jrParam.setField("STOCK_MOVE_TERM"	, YmConstant.NEW_STOCK_MOVE_TERM_FS ); //¾Ğ¿¬ÀÛ¾÷´ë±â
+						jrParam.setField("STOCK_MOVE_TERM"	, YmConstant.NEW_STOCK_MOVE_TERM_FS ); //ì••ì—°ì‘ì—…ëŒ€ê¸°
 						
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç UPDATE");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ UPDATE");
 					}
 				 
 				
-				//½ºÄÉÁÙ ¸ŞÀÎ È£Ãâ
+				//ìŠ¤ì¼€ì¤„ ë©”ì¸ í˜¸ì¶œ
 				//JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 				//jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-				//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-				//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ÀÛ¾÷¿¹¾àID
-				//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-				//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+				//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+				//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ì‘ì—…ì˜ˆì•½ID
+				//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 				//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);		
 				
 				//Slab Schedule EJB Call
 				jrParam.setField("JMS_TC_CD"    , "YMYMJ202"); 
-				jrParam.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_SCH_CD"    , ""  ); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_EQP_ID"    , ""  ); //¾ßµå¼³ºñID
+				jrParam.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_SCH_CD"    , ""  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_EQP_ID"    , ""  ); //ì•¼ë“œì„¤ë¹„ID
 				
 				
 				EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
@@ -7191,24 +7191,24 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		} catch (Exception e) {
 			throw new DAOException(commUtils.makeErrorLog(logId, methodNm, e));
 		}
-	} // end of W/B º¸±Ş 
+	} // end of W/B ë³´ê¸‰ 
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀúÀåÇ°ÀÇ ÀåÀÔ¼ø¹ø CLEAR(modifyZoneInNo)
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì €ì¥í’ˆì˜ ì¥ì…ìˆœë²ˆ CLEAR(modifyZoneInNo)
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord modifyZoneInNo(GridData gdReq) throws DAOException {
-		String methodNm = "ÀúÀåÇ°ÀÇ ÀåÀÔ¼ø¹ø CLEAR[BSlabJspSeEJB.modifyZoneInNo] < " + gdReq.getNavigateValue();
+		String methodNm = "ì €ì¥í’ˆì˜ ì¥ì…ìˆœë²ˆ CLEAR[BSlabJspSeEJB.modifyZoneInNo] < " + gdReq.getNavigateValue();
 		 
 		
 		JDTORecord jrRtn 		= JDTORecordFactory.getInstance().create();
-	    JDTORecord jrParam		= JDTORecordFactory.getInstance().create(); //Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord 
-	    JDTORecord tcParam		= JDTORecordFactory.getInstance().create(); //Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord 
-	    JDTORecord eaiParam		= JDTORecordFactory.getInstance().create(); //Query ½ÇÇà½Ã ÆÄ¶ó¸ŞÅÍ Àü´Ş¿ë JDTORecord 
+	    JDTORecord jrParam		= JDTORecordFactory.getInstance().create(); //Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord 
+	    JDTORecord tcParam		= JDTORecordFactory.getInstance().create(); //Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord 
+	    JDTORecord eaiParam		= JDTORecordFactory.getInstance().create(); //Query ì‹¤í–‰ì‹œ íŒŒë¼ë©”í„° ì „ë‹¬ìš© JDTORecord 
 	    JDTORecordSet rsResult = null;
 		String logId = gdReq.getIPAddress();
 	    
@@ -7219,22 +7219,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			commUtils.printLog(logId, methodNm, "S+");
 	    	
  		   jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
- 		   jrParam.setResultMsg(methodNm);	//»óÀ§ Method ¸í
+ 		   jrParam.setResultMsg(methodNm);	//ìƒìœ„ Method ëª…
 
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			for(int ii = 0; ii < rowCnt; ii++) {
 				String stockID = commUtils.getValue(gdReq, "STOCK_ID", ii);
 				
 				if("".equals(stockID)) continue;
 				jrParam.setField("STOCK_ID"			, stockID);
-				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYmStockInfoJoinSlabcomm", logId, methodNm, "ÀúÀåÇ° Á¶È¸"); 
+				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYmStockInfoJoinSlabcomm", logId, methodNm, "ì €ì¥í’ˆ ì¡°íšŒ"); 
 				
 				if(rsResult.size()>0){
 					
 					tcParam		= JDTORecordFactory.getInstance().create();
-					//2020.03 »ı»êÅëÁ¦·Î Ãë¼ÒÀü¹® Àü¼Û YDCTJ038
+					//2020.03 ìƒì‚°í†µì œë¡œ ì·¨ì†Œì „ë¬¸ ì „ì†¡ YDCTJ038
 					//jrParam = JDTORecordFactory.getInstance().create();
 					tcParam.setResultCode(logId);	//Log ID
 					tcParam.setResultMsg(methodNm);	//Log Method Name
@@ -7242,17 +7242,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					tcParam.setField("JMS_TC_CD"	       , "YDCTJ038"  );
 					tcParam.setField("JMS_TC_CREATE_DDTT"  , commUtils.getDateTime14()  );
 					
-					tcParam.setField("SLAB_WO_RT_CD"	   , rsResult.getRecord(0).getFieldString("SLAB_WO_RT_CD")  ); //SLAB Áö½Ã Çà¼± ÄÚµå
-					tcParam.setField("SLAB_NO"  	       , stockID); //SLAB ¹øÈ£
-					tcParam.setField("PLAN_SLAB_NO"  	   , rsResult.getRecord(0).getFieldString("PLAN_SLAB_NO")); //¿¹Á¤ SLAB¹øÈ£
+					tcParam.setField("SLAB_WO_RT_CD"	   , rsResult.getRecord(0).getFieldString("SLAB_WO_RT_CD")  ); //SLAB ì§€ì‹œ í–‰ì„  ì½”ë“œ
+					tcParam.setField("SLAB_NO"  	       , stockID); //SLAB ë²ˆí˜¸
+					tcParam.setField("PLAN_SLAB_NO"  	   , rsResult.getRecord(0).getFieldString("PLAN_SLAB_NO")); //ì˜ˆì • SLABë²ˆí˜¸
 
-					//Àü¼Û Data »ı¼º
+					//ì „ì†¡ Data ìƒì„±
 					//jrRtn = commUtils.addSndData(commDao.getMsgL2("YMA8L001", jrParam));
 					jrRtn = commUtils.addSndData(jrRtn, tcParam);
 					
 				}
 				else{
-					throw new Exception("ÀúÀåÇ°ID ["+commUtils.getValue(gdReq, "STOCK_ID", ii)+"] ¿¡ ´ëÇØ ÀúÀåÇ°ÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ì €ì¥í’ˆID ["+commUtils.getValue(gdReq, "STOCK_ID", ii)+"] ì— ëŒ€í•´ ì €ì¥í’ˆì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				}
 				
 			
@@ -7272,15 +7272,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * µ¿°£ÀÛ¾÷±âÁØ º¯°æ
+	 * ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updBayBetWrkRule(GridData gdReq) throws DAOException {
-		String methodNm = "µ¿°£ÀÛ¾÷±âÁØ º¯°æ[BSlabJspSeEJB.updBayBetWrkRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½[BSlabJspSeEJB.updBayBetWrkRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -7289,37 +7289,37 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			String sCARLOAD_STOP_LOC = ""; //»óÂ÷µ¿
-			String sEQUIP_GP         = ""; //´ëÂ÷¹øÈ£
+			String sCARLOAD_STOP_LOC = ""; //ìƒì°¨ë™
+			String sEQUIP_GP         = ""; //ëŒ€ì°¨ë²ˆí˜¸
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				/*
-				 * 2018.01.12 µ¿°£ÀÛ¾÷±âÁØÁ¶È¸ - ÇöÀçµ¿ ±âÁØÀ¸·Î 3¹ø ´ëÂ÷·Î »óÇÏÂ÷µ¿ º¯°æ
+				 * 2018.01.12 ë™ê°„ì‘ì—…ê¸°ì¤€ì¡°íšŒ - í˜„ì¬ë™ ê¸°ì¤€ìœ¼ë¡œ 3ë²ˆ ëŒ€ì°¨ë¡œ ìƒí•˜ì°¨ë™ ë³€ê²½
 				 */
 				/***************************************************************************
-				* 2DTC31 º¯°æÁ¶°Ç Ãß°¡ (µ¿°£ÀÛ¾÷±âÁØÁ¶È¸)
-	  			* 2DTC32¸¦ 2DTC31·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC32¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ
-	            * 2DTC31¸¦ 2DTC32·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC31¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ
+				* 2DTC31 ë³€ê²½ì¡°ê±´ ì¶”ê°€ (ë™ê°„ì‘ì—…ê¸°ì¤€ì¡°íšŒ)
+	  			* 2DTC32ë¥¼ 2DTC31ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC32ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨
+	            * 2DTC31ë¥¼ 2DTC32ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC31ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨
 	            * 
-	            * À§ Á¶°ÇÀÏ °æ¿ì 3¹ø´ëÂ÷°¡ Dµ¿¿¡ ¾øÀ» °æ¿ì´Â »óÂ÷µ¿À» 2DTC31, 2DTC32·Î º¯°æÀÌ ºÒ°¡´ÉÇÔ  
+	            * ìœ„ ì¡°ê±´ì¼ ê²½ìš° 3ë²ˆëŒ€ì°¨ê°€ Dë™ì— ì—†ì„ ê²½ìš°ëŠ” ìƒì°¨ë™ì„ 2DTC31, 2DTC32ë¡œ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥í•¨  
 	            * 
-	            * ´ëÂ÷3È£ »óÂ÷µ¿À» 2DTC31 ¶Ç´Â 2DTC32 ·Î º¯°æÇÒ °æ¿ì Dµ¿¿¡ ´ëÂ÷»óÂ÷½ºÄÉÁÙÀÌ Á¸ÀçÇÏ°í
-	            * TOÀ§Ä¡°¡ º¯°æÇÏ·Á´Â »óÂ÷µ¿ À§Ä¡¿Í ´Ù¸£¸é º¯°æ ºÒ°¡´ÉÇÏ´Ù. (½ºÄÉÁÙ ¿Ï·á ÈÄ º¯°æ°¡´É)
+	            * ëŒ€ì°¨3í˜¸ ìƒì°¨ë™ì„ 2DTC31 ë˜ëŠ” 2DTC32 ë¡œ ë³€ê²½í•  ê²½ìš° Dë™ì— ëŒ€ì°¨ìƒì°¨ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•˜ê³ 
+	            * TOìœ„ì¹˜ê°€ ë³€ê²½í•˜ë ¤ëŠ” ìƒì°¨ë™ ìœ„ì¹˜ì™€ ë‹¤ë¥´ë©´ ë³€ê²½ ë¶ˆê°€ëŠ¥í•˜ë‹¤. (ìŠ¤ì¼€ì¤„ ì™„ë£Œ í›„ ë³€ê²½ê°€ëŠ¥)
 	            * 
 				****************************************************************************/
 				sEQUIP_GP         = commUtils.getValue(gdReq, "EQUIP_GP"           , ii);
 				
-/*			    //1Â÷¹öÁ¯	
+/*			    //1ì°¨ë²„ì ¼	
 				if("2XTC03".equals(sEQUIP_GP)) {
 					
-					sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii); //»óÂ÷µ¿ 
-					//sCARUNLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC" , ii); //ÇÏÂ÷µ¿
+					sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii); //ìƒì°¨ë™ 
+					//sCARUNLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC" , ii); //í•˜ì°¨ë™
 
 					if("2DTC31".equals(sCARLOAD_STOP_LOC) || "2DTC32".equals(sCARLOAD_STOP_LOC)) { 
 					//|| "2DTC31".equals(sCARUNLOAD_STOP_LOC) || "2DTC32".equals(sCARUNLOAD_STOP_LOC)) {
@@ -7338,36 +7338,36 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			               AND EQUIP_GP = :V_EQUIP_GP
 			            
 						
-						JDTORecordSet jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getTransCarRuleList", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ º¯°æ ½Ã ¼³ºñ Å×ÀÌºí Á¶È¸");
+						JDTORecordSet jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getTransCarRuleList", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½ ì‹œ ì„¤ë¹„ í…Œì´ë¸” ì¡°íšŒ");
 						
 						if (jdrs != null && jdrs.size() > 0) {
 							
 							if(!sCARLOAD_STOP_LOC.equals(jdrs.getRecord(0).getFieldString("CARLOAD_STOP_LOC"))) {
-								//´ëÂ÷ 3È£±â Dµ¿ »óÂ÷µ¿ º¯°æ  
+								//ëŒ€ì°¨ 3í˜¸ê¸° Dë™ ìƒì°¨ë™ ë³€ê²½  
 								if("2DTC31".equals(sCARLOAD_STOP_LOC)) {
 									if("2DTC31".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-										//ÇöÀ§Ä¡°¡ 2DTC31 ÀÎµ¥ »óÂ÷Áö¸¦ 2DTC31·Î º¯°æÇÏ´Â°Ç °¡´ÉÇÏ´Ù
+										//í˜„ìœ„ì¹˜ê°€ 2DTC31 ì¸ë° ìƒì°¨ì§€ë¥¼ 2DTC31ë¡œ ë³€ê²½í•˜ëŠ”ê±´ ê°€ëŠ¥í•˜ë‹¤
 									} else if(!"2DTC32".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-										throw new Exception("»óÂ÷µ¿ 2DTC32¸¦ 2DTC31·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC32¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ");
+										throw new Exception("ìƒì°¨ë™ 2DTC32ë¥¼ 2DTC31ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC32ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨");
 									}
 								} else if("2DTC32".equals(sCARLOAD_STOP_LOC)) {
 									if("2DTC32".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-										//ÇöÀ§Ä¡°¡ 2DTC32 ÀÎµ¥ »óÂ÷Áö¸¦ 2DTC32·Î º¯°æÇÏ´Â°Ç °¡´ÉÇÏ´Ù
+										//í˜„ìœ„ì¹˜ê°€ 2DTC32 ì¸ë° ìƒì°¨ì§€ë¥¼ 2DTC32ë¡œ ë³€ê²½í•˜ëŠ”ê±´ ê°€ëŠ¥í•˜ë‹¤
 									} else if(!"2DTC31".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-										throw new Exception("»óÂ÷µ¿ 2DTC31¸¦ 2DTC32·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC31¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ");
+										throw new Exception("ìƒì°¨ë™ 2DTC31ë¥¼ 2DTC32ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC31ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨");
 									}
 								}
 							}
 							
 							//if(!sCARUNLOAD_STOP_LOC.equals(jdrs.getRecord(0).getFieldString("CARUNLOAD_STOP_LOC"))) {
-							//	//´ëÂ÷ 3È£±â Dµ¿ ÇÏÂ÷µ¿ º¯°æ  
+							//	//ëŒ€ì°¨ 3í˜¸ê¸° Dë™ í•˜ì°¨ë™ ë³€ê²½  
 							//	if("2DTC31".equals(sCARUNLOAD_STOP_LOC)) {
 							//		if(!"2DTC32".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-							//			throw new Exception("ÇÏÂ÷µ¿ 2DTC32¸¦ 2DTC31·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC32¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ");
+							//			throw new Exception("í•˜ì°¨ë™ 2DTC32ë¥¼ 2DTC31ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC32ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨");
 							//		}
 							//	} else if("2DTC32".equals(sCARUNLOAD_STOP_LOC)) {
 							//		if(!"2DTC31".equals(jdrs.getRecord(0).getFieldString("CURR_STOP_LOC"))) {
-							//			throw new Exception("ÇÏÂ÷µ¿ 2DTC31¸¦ 2DTC32·Î º¯°æÇÒ ¶§´Â 3¹ø´ëÂ÷°¡ 2DTC31¿¡ ÀÖÀ»¶§ º¯°æ°¡´ÉÇÔ");
+							//			throw new Exception("í•˜ì°¨ë™ 2DTC31ë¥¼ 2DTC32ë¡œ ë³€ê²½í•  ë•ŒëŠ” 3ë²ˆëŒ€ì°¨ê°€ 2DTC31ì— ìˆì„ë•Œ ë³€ê²½ê°€ëŠ¥í•¨");
 							//		}
 							//	}
 							//}
@@ -7375,10 +7375,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 				}
 */				
-				/*2Â÷ ¹öÀü */
+				/*2ì°¨ ë²„ì „ */
 				if("2XTC03".equals(sEQUIP_GP)) {
 					
-					sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii); //»óÂ÷Áö  (È­¸é¿¡¼­ º¯°æÇÑ »óÂ÷Áö ¿¹)2DTC31¸¦ 2DTC32·Î º¯°æÇÏ¸é 2DTC32 °ªÀÌ µé¾î ÀÖ´Ù)
+					sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii); //ìƒì°¨ì§€  (í™”ë©´ì—ì„œ ë³€ê²½í•œ ìƒì°¨ì§€ ì˜ˆ)2DTC31ë¥¼ 2DTC32ë¡œ ë³€ê²½í•˜ë©´ 2DTC32 ê°’ì´ ë“¤ì–´ ìˆë‹¤)
 					
 					if("2DTC31".equals(sCARLOAD_STOP_LOC) || "2DTC32".equals(sCARLOAD_STOP_LOC)) { 
 						
@@ -7397,7 +7397,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						AND   EQUIP_GP = :V_EQUIP_GP
 			            */ 
 						
-						JDTORecordSet jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getTransCarRuleList", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ º¯°æ ½Ã ¼³ºñ Å×ÀÌºí Á¶È¸");
+						JDTORecordSet jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getTransCarRuleList", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½ ì‹œ ì„¤ë¹„ í…Œì´ë¸” ì¡°íšŒ");
 						
 						if (jdrs != null && jdrs.size() > 0) {
 							
@@ -7424,13 +7424,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 									*/
 									jrParam.setField("YD_DN_WO_LOC1", "2DTC");
 									jrParam.setField("YD_DN_WO_LOC2", sCARLOAD_STOP_LOC);
-									jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getCrnSchNotLikeDnWoLoc", logId, methodNm, "Å©·¹ÀÎ ½ºÄÉÁÙ Á¶È¸");
+									jdrs = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.BSlabDAO.getCrnSchNotLikeDnWoLoc", logId, methodNm, "í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ì¡°íšŒ");
 									
 									if (jdrs != null && jdrs.size() > 0) {
 										if("2DTC31".equals(sCARLOAD_STOP_LOC)) {
-											throw new Exception("Dµ¿ Å©·¹ÀÎ ½ºÄÉÁÙ¿¡ ±ÇÇÏÀ§Ä¡°¡ 2DTC32·Î ÁöÁ¤µÈ ´ëÂ÷»óÂ÷ ½ºÄÉÁÙÀÌ Á¸ÀçÇÕ´Ï´Ù! ´ëÂ÷°¡ Dµ¿¿¡ µµÂø ÈÄ »óÂ÷µ¿À» º¯°æÇØ ÁÖ½Ê½Ã¿ä.");
+											throw new Exception("Dë™ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì— ê¶Œí•˜ìœ„ì¹˜ê°€ 2DTC32ë¡œ ì§€ì •ëœ ëŒ€ì°¨ìƒì°¨ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•©ë‹ˆë‹¤! ëŒ€ì°¨ê°€ Dë™ì— ë„ì°© í›„ ìƒì°¨ë™ì„ ë³€ê²½í•´ ì£¼ì‹­ì‹œìš”.");
 										} else if("2DTC32".equals(sCARLOAD_STOP_LOC)) {
-											throw new Exception("Dµ¿ Å©·¹ÀÎ ½ºÄÉÁÙ¿¡ ±ÇÇÏÀ§Ä¡°¡ 2DTC31·Î ÁöÁ¤µÈ ´ëÂ÷»óÂ÷ ½ºÄÉÁÙÀÌ Á¸ÀçÇÕ´Ï´Ù! ´ëÂ÷°¡ Dµ¿¿¡ µµÂø ÈÄ »óÂ÷µ¿À» º¯°æÇØ ÁÖ½Ê½Ã¿ä.");
+											throw new Exception("Dë™ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì— ê¶Œí•˜ìœ„ì¹˜ê°€ 2DTC31ë¡œ ì§€ì •ëœ ëŒ€ì°¨ìƒì°¨ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•©ë‹ˆë‹¤! ëŒ€ì°¨ê°€ Dë™ì— ë„ì°© í›„ ìƒì°¨ë™ì„ ë³€ê²½í•´ ì£¼ì‹­ì‹œìš”.");
 											
 										}
 									}
@@ -7442,38 +7442,38 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				
 				
-				jrParam.setField("WAIT_STOP_LOC"       , commUtils.getValue(gdReq, "WAIT_STOP_LOC"      , ii)); //´ë±âµ¿(1BTC03) ; ´ëÂ÷ÄÚµåÀÇ X´ë½Å µ¿±¸ºĞÀÌ µé¾î°¨ 
-				jrParam.setField("CARLOAD_STOP_LOC"    , commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii)); //»óÂ÷µ¿(1BTC03) ; »óµ¿                             
-				jrParam.setField("CARUNLOAD_STOP_LOC"  , commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC" , ii)); //ÇÏÂ÷µ¿(1ATC03) ; »óµ¿                             
-				jrParam.setField("CARLOAD_ASSIGN_YN"   , commUtils.getValue(gdReq, "CARLOAD_ASSIGN_YN"  , ii)); //»óÂ÷ÁöÁ¤(Y OR N)                                  
-				jrParam.setField("CARUNLOAD_ASSIGN_YN" , commUtils.getValue(gdReq, "CARUNLOAD_ASSIGN_YN", ii)); //ÇÏÂ÷ÁöÁ¤(Y OR N)                                  
-				jrParam.setField("CARLD_SCH_CD"        , commUtils.getValue(gdReq, "CARLD_SCH_CD"       , ii)); //»óÂ÷½ºÄÉÁÙ                                        
-				jrParam.setField("CARUD_SCH_CD"        , commUtils.getValue(gdReq, "CARUD_SCH_CD"       , ii)); //ÇÏÂ÷½ºÄÉÁÙ                                        
-				jrParam.setField("STACK_MAX_QNTY"      , commUtils.getValue(gdReq, "STACK_MAX_QNTY"     , ii)); //ÀûÄ¡°¡´É¼ö·®                                      
-				jrParam.setField("CTS_RELAY_YN"        , commUtils.getValue(gdReq, "CTS_RELAY_YN"       , ii)); //¿¬¼ÓÀÛ¾÷È½¼ö                                      
-				jrParam.setField("PALLET_NO"           , commUtils.getValue(gdReq, "PRE_WRK_WO"         , ii)); //¼±ÀÛ¾÷Áö½Ã 1:½ÇÇà 2:´ë±â                          
+				jrParam.setField("WAIT_STOP_LOC"       , commUtils.getValue(gdReq, "WAIT_STOP_LOC"      , ii)); //ëŒ€ê¸°ë™(1BTC03) ; ëŒ€ì°¨ì½”ë“œì˜ XëŒ€ì‹  ë™êµ¬ë¶„ì´ ë“¤ì–´ê° 
+				jrParam.setField("CARLOAD_STOP_LOC"    , commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"   , ii)); //ìƒì°¨ë™(1BTC03) ; ìƒë™                             
+				jrParam.setField("CARUNLOAD_STOP_LOC"  , commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC" , ii)); //í•˜ì°¨ë™(1ATC03) ; ìƒë™                             
+				jrParam.setField("CARLOAD_ASSIGN_YN"   , commUtils.getValue(gdReq, "CARLOAD_ASSIGN_YN"  , ii)); //ìƒì°¨ì§€ì •(Y OR N)                                  
+				jrParam.setField("CARUNLOAD_ASSIGN_YN" , commUtils.getValue(gdReq, "CARUNLOAD_ASSIGN_YN", ii)); //í•˜ì°¨ì§€ì •(Y OR N)                                  
+				jrParam.setField("CARLD_SCH_CD"        , commUtils.getValue(gdReq, "CARLD_SCH_CD"       , ii)); //ìƒì°¨ìŠ¤ì¼€ì¤„                                        
+				jrParam.setField("CARUD_SCH_CD"        , commUtils.getValue(gdReq, "CARUD_SCH_CD"       , ii)); //í•˜ì°¨ìŠ¤ì¼€ì¤„                                        
+				jrParam.setField("STACK_MAX_QNTY"      , commUtils.getValue(gdReq, "STACK_MAX_QNTY"     , ii)); //ì ì¹˜ê°€ëŠ¥ìˆ˜ëŸ‰                                      
+				jrParam.setField("CTS_RELAY_YN"        , commUtils.getValue(gdReq, "CTS_RELAY_YN"       , ii)); //ì—°ì†ì‘ì—…íšŸìˆ˜                                      
+				jrParam.setField("PALLET_NO"           , commUtils.getValue(gdReq, "PRE_WRK_WO"         , ii)); //ì„ ì‘ì—…ì§€ì‹œ 1:ì‹¤í–‰ 2:ëŒ€ê¸°                          
 				jrParam.setField("EQUIP_GP"            , commUtils.getValue(gdReq, "EQUIP_GP"           , ii)); //
 				
 				/*
 				UPDATE TB_YM_EQUIP 
-				   SET WAIT_STOP_LOC       = :V_WAIT_STOP_LOC       --´ë±âµ¿(1BTC03) ; ´ëÂ÷ÄÚµåÀÇ X´ë½Å µ¿±¸ºĞÀÌ µé¾î°¨
-				     , CARLOAD_STOP_LOC    = :V_CARLOAD_STOP_LOC    --»óÂ÷µ¿(1BTC03) ; »óµ¿
-				     , CARUNLOAD_STOP_LOC  = :V_CARUNLOAD_STOP_LOC  --ÇÏÂ÷µ¿(1ATC03) ; »óµ¿
-				     , CARLOAD_ASSIGN_YN   = :V_CARLOAD_ASSIGN_YN   --»óÂ÷ÁöÁ¤(Y OR N)
-				     , CARUNLOAD_ASSIGN_YN = :V_CARUNLOAD_ASSIGN_YN --ÇÏÂ÷ÁöÁ¤(Y OR N)
-				     , CARLD_SCH_CD        = :V_CARLD_SCH_CD        --»óÂ÷½ºÄÉÁÙ   
-				     , CARUD_SCH_CD        = :V_CARUD_SCH_CD        --ÇÏÂ÷½ºÄÉÁÙ
-				     , STACK_MAX_QNTY      = :V_STACK_MAX_QNTY      --ÀûÄ¡°¡´É¼ö·®
-				     , CTS_RELAY_YN        = :V_CTS_RELAY_YN        --¿¬¼ÓÀÛ¾÷È½¼ö
-				     , PALLET_NO           = :V_PALLET_NO           --¼±ÀÛ¾÷Áö½Ã 1:½ÇÇà 2:´ë±â
+				   SET WAIT_STOP_LOC       = :V_WAIT_STOP_LOC       --ëŒ€ê¸°ë™(1BTC03) ; ëŒ€ì°¨ì½”ë“œì˜ XëŒ€ì‹  ë™êµ¬ë¶„ì´ ë“¤ì–´ê°
+				     , CARLOAD_STOP_LOC    = :V_CARLOAD_STOP_LOC    --ìƒì°¨ë™(1BTC03) ; ìƒë™
+				     , CARUNLOAD_STOP_LOC  = :V_CARUNLOAD_STOP_LOC  --í•˜ì°¨ë™(1ATC03) ; ìƒë™
+				     , CARLOAD_ASSIGN_YN   = :V_CARLOAD_ASSIGN_YN   --ìƒì°¨ì§€ì •(Y OR N)
+				     , CARUNLOAD_ASSIGN_YN = :V_CARUNLOAD_ASSIGN_YN --í•˜ì°¨ì§€ì •(Y OR N)
+				     , CARLD_SCH_CD        = :V_CARLD_SCH_CD        --ìƒì°¨ìŠ¤ì¼€ì¤„   
+				     , CARUD_SCH_CD        = :V_CARUD_SCH_CD        --í•˜ì°¨ìŠ¤ì¼€ì¤„
+				     , STACK_MAX_QNTY      = :V_STACK_MAX_QNTY      --ì ì¹˜ê°€ëŠ¥ìˆ˜ëŸ‰
+				     , CTS_RELAY_YN        = :V_CTS_RELAY_YN        --ì—°ì†ì‘ì—…íšŸìˆ˜
+				     , PALLET_NO           = :V_PALLET_NO           --ì„ ì‘ì—…ì§€ì‹œ 1:ì‹¤í–‰ 2:ëŒ€ê¸°
 				     , MODIFIER            = :V_MODIFIER
 				     , MOD_DDTT            = SYSDATE
-				 WHERE EQUIP_GP = :V_EQUIP_GP    --´ëÂ÷ÄÚµå(1XTC03)
+				 WHERE EQUIP_GP = :V_EQUIP_GP    --ëŒ€ì°¨ì½”ë“œ(1XTC03)
 				 */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateTransCarRoute", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateTransCarRoute", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½");
 				
 				/**********************************************************
-				* ´ëÂ÷ »óÇÏÂ÷µ¿ °ü·Ã(TB_YM_RULE) ±âÁØ Å×ÀÌºí Update - »óÂ÷µ¿ *
+				* ëŒ€ì°¨ ìƒí•˜ì°¨ë™ ê´€ë ¨(TB_YM_RULE) ê¸°ì¤€ í…Œì´ë¸” Update - ìƒì°¨ë™ *
 				**********************************************************/
 				jrParam.setField("STOP_LOC", commUtils.getValue(gdReq, "CARLOAD_STOP_LOC" , ii));
 				jrParam.setField("EQUIP_GP", commUtils.getValue(gdReq, "EQUIP_GP" , ii));
@@ -7495,10 +7495,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				     DTL_ITM3 = DD.DTL_ITM3
 				    ,MOD_DDTT = SYSDATE
 				    ,MODIFIER = :V_MODIFIER */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateTransCarRule", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ º¯°æ ½Ã ±âÁØ Å×ÀÌºí º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateTransCarRule", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½ ì‹œ ê¸°ì¤€ í…Œì´ë¸” ë³€ê²½");
 				
 				/**********************************************************
-				* ´ëÂ÷ »óÇÏÂ÷µ¿ °ü·Ã(TB_YM_RULE) ±âÁØ Å×ÀÌºí Update - ÇÏÂ÷µ¿ *
+				* ëŒ€ì°¨ ìƒí•˜ì°¨ë™ ê´€ë ¨(TB_YM_RULE) ê¸°ì¤€ í…Œì´ë¸” Update - í•˜ì°¨ë™ *
 				**********************************************************/
 				jrParam.setField("STOP_LOC", commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC" , ii));
 				jrParam.setField("EQUIP_GP", commUtils.getValue(gdReq, "EQUIP_GP" , ii));
@@ -7520,7 +7520,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				     DTL_ITM3 = DD.DTL_ITM3
 				    ,MOD_DDTT = SYSDATE
 				    ,MODIFIER = :V_MODIFIER */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateTransCarRule", logId, methodNm, "µ¿°£ÀÛ¾÷±âÁØ º¯°æ ½Ã ±âÁØ Å×ÀÌºí º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateTransCarRule", logId, methodNm, "ë™ê°„ì‘ì—…ê¸°ì¤€ ë³€ê²½ ì‹œ ê¸°ì¤€ í…Œì´ë¸” ë³€ê²½");
 
 //				sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARUNLOAD_STOP_LOC", ii);
 				sCARLOAD_STOP_LOC = commUtils.getValue(gdReq, "CARLOAD_STOP_LOC"  , ii);
@@ -7534,8 +7534,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND DEL_YN = 'N'
 				   AND YD_WRK_PLAN_TCAR = :V_YD_WRK_PLAN_TCAR
 				 */
-				jrParam.setField("YD_WRK_PLAN_TCAR", sEQUIP_GP); //´ëÂ÷¹øÈ£
-				JDTORecordSet jrWbCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookCntByTcar", logId, methodNm, "´ëÂ÷º° ÀÛ¾÷¿¹¾à °³¼ö");
+				jrParam.setField("YD_WRK_PLAN_TCAR", sEQUIP_GP); //ëŒ€ì°¨ë²ˆí˜¸
+				JDTORecordSet jrWbCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWrkBookCntByTcar", logId, methodNm, "ëŒ€ì°¨ë³„ ì‘ì—…ì˜ˆì•½ ê°œìˆ˜");
 				
 				int nWRK_CNT = 99;
 				if (jrWbCnt.size() > 0) {
@@ -7552,8 +7552,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 WHERE DEL_YN    = 'N'
 					   AND YD_EQP_ID = :V_YD_EQP_ID
 					 */
-					jrParam.setField("YD_CARLD_STOP_LOC", sCARLOAD_STOP_LOC); //»óÂ÷µ¿
-					jrParam.setField("YD_EQP_ID"        , sEQUIP_GP        ); //´ëÂ÷¹øÈ£
+					jrParam.setField("YD_CARLD_STOP_LOC", sCARLOAD_STOP_LOC); //ìƒì°¨ë™
+					jrParam.setField("YD_EQP_ID"        , sEQUIP_GP        ); //ëŒ€ì°¨ë²ˆí˜¸
 					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updTcarSchL");
 				}			
 
@@ -7571,15 +7571,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ Å©·¹ÀÎº¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ í¬ë ˆì¸ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updCraneChange(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ Å©·¹ÀÎº¯°æ[BSlabJspSeEJB.updCraneChange] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ í¬ë ˆì¸ë³€ê²½[BSlabJspSeEJB.updCraneChange] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -7588,24 +7588,24 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCrnSchId      = ""; //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId       = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydWrkProgStat   = ""; //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-			String ydSchCd         = ""; //¾ßµå½ºÄÉÁìÄÚµå
-			String ydEqpId         = ""; //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String chgYdEqpId      = ""; //º¯°æ ¾ßµå¼³ºñID(Å©·¹ÀÎ)
-			String chgYdSchPrior   = ""; //º¯°æ ¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			String chgYdEqpStat    = ""; //º¯°æ ¾ßµå¼³ºñ»óÅÂ
-			String chgYdEqpWrkMode = ""; //º¯°æ ¾ßµå¼³ºñÀÛ¾÷Mode
-			String sYD_EQP_WRK_MODE2 = "";//À¯¹«ÀÎ¿©ºÎ
-			String sOLD_WORK_MODE  = ""; //ÀÌÀü Å©·¹ÀÎÀÇ on off-line »óÅÂ
-			String sOLD_WPROG_STAT = ""; //ÀÌÀü Å©·¹ÀÎ ¼³ºñ»óÅÂ
-			String modifier = commUtils.trim(gdReq.getParam("userid")); //¼öÁ¤ÀÚ
+			String ydCrnSchId      = ""; //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId       = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydWrkProgStat   = ""; //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+			String ydSchCd         = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			String ydEqpId         = ""; //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String chgYdEqpId      = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+			String chgYdSchPrior   = ""; //ë³€ê²½ ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			String chgYdEqpStat    = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+			String chgYdEqpWrkMode = ""; //ë³€ê²½ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
+			String sYD_EQP_WRK_MODE2 = "";//ìœ ë¬´ì¸ì—¬ë¶€
+			String sOLD_WORK_MODE  = ""; //ì´ì „ í¬ë ˆì¸ì˜ on off-line ìƒíƒœ
+			String sOLD_WPROG_STAT = ""; //ì´ì „ í¬ë ˆì¸ ì„¤ë¹„ìƒíƒœ
+			String modifier = commUtils.trim(gdReq.getParam("userid")); //ìˆ˜ì •ì
 
 			//DAO Parameter
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
@@ -7613,21 +7613,21 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				ydWbookId  = commUtils.trim(gdReq.getHeader("YD_WBOOK_ID"  ).getValue(ii));
 				ydCrnSchId = commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID").getValue(ii));
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
-				if (commUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }  //ÇØ´ç °ªÀÌ ÀÖ´ÂÁö¸¦ Check
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
+				if (commUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }  //í•´ë‹¹ ê°’ì´ ìˆëŠ”ì§€ë¥¼ Check
 				
 				arrYdWbookId[ii] = ydWbookId;
 
 				/**********************************************************
-				* 1. Å©·¹ÀÎ½ºÄÉÁÙ, ½ºÄÉÁÙ±âÁØ, ¼³ºñÁ¤º¸ Check
-				* 1.1 Å©·¹ÀÎ½ºÄÉÁÙÀÇ ½ºÄÉÁÙID ¹× ¼³ºñ»óÅÂ Check
-				* 1.2 Å©·¹ÀÎ½ºÄÉÁÙ ¼³ºñID·Î ½ºÄÉÁÙ±âÁØÀÇ ÁÖ ¹× ´ëÃ¼ Å©·¹ÀÎ¼³ºñID¿Í ºñ±³ÇÏ¿© º¯°æ Å©·¹ÀÎ¼³ºñID¿Í ¼øÀ§¸¦ Set
-				* 1.3 º¯°æ ÇÒ Å©·¹ÀÎ Á¤º¸¸¦ Check
+				* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„, ìŠ¤ì¼€ì¤„ê¸°ì¤€, ì„¤ë¹„ì •ë³´ Check
+				* 1.1 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì˜ ìŠ¤ì¼€ì¤„ID ë° ì„¤ë¹„ìƒíƒœ Check
+				* 1.2 í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì„¤ë¹„IDë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€ì˜ ì£¼ ë° ëŒ€ì²´ í¬ë ˆì¸ì„¤ë¹„IDì™€ ë¹„êµí•˜ì—¬ ë³€ê²½ í¬ë ˆì¸ì„¤ë¹„IDì™€ ìˆœìœ„ë¥¼ Set
+				* 1.3 ë³€ê²½ í•  í¬ë ˆì¸ ì •ë³´ë¥¼ Check
 				**********************************************************/
 				jrParam.setField("YD_WBOOK_ID"  , ydWbookId );
 				jrParam.setField("YD_CRN_SCH_ID", ydCrnSchId);
 				
-				//±âº»Á¤º¸Á¶È¸
+				//ê¸°ë³¸ì •ë³´ì¡°íšŒ
 				/*
 				SELECT CS.YD_WBOOK_ID
 				      ,CS.YD_WRK_PROG_STAT
@@ -7657,68 +7657,68 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				           ) CS
 				 WHERE CS.CHG_YD_EQP_ID = EQ.EQUIP_GP
 				 */
-				JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCraneChange1", logId, methodNm, "Å©·¹ÀÎº¯°æ Á¶È¸");
+				JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCraneChange1", logId, methodNm, "í¬ë ˆì¸ë³€ê²½ ì¡°íšŒ");
 
 			    if (jsCrn == null || jsCrn.size() <= 0) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁìID[" + ydCrnSchId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¥´ID[" + ydCrnSchId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			    }
 				
 			    JDTORecord jrCrn = jsCrn.getRecord(0);
 				
-			    ydWrkProgStat   = commUtils.trim(jrCrn.getFieldString("YD_WRK_PROG_STAT"   )); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				ydSchCd         = commUtils.trim(jrCrn.getFieldString("YD_SCH_CD"          )); //¾ßµå½ºÄÉÁìÄÚµå
-				ydEqpId         = commUtils.trim(jrCrn.getFieldString("YD_EQP_ID"          )); //¾ßµå¼³ºñID
-				chgYdEqpId      = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_ID"      )); //º¯°æ ¾ßµå¼³ºñID
-				chgYdSchPrior   = commUtils.trim(jrCrn.getFieldString("CHG_YD_SCH_PRIOR"   )); //º¯°æ ¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				chgYdEqpStat    = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_STAT"    )); //º¯°æ ¾ßµå¼³ºñ»óÅÂ
-				chgYdEqpWrkMode = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_WRK_MODE")); //º¯°æ ¾ßµå¼³ºñÀÛ¾÷Mode
-				sYD_EQP_WRK_MODE2 = commUtils.trim(jrCrn.getFieldString("OLD_YD_EQP_WRK_MODE2" )); //À¯¹«ÀÎ ¿©ºÎ
+			    ydWrkProgStat   = commUtils.trim(jrCrn.getFieldString("YD_WRK_PROG_STAT"   )); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				ydSchCd         = commUtils.trim(jrCrn.getFieldString("YD_SCH_CD"          )); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				ydEqpId         = commUtils.trim(jrCrn.getFieldString("YD_EQP_ID"          )); //ì•¼ë“œì„¤ë¹„ID
+				chgYdEqpId      = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_ID"      )); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ID
+				chgYdSchPrior   = commUtils.trim(jrCrn.getFieldString("CHG_YD_SCH_PRIOR"   )); //ë³€ê²½ ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				chgYdEqpStat    = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_STAT"    )); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ìƒíƒœ
+				chgYdEqpWrkMode = commUtils.trim(jrCrn.getFieldString("CHG_YD_EQP_WRK_MODE")); //ë³€ê²½ ì•¼ë“œì„¤ë¹„ì‘ì—…Mode
+				sYD_EQP_WRK_MODE2 = commUtils.trim(jrCrn.getFieldString("OLD_YD_EQP_WRK_MODE2" )); //ìœ ë¬´ì¸ ì—¬ë¶€
 				sOLD_WORK_MODE    = commUtils.trim(jrCrn.getFieldString("OLD_WORK_MODE"    ));
 				sOLD_WPROG_STAT   = commUtils.trim(jrCrn.getFieldString("OLD_WPROG_STAT"   ));
 				
 				if ("A".equals(sYD_EQP_WRK_MODE2) && !"W".equals(ydWrkProgStat)) {
-					throw new Exception("ÀÚµ¿È­Å©·¹ÀÎÀÇ °æ¿ì »óÅÂ°ªÀÌ ¾øÀ» °æ¿ì º¯°æÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.");
+					throw new Exception("ìë™í™”í¬ë ˆì¸ì˜ ê²½ìš° ìƒíƒœê°’ì´ ì—†ì„ ê²½ìš° ë³€ê²½í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
 				}
 				
 				if ("2".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [2:±Ç»ó¿Ï·á]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [2:ê¶Œìƒì™„ë£Œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("3".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [3:±ÇÇÏÁö½Ã]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [3:ê¶Œí•˜ì§€ì‹œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("4".equals(ydWrkProgStat)) {
-					throw new Exception("Å©·¹ÀÎ½ºÄÉÁÙ [" + ydCrnSchId + "]ÀÇ ÀÛ¾÷ÁøÇà»óÅÂ°¡ [4:±ÇÇÏ¿Ï·á]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("í¬ë ˆì¸ìŠ¤ì¼€ì¤„ [" + ydCrnSchId + "]ì˜ ì‘ì—…ì§„í–‰ìƒíƒœê°€ [4:ê¶Œí•˜ì™„ë£Œ]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("".equals(chgYdEqpId)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				} else if ("B".equals(chgYdEqpStat)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ¼³ºñ»óÅÂ°¡ [B:°íÀå]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì„¤ë¹„ìƒíƒœê°€ [B:ê³ ì¥]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if (!"1".equals(chgYdEqpWrkMode)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ¼³ºñÀÛ¾÷Mode°¡ [Off-Line]ÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì„¤ë¹„ì‘ì—…Modeê°€ [Off-Line]ì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if ("1".equals(chgYdEqpStat) || "2".equals(chgYdEqpStat) || "3".equals(chgYdEqpStat)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]ÀÇ ÀÛ¾÷Áö½Ã°¡ ÀÌ¹Ì ³»·ÁÁø »óÅÂÀÌ¹Ç·Î º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ì˜ ì‘ì—…ì§€ì‹œê°€ ì´ë¯¸ ë‚´ë ¤ì§„ ìƒíƒœì´ë¯€ë¡œ ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				} else if (ydEqpId.equals(chgYdEqpId)) {
-					throw new Exception("º¯°æ Å©·¹ÀÎ [" + chgYdEqpId + "]°ú ÇöÀç Å©·¹ÀÎ°ú °°½À´Ï´Ù. ");
+					throw new Exception("ë³€ê²½ í¬ë ˆì¸ [" + chgYdEqpId + "]ê³¼ í˜„ì¬ í¬ë ˆì¸ê³¼ ê°™ìŠµë‹ˆë‹¤. ");
 				}
 
-				commUtils.printLog(logId, "Å©·¹ÀÎº¯°æ [ " + ydWbookId + " : " + ydEqpId + " >> " + chgYdEqpId + " ]", "SL");
+				commUtils.printLog(logId, "í¬ë ˆì¸ë³€ê²½ [ " + ydWbookId + " : " + ydEqpId + " >> " + chgYdEqpId + " ]", "SL");
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à ¹× Å©·¹ÀÎ½ºÄÉÁÙ Table¿¡  ´ëÃ¼ Å©·¹ÀÎID¿Í ¿ì¼±¼øÀ§¸¦ Update
+				* 2. ì‘ì—…ì˜ˆì•½ ë° í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Tableì—  ëŒ€ì²´ í¬ë ˆì¸IDì™€ ìš°ì„ ìˆœìœ„ë¥¼ Update
 				**********************************************************/
 				jrParam.setField("MODIFIER"		, modifier);
 				jrParam.setField("YD_SCH_PRIOR"	, chgYdSchPrior);
 				jrParam.setField("YD_EQP_ID"   	, chgYdEqpId   );
 				
-				//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+				//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWrkBookPrior", logId, methodNm, "TB_YM_WRKBOOK");				
 				
 				if ("1".equals(ydWrkProgStat) || "S".equals(ydWrkProgStat)) {
 					/**********************************************************
-					* 2.1  ÀÌÀü Å©·¹ÀÎÀÇ ÀÛ¾÷Áö½Ã Ãë¼Ò Àü¹® ¼Û½Å
+					* 2.1  ì´ì „ í¬ë ˆì¸ì˜ ì‘ì—…ì§€ì‹œ ì·¨ì†Œ ì „ë¬¸ ì†¡ì‹ 
 					**********************************************************/
-					jrParam.setField("MSG_GP"       , "D"       ); //Àü¹®±¸ºĞ(Ãë¼Ò)
+					jrParam.setField("MSG_GP"       , "D"       ); //ì „ë¬¸êµ¬ë¶„(ì·¨ì†Œ)
 					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L004", jrParam));
 				}
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update
 				/*
 				UPDATE TB_YM_CRNSCH
 				   SET MODIFIER     = :V_MODIFIER
@@ -7734,14 +7734,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 			
 				/**********************************************************
-				* 3. Çö ÀÛ¾÷»óÅÂ°¡ ±Ç»óÁö½Ã[1]ÀÎ °æ¿ì
+				* 3. í˜„ ì‘ì—…ìƒíƒœê°€ ê¶Œìƒì§€ì‹œ[1]ì¸ ê²½ìš°
 				**********************************************************/
 				if ("1".equals(ydWrkProgStat) || "S".equals(ydWrkProgStat)) {
 					/**********************************************************
-					* 3.1 º¯°æ Å©·¹ÀÎÀÇ ¼³ºñ Table »óÅÂÁ¤º¸¸¦ Update
+					* 3.1 ë³€ê²½ í¬ë ˆì¸ì˜ ì„¤ë¹„ Table ìƒíƒœì •ë³´ë¥¼ Update
 					**********************************************************/
 					jrParam.setField("MODIFIER"		, modifier);
-					jrParam.setField("EQUIP_STAT"   , "1"); //¾ßµå¼³ºñ»óÅÂ : ±Ç»óÀÛ¾÷Áö½Ã
+					jrParam.setField("EQUIP_STAT"   , "1"); //ì•¼ë“œì„¤ë¹„ìƒíƒœ : ê¶Œìƒì‘ì—…ì§€ì‹œ
 					jrParam.setField("EQUIP_GP"   	, chgYdEqpId   );
 					/*
 					UPDATE TB_YM_EQUIP
@@ -7754,15 +7754,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnYsEqp", logId, methodNm,  "TB_YM_EQUIP");				
 
 					/**********************************************************
-					* 3.2 º¯°æ Å©·¹ÀÎÀÇ Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Ã³¸®
+					* 3.2 ë³€ê²½ í¬ë ˆì¸ì˜ í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì²˜ë¦¬
 					**********************************************************/
-					//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, modifier);
-					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-					jrYdMsg.setField("YD_EQP_ID"       , chgYdEqpId);	//¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_WRK_PROG_STAT", "1"       );	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±Ç»óÀÛ¾÷Áö½Ã)
-					jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//¾ßµå½ºÄÉÁìÄÚµå
-					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+					jrYdMsg.setField("YD_EQP_ID"       , chgYdEqpId);	//ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_WRK_PROG_STAT", "1"       );	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œìƒì‘ì—…ì§€ì‹œ)
+					jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 					EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 					JDTORecord jrSnd = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -7770,24 +7770,24 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrRtn = commUtils.addSndData(jrRtn, jrSnd);
 
 					/**********************************************************
-					* 3.3 ÀÌÀü Å©·¹ÀÎÀÇ ¼³ºñ Table »óÅÂÁ¤º¸¸¦ Update
+					* 3.3 ì´ì „ í¬ë ˆì¸ì˜ ì„¤ë¹„ Table ìƒíƒœì •ë³´ë¥¼ Update
 					**********************************************************/
 					jrParam.setField("MODIFIER"		, modifier);
-					jrParam.setField("EQUIP_STAT"	, "W"    ); //¾ßµå¼³ºñ»óÅÂ : ±Ç»óÀÛ¾÷Áö½Ã
+					jrParam.setField("EQUIP_STAT"	, "W"    ); //ì•¼ë“œì„¤ë¹„ìƒíƒœ : ê¶Œìƒì‘ì—…ì§€ì‹œ
 					jrParam.setField("EQUIP_GP"  	, ydEqpId);
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnYsEqp", logId, methodNm,  "TB_YM_EQUIP");				
 					
 					/**********************************************************
-					* 3.4 ÀÌÀü Å©·¹ÀÎÀÇ ÀÛ¾÷½ÇÀûÀÀ´ä Àü¹®À» Àü¼Û
+					* 3.4 ì´ì „ í¬ë ˆì¸ì˜ ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ì„ ì „ì†¡
 					**********************************************************/
-					JDTORecord resMsg = JDTORecordFactory.getInstance().create(); //Å©·¹ÀÎÀÛ¾÷½ÇÀûÀÀ´ä Àü¹® »ı¼º¿ë
+					JDTORecord resMsg = JDTORecordFactory.getInstance().create(); //í¬ë ˆì¸ì‘ì—…ì‹¤ì ì‘ë‹µ ì „ë¬¸ ìƒì„±ìš©
 
 					resMsg.setResultCode(logId);	//Log ID
 					resMsg.setResultMsg(methodNm);	//Log Method Name
-					resMsg.setField("YD_EQP_ID"     , ydEqpId); //¾ßµå¼³ºñID
-					resMsg.setField("YD_L2_WR_GP"   , "J"    ); //¾ßµåL2½ÇÀû±¸ºĞ(Áö½Ã¿ä±¸)
-					resMsg.setField("YD_L3_HD_RS_CD", "9999" ); //¾ßµåL3Ã³¸®°á°úÄÚµå(Error)
-					resMsg.setField("YD_L3_MSG"     , "Å©·¹ÀÎº¯°æ[" + chgYdEqpId + "]" ); //¾ßµåL3MESSAGE
+					resMsg.setField("YD_EQP_ID"     , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
+					resMsg.setField("YD_L2_WR_GP"   , "J"    ); //ì•¼ë“œL2ì‹¤ì êµ¬ë¶„(ì§€ì‹œìš”êµ¬)
+					resMsg.setField("YD_L3_HD_RS_CD", "9999" ); //ì•¼ë“œL3ì²˜ë¦¬ê²°ê³¼ì½”ë“œ(Error)
+					resMsg.setField("YD_L3_MSG"     , "í¬ë ˆì¸ë³€ê²½[" + chgYdEqpId + "]" ); //ì•¼ë“œL3MESSAGE
 
 					jrRtn = commUtils.addSndData(jrRtn, bSlabComm.getYMA8L005(resMsg));
 					
@@ -7810,7 +7810,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				if (rst.size() > 0) {
 					if ("W".equals(rst.getRecord(0).getFieldString("YD_WRK_PROG_STAT"))) {
 						/*********************************************
-						 * ÀÌÀü Å©·¹ÀÎÀÇ ´ÙÀ½ ½ºÄÉÁÙ ¸í·É ¼±ÅÃ ±âµ¿ 
+						 * ì´ì „ í¬ë ˆì¸ì˜ ë‹¤ìŒ ìŠ¤ì¼€ì¤„ ëª…ë ¹ ì„ íƒ ê¸°ë™ 
 						 ********************************************/
 						JDTORecord jrA8YML007 = JDTORecordFactory.getInstance().create();
 						jrA8YML007.setField("JMS_TC_CD", YmConstant.A8YML007);
@@ -7821,10 +7821,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrRtn = commUtils.addSndData(jrRtn, jrSnd);
 					}
 				}
-				//º¯°æµÈ Å©·¹ÀÎ »óÅÂ wÀÌ¸é ¸í·É¼±ÅÃ±âµ¿ EQP
+				//ë³€ê²½ëœ í¬ë ˆì¸ ìƒíƒœ wì´ë©´ ëª…ë ¹ì„ íƒê¸°ë™ EQP
 //				if ("W".equals(chgYdEqpStat)) {
 					/*********************************************
-					 * º¯°æ Å©·¹ÀÎÀÇ ´ÙÀ½ ½ºÄÉÁÙ ¸í·É ¼±ÅÃ ±âµ¿ 
+					 * ë³€ê²½ í¬ë ˆì¸ì˜ ë‹¤ìŒ ìŠ¤ì¼€ì¤„ ëª…ë ¹ ì„ íƒ ê¸°ë™ 
 					 ********************************************/
 //					JDTORecord jrA8YML007a = JDTORecordFactory.getInstance().create();
 //					jrA8YML007a.setField("JMS_TC_CD", YmConstant.A8YML007);
@@ -7849,52 +7849,52 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	}	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ¼øÀ§º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ìˆœìœ„ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updPriorChange(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ¼øÀ§º¯°æ[BSlabJspSeEJB.updPriorChange] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ìˆœìœ„ë³€ê²½[BSlabJspSeEJB.updPriorChange] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydSchPrior = ""; //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydSchPrior = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				/**********************************************************
-				* 1. ÀÛ¾÷¿¹¾àID Check
+				* 1. ì‘ì—…ì˜ˆì•½ID Check
 				**********************************************************/
-			    ydWbookId  = commUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //¾ßµåÀÛ¾÷¿¹¾àID
-			    ydSchPrior = commUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii)); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+			    ydWbookId  = commUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			    ydSchPrior = commUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii)); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (commUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				commUtils.printLog(logId, "¿ì¼±¼øÀ§º¯°æ [ " + ydWbookId + " >> " + ydSchPrior + " ]", "SL");
+				commUtils.printLog(logId, "ìš°ì„ ìˆœìœ„ë³€ê²½ [ " + ydWbookId + " >> " + ydSchPrior + " ]", "SL");
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à ¹× Å©·¹ÀÎ½ºÄÉÁÙ Table¿¡  ¿ì¼±¼øÀ§¸¦ Update
+				* 2. ì‘ì—…ì˜ˆì•½ ë° í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Tableì—  ìš°ì„ ìˆœìœ„ë¥¼ Update
 				**********************************************************/
 				jrParam.setField("YD_WBOOK_ID" , ydWbookId );
 				jrParam.setField("YD_SCH_PRIOR", ydSchPrior);
 				
-				//ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+				//ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 				/*
-				--ÀÛ¾÷¿¹¾à ½ºÄÉÁì¿ì¼±¼øÀ§ ¼öÁ¤
+				--ì‘ì—…ì˜ˆì•½ ìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„ ìˆ˜ì •
 				UPDATE TB_YM_WRKBOOK
 				   SET MODIFIER     = :V_MODIFIER
 				     , MOD_DDTT     = SYSDATE
@@ -7904,9 +7904,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 */
 				//commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWrkBookPrior", logId, methodNm, "TB_YM_WRKBOOK");				
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update
 				/*
-				--Å©·¹ÀÎÀÛ¾÷°ü¸® Å©·¹ÀÎº¯°æ Å©·¹ÀÎ½ºÄÉÁÙ ¼öÁ¤
+				--í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ í¬ë ˆì¸ë³€ê²½ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ìˆ˜ì •
 				UPDATE TB_YM_CRNSCH
 				   SET MODIFIER     = :V_MODIFIER
 				      ,MOD_DDTT     = SYSDATE
@@ -7933,22 +7933,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ±ä±ŞÀÛ¾÷
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ê¸´ê¸‰ì‘ì—…
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updPriorWrkChange(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ±ä±ŞÀÛ¾÷[BSlabJspSeEJB.updPriorWrkChange] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ê¸´ê¸‰ì‘ì—…[BSlabJspSeEJB.updPriorWrkChange] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-			String ydSchPrior = ""; //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			String ydSchPrior = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			String ydEqpId = ""; 
 			String ydCrnSchId = ""; 
 			String ydCrnSchIdWrk = ""; 
@@ -7956,39 +7956,39 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_DN_LOC = "";
 			
 			JDTORecord jrRtn = null;
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				/**********************************************************
-				* 1. ÀÛ¾÷¿¹¾àID Check
+				* 1. ì‘ì—…ì˜ˆì•½ID Check
 				**********************************************************/
 				ydEqpId  	= commUtils.trim(gdReq.getHeader("YD_EQP_ID" ).getValue(ii)); 
-			    ydWbookId  	= commUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //¾ßµåÀÛ¾÷¿¹¾àID
+			    ydWbookId  	= commUtils.trim(gdReq.getHeader("YD_WBOOK_ID" ).getValue(ii)); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			    ydSchPrior 	= commUtils.trim(gdReq.getHeader("YD_SCH_PRIOR").getValue(ii)); 
-			    ydCrnSchId 	= commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID").getValue(ii));  // ½Å±ÔÀÛ¾÷
+			    ydCrnSchId 	= commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID").getValue(ii));  // ì‹ ê·œì‘ì—…
 			    ydSchCd 	= commUtils.trim(gdReq.getHeader("YD_SCH_CD").getValue(ii));
 			    sYD_DN_LOC  = commUtils.trim(gdReq.getHeader("YD_DN_LOC").getValue(ii));
 			    
 			    if ("XX010101".equals(sYD_DN_LOC)) {
-			    	throw new Exception("ToÀ§Ä¡°¡ XX010101ÀÏ°æ¿ì ±ä±ŞÀÛ¾÷À» ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			    	throw new Exception("Toìœ„ì¹˜ê°€ XX010101ì¼ê²½ìš° ê¸´ê¸‰ì‘ì—…ì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			    }
 			    
-				commUtils.printLog(logId, "±ä±ŞÀÛ¾÷ [ " + ydEqpId + " >> " + ydWbookId + " >> " + ydSchPrior + " >> " + ydCrnSchId +" >> " + ydSchCd + " ]", "SL");
+				commUtils.printLog(logId, "ê¸´ê¸‰ì‘ì—… [ " + ydEqpId + " >> " + ydWbookId + " >> " + ydSchPrior + " >> " + ydCrnSchId +" >> " + ydSchCd + " ]", "SL");
  
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (commUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-			    jrParam.setField("YD_EQP_ID"		, ydEqpId );      //½Å±Ô
-			    jrParam.setField("YD_CRN_SCH_ID" 	, ydCrnSchId );   //½Å±Ô
-				jrParam.setField("YD_WBOOK_ID" 		, ydWbookId );    //½Å±Ô
-				jrParam.setField("YD_SCH_PRIOR"		, "0");           //½Å±Ô
-                // ±âÁ¸ÀÛ¾÷Áö½Ã
+			    jrParam.setField("YD_EQP_ID"		, ydEqpId );      //ì‹ ê·œ
+			    jrParam.setField("YD_CRN_SCH_ID" 	, ydCrnSchId );   //ì‹ ê·œ
+				jrParam.setField("YD_WBOOK_ID" 		, ydWbookId );    //ì‹ ê·œ
+				jrParam.setField("YD_SCH_PRIOR"		, "0");           //ì‹ ê·œ
+                // ê¸°ì¡´ì‘ì—…ì§€ì‹œ
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnWrkMgtPriorWrk1   
 				SELECT YD_CRN_SCH_ID
 				  FROM (
@@ -8002,7 +8002,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				        )
 				 WHERE CRN_WRK_CNT = 1            
 				 */
-				JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnWrkMgtPriorWrk1", logId, methodNm, "±âÁ¸Å©·¹ÀÎ Á¶È¸");
+				JDTORecordSet jsCrn = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getCrnWrkMgtPriorWrk1", logId, methodNm, "ê¸°ì¡´í¬ë ˆì¸ ì¡°íšŒ");
 
 				
 				if (jsCrn.size() == 0) {
@@ -8010,16 +8010,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    } else {
 			    	
 					/**********************************************************
-					* 3.1 ±âÁ¸ ÀÛ¾÷ Á¤¸® 
-					* 3.2 ½Å±Ô ÀÛ¾÷ Ã³¸® ÇÔ  
+					* 3.1 ê¸°ì¡´ ì‘ì—… ì •ë¦¬ 
+					* 3.2 ì‹ ê·œ ì‘ì—… ì²˜ë¦¬ í•¨  
 					**********************************************************/
 			    	
 			    	JDTORecord jrCrn = jsCrn.getRecord(0);
-				    ydCrnSchIdWrk   = commUtils.trim(jrCrn.getFieldString("YD_CRN_SCH_ID"));    //±âÁ¸
+				    ydCrnSchIdWrk   = commUtils.trim(jrCrn.getFieldString("YD_CRN_SCH_ID"));    //ê¸°ì¡´
 				    
 				    
 				    /*********************************
-					 * ¹«ÀÎÅ©·¹ÀÎ ¿©ºÎ Ã¼Å© 
+					 * ë¬´ì¸í¬ë ˆì¸ ì—¬ë¶€ ì²´í¬ 
 					 ********************************/
 			    	/*
 					SELECT YD_EQP_WRK_MODE2
@@ -8034,7 +8034,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    		
 			    		if ("A".equals(sYD_EQP_WRK_MODE2)) {
 
-			    			//ÀÌÀü Å©·¹ÀÎ ½ºÄÉÁÙÀÌ À§Ä¡°Ë»ö ½ÇÆĞ ÀÏ ¶§
+			    			//ì´ì „ í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì´ ìœ„ì¹˜ê²€ìƒ‰ ì‹¤íŒ¨ ì¼ ë•Œ
 			    			/*
 							SELECT *
 							  FROM TB_YM_CRNSCH
@@ -8046,8 +8046,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    			String sYD_DN_WO_LOC = frst.getRecord(0).getFieldString("YD_DN_WO_LOC");
 			    			
 			    			if ("XX010101".equals(sYD_DN_WO_LOC)) {
-							    /**** ±âÁ¸ ÀÛ¾÷ Áö½Ã Á¤¸® ***********/
-								//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update, 
+							    /**** ê¸°ì¡´ ì‘ì—… ì§€ì‹œ ì •ë¦¬ ***********/
+								//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update, 
 							    /* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtPriorWrkNext1 
 							    UPDATE TB_YM_CRNSCH A
 							       SET MODIFIER         = :V_MODIFIER
@@ -8062,7 +8062,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							    jrParam.setField("YD_CRN_SCH_ID" , ydCrnSchIdWrk);
 								commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtPriorWrkNext1", logId, methodNm,  "TB_YM_CRNSCH");
 								
-								//½Å±Ô ÀÛ¾÷ ¿ì¼±¼øÀ§ º¯°æ
+								//ì‹ ê·œ ì‘ì—… ìš°ì„ ìˆœìœ„ ë³€ê²½
 								/*  
 								UPDATE TB_YM_CRNSCH
 								   SET MODIFIER     = :V_MODIFIER
@@ -8075,32 +8075,32 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 								 */
 								commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgt", logId, methodNm,  "TB_YM_CRNSCH");
 								
-								//±âÁ¸ ÀÛ¾÷ÀÌ À§Ä¡°Ë»ö½ÇÆĞ ÀÌ¸é ½ºÄÉÁÙ ±âµ¿
+								//ê¸°ì¡´ ì‘ì—…ì´ ìœ„ì¹˜ê²€ìƒ‰ì‹¤íŒ¨ ì´ë©´ ìŠ¤ì¼€ì¤„ ê¸°ë™
 								JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 
 								jrYdMsg.setResultCode(logId);	//Log ID
 								jrYdMsg.setResultMsg(methodNm);	//Log Method Name
-								jrYdMsg.setField("JMS_TC_CD"       , YmConstant.YMA8L004);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-								jrYdMsg.setField("MSG_GP"          , "I");	//¾ßµå¼³ºñID
-								jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+								jrYdMsg.setField("JMS_TC_CD"       , YmConstant.YMA8L004);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+								jrYdMsg.setField("MSG_GP"          , "I");	//ì•¼ë“œì„¤ë¹„ID
+								jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 			//SJH				jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L004", jrYdMsg));	
 				        		JDTORecordSet jsRtn1 = commDao.getMsgL2("YMA8L004", jrYdMsg);
 								jrRtn = commUtils.addSndData(jrRtn , jsRtn1);
 								
-								//Å©·¹ÀÎÀÛ¾÷Áö½Ã Z°ª °»½Å Ã³¸®
+								//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ Zê°’ ê°±ì‹  ì²˜ë¦¬
 				        		if(jsRtn1.size() > 0 ) {
 				        			jrYdMsg.setField("YD_UP_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_UP_WO_LOC_ZAXIS"));	
 				        			jrYdMsg.setField("YD_DN_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_DN_WO_LOC_ZAXIS"));	
 				        			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS 
-				    				--Å©·¹ÀÎ½ºÄÉÁÙ z°ª °»½Å
+				    				--í¬ë ˆì¸ìŠ¤ì¼€ì¤„ zê°’ ê°±ì‹ 
 				    				UPDATE TB_YM_CRNSCH
 				    				   SET YD_UP_WO_LOC_ZAXIS = :V_YD_UP_WO_LOC_ZAXIS
 				    				     , YD_DN_WO_LOC_ZAXIS = :V_YD_DN_WO_LOC_ZAXIS
 				    				 WHERE YD_CRN_SCH_ID    = :V_YD_CRN_SCH_ID
 				    				   AND DEL_YN           = 'N' 
 				    				*/
-				            		commDao.update(jrYdMsg, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABÅ©·¹ÀÎ½ºÄÉÁÙ Z°ª ¼öÁ¤");
+				            		commDao.update(jrYdMsg, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABí¬ë ˆì¸ìŠ¤ì¼€ì¤„ Zê°’ ìˆ˜ì •");
 				        			
 //				        			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 //									ejbConn1.trx("procCrnsSchZaxis", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg }); 					
@@ -8108,9 +8108,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				        		return jrRtn;
 			    			}
 			    			/******************************************************
-			    			 * ±ä±ŞÀÛ¾÷½Ã AutoÅ©·¹ÀÎ ¿ì¼±¼øÀ§ º¯°æÈÄ ¾Æ¹«°Íµµ ¾ÈÇÔ
+			    			 * ê¸´ê¸‰ì‘ì—…ì‹œ Autoí¬ë ˆì¸ ìš°ì„ ìˆœìœ„ ë³€ê²½í›„ ì•„ë¬´ê²ƒë„ ì•ˆí•¨
 			    			 ******************************************************/
-							//½Å±Ô ÀÛ¾÷ ¿ì¼±¼øÀ§ º¯°æ
+							//ì‹ ê·œ ì‘ì—… ìš°ì„ ìˆœìœ„ ë³€ê²½
 							/*  
 							UPDATE TB_YM_CRNSCH
 							   SET MODIFIER     = :V_MODIFIER
@@ -8124,18 +8124,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgt", logId, methodNm,  "TB_YM_CRNSCH");
 							
 							/**********************************************************
-							* Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸ - ÀÏ½ÃÁ¤Áö ±ä±ŞÀÛ¾÷
+							* í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ - ì¼ì‹œì •ì§€ ê¸´ê¸‰ì‘ì—…
 							**********************************************************/
 							String sAPP030 = ymComm.BCoilApplyYn("APP030","2","S1");
 							
 							if ("Y".equals(sAPP030)) {
-								//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+								//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 								JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 				                
-				               	jrYdMsg.setField("JMS_TC_CD"         , YmConstant.YMA8L004); //Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-								jrYdMsg.setField("YD_CRN_SCH_ID"     , ydCrnSchId         ); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-								jrYdMsg.setField("MSG_GP"            , "I"   ); //Àü¹®±¸ºĞ
-								jrYdMsg.setField("YD_CRN_SCH_RMD_CNT", "S1"  ); //S1 ÀÏ½ÃÁ¤Áö ÈÄ ±ä±ŞÀÛ¾÷
+				               	jrYdMsg.setField("JMS_TC_CD"         , YmConstant.YMA8L004); //í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+								jrYdMsg.setField("YD_CRN_SCH_ID"     , ydCrnSchId         ); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+								jrYdMsg.setField("MSG_GP"            , "I"   ); //ì „ë¬¸êµ¬ë¶„
+								jrYdMsg.setField("YD_CRN_SCH_RMD_CNT", "S1"  ); //S1 ì¼ì‹œì •ì§€ í›„ ê¸´ê¸‰ì‘ì—…
 
 								jrRtn = commUtils.addSndData(commDao.getMsgL2("YMA8L004", jrYdMsg));
 							}
@@ -8143,16 +8143,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    			return jrRtn;
 			    			
 			    		} 
-			    		if ("M".equals(sYD_EQP_WRK_MODE2) || "R".equals(sYD_EQP_WRK_MODE2)) { //À¯ÀÎ
+			    		if ("M".equals(sYD_EQP_WRK_MODE2) || "R".equals(sYD_EQP_WRK_MODE2)) { //ìœ ì¸
 
 			    			/******************************************************
-			    			 * À¯ÀÎ ±ä±ŞÀÛ¾÷ÀÏ °æ¿ì ¸í·É¼±ÅÃ ±âµ¿(±âÁ¸ÀÛ¾÷)
+			    			 * ìœ ì¸ ê¸´ê¸‰ì‘ì—…ì¼ ê²½ìš° ëª…ë ¹ì„ íƒ ê¸°ë™(ê¸°ì¡´ì‘ì—…)
 			    			 ******************************************************/
 						    jrParam.setField("YD_CRN_SCH_ID" 	, ydCrnSchIdWrk );
 						    
 						    
-						    /**** ±âÁ¸ ÀÛ¾÷ Áö½Ã Á¤¸® ***********/
-							//Å©·¹ÀÎ½ºÄÉÁÙ Table Å©·¹ÀÎID, ¿ì¼±¼øÀ§ Update, 
+						    /**** ê¸°ì¡´ ì‘ì—… ì§€ì‹œ ì •ë¦¬ ***********/
+							//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ Table í¬ë ˆì¸ID, ìš°ì„ ìˆœìœ„ Update, 
 						    /* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCrnWrkMgtPriorWrkNext1 
 						    UPDATE TB_YM_CRNSCH A
 						       SET MODIFIER         = :V_MODIFIER
@@ -8171,11 +8171,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    	}
 							
 			    	/**
-			    	 * ¼øÀ§º¯°æ½Ã¿¡´Â ÀÛ¾÷¿¹¾à ¼øÀ§´Â º¯°æÇÏÁö ¾Ê´Â´Ù. 
+			    	 * ìˆœìœ„ë³€ê²½ì‹œì—ëŠ” ì‘ì—…ì˜ˆì•½ ìˆœìœ„ëŠ” ë³€ê²½í•˜ì§€ ì•ŠëŠ”ë‹¤. 
 			    	 */
-					//½Å±Ô ÀÛ¾÷¿¹¾à Table ¿ì¼±¼øÀ§ Update
+					//ì‹ ê·œ ì‘ì—…ì˜ˆì•½ Table ìš°ì„ ìˆœìœ„ Update
 			    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWrkBookPrior1 
-			    	--ÀÛ¾÷¿¹¾à ½ºÄÉÁì¿ì¼±¼øÀ§ ¼öÁ¤
+			    	--ì‘ì—…ì˜ˆì•½ ìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„ ìˆ˜ì •
 			    	UPDATE TB_YM_WRKBOOK
 			    	   SET MODIFIER     = :V_MODIFIER
 			    	     , MOD_DDTT     = SYSDATE
@@ -8187,7 +8187,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					//commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updWrkBookPrior1", logId, methodNm, "TB_YM_WRKBOOK");				
 
 			    	
-					//½Å±Ô ÀÛ¾÷ ¿ì¼±¼øÀ§ º¯°æ
+					//ì‹ ê·œ ì‘ì—… ìš°ì„ ìˆœìœ„ ë³€ê²½
 					/*  
 					UPDATE TB_YM_CRNSCH
 					   SET MODIFIER     = :V_MODIFIER
@@ -8228,23 +8228,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdWorkDt");
 					
 					/**********************************************************
-					* 3.2 ½Å  Å©·¹ÀÎÀÛ¾÷Áö½Ã ¿ä±¸ Ã³¸®
+					* 3.2 ì‹   í¬ë ˆì¸ì‘ì—…ì§€ì‹œ ìš”êµ¬ ì²˜ë¦¬
 					**********************************************************/
 
-					//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+					//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 					JDTORecord jrYdMsg = JDTORecordFactory.getInstance().create();
 
 					jrYdMsg.setResultCode(logId);	//Log ID
 					jrYdMsg.setResultMsg(methodNm);	//Log Method Name
-					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.YMA8L004);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-					jrYdMsg.setField("MSG_GP"          , "I");	//¾ßµå¼³ºñID
-					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+					jrYdMsg.setField("JMS_TC_CD"       , YmConstant.YMA8L004);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+					jrYdMsg.setField("MSG_GP"          , "I");	//ì•¼ë“œì„¤ë¹„ID
+					jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 
 //SJH					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L004", jrYdMsg));	
 	        		JDTORecordSet jsRtn1 = commDao.getMsgL2("YMA8L004", jrYdMsg);
 					jrRtn = commUtils.addSndData(jrRtn , jsRtn1);
 					
-					//Å©·¹ÀÎÀÛ¾÷Áö½Ã Z°ª °»½Å Ã³¸®
+					//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ Zê°’ ê°±ì‹  ì²˜ë¦¬
 	        		if(jsRtn1.size() > 0 ) {
 	        			commUtils.printLog(logId,jsRtn1.getRecord(0).getFieldString("JMS_TC_MESSAGE").substring(165, 170), "SL");	        			
 	        			commUtils.printLog(logId,jsRtn1.getRecord(0).getFieldString("JMS_TC_MESSAGE").substring(225, 230), "SL");	        			
@@ -8252,14 +8252,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	        			jrYdMsg.setField("YD_UP_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_UP_WO_LOC_ZAXIS"));	
 	        			jrYdMsg.setField("YD_DN_WO_LOC_ZAXIS"   , jsRtn1.getRecord(0).getFieldString("YD_DN_WO_LOC_ZAXIS"));	
 	        			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS 
-	    				--Å©·¹ÀÎ½ºÄÉÁÙ z°ª °»½Å
+	    				--í¬ë ˆì¸ìŠ¤ì¼€ì¤„ zê°’ ê°±ì‹ 
 	    				UPDATE TB_YM_CRNSCH
 	    				   SET YD_UP_WO_LOC_ZAXIS = :V_YD_UP_WO_LOC_ZAXIS
 	    				     , YD_DN_WO_LOC_ZAXIS = :V_YD_DN_WO_LOC_ZAXIS
 	    				 WHERE YD_CRN_SCH_ID    = :V_YD_CRN_SCH_ID
 	    				   AND DEL_YN           = 'N' 
 	    				*/
-	            		commDao.update(jrYdMsg, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABÅ©·¹ÀÎ½ºÄÉÁÙ Z°ª ¼öÁ¤");
+	            		commDao.update(jrYdMsg, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updZAXIS", logId, methodNm, "SLABí¬ë ˆì¸ìŠ¤ì¼€ì¤„ Zê°’ ìˆ˜ì •");
 	            		
 //	        			EJBConnector ejbConn1 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 //						ejbConn1.trx("procCrnsSchZaxis", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg }); 		
@@ -8282,15 +8282,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ±ÇÇÏÀ§Ä¡º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ê¶Œí•˜ìœ„ì¹˜ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updDownLocChange(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷°ü¸® ±ÇÇÏÀ§Ä¡º¯°æ[BSlabJspSeEJB.updDownLocChange] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ê´€ë¦¬ ê¶Œí•˜ìœ„ì¹˜ë³€ê²½[BSlabJspSeEJB.updDownLocChange] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -8299,23 +8299,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//±ÇÇÏÀ§Ä¡º¯°æ ´ë»ó ½ºÄÉÁÙ
+			//ê¶Œí•˜ìœ„ì¹˜ë³€ê²½ ëŒ€ìƒ ìŠ¤ì¼€ì¤„
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//EJB CallÀ» À§ÇÑ Message »ı¼º - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//EJB Callì„ ìœ„í•œ Message ìƒì„± - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 				
-				jrYdMsg.setField("STOCK_ID"        , commUtils.trim(gdReq.getHeader("STOCK_ID"        ).getValue(ii))); //ÀúÀåÇ°
-				jrYdMsg.setField("YD_EQP_ID"       , commUtils.trim(gdReq.getHeader("YD_EQP_ID"       ).getValue(ii))); //¾ßµå¼³ºñID(Å©·¹ÀÎ)
-				jrYdMsg.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(ii))); //¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(ii))); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-				jrYdMsg.setField("YD_WBOOK_ID"     , commUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(ii))); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrYdMsg.setField("YD_DN_WO_LOC"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(½Å±Ô)
-				jrYdMsg.setField("YD_WRK_PROG_STAT", commUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(ii))); //¾ßµåÀÛ¾÷ÁøÇà»óÅÂ
-				jrYdMsg.setField("YD_DN_WO_LOC_ORG", commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ORG").getValue(ii))); //¾ßµå±ÇÇÏÁö½ÃÀ§Ä¡(±âÁ¸)
+				jrYdMsg.setField("STOCK_ID"        , commUtils.trim(gdReq.getHeader("STOCK_ID"        ).getValue(ii))); //ì €ì¥í’ˆ
+				jrYdMsg.setField("YD_EQP_ID"       , commUtils.trim(gdReq.getHeader("YD_EQP_ID"       ).getValue(ii))); //ì•¼ë“œì„¤ë¹„ID(í¬ë ˆì¸)
+				jrYdMsg.setField("YD_SCH_CD"       , commUtils.trim(gdReq.getHeader("YD_SCH_CD"       ).getValue(ii))); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , commUtils.trim(gdReq.getHeader("YD_CRN_SCH_ID"   ).getValue(ii))); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+				jrYdMsg.setField("YD_WBOOK_ID"     , commUtils.trim(gdReq.getHeader("YD_WBOOK_ID"     ).getValue(ii))); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrYdMsg.setField("YD_DN_WO_LOC"    , commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC"    ).getValue(ii))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ì‹ ê·œ)
+				jrYdMsg.setField("YD_WRK_PROG_STAT", commUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(ii))); //ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ
+				jrYdMsg.setField("YD_DN_WO_LOC_ORG", commUtils.trim(gdReq.getHeader("YD_DN_WO_LOC_ORG").getValue(ii))); //ì•¼ë“œê¶Œí•˜ì§€ì‹œìœ„ì¹˜(ê¸°ì¡´)
 				
-				//±ÇÇÏÁö½ÃÀ§Ä¡ º¯°æ
+				//ê¶Œí•˜ì§€ì‹œìœ„ì¹˜ ë³€ê²½
 				jrRtn = commUtils.addSndData(jrRtn, this.updCrnSchDnWoLoc(jrYdMsg));
 			}
 
@@ -8331,15 +8331,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ÀÛ¾÷Ãë¼Ò
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ì‘ì—…ì·¨ì†Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updCraneWrkCancel(GridData gdReq) throws DAOException {
-		String methodNm = "Å©·¹ÀÎÀÛ¾÷¿ä±¸ÇöÈ²Á¶È¸ ÀÛ¾÷Ãë¼Ò[BSlabJspSeEJB.updCraneWrkCancel] < " + gdReq.getNavigateValue();
+		String methodNm = "í¬ë ˆì¸ì‘ì—…ìš”êµ¬í˜„í™©ì¡°íšŒ ì‘ì—…ì·¨ì†Œ[BSlabJspSeEJB.updCraneWrkCancel] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -8348,10 +8348,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydCrnSchId = ""; //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
-			String ydWbookId  = ""; //¾ßµåÀÛ¾÷¿¹¾àID
-		    String ydEqpId    = ""; //¾ßµå¼³ºñID
-		    String ydSchCd    = ""; //¾ßµå½ºÄÉÁìÄÚµå
+			String ydCrnSchId = ""; //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
+			String ydWbookId  = ""; //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+		    String ydEqpId    = ""; //ì•¼ë“œì„¤ë¹„ID
+		    String ydSchCd    = ""; //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 			String sWORK_MODE = "";
 			
 		    boolean autoFlag = false;
@@ -8359,10 +8359,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		    String sYD_EQP_AUTO_CRN_MODE = "";
 		    String sYD_EQP_WRK_MODE2     = "";
 		    String sYD_WRK_PROG_STAT     = "";
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			//Ã³¸®¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID
+			//ì²˜ë¦¬ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String[] arrYdWbookId = new String[rowCnt];
 			
@@ -8374,7 +8374,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			    sYD_WRK_PROG_STAT = commUtils.trim(gdReq.getHeader("YD_WRK_PROG_STAT").getValue(ii));
 			    
 			    /*****************************************
-			     * ¹«ÀÎÅ©·¹ÀÎÀÏ ¶§´Â ÀÛ¾÷Ãë¼Ò°¡ µÇ¸é ¾ÈµÊ
+			     * ë¬´ì¸í¬ë ˆì¸ì¼ ë•ŒëŠ” ì‘ì—…ì·¨ì†Œê°€ ë˜ë©´ ì•ˆë¨
 			     *****************************************/
 			    /*
 				SELECT *
@@ -8390,32 +8390,32 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					rsResult.first();
 					jrEqpInfo = rsResult.getRecord();
 					
-					sWPROG_STAT           = jrEqpInfo.getFieldString("WPROG_STAT");          // ¼³ºñ »óÅÂ
-					sYD_EQP_AUTO_CRN_MODE = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn »óÅÂ
-					sYD_EQP_WRK_MODE2     = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	// AutoCrn ¿©ºÎ
+					sWPROG_STAT           = jrEqpInfo.getFieldString("WPROG_STAT");          // ì„¤ë¹„ ìƒíƒœ
+					sYD_EQP_AUTO_CRN_MODE = jrEqpInfo.getFieldString("YD_EQP_AUTO_CRN_MODE");// AutoCrn ìƒíƒœ
+					sYD_EQP_WRK_MODE2     = jrEqpInfo.getFieldString("YD_EQP_WRK_MODE2"); 	// AutoCrn ì—¬ë¶€
 					sWORK_MODE            = jrEqpInfo.getFieldString("sWORK_MODE");
 					
-					if ("A".equals(sYD_EQP_WRK_MODE2)) {// A:¹«ÀÎ R:¸®¸ğÄÁ
+					if ("A".equals(sYD_EQP_WRK_MODE2)) {// A:ë¬´ì¸ R:ë¦¬ëª¨ì»¨
 						autoFlag = true; 
 					}
 				}
 				
-				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)){ //W:¸í·É¼±ÅÃ´ë±â S:½ºÄÉÁÙÀÛ¼ºÁß
+				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)){ //W:ëª…ë ¹ì„ íƒëŒ€ê¸° S:ìŠ¤ì¼€ì¤„ì‘ì„±ì¤‘
 					
-					//¼³ºñ»óÅÂ Ã¼Å©ÇÏ¿© AutoÀÏ°æ¿ì ÀÏ½ÃÁ¤Áö »óÅÂ¿¡¼­¸¸ °¡´ÉÇÏ°Ô ¼öÁ¤
-					if (!"4".equals(sYD_EQP_AUTO_CRN_MODE) && !"B".equals(sWPROG_STAT)) { //4: ÀÏ½ÃÁ¤Áö B:°íÀå
+					//ì„¤ë¹„ìƒíƒœ ì²´í¬í•˜ì—¬ Autoì¼ê²½ìš° ì¼ì‹œì •ì§€ ìƒíƒœì—ì„œë§Œ ê°€ëŠ¥í•˜ê²Œ ìˆ˜ì •
+					if (!"4".equals(sYD_EQP_AUTO_CRN_MODE) && !"B".equals(sWPROG_STAT)) { //4: ì¼ì‹œì •ì§€ B:ê³ ì¥
 						//m_ctx.setRollbackOnly();
-						throw new Exception("¹«ÀÎÅ©·¹ÀÎ [" + ydEqpId + "]ÀÌ ÀÏ½ÃÁ¤ÁöÀÌ°Å³ª °íÀå»óÅÂ°¡ ¾Æ´Ï¸é Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						throw new Exception("ë¬´ì¸í¬ë ˆì¸ [" + ydEqpId + "]ì´ ì¼ì‹œì •ì§€ì´ê±°ë‚˜ ê³ ì¥ìƒíƒœê°€ ì•„ë‹ˆë©´ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						
 					}
 				}
 
 				/**************************************
-				 * ¹«ÀÎÅ©·¹ÀÎ
+				 * ë¬´ì¸í¬ë ˆì¸
 				 **************************************/
 				if (autoFlag && !"W".equals(sYD_WRK_PROG_STAT)) {
 					
-					// ÀÛ¾÷´ë±â»óÅÂ update
+					// ì‘ì—…ëŒ€ê¸°ìƒíƒœ update
 					/*
 					UPDATE TB_YM_CRNSCH  
 					   SET YD_WRK_PROG_STAT   = :V_YD_WRK_PROG_STAT
@@ -8429,27 +8429,27 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("YD_CRN_SCH_ID"     , ydCrnSchId);
 					commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updYdCrnSchProgStat");
 					
-					jrParam.setField("MSG_GP"       , "D"       ); //Àü¹®±¸ºĞ(Ãë¼Ò)
+					jrParam.setField("MSG_GP"       , "D"       ); //ì „ë¬¸êµ¬ë¶„(ì·¨ì†Œ)
 					jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L004", jrParam));
 					
 					return jrRtn;
 				}
 				
 			    
-			    //ÀÛ¾÷ÇÒ  ¾ßµåÀÛ¾÷¿¹¾àID°¡ ÀÛ¾÷ ¿Ï·áÇÑ ¾ßµåÀÛ¾÷¿¹¾àID¿¡ ÀÖÀ¸¸é ÀÌÀü¿¡ ¸ğµÎ Ã³¸®µÇ¾úÀ¸¹Ç·Î Skip
+			    //ì‘ì—…í•   ì•¼ë“œì‘ì—…ì˜ˆì•½IDê°€ ì‘ì—… ì™„ë£Œí•œ ì•¼ë“œì‘ì—…ì˜ˆì•½IDì— ìˆìœ¼ë©´ ì´ì „ì— ëª¨ë‘ ì²˜ë¦¬ë˜ì—ˆìœ¼ë¯€ë¡œ Skip
 				if (commUtils.chkExist(arrYdWbookId, ydWbookId)) { continue; }
 				arrYdWbookId[ii] = ydWbookId;
 
-				//±âº»Á¤º¸Á¶È¸
+				//ê¸°ë³¸ì •ë³´ì¡°íšŒ
 				jrParam.setField("YD_WBOOK_ID", ydWbookId);
 
-				JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCrnsch", logId, methodNm, "Å©·¹ÀÎÀÛ¾÷Áö½Ãread");
+				JDTORecordSet jsCrnSch = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getCrnsch", logId, methodNm, "í¬ë ˆì¸ì‘ì—…ì§€ì‹œread");
 				if (jsCrnSch == null || jsCrnSch.size() <= 0) {
-					throw new Exception("ÀÛ¾÷¿¹¾àID[" + ydWbookId + "]ÀÇ Å©·¹ÀÎ½ºÄÉÁÙ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ID[" + ydWbookId + "]ì˜ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			    }
-				ydCrnSchId = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+				ydCrnSchId = commUtils.trim(jsCrnSch.getRecord(0).getFieldString("YD_CRN_SCH_ID")); //ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 				
-				commUtils.printLog(logId, "ÀÛ¾÷Ãë¼Ò [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
+				commUtils.printLog(logId, "ì‘ì—…ì·¨ì†Œ [ " + ydWbookId + " - " + ydCrnSchId + " ]", "SL");
 
 				jrParam.setField("YD_WBOOK_ID"  , ydWbookId );
 				jrParam.setField("YD_CRN_SCH_ID", ydCrnSchId);
@@ -8457,30 +8457,30 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_SCH_CD"    , ydSchCd   );
 				
 				/**********************************************************
-				* 1. Å©·¹ÀÎ½ºÄÉÁÙ Ãë¼Ò
+				* 1. í¬ë ˆì¸ìŠ¤ì¼€ì¤„ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = commUtils.addSndData(jrRtn, this.trtCrnSchCncl(jrParam));
 
 				/**********************************************************
-				* 2. ÀÛ¾÷¿¹¾à Ãë¼Ò
+				* 2. ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ
 				**********************************************************/
 				jrRtn = commUtils.addSndData(jrRtn, this.trtWrkBookCncl(jrParam));
 			}
 
-			// ÀÛ¾÷Ãë¼Ò½Ã ¼³ºñ°¡ offline, °íÀåÀÌ ¾Æ´Ï°í ´ë±â ÀÏ¶§  ¸í·É ¼±ÅÃ
+			// ì‘ì—…ì·¨ì†Œì‹œ ì„¤ë¹„ê°€ offline, ê³ ì¥ì´ ì•„ë‹ˆê³  ëŒ€ê¸° ì¼ë•Œ  ëª…ë ¹ ì„ íƒ
 			if (!"B".equals(sWPROG_STAT) && !"2".equals(sWORK_MODE) && "W".equals(sWPROG_STAT)) { 
 	
 				/**********************************************************
-				* 5. Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® Á¶È¸
+				* 5. í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ ì¡°íšŒ
 				**********************************************************/
-				//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸ Àü¹® - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬ ì „ë¬¸ - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, "A8YML007");
 	
-				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//Å©·¹ÀÎÀÛ¾÷Áö½Ã¿ä±¸
-				jrYdMsg.setField("YD_EQP_ID"       , ydEqpId   );	//¾ßµå¼³ºñID
-				jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       );	//¾ßµåÀÛ¾÷ÁøÇà»óÅÂ(±ÇÇÏ¿Ï·á)
-				jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//¾ßµå½ºÄÉÁìÄÚµå
-				jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//¾ßµåÅ©·¹ÀÎ½ºÄÉÁìID
+				jrYdMsg.setField("JMS_TC_CD"       , YmConstant.A8YML007);	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œìš”êµ¬
+				jrYdMsg.setField("YD_EQP_ID"       , ydEqpId   );	//ì•¼ë“œì„¤ë¹„ID
+				jrYdMsg.setField("YD_WRK_PROG_STAT", "4"       );	//ì•¼ë“œì‘ì—…ì§„í–‰ìƒíƒœ(ê¶Œí•˜ì™„ë£Œ)
+				jrYdMsg.setField("YD_SCH_CD"       , ydSchCd   );	//ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrYdMsg.setField("YD_CRN_SCH_ID"   , ydCrnSchId);	//ì•¼ë“œí¬ë ˆì¸ìŠ¤ì¼€ì¥´ID
 	
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				JDTORecord jrRtn1 = (JDTORecord)sndConn.trx("rcvA8YML007", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
@@ -8503,16 +8503,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ´ëÂ÷½ºÄÉÁÙ°ü¸® - ´ëÂ÷ÃÊ±âÈ­
+	 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ - ëŒ€ì°¨ì´ˆê¸°í™”
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord initTcarSchMgt(JDTORecord rcvMsg) throws DAOException {
 		
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ°ü¸® ´ëÂ÷ÃÊ±âÈ­[BSlabJspSeEJB.initTcarSchMgt] < " + rcvMsg.getResultMsg();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ëŒ€ì°¨ì´ˆê¸°í™”[BSlabJspSeEJB.initTcarSchMgt] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
@@ -8521,29 +8521,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String ydEqpId     = ""; //¾ßµå¼³ºñID(´ëÂ÷)
-			String ydCurrBayGp = ""; //¾ßµåÇöÀçµ¿±¸ºĞ(½Å±Ô)
+			String ydEqpId     = ""; //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String ydCurrBayGp = ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ì‹ ê·œ)
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(rcvMsg.getFieldString("userid")));
 
-			jrParam.setField("YD_EQP_WRK_STAT"    , "U"); //¾ßµå¼³ºñÀÛ¾÷»óÅÂ(°øÂ÷)
-			jrParam.setField("YD_CARLD_SCH_REQ_GP", "6"); //¾ßµå»óÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(°ø´ëÂ÷µµÂø)
-			jrParam.setField("YD_CARUD_SCH_REQ_GP", "3"); //¾ßµåÇÏÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(¿µ´ëÂ÷µµÂø)
-			jrParam.setField("YD_CAR_PROG_STAT"   , "0"); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
+			jrParam.setField("YD_EQP_WRK_STAT"    , "U"); //ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ(ê³µì°¨)
+			jrParam.setField("YD_CARLD_SCH_REQ_GP", "6"); //ì•¼ë“œìƒì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ê³µëŒ€ì°¨ë„ì°©)
+			jrParam.setField("YD_CARUD_SCH_REQ_GP", "3"); //ì•¼ë“œí•˜ì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì˜ëŒ€ì°¨ë„ì°©)
+			jrParam.setField("YD_CAR_PROG_STAT"   , "0"); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
 
-			//´ëÂ÷Á¤º¸
+			//ëŒ€ì°¨ì •ë³´
 			ydEqpId     = commUtils.trim(rcvMsg.getFieldString("EQUIP_GP"));
 			ydCurrBayGp = commUtils.trim(rcvMsg.getFieldString("YD_CURR_BAY_GP"));
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(ydCurrBayGp)) {
-				throw new Exception("º¯°æÇÒ ÇöÀçµ¿ÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  í˜„ì¬ë™ì´ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
 			/**********************************************************
-			* 2. ±âÁ¸ ´ëÂ÷½ºÄÉÁÙ/Àç·á »èÁ¦
+			* 2. ê¸°ì¡´ ëŒ€ì°¨ìŠ¤ì¼€ì¤„/ì¬ë£Œ ì‚­ì œ
 			**********************************************************/
 			jrParam.setField("YD_EQP_ID", ydEqpId);
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl 
@@ -8557,8 +8557,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			                           WHERE YD_EQP_ID = :V_YD_EQP_ID
 			                             AND DEL_YN    = 'N')
 			*/
-			//´ëÂ÷ÀÌ¼ÛÀç·á ÃÊ±âÈ­
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl", logId, methodNm, "´ëÂ÷ÀÌ¼ÛÀç·á ÃÊ±âÈ­");
+			//ëŒ€ì°¨ì´ì†¡ì¬ë£Œ ì´ˆê¸°í™”
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl", logId, methodNm, "ëŒ€ì°¨ì´ì†¡ì¬ë£Œ ì´ˆê¸°í™”");
 
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch 
 			UPDATE TB_YM_TCARSCH
@@ -8568,23 +8568,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE YD_EQP_ID = :V_YD_EQP_ID
 			   AND DEL_YN    = 'N'
 			*/	   
-			//´ëÂ÷½ºÄÉÁÙ ÃÊ±âÈ­
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch", logId, methodNm, "´ëÂ÷½ºÄÉÁÙ ÃÊ±âÈ­");
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì´ˆê¸°í™”
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì´ˆê¸°í™”");
 			
 			/**********************************************************
-			* 3. ½Å±Ô ´ëÂ÷½ºÄÉÁÙ µî·Ï
+			* 3. ì‹ ê·œ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
 			**********************************************************/
-			//¾ßµå´ëÂ÷½ºÄÉÁìID »ı¼º
+			//ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID ìƒì„±
 			String ydTcarSchId = commDao.getSeqId(logId, methodNm, "TcarSch");
 
 			if ("".equals(ydTcarSchId)) {
-				throw new Exception( "´ëÂ÷½ºÄÉÁÙID »ı¼º Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.");
+				throw new Exception( "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ID ìƒì„± ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			
-			//´ëÂ÷½ºÄÉÁÙ µî·Ï
-			jrParam.setField("YD_TCAR_SCH_ID"   , ydTcarSchId); //¾ßµå´ëÂ÷½ºÄÉÁìID
-			jrParam.setField("YD_CAR_PROG_STAT" , "0"        ); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
-			jrParam.setField("YD_CARLD_STOP_LOC", ydEqpId.substring(0, 1) + ydCurrBayGp + ydEqpId.substring(2)); //¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
+			jrParam.setField("YD_TCAR_SCH_ID"   , ydTcarSchId); //ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID
+			jrParam.setField("YD_CAR_PROG_STAT" , "0"        ); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
+			jrParam.setField("YD_CARLD_STOP_LOC", ydEqpId.substring(0, 1) + ydCurrBayGp + ydEqpId.substring(2)); //ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
 			
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch 
 			MERGE INTO TB_YM_TCARSCH TS USING (
@@ -8593,14 +8593,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,SYSDATE                 AS MOD_DDTT
 			      ,'N'                     AS DEL_YN
 			      ,:V_YD_EQP_ID            AS YD_EQP_ID
-			      ,'U'                     AS YD_EQP_WRK_STAT     --°øÂ÷
+			      ,'U'                     AS YD_EQP_WRK_STAT     --ê³µì°¨
 			      ,:V_YD_CAR_PROG_STAT     AS YD_CAR_PROG_STAT
 			      ,:V_YD_CARLD_WRK_BOOK_ID AS YD_CARLD_WRK_BOOK_ID
 			      ,:V_YD_CARLD_LEV_LOC     AS YD_CARLD_LEV_LOC
 			      ,:V_YD_CARLD_STOP_LOC    AS YD_CARLD_STOP_LOC
 			      ,:V_YD_CARUD_STOP_LOC    AS YD_CARUD_STOP_LOC
-			      ,'6'                     AS YD_CARLD_SCH_REQ_GP --°ø´ëÂ÷µµÂø
-			      ,'3'                     AS YD_CARUD_SCH_REQ_GP --¿µ´ëÂ÷µµÂø
+			      ,'6'                     AS YD_CARLD_SCH_REQ_GP --ê³µëŒ€ì°¨ë„ì°©
+			      ,'3'                     AS YD_CARUD_SCH_REQ_GP --ì˜ëŒ€ì°¨ë„ì°©
 			  FROM DUAL
 			) DD ON (TS.YD_TCAR_SCH_ID = DD.YD_TCAR_SCH_ID)
 			WHEN MATCHED THEN UPDATE SET
@@ -8624,10 +8624,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			        DD.YD_CAR_PROG_STAT , DD.YD_CARLD_WRK_BOOK_ID, DD.YD_CARLD_LEV_LOC   , DD.YD_CARLD_STOP_LOC,
 			        DD.YD_CARUD_STOP_LOC, DD.YD_CARLD_SCH_REQ_GP , DD.YD_CARUD_SCH_REQ_GP)
 			 */	        
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch", logId, methodNm, "´ëÂ÷½ºÄÉÁÙ µî·Ï");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡");
 			
 			/**********************************************************
-			* 4. ´ëÂ÷ ÇöÀçµ¿ º¯°æ
+			* 4. ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½
 			**********************************************************/
 			jrParam.setField("EQUIP_GP"      , ydEqpId    );
 			jrParam.setField("YD_CURR_BAY_GP", ydCurrBayGp);
@@ -8645,15 +8645,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of initTcarSchMgt
 	
 	/**
-	 * ´ëÂ÷½ºÄÉÁÙ º¹±¸
+	 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë³µêµ¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord TcarSchRollBack(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ º¹±¸[BSlabJspFaEJB.TcarSchRollBack] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë³µêµ¬[BSlabJspFaEJB.TcarSchRollBack] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -8662,14 +8662,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			//String ydEqpId =  commUtils.trim(gdReq.getParam("ydEqpId")) ;
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
-			String ydWrkBookId_Unload ="";  // ÇÏÂ÷Áö ¿¹¾à id
-			String ydWrkBookId_load ="";	// »óÂ÷Áö ¿¹¾à id		 
+			String ydWrkBookId_Unload ="";  // í•˜ì°¨ì§€ ì˜ˆì•½ id
+			String ydWrkBookId_load ="";	// ìƒì°¨ì§€ ì˜ˆì•½ id		 
 			String YdTcarSchId 	   ="";
 			String ProgStat         = "";
 			String LU              ="";
@@ -8688,17 +8688,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				*/
 				jrParam.setField("STOCK_ID" 		, commUtils.getValue(gdReq, "STOCK_ID", ii));
 				
-				JDTORecordSet jsDnTc = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getBookChkYn", logId, methodNm, "ÀÛ¾÷¿¹¾à¾ø´Â°Ç ´ë»ó");	
+				JDTORecordSet jsDnTc = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getBookChkYn", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì—†ëŠ”ê±´ ëŒ€ìƒ");	
 			if (jsDnTc.size() <= 0 ){		
 				if(ii == 0 ){
 				  
 					
 					 
-					 LU       = commUtils.getValue(gdReq, "WPROG_STAT", ii); //»óÇÏÂ÷±¸ºĞ
-					String EquipGp  = commUtils.getValue(gdReq, "EQUIP_GP", ii);   //´ëÂ÷¼³ºñ¹øÈ£
+					 LU       = commUtils.getValue(gdReq, "WPROG_STAT", ii); //ìƒí•˜ì°¨êµ¬ë¶„
+					String EquipGp  = commUtils.getValue(gdReq, "EQUIP_GP", ii);   //ëŒ€ì°¨ì„¤ë¹„ë²ˆí˜¸
 					 
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getEqpSchCd 	
-					--¼³ºñ(´ëÂ÷)½ºÄÉÁÙÁ¶È¸
+					--ì„¤ë¹„(ëŒ€ì°¨)ìŠ¤ì¼€ì¤„ì¡°íšŒ
 						SELECT EQ.CARLOAD_STOP_LOC      
 						     , EQ.CARUNLOAD_STOP_LOC      
 							 , SUBSTR(EQ.CARLOAD_STOP_LOC,1,2)||SUBSTR(EQ.CARLD_SCH_CD,3)  AS CARLD_SCH_CD	                  
@@ -8717,37 +8717,37 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND EQ.DEL_YN    = 'N' 
 						   AND TC.DEL_YN    = 'N'
 					*/
-					jrParam.setField("YD_EQP_ID"           , EquipGp); //´ëÂ÷¼³ºñid
+					jrParam.setField("YD_EQP_ID"           , EquipGp); //ëŒ€ì°¨ì„¤ë¹„id
 			
-					JDTORecordSet jsTcSchCd = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getEqpSchCd", logId, methodNm, "´ëÂ÷½ºÄÉÁÙÁ¤º¸Á¶È¸ "); 
+					JDTORecordSet jsTcSchCd = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getEqpSchCd", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ "); 
 					
-					String LoadStopLoc      	= commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARLOAD_STOP_LOC"));   //»óÂ÷Á¤ÁöÀ§Ä¡
-					UnloadStopLoc 	    = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARUNLOAD_STOP_LOC")); //ÇÏÂ÷Á¤ÁöÀ§Ä¡
-					String CarldSchCd 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARLD_SCH_CD"));       //»óÂ÷½ºÄÉÁÙ
-					String CarudSchCd 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARUD_SCH_CD"));       //ÇÏÂ÷½ºÄÉÁÙ
-					String LCrnPrior 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("L_CRN_PRIOR"));        //»óÂ÷Áö½ºÄÉÁÙ¿ì¼±¼øÀ§
-					String UCrnPrior 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("U_CRN_PRIOR"));        //ÇÏÂ÷Áö½ºÄÉÁÙ¿ì¼±¼øÀ§
-					       YdTcarSchId 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("YD_TCAR_SCH_ID"));     //´ëÂ÷½ºÄÉÁÙID
+					String LoadStopLoc      	= commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARLOAD_STOP_LOC"));   //ìƒì°¨ì •ì§€ìœ„ì¹˜
+					UnloadStopLoc 	    = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARUNLOAD_STOP_LOC")); //í•˜ì°¨ì •ì§€ìœ„ì¹˜
+					String CarldSchCd 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARLD_SCH_CD"));       //ìƒì°¨ìŠ¤ì¼€ì¤„
+					String CarudSchCd 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("CARUD_SCH_CD"));       //í•˜ì°¨ìŠ¤ì¼€ì¤„
+					String LCrnPrior 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("L_CRN_PRIOR"));        //ìƒì°¨ì§€ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
+					String UCrnPrior 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("U_CRN_PRIOR"));        //í•˜ì°¨ì§€ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
+					       YdTcarSchId 	        = commUtils.trim(jsTcSchCd.getRecord(0).getFieldString("YD_TCAR_SCH_ID"));     //ëŒ€ì°¨ìŠ¤ì¼€ì¤„ID
 			
-					String SetStopLoc      	= "";        //Á¤ÁöÀ§Ä¡
-					String SetSchCd 	    = "";        //½ºÄÉÁÙ
-					String SetCrnPrior 	    = "";        //½ºÄÉÁÙ¿ì¼±¼øÀ§
+					String SetStopLoc      	= "";        //ì •ì§€ìœ„ì¹˜
+					String SetSchCd 	    = "";        //ìŠ¤ì¼€ì¤„
+					String SetCrnPrior 	    = "";        //ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
 					//String ProgStat         = "";
-					if(LU.equals("L")){   //»óÂ÷Áö ¼¼ÆÃ
+					if(LU.equals("L")){   //ìƒì°¨ì§€ ì„¸íŒ…
 						SetStopLoc    =  LoadStopLoc;
 						SetSchCd      =  CarldSchCd ;
 						SetCrnPrior   =  LCrnPrior ;
-						ProgStat      =  "5" ;        //»óÂ÷¿Ï·á
-					}else if(LU.equals("U")){ //ÇÏÂ÷Áö ¼¼ÆÃ
+						ProgStat      =  "5" ;        //ìƒì°¨ì™„ë£Œ
+					}else if(LU.equals("U")){ //í•˜ì°¨ì§€ ì„¸íŒ…
 						SetStopLoc    =  UnloadStopLoc;
 						SetSchCd      =  CarudSchCd ;
 						SetCrnPrior   =  UCrnPrior ;
-						ProgStat      =  "B" ;      //¿µ´ëÂ÷ÇÏÂ÷µµÂø
+						ProgStat      =  "B" ;      //ì˜ëŒ€ì°¨í•˜ì°¨ë„ì°©
 					}else {
 						break;
 					}
 					
-					//ÀÛ¾÷¿¹¾à µî·Ï
+					//ì‘ì—…ì˜ˆì•½ ë“±ë¡
 				if(LU.equals("L")){  
 					/*com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012WbTCarIns
 					INSERT INTO TB_YM_WRKBOOK WB
@@ -8762,25 +8762,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		            */
 					
 					ydWrkBookId_load = commDao.getSeqId(logId, methodNm, "WrkBook");
-					jrParam.setField("YD_WBOOK_ID"         , ydWrkBookId_load); //»óÂ÷ÁöÀÛ¾÷¿¹¾àID
+					jrParam.setField("YD_WBOOK_ID"         , ydWrkBookId_load); //ìƒì°¨ì§€ì‘ì—…ì˜ˆì•½ID
 					jrParam.setField("DEL_YN"              , "Y"       	); 
-					jrParam.setField("YD_SCH_CD"           , CarldSchCd); //ÇÏÂ÷Áö½ºÄÉÁì ÄÚµå
-					jrParam.setField("YD_WRK_CRN_PRIOR"    , LCrnPrior); //½ºÄÉÁÙ¿ì¼±¼øÀ§
-					jrParam.setField("YD_AIM_BAY_GP"       , UnloadStopLoc.substring(1, 2)); //¸ñÇ¥µ¿
+					jrParam.setField("YD_SCH_CD"           , CarldSchCd); //í•˜ì°¨ì§€ìŠ¤ì¼€ì¥´ ì½”ë“œ
+					jrParam.setField("YD_WRK_CRN_PRIOR"    , LCrnPrior); //ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_AIM_BAY_GP"       , UnloadStopLoc.substring(1, 2)); //ëª©í‘œë™
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012WbTCarIns", logId, methodNm, "ÀÛ¾÷¿¹¾à ÇÏÂ÷Áö µî·Ï");	
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012WbTCarIns", logId, methodNm, "ì‘ì—…ì˜ˆì•½ í•˜ì°¨ì§€ ë“±ë¡");	
 					}
 				if(LU.equals("U")){  
 					ydWrkBookId_Unload = commDao.getSeqId(logId, methodNm, "WrkBook");
-					 jrParam.setField("YD_WBOOK_ID"         , ydWrkBookId_Unload); //ÇÏÂ÷¾ßµåÀÛ¾÷¿¹¾àID
+					 jrParam.setField("YD_WBOOK_ID"         , ydWrkBookId_Unload); //í•˜ì°¨ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 					 jrParam.setField("DEL_YN"              , "N"       	); 
-					 jrParam.setField("YD_SCH_CD"           , CarudSchCd); //ÇÏÂ÷Áö½ºÄÉÁì ÄÚµå
-					 jrParam.setField("YD_WRK_CRN_PRIOR"    , UCrnPrior); //½ºÄÉÁÙ¿ì¼±¼øÀ§
-					 jrParam.setField("YD_AIM_BAY_GP"       , UnloadStopLoc.substring(1, 2)); //¸ñÇ¥µ¿
+					 jrParam.setField("YD_SCH_CD"           , CarudSchCd); //í•˜ì°¨ì§€ìŠ¤ì¼€ì¥´ ì½”ë“œ
+					 jrParam.setField("YD_WRK_CRN_PRIOR"    , UCrnPrior); //ìŠ¤ì¼€ì¤„ìš°ì„ ìˆœìœ„
+					 jrParam.setField("YD_AIM_BAY_GP"       , UnloadStopLoc.substring(1, 2)); //ëª©í‘œë™
 
-				     commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012WbTCarIns", logId, methodNm, "ÀÛ¾÷¿¹¾à ÇÏÂ÷Áö µî·Ï");			
+				     commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012WbTCarIns", logId, methodNm, "ì‘ì—…ì˜ˆì•½ í•˜ì°¨ì§€ ë“±ë¡");			
 					} 
-                   //´ëÂ÷½ºÄÉÁÙ °»½Å
+                   //ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ê°±ì‹ 
 						/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateTcshbefore3 
 						UPDATE TB_YM_TCARSCH
 						   SET MODIFIER              = :V_MODIFIER
@@ -8799,19 +8799,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				    
 				    // if(LU.equals("L")){ 
 				        
-				    	 jrParam.setField("YD_CARLD_WRK_BOOK_ID"       , ydWrkBookId_load   ); // »óÂ÷ÀÎ ¿¹¾à id
+				    	 jrParam.setField("YD_CARLD_WRK_BOOK_ID"       , ydWrkBookId_load   ); // ìƒì°¨ì¸ ì˜ˆì•½ id
 				    // }else if(LU.equals("U")){
 				       
-				    	jrParam.setField("YD_CARUD_WRK_BOOK_ID"        , ydWrkBookId_Unload   ); // ÇÏÂ÷ÀÎ ¿¹¾à id
+				    	jrParam.setField("YD_CARUD_WRK_BOOK_ID"        , ydWrkBookId_Unload   ); // í•˜ì°¨ì¸ ì˜ˆì•½ id
 				    	 
 				    // }else{
 				    //	 break;
 				     //}
-				     jrParam.setField("YD_CARLD_STOP_LOC"          , LoadStopLoc       ); //»óÂ÷Á¤ÁöÀ§Ä¡
-					 jrParam.setField("YD_CARUD_STOP_LOC"          , UnloadStopLoc     ); //ÇÏÂ÷Á¤ÁöÀ§Ä¡
-					 jrParam.setField("YD_CAR_PROG_STAT"           , ProgStat          ); //Â÷·®»óÅÂ
+				     jrParam.setField("YD_CARLD_STOP_LOC"          , LoadStopLoc       ); //ìƒì°¨ì •ì§€ìœ„ì¹˜
+					 jrParam.setField("YD_CARUD_STOP_LOC"          , UnloadStopLoc     ); //í•˜ì°¨ì •ì§€ìœ„ì¹˜
+					 jrParam.setField("YD_CAR_PROG_STAT"           , ProgStat          ); //ì°¨ëŸ‰ìƒíƒœ
 					 
-		    		commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateTcshbefore3", logId, methodNm, "ÃÊ±â ´ëÂ÷½ºÄÉÁÙ¿¡ °»½Å");	 				     
+		    		commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateTcshbefore3", logId, methodNm, "ì´ˆê¸° ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì— ê°±ì‹ ");	 				     
 					 
 					}
 				
@@ -8821,7 +8821,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("STACK_LAYER_GP"   , commUtils.getValue(gdReq, "STACK_LAYER_GP", ii)); 
 				
 				if(LU.equals("U")){  //
-					//ÀÛ¾÷¿¹¾àÀç·á µî·Ï
+					//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë“±ë¡
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA7YML009WbMtlTCarIns 
 					INSERT INTO TB_YM_WRKBOOKMTL WM
 					       (WM.YD_WBOOK_ID          , WM.STOCK_ID       , WM.REGISTER       , WM.REG_DDTT    ,
@@ -8835,12 +8835,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					//jrParam.setField("STOCK_ID" 		, commUtils.getValue(gdReq, "STOCK_ID", ii)); 
 					jrParam.setField("YD_UP_COLL_SEQ"   , commUtils.getValue(gdReq, "STACK_LAYER_GP", ii)); 
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA7YML009WbMtlTCarIns", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á µî·Ï");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA7YML009WbMtlTCarIns", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ ë“±ë¡");
 				}
 				
 			
 
-		                // ´ëÂ÷Layerº¹±¸ 
+		                // ëŒ€ì°¨Layerë³µêµ¬ 
 						/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStkLyrTCarStl3  
 						UPDATE TB_YM_STACKLAYER
 						   SET MODIFIER                = :V_MODIFIER
@@ -8854,7 +8854,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND STACK_LAYER_STAT        ='E'
 						   AND DEL_YN                  ='N'
 						*/
-						commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStkLyrTCarStl3", logId, methodNm, "TC_LYAERº¹±¸");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStkLyrTCarStl3", logId, methodNm, "TC_LYAERë³µêµ¬");
 				if(LU.equals("L")){			
 						jrParam.setField("YD_CARUD_STOP_LOC", UnloadStopLoc); 
 						jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L006", jrParam));
@@ -8865,7 +8865,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				
 				
-				//´ëÂ÷Àç·á µî·Ï
+				//ëŒ€ì°¨ì¬ë£Œ ë“±ë¡
 				
 				/*com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getInformStock
 				SELECT     
@@ -8878,7 +8878,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				AND  ST.STOCK_ID = :V_STOCK_ID
 				*/
 				
-				JDTORecordSet jsStInfor = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getInformStock", logId, methodNm, "´ëÂ÷½ºÄÉÁÙÁ¤º¸Á¶È¸ "); 				
+				JDTORecordSet jsStInfor = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getInformStock", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ì •ë³´ì¡°íšŒ "); 				
 				String HcrGp      	= commUtils.trim(jsStInfor.getRecord(0).getFieldString("HCR_GP"));        //
 				String StlProgCd 	= commUtils.trim(jsStInfor.getRecord(0).getFieldString("STL_PROG_CD")); //
 				String YdMtlItem 	= commUtils.trim(jsStInfor.getRecord(0).getFieldString("YD_MTL_ITEM"));       //
@@ -8897,9 +8897,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("HCR_GP"        , HcrGp); 
 				jrParam.setField("STL_PROG_CD"   , StlProgCd); 
 				jrParam.setField("YD_MTL_ITEM"   , YdMtlItem); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012TCarMtlIns", logId, methodNm, "´ëÂ÷Àç·á µî·Ï");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insA8YML012TCarMtlIns", logId, methodNm, "ëŒ€ì°¨ì¬ë£Œ ë“±ë¡");
 			}else{
-			   throw new Exception("ÀÛ¾÷¿¹¾àÀÌ  ÀÌ¹Ì Á¸Àç ÇÕ´Ï´Ù.");
+			   throw new Exception("ì‘ì—…ì˜ˆì•½ì´  ì´ë¯¸ ì¡´ì¬ í•©ë‹ˆë‹¤.");
 			}
 		  }
 
@@ -8907,16 +8907,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				//JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 				
 
-				String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+				String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 				
-				jrParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+				jrParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 				
-				jrParam.setField("YD_WBOOK_ID", ydWrkBookId_Unload); //¾ßµåÀÛ¾÷¿¹¾àID
-				jrParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-				jrParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+				jrParam.setField("YD_WBOOK_ID", ydWrkBookId_Unload); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				jrParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				jrParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 				EJBConnector sndConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 				JDTORecord jrRtn2 = (JDTORecord)sndConn.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				
@@ -8940,15 +8940,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of TcarSchRollBack		
 	/**
-	 * ´ëÂ÷½ºÄÉÁÙ°ü¸® - ´ëÂ÷ÃÊ±âÈ­(È­¸é)
+	 * ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ - ëŒ€ì°¨ì´ˆê¸°í™”(í™”ë©´)
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord initTcarSchMgt(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷½ºÄÉÁÙ°ü¸® ´ëÂ÷ÃÊ±âÈ­[BSlabJspSeEJB.initTcarSchMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ê´€ë¦¬ ëŒ€ì°¨ì´ˆê¸°í™”[BSlabJspSeEJB.initTcarSchMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -8957,32 +8957,32 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			String sEQUIP_GP     = ""; //¾ßµå¼³ºñID(´ëÂ÷)
-			//String ydCurrBayGp = ""; //¾ßµåÇöÀçµ¿±¸ºĞ(½Å±Ô)
+			String sEQUIP_GP     = ""; //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			//String ydCurrBayGp = ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(ì‹ ê·œ)
 			
-			sEQUIP_GP = gdReq.getParam("TC_NO"); //´ëÂ÷¹øÈ£
+			sEQUIP_GP = gdReq.getParam("TC_NO"); //ëŒ€ì°¨ë²ˆí˜¸
 			
 			/**********************************************************
-			* 1. Á¤ÇÕ¼º Ã¼Å© ¹× ÇöÀçµ¿, »ó/ÇÏÂ÷µ¿ Á¶È¸
+			* 1. ì •í•©ì„± ì²´í¬ ë° í˜„ì¬ë™, ìƒ/í•˜ì°¨ë™ ì¡°íšŒ
 			**********************************************************/
 			if ("".equals(sEQUIP_GP)) {
-				throw new Exception("´ëÂ÷¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-			jrParam.setField("YD_EQP_ID"          , sEQUIP_GP); //´ëÂ÷
-			jrParam.setField("YD_EQP_WRK_STAT"    , "U"); //¾ßµå¼³ºñÀÛ¾÷»óÅÂ(°øÂ÷)
-			jrParam.setField("YD_CARLD_SCH_REQ_GP", "6"); //¾ßµå»óÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(°ø´ëÂ÷µµÂø)
-			jrParam.setField("YD_CARUD_SCH_REQ_GP", "3"); //¾ßµåÇÏÂ÷½ºÄÉÁì¿äÃ»±¸ºĞ(¿µ´ëÂ÷µµÂø)
-			jrParam.setField("YD_CAR_PROG_STAT"   , "0"); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
+			jrParam.setField("YD_EQP_ID"          , sEQUIP_GP); //ëŒ€ì°¨
+			jrParam.setField("YD_EQP_WRK_STAT"    , "U"); //ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ(ê³µì°¨)
+			jrParam.setField("YD_CARLD_SCH_REQ_GP", "6"); //ì•¼ë“œìƒì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ê³µëŒ€ì°¨ë„ì°©)
+			jrParam.setField("YD_CARUD_SCH_REQ_GP", "3"); //ì•¼ë“œí•˜ì°¨ìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì˜ëŒ€ì°¨ë„ì°©)
+			jrParam.setField("YD_CAR_PROG_STAT"   , "0"); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
 
 			JDTORecordSet rst = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.readListBSTCCTracking2");
 			
-			//SLAB´Â µ¿ 6ÀÚ¸®
-			String sCURR_STOP_LOC      = "";//ÇöÀçÀ§Ä¡ 
-			String sCARLOAD_STOP_LOC   = "";//»óÂ÷µ¿ 
-			String sCARUNLOAD_STOP_LOC = "";//ÇÏÂ÷µ¿ 
+			//SLABëŠ” ë™ 6ìë¦¬
+			String sCURR_STOP_LOC      = "";//í˜„ì¬ìœ„ì¹˜ 
+			String sCARLOAD_STOP_LOC   = "";//ìƒì°¨ë™ 
+			String sCARUNLOAD_STOP_LOC = "";//í•˜ì°¨ë™ 
 			
 			if (rst.size() > 0) {
 				sCURR_STOP_LOC      = rst.getRecord(0).getFieldString("CURR_STOP_LOC");
@@ -8991,7 +8991,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			 * 0. Map µî·Ï BACK-UP
+			 * 0. Map ë“±ë¡ BACK-UP
 			 *********************************************************/
 			String sMAP_REG_YN = commUtils.nvl(gdReq.getParam("MAP_REG_YN"), "N");
 			
@@ -9013,7 +9013,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				JDTORecordSet jrMtlList =  commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getTcarMtlStkListByEqpId");
 				
 				if (jrMtlList.size() > 0) {
-					throw new Exception("ÇØ´ç ´ëÂ÷ÀÇ ÀúÀåÇ°Àº ¾ßµå¸Ê¿¡ Á¸ÀçÇÕ´Ï´Ù.");
+					throw new Exception("í•´ë‹¹ ëŒ€ì°¨ì˜ ì €ì¥í’ˆì€ ì•¼ë“œë§µì— ì¡´ì¬í•©ë‹ˆë‹¤.");
 				}
 				/*
 				MERGE INTO TB_YM_STACKLAYER SL USING (
@@ -9042,7 +9042,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			/**********************************************************
-			* 2. ±âÁ¸ ´ëÂ÷½ºÄÉÁÙ/Àç·á »èÁ¦
+			* 2. ê¸°ì¡´ ëŒ€ì°¨ìŠ¤ì¼€ì¤„/ì¬ë£Œ ì‚­ì œ
 			**********************************************************/
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl 
 			UPDATE TB_YM_TCARFTMVMTL
@@ -9055,8 +9055,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			                           WHERE YD_EQP_ID = :V_YD_EQP_ID
 			                             AND DEL_YN    = 'N')
 			*/
-			//´ëÂ÷ÀÌ¼ÛÀç·á ÃÊ±âÈ­
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl", logId, methodNm, "´ëÂ÷ÀÌ¼ÛÀç·á ÃÊ±âÈ­");
+			//ëŒ€ì°¨ì´ì†¡ì¬ë£Œ ì´ˆê¸°í™”
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitMtl", logId, methodNm, "ëŒ€ì°¨ì´ì†¡ì¬ë£Œ ì´ˆê¸°í™”");
 
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch 
 			UPDATE TB_YM_TCARSCH
@@ -9066,23 +9066,23 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE YD_EQP_ID = :V_YD_EQP_ID
 			   AND DEL_YN    = 'N'
 			*/	   
-			//´ëÂ÷½ºÄÉÁÙ ÃÊ±âÈ­
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch", logId, methodNm, "´ëÂ÷½ºÄÉÁÙ ÃÊ±âÈ­");
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì´ˆê¸°í™”
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInitSch", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ì´ˆê¸°í™”");
 			
 			/**********************************************************
-			* 3. ½Å±Ô ´ëÂ÷½ºÄÉÁÙ µî·Ï
+			* 3. ì‹ ê·œ ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
 			**********************************************************/
-			//¾ßµå´ëÂ÷½ºÄÉÁìID »ı¼º
+			//ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID ìƒì„±
 			String ydTcarSchId = commDao.getSeqId(logId, methodNm, "TcarSch");
 
 			if ("".equals(ydTcarSchId)) {
-				throw new Exception( "´ëÂ÷½ºÄÉÁÙID »ı¼º Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.");
+				throw new Exception( "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ID ìƒì„± ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 			
-			//´ëÂ÷½ºÄÉÁÙ µî·Ï
-			jrParam.setField("YD_TCAR_SCH_ID"   , ydTcarSchId); //¾ßµå´ëÂ÷½ºÄÉÁìID
-			jrParam.setField("YD_CAR_PROG_STAT" , "0"        ); //¾ßµåÂ÷·®ÁøÇà»óÅÂ(»óÂ÷´ë±â)
-			jrParam.setField("YD_CARLD_STOP_LOC", sCARLOAD_STOP_LOC); //¾ßµå»óÂ÷Á¤ÁöÀ§Ä¡
+			//ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡
+			jrParam.setField("YD_TCAR_SCH_ID"   , ydTcarSchId); //ì•¼ë“œëŒ€ì°¨ìŠ¤ì¼€ì¥´ID
+			jrParam.setField("YD_CAR_PROG_STAT" , "0"        ); //ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ(ìƒì°¨ëŒ€ê¸°)
+			jrParam.setField("YD_CARLD_STOP_LOC", sCARLOAD_STOP_LOC); //ì•¼ë“œìƒì°¨ì •ì§€ìœ„ì¹˜
 			
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch 
 			MERGE INTO TB_YM_TCARSCH TS USING (
@@ -9091,14 +9091,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,SYSDATE                 AS MOD_DDTT
 			      ,'N'                     AS DEL_YN
 			      ,:V_YD_EQP_ID            AS YD_EQP_ID
-			      ,'U'                     AS YD_EQP_WRK_STAT     --°øÂ÷
+			      ,'U'                     AS YD_EQP_WRK_STAT     --ê³µì°¨
 			      ,:V_YD_CAR_PROG_STAT     AS YD_CAR_PROG_STAT
 			      ,:V_YD_CARLD_WRK_BOOK_ID AS YD_CARLD_WRK_BOOK_ID
 			      ,:V_YD_CARLD_LEV_LOC     AS YD_CARLD_LEV_LOC
 			      ,:V_YD_CARLD_STOP_LOC    AS YD_CARLD_STOP_LOC
 			      ,:V_YD_CARUD_STOP_LOC    AS YD_CARUD_STOP_LOC
-			      ,'6'                     AS YD_CARLD_SCH_REQ_GP --°ø´ëÂ÷µµÂø
-			      ,'3'                     AS YD_CARUD_SCH_REQ_GP --¿µ´ëÂ÷µµÂø
+			      ,'6'                     AS YD_CARLD_SCH_REQ_GP --ê³µëŒ€ì°¨ë„ì°©
+			      ,'3'                     AS YD_CARUD_SCH_REQ_GP --ì˜ëŒ€ì°¨ë„ì°©
 			  FROM DUAL
 			) DD ON (TS.YD_TCAR_SCH_ID = DD.YD_TCAR_SCH_ID)
 			WHEN MATCHED THEN UPDATE SET
@@ -9122,16 +9122,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			        DD.YD_CAR_PROG_STAT , DD.YD_CARLD_WRK_BOOK_ID, DD.YD_CARLD_LEV_LOC   , DD.YD_CARLD_STOP_LOC,
 			        DD.YD_CARUD_STOP_LOC, DD.YD_CARLD_SCH_REQ_GP , DD.YD_CARUD_SCH_REQ_GP)
 			 */	        
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch", logId, methodNm, "´ëÂ÷½ºÄÉÁÙ µî·Ï");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchInsSch", logId, methodNm, "ëŒ€ì°¨ìŠ¤ì¼€ì¤„ ë“±ë¡");
 			
 			/**********************************************************
-			* 4. ´ëÂ÷ ÇöÀçµ¿ º¯°æ
+			* 4. ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½
 			**********************************************************/
 			jrParam.setField("EQUIP_GP"      , sEQUIP_GP     );
 			jrParam.setField("YD_CURR_BAY_GP", sCURR_STOP_LOC);
 
 			jrRtn = commUtils.addSndData(jrRtn, this.updTcarCurrBay(jrParam));
-			//slab´ëÂ÷´Â ÇöÀçµ¿ ¼³Á¤ºÎºĞÀÌ ¾øÀ¸¹Ç·Î ÇöÀçµ¿ º¯°æ ·ÎÁ÷Àº ½ÇÇà¾ÈÇÔ
+			//slabëŒ€ì°¨ëŠ” í˜„ì¬ë™ ì„¤ì •ë¶€ë¶„ì´ ì—†ìœ¼ë¯€ë¡œ í˜„ì¬ë™ ë³€ê²½ ë¡œì§ì€ ì‹¤í–‰ì•ˆí•¨
 				
 				
 			//}
@@ -9148,88 +9148,88 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷ ÇöÀçµ¿ º¯°æ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord updTcarCurrBay(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "´ëÂ÷ ÇöÀçµ¿ º¯°æ[BSlabJspSeEJB.updTcarCurrBay] < " + rcvMsg.getResultMsg();
+		String methodNm = "ëŒ€ì°¨ í˜„ì¬ë™ ë³€ê²½[BSlabJspSeEJB.updTcarCurrBay] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 		//Return Value
 		JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 
-			String ydEqpId 		       = commUtils.trim(rcvMsg.getFieldString("EQUIP_GP"     ));  //¾ßµå¼³ºñID(´ëÂ÷)
-			String sYD_CURR_BAY_GP_NEW = commUtils.trim(rcvMsg.getFieldString("YD_CURR_BAY_GP")); //¾ßµå½Å±Ôµ¿±¸ºĞ 6ÀÚ¸®
+			String ydEqpId 		       = commUtils.trim(rcvMsg.getFieldString("EQUIP_GP"     ));  //ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String sYD_CURR_BAY_GP_NEW = commUtils.trim(rcvMsg.getFieldString("YD_CURR_BAY_GP")); //ì•¼ë“œì‹ ê·œë™êµ¬ë¶„ 6ìë¦¬
 
 			if ("".equals(ydEqpId)) {
-				throw new Exception("¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} else if ("".equals(sYD_CURR_BAY_GP_NEW)) {
-				throw new Exception("º¯°æÇÒ ÇöÀçµ¿ÀÌ ¾ø½À´Ï´Ù.");
+				throw new Exception("ë³€ê²½í•  í˜„ì¬ë™ì´ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 	
-//			String ydBayGpCurr  	= ""; //¾ßµåÇöÀçµ¿±¸ºĞ(ÇöÀç)
-//			String ydStkColGpCurr   = ""; //¾ßµåÀûÄ¡¿­±¸ºĞ(ÇöÀç)
-			String sCURR_STOP_LOC = ""; //¾ßµåÇöÀçµ¿±¸ºĞ(ÇöÀç)-SLABÀÇ °æ¿ì ex) 2ATC12
-			//String ydStkColGpNew    = ydEqpId.substring(0, 1) + ydBayGpNew + ydEqpId.substring(2); //¾ßµåÀûÄ¡¿­(½Å±Ô)
-//			String ydStkColGpNew    = ydBayGpNew; //¾ßµåÀûÄ¡¿­(½Å±Ô)
+//			String ydBayGpCurr  	= ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(í˜„ì¬)
+//			String ydStkColGpCurr   = ""; //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(í˜„ì¬)
+			String sCURR_STOP_LOC = ""; //ì•¼ë“œí˜„ì¬ë™êµ¬ë¶„(í˜„ì¬)-SLABì˜ ê²½ìš° ex) 2ATC12
+			//String ydStkColGpNew    = ydEqpId.substring(0, 1) + ydBayGpNew + ydEqpId.substring(2); //ì•¼ë“œì ì¹˜ì—´(ì‹ ê·œ)
+//			String ydStkColGpNew    = ydBayGpNew; //ì•¼ë“œì ì¹˜ì—´(ì‹ ê·œ)
 
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(rcvMsg.getFieldString("MODIFIER")));
 
 			jrParam.setField("YD_EQP_ID"         , ydEqpId       );
 			jrParam.setField("YD_CURR_BAY_GP_NEW", sYD_CURR_BAY_GP_NEW);
 			
 			/**********************************************************
-			* 1. ´ëÂ÷Bed»óÅÂ Á¶È¸
+			* 1. ëŒ€ì°¨Bedìƒíƒœ ì¡°íšŒ
 			**********************************************************/
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp 
-			--¼³ºñ»óÅÂÁ¶È¸ 
+			--ì„¤ë¹„ìƒíƒœì¡°íšŒ 
 			SELECT WPROG_STAT     AS YD_EQP_STAT
 			     , WORK_MODE      AS YD_EQP_WRK_MODE
-				 , STACK_MAX_QNTY	                  --ÀûÀç ÃÖ´ë ¼ö·®
-				 , STACK_MAX_WT		                  --ÀûÀç ÃÖ´ë Áß·®
+				 , STACK_MAX_QNTY	                  --ì ì¬ ìµœëŒ€ ìˆ˜ëŸ‰
+				 , STACK_MAX_WT		                  --ì ì¬ ìµœëŒ€ ì¤‘ëŸ‰
 			     , CURR_STOP_LOC
 			  FROM TB_YM_EQUIP EQ
 			 WHERE EQUIP_GP = :V_YD_EQP_ID
 			   AND DEL_YN    = 'N' 
 			*/	   
-			JDTORecordSet jsTcar = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "´ëÂ÷Bed»óÅÂ Á¶È¸");
+			JDTORecordSet jsTcar = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStatEqp", logId, methodNm, "ëŒ€ì°¨Bedìƒíƒœ ì¡°íšŒ");
 			if (jsTcar != null && jsTcar.size() > 0) {
 		    	JDTORecord jrTcar = jsTcar.getRecord(0);
 	
-		    	sCURR_STOP_LOC	= commUtils.trim(jrTcar.getFieldString("CURR_STOP_LOC"));//´ëÂ÷ÇöÀçÀ§Ä¡
+		    	sCURR_STOP_LOC	= commUtils.trim(jrTcar.getFieldString("CURR_STOP_LOC"));//ëŒ€ì°¨í˜„ì¬ìœ„ì¹˜
 	
 //			    if ("".equals(sYD_CURR_BAY_GP_NEW)) {
-//					throw new Exception("º¯°æÇÒ ÀûÄ¡¿­ÀÌ ¾ø½À´Ï´Ù.");
+//					throw new Exception("ë³€ê²½í•  ì ì¹˜ì—´ì´ ì—†ìŠµë‹ˆë‹¤.");
 //				}
 		    } else {
-				throw new Exception("´ëÂ÷ Bed»óÅÂ Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ Bedìƒíƒœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		    }
 
 			/**********************************************************
-			* 2. ´ëÂ÷ ÀúÀåÀ§Ä¡ ÀüÃ¼ ºñ È°¼ºÈ­
+			* 2. ëŒ€ì°¨ ì €ì¥ìœ„ì¹˜ ì „ì²´ ë¹„ í™œì„±í™”
 			**********************************************************/
-			jrParam.setField("STACK_COL_GP", sCURR_STOP_LOC); //¾ßµåÀûÄ¡¿­±¸ºĞ(´ëÂ÷ÀüÃ¼Bed)
+			jrParam.setField("STACK_COL_GP", sCURR_STOP_LOC); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„(ëŒ€ì°¨ì „ì²´Bed)
 
-			//ÀûÄ¡Bed(ÀüÃ¼) ºñÈ°¼ºÈ­
+			//ì ì¹˜Bed(ì „ì²´) ë¹„í™œì„±í™”
 			/*  
 			UPDATE TB_YM_STACKER
 			   SET MODIFIER            = :V_MODIFIER
 			     , MOD_DDTT            = SYSDATE
-			     , STACK_BED_ACTIVE_STAT = 'C'   --ºñÈ°¼ºÈ­
+			     , STACK_BED_ACTIVE_STAT = 'C'   --ë¹„í™œì„±í™”
 			 WHERE STACK_COL_GP  LIKE '2_TC'||SUBSTR(:V_STACK_COL_GP,5,1)||'%' -- 2ATC11
 			   AND DEL_YN              = 'N'
 			*/	   
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStatStkBedActCA", logId, methodNm, "ÀûÄ¡Bed(ÀüÃ¼) ºñÈ°¼ºÈ­");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStatStkBedActCA", logId, methodNm, "ì ì¹˜Bed(ì „ì²´) ë¹„í™œì„±í™”");
 
-			//ÀûÄ¡´Ü(ÀüÃ¼) Àç·á »èÁ¦
+			//ì ì¹˜ë‹¨(ì „ì²´) ì¬ë£Œ ì‚­ì œ
 			/* 
 			UPDATE TB_YM_STACKLAYER
 			   SET MODIFIER                = :V_MODIFIER
@@ -9240,13 +9240,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE STACK_COL_GP  LIKE  '2_TC'||SUBSTR(:V_STACK_COL_GP,5,1)||'%'
 			   AND DEL_YN                  = 'N'
 			*/	   
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdStkLyrClr1", logId, methodNm, "ÀûÄ¡´Ü Àç·á »èÁ¦");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdStkLyrClr1", logId, methodNm, "ì ì¹˜ë‹¨ ì¬ë£Œ ì‚­ì œ");
 
 			/**********************************************************
-			* 3. ÇöÀçµ¿ º¯°æ ¹× ÀúÀåÀ§Ä¡Á¦¿ø Àü¹® Á¶È¸
+			* 3. í˜„ì¬ë™ ë³€ê²½ ë° ì €ì¥ìœ„ì¹˜ì œì› ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
 			if (!sCURR_STOP_LOC.equals(sYD_CURR_BAY_GP_NEW)) {
-				//¼³ºñ ÇöÀçµ¿ ¼öÁ¤
+				//ì„¤ë¹„ í˜„ì¬ë™ ìˆ˜ì •
 				jrParam.setField("STACK_COL_GP", sYD_CURR_BAY_GP_NEW);
 
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdEqpCurrBay
@@ -9256,25 +9256,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				      ,CURR_STOP_LOC  = :V_STACK_COL_GP
 				 WHERE EQUIP_GP       = :V_YD_EQP_ID
 				*/ 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdEqpCurrBay", logId, methodNm, "¼³ºñ ÇöÀçµ¿ ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdEqpCurrBay", logId, methodNm, "ì„¤ë¹„ í˜„ì¬ë™ ìˆ˜ì •");
 
-				//±âÁ¸ BedÀÇ »óÅÂ°¡ º¯°æµÇ¾úÀ¸¸é ÀúÀåÀ§Ä¡Á¦¿ø(YDY1L001, YDY3L001) Àü¹® Á¶È¸
-				jrParam.setField("YD_INFO_SYNC_CD", "4"          ); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(Bed)
-				jrParam.setField("STACK_COL_GP"   , sYD_CURR_BAY_GP_NEW); //¾ßµåÀûÄ¡¿­±¸ºĞ
-				jrParam.setField("STACK_BED_GP"   , "01"         ); //¾ßµåÀûÄ¡Bed¹øÈ£
+				//ê¸°ì¡´ Bedì˜ ìƒíƒœê°€ ë³€ê²½ë˜ì—ˆìœ¼ë©´ ì €ì¥ìœ„ì¹˜ì œì›(YDY1L001, YDY3L001) ì „ë¬¸ ì¡°íšŒ
+				jrParam.setField("YD_INFO_SYNC_CD", "4"          ); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(Bed)
+				jrParam.setField("STACK_COL_GP"   , sYD_CURR_BAY_GP_NEW); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+				jrParam.setField("STACK_BED_GP"   , "01"         ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
-				//Àü¼ÛData Á¶È¸
+				//ì „ì†¡Data ì¡°íšŒ
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L001", jrParam));
 			}
 			
 			/**********************************************************
-			* 4. ½Å±Ô ÀúÀåÀ§Ä¡  È°¼ºÈ­ ¹× ÀúÀåÀ§Ä¡Á¦¿ø Àü¹® Á¶È¸
+			* 4. ì‹ ê·œ ì €ì¥ìœ„ì¹˜  í™œì„±í™” ë° ì €ì¥ìœ„ì¹˜ì œì› ì „ë¬¸ ì¡°íšŒ
 			**********************************************************/
-			//½Å±Ô ÀûÄ¡Bed Close »óÅÂÀÌ¸é È°¼ºÈ­
-			jrParam.setField("STACK_COL_GP"      	, sYD_CURR_BAY_GP_NEW); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("STACK_BED_ACTIVE_STAT", "L"          ); //¾ßµåÀûÄ¡BedÈ°¼º»óÅÂ(ÀûÄ¡°¡´É)
+			//ì‹ ê·œ ì ì¹˜Bed Close ìƒíƒœì´ë©´ í™œì„±í™”
+			jrParam.setField("STACK_COL_GP"      	, sYD_CURR_BAY_GP_NEW); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("STACK_BED_ACTIVE_STAT", "L"          ); //ì•¼ë“œì ì¹˜Bedí™œì„±ìƒíƒœ(ì ì¹˜ê°€ëŠ¥)
 			
-			//ÀûÄ¡Bed ¼öÁ¤
+			//ì ì¹˜Bed ìˆ˜ì •
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStatStkBedActByCol/
 			UPDATE TB_YM_STACKER
 			   SET MODIFIER              = :V_MODIFIER
@@ -9283,9 +9283,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE STACK_COL_GP          = :V_STACK_COL_GP
 			   AND DEL_YN                = 'N'
 			*/	   
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStatStkBedActByCol", logId, methodNm, "½Å±Ô ÀûÄ¡Bed Close »óÅÂÀÌ¸é È°¼ºÈ­");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updStatStkBedActByCol", logId, methodNm, "ì‹ ê·œ ì ì¹˜Bed Close ìƒíƒœì´ë©´ í™œì„±í™”");
 
-			//ÀûÄ¡´Ü ¼öÁ¤
+			//ì ì¹˜ë‹¨ ìˆ˜ì •
 			/* 
 			UPDATE TB_YM_STACKLAYER
 			   SET MODIFIER                = :V_MODIFIER
@@ -9296,13 +9296,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE STACK_COL_GP            = :V_STACK_COL_GP
 			   AND DEL_YN                  = 'N' 
 			*/	   
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdStkLyrActiveTC", logId, methodNm, "½Å±Ô ÀûÄ¡Bed Close »óÅÂÀÌ¸é È°¼ºÈ­");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdStkLyrActiveTC", logId, methodNm, "ì‹ ê·œ ì ì¹˜Bed Close ìƒíƒœì´ë©´ í™œì„±í™”");
 			
 
-			//½Å±Ô BedÀÇ »óÅÂ°¡ º¯°æµÇ¾úÀ¸¸é ÀúÀåÀ§Ä¡Á¦¿ø(YDY1L001, YDY3L001) Àü¹® Àü¼Û
-			jrParam.setField("YD_INFO_SYNC_CD", "3"); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(Bed)
+			//ì‹ ê·œ Bedì˜ ìƒíƒœê°€ ë³€ê²½ë˜ì—ˆìœ¼ë©´ ì €ì¥ìœ„ì¹˜ì œì›(YDY1L001, YDY3L001) ì „ë¬¸ ì „ì†¡
+			jrParam.setField("YD_INFO_SYNC_CD", "3"); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(Bed)
 			jrParam.setField("STACK_BED_GP"   , "");  
-			//Àü¼ÛData Á¶È¸
+			//ì „ì†¡Data ì¡°íšŒ
 			jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L001", jrParam));
 
 			commUtils.printLog(logId, methodNm, "S-");
@@ -9318,64 +9318,64 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ´ëÂ÷»óÅÂ¼³Á¤ µî·ÏÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ëŒ€ì°¨ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtTcarStatSet(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷»óÅÂ¼³Á¤ µî·ÏÃ³¸®[BSlabJspFaEJB.trtTcarStatSet] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨ìƒíƒœì„¤ì • ë“±ë¡ì²˜ë¦¬[BSlabJspFaEJB.trtTcarStatSet] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String sOPRN    = commUtils.nvl(commUtils.trim(gdReq.getParam("OPRN")), "N");	//¿µ´ëÂ÷¿©ºÎ
-			String trtDtlGp = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//Ã³¸®»ó¼¼±¸ºĞ
-			String ydEqpId  = commUtils.trim(gdReq.getParam("EQUIP_GP" ));	//¾ßµå¼³ºñID(´ëÂ÷)
-			String modifier = commUtils.trim(gdReq.getParam("userid"      ));	//¼öÁ¤ÀÚ
-			String currDate = commUtils.getDateTime14();						//ÇöÀç½Ã°¢
+			String sOPRN    = commUtils.nvl(commUtils.trim(gdReq.getParam("OPRN")), "N");	//ì˜ëŒ€ì°¨ì—¬ë¶€
+			String trtDtlGp = commUtils.trim(gdReq.getParam("TRT_DTL_GP"));	//ì²˜ë¦¬ìƒì„¸êµ¬ë¶„
+			String ydEqpId  = commUtils.trim(gdReq.getParam("EQUIP_GP" ));	//ì•¼ë“œì„¤ë¹„ID(ëŒ€ì°¨)
+			String modifier = commUtils.trim(gdReq.getParam("userid"      ));	//ìˆ˜ì •ì
+			String currDate = commUtils.getDateTime14();						//í˜„ì¬ì‹œê°
 			
 			if ("".equals(ydEqpId)) {
-				throw new Exception("´ëÂ÷¼³ºñID°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ëŒ€ì°¨ì„¤ë¹„IDê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//EJB CallÀ» À§ÇÑ Message »ı¼º¿ë - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//EJB Callì„ ìœ„í•œ Message ìƒì„±ìš© - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrYdMsg = commUtils.getParam(logId, methodNm, modifier);
 
-			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //¾ßµå¼³ºñID
-			jrYdMsg.setField("EQUIP_GP" , ydEqpId); //¾ßµå¼³ºñID
+			jrYdMsg.setField("YD_EQP_ID", ydEqpId); //ì•¼ë“œì„¤ë¹„ID
+			jrYdMsg.setField("EQUIP_GP" , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 			
 			if ("ST".equals(trtDtlGp)) {
-				//¼³ºñ»óÅÂ º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"          , "A8YML004"); //¼³ºñ°íÀåº¹±¸½ÇÀû
-				jrYdMsg.setField("YD_EQP_STAT"        , commUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //¾ßµå¼³ºñ»óÅÂ(B:°íÀå, N:Á¤»ó)
-				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //¾ßµå¼³ºñÈŞÁöÄÚµå
-				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //¾ßµå¼³ºñ°íÀåº¹±¸ÀÏ½Ã
+				//ì„¤ë¹„ìƒíƒœ ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"          , "A8YML004"); //ì„¤ë¹„ê³ ì¥ë³µêµ¬ì‹¤ì 
+				jrYdMsg.setField("YD_EQP_STAT"        , commUtils.trim(gdReq.getParam("YD_EQP_STAT"))); //ì•¼ë“œì„¤ë¹„ìƒíƒœ(B:ê³ ì¥, N:ì •ìƒ)
+				jrYdMsg.setField("YD_EQP_PAUSE_CODE"  , "0000"    ); //ì•¼ë“œì„¤ë¹„íœ´ì§€ì½”ë“œ
+				jrYdMsg.setField("YD_EQP_TRBL_RCVR_DT", currDate  ); //ì•¼ë“œì„¤ë¹„ê³ ì¥ë³µêµ¬ì¼ì‹œ
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML004", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("MD".equals(trtDtlGp)) {
-				//ÀÛ¾÷Mode º¯°æ
-				jrYdMsg.setField("JMS_TC_CD"      , "A8YML003"); //¼³ºñ¿îÀü¸ğµåÀüÈ¯
-				jrYdMsg.setField("YD_EQP_WRK_MODE", commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //¾ßµå¼³ºñÀÛ¾÷Mode(1:On-Line, 0:Off-Line)
+				//ì‘ì—…Mode ë³€ê²½
+				jrYdMsg.setField("JMS_TC_CD"      , "A8YML003"); //ì„¤ë¹„ìš´ì „ëª¨ë“œì „í™˜
+				jrYdMsg.setField("YD_EQP_WRK_MODE", commUtils.trim(gdReq.getParam("YD_EQP_WRK_MODE"))); //ì•¼ë“œì„¤ë¹„ì‘ì—…Mode(1:On-Line, 0:Off-Line)
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML003", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("HB".equals(trtDtlGp)) {
-				//Homeµ¿ º¯°æ - Log ID, Method, ¼öÁ¤ÀÚ Set
+				//Homeë™ ë³€ê²½ - Log ID, Method, ìˆ˜ì •ì Set
 				JDTORecord jrParam = commUtils.getParam(logId, methodNm, modifier);
 
-				jrParam.setField("EQUIP_GP"   , ydEqpId); //¾ßµå¼³ºñID
+				jrParam.setField("EQUIP_GP"   , ydEqpId); //ì•¼ë“œì„¤ë¹„ID
 				jrParam.setField("YD_HOME_LOC", commUtils.trim(gdReq.getParam("YD_HOME_BAY_GP")));
 				
 				/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEqpHomeBay 
-				--¼³ºñ È¨µ¿ ¼öÁ¤ - 
+				--ì„¤ë¹„ í™ˆë™ ìˆ˜ì • - 
 				UPDATE TB_YM_EQUIP
 				   SET MODIFIER       = :V_MODIFIER
 				      ,MOD_DDTT       = SYSDATE
@@ -9383,40 +9383,40 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE EQUIP_GP       = :V_EQUIP_GP
 
 				*/ 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEqpHomeBay", logId, methodNm, "Homeµ¿ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEqpHomeBay", logId, methodNm, "Homeë™ ë³€ê²½");
 				
 			} else if ("CB".equals(trtDtlGp)) {
-				//ÇöÀçµ¿ º¯°æ
-				jrYdMsg.setField("YD_CURR_BAY_GP", commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP"))); //½Å±ÔÇöÀçµ¿
+				//í˜„ì¬ë™ ë³€ê²½
+				jrYdMsg.setField("YD_CURR_BAY_GP", commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP"))); //ì‹ ê·œí˜„ì¬ë™
 				jrRtn = this.updTcarCurrBay(jrYdMsg);
 				
 			} else if ("TS".equals(trtDtlGp)) {
-				//°ø´ëÂ÷Ãâ¹ßÁö½Ã µî·Ï
-				jrYdMsg.setField("YD_BAY_GP", commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TS"))); //¾ßµåµ¿±¸ºĞ(»óÂ÷µ¿)
-				jrYdMsg.setField("OPRN"     , sOPRN); //¿µ´ëÂ÷¿©ºÎ
+				//ê³µëŒ€ì°¨ì¶œë°œì§€ì‹œ ë“±ë¡
+				jrYdMsg.setField("YD_BAY_GP", commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TS"))); //ì•¼ë“œë™êµ¬ë¶„(ìƒì°¨ë™)
+				jrYdMsg.setField("OPRN"     , sOPRN); //ì˜ëŒ€ì°¨ì—¬ë¶€
 				jrRtn = ymComm.trtTcarSchLevWo_Slab(jrYdMsg);
 			} else if ("TL".equals(trtDtlGp)) {
-				//Ãâ¹ß½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"      	, "A8YML011"); //´ëÂ÷ÀÌµ¿½ÇÀû
-				jrYdMsg.setField("YD_MOVE_GP"		, "S"       ); //¾ßµå´ëÂ÷ÀÌµ¿±¸ºĞ(Ãâ¹ß)
-				jrYdMsg.setField("YD_TCAR_CURR_BAY" , commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TL"))); //¾ßµåµ¿±¸ºĞ1(ÇöÀçµ¿)
+				//ì¶œë°œì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"      	, "A8YML011"); //ëŒ€ì°¨ì´ë™ì‹¤ì 
+				jrYdMsg.setField("YD_MOVE_GP"		, "S"       ); //ì•¼ë“œëŒ€ì°¨ì´ë™êµ¬ë¶„(ì¶œë°œ)
+				jrYdMsg.setField("YD_TCAR_CURR_BAY" , commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TL"))); //ì•¼ë“œë™êµ¬ë¶„1(í˜„ì¬ë™)
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML011", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("TA".equals(trtDtlGp)) {
-				//µµÂø½ÇÀûÃ³¸®
-				jrYdMsg.setField("JMS_TC_CD"      	, "A8YML011"); //´ëÂ÷ÀÌµ¿½ÇÀû
-				jrYdMsg.setField("YD_MOVE_GP"		, "E"       ); //¾ßµå´ëÂ÷ÀÌµ¿±¸ºĞ(µµÂø)
-				jrYdMsg.setField("YD_TCAR_CURR_BAY" , commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TA"))); //¾ßµåµ¿±¸ºĞ1(ÇöÀçµ¿)
+				//ë„ì°©ì‹¤ì ì²˜ë¦¬
+				jrYdMsg.setField("JMS_TC_CD"      	, "A8YML011"); //ëŒ€ì°¨ì´ë™ì‹¤ì 
+				jrYdMsg.setField("YD_MOVE_GP"		, "E"       ); //ì•¼ë“œëŒ€ì°¨ì´ë™êµ¬ë¶„(ë„ì°©)
+				jrYdMsg.setField("YD_TCAR_CURR_BAY" , commUtils.trim(gdReq.getParam("YD_CURR_BAY_GP_TA"))); //ì•¼ë“œë™êµ¬ë¶„1(í˜„ì¬ë™)
 
 				EJBConnector sndConn = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvA8YML011", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 			} else if ("TC".equals(trtDtlGp)) {
-				//¿Ï·á½ÇÀûÃ³¸®
-				String ydCarProgStat = commUtils.trim(gdReq.getHeader("YD_CAR_PROG_STAT").getValue(0));	//¾ßµåÂ÷·®ÁøÇà»óÅÂ
+				//ì™„ë£Œì‹¤ì ì²˜ë¦¬
+				String ydCarProgStat = commUtils.trim(gdReq.getHeader("YD_CAR_PROG_STAT").getValue(0));	//ì•¼ë“œì°¨ëŸ‰ì§„í–‰ìƒíƒœ
 				
 //				if ("4".equals(ydCarProgStat)) { 
-					//»óÂ÷°³½Ã -> »óÂ÷¿Ï·á
+					//ìƒì°¨ê°œì‹œ -> ìƒì°¨ì™„ë£Œ
 					/*
 					UPDATE TB_YM_TCARSCH
 					   SET YD_CAR_PROG_STAT = :V_YD_CAR_PROG_STAT
@@ -9425,15 +9425,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 WHERE DEL_YN    = 'N'
 					   AND YD_EQP_ID = :V_YD_EQP_ID
 					 */
-					jrYdMsg.setField("YD_CAR_PROG_STAT", "5"); //»óÂ÷¿Ï·á
+					jrYdMsg.setField("YD_CAR_PROG_STAT", "5"); //ìƒì°¨ì™„ë£Œ
 					commDao.update(jrYdMsg, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTcarSchProgStatByEqpId");
 					
-					//´ëÂ÷Ãâ¹ßÁö½Ã
+					//ëŒ€ì°¨ì¶œë°œì§€ì‹œ
 					jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL2("YMA8L006BACKUP", jrYdMsg));
 //				}
 				
 			} else {
-				throw new Exception("Á¤ÀÇµÇÁö ¾ÊÀº Ã³¸®±¸ºĞ[" + trtDtlGp + "] ÀÔ´Ï´Ù.");
+				throw new Exception("ì •ì˜ë˜ì§€ ì•Šì€ ì²˜ë¦¬êµ¬ë¶„[" + trtDtlGp + "] ì…ë‹ˆë‹¤.");
 			}
 
 			commUtils.printLog(logId, methodNm, "S-");
@@ -9447,31 +9447,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of trtTcarStatSet
 		
 	
-	//ÀÌ¼ÛÁö½Ã »óÂ÷ µî·Ï - SLAB ÀÌ¼Û»óÂ÷ Áö½Ã
+	//ì´ì†¡ì§€ì‹œ ìƒì°¨ ë“±ë¡ - SLAB ì´ì†¡ìƒì°¨ ì§€ì‹œ
 	/**
-	 * SLAB ÀÌ¼Û»óÂ÷ Áö½Ã- µî·Ï
+	 * SLAB ì´ì†¡ìƒì°¨ ì§€ì‹œ- ë“±ë¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord regCARLD(GridData gdReq) throws DAOException {
-		String methodNm = "SLAB ÀÌ¼Û»óÂ÷ Áö½Ã- µî·Ï[BSlabJspSeEJB.regCARLD] < " + gdReq.getNavigateValue();
+		String methodNm = "SLAB ì´ì†¡ìƒì°¨ ì§€ì‹œ- ë“±ë¡[BSlabJspSeEJB.regCARLD] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 
-			String sYD_GP            = gdReq.getParam("YD_GP"); //¾ßµå
-			String sBAY_GP           = gdReq.getParam("BAY_GP"); //µ¿
-			String sYD_CARPNT_CD     = gdReq.getParam("YD_CARPNT_CD"); //Â÷·® Æ÷ÀÎÆ®
+			String sYD_GP            = gdReq.getParam("YD_GP"); //ì•¼ë“œ
+			String sBAY_GP           = gdReq.getParam("BAY_GP"); //ë™
+			String sYD_CARPNT_CD     = gdReq.getParam("YD_CARPNT_CD"); //ì°¨ëŸ‰ í¬ì¸íŠ¸
 			
-			String sYD_SCH_CD        = ""; //½ºÄÉÁÙ
+			String sYD_SCH_CD        = ""; //ìŠ¤ì¼€ì¤„
 			String sYD_TO_LOC_GUIDE  = "";
 			String sTRN_EQP_CD       = "";
 			String szMsg             = "";
-			String sFRTOMOVE_WORD_NO = ""; //ÀÌ¼ÛÀÛ¾÷Áö½Ã ¹øÈ£
+			String sFRTOMOVE_WORD_NO = ""; //ì´ì†¡ì‘ì—…ì§€ì‹œ ë²ˆí˜¸
 			//String sARR_WLOC_CD2 		= commUtils.getValue(gdReq, "ARR_WLOC_CD2"         , ii);
 			String sARR_WLOC_CD      = commUtils.getValue(gdReq, "ARR_WLOC_CD2"         , 0);
 			
@@ -9481,47 +9481,47 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecord    jrRtn2     = null;
 			//JDTORecordSet rsResult = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			String sLoc_CBL_GP      = "";
 			String ydWbookId        = "";
 			
-			//ÀÌ¼Û ÀÛ¾÷Áö½Ã ¹øÈ£ °¡Á®¿À±â
+			//ì´ì†¡ ì‘ì—…ì§€ì‹œ ë²ˆí˜¸ ê°€ì ¸ì˜¤ê¸°
 			sFRTOMOVE_WORD_NO = commDao.getSeqId(logId, methodNm, "FtMvWo");
 			
-			//½ºÄÉÁÙ ±âµ¿¿ë Àü¹® ¼¼ÆÃ
+			//ìŠ¤ì¼€ì¤„ ê¸°ë™ìš© ì „ë¬¸ ì„¸íŒ…
 			JDTORecord jrMsg = JDTORecordFactory.getInstance().create();
 			jrMsg.setField("JMS_TC_CD"    , "YMYMJ203"); 
-			jrMsg.setField("YD_SCH_CD"    , ""  ); //¾ßµå½ºÄÉÁìÄÚµå
-			jrMsg.setField("YD_EQP_ID"    , ""  ); //¾ßµå¼³ºñID
+			jrMsg.setField("YD_SCH_CD"    , ""  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrMsg.setField("YD_EQP_ID"    , ""  ); //ì•¼ë“œì„¤ë¹„ID
 			
 			int wbIdx = 0;
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				String sSTOCK_ID 		= commUtils.getValue(gdReq, "STOCK_ID"         , ii);
-				String sSTOCK_CBL_GP    = commUtils.getValue(gdReq, "STOCK_CBL_GP"     , ii).substring(0,8); //ÇöÀç À§Ä¡ °ª(fromÀ§Ä¡)
+				String sSTOCK_CBL_GP    = commUtils.getValue(gdReq, "STOCK_CBL_GP"     , ii).substring(0,8); //í˜„ì¬ ìœ„ì¹˜ ê°’(fromìœ„ì¹˜)
 								
 				String sSTACK_COL_GP    = commUtils.getValue(gdReq, "STOCK_CBL_GP", ii).substring(0, 6);
 				String sBED_GP          = commUtils.getValue(gdReq, "STOCK_CBL_GP", ii).substring(6, 8);
 				String sSTACK_LAYER_GP  = commUtils.getValue(gdReq, "STOCK_CBL_GP", ii).substring(8, 10);
 				sYD_SCH_CD 		        = sYD_GP + sBAY_GP + "PT02UM";
 				
-				if("".equals(sLoc_CBL_GP)||!sSTOCK_CBL_GP.equals(sLoc_CBL_GP)){ //if (ÀÓ½ÃÀ§Ä¡ ="" || !ÀÓ½ÃÀ§Ä¡ = ÇØ´çÀ§Ä¡(ÇöÀç À§Ä¡ °ª (fromÀ§Ä¡))
+				if("".equals(sLoc_CBL_GP)||!sSTOCK_CBL_GP.equals(sLoc_CBL_GP)){ //if (ì„ì‹œìœ„ì¹˜ ="" || !ì„ì‹œìœ„ì¹˜ = í•´ë‹¹ìœ„ì¹˜(í˜„ì¬ ìœ„ì¹˜ ê°’ (fromìœ„ì¹˜))
 					
-					sLoc_CBL_GP         = commUtils.getValue(gdReq, "STOCK_CBL_GP"   , ii).substring(0,8); //ÀÓ½ÃÀ§Ä¡ = commUtils.getValue(gdReq, "STACK_CBL_GP"   , ii).substring(0,8);
+					sLoc_CBL_GP         = commUtils.getValue(gdReq, "STOCK_CBL_GP"   , ii).substring(0,8); //ì„ì‹œìœ„ì¹˜ = commUtils.getValue(gdReq, "STACK_CBL_GP"   , ii).substring(0,8);
 					
 //					if (!"".equals(ydWbookId)) {
 //						/**********************************************************
-//						* 3. Å©·¹ÀÎ ½ºÄÉÁÙ È£Ãâ
+//						* 3. í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ
 //						**********************************************************/
 //						JDTORecord jrMsg = JDTORecordFactory.getInstance().create();
 //						jrMsg.setField("JMS_TC_CD"    , "YMYMJ202"); 
-//						jrMsg.setField("YD_WBOOK_ID"  , ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
-//						jrMsg.setField("YD_SCH_CD"    , ""  ); //¾ßµå½ºÄÉÁìÄÚµå
-//						jrMsg.setField("YD_EQP_ID"    , ""  ); //¾ßµå¼³ºñID
+//						jrMsg.setField("YD_WBOOK_ID"  , ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+//						jrMsg.setField("YD_SCH_CD"    , ""  ); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+//						jrMsg.setField("YD_EQP_ID"    , ""  ); //ì•¼ë“œì„¤ë¹„ID
 //						
 //						EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
 //						JDTORecord jrRtn1 = (JDTORecord)ejbConn.trx("procYMYMJ202",new Class[]{JDTORecord.class},new Object[]{ jrMsg });	
@@ -9530,10 +9530,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 //					}
 					
 					/********************************************
-					 *** 2. ÀÛ¾÷¿¹¾à ID °¡Á®¿À±â
+					 *** 2. ì‘ì—…ì˜ˆì•½ ID ê°€ì ¸ì˜¤ê¸°
 					 ********************************************/
-					ydWbookId = commDao.getSeqId(logId, methodNm, "WrkBook"); //¿¹¾àID = ÀÛ¾÷¿¹¾à »ı¼º
-					jrMsg.setField("YD_WBOOK_ID" + ++wbIdx, ydWbookId); //ÀÛ¾÷¿¹¾à
+					ydWbookId = commDao.getSeqId(logId, methodNm, "WrkBook"); //ì˜ˆì•½ID = ì‘ì—…ì˜ˆì•½ ìƒì„±
+					jrMsg.setField("YD_WBOOK_ID" + ++wbIdx, ydWbookId); //ì‘ì—…ì˜ˆì•½
 					
 					if("2APT01".equals(sYD_CARPNT_CD)){
 						sYD_SCH_CD = "2APT02UM";
@@ -9568,7 +9568,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 									
 					 /********************************************
-					  *** 2. ¿î¼ÛÀåºñ ÄÚµå °¡Á®¿À±â
+					  *** 2. ìš´ì†¡ì¥ë¹„ ì½”ë“œ ê°€ì ¸ì˜¤ê¸°
 					  ********************************************/
 
 					jrParam.setField("YD_STK_COL_GP"		, sYD_TO_LOC_GUIDE);
@@ -9580,13 +9580,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	                    AND YD_STK_COL_GP = :V_YD_STK_COL_GP*/
 					 
 					
-					JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getFtmvCarLoad", logId, methodNm, "ÀÌ¼ÛÁö½Ã »óÂ÷µî·Ï"); 
+					JDTORecordSet jsChk = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getFtmvCarLoad", logId, methodNm, "ì´ì†¡ì§€ì‹œ ìƒì°¨ë“±ë¡"); 
 					
 					if(jsChk.size() > 0) {
 						sTRN_EQP_CD = jsChk.getRecord(0).getFieldString("TRN_EQP_CD");
 					} else {
 					
-			    		szMsg = gdReq.getParam("YD_CARPNT_CD") + " ÇØ´ç À§Ä¡¿¡ Â÷·®ÀÌ ¾ø½À´Ï´Ù.";
+			    		szMsg = gdReq.getParam("YD_CARPNT_CD") + " í•´ë‹¹ ìœ„ì¹˜ì— ì°¨ëŸ‰ì´ ì—†ìŠµë‹ˆë‹¤.";
 			    		
 			    		//jrRtn.setField("RTN_MSG", szMsg);
 			    		
@@ -9601,9 +9601,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("YD_BAY_GP"  			, sBAY_GP);
 						jrParam.setField("YD_SCH_CD"        	, sYD_SCH_CD);
 						jrParam.setField("YD_SCH_PRIOR"      	, "");
-						jrParam.setField("YD_SCH_PROG_STAT"  	, "W");//¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(½ºÄÉÁÙ¼öÇà´ë±â)
-						jrParam.setField("YD_SCH_ST_GP"      	, "O");//¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(Manual)
-						jrParam.setField("YD_SCH_REQ_GP"     	, "M");//¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ(ÀÌÀû)
+						jrParam.setField("YD_SCH_PROG_STAT"  	, "W");//ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+						jrParam.setField("YD_SCH_ST_GP"      	, "O");//ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(Manual)
+						jrParam.setField("YD_SCH_REQ_GP"     	, "M");//ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„(ì´ì )
 						jrParam.setField("YD_AIM_YD_GP"      	, "");
 						jrParam.setField("YD_AIM_BAY_GP"     	, sBAY_GP);
 						jrParam.setField("YD_TO_LOC_DCSN_MTD"	, "O"); 
@@ -9627,61 +9627,61 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						   AND YD_SCH_CD = :V_YD_SCH_CD
 						*/   
 						String sYD_WRK_CRN = "";
-						JDTORecordSet jsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+						JDTORecordSet jsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 						if (jsResult != null && jsResult.size() > 0) {
-							String sYD_SCH_PRIOR = jsResult.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+							String sYD_SCH_PRIOR = jsResult.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 							jrParam.setField("YD_SCH_PRIOR"      , sYD_SCH_PRIOR);
 							
-							sYD_WRK_CRN = jsResult.getRecord(0).getFieldString("YD_WRK_CRN"); //Å©·¹ÀÎ
+							sYD_WRK_CRN = jsResult.getRecord(0).getFieldString("YD_WRK_CRN"); //í¬ë ˆì¸
 						} 
 						
 						
-						//Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡BED Á¶È¸ TB_YM_RULE : YM2021
+						//í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜BED ì¡°íšŒ TB_YM_RULE : YM2021
 						JDTORecord jrYmParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-						jrYmParam.setField("YD_EQP_ID"       , sYD_WRK_CRN); //Å©·¹ÀÎÁ¤º¸
-						jrYmParam.setField("STACK_COL_BED_GP", sSTOCK_CBL_GP); //ÀûÄ¡À§Ä¡
-						JDTORecordSet ym2021Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2021Crn", logId, methodNm, "SLAB Å©·¹ÀÎÀÛ¾÷ºÒ°¡ ÀûÄ¡±İÁö BED Á¶°ÇÁ¶È¸");
+						jrYmParam.setField("YD_EQP_ID"       , sYD_WRK_CRN); //í¬ë ˆì¸ì •ë³´
+						jrYmParam.setField("STACK_COL_BED_GP", sSTOCK_CBL_GP); //ì ì¹˜ìœ„ì¹˜
+						JDTORecordSet ym2021Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2021Crn", logId, methodNm, "SLAB í¬ë ˆì¸ì‘ì—…ë¶ˆê°€ ì ì¹˜ê¸ˆì§€ BED ì¡°ê±´ì¡°íšŒ");
 						
 						if (ym2021Rule.size() > 0) {
-							throw new Exception("ÀÌÀû´ë»óÀçÀÇ À§Ä¡°¡ ["+sYD_WRK_CRN.substring(4, 6)+"]Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡BED¿¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+							throw new Exception("ì´ì ëŒ€ìƒì¬ì˜ ìœ„ì¹˜ê°€ ["+sYD_WRK_CRN.substring(4, 6)+"]í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜BEDì— ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 						} 
 						
 
-						jrYmParam.setField("STACK_COL_GP", sSTACK_COL_GP); //ÀûÄ¡À§Ä¡
-						JDTORecordSet ym2010Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2010Crn", logId, methodNm, "SLAB Å©·¹ÀÎÀÛ¾÷ºÒ°¡ ÀûÄ¡¿­±İÁö Á¶°ÇÁ¶È¸");
+						jrYmParam.setField("STACK_COL_GP", sSTACK_COL_GP); //ì ì¹˜ìœ„ì¹˜
+						JDTORecordSet ym2010Rule = commDao.select(jrYmParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectRuleYM2010Crn", logId, methodNm, "SLAB í¬ë ˆì¸ì‘ì—…ë¶ˆê°€ ì ì¹˜ì—´ê¸ˆì§€ ì¡°ê±´ì¡°íšŒ");
 						
 						if (ym2010Rule.size() > 0) {
-							throw new Exception("ÀÌÀû´ë»óÀçÀÇ À§Ä¡°¡ ["+sYD_WRK_CRN.substring(4, 6)+"]Å©·¹ÀÎ ÀÛ¾÷ºÒ°¡ ÀûÄ¡¿­¿¡ ÀûÄ¡µÇ¾î ÀÖ½À´Ï´Ù.");
+							throw new Exception("ì´ì ëŒ€ìƒì¬ì˜ ìœ„ì¹˜ê°€ ["+sYD_WRK_CRN.substring(4, 6)+"]í¬ë ˆì¸ ì‘ì—…ë¶ˆê°€ ì ì¹˜ì—´ì— ì ì¹˜ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
 						}
 						
 						/*
 						INSERT INTO TB_YM_WRKBOOK (
-						       YD_WBOOK_ID        --¾ßµåÀÛ¾÷¿¹¾àID
-						     , YD_GP              --¾ßµå±¸ºĞ
-						     , YD_BAY_GP          --¾ßµåµ¿±¸ºĞ
-						     , YD_SCH_CD          --¾ßµå½ºÄÉÁìÄÚµå
-						     , YD_SCH_PRIOR       --¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-						     , YD_SCH_PROG_STAT   --¾ßµå½ºÄÉÁìÁøÇà»óÅÂ
-						     , YD_SCH_ST_GP       --¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ
-						     , YD_SCH_REQ_GP      --¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ
-						     , YD_AIM_YD_GP       --¾ßµå¸ñÇ¥¾ßµå±¸ºĞ
-						     , YD_AIM_BAY_GP      --¾ßµå¸ñÇ¥µ¿±¸ºĞ
-						     , YD_TO_LOC_DCSN_MTD --¾ßµåToÀ§Ä¡°áÁ¤¹æ¹ı
-						     , YD_TO_LOC_GUIDE    --¾ßµåToÀ§Ä¡Guide
-						     , YD_WRK_PLAN_TCAR   --¾ßµåÀÛ¾÷°èÈ¹´ëÂ÷
-						     , YD_CAR_USE_GP      --¾ßµåÂ÷·®»ç¿ë±¸ºĞ
-						     , TRN_EQP_CD         --¿î¼ÛÀåºñÄÚµå
-						     , CAR_NO             --Â÷·®¹øÈ£
-						     , CARD_NO            --Ä«µå¹øÈ£
-						     , PTOP_PLNT_GP       --Á¶¾÷°øÀå±¸ºĞ
-						     , DEST_TEL_NO        --¸ñÀûÁöÀüÈ­¹øÈ£
-						     , DIST_SHIPASSIGN_GP --ÃâÇÏ¹è¼±Áö½Ã±¸ºĞ 
-						     , YD_WRK_PLAN_CRN    --¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-						     , REGISTER           --µî·ÏÀÚ
-						     , REG_DDTT           --µî·ÏÀÏ½Ã
-						     , MODIFIER           --¼öÁ¤ÀÚ
-						     , MOD_DDTT           --¼öÁ¤ÀÏ½Ã
-						     , DEL_YN             --»èÁ¦À¯¹«
+						       YD_WBOOK_ID        --ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+						     , YD_GP              --ì•¼ë“œêµ¬ë¶„
+						     , YD_BAY_GP          --ì•¼ë“œë™êµ¬ë¶„
+						     , YD_SCH_CD          --ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						     , YD_SCH_PRIOR       --ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+						     , YD_SCH_PROG_STAT   --ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ
+						     , YD_SCH_ST_GP       --ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„
+						     , YD_SCH_REQ_GP      --ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„
+						     , YD_AIM_YD_GP       --ì•¼ë“œëª©í‘œì•¼ë“œêµ¬ë¶„
+						     , YD_AIM_BAY_GP      --ì•¼ë“œëª©í‘œë™êµ¬ë¶„
+						     , YD_TO_LOC_DCSN_MTD --ì•¼ë“œToìœ„ì¹˜ê²°ì •ë°©ë²•
+						     , YD_TO_LOC_GUIDE    --ì•¼ë“œToìœ„ì¹˜Guide
+						     , YD_WRK_PLAN_TCAR   --ì•¼ë“œì‘ì—…ê³„íšëŒ€ì°¨
+						     , YD_CAR_USE_GP      --ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
+						     , TRN_EQP_CD         --ìš´ì†¡ì¥ë¹„ì½”ë“œ
+						     , CAR_NO             --ì°¨ëŸ‰ë²ˆí˜¸
+						     , CARD_NO            --ì¹´ë“œë²ˆí˜¸
+						     , PTOP_PLNT_GP       --ì¡°ì—…ê³µì¥êµ¬ë¶„
+						     , DEST_TEL_NO        --ëª©ì ì§€ì „í™”ë²ˆí˜¸
+						     , DIST_SHIPASSIGN_GP --ì¶œí•˜ë°°ì„ ì§€ì‹œêµ¬ë¶„ 
+						     , YD_WRK_PLAN_CRN    --ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+						     , REGISTER           --ë“±ë¡ì
+						     , REG_DDTT           --ë“±ë¡ì¼ì‹œ
+						     , MODIFIER           --ìˆ˜ì •ì
+						     , MOD_DDTT           --ìˆ˜ì •ì¼ì‹œ
+						     , DEL_YN             --ì‚­ì œìœ ë¬´
 						) VALUES (
 						      :V_YD_WBOOK_ID
 						     ,:V_YD_GP
@@ -9711,11 +9711,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						     ,'N'
 						)
 						 */
-						bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook"); //ÀÛ¾÷¿¹¾à »ı¼º
+						bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook"); //ì‘ì—…ì˜ˆì•½ ìƒì„±
 				}
 					
 						/**********************************************************
-						* 2-2. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+						* 2-2. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 						**********************************************************/
 						/*String YDWbookId = commDao.getSeqId(logId, methodNm, "WrkBook");*/
 				
@@ -9728,11 +9728,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						bSlabComm.execQueryId(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl");
 						
 						/**********************************************************
-						* 1-3. TB_YM_STOCKÀÇÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£(TRANS_WORD_NO) µî·Ï
+						* 1-3. TB_YM_STOCKì˜ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸(TRANS_WORD_NO) ë“±ë¡
 						**********************************************************/
 						jrParam.setField("STOCK_ID"			, sSTOCK_ID);
-						jrParam.setField("STOCK_MOVE_TERM"	, ""); //ÀÌ¼Û´ë±â
-						jrParam.setField("FRTOMOVE_WORD_NO"	, sFRTOMOVE_WORD_NO); //ÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£
+						jrParam.setField("STOCK_MOVE_TERM"	, ""); //ì´ì†¡ëŒ€ê¸°
+						jrParam.setField("FRTOMOVE_WORD_NO"	, sFRTOMOVE_WORD_NO); //ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸
 						/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockTransWordNo
 						UPDATE TB_YM_STOCK
 						   SET MODIFIER   = :V_MODIFIER
@@ -9740,49 +9740,49 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						     , STOCK_MOVE_TERM = NVL(:V_STOCK_MOVE_TERM,STOCK_MOVE_TERM)
 						     , FRTOMOVE_WORD_NO = :V_FRTOMOVE_WORD_NO
 						WHERE STOCK_ID = :V_STOCK_ID */
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockTransWordNo", logId, methodNm, "TB_YM_STOCKÀÇ ÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£(TRANS_WORD_NO) µî·Ï");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockTransWordNo", logId, methodNm, "TB_YM_STOCKì˜ ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸(TRANS_WORD_NO) ë“±ë¡");
 						
 						/*
-						jrParam.setField("SEARCH_FLAG" , "3");		//1:»óÂ÷µµ, 2:Â÷·®½ºÄÉÁì ID, 3:Â÷·®»óÂ÷ Æ÷ÀÎÆ®  
-						jrParam.setField("PT_LOAD_LOC" , sSTACK_COL_GP); 	//»óÂ÷µµ À§Ä¡
-						jrParam.setField("YD_WBOOK_ID"  , ydWbookId); //¾ßµåÀÛ¾÷¿¹¾àID
+						jrParam.setField("SEARCH_FLAG" , "3");		//1:ìƒì°¨ë„, 2:ì°¨ëŸ‰ìŠ¤ì¼€ì¥´ ID, 3:ì°¨ëŸ‰ìƒì°¨ í¬ì¸íŠ¸  
+						jrParam.setField("PT_LOAD_LOC" , sSTACK_COL_GP); 	//ìƒì°¨ë„ ìœ„ì¹˜
+						jrParam.setField("YD_WBOOK_ID"  , ydWbookId); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
 						jrRtn = commUtils.addSndData(jrRtn, ymComm.procCarPlanInfo_Slab(jrParam));*/
 
 						
 						/*JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 						jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-						jrCrnSchMsg.setField("YD_WBOOK_ID"  		, YDWbookId); //ÀÛ¾÷¿¹¾àID
-						jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-						jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+						jrCrnSchMsg.setField("YD_WBOOK_ID"  		, YDWbookId); //ì‘ì—…ì˜ˆì•½ID
+						jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 						jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);*/	
 				
 		
-			}//for¹®
+			}//forë¬¸
 			
 						
 			/**********************************************************
-			* Â÷·®½ºÄÉÁÙ ¾÷µ¥ÀÌÆ®
+			* ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì—…ë°ì´íŠ¸
 			**********************************************************/
-			jrParam.setField("FRTOMOVE_WORD_NO"	  , sFRTOMOVE_WORD_NO); //ÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£
+			jrParam.setField("FRTOMOVE_WORD_NO"	  , sFRTOMOVE_WORD_NO); //ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸
 			jrParam.setField("YD_CARUD_STOP_LOC"  , sYD_CARPNT_CD);
 			jrParam.setField("ARR_WLOC_CD"       , sARR_WLOC_CD);
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFrtpmoveWordNo", logId, methodNm, "TB_YD_CARSCHÀÇ  µî·Ï");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFrtpmoveWordNo", logId, methodNm, "TB_YD_CARSCHì˜  ë“±ë¡");
 			  
 			
 			/**********************************************************
-			* Â÷·®ÀÛ¾÷ ¿¹Á¤Á¤º¸ ¼Û½Å (YMA8L008)
+			* ì°¨ëŸ‰ì‘ì—… ì˜ˆì •ì •ë³´ ì†¡ì‹  (YMA8L008)
 			**********************************************************/
-//			jrParam.setField("SEARCH_FLAG" , "3");		//1:»óÂ÷µµ, 2:Â÷·®½ºÄÉÁì ID, 3:Â÷·®»óÂ÷ Æ÷ÀÎÆ®  
-//			jrParam.setField("PT_LOAD_LOC" , sYD_CARPNT_CD); 	//»óÂ÷µµ À§Ä¡
-//			jrParam.setField("FRTOMOVE_WORD_NO"	, sFRTOMOVE_WORD_NO); //ÀÌ¼ÛÀÛ¾÷Áö½Ã¹øÈ£
+//			jrParam.setField("SEARCH_FLAG" , "3");		//1:ìƒì°¨ë„, 2:ì°¨ëŸ‰ìŠ¤ì¼€ì¥´ ID, 3:ì°¨ëŸ‰ìƒì°¨ í¬ì¸íŠ¸  
+//			jrParam.setField("PT_LOAD_LOC" , sYD_CARPNT_CD); 	//ìƒì°¨ë„ ìœ„ì¹˜
+//			jrParam.setField("FRTOMOVE_WORD_NO"	, sFRTOMOVE_WORD_NO); //ì´ì†¡ì‘ì—…ì§€ì‹œë²ˆí˜¸
 //			jrRtn = commUtils.addSndData(jrRtn, ymComm.procCarPlanInfo_Slab(jrParam));
 			
 			/**********************************************************
-			* 3. Å©·¹ÀÎ ½ºÄÉÁÙ È£Ãâ
+			* 3. í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ
 			**********************************************************/
-			// 20171113  ±è±âÈÆ ÁÖÀÓ ¿äÃ» ½ºÄÉÁÙ ±âµ¿ÇÏÁö ¾ÊÀ½
+			// 20171113  ê¹€ê¸°í›ˆ ì£¼ì„ ìš”ì²­ ìŠ¤ì¼€ì¤„ ê¸°ë™í•˜ì§€ ì•ŠìŒ
 //			jrMsg.setField("SCH_CNT", Integer.toString(wbIdx));
 //			EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
 //			jrRtn2 = (JDTORecord)ejbConn.trx("rcvYMYMJ203",new Class[]{JDTORecord.class},new Object[]{ jrMsg });	
@@ -9800,17 +9800,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of regCARLD
 	
 	
-	//CTC Áö½ÃÆø ¼öÁ¤
+	//CTC ì§€ì‹œí­ ìˆ˜ì •
 	/**
-	 * CTC Áö½ÃÆø º¯°æ
+	 * CTC ì§€ì‹œí­ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSlabWMgt(GridData gdReq) throws DAOException {
-		String methodNm = "CTC Áö½ÃÆø º¯°æ[BSlabJspSeEJB.updSlabWMgt] < " + gdReq.getNavigateValue();
+		String methodNm = "CTC ì§€ì‹œí­ ë³€ê²½[BSlabJspSeEJB.updSlabWMgt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -9819,10 +9819,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -9837,7 +9837,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						WHERE SLAB_NO = :V_STOCK_ID   */
 								
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabInfo", logId, methodNm, "CTC Æø º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabInfo", logId, methodNm, "CTC í­ ë³€ê²½");
 								
 			}
 
@@ -9852,15 +9852,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSlabWMgt
 	
 	/**
-	 * B¿­¿¬ SLAB º¥µùÇ¥½Ã,ÇØÁ¦,º¸±Ş ¼³Á¤
+	 * Bì—´ì—° SLAB ë²¤ë”©í‘œì‹œ,í•´ì œ,ë³´ê¸‰ ì„¤ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updBendingStat(GridData gdReq) throws DAOException {
-		String methodNm = "B¿­¿¬ SLAB º¥µùÇ¥½Ã,ÇØÁ¦,º¸±Ş ¼³Á¤ - LAYERÈ°¼º»óÅÂ º¯°æ[BSlabJspSeEJB.updBedActStat] < " + gdReq.getNavigateValue();
+		String methodNm = "Bì—´ì—° SLAB ë²¤ë”©í‘œì‹œ,í•´ì œ,ë³´ê¸‰ ì„¤ì • - LAYERí™œì„±ìƒíƒœ ë³€ê²½[BSlabJspSeEJB.updBedActStat] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -9869,26 +9869,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			String sGUBUN 			= commUtils.trim(gdReq.getParam("GUBUN")			); //1:º¥µùÇ¥½Ã,2:º¥µùÇØÁ¦,3:º¥µùº¸±Ş
-			String sBENDING_GP 		= commUtils.trim(gdReq.getParam("BENDING_GP")		); //BENDING±¸ºĞ(+:»ó,-:ÇÏ)
-			String sBENDING_AXIS 	= commUtils.nvl( gdReq.getParam("BENDING_AXIS"),"0"	); //BENDING·®(mm)
-			String sARR_STOCK_ID 	= commUtils.trim(gdReq.getParam("ARR_STOCK_ID")		); //´ë»ó SLAB ¸®½ºÆ®
+			String sGUBUN 			= commUtils.trim(gdReq.getParam("GUBUN")			); //1:ë²¤ë”©í‘œì‹œ,2:ë²¤ë”©í•´ì œ,3:ë²¤ë”©ë³´ê¸‰
+			String sBENDING_GP 		= commUtils.trim(gdReq.getParam("BENDING_GP")		); //BENDINGêµ¬ë¶„(+:ìƒ,-:í•˜)
+			String sBENDING_AXIS 	= commUtils.nvl( gdReq.getParam("BENDING_AXIS"),"0"	); //BENDINGëŸ‰(mm)
+			String sARR_STOCK_ID 	= commUtils.trim(gdReq.getParam("ARR_STOCK_ID")		); //ëŒ€ìƒ SLAB ë¦¬ìŠ¤íŠ¸
 			
 			String sSTOCK_ID;
 			String sSTOCK_MOVE_TERM;
 			
-			//´ë»ó SLAB ¸®½ºÆ®¸¦ ±¸ÇÑ´Ù.
+			//ëŒ€ìƒ SLAB ë¦¬ìŠ¤íŠ¸ë¥¼ êµ¬í•œë‹¤.
 			jrParam.setField("ARR_STOCK_ID"		, sARR_STOCK_ID);
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdList
 			SELECT REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) AS STOCK_ID
 			  FROM (SELECT :V_ARR_STOCK_ID AS SSTL_NOS FROM DUAL)
 			CONNECT BY REGEXP_SUBSTR(SSTL_NOS, '[^,]+', 1, LEVEL) IS NOT NULL  */
-			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdList", logId, methodNm, "´ë»ó SLAB ¸®½ºÆ®¸¦ ±¸ÇÑ´Ù.");
+			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdList", logId, methodNm, "ëŒ€ìƒ SLAB ë¦¬ìŠ¤íŠ¸ë¥¼ êµ¬í•œë‹¤.");
 			if(rsResult.size() <= 0) {
-				throw new Exception("´ë»ó SLAB ¸®½ºÆ®°¡ ¾ø½À´Ï´Ù!!");
+				throw new Exception("ëŒ€ìƒ SLAB ë¦¬ìŠ¤íŠ¸ê°€ ì—†ìŠµë‹ˆë‹¤!!");
 			}				
 			
 			for(int ii = 0; ii < rsResult.size(); ii++) {
@@ -9897,13 +9897,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				sSTOCK_MOVE_TERM =  bSlabComm.getStockMoveTerm(sSTOCK_ID);
 
 				if("1".equals(sGUBUN)) {
-					jrParam.setField("YD_RULE_PL_RS_GP"		, "Y"); //Ç¥½Ã
+					jrParam.setField("YD_RULE_PL_RS_GP"		, "Y"); //í‘œì‹œ
 				} else if("2".equals(sGUBUN)) {
-					jrParam.setField("YD_RULE_PL_RS_GP"		, "" ); //ÇØÁ¦
+					jrParam.setField("YD_RULE_PL_RS_GP"		, "" ); //í•´ì œ
 				} else if("3".equals(sGUBUN)) {
-					jrParam.setField("YD_RULE_PL_RS_GP"		, "S"); //º¸±Ş
+					jrParam.setField("YD_RULE_PL_RS_GP"		, "S"); //ë³´ê¸‰
 				} else {
-					throw new Exception("ÀÛ¾÷±¸ºĞ ¿À·ù!! GUBUN:"+sGUBUN);
+					throw new Exception("ì‘ì—…êµ¬ë¶„ ì˜¤ë¥˜!! GUBUN:"+sGUBUN);
 				}
 			
 				jrParam.setField("STOCK_MOVE_TERM"	, sSTOCK_MOVE_TERM);
@@ -9919,7 +9919,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				      ,BENDING_GP = :V_BENDING_GP
 				      ,BENDING_AXIS = :V_BENDING_AXIS
 				WHERE  STOCK_ID = :V_STOCK_ID */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockBendingStat", logId, methodNm, "ÀúÀåÇ° Bending»óÅÂ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockBendingStat", logId, methodNm, "ì €ì¥í’ˆ Bendingìƒíƒœ ë³€ê²½");
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -9933,15 +9933,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updBendingStat	
 	
 	/**
-	 * BÂ÷·®Æ÷ÀÎÆ® »óÅÂ º¯°æ(»ç¿ë°¡´É,»ç¿ëºÒ°¡)
+	 * Bì°¨ëŸ‰í¬ì¸íŠ¸ ìƒíƒœ ë³€ê²½(ì‚¬ìš©ê°€ëŠ¥,ì‚¬ìš©ë¶ˆê°€)
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updCarPointStat(GridData gdReq) throws DAOException {
-		String methodNm = "Â÷·®Æ÷ÀÎÆ® »óÅÂ º¯°æ(»ç¿ë°¡´É,»ç¿ëºÒ°¡)[BSlabJspSeEJB.updCarPointStat] < " + gdReq.getNavigateValue();
+		String methodNm = "ì°¨ëŸ‰í¬ì¸íŠ¸ ìƒíƒœ ë³€ê²½(ì‚¬ìš©ê°€ëŠ¥,ì‚¬ìš©ë¶ˆê°€)[BSlabJspSeEJB.updCarPointStat] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -9950,19 +9950,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			String sYD_STK_COL_ACT_STAT = commUtils.trim(gdReq.getParam("YD_STK_COL_ACT_STAT")	); 
 			String sYD_STK_COL_GP 		= commUtils.trim(gdReq.getParam("YD_STK_COL_GP")		); 
 			
 			if("C".equals(sYD_STK_COL_ACT_STAT)) {
-				//»ç¿ë°¡´É
+				//ì‚¬ìš©ê°€ëŠ¥
 
 				jrParam.setField("YD_STK_COL_GP"		, sYD_STK_COL_GP);
-				JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCarPnt", logId, methodNm, "Â÷·®Æ÷ÀÎÆ® Á¶È¸");
+				JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getYdCarPnt", logId, methodNm, "ì°¨ëŸ‰í¬ì¸íŠ¸ ì¡°íšŒ");
 				if(rsResult.size() <= 0) {
-					throw new Exception("´ë»ó Â÷·® Point °¡ ¸®½ºÆ®¿¡ ¾ø½À´Ï´Ù!!");
+					throw new Exception("ëŒ€ìƒ ì°¨ëŸ‰ Point ê°€ ë¦¬ìŠ¤íŠ¸ì— ì—†ìŠµë‹ˆë‹¤!!");
 				}
 				String sTRN_EQP_CD = rsResult.getRecord(0).getFieldString("TRN_EQP_CD");
 				String sYD_CAR_PROG_STAT = rsResult.getRecord(0).getFieldString("YD_CAR_PROG_STAT");
@@ -9984,17 +9984,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			       ,MOD_DDTT = SYSDATE
 			       ,YD_STK_COL_ACT_STAT = :V_YD_STK_COL_ACT_STAT
 			 WHERE  YD_STK_COL_GP = :V_YD_STK_COL_GP      */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdCarPointActStat", logId, methodNm, "Â÷·®Æ÷ÀÎÆ® ÀûÄ¡¿­È°¼º»óÅÂ UPDATE");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdCarPointActStat", logId, methodNm, "ì°¨ëŸ‰í¬ì¸íŠ¸ ì ì¹˜ì—´í™œì„±ìƒíƒœ UPDATE");
 			
 			
 			/**********************************************************
-			* 2. ÀúÀåÀ§Ä¡Á¦¿ø(YMA8L001) Àü¹® »ı¼º
+			* 2. ì €ì¥ìœ„ì¹˜ì œì›(YMA8L001) ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			jrParam.setField("YD_INFO_SYNC_CD"	, "4"            ); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-			jrParam.setField("STACK_COL_GP"  	, sYD_STK_COL_GP ); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("STACK_BED_GP"  	, "01"           ); //¾ßµåÀûÄ¡Bed¹øÈ£
+			jrParam.setField("YD_INFO_SYNC_CD"	, "4"            ); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+			jrParam.setField("STACK_COL_GP"  	, sYD_STK_COL_GP ); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("STACK_BED_GP"  	, "01"           ); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
 
-			//Àü¼Û Data »ı¼º
+			//ì „ì†¡ Data ìƒì„±
 			jrRtn = commUtils.addSndData(commDao.getMsgL2("YMA8L001", jrParam));
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -10008,15 +10008,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updCarPointStat		
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ÀÌ¼ÛÂ÷·® ½ÇÀûÃ³¸® ÆË¾÷ - µî·Ï
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì´ì†¡ì°¨ëŸ‰ ì‹¤ì ì²˜ë¦¬ íŒì—… - ë“±ë¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord trtMvCarStatSet2(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌ¼ÛÂ÷·® ½ÇÀûÃ³¸® ÆË¾÷ - µî·Ï [BSlabSeEJB.trtMvCarStatSet2] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì†¡ì°¨ëŸ‰ ì‹¤ì ì²˜ë¦¬ íŒì—… - ë“±ë¡ [BSlabSeEJB.trtMvCarStatSet2] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10037,11 +10037,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sWLOC_CD 			= null;
 			String sYD_PNT_CD 			= null;
 
-			String modifier = commUtils.trim(gdReq.getParam("userid"      ));	//¼öÁ¤ÀÚ
-			String currDate = commUtils.getDateTime14();						//ÇöÀç½Ã°¢
+			String modifier = commUtils.trim(gdReq.getParam("userid"      ));	//ìˆ˜ì •ì
+			String currDate = commUtils.getDateTime14();						//í˜„ì¬ì‹œê°
 
 			if ("".equals(sTRN_EQP_CD)) {
-				throw new Exception("¿î¼ÛÀåºñÄÚµå°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ìš´ì†¡ì¥ë¹„ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 
 			//Return Value
@@ -10053,17 +10053,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			jrYdMsg.setField("JMS_TC_CD"         		, sJMS_TC_CD);
 			
-			if("TSYDJ003".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®µµÂø
+			if("TSYDJ003".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰ë„ì°©
 				
 				jrYdMsg.setField("TRN_EQP_CD"   	  		, sTRN_EQP_CD);
 				
 				if("F".equals(sTRN_WRK_FULLVOID_GP)) {
-					//ÇÏÂ÷µµÂø
+					//í•˜ì°¨ë„ì°©
 					jrYdMsg.setField("ARR_WLOC_CD"     	  		, sARR_WLOC_CD);
 					jrYdMsg.setField("ARR_YD_PNT_CD"   	  		, sYD_PNT_CD3);
 					jrYdMsg.setField("TRN_WRK_FULLVOID_GP"		, sTRN_WRK_FULLVOID_GP);
 				} else if("E".equals(sTRN_WRK_FULLVOID_GP)) {
-					//»óÂ÷µµÂø
+					//ìƒì°¨ë„ì°©
 					jrYdMsg.setField("ARR_WLOC_CD"     	  		, sSPOS_WLOC_CD);
 					jrYdMsg.setField("ARR_YD_PNT_CD"   	  		, sYD_PNT_CD1);
 					jrYdMsg.setField("TRN_WRK_FULLVOID_GP"		, sTRN_WRK_FULLVOID_GP);
@@ -10072,20 +10072,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "YmCommCarMvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvTSYDJ003", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 				
-			} else if("TSYDJ004".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®Ãâ¹ß
+			} else if("TSYDJ004".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰ì¶œë°œ
 				
 				jrYdMsg.setField("TRN_EQP_CD"   	  		, sTRN_EQP_CD);
 				jrYdMsg.setField("TRN_WRK_FULLVOID_GP"		, sTRN_WRK_FULLVOID_GP);
 				jrYdMsg.setField("TRN_EQP_STK_CAPA"		    , "80000");
 				
-				if("F".equals(sTRN_WRK_FULLVOID_GP)) { //¿µÂ÷:ÇÏÂ÷ÇÏ·¯ Ãâ¹ß 
+				if("F".equals(sTRN_WRK_FULLVOID_GP)) { //ì˜ì°¨:í•˜ì°¨í•˜ëŸ¬ ì¶œë°œ 
 					
 					jrYdMsg.setField("SPOS_WLOC_CD"     	  	, sSPOS_WLOC_CD);
 					jrYdMsg.setField("SPOS_YD_PNT_CD"   	  	, sYD_PNT_CD1);
 					jrYdMsg.setField("ARR_WLOC_CD"     	  		, sARR_WLOC_CD);
 					jrYdMsg.setField("ARR_YD_PNT_CD"   	  		, sYD_PNT_CD3);
 					
-				} else if("E".equals(sTRN_WRK_FULLVOID_GP)) { //ÇÏÂ÷¿Ï·áÈÄ Ãâ¹ßÃ³¸®·Î ÂøÁö°³¼Ò¸¦ DMY1P·Î ÁÜÀ¸·Î½á Â÷·®½ºÄÉÁÙ ¿Ï·áÃ³¸®¸¦ ÇÑ´Ù.
+				} else if("E".equals(sTRN_WRK_FULLVOID_GP)) { //í•˜ì°¨ì™„ë£Œí›„ ì¶œë°œì²˜ë¦¬ë¡œ ì°©ì§€ê°œì†Œë¥¼ DMY1Pë¡œ ì¤Œìœ¼ë¡œì¨ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì™„ë£Œì²˜ë¦¬ë¥¼ í•œë‹¤.
 					
 					jrYdMsg.setField("SPOS_WLOC_CD"     	  	, sARR_WLOC_CD);
 					jrYdMsg.setField("SPOS_YD_PNT_CD"   	  	, sYD_PNT_CD3);
@@ -10096,87 +10096,87 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				EJBConnector sndConn = new EJBConnector("default", "YmCommCarMvSeEJB", this);
 				jrRtn = (JDTORecord)sndConn.trx("rcvTSYDJ004", new Class[] { JDTORecord.class }, new Object[] { jrYdMsg });
 
-			} else if("YDTSJ007".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®»óÂ÷°³½Ã
+			} else if("YDTSJ007".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰ìƒì°¨ê°œì‹œ
 				
-				//Â÷·®ÁøÇà»óÅÂ¸¦ ÇÏÂ÷¿Ï·á·Î ¼³Á¤
-				jrParam.setField("YD_CAR_PROG_STAT"		, "4"		);  //»óÂ÷°³½Ã
-				jrParam.setField("YD_CARLD_ST_DT"		, currDate	);  //»óÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //»óÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //ÇÏÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //ÇÏÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
+				//ì°¨ëŸ‰ì§„í–‰ìƒíƒœë¥¼ í•˜ì°¨ì™„ë£Œë¡œ ì„¤ì •
+				jrParam.setField("YD_CAR_PROG_STAT"		, "4"		);  //ìƒì°¨ê°œì‹œ
+				jrParam.setField("YD_CARLD_ST_DT"		, currDate	);  //ìƒì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //ìƒì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //í•˜ì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //í•˜ì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
 				jrParam.setField("YD_CAR_SCH_ID"		, sYD_CAR_SCH_ID); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ »óÂ÷°³½Ã·Î ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìƒì°¨ê°œì‹œë¡œ ìˆ˜ì •");
 				
-				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate		); //JMSTC»ı¼ºÀÏ½Ã
-				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD	); //¿î¼ÛÀåºñÄÚµå
-				jrYdMsg.setField("SPOS_WLOC_CD"      , sSPOS_WLOC_CD); //¹ßÁö°³¼ÒÄÚµå
-				jrYdMsg.setField("SPOS_YD_PNT_CD"    , sYD_PNT_CD1	); //¹ßÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD	); //ÂøÁö°³¼ÒÄÚµå
-				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    	); //¿î¼ÛÀÛ¾÷½ÃÀÛÀÏ½Ã
+				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate		); //JMSTCìƒì„±ì¼ì‹œ
+				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD	); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				jrYdMsg.setField("SPOS_WLOC_CD"      , sSPOS_WLOC_CD); //ë°œì§€ê°œì†Œì½”ë“œ
+				jrYdMsg.setField("SPOS_YD_PNT_CD"    , sYD_PNT_CD1	); //ë°œì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD	); //ì°©ì§€ê°œì†Œì½”ë“œ
+				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    	); //ìš´ì†¡ì‘ì—…ì‹œì‘ì¼ì‹œ
 				
-				//Àü¼ÛÇÒ Àü¹®¿¡ Ãß°¡
+				//ì „ì†¡í•  ì „ë¬¸ì— ì¶”ê°€
 				jrRtn = commUtils.addSndData(jrRtn, jrYdMsg);
 				
-			} else if("YDTSJ008".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®»óÂ÷¿Ï·á
+			} else if("YDTSJ008".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰ìƒì°¨ì™„ë£Œ
 				
-				//Â÷·®ÁøÇà»óÅÂ¸¦ »óÂ÷¿Ï·á·Î ¼³Á¤
-				jrParam.setField("YD_CAR_PROG_STAT"		, "5"		);  //»óÂ÷¿Ï·á
-				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //»óÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARLD_CMPL_DT"		, currDate	);  //»óÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //ÇÏÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //ÇÏÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
+				//ì°¨ëŸ‰ì§„í–‰ìƒíƒœë¥¼ ìƒì°¨ì™„ë£Œë¡œ ì„¤ì •
+				jrParam.setField("YD_CAR_PROG_STAT"		, "5"		);  //ìƒì°¨ì™„ë£Œ
+				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //ìƒì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARLD_CMPL_DT"		, currDate	);  //ìƒì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //í•˜ì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //í•˜ì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
 				jrParam.setField("YD_CAR_SCH_ID"		, sYD_CAR_SCH_ID); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ »óÂ÷¿Ï·á·Î ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìƒì°¨ì™„ë£Œë¡œ ìˆ˜ì •");
 				
-				jrYdMsg.setField("YD_CAR_SCH_ID"     , sYD_CAR_SCH_ID); //Â÷·®½ºÄÉÁÙID
+				jrYdMsg.setField("YD_CAR_SCH_ID"     , sYD_CAR_SCH_ID); //ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID
 				jrRtn = commUtils.addSndData(jrRtn, commDao.getMsgL3("YDTSJ008", jrYdMsg));
 				
-			} else if("YDTSJ009".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®ÇÏÂ÷°³½Ã
+			} else if("YDTSJ009".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ê°œì‹œ
 				
-				//Â÷·®ÁøÇà»óÅÂ¸¦ ÇÏÂ÷¿Ï·á·Î ¼³Á¤
-				jrParam.setField("YD_CAR_PROG_STAT"		, "D"		);  //ÇÏÂ÷°³½Ã
-				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //»óÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //»óÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_ST_DT"		, currDate	);  //ÇÏÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //ÇÏÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
+				//ì°¨ëŸ‰ì§„í–‰ìƒíƒœë¥¼ í•˜ì°¨ì™„ë£Œë¡œ ì„¤ì •
+				jrParam.setField("YD_CAR_PROG_STAT"		, "D"		);  //í•˜ì°¨ê°œì‹œ
+				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //ìƒì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //ìƒì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_ST_DT"		, currDate	);  //í•˜ì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_CMPL_DT"		, ""		);  //í•˜ì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
 				jrParam.setField("YD_CAR_SCH_ID"		, sYD_CAR_SCH_ID); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ ÇÏÂ÷°³½Ã·Î ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ í•˜ì°¨ê°œì‹œë¡œ ìˆ˜ì •");
 				
-				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate    ); //JMSTC»ı¼ºÀÏ½Ã
-				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD); //ÂøÁö°³¼ÒÄÚµå
-				jrYdMsg.setField("ARR_YD_PNT_CD"     , sYD_PNT_CD3); //ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    ); //¿î¼ÛÀÛ¾÷½ÃÀÛÀÏ½Ã
+				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate    ); //JMSTCìƒì„±ì¼ì‹œ
+				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD); //ì°©ì§€ê°œì†Œì½”ë“œ
+				jrYdMsg.setField("ARR_YD_PNT_CD"     , sYD_PNT_CD3); //ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    ); //ìš´ì†¡ì‘ì—…ì‹œì‘ì¼ì‹œ
 				
-				//Àü¼ÛÇÒ Àü¹®¿¡ Ãß°¡
+				//ì „ì†¡í•  ì „ë¬¸ì— ì¶”ê°€
 				jrRtn = commUtils.addSndData(jrRtn, jrYdMsg);
 				
-			} else if("YDTSJ010".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®ÇÏÂ÷¿Ï·á
+			} else if("YDTSJ010".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰í•˜ì°¨ì™„ë£Œ
 				
-				//Â÷·®ÁøÇà»óÅÂ¸¦ ÇÏÂ÷¿Ï·á·Î ¼³Á¤
-				jrParam.setField("YD_CAR_PROG_STAT"		, "E"		);  //ÇÏÂ÷¿Ï·á
-				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //»óÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //»óÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //ÇÏÂ÷°³½ÃÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
-				jrParam.setField("YD_CARUD_CMPL_DT"		, currDate	);  //ÇÏÂ÷¿Ï·áÀÏ½Ã ""ÀÌ¸é ÀÌÀü°ª À¯Áö
+				//ì°¨ëŸ‰ì§„í–‰ìƒíƒœë¥¼ í•˜ì°¨ì™„ë£Œë¡œ ì„¤ì •
+				jrParam.setField("YD_CAR_PROG_STAT"		, "E"		);  //í•˜ì°¨ì™„ë£Œ
+				jrParam.setField("YD_CARLD_ST_DT"		, ""		);  //ìƒì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARLD_CMPL_DT"		, ""		);  //ìƒì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_ST_DT"		, ""		);  //í•˜ì°¨ê°œì‹œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
+				jrParam.setField("YD_CARUD_CMPL_DT"		, currDate	);  //í•˜ì°¨ì™„ë£Œì¼ì‹œ ""ì´ë©´ ì´ì „ê°’ ìœ ì§€
 				jrParam.setField("YD_CAR_SCH_ID"		, sYD_CAR_SCH_ID); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ ÇÏÂ÷¿Ï·á·Î ¼öÁ¤");
-				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate    ); //JMSTC»ı¼ºÀÏ½Ã
-				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD); //ÂøÁö°³¼ÒÄÚµå
-				jrYdMsg.setField("ARR_YD_PNT_CD"     , sYD_PNT_CD3); //ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    ); //¿î¼ÛÀÛ¾÷½ÃÀÛÀÏ½Ã
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchCmpl", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ í•˜ì°¨ì™„ë£Œë¡œ ìˆ˜ì •");
+				jrYdMsg.setField("JMS_TC_CREATE_DDTT", currDate    ); //JMSTCìƒì„±ì¼ì‹œ
+				jrYdMsg.setField("TRN_EQP_CD"        , sTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+				jrYdMsg.setField("ARR_WLOC_CD"       , sARR_WLOC_CD); //ì°©ì§€ê°œì†Œì½”ë“œ
+				jrYdMsg.setField("ARR_YD_PNT_CD"     , sYD_PNT_CD3); //ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+				jrYdMsg.setField("TRN_WRK_ST_DT"     , currDate    ); //ìš´ì†¡ì‘ì—…ì‹œì‘ì¼ì‹œ
 				
-				//Àü¼ÛÇÒ Àü¹®¿¡ Ãß°¡
+				//ì „ì†¡í•  ì „ë¬¸ì— ì¶”ê°€
 				jrRtn = commUtils.addSndData(jrRtn, jrYdMsg);
 				
-			} else if("YDTSJ011".equals(sJMS_TC_CD)) { //¼ÒÀçÂ÷·®PointÁö½Ã
+			} else if("YDTSJ011".equals(sJMS_TC_CD)) { //ì†Œì¬ì°¨ëŸ‰Pointì§€ì‹œ
 
-				//¾ßµåÀûÄ¡¿­±¸ºĞÀ¸·Î Â÷·®Æ÷ÀÎÆ® Á¤º¸ Á¶È¸
+				//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„ìœ¼ë¡œ ì°¨ëŸ‰í¬ì¸íŠ¸ ì •ë³´ ì¡°íšŒ
 				jrParam.setField("YD_STK_COL_GP", sTO_LOC);
 				/* com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdPntByStkColGp
 				SELECT YD_CARPNT_CD
@@ -10196,7 +10196,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				      ,YD_FRM_YN
 				  FROM TB_YD_CARPOINT  
 				 WHERE YD_STK_COL_GP = :V_YD_STK_COL_GP */
-				JDTORecordSet jsCol = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdPntByStkColGp", logId, methodNm, "¾ßµåÀûÄ¡¿­±¸ºĞÀ¸·Î Â÷·®Æ÷ÀÎÆ® Á¤º¸ Á¶È¸");
+				JDTORecordSet jsCol = commDao.select(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.getYdPntByStkColGp", logId, methodNm, "ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„ìœ¼ë¡œ ì°¨ëŸ‰í¬ì¸íŠ¸ ì •ë³´ ì¡°íšŒ");
 				
 				if(jsCol != null && jsCol.size() > 0) {
 					sWLOC_CD	= commUtils.trim(jsCol.getRecord(0).getFieldString("WLOC_CD"));
@@ -10204,52 +10204,52 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					if("".equals(sWLOC_CD) || "".equals(sYD_PNT_CD)) {
 						
-						throw new Exception(sTO_LOC + " ÀÇ °³¼ÒÄÚµå ¶Ç´Â ¾ßµåÆ÷ÀÎÆ®¿¡ NULL °ªÀÌ ÀÖ½À´Ï´Ù.");
+						throw new Exception(sTO_LOC + " ì˜ ê°œì†Œì½”ë“œ ë˜ëŠ” ì•¼ë“œí¬ì¸íŠ¸ì— NULL ê°’ì´ ìˆìŠµë‹ˆë‹¤.");
 					}
 					
 					if(!"".equals(commUtils.trim(jsCol.getRecord(0).getFieldString("TRN_EQP_CD")))) {
 						
-						throw new Exception(sTO_LOC + " ¿¡ ÀÌ¹Ì " + commUtils.trim(jsCol.getRecord(0).getFieldString("TRN_EQP_CD")) + " ¿î¼ÛÀåºñ°¡ Á¡À¯ÇÏ°í  ÀÖ½À´Ï´Ù.");
+						throw new Exception(sTO_LOC + " ì— ì´ë¯¸ " + commUtils.trim(jsCol.getRecord(0).getFieldString("TRN_EQP_CD")) + " ìš´ì†¡ì¥ë¹„ê°€ ì ìœ í•˜ê³   ìˆìŠµë‹ˆë‹¤.");
 					}
 					
 					if(!"".equals(commUtils.trim(jsCol.getRecord(0).getFieldString("CAR_NO")))) {
 						
-						throw new Exception(sTO_LOC + " ¿¡ ÀÌ¹Ì " + commUtils.trim(jsCol.getRecord(0).getFieldString("CAR_NO")) + " Â÷·®ÀÌ Á¡À¯ÇÏ°í  ÀÖ½À´Ï´Ù.");
+						throw new Exception(sTO_LOC + " ì— ì´ë¯¸ " + commUtils.trim(jsCol.getRecord(0).getFieldString("CAR_NO")) + " ì°¨ëŸ‰ì´ ì ìœ í•˜ê³   ìˆìŠµë‹ˆë‹¤.");
 					}
 					
 				} else {
-					throw new Exception(sTO_LOC + " ÀÇ °³¼ÒÄÚµå¿Í ¾ßµåÆ÷ÀÎÆ®¸¦ TB_YD_CARPOINT ¿¡¼­ Ã£Áö ¸øÇß½À´Ï´Ù.");
+					throw new Exception(sTO_LOC + " ì˜ ê°œì†Œì½”ë“œì™€ ì•¼ë“œí¬ì¸íŠ¸ë¥¼ TB_YD_CARPOINT ì—ì„œ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
 				}
 				
 				jrYdMsg.setField("JMS_TC_CD"         	, sJMS_TC_CD	); //"YDTSJ011"
-				jrYdMsg.setField("JMS_TC_CREATE_DDTT"	, currDate  	); //JMSTC»ı¼ºÀÏ½Ã
-				jrYdMsg.setField("TRN_EQP_CD"        	, sTRN_EQP_CD	); //¿î¼ÛÀåºñÄÚµå
+				jrYdMsg.setField("JMS_TC_CREATE_DDTT"	, currDate  	); //JMSTCìƒì„±ì¼ì‹œ
+				jrYdMsg.setField("TRN_EQP_CD"        	, sTRN_EQP_CD	); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
 				jrYdMsg.setField("WLOC_CD"     	 		, sWLOC_CD		);
 				jrYdMsg.setField("YD_PNT_CD"     		, sYD_PNT_CD	); 
 				jrYdMsg.setField("PNT_WO_GP"     		, "A"    		);
 				jrYdMsg.setField("PNT_WO_DT"     		, currDate 		); 
 				
-				//Àü¼ÛÇÒ Àü¹®¿¡ Ãß°¡
+				//ì „ì†¡í•  ì „ë¬¸ì— ì¶”ê°€
 				jrRtn = commUtils.addSndData(jrRtn, jrYdMsg);
 				
 				String sYD_CARLD_PNT_WO_DT = "";
 				String sYD_CARUD_PNT_WO_DT = "";
 
-				//Â÷·®½ºÄÉÁÙÀÇ °³¼ÒÄÚµå, ¾ßµåÆ÷ÀÎÆ®, Á¤ÁöÀ§Ä¡¸¦ UDPATE ÇÑ´Ù.
-				if("E".equals(sTRN_WRK_FULLVOID_GP)) { //°øÂ÷:»óÂ÷
+				//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ì˜ ê°œì†Œì½”ë“œ, ì•¼ë“œí¬ì¸íŠ¸, ì •ì§€ìœ„ì¹˜ë¥¼ UDPATE í•œë‹¤.
+				if("E".equals(sTRN_WRK_FULLVOID_GP)) { //ê³µì°¨:ìƒì°¨
 					sSPOS_WLOC_CD 		= sWLOC_CD;
 					sYD_PNT_CD1			= sYD_PNT_CD;	
 					sYD_CARLD_STOP_LOC 	= sTO_LOC;
 					sYD_CARLD_PNT_WO_DT = currDate;
-				} else { //¿µÂ÷:ÇÏÂ÷
+				} else { //ì˜ì°¨:í•˜ì°¨
 					sARR_WLOC_CD 		= sWLOC_CD;
 					sYD_PNT_CD3			= sYD_PNT_CD;	
 					sYD_CARUD_STOP_LOC 	= sTO_LOC;
 					sYD_CARUD_PNT_WO_DT = currDate;
 				}
 				
-				//ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ ¼öÁ¤ 
-				jrParam.setField("YD_CAR_PROG_STAT"		, "");  //""ÀÌ¸é ÀÌÀü »óÅÂ À¯ÁöµÈ´Ù.
+				//ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìˆ˜ì • 
+				jrParam.setField("YD_CAR_PROG_STAT"		, "");  //""ì´ë©´ ì´ì „ ìƒíƒœ ìœ ì§€ëœë‹¤.
 				jrParam.setField("SPOS_WLOC_CD"			, sSPOS_WLOC_CD);
 				jrParam.setField("YD_CARLD_PNT_WO_DT"	, sYD_CARLD_PNT_WO_DT);
 				jrParam.setField("YD_PNT_CD1"			, sYD_PNT_CD1);
@@ -10259,7 +10259,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_PNT_CD3"			, sYD_PNT_CD3);
 				jrParam.setField("YD_CARUD_STOP_LOC"	, sYD_CARUD_STOP_LOC); 
 				jrParam.setField("YD_CAR_SCH_ID"		, sYD_CAR_SCH_ID); 
-				/* ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ »óÇÏÂ÷ Æ÷ÀÎÆ®Áö½Ã ¼öÁ¤ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchPntWo 
+				/* ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ìƒí•˜ì°¨ í¬ì¸íŠ¸ì§€ì‹œ ìˆ˜ì • -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchPntWo 
 				UPDATE USRYDA.TB_YD_CARSCH
 				SET    MOD_DDTT = SYSDATE
 				      ,MODIFIER = :V_MODIFIER
@@ -10273,9 +10273,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				      ,YD_PNT_CD3 = NVL(:V_YD_PNT_CD3,YD_PNT_CD3)
 				      ,YD_CARUD_STOP_LOC = NVL(:V_YD_CARUD_STOP_LOC,YD_CARUD_STOP_LOC)
 				WHERE  YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID   */			
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchPntWo", logId, methodNm, "Â÷·®Æ÷ÀÌÆ® Áö½Ã ¼öÁ¤");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.updMvCarSchPntWo", logId, methodNm, "ì°¨ëŸ‰í¬ì´íŠ¸ ì§€ì‹œ ìˆ˜ì •");
 				
-				//TB_YM_STACKCOL ¿¹¾àÁ¤º¸µî·Ï 
+				//TB_YM_STACKCOL ì˜ˆì•½ì •ë³´ë“±ë¡ 
 				jrParam.setField("STACK_STAT"	, "L"); 
 				jrParam.setField("CAR_CARD_NO"	, sTRN_EQP_CD);
 				jrParam.setField("STACK_COL_GP"	, sTO_LOC);
@@ -10286,9 +10286,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				      ,MODIFIER = :V_MODIFIER
 				      ,MOD_DDTT = SYSDATE
 				 WHERE STACK_COL_GP = :V_STACK_COL_GP */ 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateEquipcolStat", logId, methodNm, "TB_YM_STACKCOL ¿¹¾àÁ¤º¸µî·Ï");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateEquipcolStat", logId, methodNm, "TB_YM_STACKCOL ì˜ˆì•½ì •ë³´ë“±ë¡");
 				
-				//TB_YD_CARPOINT Æ÷ÀÎÆ®Áö½Ã ¿¹¾àÇÏ±â
+				//TB_YD_CARPOINT í¬ì¸íŠ¸ì§€ì‹œ ì˜ˆì•½í•˜ê¸°
 		        EJBConnector ejbConn1 = new EJBConnector("default","YmCommCarMvSeEJB",this);
 				ejbConn1.trx("YmCarPointinforeg", new Class[]{String.class,String.class,String.class,String.class,String.class,String.class,String.class,String.class,String.class},
 			  	             new Object[]{"3","",sTRN_EQP_CD,sTO_LOC,"","","R",logId,methodNm});
@@ -10306,15 +10306,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of trtMvCarStatSet2	
 	
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updCarFtMvMtl(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï[BSlabJspFaEJB.updCarFtMvMtl] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡[BSlabJspFaEJB.updCarFtMvMtl] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10323,81 +10323,81 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			String sSlabNo;
 			String sStockMv;
 			JDTORecordSet rsResult;
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 
 				sSlabNo = commUtils.getValue(gdReq, "STL_NO", ii);
 				
-				//ÄÚÀÏ°øÅëÀÇ Â÷°øÁ¤ÄÚµå·Î ÀÌµ¿Á¶°Ç ¼³Á¤, ¸®ÅÏ °ªÀÌ ""ÀÌ¸é ÄÚÀÏ°øÅë¿¡ Á¸ÀçÇÏÁö ¾Ê´Â ÄÚÀÏ ¹øÈ£·Î Error Ã³¸® ÇÑ´Ù.
+				//ì½”ì¼ê³µí†µì˜ ì°¨ê³µì •ì½”ë“œë¡œ ì´ë™ì¡°ê±´ ì„¤ì •, ë¦¬í„´ ê°’ì´ ""ì´ë©´ ì½”ì¼ê³µí†µì— ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì½”ì¼ ë²ˆí˜¸ë¡œ Error ì²˜ë¦¬ í•œë‹¤.
 				sStockMv	= bSlabComm.getStockMoveTerm(sSlabNo);
 				
 				if("".equals(sStockMv)) {
-					throw new Exception("SLAB°øÅë¿¡ Á¸ÀçÇÏÁö ¾Ê´Â SLAB_NO : " + sSlabNo);
+					throw new Exception("SLABê³µí†µì— ì¡´ì¬í•˜ì§€ ì•ŠëŠ” SLAB_NO : " + sSlabNo);
 				}
 				
-				//TB_YM_STOCK ¿¡ Á¸Àç ÇÏ´ÂÁö È®ÀÎ
+				//TB_YM_STOCK ì— ì¡´ì¬ í•˜ëŠ”ì§€ í™•ì¸
 				jrParam.setField("STOCK_ID"	, sSlabNo);
-				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStockInfoWcrGp", logId, methodNm, "TB_YM_STOCK¿¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©");
+				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getStockInfoWcrGp", logId, methodNm, "TB_YM_STOCKì— ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬");
 				
 				if(rsResult.size()<=0) {
 					
-					//TB_YM_STOCK ¿¡ STOCK_ID°¡ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì..
+					//TB_YM_STOCK ì— STOCK_IDê°€ ì¡´ì¬í•˜ì§€ ì•Šì„ ê²½ìš°..
 					
 					/**********************************************************
-					* 1-1-2-1. TB_YM_STOCK¿¡ STOCK_ID¸¦ ½Å±Ô»ı¼º
+					* 1-1-2-1. TB_YM_STOCKì— STOCK_IDë¥¼ ì‹ ê·œìƒì„±
 					**********************************************************/
 					jrParam.setField("STOCK_ID"			, sSlabNo );
-					jrParam.setField("STOCK_MOVE_TERM"	, sStockMv  ); //ÀúÀåÇ° ÀÌµ¿ Á¶°Ç 
+					jrParam.setField("STOCK_MOVE_TERM"	, sStockMv  ); //ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ 
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insStockInfo", logId, methodNm, "TB_YM_STOCK¿¡ STOCK_ID¸¦ ½Å±Ô»ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insStockInfo", logId, methodNm, "TB_YM_STOCKì— STOCK_IDë¥¼ ì‹ ê·œìƒì„±");
 					
 					/**********************************************************
-					* 1-1-2-2. ÀúÀåÇ°Á¦¿øÁ¤º¸(YMA8L002)  L2 ¼Û½Å
+					* 1-1-2-2. ì €ì¥í’ˆì œì›ì •ë³´(YMA8L002)  L2 ì†¡ì‹ 
 					**********************************************************/
-					jrParam.setField("STOCK_ID"			, sSlabNo ); //Àç·á¹øÈ£(SLAB¹øÈ£)
-					jrParam.setField("MSG_GP"			, "I"		 ); //Á¤º¸±¸ºĞ(I:½Å±Ô)
-					jrParam.setField("YD_INFO_SYNC_CD"	, "A"		 ); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå(A:»ı»ê½ÇÀû)
+					jrParam.setField("STOCK_ID"			, sSlabNo ); //ì¬ë£Œë²ˆí˜¸(SLABë²ˆí˜¸)
+					jrParam.setField("MSG_GP"			, "I"		 ); //ì •ë³´êµ¬ë¶„(I:ì‹ ê·œ)
+					jrParam.setField("YD_INFO_SYNC_CD"	, "A"		 ); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ(A:ìƒì‚°ì‹¤ì )
 		
 					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L002", jrParam));
 					
 				} else {
 					/**********************************************************
-					* 1-1-2-3. TB_YM_STOCKÀÇ STL_NO¿¡ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç °»½Å
+					* 1-1-2-3. TB_YM_STOCKì˜ STL_NOì— ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ ê°±ì‹ 
 					**********************************************************/
 					jrParam.setField("STOCK_ID"			, sSlabNo );
-					jrParam.setField("STOCK_MOVE_TERM"	, sStockMv  ); //ÀúÀåÇ° ÀÌµ¿ Á¶°Ç 
+					jrParam.setField("STOCK_MOVE_TERM"	, sStockMv  ); //ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ 
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKÀÇ STOCK_ID¿¡ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç °»½Å");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKì˜ STOCK_IDì— ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ ê°±ì‹ ");
 				}
 				
-				//ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦
+				//ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ
 				jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
 				jrParam.setField("STL_NO"			, commUtils.getValue(gdReq, "OLD_SSTL_NO", ii)); 
- 				/* ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
+ 				/* ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
 
 				DELETE USRYDA.TB_YD_CARFTMVMTL
 				WHERE  YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				AND    STL_NO = :V_STL_NO   
 				*/
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ");
 				
-				//ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï
+				//ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡
 				jrParam.setField("STL_NO"			, sSlabNo); 
 				jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
 				jrParam.setField("STACK_BED_GP"	    , commUtils.getValue(gdReq, "STACK_BED_GP", ii)); 
 				jrParam.setField("STACK_LAYER_GP"	, commUtils.getValue(gdReq, "STACK_LAYER_GP",ii)); 
 				jrParam.setField("MODIFIER"	        , commUtils.trim(gdReq.getParam("userid"))); 
 				//jrParam.setField("YS_STK_SEQ_NO"	, commUtils.getValue(gdReq, "YS_STK_SEQ_NO", ii)); 
-				/* ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï -- com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl 
+				/* ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡ -- com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl 
 
 				MERGE INTO TB_YD_CARFTMVMTL TM USING (
 				    SELECT STK.STOCK_ID
@@ -10415,7 +10415,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				                   ,STACK_LAYER_GP 
 				              FROM  USRYMA.TB_YM_STACKLAYER
 				              WHERE STOCK_ID = :V_STL_NO
-				                AND STACK_LAYER_STAT IN ('C','U') ) LAY --±Ç»ó´ë±â ÀûÄ¡Áß
+				                AND STACK_LAYER_STAT IN ('C','U') ) LAY --ê¶ŒìƒëŒ€ê¸° ì ì¹˜ì¤‘
 				          ,VW_YD_SLABCOMM   SLAB    
 				    WHERE  STK.STOCK_ID = :V_STL_NO
 				      AND  STK.STOCK_ID = SLAB.SLAB_NO 
@@ -10439,12 +10439,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   ,TM.HCR_GP = DD.HCR_GP
 				   ,TM.STL_PROG_CD = DD.STL_PROG_CD	 */
 				
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl", logId, methodNm, "ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl", logId, methodNm, "ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡");
 			}
 						
-			//Â÷·® ÀÛ¾÷ »óÅÂ,¸Å¼ö,ÀÛ¾÷¿Ï·á½Ã°£ update
+			//ì°¨ëŸ‰ ì‘ì—… ìƒíƒœ,ë§¤ìˆ˜,ì‘ì—…ì™„ë£Œì‹œê°„ update
 			jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarSchWrkStSlab", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ Â÷·®ÀÛ¾÷»óÅÂ ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarSchWrkStSlab", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì°¨ëŸ‰ì‘ì—…ìƒíƒœ ìˆ˜ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10458,15 +10458,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updCarFtMvMtl
 	
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord delCarFtMvMtl(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦[BSlabJspFaEJB.delCarFtMvMtl] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ[BSlabJspFaEJB.delCarFtMvMtl] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10475,29 +10475,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦
+				//ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ
 				jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
 				jrParam.setField("STL_NO"			, commUtils.getValue(gdReq, "OLD_SSTL_NO", ii)); 
- 				/* ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
+ 				/* ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
 
 				DELETE USRYDA.TB_YD_CARFTMVMTL
 				WHERE  YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				AND    STL_NO = :V_STL_NO   
 				*/
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ");
 			}
 			
 			
-			//Â÷·® ÀÛ¾÷ »óÅÂ,¸Å¼ö,ÀÛ¾÷¿Ï·á½Ã°£ update
+			//ì°¨ëŸ‰ ì‘ì—… ìƒíƒœ,ë§¤ìˆ˜,ì‘ì—…ì™„ë£Œì‹œê°„ update
 			jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarSchWrkStSlab", logId, methodNm, "ÀÌ¼ÛÂ÷·®½ºÄÉÁÙ Â÷·®ÀÛ¾÷»óÅÂ ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarSchWrkStSlab", logId, methodNm, "ì´ì†¡ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì°¨ëŸ‰ì‘ì—…ìƒíƒœ ìˆ˜ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10511,15 +10511,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of delCarFtMvMtl
 	
 	/**
-	 * ÀÌ¼ÛÀÛ¾÷Àç·áÀ§Ä¡º¯°æ
+	 * ì´ì†¡ì‘ì—…ì¬ë£Œìœ„ì¹˜ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord chgCarFtMvMtl(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌ¼ÛÀÛ¾÷Àç·áÀ§Ä¡º¯°æ[BSlabJspFaEJB.chgCarFtMvMtl] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ì†¡ì‘ì—…ì¬ë£Œìœ„ì¹˜ë³€ê²½[BSlabJspFaEJB.chgCarFtMvMtl] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10528,27 +10528,27 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦
+				//ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ
 				jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
 				jrParam.setField("STL_NO"			, commUtils.getValue(gdReq, "STL_NO", ii)); 
-				/* ÀÌ¼ÛÀÛ¾÷Àç·á»èÁ¦ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
+				/* ì´ì†¡ì‘ì—…ì¬ë£Œì‚­ì œ -- com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl 
 
 				DELETE USRYDA.TB_YD_CARFTMVMTL
 				WHERE  YD_CAR_SCH_ID = :V_YD_CAR_SCH_ID
 				AND    STL_NO = :V_STL_NO   
 				*/
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ÀÌ¼ÛÀÛ¾÷Àç·áÀ§Ä¡º¯°æ");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcoil.dao.BCoilDAO.delCarFtMvMtl", logId, methodNm, "ì´ì†¡ì‘ì—…ì¬ë£Œìœ„ì¹˜ë³€ê²½");
 			}
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				//ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï
+				//ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡
 				jrParam.setField("STL_NO"			, commUtils.getValue(gdReq, "OLD_SSTL_NO", ii)); 
 				jrParam.setField("YD_CAR_SCH_ID"	, commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"))); 
 				jrParam.setField("STACK_BED_GP"  	, commUtils.getValue(gdReq, "STACK_BED_GP", ii)); 
@@ -10556,7 +10556,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				//jrParam.setField("YS_STK_SEQ_NO"	, commUtils.getValue(gdReq, "YS_STK_SEQ_NO", ii)); 
 				jrParam.setField("MODIFIER"	        , commUtils.trim(gdReq.getParam("userid"))); 
 				//jrParam.setField("YS_STK_SEQ_NO"	, commUtils.getValue(gdReq, "YS_STK_SEQ_NO", ii)); 
-				/* ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï -- com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl 
+				/* ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡ -- com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl 
 
 				MERGE INTO TB_YD_CARFTMVMTL TM USING (
 				    SELECT STK.STOCK_ID
@@ -10574,7 +10574,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				                   ,STACK_LAYER_GP 
 				              FROM  USRYMA.TB_YM_STACKLAYER
 				              WHERE STOCK_ID = :V_STL_NO
-				                AND STACK_LAYER_STAT IN ('C','U') ) LAY --±Ç»ó´ë±â ÀûÄ¡Áß
+				                AND STACK_LAYER_STAT IN ('C','U') ) LAY --ê¶ŒìƒëŒ€ê¸° ì ì¹˜ì¤‘
 				          ,VW_YD_SLABCOMM   SLAB    
 				    WHERE  STK.STOCK_ID = :V_STL_NO
 				      AND  STK.STOCK_ID = SLAB.SLAB_NO 
@@ -10598,7 +10598,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   ,TM.HCR_GP = DD.HCR_GP
 				   ,TM.STL_PROG_CD = DD.STL_PROG_CD	 */
 				
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl", logId, methodNm, "ÀÌ¼ÛÀÛ¾÷Àç·áµî·Ï");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updCarFtMvMtl", logId, methodNm, "ì´ì†¡ì‘ì—…ì¬ë£Œë“±ë¡");
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -10613,15 +10613,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of chgCarFtMvMtl	
 	
 	/**
-	 * ÇÏÂ÷¹é¾÷»ı¼º
+	 * í•˜ì°¨ë°±ì—…ìƒì„±
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord mkUdCarSch(GridData gdReq) throws DAOException {
-		String methodNm = "ÇÏÂ÷¹é¾÷»ı¼º[BSlabJspFaEJB.mkUdCarSch] < " + gdReq.getNavigateValue();
+		String methodNm = "í•˜ì°¨ë°±ì—…ìƒì„±[BSlabJspFaEJB.mkUdCarSch] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10630,22 +10630,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			jrParam.setField("YD_CAR_SCH_ID"		, commDao.getSeqId(logId, methodNm, "CarSch")); //¾ßµåÂ÷·®½ºÄÉÁìID
-			jrParam.setField("YD_CAR_PROG_STAT"		, "5"							); //Â÷·®ÁøÇà»óÅÂ (5:»óÂ÷¿Ï·á)
-			jrParam.setField("YD_CAR_USE_GP"		, "L"							); //¾ßµåÂ÷·®»ç¿ë±¸ºĞ (L:±¸³»¿î¼Û, G:ÃâÇÏÂ÷·® )
-			jrParam.setField("YD_EQP_WRK_STAT"		, "L"							); //¾ßµå¼³ºñÀÛ¾÷»óÅÂ (L:¿µÂ÷, U:°øÂ÷)
-			jrParam.setField("SPOS_WLOC_CD"			, gdReq.getParam("SPOS_WLOC_CD")); //¹ßÁö°³¼ÒÄÚµå(»óÂ÷Áö)
-			jrParam.setField("ARR_WLOC_CD"			, gdReq.getParam("ARR_WLOC_CD")	); //ÂøÁö°³¼ÒÄÚµå(ÇÏÂ÷Áö)
-			jrParam.setField("YD_PNT_CD"			, ""							); //¾ßµå»óÂ÷Æ÷ÀÎÆ®ÄÚµå(¹ßÁö)
-			jrParam.setField("YD_CARLD_WRK_BOOK_ID"	, ""							); //¾ßµå»óÂ÷ÀÛ¾÷¿¹¾àID
-			jrParam.setField("YD_CARLD_STOP_LOC"	, ""							); //¾ßµåÇÏÂ÷Á¤ÁöÀ§Ä¡
-			jrParam.setField("TRN_EQP_CD"			, gdReq.getParam("TRN_EQP_CD")	); //¿î¼ÛÀåºñÄÚµå
-			jrParam.setField("CAR_KIND"				, gdReq.getParam("TRN_EQP_CD").substring(1, 3)		); //TR,PT ±¸ºĞ
+			jrParam.setField("YD_CAR_SCH_ID"		, commDao.getSeqId(logId, methodNm, "CarSch")); //ì•¼ë“œì°¨ëŸ‰ìŠ¤ì¼€ì¥´ID
+			jrParam.setField("YD_CAR_PROG_STAT"		, "5"							); //ì°¨ëŸ‰ì§„í–‰ìƒíƒœ (5:ìƒì°¨ì™„ë£Œ)
+			jrParam.setField("YD_CAR_USE_GP"		, "L"							); //ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ (L:êµ¬ë‚´ìš´ì†¡, G:ì¶œí•˜ì°¨ëŸ‰ )
+			jrParam.setField("YD_EQP_WRK_STAT"		, "L"							); //ì•¼ë“œì„¤ë¹„ì‘ì—…ìƒíƒœ (L:ì˜ì°¨, U:ê³µì°¨)
+			jrParam.setField("SPOS_WLOC_CD"			, gdReq.getParam("SPOS_WLOC_CD")); //ë°œì§€ê°œì†Œì½”ë“œ(ìƒì°¨ì§€)
+			jrParam.setField("ARR_WLOC_CD"			, gdReq.getParam("ARR_WLOC_CD")	); //ì°©ì§€ê°œì†Œì½”ë“œ(í•˜ì°¨ì§€)
+			jrParam.setField("YD_PNT_CD"			, ""							); //ì•¼ë“œìƒì°¨í¬ì¸íŠ¸ì½”ë“œ(ë°œì§€)
+			jrParam.setField("YD_CARLD_WRK_BOOK_ID"	, ""							); //ì•¼ë“œìƒì°¨ì‘ì—…ì˜ˆì•½ID
+			jrParam.setField("YD_CARLD_STOP_LOC"	, ""							); //ì•¼ë“œí•˜ì°¨ì •ì§€ìœ„ì¹˜
+			jrParam.setField("TRN_EQP_CD"			, gdReq.getParam("TRN_EQP_CD")	); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+			jrParam.setField("CAR_KIND"				, gdReq.getParam("TRN_EQP_CD").substring(1, 3)		); //TR,PT êµ¬ë¶„
 			
-			commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insCarSchLd", logId, methodNm, "Â÷·®½ºÄÉÁì »óÂ÷¿Ï·á(5)·Î INSERT ");
+			commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insCarSchLd", logId, methodNm, "ì°¨ëŸ‰ìŠ¤ì¼€ì¥´ ìƒì°¨ì™„ë£Œ(5)ë¡œ INSERT ");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10658,15 +10658,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of mkUdCarSch		
 	
 	/**
-	 * PalletÁ¶È¸ (C) ¸ñÀûµ¿º¯°æ
+	 * Palletì¡°íšŒ (C) ëª©ì ë™ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updDestBay(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (C) ¸ñÀûµ¿º¯°æ[BSlabJspSeEJB.updDestBay] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (C) ëª©ì ë™ë³€ê²½[BSlabJspSeEJB.updDestBay] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10675,13 +10675,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("YD_STK_COL_GP"	, gdReq.getParam("YD_STK_COL_GP"));
 			jrParam.setField("YD_STKBED_USG_CD"	, gdReq.getParam("YD_STKBED_USG_CD")); 
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateListTargetDong", logId, methodNm, "PalletÁ¶È¸ (C) ¸ñÀûµ¿º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateListTargetDong", logId, methodNm, "Palletì¡°íšŒ (C) ëª©ì ë™ë³€ê²½");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10694,15 +10694,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updDestBay
 	
 	/**
-	 * ¾ßµå±âÁØ º¯°æ1
+	 * ì•¼ë“œê¸°ì¤€ ë³€ê²½1
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updYmRuleDtlItm1(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµå±âÁØ º¯°æ1[BSlabJspSeEJB.updYmRuleDtlItm1] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œê¸°ì¤€ ë³€ê²½1[BSlabJspSeEJB.updYmRuleDtlItm1] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10711,7 +10711,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("REPR_CD_GP"	, gdReq.getParam("REPR_CD_GP") );
@@ -10719,7 +10719,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			jrParam.setField("ITEM"			, gdReq.getParam("ITEM"));
 			jrParam.setField("DTL_ITM1"		, gdReq.getParam("DTL_ITM1"));
 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRuleNvl", logId, methodNm, "TB_YM_RULE ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRuleNvl", logId, methodNm, "TB_YM_RULE ìˆ˜ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10732,15 +10732,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updYmRuleDtlItm1
 	
 	/**
-	 * ½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤
+	 * ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSchRuleMultiYn(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµå±âÁØ º¯°æ1[BSlabJspSeEJB.updSchRuleMultiYn] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œê¸°ì¤€ ë³€ê²½1[BSlabJspSeEJB.updSchRuleMultiYn] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10749,7 +10749,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("YD_MULTI_WRK_YN"	, gdReq.getParam("YD_MULTI_WRK_YN") );
@@ -10764,7 +10764,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,YD_WRK_CRN = :V_YD_WRK_CRN
 			      ,YD_ALT_CRN = :V_YD_ALT_CRN
 			 WHERE YD_SCH_CD = :V_YD_SCH_CD */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleMultiYn", logId, methodNm, "½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleMultiYn", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -10777,16 +10777,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSchRuleMultiYn			
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿2 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™2 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 *		@ejb.transaction type="RequiresNew"
 	*/
 	public JDTORecord procCrnSchStart2(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿2 [BSlabJspSeEJB.procCrnSchStart2] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™2 [BSlabJspSeEJB.procCrnSchStart2] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -10794,9 +10794,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			//Return Value
 			//JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 			
@@ -10820,7 +10820,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			String sCHARGE_LOT_NO_DIV_YN = commUtils.nvl(gdReq.getParam("CHARGE_LOT_NO_DIV_YN"),"Y");
 			String sYD_CAR_SCH_ID = commUtils.trim(gdReq.getParam("YD_CAR_SCH_ID"));
-			String sDIST_SHIPASSIGN_GP   = commUtils.nvl(gdReq.getParam("DIST_SHIPASSIGN_GP"),""); //»ó´Ü1¸Å ½ºÄÉÁÙ ±âµ¿ ÀÎÁö ÆÇ´ÜÇÏ±â À§Èù ÆÄ¶ó¸ŞÅÍ
+			String sDIST_SHIPASSIGN_GP   = commUtils.nvl(gdReq.getParam("DIST_SHIPASSIGN_GP"),""); //ìƒë‹¨1ë§¤ ìŠ¤ì¼€ì¤„ ê¸°ë™ ì¸ì§€ íŒë‹¨í•˜ê¸° ìœ„íŒ íŒŒë¼ë©”í„°
 			
 	    	int iWbook_ID_Cnt = 0;
 	    	int iWbook_NOID_Cnt = 0;
@@ -10842,10 +10842,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				jrCrnSchMsg.setField("SCH_CNT" , "0");
 				
-				//½ºÄÉÁÙÄÚµå »ı¼º  - ÀÌ¼ÛÇÏÂ÷(L)
+				//ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±  - ì´ì†¡í•˜ì°¨(L)
 				sSchCode = s_STACK_YD_GP + s_STACK_BAY_GP + "PT02LM";
 				
-				//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+				//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 				jrParam.setField("YD_SCH_CD", sSchCode);
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 				SELECT YD_SCH_CD
@@ -10856,19 +10856,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				*/   
-				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 		    	
 				if (rsResult2 != null && rsResult2.size() > 0) {
-					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ
+					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€
 				} else {
-					throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sSchCode + "]");
+					throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sSchCode + "]");
 				}			
 				
 				if("Y".equals(sYD_MULTI_WRK_YN)) {
-					//jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-					sYD_SCH_ST_GP = "N"; //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+					//jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+					sYD_SCH_ST_GP = "N"; //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 					if("A".equals(s_STACK_BAY_GP)) {
 						if("2ACRA1".equals(sYD_WRK_CRN)) {
 							sYD_WRK_PLAN_CRN = "2ACRA1";
@@ -10891,7 +10891,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 					
 				} else {
-					sYD_SCH_ST_GP = "A"; //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+					sYD_SCH_ST_GP = "A"; //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 					sYD_WRK_PLAN_CRN = sYD_WRK_CRN;
 					sYD_WRK_PLAN_CRN2 = "";
 				}
@@ -10906,12 +10906,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 				
 				if(iWbook_NOID_Cnt == rowCnt) {
-					//ÀÛ¾÷¿¹¾àÀÌ ¾ø´Â °æ¿ì.. ÀÛ¾÷¿¹¾à »ı¼º ÈÄ ½ºÄÉÁÙ È£Ãâ
+					//ì‘ì—…ì˜ˆì•½ì´ ì—†ëŠ” ê²½ìš°.. ì‘ì—…ì˜ˆì•½ ìƒì„± í›„ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ
 					
 						
 					//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 					//------------------------------------------------------------------------------------------------------------------------
-					//ÀÛ¾÷¿¹¾à ½½¶óºê ´ÜÀ§·Î »ı¼º
+					//ì‘ì—…ì˜ˆì•½ ìŠ¬ë¼ë¸Œ ë‹¨ìœ„ë¡œ ìƒì„±
 					
 					iWbook_ID_Cnt = 0;
 					
@@ -10923,7 +10923,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 						if("".equals(sYD_WBOOK_ID)) {
 							
-							//ÀÛ¾÷¿¹¾àID»ı¼º
+							//ì‘ì—…ì˜ˆì•½IDìƒì„±
 							sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 							iWbook_ID_Cnt++;
 							
@@ -10931,36 +10931,36 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							jrCrnSchMsg.setField("SCH_CNT" , Integer.toString(iWbook_ID_Cnt));
 							
 							/**********************************************************
-							* 1-1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+							* 1-1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 							**********************************************************/
 							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 							jrParam.setField("YD_GP"				, s_STACK_YD_GP);
 							jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP);
-							jrParam.setField("YD_SCH_CD"			, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
-							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-							jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-							jrParam.setField("YD_SCH_REQ_GP"		, "C"); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ C:¿µÂ÷Â÷·®µµÂø, F:°øÂ÷Â÷·®µµÂø
-							jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-							jrParam.setField("YD_CAR_USE_GP"		, "L"); //¾ßµåÂ÷·®»ç¿ë±¸ºĞ L:±¸³»¿î¼Û
-							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+							jrParam.setField("YD_SCH_CD"			, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+							jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+							jrParam.setField("YD_SCH_REQ_GP"		, "C"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„ C:ì˜ì°¨ì°¨ëŸ‰ë„ì°©, F:ê³µì°¨ì°¨ëŸ‰ë„ì°©
+							jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+							jrParam.setField("YD_CAR_USE_GP"		, "L"); //ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ L:êµ¬ë‚´ìš´ì†¡
+							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 							jrParam.setField("YD_TO_LOC_GUIDE"		, sYD_TO_LOC_GUIDE);
 							
 							if(!"".equals(sCHANGE_CRN)) {
-								jrParam.setField("YD_SCH_ST_GP"			, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
-							jrParam.setField("DIST_SHIPASSIGN_GP"	, sDIST_SHIPASSIGN_GP); //»ó´Ü 1¸Å ½ºÄÉÁÙ ±âµ¿
+							jrParam.setField("DIST_SHIPASSIGN_GP"	, sDIST_SHIPASSIGN_GP); //ìƒë‹¨ 1ë§¤ ìŠ¤ì¼€ì¤„ ê¸°ë™
 							
-							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 							//bSlabComm.insWrkBook(jrParam);
 							
 							/**********************************************************
-							* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+							* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 							**********************************************************/
 							jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 							jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "STOCK_ID", ii));
@@ -10969,7 +10969,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							jrParam.setField("STACK_LAYER_GP"	, commUtils.getValue(gdReq, "STACK_LAYER_GP", ii));
 							
 							
-							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 							//bSlabComm.insWrkBookMtl(jrParam);
 						}
 						
@@ -10980,7 +10980,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					
 				} else if(iWbook_ID_Cnt == rowCnt) {
-					//ÀÛ¾÷¿¹¾àÀÌ ÀÌ¹Ì Á¸ÀçÇÏ´Â °æ¿ì.. ±âÁ¸ÀÛ¾÷¿¹¾àÀ¸·Î ½ºÄÉÁÙ È£Ãâ
+					//ì‘ì—…ì˜ˆì•½ì´ ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ê²½ìš°.. ê¸°ì¡´ì‘ì—…ì˜ˆì•½ìœ¼ë¡œ ìŠ¤ì¼€ì¤„ í˜¸ì¶œ
 					
 					sYD_WBOOK_ID = "";
 					iWbook_ID_Cnt = 0;
@@ -11021,26 +11021,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							}
 							
 							/**********************************************************
-							* ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) ¼öÁ¤
+							* ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìˆ˜ì •
 							**********************************************************/
-							jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //µ¿±¸ºĞ
-							jrParam.setField("YD_SCH_CD"			, sSchCode		); //½ºÄÉÁÙÄÚµå
-							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ÀÛ¾÷¿¹¾àID
-							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+							jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //ë™êµ¬ë¶„
+							jrParam.setField("YD_SCH_CD"			, sSchCode		); //ìŠ¤ì¼€ì¤„ì½”ë“œ
+							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ì‘ì—…ì˜ˆì•½ID
+							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 							jrParam.setField("YD_TO_LOC_GUIDE"		, commUtils.getValue(gdReq, "MTL_YD_TO_LOC_GUIDE", ii));
 							if(!"".equals(sCHANGE_CRN)) {
-								jrParam.setField("YD_SCH_ST_GP"			, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
-							jrParam.setField("DIST_SHIPASSIGN_GP"	, sDIST_SHIPASSIGN_GP); //»ó´Ü 1¸Å ½ºÄÉÁÙ ±âµ¿
+							jrParam.setField("DIST_SHIPASSIGN_GP"	, sDIST_SHIPASSIGN_GP); //ìƒë‹¨ 1ë§¤ ìŠ¤ì¼€ì¤„ ê¸°ë™
 							/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook
-							--ÀÛ¾÷¿¹¾à Å©·¹ÀÎ º¯°æ,Multi ÀÛ¾÷
+							--ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ ë³€ê²½,Multi ì‘ì—…
 							UPDATE TB_YM_WRKBOOK
 							   SET MODIFIER = :V_MODIFIER
 							      ,MOD_DDTT = SYSDATE
@@ -11055,20 +11055,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							      ,DIST_SHIPASSIGN_GP = NVL(:V_DIST_SHIPASSIGN_GP,DIST_SHIPASSIGN_GP)
 							   
 							 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID    */
-							commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) º¯°æ");				
+							commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ë³€ê²½");				
 						}
 					}
 					
-					//Å©·¹ÀÎ ½ºÄÉÁÙ ±âµ¿ YMYMJ203 È£Ãâ
+					//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ê¸°ë™ YMYMJ203 í˜¸ì¶œ
 					jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ203"); 
-					jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã	
-					jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //¾ßµå½ºÄÉÁìÄÚµå
-					jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //¾ßµå¼³ºñID
+					jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ	
+					jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //ì•¼ë“œì„¤ë¹„ID
 					
 					//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);
 					
 				} else {
-					throw new Exception("ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏ´Â Àç·á¹øÈ£¿Í ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏÁö ¾Ê´Â Àç·á¹øÈ£¸¦ µ¿½Ã¿¡ ½ºÄÉÁÙ ±âµ¿ ½ÃÅ³ ¼ö ¾ø½À´Ï´Ù!!");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ëŠ” ì¬ë£Œë²ˆí˜¸ì™€ ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì¬ë£Œë²ˆí˜¸ë¥¼ ë™ì‹œì— ìŠ¤ì¼€ì¤„ ê¸°ë™ ì‹œí‚¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!");
 				}
 				
 			}
@@ -11085,16 +11085,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of procCrnSchStart2
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿2 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™2 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 *		@ejb.transaction type="RequiresNew"
 	*/
 	public JDTORecord procCrnSchStart2_save(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿2 [BSlabJspSeEJB.procCrnSchStart2] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™2 [BSlabJspSeEJB.procCrnSchStart2] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -11102,9 +11102,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			//Return Value
 			//JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 			
@@ -11148,10 +11148,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				jrCrnSchMsg.setField("SCH_CNT" , "0");
 				
-				//½ºÄÉÁÙÄÚµå »ı¼º  - ÀÌ¼ÛÇÏÂ÷(L)
+				//ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±  - ì´ì†¡í•˜ì°¨(L)
 				sSchCode = s_STACK_YD_GP + s_STACK_BAY_GP + "PT02LM";
 				
-				//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+				//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 				jrParam.setField("YD_SCH_CD", sSchCode);
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 				SELECT YD_SCH_CD
@@ -11162,19 +11162,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				*/   
-				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 		    	
 				if (rsResult2 != null && rsResult2.size() > 0) {
-					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ
+					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€
 				} else {
-					throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sSchCode + "]");
+					throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sSchCode + "]");
 				}			
 				
 				if("Y".equals(sYD_MULTI_WRK_YN)) {
-					//jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-					sYD_SCH_ST_GP = "N"; //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+					//jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+					sYD_SCH_ST_GP = "N"; //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 					if("A".equals(s_STACK_BAY_GP)) {
 						if("2ACRA1".equals(sYD_WRK_CRN)) {
 							sYD_WRK_PLAN_CRN = "2ACRA1";
@@ -11197,7 +11197,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					}
 					
 				} else {
-					sYD_SCH_ST_GP = "A"; //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+					sYD_SCH_ST_GP = "A"; //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 					sYD_WRK_PLAN_CRN = sYD_WRK_CRN;
 					sYD_WRK_PLAN_CRN2 = "";
 				}
@@ -11214,7 +11214,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				if(iWbook_NOID_Cnt == rowCnt) {
 					
 					/**********************************************************
-					* Å©·¹ÀÎ ½ºÄÉÁÙ GROUPING È£Ãâ
+					* í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ GROUPING í˜¸ì¶œ
 					**********************************************************/
 					JDTORecord jrParamSet			= JDTORecordFactory.getInstance().create();
 					
@@ -11228,7 +11228,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					JDTORecordSet rsHandlingCntSpec = (JDTORecordSet)ejbConn.trx("CrnSchGrpPT",new Class[]{String.class, String.class, JDTORecord.class},new Object[]{ logId, methodNm, jrParamSet });			
 					
 					if(rsHandlingCntSpec.size() > 0) {
-						//½Å±Ô ¸ğµâ - ½ºÄÉÁÙÀÛ¾÷´ÜÀ§·Î ÀÛ¾÷¿¹¾à »ı¼º
+						//ì‹ ê·œ ëª¨ë“ˆ - ìŠ¤ì¼€ì¤„ì‘ì—…ë‹¨ìœ„ë¡œ ì‘ì—…ì˜ˆì•½ ìƒì„±
 						
 						String sHANDLING_CNT_SPEC_OLD = "0";
 						String sHANDLING_CNT_SPEC;
@@ -11258,7 +11258,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 								
 								if("".equals(sYD_WBOOK_ID)) {
 									
-									//ÀÛ¾÷¿¹¾àID»ı¼º
+									//ì‘ì—…ì˜ˆì•½IDìƒì„±
 									sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 									iWbook_ID_Cnt++;
 									
@@ -11268,35 +11268,35 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 									sHANDLING_CNT_SPEC_OLD = sHANDLING_CNT_SPEC;
 									
 									/**********************************************************
-									* 1-1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+									* 1-1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 									**********************************************************/
 									jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 									jrParam.setField("YD_GP"				, s_STACK_YD_GP);
 									jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP);
-									jrParam.setField("YD_SCH_CD"			, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
-									jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-									jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-									jrParam.setField("YD_SCH_REQ_GP"		, "C"); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ C:¿µÂ÷Â÷·®µµÂø, F:°øÂ÷Â÷·®µµÂø
-									jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-									jrParam.setField("YD_CAR_USE_GP"		, "L"); //¾ßµåÂ÷·®»ç¿ë±¸ºĞ L:±¸³»¿î¼Û
-									jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+									jrParam.setField("YD_SCH_CD"			, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+									jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+									jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+									jrParam.setField("YD_SCH_REQ_GP"		, "C"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„ C:ì˜ì°¨ì°¨ëŸ‰ë„ì°©, F:ê³µì°¨ì°¨ëŸ‰ë„ì°©
+									jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+									jrParam.setField("YD_CAR_USE_GP"		, "L"); //ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ L:êµ¬ë‚´ìš´ì†¡
+									jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 									jrParam.setField("YD_TO_LOC_GUIDE"		, sYD_TO_LOC_GUIDE);
 									
 									if(!"".equals(sCHANGE_CRN)) {
-										jrParam.setField("YD_SCH_ST_GP"			, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-										jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-										jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+										jrParam.setField("YD_SCH_ST_GP"			, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+										jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+										jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 									} else {
-										jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-										jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-										jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+										jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+										jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+										jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 									}
 									
-									commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+									commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 									//bSlabComm.insWrkBook(jrParam);
 									
 									/**********************************************************
-									* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+									* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 									**********************************************************/
 									jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 									jrParam.setField("STOCK_ID"			, commUtils.trim(rsHandlingCntSpec.getRecord(jj).getFieldString("STOCK_ID")));
@@ -11304,14 +11304,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 									jrParam.setField("STACK_BED_GP"		, "01");
 									jrParam.setField("STACK_LAYER_GP"	, commUtils.trim(rsHandlingCntSpec.getRecord(jj).getFieldString("STACK_LAYER_GP")));
 									
-									commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+									commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 									//bSlabComm.insWrkBookMtl(jrParam);
 								}
 								
 							} else {
 								
 								/**********************************************************
-								* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+								* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 								**********************************************************/
 								jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 								jrParam.setField("STOCK_ID"			, commUtils.trim(rsHandlingCntSpec.getRecord(jj).getFieldString("STOCK_ID")));
@@ -11319,61 +11319,61 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 								jrParam.setField("STACK_BED_GP"		, "01");
 								jrParam.setField("STACK_LAYER_GP"	, commUtils.trim(rsHandlingCntSpec.getRecord(jj).getFieldString("STACK_LAYER_GP")));
 								
-								commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+								commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 								//bSlabComm.insWrkBookMtl(jrParam);
 							}
 						}						
 						
-						//Å©·¹ÀÎ ½ºÄÉÁÙ ±âµ¿ YMYMJ203 È£Ãâ
+						//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ê¸°ë™ YMYMJ203 í˜¸ì¶œ
 						jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ203"); 
-						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã	
-						jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //¾ßµå½ºÄÉÁìÄÚµå
-						jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //¾ßµå¼³ºñID
+						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ	
+						jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //ì•¼ë“œì„¤ë¹„ID
 						
 						//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);
 						
 					} else {
-						//±âÁ¸ ¸ğµâ - ÇÑ°³ÀÇ ÀÛ¾÷¿¹¾à »ı¼º
+						//ê¸°ì¡´ ëª¨ë“ˆ - í•œê°œì˜ ì‘ì—…ì˜ˆì•½ ìƒì„±
 						
 						sYD_TO_LOC_GUIDE = commUtils.getValue(gdReq, "MTL_YD_TO_LOC_GUIDE", 0);
 						sCHANGE_CRN = commUtils.getValue(gdReq, "CHANGE_CRN", 0);
 						
-						//ÀÛ¾÷¿¹¾àID»ı¼º
+						//ì‘ì—…ì˜ˆì•½IDìƒì„±
 						sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 						
 						/**********************************************************
-						* 1-1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+						* 1-1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 						**********************************************************/
 						jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 						jrParam.setField("YD_GP"				, s_STACK_YD_GP);
 						jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP);
-						jrParam.setField("YD_SCH_CD"			, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
-						jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-						jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-						jrParam.setField("YD_SCH_REQ_GP"		, "C"); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ C:¿µÂ÷Â÷·®µµÂø, F:°øÂ÷Â÷·®µµÂø
-						jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-						jrParam.setField("YD_CAR_USE_GP"		, "L"); //¾ßµåÂ÷·®»ç¿ë±¸ºĞ L:±¸³»¿î¼Û
-						jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+						jrParam.setField("YD_SCH_CD"			, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+						jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+						jrParam.setField("YD_SCH_REQ_GP"		, "C"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„ C:ì˜ì°¨ì°¨ëŸ‰ë„ì°©, F:ê³µì°¨ì°¨ëŸ‰ë„ì°©
+						jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+						jrParam.setField("YD_CAR_USE_GP"		, "L"); //ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ L:êµ¬ë‚´ìš´ì†¡
+						jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 						jrParam.setField("YD_TO_LOC_GUIDE"		, sYD_TO_LOC_GUIDE);
 						
 						if(!"".equals(sCHANGE_CRN)) {
-							jrParam.setField("YD_SCH_ST_GP"			, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-							jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_SCH_ST_GP"			, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+							jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else {
-							jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-							jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+							jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 						
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 						//bSlabComm.insWrkBook(jrParam);
 						
-						//ÇÏÂ÷´ë»ó °¹¼ö ¸¸Å­ Looping...
+						//í•˜ì°¨ëŒ€ìƒ ê°¯ìˆ˜ ë§Œí¼ Looping...
 						for(int ii = 0; ii < rowCnt; ii++) {
 							
 							/**********************************************************
-							* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+							* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 							**********************************************************/
 							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 							jrParam.setField("STOCK_ID"				, commUtils.getValue(gdReq, "STOCK_ID", ii));
@@ -11382,17 +11382,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							jrParam.setField("STACK_LAYER_GP"		, commUtils.getValue(gdReq, "STACK_LAYER_GP", ii));
 							//jrParam.setField("MTL_YD_TO_LOC_GUIDE"	, commUtils.getValue(gdReq, "MTL_YD_TO_LOC_GUIDE", ii));
 							
-							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+							commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 							//bSlabComm.insWrkBookMtl(jrParam);
 						}
 						
-						//Å©·¹ÀÎ ½ºÄÉÁÙ ±âµ¿ YMYMJ203 È£Ãâ
+						//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ê¸°ë™ YMYMJ203 í˜¸ì¶œ
 						jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ203"); 
-						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã	
-						jrCrnSchMsg.setField("YD_WBOOK_ID1"  		, sYD_WBOOK_ID); //ÀÛ¾÷¿¹¾àID
+						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ	
+						jrCrnSchMsg.setField("YD_WBOOK_ID1"  		, sYD_WBOOK_ID); //ì‘ì—…ì˜ˆì•½ID
 						jrCrnSchMsg.setField("SCH_CNT"  			, "1"); 
-						jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //¾ßµå½ºÄÉÁìÄÚµå
-						jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //¾ßµå¼³ºñID
+						jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //ì•¼ë“œì„¤ë¹„ID
 						
 						//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);
 						
@@ -11439,26 +11439,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							}
 							
 							/**********************************************************
-							* ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) ¼öÁ¤
+							* ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìˆ˜ì •
 							**********************************************************/
-							jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //µ¿±¸ºĞ
-							jrParam.setField("YD_SCH_CD"			, sSchCode		); //½ºÄÉÁÙÄÚµå
-							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ÀÛ¾÷¿¹¾àID
-							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+							jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //ë™êµ¬ë¶„
+							jrParam.setField("YD_SCH_CD"			, sSchCode		); //ìŠ¤ì¼€ì¤„ì½”ë“œ
+							jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+							jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ì‘ì—…ì˜ˆì•½ID
+							jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 							jrParam.setField("YD_TO_LOC_GUIDE"		, commUtils.getValue(gdReq, "MTL_YD_TO_LOC_GUIDE", ii));
 							if(!"".equals(sCHANGE_CRN)) {
-								jrParam.setField("YD_SCH_ST_GP"			, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_SCH_ST_GP"			, sYD_SCH_ST_GP); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+								jrParam.setField("YD_WRK_PLAN_CRN"		, sYD_WRK_PLAN_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"		, sYD_WRK_PLAN_CRN2); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
 							
 							/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook
-							--ÀÛ¾÷¿¹¾à Å©·¹ÀÎ º¯°æ,Multi ÀÛ¾÷
+							--ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ ë³€ê²½,Multi ì‘ì—…
 							UPDATE TB_YM_WRKBOOK
 							   SET MODIFIER = :V_MODIFIER
 							      ,MOD_DDTT = SYSDATE
@@ -11472,20 +11472,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 							      ,YD_TO_LOC_GUIDE = :V_YD_TO_LOC_GUIDE
 							   
 							 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID   */
-							commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) º¯°æ");				
+							commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ë³€ê²½");				
 						}
 					}
 					
-					//Å©·¹ÀÎ ½ºÄÉÁÙ ±âµ¿ YMYMJ203 È£Ãâ
+					//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ ê¸°ë™ YMYMJ203 í˜¸ì¶œ
 					jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ203"); 
-					jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã	
-					jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //¾ßµå½ºÄÉÁìÄÚµå
-					jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //¾ßµå¼³ºñID
+					jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ	
+					jrCrnSchMsg.setField("YD_SCH_CD"  			, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrCrnSchMsg.setField("YD_EQP_ID"  			, ""); //ì•¼ë“œì„¤ë¹„ID
 					
 					//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);
 					
 				} else {
-					throw new Exception("ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏ´Â Àç·á¹øÈ£¿Í ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏÁö ¾Ê´Â Àç·á¹øÈ£¸¦ µ¿½Ã¿¡ ½ºÄÉÁÙ ±âµ¿ ½ÃÅ³ ¼ö ¾ø½À´Ï´Ù!!");
+					throw new Exception("ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ëŠ” ì¬ë£Œë²ˆí˜¸ì™€ ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì¬ë£Œë²ˆí˜¸ë¥¼ ë™ì‹œì— ìŠ¤ì¼€ì¤„ ê¸°ë™ ì‹œí‚¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!");
 				}
 				
 			}
@@ -11502,16 +11502,16 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of procCrnSchStart2_save	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	 *		@ejb.transaction type="RequiresNew"
 	*/
 	public JDTORecord procCrnSchStart(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (B) - ½ºÄÉÁÙ±âµ¿ [BSlabJspSeEJB.procCrnSchStart] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (B) - ìŠ¤ì¼€ì¤„ê¸°ë™ [BSlabJspSeEJB.procCrnSchStart] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -11519,9 +11519,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			//Return Value
 			JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			JDTORecordSet rsResult  = null;
@@ -11557,12 +11557,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				commUtils.printLog(logId, "=======:::: TRN_EQP_CD : " +  szTRN_EQP_CD , "SL");
 				commUtils.printLog(logId, "=======:::: CHANGE_CRN : " +  sCHANGE_CRN , "SL");
 				
-				//½ºÄÉÁÙÄÚµå »ı¼º  - ÀÌ¼ÛÇÏÂ÷(L)
+				//ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±  - ì´ì†¡í•˜ì°¨(L)
 				sSchCode = s_STACK_YD_GP + s_STACK_BAY_GP + "PT02LM";
 				
-				if("".equals(sCHANGE_CRN)) { //±×¸®µå¿¡¼­ Å©·¹ÀÎº¯°æÀ» ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ½ºÄÉÁÙ ±âÁØ¿¡ ÀÇÇØ¼­ Å©·¡ÀÎÀ» ÁöÁ¤ÇÑ´Ù.
+				if("".equals(sCHANGE_CRN)) { //ê·¸ë¦¬ë“œì—ì„œ í¬ë ˆì¸ë³€ê²½ì„ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ìŠ¤ì¼€ì¤„ ê¸°ì¤€ì— ì˜í•´ì„œ í¬ë˜ì¸ì„ ì§€ì •í•œë‹¤.
 				
-					//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+					//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 					jrParam.setField("YD_SCH_CD", sSchCode);
 			    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 					SELECT YD_SCH_CD
@@ -11573,93 +11573,93 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 WHERE DEL_YN = 'N'
 					   AND YD_SCH_CD = :V_YD_SCH_CD
 					*/   
-					rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+					rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 			    	
 					if (rsResult2 != null && rsResult2.size() > 0) {
-						sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-						sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-						sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ
+						sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+						sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+						sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€
 					} else {
-						throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sSchCode + "]");
+						throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sSchCode + "]");
 					}			
 					
 					if("Y".equals(sYD_MULTI_WRK_YN)) {
-						jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+						jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 						if("A".equals(s_STACK_BAY_GP)) {
 							if("2ACRA1".equals(sYD_WRK_CRN)) {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
 						} else if("D".equals(s_STACK_BAY_GP)) {
 							if("2DCRD3".equals(sYD_WRK_CRN)) {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 						
 					} else {
-						jrParam.setField("YD_SCH_ST_GP"		, "M"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-						jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-						jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+						jrParam.setField("YD_SCH_ST_GP"		, "M"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+						jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+						jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 					}
-				} else { //±×¸®µå¿¡¼­ Å©·¡ÀÎº¯°æÀ» ÁöÁ¤ÇÑ °æ¿ì
+				} else { //ê·¸ë¦¬ë“œì—ì„œ í¬ë˜ì¸ë³€ê²½ì„ ì§€ì •í•œ ê²½ìš°
 					
 					if("MULTI".equals(sCHANGE_CRN)) {
-						jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+						jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 						
 						if("A".equals(s_STACK_BAY_GP)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else if("D".equals(s_STACK_BAY_GP)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 					} else if("MULTI2".equals(sCHANGE_CRN)) {
-						jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+						jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 						
 						if("A".equals(s_STACK_BAY_GP)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else if("D".equals(s_STACK_BAY_GP)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 					} else {
-						jrParam.setField("YD_SCH_ST_GP"		, "M"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+						jrParam.setField("YD_SCH_ST_GP"		, "M"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 						if("A".equals(s_STACK_BAY_GP)) {
 							if("2ACRA1".equals(sCHANGE_CRN)) {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
 						} else if("D".equals(s_STACK_BAY_GP)) {
 							if("2DCRD3".equals(sCHANGE_CRN)) {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							} else {
-								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+								jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+								jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 							}
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, sCHANGE_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 					}
 				}
@@ -11667,29 +11667,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("".equals(sYD_WBOOK_ID)) {
 				
-					//ÀÛ¾÷¿¹¾à »ı¼º
+					//ì‘ì—…ì˜ˆì•½ ìƒì„±
 					sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 					
 					/**********************************************************
-					* ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+					* ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 					**********************************************************/
 					jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 					jrParam.setField("YD_GP"				, s_STACK_YD_GP);
 					jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP);
-					jrParam.setField("YD_SCH_CD"			, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
-					jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-					jrParam.setField("YD_SCH_REQ_GP"		, "C"); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ C:¿µÂ÷Â÷·®µµÂø, F:°øÂ÷Â÷·®µµÂø
-					jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //¿î¼ÛÀåºñÄÚµå
-					jrParam.setField("YD_CAR_USE_GP"		, "L"); //¾ßµåÂ÷·®»ç¿ë±¸ºĞ L:±¸³»¿î¼Û
-					jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+					jrParam.setField("YD_SCH_CD"			, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_SCH_PROG_STAT"		, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+					jrParam.setField("YD_SCH_REQ_GP"		, "C"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„ C:ì˜ì°¨ì°¨ëŸ‰ë„ì°©, F:ê³µì°¨ì°¨ëŸ‰ë„ì°©
+					jrParam.setField("TRN_EQP_CD"			, szTRN_EQP_CD); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+					jrParam.setField("YD_CAR_USE_GP"		, "L"); //ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„ L:êµ¬ë‚´ìš´ì†¡
+					jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 					
 					for (int ii = 0; ii < rowCnt; ii++) {
 						
 						/**********************************************************
-						* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+						* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 						**********************************************************/
 						jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 						jrParam.setField("STOCK_ID"				, commUtils.getValue(gdReq, "STOCK_ID", ii));
@@ -11698,21 +11698,21 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("STACK_LAYER_GP"		, commUtils.getValue(gdReq, "STACK_LAYER_GP", ii));
 						jrParam.setField("MTL_YD_TO_LOC_GUIDE"	, commUtils.getValue(gdReq, "MTL_YD_TO_LOC_GUIDE", ii));
 						
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 					}
 
 				} else {
 					
 					/**********************************************************
-					* ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) ¼öÁ¤
+					* ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìˆ˜ì •
 					**********************************************************/
-					jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //µ¿±¸ºĞ
-					jrParam.setField("YD_SCH_CD"			, sSchCode		); //½ºÄÉÁÙÄÚµå
-					jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ÀÛ¾÷¿¹¾àID
-					jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ÀåÀÔ¼ø¹øºĞ¸®¿©ºÎ
+					jrParam.setField("YD_BAY_GP"			, s_STACK_BAY_GP); //ë™êµ¬ë¶„
+					jrParam.setField("YD_SCH_CD"			, sSchCode		); //ìŠ¤ì¼€ì¤„ì½”ë“œ
+					jrParam.setField("YD_SCH_PRIOR"			, sYD_SCH_PRIOR	); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID	); //ì‘ì—…ì˜ˆì•½ID
+					jrParam.setField("CHARGE_LOT_NO_DIV_YN"	, sCHARGE_LOT_NO_DIV_YN); //ì¥ì…ìˆœë²ˆë¶„ë¦¬ì—¬ë¶€
 					/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook
-					--ÀÛ¾÷¿¹¾à Å©·¹ÀÎ º¯°æ,Multi ÀÛ¾÷
+					--ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ ë³€ê²½,Multi ì‘ì—…
 					UPDATE TB_YM_WRKBOOK
 					   SET MODIFIER = :V_MODIFIER
 					      ,MOD_DDTT = SYSDATE
@@ -11727,12 +11727,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					      ,DIST_SHIPASSIGN_GP = NVL(:V_DIST_SHIPASSIGN_GP,DIST_SHIPASSIGN_GP)
 					   
 					 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID    */
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) º¯°æ");				
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ë³€ê²½");				
 					
 					for (int ii = 0; ii < rowCnt; ii++) {
 						
 						/**********************************************************
-						* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) ¼öÁ¤
+						* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìˆ˜ì •
 						**********************************************************/
 						jrParam.setField("YD_WBOOK_ID"			, sYD_WBOOK_ID);
 						jrParam.setField("STOCK_ID"				, commUtils.getValue(gdReq, "STOCK_ID", ii));
@@ -11744,22 +11744,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						      ,MTL_YD_TO_LOC_GUIDE = :V_MTL_YD_TO_LOC_GUIDE
 						 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID
 						   AND STOCK_ID = :V_STOCK_ID	 */					
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmWrkBookMtlToLoc", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) º¯°æ");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmWrkBookMtlToLoc", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ë³€ê²½");
 					}
 				}
 				
 				
 				//-------------------------------------------------------------------------------------------------------------------------
-				//jrParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-				//jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+				//jrParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				//jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 				
-				//jrParam.setField("YD_WBOOK_ID", sYD_WBOOK_ID); //¾ßµåÀÛ¾÷¿¹¾àID
-				//jrParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-				//jrParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+				//jrParam.setField("YD_WBOOK_ID", sYD_WBOOK_ID); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+				//jrParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				//jrParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 
 				//jrRtn = commUtils.addSndData(jrRtn, jrParam);
 				
-				//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+				//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 				//EJBConnector sndConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 				//jrRtn = (JDTORecord)sndConn.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 				
@@ -11767,12 +11767,12 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			jrRtn = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
-			jrRtn.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrRtn.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+			jrRtn.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrRtn.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 			
-			jrRtn.setField("YD_WBOOK_ID", sYD_WBOOK_ID); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrRtn.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-			jrRtn.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+			jrRtn.setField("YD_WBOOK_ID", sYD_WBOOK_ID); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrRtn.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrRtn.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 			
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -11787,15 +11787,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of procCrnSchStart
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : PalletÁ¶È¸ (B) - ÇÏÂ÷À§Ä¡º¯°æ 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Palletì¡°íšŒ (B) - í•˜ì°¨ìœ„ì¹˜ë³€ê²½ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord procChangeUdLoc(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (B) - ÇÏÂ÷À§Ä¡º¯°æ [BSlabJspSeEJB.procChangeUdLoc] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (B) - í•˜ì°¨ìœ„ì¹˜ë³€ê²½ [BSlabJspSeEJB.procChangeUdLoc] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -11806,7 +11806,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecordSet rsResult 	= null;
 			JDTORecordSet rsResult2 = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			String sSTOCK_ID;
@@ -11836,9 +11836,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			
 			/**********************************************************
-			* 1. TB_YD_CARPOINT º¯°æ
+			* 1. TB_YD_CARPOINT ë³€ê²½
 			**********************************************************/
-			//FROM À§Ä¡ Clear
+			//FROM ìœ„ì¹˜ Clear
 			jrParam.setField("YD_STK_COL_ACT_STAT"	, "C");
 			jrParam.setField("TRN_EQP_CD"			, "");
 			jrParam.setField("YD_STK_COL_GP"		, sFROM_LOC);
@@ -11849,19 +11849,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,YD_STK_COL_ACT_STAT = :V_YD_STK_COL_ACT_STAT
 			      ,TRN_EQP_CD = :V_TRN_EQP_CD
 			 WHERE YD_STK_COL_GP = :V_YD_STK_COL_GP   */ 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarpointByYdStkColGp", logId, methodNm, "TB_YD_CARPOINT º¯°æ - FROMÀ§Ä¡");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarpointByYdStkColGp", logId, methodNm, "TB_YD_CARPOINT ë³€ê²½ - FROMìœ„ì¹˜");
 			
-			//TO À§Ä¡¿¡ Â÷·® ¼³Á¤
+			//TO ìœ„ì¹˜ì— ì°¨ëŸ‰ ì„¤ì •
 			jrParam.setField("YD_STK_COL_ACT_STAT"	, "L");
 			jrParam.setField("TRN_EQP_CD"			, sTRN_EQP_CD);
 			jrParam.setField("YD_STK_COL_GP"		, sTO_LOC);
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarpointByYdStkColGp", logId, methodNm, "TB_YD_CARPOINT º¯°æ - TOÀ§Ä¡");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarpointByYdStkColGp", logId, methodNm, "TB_YD_CARPOINT ë³€ê²½ - TOìœ„ì¹˜");
 			
 			
 			/**********************************************************
-			* 2. TB_YM_STACKCOL º¯°æ
+			* 2. TB_YM_STACKCOL ë³€ê²½
 			**********************************************************/
-			//FROM À§Ä¡ Clear
+			//FROM ìœ„ì¹˜ Clear
 			jrParam.setField("YD_CAR_USE_GP"	, "");
 			jrParam.setField("TRN_EQP_CD"		, "");
 			jrParam.setField("CAR_NO"			, "");
@@ -11877,20 +11877,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE  WLOC_CD = :V_WLOC_CD
 			   AND  YD_PNT_CD = :V_YD_PNT_CD
 			   AND  SECT_GP = 'PT' 		 */ 
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateLayerstat_01", logId, methodNm, "TB_YM_STACKCOL º¯°æ - FROMÀ§Ä¡");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateLayerstat_01", logId, methodNm, "TB_YM_STACKCOL ë³€ê²½ - FROMìœ„ì¹˜");
 			
-			//TO À§Ä¡¿¡ Â÷·® ¼³Á¤
+			//TO ìœ„ì¹˜ì— ì°¨ëŸ‰ ì„¤ì •
 			jrParam.setField("YD_CAR_USE_GP"	, "L");
 			jrParam.setField("TRN_EQP_CD"		, sTRN_EQP_CD);
 			jrParam.setField("CAR_NO"			, "");
 			jrParam.setField("CARD_NO"			, "");
 			jrParam.setField("WLOC_CD"			, "D3Y43");
 			jrParam.setField("YD_PNT_CD"		, "1"+sTO_LOC.substring(1,2)+sTO_LOC.substring(4,6));
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateLayerstat_01", logId, methodNm, "TB_YM_STACKCOL º¯°æ - TOÀ§Ä¡");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updateLayerstat_01", logId, methodNm, "TB_YM_STACKCOL ë³€ê²½ - TOìœ„ì¹˜");
 			
 			
 			/**********************************************************
-			* 3. TB_YM_STACKLAYER º¯°æ
+			* 3. TB_YM_STACKLAYER ë³€ê²½
 			**********************************************************/
 			jrParam.setField("STACK_COL_GP"		, sFROM_LOC); 
 			jrParam.setField("STACK_BED_GP"		, "01"); 
@@ -11907,7 +11907,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 			   AND  STACK_BED_GP = :V_STACK_BED_GP
 			   AND  STACK_LAYER_GP LIKE :V_STACK_LAYER_GP || '%' */
-			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdByLoc", logId, methodNm, "TB_YM_STACKLAYER Á¤º¸ Á¶È¸ - FROMÀ§Ä¡ "); 
+			rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockIdByLoc", logId, methodNm, "TB_YM_STACKLAYER ì •ë³´ ì¡°íšŒ - FROMìœ„ì¹˜ "); 
 			for(int ii = 0; ii < rsResult.size() ; ii++) {
 				
 				sSTOCK_ID 				 = rsResult.getRecord(ii).getFieldString("STOCK_ID");	
@@ -11915,7 +11915,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				sSTACK_LAYER_ACTIVE_STAT = rsResult.getRecord(ii).getFieldString("STACK_LAYER_ACTIVE_STAT");
 				sSTACK_LAYER_GP			 = rsResult.getRecord(ii).getFieldString("STACK_LAYER_GP");
 				
-				//FROM À§Ä¡ Clear
+				//FROM ìœ„ì¹˜ Clear
 				jrParam.setField("STOCK_ID"					, ""); 
 				jrParam.setField("STACK_LAYER_STAT"			, "E"); 
 				jrParam.setField("STACK_LAYER_ACTIVE_STAT"	, "C"); 
@@ -11933,26 +11933,26 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 				   AND  STACK_BED_GP = :V_STACK_BED_GP
 				   AND  STACK_LAYER_GP = :V_STACK_LAYER_GP  */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "TB_YM_STACKLAYER º¯°æ - FROMÀ§Ä¡ ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "TB_YM_STACKLAYER ë³€ê²½ - FROMìœ„ì¹˜ ");
 				
-				//TO À§Ä¡ ÀûÄ¡´Ü ¼³Á¤
+				//TO ìœ„ì¹˜ ì ì¹˜ë‹¨ ì„¤ì •
 				jrParam.setField("STOCK_ID"					, sSTOCK_ID); 
 				jrParam.setField("STACK_LAYER_STAT"			, sSTACK_LAYER_STAT); 
 				jrParam.setField("STACK_LAYER_ACTIVE_STAT"	, sSTACK_LAYER_ACTIVE_STAT); 
 				jrParam.setField("STACK_COL_GP"				, sTO_LOC); 
 				jrParam.setField("STACK_BED_GP"				, "01"); 
 				jrParam.setField("STACK_LAYER_GP"			, sSTACK_LAYER_GP); 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "TB_YM_STACKLAYER º¯°æ - TOÀ§Ä¡ ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByLoc", logId, methodNm, "TB_YM_STACKLAYER ë³€ê²½ - TOìœ„ì¹˜ ");
 			
 			}
 			
-			//ÇÏÂ÷À§Ä¡ º¯°æ
+			//í•˜ì°¨ìœ„ì¹˜ ë³€ê²½
 			if(sYD_CAR_PROG_STAT.equals("B") || sYD_CAR_PROG_STAT.equals("C") || sYD_CAR_PROG_STAT.equals("D"))
 			{
-				sYD_EQP_WRK_STAT = "L";//¿µÂ÷
+				sYD_EQP_WRK_STAT = "L";//ì˜ì°¨
 					
 				/**********************************************************
-				* STOCK¿¡¼­ ±âÁ¸  SCAN ÁÂÇ¥°ª ÃÊ±â È­ 
+				* STOCKì—ì„œ ê¸°ì¡´  SCAN ì¢Œí‘œê°’ ì´ˆê¸° í™” 
 				**********************************************************/
 				for(int ii = 0; ii < rsResult.size() ; ii++) {
 					
@@ -11988,11 +11988,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					                               ELSE '' END 
 					      ,CAU_CD = NVL(:V_CAU_CD,'0000');
 					 WHERE STOCK_ID = :V_STOCK_ID  */
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockByA8YML029", logId, methodNm, "STOCK¿¡¼­ ±âÁ¸  SCAN ÁÂÇ¥°ª ÃÊ±â È­  (tb_ym_stock °ü·Ã Ç×¸ñ update)");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockByA8YML029", logId, methodNm, "STOCKì—ì„œ ê¸°ì¡´  SCAN ì¢Œí‘œê°’ ì´ˆê¸° í™”  (tb_ym_stock ê´€ë ¨ í•­ëª© update)");
 				}
 				
 				/**********************************************************
-				* º¯°æÇÒ ÀÛ¾÷¿¹¾à Á¶È¸ ¹× ½ºÄÉÁÙ ÄÚµå ±âÁØ Á¶È¸
+				* ë³€ê²½í•  ì‘ì—…ì˜ˆì•½ ì¡°íšŒ ë° ìŠ¤ì¼€ì¤„ ì½”ë“œ ê¸°ì¤€ ì¡°íšŒ
 				**********************************************************/
 				jrParam.setField("YD_SCH_CD"		, sFROM_LOC.substring(0,2) + "PT02LM"); 
 				jrParam.setField("TRN_EQP_CD"		, sTRN_EQP_CD); 
@@ -12002,17 +12002,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				   AND TRN_EQP_CD = :V_TRN_EQP_CD */
-				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdBySchCd", logId, methodNm, "ÀÛ¾÷¿¹¾àID Á¶È¸ - FROMÀ§Ä¡ ");
+				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdBySchCd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ - FROMìœ„ì¹˜ ");
 				
 				
-				//TOÀ§Ä¡ ½ºÄÉÁÙ ÄÚµå¹× ±âÁØ
+				//TOìœ„ì¹˜ ìŠ¤ì¼€ì¤„ ì½”ë“œë° ê¸°ì¤€
 				s_STACK_YD_GP	= sTO_LOC.substring(0,1);
 				s_STACK_BAY_GP	= sTO_LOC.substring(1,2);
 				
-				//½ºÄÉÁÙÄÚµå »ı¼º  - ÀÌ¼ÛÇÏÂ÷(L)
+				//ìŠ¤ì¼€ì¤„ì½”ë“œ ìƒì„±  - ì´ì†¡í•˜ì°¨(L)
 				sSchCode = s_STACK_YD_GP + s_STACK_BAY_GP + "PT02LM";
 				
-				//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+				//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 				jrParam.setField("YD_SCH_CD", sSchCode);
 		    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 				SELECT YD_SCH_CD
@@ -12023,43 +12023,43 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				*/   
-				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+				rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 		    	
 				if (rsResult2 != null && rsResult2.size() > 0) {
-					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ
+					sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+					sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€
 				} else {
-					throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sSchCode + "]");
+					throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sSchCode + "]");
 				}			
 				
 				if("Y".equals(sYD_MULTI_WRK_YN)) {
-					jrParam.setField("YD_SCH_ST_GP"		, "N"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
+					jrParam.setField("YD_SCH_ST_GP"		, "N"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
 					if("A".equals(s_STACK_BAY_GP)) {
 						if("2ACRA1".equals(sYD_WRK_CRN)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2ACRA2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2ACRA1"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 					} else if("D".equals(s_STACK_BAY_GP)) {
 						if("2DCRD3".equals(sYD_WRK_CRN)) {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						} else {
-							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+							jrParam.setField("YD_WRK_PLAN_CRN"	, "2DCRD2"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+							jrParam.setField("YD_WRK_PLAN_CRN2"	, "2DCRD3"); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 						}
 					} else {
-						jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-						jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+						jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+						jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 					}
 					
 				} else {
-					jrParam.setField("YD_SCH_ST_GP"		, "M"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-					jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-					jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
+					jrParam.setField("YD_SCH_ST_GP"		, "M"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+					jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+					jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
 				}
 				
 				
@@ -12070,14 +12070,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					if(!sYD_WBOOK_ID_OLD.equals(sYD_WBOOK_ID)) {
 						
 						/**********************************************************
-						* 4. TB_YM_WRKBOOK º¯°æ
+						* 4. TB_YM_WRKBOOK ë³€ê²½
 						**********************************************************/
-						jrParam.setField("YD_BAY_GP"		, s_STACK_BAY_GP); //µ¿±¸ºĞ
-						jrParam.setField("YD_SCH_CD"		, sSchCode		); //½ºÄÉÁÙÄÚµå
-						jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR	); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID	); //ÀÛ¾÷¿¹¾àID
+						jrParam.setField("YD_BAY_GP"		, s_STACK_BAY_GP); //ë™êµ¬ë¶„
+						jrParam.setField("YD_SCH_CD"		, sSchCode		); //ìŠ¤ì¼€ì¤„ì½”ë“œ
+						jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR	); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID	); //ì‘ì—…ì˜ˆì•½ID
 						/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook
-						--ÀÛ¾÷¿¹¾à Å©·¹ÀÎ º¯°æ,Multi ÀÛ¾÷
+						--ì‘ì—…ì˜ˆì•½ í¬ë ˆì¸ ë³€ê²½,Multi ì‘ì—…
 						UPDATE TB_YM_WRKBOOK
 						   SET MODIFIER = :V_MODIFIER
 						      ,MOD_DDTT = SYSDATE
@@ -12089,34 +12089,34 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						      ,YD_WRK_PLAN_CRN2 = :V_YD_WRK_PLAN_CRN2
 						   
 						 WHERE YD_WBOOK_ID = :V_YD_WBOOK_ID   */
-						commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) º¯°æ");				
+						commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updTbYmWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ë³€ê²½");				
 						
 						/**********************************************************
-						* 5. TB_YM_WRKBOOKMTL º¯°æ
+						* 5. TB_YM_WRKBOOKMTL ë³€ê²½
 						**********************************************************/
 						jrParam.setField("STACK_COL_GP"		, sTO_LOC); 
-						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID	); //ÀÛ¾÷¿¹¾àID
+						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID	); //ì‘ì—…ì˜ˆì•½ID
 						/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updWrkBookMtlStackColGp
 						UPDATE  TB_YM_WRKBOOKMTL
 						   SET  MODIFIER = :V_MODIFIER
 						       ,MOD_DDTT = SYSDATE
 						       ,STACK_COL_GP = :V_STACK_COL_GP
 						 WHERE  YD_WBOOK_ID = :V_YD_WBOOK_ID    */    
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updWrkBookMtlStackColGp", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) º¯°æ");				
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updWrkBookMtlStackColGp", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ë³€ê²½");				
 					}
 					sYD_WBOOK_ID_OLD = sYD_WBOOK_ID;
 				}
 
 				
 				/**********************************************************
-				* 6. TB_YD_CARSCH º¯°æ
+				* 6. TB_YD_CARSCH ë³€ê²½
 				**********************************************************/
 				jrParam.setField("YD_PNT_CD3"	, "1" + s_STACK_BAY_GP + sTO_LOC.substring(4,6)); 
 				jrParam.setField("TO_LOC"		, sTO_LOC); 
 				jrParam.setField("FROM_LOC"		, sFROM_LOC); 
 				jrParam.setField("TRN_EQP_CD"	, sTRN_EQP_CD);
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd3
-				--ÇÏÂ÷À§Ä¡º¯°æ
+				--í•˜ì°¨ìœ„ì¹˜ë³€ê²½
 				UPDATE  TB_YD_CARSCH
 				   SET  MODIFIER = :V_MODIFIER
 				       ,MOD_DDTT = SYSDATE
@@ -12131,19 +12131,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				                                 AND DEL_YN='N'
 				                                 AND TRN_EQP_CD = :V_TRN_EQP_CD
 				                          )  */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd3", logId, methodNm, "Â÷·®½ºÄÉÁÙ(TB_YD_CARSCH) ÇÏÂ÷À§Ä¡º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd3", logId, methodNm, "ì°¨ëŸ‰ìŠ¤ì¼€ì¤„(TB_YD_CARSCH) í•˜ì°¨ìœ„ì¹˜ë³€ê²½");
 
-			//»óÂ÷À§Ä¡º¯°æ
+			//ìƒì°¨ìœ„ì¹˜ë³€ê²½
 			}else{
 
-				sYD_EQP_WRK_STAT = "U";//°øÂ÷
+				sYD_EQP_WRK_STAT = "U";//ê³µì°¨
 				
-				//TOÀ§Ä¡ ½ºÄÉÁÙ ÄÚµå¹× ±âÁØ
+				//TOìœ„ì¹˜ ìŠ¤ì¼€ì¤„ ì½”ë“œë° ê¸°ì¤€
 				s_STACK_YD_GP	= sTO_LOC.substring(0,1);
 				s_STACK_BAY_GP	= sTO_LOC.substring(1,2);
 				
 				/**********************************************************
-				* º¯°æÇÒ ÀÛ¾÷¿¹¾à Á¶È¸ ¹× ½ºÄÉÁÙ ÄÚµå ±âÁØ Á¶È¸
+				* ë³€ê²½í•  ì‘ì—…ì˜ˆì•½ ì¡°íšŒ ë° ìŠ¤ì¼€ì¤„ ì½”ë“œ ê¸°ì¤€ ì¡°íšŒ
 				**********************************************************/
 				jrParam.setField("YD_SCH_CD"		, sFROM_LOC.substring(0,2) + "PT02UM"); 
 				jrParam.setField("TRN_EQP_CD"		, sTRN_EQP_CD); 
@@ -12153,7 +12153,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				 WHERE DEL_YN = 'N'
 				   AND YD_SCH_CD = :V_YD_SCH_CD
 				   AND TRN_EQP_CD = :V_TRN_EQP_CD */
-				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdBySchCd", logId, methodNm, "ÀÛ¾÷¿¹¾àID Á¶È¸ - FROMÀ§Ä¡ ");
+				rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdBySchCd", logId, methodNm, "ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ - FROMìœ„ì¹˜ ");
 				
 				
 				for(int ii = 0; ii < rsResult.size() ; ii++) {
@@ -12168,7 +12168,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID );
 						
 						/**********************************************************
-						* 2. ÀÛ¾÷¿¹¾à Ãë¼Ò
+						* 2. ì‘ì—…ì˜ˆì•½ ì·¨ì†Œ
 						**********************************************************/
 						jrRtn = commUtils.addSndData(jrRtn, this.trtWrkBookCncl(jrParam));
 					}
@@ -12177,14 +12177,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 				
 				/**********************************************************
-				* 6. TB_YD_CARSCH º¯°æ
+				* 6. TB_YD_CARSCH ë³€ê²½
 				**********************************************************/
 				jrParam.setField("YD_PNT_CD1"	, "1" + s_STACK_BAY_GP + sTO_LOC.substring(4,6)); 
 				jrParam.setField("TO_LOC"		, sTO_LOC); 
 				jrParam.setField("FROM_LOC"		, sFROM_LOC); 
 				jrParam.setField("TRN_EQP_CD"	, sTRN_EQP_CD);
 				/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd4 
-					--»óÂ÷À§Ä¡º¯°æ
+					--ìƒì°¨ìœ„ì¹˜ë³€ê²½
 					UPDATE  TB_YD_CARSCH
 					   SET  MODIFIER = :V_MODIFIER
 					       ,MOD_DDTT = SYSDATE
@@ -12199,73 +12199,73 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					                                 AND DEL_YN='N'
 					                                 AND TRN_EQP_CD = :V_TRN_EQP_CD
 					                          )  */
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd4", logId, methodNm, "Â÷·®½ºÄÉÁÙ(TB_YD_CARSCH) »óÂ÷À§Ä¡º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYdCarSchYdPntCd4", logId, methodNm, "ì°¨ëŸ‰ìŠ¤ì¼€ì¤„(TB_YD_CARSCH) ìƒì°¨ìœ„ì¹˜ë³€ê²½");
 
 			
-				//ÀÌ¼Û»óÂ÷ µµÂøÃ³¸®½Ã TB_YM_RULE ÀÇ YM2019 ÇØ´ç Æ÷ÀÎÆ®¸¦ ÃÊ±âÈ­ ÇÑ´Ù..
+				//ì´ì†¡ìƒì°¨ ë„ì°©ì²˜ë¦¬ì‹œ TB_YM_RULE ì˜ YM2019 í•´ë‹¹ í¬ì¸íŠ¸ë¥¼ ì´ˆê¸°í™” í•œë‹¤..
 				jrParam.setField("REPR_CD_GP"	, "YM2019" );
 				jrParam.setField("CD_GP"		, "2" );
 				jrParam.setField("ITEM"			, sTO_LOC);
 				jrParam.setField("DTL_ITM4"		, "");
 				jrParam.setField("DTL_ITM5"		, "N");
 
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRuleNvl", logId, methodNm, "TB_YM_RULE YM2019 ¼öÁ¤ - ÃÊ±âÈ­");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYmRuleNvl", logId, methodNm, "TB_YM_RULE YM2019 ìˆ˜ì • - ì´ˆê¸°í™”");
 				
 			}
 			
 			
 			/**********************************************************
-			* 7. Â÷·®ÀÛ¾÷ ¿¹Á¤Á¤º¸(YMA8L008->YMA8L001->YMA8L002) Àü¹® »ı¼º
+			* 7. ì°¨ëŸ‰ì‘ì—… ì˜ˆì •ì •ë³´(YMA8L008->YMA8L001->YMA8L002) ì „ë¬¸ ìƒì„±
 			**********************************************************/
 			jrParam.setField("PT_LOAD_LOC", sTO_LOC);  
 			jrParam.setField("TC_CODE", "A8YML016");  
 			
-	    	//Â÷·®¿¹Á¤Á¤º¸
+	    	//ì°¨ëŸ‰ì˜ˆì •ì •ë³´
 		    EJBConnector ejbConnPT2 = new EJBConnector("default", "BSlabL2RcvSeEJB", this);
 		    jrRtn = (JDTORecord)ejbConnPT2.trx("rcvA8YML016", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
 			/**********************************************************
-			* 7. ÀúÀåÀ§Ä¡Á¦¿ø(YMA8L001) Àü¹® »ı¼º
+			* 7. ì €ì¥ìœ„ì¹˜ì œì›(YMA8L001) ì „ë¬¸ ìƒì„±
 			**********************************************************/
-			//FROM À§Ä¡ ÀúÀåÀ§Ä¡Á¦¿ø  Àü¼Û Data »ı¼º
-			jrParam.setField("YD_INFO_SYNC_CD"		, "4"           	); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-			jrParam.setField("STACK_COL_GP"  		, sFROM_LOC 		); //¾ßµåÀûÄ¡¿­±¸ºĞ
-			jrParam.setField("STACK_BED_GP"  		, "01"          	); //¾ßµåÀûÄ¡Bed¹øÈ£
-			jrParam.setField("YD_CAR_ARRSTRT_STAT" 	, "S"				); //A:µµÂø, S:Ãâ¹ß
-			jrParam.setField("YD_CAR_USE_GP"    	, "L"				); //L:±¸³»¿î¼Û, G:ÃâÇÏÂ÷·®
-			jrParam.setField("YD_EQP_WRK_STAT"  	, sYD_EQP_WRK_STAT	); //U:°øÂ÷, L:¿µÂ÷
-			jrParam.setField("TRN_EQP_CD"  			, sTRN_EQP_CD		); //¿î¼ÛÀåºñÄÚµå
+			//FROM ìœ„ì¹˜ ì €ì¥ìœ„ì¹˜ì œì›  ì „ì†¡ Data ìƒì„±
+			jrParam.setField("YD_INFO_SYNC_CD"		, "4"           	); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+			jrParam.setField("STACK_COL_GP"  		, sFROM_LOC 		); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+			jrParam.setField("STACK_BED_GP"  		, "01"          	); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+			jrParam.setField("YD_CAR_ARRSTRT_STAT" 	, "S"				); //A:ë„ì°©, S:ì¶œë°œ
+			jrParam.setField("YD_CAR_USE_GP"    	, "L"				); //L:êµ¬ë‚´ìš´ì†¡, G:ì¶œí•˜ì°¨ëŸ‰
+			jrParam.setField("YD_EQP_WRK_STAT"  	, sYD_EQP_WRK_STAT	); //U:ê³µì°¨, L:ì˜ì°¨
+			jrParam.setField("TRN_EQP_CD"  			, sTRN_EQP_CD		); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
 			jrParam.setField("YD_CAR_AIM_YD_GP"		, s_STACK_YD_GP		); 
 			jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L001_CarInfo", jrParam));
 
-			//TO À§Ä¡ ÀúÀåÀ§Ä¡Á¦¿ø  Àü¼Û Data »ı¼º
-//			jrParam.setField("YD_INFO_SYNC_CD"		, "4"           	); //¾ßµåÁ¤º¸µ¿±âÈ­ÄÚµå
-//			jrParam.setField("STACK_COL_GP"  		, sTO_LOC 			); //¾ßµåÀûÄ¡¿­±¸ºĞ
-//			jrParam.setField("STACK_BED_GP"  		, "01"          	); //¾ßµåÀûÄ¡Bed¹øÈ£
-//			jrParam.setField("YD_CAR_ARRSTRT_STAT" 	, "A"				); //A:µµÂø, S:Ãâ¹ß
-//			jrParam.setField("YD_CAR_USE_GP"    	, "L"				); //L:±¸³»¿î¼Û, G:ÃâÇÏÂ÷·®
-//			jrParam.setField("YD_EQP_WRK_STAT"  	, "L"				); //U:°øÂ÷, L:¿µÂ÷
-//			jrParam.setField("TRN_EQP_CD"  			, sTRN_EQP_CD		); //¿î¼ÛÀåºñÄÚµå
+			//TO ìœ„ì¹˜ ì €ì¥ìœ„ì¹˜ì œì›  ì „ì†¡ Data ìƒì„±
+//			jrParam.setField("YD_INFO_SYNC_CD"		, "4"           	); //ì•¼ë“œì •ë³´ë™ê¸°í™”ì½”ë“œ
+//			jrParam.setField("STACK_COL_GP"  		, sTO_LOC 			); //ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
+//			jrParam.setField("STACK_BED_GP"  		, "01"          	); //ì•¼ë“œì ì¹˜Bedë²ˆí˜¸
+//			jrParam.setField("YD_CAR_ARRSTRT_STAT" 	, "A"				); //A:ë„ì°©, S:ì¶œë°œ
+//			jrParam.setField("YD_CAR_USE_GP"    	, "L"				); //L:êµ¬ë‚´ìš´ì†¡, G:ì¶œí•˜ì°¨ëŸ‰
+//			jrParam.setField("YD_EQP_WRK_STAT"  	, "L"				); //U:ê³µì°¨, L:ì˜ì°¨
+//			jrParam.setField("TRN_EQP_CD"  			, sTRN_EQP_CD		); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
 //			jrParam.setField("YD_CAR_AIM_YD_GP"		, s_STACK_YD_GP		); 
 //			jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L001_CarInfo", jrParam));
   
 			  
 			/**********************************************************
-			* 8. ÇÏÂ÷À§Ä¡º¯°æ(YDTSJ017) Àü¹® »ı¼º
+			* 8. í•˜ì°¨ìœ„ì¹˜ë³€ê²½(YDTSJ017) ì „ë¬¸ ìƒì„±
 			**********************************************************/
 			JDTORecord jrTemp = JDTORecordFactory.getInstance().create();
 
 			jrTemp.setResultCode(logId);	//Log ID
 			jrTemp.setResultMsg(methodNm);	//Log Method Name
 			jrTemp.setField("JMS_TC_CD"				, "YDTSJ017");
-			jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã
+			jrTemp.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ
 			jrTemp.setField("TRN_EQP_CD"			, sTRN_EQP_CD);
 			jrTemp.setField("WLOC_CD"				, sWLOC_CD);
 			jrTemp.setField("YD_PNT_CD"				, sYD_PNT_CD);
 			jrTemp.setField("MOD_WLOC_CD"			, sMOD_WLOC_CD);
 			jrTemp.setField("MOD_YD_PNT_CD"			, sMOD_YD_PNT_CD);
 			
-			//Àü¼Û Data »ı¼º
+			//ì „ì†¡ Data ìƒì„±
 			jrRtn = commUtils.addSndData(jrRtn,jrTemp);		
 			
 			
@@ -12280,15 +12280,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of procChangeUdLoc
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : PalletÁ¶È¸ (B) - »óÂ÷¿Ï·áÃ³¸® 
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Palletì¡°íšŒ (B) - ìƒì°¨ì™„ë£Œì²˜ë¦¬ 
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord runLdCmplProc(GridData gdReq) throws DAOException {
-		String methodNm = "PalletÁ¶È¸ (B) - »óÂ÷¿Ï·áÃ³¸® [BSlabJspSeEJB.runLdCmplProc] < " + gdReq.getNavigateValue();
+		String methodNm = "Palletì¡°íšŒ (B) - ìƒì°¨ì™„ë£Œì²˜ë¦¬ [BSlabJspSeEJB.runLdCmplProc] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -12297,13 +12297,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 	    	jrParam.setField("YD_CAR_SCH_ID", gdReq.getParam("YD_CAR_SCH_ID"));
 	    	jrParam.setField("TRN_EQP_CD", gdReq.getParam("TRN_EQP_CD"));
 	    	
-	    	//»óÂ÷¿Ï·áÃ³¸®
+	    	//ìƒì°¨ì™„ë£Œì²˜ë¦¬
 		    EJBConnector ejbConnPT2 = new EJBConnector("default", "YmCommSeEJB", this);
 		    jrRtn = (JDTORecord)ejbConnPT2.trx("runLdCmplProc", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
@@ -12318,9 +12318,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of runLdCmplProc
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : W/B, CTC - Take Out
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : W/B, CTC - Take Out
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
@@ -12334,9 +12334,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			//Return Value
 			JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			JDTORecordSet rsResult2 = null;
@@ -12349,7 +12349,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sYD_TO_LOC_GUIDE 		= commUtils.nvl(gdReq.getParam("YD_TO_LOC_GUIDE"), "");
 			String sYD_WRK_PLAN_CRN			= commUtils.nvl(gdReq.getParam("YD_WRK_PLAN_CRN"), "");
 			String sYD_ALT_CRN				= "";
-			//½ºÄÉÁÙÄÚµå
+			//ìŠ¤ì¼€ì¤„ì½”ë“œ
 			String sSchCode = gdReq.getParam("YD_SCH_CD");
 
 			//--------------------------------------------------------------------------------------------------------------------------
@@ -12382,11 +12382,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,YD_WRK_CRN = :V_YD_WRK_CRN
 			      ,YD_ALT_CRN = :V_YD_ALT_CRN
 			 WHERE YD_SCH_CD = :V_YD_SCH_CD */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleMultiYn", logId, methodNm, "½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSchRuleMultiYn", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •");
 			//--------------------------------------------------------------------------------------------------------------------------
 			
 			
-			//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+			//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 			jrParam.setField("YD_SCH_CD", sSchCode);
 	    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 			SELECT YD_SCH_CD
@@ -12397,75 +12397,75 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE DEL_YN = 'N'
 			   AND YD_SCH_CD = :V_YD_SCH_CD
 			*/   
-			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 	    	
 			if (rsResult2 != null && rsResult2.size() > 0) {
-				sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //¾ßµåÀÛ¾÷Å©·¹ÀÎ
-				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-				sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ
+				sYD_WRK_CRN = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN"); //ì•¼ë“œì‘ì—…í¬ë ˆì¸
+				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+				sYD_MULTI_WRK_YN = rsResult2.getRecord(0).getFieldString("YD_MULTI_WRK_YN"); //ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€
 			} else {
-				throw new Exception("B¿­¿¬ ÄÚÀÏ ½ºÄÉÁì ÄÚµå ÀÌ»ó : [" + sSchCode + "]");
+				throw new Exception("Bì—´ì—° ì½”ì¼ ìŠ¤ì¼€ì¥´ ì½”ë“œ ì´ìƒ : [" + sSchCode + "]");
 			}			
 			s_STACK_YD_GP	= commUtils.getValue(gdReq, "STACK_COL_GP"   , 0).substring(0,1);
 			s_STACK_BAY_GP	= commUtils.getValue(gdReq, "STACK_COL_GP"   , 0).substring(1,2);
 			
 			
-			//ÀÛ¾÷¿¹¾àID»ı¼º
+			//ì‘ì—…ì˜ˆì•½IDìƒì„±
 			wbook_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 			
 			/**********************************************************
-			* ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+			* ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 			**********************************************************/
 			jrParam.setField("YD_WBOOK_ID"		, wbook_ID);
 			jrParam.setField("YD_GP"			, s_STACK_YD_GP);
 			jrParam.setField("YD_BAY_GP"		, s_STACK_BAY_GP);
-			jrParam.setField("YD_SCH_CD"		, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-			jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-			jrParam.setField("YD_SCH_REQ_GP"	, "C"); //¾ßµå½ºÄÉÁì¿äÃ»±¸ºĞ C:¿µÂ÷Â÷·®µµÂø, F:°øÂ÷Â÷·®µµÂø
-			jrParam.setField("YD_SCH_ST_GP"		, "M"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷, N:¸ÖÆ¼ÀÛ¾÷)
-			jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ
-			jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //¾ßµåÀÛ¾÷°èÈ¹Å©·¹ÀÎ2
-			jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //¾ßµåToÀ§Ä¡Guide
+			jrParam.setField("YD_SCH_CD"		, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+			jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+			jrParam.setField("YD_SCH_REQ_GP"	, "C"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš”ì²­êµ¬ë¶„ C:ì˜ì°¨ì°¨ëŸ‰ë„ì°©, F:ê³µì°¨ì°¨ëŸ‰ë„ì°©
+			jrParam.setField("YD_SCH_ST_GP"		, "M"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…, N:ë©€í‹°ì‘ì—…)
+			jrParam.setField("YD_WRK_PLAN_CRN"	, sYD_WRK_CRN); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸
+			jrParam.setField("YD_WRK_PLAN_CRN2"	, ""); //ì•¼ë“œì‘ì—…ê³„íší¬ë ˆì¸2
+			jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //ì•¼ë“œToìœ„ì¹˜Guide
 			
-			commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+			commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 			
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
 				/**********************************************************
-				* ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+				* ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 				**********************************************************/
 				jrParam.setField("YD_WBOOK_ID"		, wbook_ID);
-				jrParam.setField("YD_SCH_CD"		, sSchCode); //¾ßµå½ºÄÉÁìÄÚµå
+				jrParam.setField("YD_SCH_CD"		, sSchCode); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
 				jrParam.setField("STOCK_ID"			, commUtils.trim(gdReq.getHeader("STOCK_ID").getValue(ii)));
 				jrParam.setField("STACK_COL_GP"		, commUtils.trim(gdReq.getHeader("STACK_COL_GP").getValue(ii)));
 				jrParam.setField("STACK_BED_GP"		, commUtils.trim(gdReq.getHeader("STACK_BED_GP").getValue(ii)));
 				jrParam.setField("STACK_LAYER_GP"	, commUtils.trim(gdReq.getHeader("STACK_LAYER_GP").getValue(ii)));
 				
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 				
 				/**********************************************************
-				* ÀûÄ¡´Ü(TB_YM_STACKLAYER)¿¡ Á¤º¸ »ı¼ºÇÏ±â
+				* ì ì¹˜ë‹¨(TB_YM_STACKLAYER)ì— ì •ë³´ ìƒì„±í•˜ê¸°
 				**********************************************************/
 				jrParam.setField("STOCK_ID"			, commUtils.trim(gdReq.getHeader("STOCK_ID").getValue(ii)));
 				jrParam.setField("STACK_COL_GP"		, commUtils.trim(gdReq.getHeader("STACK_COL_GP").getValue(ii)));
 				jrParam.setField("STACK_BED_GP"		, commUtils.trim(gdReq.getHeader("STACK_BED_GP").getValue(ii)));
 				jrParam.setField("STACK_LAYER_GP"	, commUtils.trim(gdReq.getHeader("STACK_LAYER_GP").getValue(ii)));
 				
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.setStackLayer", logId, methodNm, "ÀûÄ¡´Ü(TB_YM_STACKLAYER)¿¡ SLABÁ¤º¸ »ı¼ºÇÏ±â");
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.setStackLayer", logId, methodNm, "ì ì¹˜ë‹¨(TB_YM_STACKLAYER)ì— SLABì •ë³´ ìƒì„±í•˜ê¸°");
 			}
 			
 			//-------------------------------------------------------------------------------------------------------------------------
-			jrParam.setField("JMS_TC_CD", "YMYMJ202"); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã				
+			jrParam.setField("JMS_TC_CD", "YMYMJ202"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParam.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ				
 			
-			jrParam.setField("YD_WBOOK_ID", wbook_ID); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrParam.setField("YD_SCH_CD"  , ""); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam.setField("YD_EQP_ID"  , ""); //¾ßµå¼³ºñID
+			jrParam.setField("YD_WBOOK_ID", wbook_ID); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParam.setField("YD_SCH_CD"  , ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam.setField("YD_EQP_ID"  , ""); //ì•¼ë“œì„¤ë¹„ID
 			
-			//Å©·¹ÀÎ½ºÄÉÁÙ±âµ¿ Àü¹®
+			//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ê¸°ë™ ì „ë¬¸
 			EJBConnector sndConn = new EJBConnector("default", "BSlabSchSeEJB", this);
 			jrRtn = (JDTORecord)sndConn.trx("procYMYMJ202", new Class[] { JDTORecord.class }, new Object[] { jrParam });
 			
@@ -12481,31 +12481,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : È­¸éÀ» ÅëÇØ¼­ ½ÃÆíÀç ¹× ÇÚµå½ºÄ«ÇÎ º¸±Ş¿ä±¸
-	 * ÀÛ¾÷¿¹¾àÀ» »ı¼ºÇÑ´Ù.
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í™”ë©´ì„ í†µí•´ì„œ ì‹œí¸ì¬ ë° í•¸ë“œìŠ¤ì¹´í•‘ ë³´ê¸‰ìš”êµ¬
+	 * ì‘ì—…ì˜ˆì•½ì„ ìƒì„±í•œë‹¤.
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecord scarfingWork(GridData gdReq) throws DAOException {
 		
-		/** As-Is ·ÎÁ÷
-			1. ½ºÄ«ÇÎ»ı¼º (º°µµ ¸ğµâ È£Ãâ)
-			 1-1. È­¸éÀÇ ½ºÄ«ÇÎ ÆĞÅÏ(G, S, SP, ±×¿Ü)¿¡ µû¶ó ÀÛ¾÷ID »ı¼º
-			 1-2. ÀúÀåÇ°Å×ÀÌºí TB_YM_STOCK      UPDATE
-			 1-3. ÀûÄ¡´ÜÅ×ÀÌºí TB_YM_STACKLAYER UPDATE
-			 1-4. 1-1¿¡¼­ »ı¼ºÇÑ ÀÛ¾÷ID¸¦ List¿¡ ´ã¾Æ return.
+		/** As-Is ë¡œì§
+			1. ìŠ¤ì¹´í•‘ìƒì„± (ë³„ë„ ëª¨ë“ˆ í˜¸ì¶œ)
+			 1-1. í™”ë©´ì˜ ìŠ¤ì¹´í•‘ íŒ¨í„´(G, S, SP, ê·¸ì™¸)ì— ë”°ë¼ ì‘ì—…ID ìƒì„±
+			 1-2. ì €ì¥í’ˆí…Œì´ë¸” TB_YM_STOCK      UPDATE
+			 1-3. ì ì¹˜ë‹¨í…Œì´ë¸” TB_YM_STACKLAYER UPDATE
+			 1-4. 1-1ì—ì„œ ìƒì„±í•œ ì‘ì—…IDë¥¼ Listì— ë‹´ì•„ return.
 			 
-			2. ½ºÄÉÁì call
-			 2-1.  1-4¿¡¼­ ¹İÈ¯µÈ ÀÛ¾÷ID List¸¦ ÀÎÀÚ·Î ½ºÄÉÁì ¸ğµâ call
+			2. ìŠ¤ì¼€ì¥´ call
+			 2-1.  1-4ì—ì„œ ë°˜í™˜ëœ ì‘ì—…ID Listë¥¼ ì¸ìë¡œ ìŠ¤ì¼€ì¥´ ëª¨ë“ˆ call
 		**/
 		
 		
 		
 		// To-Be Start
-		String methodNm = "È­¸éÀ» ÅëÇØ¼­ ½ÃÆíÀç ¹× ÇÚµå½ºÄ«ÇÎ º¸±Ş¿ä±¸[BSlabJspSeEJB.scarfingWork] < " + gdReq.getNavigateValue();
+		String methodNm = "í™”ë©´ì„ í†µí•´ì„œ ì‹œí¸ì¬ ë° í•¸ë“œìŠ¤ì¹´í•‘ ë³´ê¸‰ìš”êµ¬[BSlabJspSeEJB.scarfingWork] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		JDTORecord sndRecord = JDTORecordFactory.getInstance().create();
@@ -12517,31 +12517,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecord inRecord = CmUtil.genJDTORecord(gdReq);
 			JDTORecord jDrd = JDTORecordFactory.getInstance().create();
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			/**********************************************************
-			* 1. ½ºÄ«ÇÎ»ı¼º
+			* 1. ìŠ¤ì¹´í•‘ìƒì„±
 			**********************************************************/
 			JDTORecord jrParam		= JDTORecordFactory.getInstance().create();
 			JDTORecord jrRtn 		= JDTORecordFactory.getInstance().create();
 			JDTORecordSet rsResult  = null;
 			JDTORecordSet rsResult2 = null;
 			
-			// ÀÛ¾÷¿¹¾àID»ı¼º
-			// ½ºÄ«ÇÎ ÀÛ¾÷ ½ºÄÉÁì ±âÁØ º¯µ¿ Eµ¿ ÇÚµå½ºÄ«ÇÎ >> Eµ¿ µ¿³»ÀÌÀûÀ¸·Î º¯°æ
+			// ì‘ì—…ì˜ˆì•½IDìƒì„±
+			// ìŠ¤ì¹´í•‘ ì‘ì—… ìŠ¤ì¼€ì¥´ ê¸°ì¤€ ë³€ë™ Eë™ í•¸ë“œìŠ¤ì¹´í•‘ >> Eë™ ë™ë‚´ì´ì ìœ¼ë¡œ ë³€ê²½
 			
 			String sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 			
-			String sYD_SCH_CD	= "";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå
-			//String sYD_SCH_CD	= "2EYD31MM";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå : Eµ¿ µ¿³»ÀÌÀû(3)
-			//String sYD_SCH_CD	= "2ESE01UM";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå : Eµ¿ Scarfing º¸±Ş
+			String sYD_SCH_CD	= "";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ
+			//String sYD_SCH_CD	= "2EYD31MM";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ : Eë™ ë™ë‚´ì´ì (3)
+			//String sYD_SCH_CD	= "2ESE01UM";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ : Eë™ Scarfing ë³´ê¸‰
 			
 		    jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-	 		jrParam.setResultMsg(methodNm);	//»óÀ§ Method ¸í
+	 		jrParam.setResultMsg(methodNm);	//ìƒìœ„ Method ëª…
 		    
 			
-	 		// ½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+	 		// ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 	 		jrParam.setField("YD_SCH_CD", sYD_SCH_CD);
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 			SELECT YD_SCH_CD
@@ -12551,37 +12551,37 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE DEL_YN = 'N'
 			   AND YD_SCH_CD = :V_YD_SCH_CD
 			*/   
-			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 			
 			String	sYD_SCH_PRIOR = "";
 			if (rsResult2.size() > 0){
-				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			}
 			
 			
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				if(ii == 0){	// ÇÏ³ªÀÇ ÀÛ¾÷ID¿¡ ¿©·¯°³ÀÇ Àç·á¸¦ Æ÷ÇÔÇÔ
+				if(ii == 0){	// í•˜ë‚˜ì˜ ì‘ì—…IDì— ì—¬ëŸ¬ê°œì˜ ì¬ë£Œë¥¼ í¬í•¨í•¨
 					
-					// ½ºÄ«ÇÎ ÆĞÅÏ G, S´Â ÇÚµå½ºÄ«ÇÎ, ±× ¿Ü´Â ¸Ó½Å½ºÄ«ÇÎ (SP ½ÃÆíÀº ¾Èµé¾î¿À¹Ç·Î Á¦¿ÜÇÔ)
-					if("G".equals(commUtils.getValue(gdReq, "SCFÆĞÅÏ", ii)) || "S".equals(commUtils.getValue(gdReq, "SCFÆĞÅÏ", ii))){
-						sYD_SCH_CD = "2EYD31MM"; // ÇÚµå½ºÄ«ÇÎ (3¹øÅ©·¹ÀÎ µ¿³»ÀÌÀû)
+					// ìŠ¤ì¹´í•‘ íŒ¨í„´ G, SëŠ” í•¸ë“œìŠ¤ì¹´í•‘, ê·¸ ì™¸ëŠ” ë¨¸ì‹ ìŠ¤ì¹´í•‘ (SP ì‹œí¸ì€ ì•ˆë“¤ì–´ì˜¤ë¯€ë¡œ ì œì™¸í•¨)
+					if("G".equals(commUtils.getValue(gdReq, "SCFíŒ¨í„´", ii)) || "S".equals(commUtils.getValue(gdReq, "SCFíŒ¨í„´", ii))){
+						sYD_SCH_CD = "2EYD31MM"; // í•¸ë“œìŠ¤ì¹´í•‘ (3ë²ˆí¬ë ˆì¸ ë™ë‚´ì´ì )
 					}else{
-						sYD_SCH_CD = "2ESE01UM"; // ¸Ó½Å½ºÄ«ÇÎ (Eµ¿ Scarfing º¸±Ş)w
+						sYD_SCH_CD = "2ESE01UM"; // ë¨¸ì‹ ìŠ¤ì¹´í•‘ (Eë™ Scarfing ë³´ê¸‰)w
 					}
 					
 					/**********************************************************
-					* 1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+					* 1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 					**********************************************************/
-					jrParam.setField("YD_WBOOK_ID"         , sYD_WBOOK_ID				); //ÀÛ¾÷ID
-					jrParam.setField("YD_GP"               , YmConstant.YD_GP_2			); //¾ßµå±¸ºĞ
-					jrParam.setField("YD_BAY_GP"           , sYD_SCH_CD.substring(1,2)	); //µ¿±¸ºĞ
-					jrParam.setField("YD_SCH_CD"           , sYD_SCH_CD					); //¾ßµå½ºÄÉÁìÄÚµå
-					jrParam.setField("YD_SCH_PRIOR"        , sYD_SCH_PRIOR				); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					jrParam.setField("YD_SCH_PROG_STAT"    , "W"						); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-					jrParam.setField("YD_SCH_ST_GP"        , "A"						); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷)
-					jrParam.setField("YD_SCH_REQ_GP"       , ""							); //¾ßµåToÀ§Ä¡Guide
+					jrParam.setField("YD_WBOOK_ID"         , sYD_WBOOK_ID				); //ì‘ì—…ID
+					jrParam.setField("YD_GP"               , YmConstant.YD_GP_2			); //ì•¼ë“œêµ¬ë¶„
+					jrParam.setField("YD_BAY_GP"           , sYD_SCH_CD.substring(1,2)	); //ë™êµ¬ë¶„
+					jrParam.setField("YD_SCH_CD"           , sYD_SCH_CD					); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrParam.setField("YD_SCH_PRIOR"        , sYD_SCH_PRIOR				); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_SCH_PROG_STAT"    , "W"						); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+					jrParam.setField("YD_SCH_ST_GP"        , "A"						); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…)
+					jrParam.setField("YD_SCH_REQ_GP"       , ""							); //ì•¼ë“œToìœ„ì¹˜Guide
 					jrParam.setField("YD_AIM_YD_GP"        , ""							);
 					jrParam.setField("YD_AIM_BAY_GP"       , ""							);
 					jrParam.setField("YD_TO_LOC_DCSN_MTD"  , ""							);
@@ -12596,14 +12596,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("DIST_SHIPASSIGN_GP"  , ""							);
 					jrParam.setField("YD_WRK_PLAN_CRN"     , ""							);
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 				}
 				
 				/**********************************************************
-				 * 2. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+				 * 2. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 				 **********************************************************/
 				jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID												);
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)					);	// Àç·á¹øÈ£
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)					);	// ì¬ë£Œë²ˆí˜¸
 				jrParam.setField("STACK_COL_GP"		, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(0,6)	);
 				jrParam.setField("STACK_BED_GP"		, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(7,9)	);
 				jrParam.setField("STACK_LAYER_GP"	, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(10)	);
@@ -12612,38 +12612,38 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_TAKE_OUT_DT"	, ""														);
 				jrParam.setField("YD_TAKE_OUT_CD"	, ""														);
 				
-				//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+				//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 				
 				/**********************************************************
-				* 3-1. TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿Á¶°Ç µî·Ï
+				* 3-1. TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ì¡°ê±´ ë“±ë¡
 				**********************************************************/
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)										);
-				jrParam.setField("YD_AIM_RT_GP"		, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)) 			); // ÀÌµ¿Á¶°Ç
-				jrParam.setField("STOCK_MOVE_TERM"	, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)) 			); // ÀÌµ¿Á¶°Ç
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)										);
+				jrParam.setField("YD_AIM_RT_GP"		, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)) 			); // ì´ë™ì¡°ê±´
+				jrParam.setField("STOCK_MOVE_TERM"	, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)) 			); // ì´ë™ì¡°ê±´
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç UPDATE");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ UPDATE");
 				
 				/**********************************************************
-				* 3-2. ÀûÄ¡´Ü Å×ÀÌºí(TB_YM_STACKLAYER)ÀÇ 'ÀûÄ¡»óÅÂ'¸¦ UPDATE
-				* >> ±âÁØº¯°æ : Àç·áÀÇ »óÅÂ °ªÀ¸·Î ÀûÄ¡»óÅÂ¸¦ Á¶È¸ÇÏ¹Ç·Î µû·Î Set ÇÒ ÇÊ¿ä ¾øÀ½('S'ÄÚµå ¹Ì»ç¿ë Ã³¸®)
+				* 3-2. ì ì¹˜ë‹¨ í…Œì´ë¸”(TB_YM_STACKLAYER)ì˜ 'ì ì¹˜ìƒíƒœ'ë¥¼ UPDATE
+				* >> ê¸°ì¤€ë³€ê²½ : ì¬ë£Œì˜ ìƒíƒœ ê°’ìœ¼ë¡œ ì ì¹˜ìƒíƒœë¥¼ ì¡°íšŒí•˜ë¯€ë¡œ ë”°ë¡œ Set í•  í•„ìš” ì—†ìŒ('S'ì½”ë“œ ë¯¸ì‚¬ìš© ì²˜ë¦¬)
 				**********************************************************/
-				/*jrParam.setField("STACK_LAYER_STAT"	, YmConstant.STACK_LAYER_STAT_S 				); // ÀûÄ¡»óÅÂ
+				/*jrParam.setField("STACK_LAYER_STAT"	, YmConstant.STACK_LAYER_STAT_S 				); // ì ì¹˜ìƒíƒœ
 				jrParam.setField("FROM_LOC"			, commUtils.getValue(gdReq, "FROM_LOC"	, ii)	);
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°"	, ii)	);
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ"	, ii)	);
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateLayerState1", logId, methodNm, "TB_YM_STACKLAYERÀÇ 'ÀûÄ¡»óÅÂ'¸¦ UPDATE");*/
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateLayerState1", logId, methodNm, "TB_YM_STACKLAYERì˜ 'ì ì¹˜ìƒíƒœ'ë¥¼ UPDATE");*/
 				
 				
 			 
 			
-				//½ºÄÉÁÙ ¸ŞÀÎ È£Ãâ
+				//ìŠ¤ì¼€ì¤„ ë©”ì¸ í˜¸ì¶œ
 				//JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 				//jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-				//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-				//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ÀÛ¾÷¿¹¾àID
-				//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-				//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+				//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+				//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ì‘ì—…ì˜ˆì•½ID
+				//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+				//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 				//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);		
 				
 			}
@@ -12651,9 +12651,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Slab Schedule EJB Call
 			JDTORecord jrParam1		= JDTORecordFactory.getInstance().create();
 			jrParam1.setField("JMS_TC_CD"    , "YMYMJ202"	); 
-			jrParam1.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID	); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrParam1.setField("YD_SCH_CD"    , ""		  	); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam1.setField("YD_EQP_ID"    , ""  			); //¾ßµå¼³ºñID
+			jrParam1.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID	); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParam1.setField("YD_SCH_CD"    , ""		  	); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam1.setField("YD_EQP_ID"    , ""  			); //ì•¼ë“œì„¤ë¹„ID
 			
 			EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
 			jrRtn = (JDTORecord)ejbConn.trx("procYMYMJ202",new Class[]{JDTORecord.class},new Object[]{ jrParam1 });	
@@ -12667,34 +12667,34 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of scarfingWork
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : È­¸éÀ» ÅëÇØ¼­ ½ÃÆíÀç ¹× ÇÚµå½ºÄ«ÇÎ ÃßÃâ¿ä±¸
-	 * ÀÛ¾÷¿¹¾àÀ» »ı¼ºÇÑ´Ù.
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : í™”ë©´ì„ í†µí•´ì„œ ì‹œí¸ì¬ ë° í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œìš”êµ¬
+	 * ì‘ì—…ì˜ˆì•½ì„ ìƒì„±í•œë‹¤.
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
 	 */
 	public JDTORecord scarfingOut(GridData gdReq) throws DAOException {
 		
-		/** As-Is ·ÎÁ÷
-			1.	¾ßµå MAPÁ¤º¸¸¦ Ã¼Å©
-			2.	SLAB INFO Ã¼Å©(Á¶È¸¸¸ ÇÏ°í ¾Æ¹« ÀÛ¾÷ÇÏÁö ¾ÊÀ½)
-			 2-1. ½ÃÆíÀçÀÎ °æ¿ì Ã¼Å© (¹Ì±¸Çö)
-			 2-2. ÇÚµå ½ºÄ«ÇÎÀçÀÎ °æ¿ì Ã¼Å©(¹Ì±¸Çö)
+		/** As-Is ë¡œì§
+			1.	ì•¼ë“œ MAPì •ë³´ë¥¼ ì²´í¬
+			2.	SLAB INFO ì²´í¬(ì¡°íšŒë§Œ í•˜ê³  ì•„ë¬´ ì‘ì—…í•˜ì§€ ì•ŠìŒ)
+			 2-1. ì‹œí¸ì¬ì¸ ê²½ìš° ì²´í¬ (ë¯¸êµ¬í˜„)
+			 2-2. í•¸ë“œ ìŠ¤ì¹´í•‘ì¬ì¸ ê²½ìš° ì²´í¬(ë¯¸êµ¬í˜„)
 			
-			3. ½ºÄÉÁì ÄÚµå ¼ÂÆÃ
-			4. ÀÛ¾÷¿¹¾à »ı¼º.
-			5. ½ºÄÉÁì call
+			3. ìŠ¤ì¼€ì¥´ ì½”ë“œ ì…‹íŒ…
+			4. ì‘ì—…ì˜ˆì•½ ìƒì„±.
+			5. ìŠ¤ì¼€ì¥´ call
 		**/
 		
 		// To-Be Start
-		String methodNm = "È­¸éÀ» ÅëÇØ¼­ ½ÃÆíÀç ¹× ÇÚµå½ºÄ«ÇÎ ÃßÃâ¿ä±¸[BSlabJspSeEJB.scarfingWork] < " + gdReq.getNavigateValue();
+		String methodNm = "í™”ë©´ì„ í†µí•´ì„œ ì‹œí¸ì¬ ë° í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œìš”êµ¬[BSlabJspSeEJB.scarfingWork] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		JDTORecord sndRecord = JDTORecordFactory.getInstance().create();
 		
-		String sMessage = "ÃßÃâ ÀÛ¾÷¿¹¾àÀ» »ı¼ºÇß½À´Ï´Ù";
+		String sMessage = "ì¶”ì¶œ ì‘ì—…ì˜ˆì•½ì„ ìƒì„±í–ˆìŠµë‹ˆë‹¤";
 		
 		try {
 			
@@ -12703,11 +12703,11 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			JDTORecord inRecord = CmUtil.genJDTORecord(gdReq);
 			JDTORecord jDrd = JDTORecordFactory.getInstance().create();
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			/**********************************************************
-			* 1. ¾ßµå MAPÁ¤º¸¸¦ Ã¼Å©
+			* 1. ì•¼ë“œ MAPì •ë³´ë¥¼ ì²´í¬
 			**********************************************************/
 			JDTORecord jrParam		= JDTORecordFactory.getInstance().create();
 			JDTORecord jrRtn 		= JDTORecordFactory.getInstance().create();
@@ -12716,41 +12716,41 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sStockId = "";
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
-				// SLAB_NO(STOCK_ID)·Î YM_ÀûÄ¡´Ü TableÁ¶È¸
-				jrParam.setField("STACK_COL_GP"	, commUtils.getValue(gdReq, "ÀûÄ¡¿­", ii)		);
-		 		jrParam.setField("STOCK_ID"		, commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)		);
+				// SLAB_NO(STOCK_ID)ë¡œ YM_ì ì¹˜ë‹¨ Tableì¡°íšŒ
+				jrParam.setField("STACK_COL_GP"	, commUtils.getValue(gdReq, "ì ì¹˜ì—´", ii)		);
+		 		jrParam.setField("STOCK_ID"		, commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)		);
 		 		/*
 			 		SELECT *
 			 		  FROM TB_YM_STACKLAYER
 			 		 WHERE STACK_COL_GP = :STACK_COL_GP
 			 		   AND   STOCK_ID	= :STOCK_ID 
 		 		*/
-		 		rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithStockId", logId, methodNm, "YM_ÀûÄ¡´Ü Á¤º¸¸¦ Ã¼Å©"); 
+		 		rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithStockId", logId, methodNm, "YM_ì ì¹˜ë‹¨ ì •ë³´ë¥¼ ì²´í¬"); 
 				
 				if(rsResult.size() < 1){
-					sMessage = "½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°Á¤º¸ Á¸Àç¾ÈÇÔ.";
+					sMessage = "ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì •ë³´ ì¡´ì¬ì•ˆí•¨.";
 					throw new Exception(sMessage);
 				}else{
-					// ÀûÄ¡´Ü Àç·á»óÅÂ È®ÀÎ
+					// ì ì¹˜ë‹¨ ì¬ë£Œìƒíƒœ í™•ì¸
 					String sLayerStat = StringHelper.evl(rsResult.getRecord(0).getFieldString("YD_STK_LYR_MTL_STAT"),""); // AsIs : STACK_LAYER_STAT
 					
-					if("U".equals(sLayerStat)){			// U : ±Ç»ó´ë±â
-						sMessage = "=½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°ÀÌ ½ºÄÉÁì µî·Ï »óÅÂÀÓ.";
+					if("U".equals(sLayerStat)){			// U : ê¶ŒìƒëŒ€ê¸°
+						sMessage = "=ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì´ ìŠ¤ì¼€ì¥´ ë“±ë¡ ìƒíƒœì„.";
 						throw new Exception(sMessage);
-					}else if("D".equals(sLayerStat)){	// D : ±ÇÇÏ´ë±â
-						sMessage = "=½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°ÀÌ ½ºÄÉÁì µî·Ï »óÅÂÀÓ.";
+					}else if("D".equals(sLayerStat)){	// D : ê¶Œí•˜ëŒ€ê¸°
+						sMessage = "=ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì´ ìŠ¤ì¼€ì¥´ ë“±ë¡ ìƒíƒœì„.";
 						throw new Exception(sMessage);
 					}	
 					
-					// AsIs ¼Ò½º
+					// AsIs ì†ŒìŠ¤
 					/*if(YmCommonConst.STACK_LAYER_STAT_S.equals(sLayerStat)){
-						sMessage = "=½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°ÀÌ ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÔ.";
+						sMessage = "=ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì´ ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•¨.";
 						throw new Exception(sMessage);
 					}else if(YmCommonConst.STACK_LAYER_STAT_U.equals(sLayerStat)){
-						sMessage = "=½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°ÀÌ ½ºÄÉÁì µî·Ï »óÅÂÀÓ.";
+						sMessage = "=ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì´ ìŠ¤ì¼€ì¥´ ë“±ë¡ ìƒíƒœì„.";
 						throw new Exception(sMessage);
 					}else if(YmCommonConst.STACK_LAYER_STAT_P.equals(sLayerStat)){
-						sMessage = "=½ÃÆíÀç/ÇÚµå½ºÄ«ÇÎ ÃßÃâ=>ÀúÀåÇ°ÀÌ ½ºÄÉÁì µî·Ï »óÅÂÀÓ.";
+						sMessage = "=ì‹œí¸ì¬/í•¸ë“œìŠ¤ì¹´í•‘ ì¶”ì¶œ=>ì €ì¥í’ˆì´ ìŠ¤ì¼€ì¥´ ë“±ë¡ ìƒíƒœì„.";
 						throw new Exception(sMessage);
 					}*/		
 				}
@@ -12758,7 +12758,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			
 			/**********************************************************
-			* 2. SLAB INFO Ã¼Å©
+			* 2. SLAB INFO ì²´í¬
 			**********************************************************/
 			String sCurrProgCd			= "";
 			String sReagentPickYn   	= "";
@@ -12767,9 +12767,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sScarfingDoneYn   	= "";
 			String sScarfingPattern   	= "";
 			
-			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectSlabMatirialInfo", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.selectSlabMatirialInfo", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 			
-			commUtils.printLog(logId, "[½ºÄÉÁÙ ±âÁØ Á¶È¸°Ç¼ö rsResult2]="+ rsResult2.size(), "[INFO]");
+			commUtils.printLog(logId, "[ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒê±´ìˆ˜ rsResult2]="+ rsResult2.size(), "[INFO]");
 			
         	if(rsResult2.size() > 0){
 	    		sCurrProgCd	   		= StringHelper.evl(rsResult2.getFieldString("CURR_PROG_CD"), "");
@@ -12780,36 +12780,36 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	    		sScarfingPattern   	= StringHelper.evl(rsResult2.getFieldString("SCARFING_PATTERN"), "");
 	    		
 	    		
-	    		commUtils.printLog(logId, "[ÇÁ·Î±×·¥ ±¸ºĞ(H:ÇÚµå½ºÄ«ÇÎ/S:½ÃÆí) p_gbn]="+ gdReq.getParam("p_gbn"), "[INFO]");
+	    		commUtils.printLog(logId, "[í”„ë¡œê·¸ë¨ êµ¬ë¶„(H:í•¸ë“œìŠ¤ì¹´í•‘/S:ì‹œí¸) p_gbn]="+ gdReq.getParam("p_gbn"), "[INFO]");
 	    		
 	    		/*
-	        	 *	2-1. ½ÃÆíÀçÀÎ °æ¿ì Ã¼Å©
+	        	 *	2-1. ì‹œí¸ì¬ì¸ ê²½ìš° ì²´í¬
 	        	 */
 	        	if("S".equals(gdReq.getParam("p_gbn"))){
 	            /*
-	        	 *	2-2. ÇÚµå ½ºÄ«ÇÎÀçÀÎ °æ¿ì Ã¼Å©
+	        	 *	2-2. í•¸ë“œ ìŠ¤ì¹´í•‘ì¬ì¸ ê²½ìš° ì²´í¬
 	        	 */	
 	            }else if("H".equals(gdReq.getParam("p_gbn"))){
-	            	// ÃßÈÄ Ã³¸® ·ÎÁ÷ ¹İ¿µ
+	            	// ì¶”í›„ ì²˜ë¦¬ ë¡œì§ ë°˜ì˜
 	            }
 	        	
 	    	}
         	
 			
 			
-			// ÀÛ¾÷¿¹¾àID»ı¼º
-        	// ½ºÄ«ÇÎ ÀÛ¾÷ ½ºÄÉÁì ±âÁØ º¯µ¿ Eµ¿ ÇÚµå½ºÄ«ÇÎ >> Eµ¿ µ¿³»ÀÌÀû(3¹øÅ©·¹ÀÎ)À¸·Î º¯°æ
+			// ì‘ì—…ì˜ˆì•½IDìƒì„±
+        	// ìŠ¤ì¹´í•‘ ì‘ì—… ìŠ¤ì¼€ì¥´ ê¸°ì¤€ ë³€ë™ Eë™ í•¸ë“œìŠ¤ì¹´í•‘ >> Eë™ ë™ë‚´ì´ì (3ë²ˆí¬ë ˆì¸)ìœ¼ë¡œ ë³€ê²½
 			String sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 			
-			String sYD_SCH_CD	= "";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå
-			//String sYD_SCH_CD	= "2EYD31MM";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå : Eµ¿ µ¿³»ÀÌÀû(3)
-			//String sYD_SCH_CD	= "2ESE01LM";	//  ½½¶óºê ½ºÄ«ÇÎ º¸±Ş ½ºÄÉÁì ÄÚµå : Eµ¿ Scarfing ÃßÃâ
+			String sYD_SCH_CD	= "";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ
+			//String sYD_SCH_CD	= "2EYD31MM";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ : Eë™ ë™ë‚´ì´ì (3)
+			//String sYD_SCH_CD	= "2ESE01LM";	//  ìŠ¬ë¼ë¸Œ ìŠ¤ì¹´í•‘ ë³´ê¸‰ ìŠ¤ì¼€ì¥´ ì½”ë“œ : Eë™ Scarfing ì¶”ì¶œ
 			
 		    jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
-	 		jrParam.setResultMsg(methodNm);	//»óÀ§ Method ¸í
+	 		jrParam.setResultMsg(methodNm);	//ìƒìœ„ Method ëª…
 		    
 			
-	 		// ½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+	 		// ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 	 		jrParam.setField("YD_SCH_CD", sYD_SCH_CD);
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 			SELECT YD_SCH_CD
@@ -12819,36 +12819,36 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE DEL_YN = 'N'
 			   AND YD_SCH_CD = :V_YD_SCH_CD
 			*/   
-			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+			rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 			
 			String	sYD_SCH_PRIOR = "";
 			if (rsResult2.size() > 0){
-				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+				sYD_SCH_PRIOR = rsResult2.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 			}
 			
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				if(ii == 0){	// ÇÏ³ªÀÇ ÀÛ¾÷ID¿¡ ¿©·¯°³ÀÇ Àç·á¸¦ Æ÷ÇÔÇÔ
+				if(ii == 0){	// í•˜ë‚˜ì˜ ì‘ì—…IDì— ì—¬ëŸ¬ê°œì˜ ì¬ë£Œë¥¼ í¬í•¨í•¨
 					
-					// ½ºÄ«ÇÎ ÆĞÅÏ G, S´Â ÇÚµå½ºÄ«ÇÎ, ±× ¿Ü´Â ¸Ó½Å½ºÄ«ÇÎ (SP ½ÃÆíÀº ¾Èµé¾î¿À¹Ç·Î Á¦¿ÜÇÔ)
-					if("G".equals(commUtils.getValue(gdReq, "SCFÆĞÅÏ", ii)) || "S".equals(commUtils.getValue(gdReq, "SCFÆĞÅÏ", ii))){
-						sYD_SCH_CD = "2EYD31MM"; // ÇÚµå½ºÄ«ÇÎ (3¹øÅ©·¹ÀÎ µ¿³»ÀÌÀû)	>> ÇÚµå½ºÄ«ÇÎÀº ½ºÄÉÁì ³»¿¡¼­ ÁøÇà»óÅÂ¿¡ µû¶ó º¸±Ş/ÃßÃâ ºĞ¸®ÀÛ¾÷ÇÏ¹Ç·Î ½ºÄÉÁì ÄÚµå°¡ °°À½
+					// ìŠ¤ì¹´í•‘ íŒ¨í„´ G, SëŠ” í•¸ë“œìŠ¤ì¹´í•‘, ê·¸ ì™¸ëŠ” ë¨¸ì‹ ìŠ¤ì¹´í•‘ (SP ì‹œí¸ì€ ì•ˆë“¤ì–´ì˜¤ë¯€ë¡œ ì œì™¸í•¨)
+					if("G".equals(commUtils.getValue(gdReq, "SCFíŒ¨í„´", ii)) || "S".equals(commUtils.getValue(gdReq, "SCFíŒ¨í„´", ii))){
+						sYD_SCH_CD = "2EYD31MM"; // í•¸ë“œìŠ¤ì¹´í•‘ (3ë²ˆí¬ë ˆì¸ ë™ë‚´ì´ì )	>> í•¸ë“œìŠ¤ì¹´í•‘ì€ ìŠ¤ì¼€ì¥´ ë‚´ì—ì„œ ì§„í–‰ìƒíƒœì— ë”°ë¼ ë³´ê¸‰/ì¶”ì¶œ ë¶„ë¦¬ì‘ì—…í•˜ë¯€ë¡œ ìŠ¤ì¼€ì¥´ ì½”ë“œê°€ ê°™ìŒ
 					}else{
-						sYD_SCH_CD = "2ESE01LM"; // ¸Ó½Å½ºÄ«ÇÎ (Eµ¿ Scarfing ÃßÃâ)
+						sYD_SCH_CD = "2ESE01LM"; // ë¨¸ì‹ ìŠ¤ì¹´í•‘ (Eë™ Scarfing ì¶”ì¶œ)
 					}
 					
 					/**********************************************************
-					* 3. ÀÛ¾÷¿¹¾à »ı¼º.
+					* 3. ì‘ì—…ì˜ˆì•½ ìƒì„±.
 					**********************************************************/
-					jrParam.setField("YD_WBOOK_ID"         , sYD_WBOOK_ID				); //ÀÛ¾÷ID
-					jrParam.setField("YD_GP"               , YmConstant.YD_GP_2			); //¾ßµå±¸ºĞ
-					jrParam.setField("YD_BAY_GP"           , sYD_SCH_CD.substring(1,2)	); //µ¿±¸ºĞ
-					jrParam.setField("YD_SCH_CD"           , sYD_SCH_CD					); //¾ßµå½ºÄÉÁìÄÚµå
-					jrParam.setField("YD_SCH_PRIOR"        , sYD_SCH_PRIOR				); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-					jrParam.setField("YD_SCH_PROG_STAT"    , "W"						); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-					jrParam.setField("YD_SCH_ST_GP"        , "A"						); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷)
-					jrParam.setField("YD_SCH_REQ_GP"       , ""							); //¾ßµåToÀ§Ä¡Guide
+					jrParam.setField("YD_WBOOK_ID"         , sYD_WBOOK_ID				); //ì‘ì—…ID
+					jrParam.setField("YD_GP"               , YmConstant.YD_GP_2			); //ì•¼ë“œêµ¬ë¶„
+					jrParam.setField("YD_BAY_GP"           , sYD_SCH_CD.substring(1,2)	); //ë™êµ¬ë¶„
+					jrParam.setField("YD_SCH_CD"           , sYD_SCH_CD					); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+					jrParam.setField("YD_SCH_PRIOR"        , sYD_SCH_PRIOR				); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+					jrParam.setField("YD_SCH_PROG_STAT"    , "W"						); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+					jrParam.setField("YD_SCH_ST_GP"        , "A"						); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…)
+					jrParam.setField("YD_SCH_REQ_GP"       , ""							); //ì•¼ë“œToìœ„ì¹˜Guide
 					jrParam.setField("YD_AIM_YD_GP"        , ""							);
 					jrParam.setField("YD_AIM_BAY_GP"       , ""							);
 					jrParam.setField("YD_TO_LOC_DCSN_MTD"  , ""							);
@@ -12863,14 +12863,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("DIST_SHIPASSIGN_GP"  , ""							);
 					jrParam.setField("YD_WRK_PLAN_CRN"     , ""							);
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 					
 				}
 				/**********************************************************
-				 * 3-1. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+				 * 3-1. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 				 **********************************************************/
 				jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID												);
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)					);	// Àç·á¹øÈ£
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)					);	// ì¬ë£Œë²ˆí˜¸
 				jrParam.setField("STACK_COL_GP"		, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(0,6)	);
 				jrParam.setField("STACK_BED_GP"		, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(7,9)	);
 				jrParam.setField("STACK_LAYER_GP"	, commUtils.getValue(gdReq, "FROM_LOC", ii).substring(10)	);
@@ -12879,50 +12879,50 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("YD_TAKE_OUT_DT"	, ""														);
 				jrParam.setField("YD_TAKE_OUT_CD"	, ""														);
 				
-				//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+				//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 				
 				/**********************************************************
-				* 3-2. TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿Á¶°Ç µî·Ï
+				* 3-2. TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ì¡°ê±´ ë“±ë¡
 				**********************************************************/
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)										);
-				jrParam.setField("YD_AIM_RT_GP"		, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)) 			); // ÀÌµ¿Á¶°Ç
-				jrParam.setField("STOCK_MOVE_TERM"	, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ÀúÀåÇ°", ii)) 			); // ÀÌµ¿Á¶°Ç
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)										);
+				jrParam.setField("YD_AIM_RT_GP"		, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)) 			); // ì´ë™ì¡°ê±´
+				jrParam.setField("STOCK_MOVE_TERM"	, bSlabComm.getStockMoveTerm(commUtils.getValue(gdReq, "ì €ì¥í’ˆ", ii)) 			); // ì´ë™ì¡°ê±´
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç UPDATE");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ UPDATE");
 				
 				/**********************************************************
-				* 3-2. ÀûÄ¡´Ü Å×ÀÌºí(TB_YM_STACKLAYER)ÀÇ 'ÀûÄ¡»óÅÂ'¸¦ UPDATE
-				* >> ±âÁØº¯°æ : Àç·áÀÇ »óÅÂ °ªÀ¸·Î ÀûÄ¡»óÅÂ¸¦ Á¶È¸ÇÏ¹Ç·Î µû·Î Set ÇÒ ÇÊ¿ä ¾øÀ½('S'ÄÚµå ¹Ì»ç¿ë Ã³¸®)
+				* 3-2. ì ì¹˜ë‹¨ í…Œì´ë¸”(TB_YM_STACKLAYER)ì˜ 'ì ì¹˜ìƒíƒœ'ë¥¼ UPDATE
+				* >> ê¸°ì¤€ë³€ê²½ : ì¬ë£Œì˜ ìƒíƒœ ê°’ìœ¼ë¡œ ì ì¹˜ìƒíƒœë¥¼ ì¡°íšŒí•˜ë¯€ë¡œ ë”°ë¡œ Set í•  í•„ìš” ì—†ìŒ('S'ì½”ë“œ ë¯¸ì‚¬ìš© ì²˜ë¦¬)
 				**********************************************************/
-				/*jrParam.setField("STACK_LAYER_STAT"	, YmConstant.STACK_LAYER_STAT_S 				); // ÀûÄ¡»óÅÂ
+				/*jrParam.setField("STACK_LAYER_STAT"	, YmConstant.STACK_LAYER_STAT_S 				); // ì ì¹˜ìƒíƒœ
 				jrParam.setField("FROM_LOC"			, commUtils.getValue(gdReq, "FROM_LOC"	, ii)	);
-				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ÀúÀåÇ°"	, ii)	);
+				jrParam.setField("STOCK_ID"			, commUtils.getValue(gdReq, "ì €ì¥í’ˆ"	, ii)	);
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateLayerState1", logId, methodNm, "TB_YM_STACKLAYERÀÇ 'ÀûÄ¡»óÅÂ'¸¦ UPDATE");*/
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updateLayerState1", logId, methodNm, "TB_YM_STACKLAYERì˜ 'ì ì¹˜ìƒíƒœ'ë¥¼ UPDATE");*/
 
 			}
 			
 			
 			/**********************************************************
-			* 4. ½ºÄÉÁì È£Ãâ
+			* 4. ìŠ¤ì¼€ì¥´ í˜¸ì¶œ
 			**********************************************************/
 			
-			//½ºÄÉÁÙ ¸ŞÀÎ È£Ãâ
+			//ìŠ¤ì¼€ì¤„ ë©”ì¸ í˜¸ì¶œ
 			//JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 			//jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-			//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-			//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ÀÛ¾÷¿¹¾àID
-			//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-			//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+			//jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+			//jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ì‘ì—…ì˜ˆì•½ID
+			//jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			//jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 			//jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);		
 			
 			//Slab Schedule EJB Call
 			JDTORecord jrParam1		= JDTORecordFactory.getInstance().create();
 			jrParam1.setField("JMS_TC_CD"    , "YMYMJ202"	); 
-			jrParam1.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID	); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrParam1.setField("YD_SCH_CD"    , ""		  	); //¾ßµå½ºÄÉÁìÄÚµå
-			jrParam1.setField("YD_EQP_ID"    , ""  			); //¾ßµå¼³ºñID
+			jrParam1.setField("YD_WBOOK_ID"  , sYD_WBOOK_ID	); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrParam1.setField("YD_SCH_CD"    , ""		  	); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+			jrParam1.setField("YD_EQP_ID"    , ""  			); //ì•¼ë“œì„¤ë¹„ID
 			
 			
 			EJBConnector ejbConn = new EJBConnector("default","BSlabSchSeEJB",this);
@@ -12938,9 +12938,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of scarfingWork
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : SCARFING ´ë»óÀçÁ¶È¸ - Áö¿¬»çÀ¯µî·Ï
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª… : SCARFING ëŒ€ìƒì¬ì¡°íšŒ - ì§€ì—°ì‚¬ìœ ë“±ë¡
 	 * 
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inDto
 	 * @return JDTORecordSet
 	 * @throws DAOException
@@ -12948,25 +12948,25 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	public void updYd_SlabScarfDelyReg(GridData gdReq) throws DAOException {
 		
 		// To-Be Start
-		String methodNm = "SCARFING ´ë»óÀçÁ¶È¸ - Áö¿¬»çÀ¯µî·Ï[BSlabJspSeEJB.updYd_SlabScarfDelyReg] < " + gdReq.getNavigateValue();
+		String methodNm = "SCARFING ëŒ€ìƒì¬ì¡°íšŒ - ì§€ì—°ì‚¬ìœ ë“±ë¡[BSlabJspSeEJB.updYd_SlabScarfDelyReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		
 		try {
 			
 			commUtils.printLog(logId, methodNm, "S+", gdReq);
 			
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			/**********************************************************
-			*  ½ºÄ«ÇÎ´ë»óÀç Áö¿¬»çÀ¯µî·ÏÃ³¸®
+			*  ìŠ¤ì¹´í•‘ëŒ€ìƒì¬ ì§€ì—°ì‚¬ìœ ë“±ë¡ì²˜ë¦¬
 			**********************************************************/
 			JDTORecord jrParam		= JDTORecordFactory.getInstance().create();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {	
 				/*
 					-- com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYd_SlabScarfDelyReg
-					-- ½ºÄ«ÇÎ´ë»óÀç Áö¿¬»çÀ¯µî·Ï
+					-- ìŠ¤ì¹´í•‘ëŒ€ìƒì¬ ì§€ì—°ì‚¬ìœ ë“±ë¡
 					UPDATE USRPMA.TB_PM_B_SLABSCARFINGUGNTASGN A
 					SET SCARF_DELY_REGISTER = :V_SCARF_DELY_REGISTER
 					  , SCARF_DELY_CNTS     = :V_SCARF_DELY_REG_CNTS
@@ -12977,14 +12977,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					  AND STEP_NO           = :V_STEP_NO
 				 * */
 				
-				jrParam.setField("SCARF_DELY_REGISTER"	, gdReq.getParam("SCARF_DELY_REGISTER")			);	// ¿äÃ»ÀÚ»ç¹ø
-				jrParam.setField("SCARF_DELY_REG_CNTS"	, gdReq.getParam("SCARF_DELY_REG_CNTS") 		);	// Áö¿¬³»¿ë
-				jrParam.setField("STL_NO"				, commUtils.getValue(gdReq, "ÀúÀåÇ°" , ii)		);	// Àç·á¹øÈ£
-				jrParam.setField("STEP_NO"				, "1"											);	// Â÷¼ö(As-Is¿¡ "1"·Î ÇÏµåÄÚµù µÇ¾îÀÖÀ½)
+				jrParam.setField("SCARF_DELY_REGISTER"	, gdReq.getParam("SCARF_DELY_REGISTER")			);	// ìš”ì²­ìì‚¬ë²ˆ
+				jrParam.setField("SCARF_DELY_REG_CNTS"	, gdReq.getParam("SCARF_DELY_REG_CNTS") 		);	// ì§€ì—°ë‚´ìš©
+				jrParam.setField("STL_NO"				, commUtils.getValue(gdReq, "ì €ì¥í’ˆ" , ii)		);	// ì¬ë£Œë²ˆí˜¸
+				jrParam.setField("STEP_NO"				, "1"											);	// ì°¨ìˆ˜(As-Isì— "1"ë¡œ í•˜ë“œì½”ë”© ë˜ì–´ìˆìŒ)
 				//jrParam.setField("STEP_NO"	, commUtils.getValue(gdReq, "STEP_NO"				, ii)	);
 				
-				//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
-				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYd_SlabScarfDelyReg", logId, methodNm, "½ºÄ«ÇÎ´ë»óÀç Áö¿¬»çÀ¯µî·Ï - USRPMA.TB_PM_B_SLABSCARFINGUGNTASGN");
+				//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
+				commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updYd_SlabScarfDelyReg", logId, methodNm, "ìŠ¤ì¹´í•‘ëŒ€ìƒì¬ ì§€ì—°ì‚¬ìœ ë“±ë¡ - USRPMA.TB_PM_B_SLABSCARFINGUGNTASGN");
 				
 			}
 			
@@ -12996,15 +12996,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updYd_SlabScarfDelyReg
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : STE ºñ»óº¸±Ş ½ÇÇà
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : STE ë¹„ìƒë³´ê¸‰ ì‹¤í–‰
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord runSteEmgSup(GridData gdReq) throws DAOException {
-		String methodNm = "STE ºñ»óº¸±Ş ½ÇÇà [BSlabJspSeEJB.runSteEmgSup] < " + gdReq.getNavigateValue();
+		String methodNm = "STE ë¹„ìƒë³´ê¸‰ ì‹¤í–‰ [BSlabJspSeEJB.runSteEmgSup] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13012,40 +13012,40 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			//Return Value
 			JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 
-			//W/B 05¹ø ¹øÁö ÃÖ»ó´Ü Slab Á¤º¸¸¦ ÀÛ¾÷¿¹¾àÇÑ´Ù.
-			String sYD_SCH_CD = "2CHB02UM"; //Cµ¿ STE ºñ»óº¸±Ş
+			//W/B 05ë²ˆ ë²ˆì§€ ìµœìƒë‹¨ Slab ì •ë³´ë¥¼ ì‘ì—…ì˜ˆì•½í•œë‹¤.
+			String sYD_SCH_CD = "2CHB02UM"; //Cë™ STE ë¹„ìƒë³´ê¸‰
 			String sYD_TO_LOC_GUIDE = "2CCT040101"; //sYD_TO_LOC_GUIDE = "2CCT040101";
 			
 			
-			//CTC4 °íÀå½Ã ºñ»óº¸±Ş TOÀ§Ä¡ L4 Å×ÀÌºí (2CLT04) ÁöÁ¤ ¿©ºÎ
+			//CTC4 ê³ ì¥ì‹œ ë¹„ìƒë³´ê¸‰ TOìœ„ì¹˜ L4 í…Œì´ë¸” (2CLT04) ì§€ì • ì—¬ë¶€
 			String sAPP100_ZY001_YN = ymComm.BCoilApplyYn("APP100","2","ZY001_YN");
 			
 			if("Y".equals(sAPP100_ZY001_YN)) {
 				
-				//CTC#4 °íÀå¿©ºÎ È®ÀÎ
+				//CTC#4 ê³ ì¥ì—¬ë¶€ í™•ì¸
 				jrParam.setField("EQUIP_GP"  , "2CCT04"); 
 				
-				JDTORecordSet rsCtc4Stat = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.selectEquipInfo", logId, methodNm, "CTC#4 °íÀå¿©ºÎ È®ÀÎ");
+				JDTORecordSet rsCtc4Stat = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.selectEquipInfo", logId, methodNm, "CTC#4 ê³ ì¥ì—¬ë¶€ í™•ì¸");
 
 				if(rsCtc4Stat.size() > 0) {
 					if("B".equals(rsCtc4Stat.getRecord(0).getFieldString("WPROG_STAT"))) {
-						commUtils.printLog(logId, "=======:::: CTC#4 °íÀå = TOÀ§Ä¡°¡ÀÌµå¸¦ 2CLT04 ·Î º¯°æ  " , "SL");
-						sYD_TO_LOC_GUIDE = "2CLT040101"; //CTC#4 °íÀåÀÏ °æ¿ì TOÀ§Ä¡ L4 Å×ÀÌºí
+						commUtils.printLog(logId, "=======:::: CTC#4 ê³ ì¥ = TOìœ„ì¹˜ê°€ì´ë“œë¥¼ 2CLT04 ë¡œ ë³€ê²½  " , "SL");
+						sYD_TO_LOC_GUIDE = "2CLT040101"; //CTC#4 ê³ ì¥ì¼ ê²½ìš° TOìœ„ì¹˜ L4 í…Œì´ë¸”
 					}
 				}
 			}
 			
-			//¼±ÀÛ¾÷Áö½Ã Á¸Àç¿©ºÎ Ã¼Å©
+			//ì„ ì‘ì—…ì§€ì‹œ ì¡´ì¬ì—¬ë¶€ ì²´í¬
 			jrParam.setField("YD_SCH_CD" 		, sYD_SCH_CD); 
 			jrParam.setField("YD_CRN_SCH_ID"	, "1");
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPreWrkCrnSch
-			--±Ç»ó,±ÇÇÏ½Ã ÇØ´ç Å©·¹ÀÎ½ºÄÉÁÙ id¸¦ Á¦¿ÜÇÑ µ¿ÀÏ ½ºÄÉÁÙ ÀÛ¾÷ÀÌ ¸¸µé¾îÁ® ÀÖ´ÂÁö Á¶È¸
+			--ê¶Œìƒ,ê¶Œí•˜ì‹œ í•´ë‹¹ í¬ë ˆì¸ìŠ¤ì¼€ì¤„ idë¥¼ ì œì™¸í•œ ë™ì¼ ìŠ¤ì¼€ì¤„ ì‘ì—…ì´ ë§Œë“¤ì–´ì ¸ ìˆëŠ”ì§€ ì¡°íšŒ
 			SELECT CS.YD_CRN_SCH_ID
 			      ,CS.YD_SCH_CD
 			      ,CS.YD_UP_WO_LOC
@@ -13061,14 +13061,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			  AND  CS.YD_CRN_SCH_ID = CM.YD_CRN_SCH_ID
 			  AND  CM.YD_AID_WRK_YN = 'N'
 			 */
-			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPreWrkCrnSch", logId, methodNm, "¼±ÀÛ¾÷Áö½Ã Á¸Àç¿©ºÎ Ã¼Å©");
+			JDTORecordSet rsResult = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getPreWrkCrnSch", logId, methodNm, "ì„ ì‘ì—…ì§€ì‹œ ì¡´ì¬ì—¬ë¶€ ì²´í¬");
 			
 			if(rsResult.size() == 0) {
 			
 				//--------------------------------------------------------------------------------
-				//Cµ¿ STE ºñ»óº¸±Ş  ½ÃÀÛ
+				//Cë™ STE ë¹„ìƒë³´ê¸‰  ì‹œì‘
 				//--------------------------------------------------------------------------------
-				//ÀûÄ¡´Ü Å×ÀÌºí¿¡¼­ W/B 05Bed Á¤º¸¸¦ ÀĞ¾î ¿Â´Ù.
+				//ì ì¹˜ë‹¨ í…Œì´ë¸”ì—ì„œ W/B 05Bed ì •ë³´ë¥¼ ì½ì–´ ì˜¨ë‹¤.
 				jrParam.setField("STACK_COL_GP"		, "2CWB01"); 
 				jrParam.setField("STACK_BED_GP"		, "05");
 				/*
@@ -13079,7 +13079,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STOCK_ID IS NOT NULL
 				 ORDER BY STACK_LAYER_GP DESC
 				 */
-				JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithBedL", logId, methodNm, "W/B 05Bed Á¶È¸ ");
+				JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackLayerInfoWithBedL", logId, methodNm, "W/B 05Bed ì¡°íšŒ ");
 
 				boolean bFLAG = true;
 				String sSTOCK_ID = "";
@@ -13090,19 +13090,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				}
 				
 				if ("".equals(sSTOCK_ID)) {
-					//"STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ Á¸Àç¾ÈÇÔ");
-					commUtils.printLog(logId, "=======:::: STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ Á¸Àç¾ÈÇÔ. " , "SL");
-					throw new Exception("STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ Á¸Àç¾ÈÇÔ. ");
+					//"STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì¡´ì¬ì•ˆí•¨");
+					commUtils.printLog(logId, "=======:::: STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì¡´ì¬ì•ˆí•¨. " , "SL");
+					throw new Exception("STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì¡´ì¬ì•ˆí•¨. ");
 				}
 				
 				if (!"C".equals(sSTACK_LAYER_STAT)) {
-					//"STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ ÀÛ¾÷µî·Ï»óÅÂ ="+sLayerStat);
-					commUtils.printLog(logId, "=======:::: STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ ÀÛ¾÷µî·Ï»óÅÂ = " + sSTACK_LAYER_STAT, "SL");
-					throw new Exception("STE°íÀå ºñ»ó½ºÄÉÁì = W/B 5¹ø ¹øÁö ÀúÀåÇ°Á¤º¸ ÀÛ¾÷µî·Ï»óÅÂ ");
+					//"STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì‘ì—…ë“±ë¡ìƒíƒœ ="+sLayerStat);
+					commUtils.printLog(logId, "=======:::: STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì‘ì—…ë“±ë¡ìƒíƒœ = " + sSTACK_LAYER_STAT, "SL");
+					throw new Exception("STEê³ ì¥ ë¹„ìƒìŠ¤ì¼€ì¥´ = W/B 5ë²ˆ ë²ˆì§€ ì €ì¥í’ˆì •ë³´ ì‘ì—…ë“±ë¡ìƒíƒœ ");
 				}
 			
 				if (bFLAG) {
-					//CTC4 Æ®·¢Å· °ü¸®°¡ ¾ÈµÇ±â ¶§¹®¿¡ Å©·¹ÀÎ ÀÛ¾÷Áö½Ã »ı¼º Àü¿¡ Clear
+					//CTC4 íŠ¸ë™í‚¹ ê´€ë¦¬ê°€ ì•ˆë˜ê¸° ë•Œë¬¸ì— í¬ë ˆì¸ ì‘ì—…ì§€ì‹œ ìƒì„± ì „ì— Clear
 					jrParam.setField("STACK_COL_GP"		, "2CCT04"); 
 					jrParam.setField("STACK_BED_GP"		, "01");
 					jrParam.setField("STACK_LAYER_GP"	, "01");
@@ -13122,7 +13122,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					
 					
 					
-					//½ºÄÉÁÙÄÚµå·Î ½ºÄÉÁÙ±âÁØTableÁ¶È¸
+					//ìŠ¤ì¼€ì¤„ì½”ë“œë¡œ ìŠ¤ì¼€ì¤„ê¸°ì¤€Tableì¡°íšŒ
 					jrParam.setField("YD_SCH_CD", sYD_SCH_CD);
 			    	/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule  
 					SELECT YD_SCH_CD
@@ -13132,31 +13132,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					 WHERE DEL_YN = 'N'
 					   AND YD_SCH_CD = :V_YD_SCH_CD
 					*/   
-					JDTORecordSet rsResult3 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ Á¶È¸"); 
+					JDTORecordSet rsResult3 = commDao.select(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.getYdSchrule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì¡°íšŒ"); 
 					
 					if(rsResult3.size() > 0) {
-						String sYD_SCH_PRIOR = rsResult3.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
+						String sYD_SCH_PRIOR = rsResult3.getRecord(0).getFieldString("YD_WRK_CRN_PRIOR"); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
 						
-						//ÀÛ¾÷¿¹¾àID»ı¼º
+						//ì‘ì—…ì˜ˆì•½IDìƒì„±
 						String sYD_WBOOK_ID = commDao.getSeqId(logId, methodNm, "WrkBook");
 					
 						/**********************************************************
-						* 2-1. ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º
+						* 2-1. ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±
 						**********************************************************/
 						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 						jrParam.setField("YD_GP"			, YmConstant.YD_GP_2);
 						jrParam.setField("YD_BAY_GP"		, sYD_SCH_CD.substring(1,2));
-						jrParam.setField("YD_SCH_CD"		, sYD_SCH_CD); //¾ßµå½ºÄÉÁìÄÚµå
-						jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //¾ßµå½ºÄÉÁì¿ì¼±¼øÀ§
-						jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //¾ßµå½ºÄÉÁìÁøÇà»óÅÂ(W:½ºÄÉÁÙ¼öÇà´ë±â)
-						jrParam.setField("YD_SCH_ST_GP"		, "A"); //¾ßµå½ºÄÉÁì±âµ¿±¸ºĞ(A:ÀÚµ¿, B:ÀÛ¾÷ÀÚBackUp, M:ManualÀÛ¾÷)
-						jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //¾ßµåToÀ§Ä¡Guide
-						jrParam.setField("YD_TO_LOC_DCSN_MTD", "S"); //¾ßµåTOÀ§Ä¡°áÁ¤¹æ¹ı
+						jrParam.setField("YD_SCH_CD"		, sYD_SCH_CD); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrParam.setField("YD_SCH_PRIOR"		, sYD_SCH_PRIOR); //ì•¼ë“œìŠ¤ì¼€ì¥´ìš°ì„ ìˆœìœ„
+						jrParam.setField("YD_SCH_PROG_STAT"	, "W"); //ì•¼ë“œìŠ¤ì¼€ì¥´ì§„í–‰ìƒíƒœ(W:ìŠ¤ì¼€ì¤„ìˆ˜í–‰ëŒ€ê¸°)
+						jrParam.setField("YD_SCH_ST_GP"		, "A"); //ì•¼ë“œìŠ¤ì¼€ì¥´ê¸°ë™êµ¬ë¶„(A:ìë™, B:ì‘ì—…ìBackUp, M:Manualì‘ì—…)
+						jrParam.setField("YD_TO_LOC_GUIDE"	, sYD_TO_LOC_GUIDE); //ì•¼ë“œToìœ„ì¹˜Guide
+						jrParam.setField("YD_TO_LOC_DCSN_MTD", "S"); //ì•¼ë“œTOìœ„ì¹˜ê²°ì •ë°©ë²•
 						
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ÀÛ¾÷¿¹¾à(TB_YM_WRKBOOK) »ı¼º");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insWrkBook", logId, methodNm, "ì‘ì—…ì˜ˆì•½(TB_YM_WRKBOOK) ìƒì„±");
 						
 						/**********************************************************
-						* 2-2. ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º
+						* 2-2. ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±
 						**********************************************************/
 						jrParam.setField("YD_WBOOK_ID"		, sYD_WBOOK_ID);
 						jrParam.setField("STOCK_ID"			, commUtils.trim(rsResult2.getRecord(0).getFieldString("STOCK_ID")));
@@ -13164,29 +13164,29 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						jrParam.setField("STACK_BED_GP"		, commUtils.trim(rsResult2.getRecord(0).getFieldString("STACK_BED_GP")));
 						jrParam.setField("STACK_LAYER_GP"	, commUtils.trim(rsResult2.getRecord(0).getFieldString("STACK_LAYER_GP")));
 						
-						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ÀÛ¾÷¿¹¾àÀç·á(TB_YM_WRKBOOKMTL) »ı¼º");
+						commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insYmWrkBookMtl", logId, methodNm, "ì‘ì—…ì˜ˆì•½ì¬ë£Œ(TB_YM_WRKBOOKMTL) ìƒì„±");
 						
 						/**********************************************************
-						* 2-3. TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿Á¶°Ç µî·Ï
+						* 2-3. TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ì¡°ê±´ ë“±ë¡
 						**********************************************************/
 						jrParam.setField("STOCK_ID"			, commUtils.trim(rsResult2.getRecord(0).getFieldString("STOCK_ID")));
-						jrParam.setField("STOCK_MOVE_TERM"	, YmConstant.NEW_STOCK_MOVE_TERM_FS ); //¾Ğ¿¬ÀÛ¾÷´ë±â
+						jrParam.setField("STOCK_MOVE_TERM"	, YmConstant.NEW_STOCK_MOVE_TERM_FS ); //ì••ì—°ì‘ì—…ëŒ€ê¸°
 						
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKÀÇ ÀúÀåÇ° ÀÌµ¿ Á¶°Ç UPDATE");
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockMoveTerm", logId, methodNm, "TB_YM_STOCKì˜ ì €ì¥í’ˆ ì´ë™ ì¡°ê±´ UPDATE");
 						
-						//½ºÄÉÁÙ ¸ŞÀÎ È£Ãâ
+						//ìŠ¤ì¼€ì¤„ ë©”ì¸ í˜¸ì¶œ
 						JDTORecord jrCrnSchMsg = JDTORecordFactory.getInstance().create();
 						jrCrnSchMsg.setField("JMS_TC_CD"			, "YMYMJ202"); 
-						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTC»ı¼ºÀÏ½Ã				
-						jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ÀÛ¾÷¿¹¾àID
-						jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //¾ßµå½ºÄÉÁìÄÚµå
-						jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //¾ßµå¼³ºñID
+						jrCrnSchMsg.setField("JMS_TC_CREATE_DDTT"	, commUtils.getDateTime14()); //JMSTCìƒì„±ì¼ì‹œ				
+						jrCrnSchMsg.setField("YD_WBOOK_ID"  		, sYD_WBOOK_ID); //ì‘ì—…ì˜ˆì•½ID
+						jrCrnSchMsg.setField("YD_SCH_CD"  		, ""); //ì•¼ë“œìŠ¤ì¼€ì¥´ì½”ë“œ
+						jrCrnSchMsg.setField("YD_EQP_ID"  		, ""); //ì•¼ë“œì„¤ë¹„ID
 						jrRtn = commUtils.addSndData(jrRtn, jrCrnSchMsg);		
 					}
 				} //bFLAG
 			} else {
-				commUtils.printLog(logId, "=======:::: Cµ¿ STE ºñ»óº¸±Ş ½ºÆäÁÙÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù. " , "SL");					
-				throw new Exception("Cµ¿ STE ºñ»óº¸±Ş ½ºÆäÁÙÀÌ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù. ");
+				commUtils.printLog(logId, "=======:::: Cë™ STE ë¹„ìƒë³´ê¸‰ ìŠ¤í˜ì¤„ì´ ì´ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. " , "SL");					
+				throw new Exception("Cë™ STE ë¹„ìƒë³´ê¸‰ ìŠ¤í˜ì¤„ì´ ì´ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. ");
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -13199,15 +13199,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of runSteEmgSup
 	/**
-	 * ´ëÂ÷Çü»ó°ü¸®¿©ºÎ ¼³Á¤
+	 * ëŒ€ì°¨í˜•ìƒê´€ë¦¬ì—¬ë¶€ ì„¤ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updYdTcarFormRule(GridData gdReq) throws DAOException {
-		String methodNm = "´ëÂ÷Çü»ó°ü¸®¿©ºÎ ¼³Á¤[BSlabJspSeEJB.updYdTcarFormRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ëŒ€ì°¨í˜•ìƒê´€ë¦¬ì—¬ë¶€ ì„¤ì •[BSlabJspSeEJB.updYdTcarFormRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try { 
@@ -13216,7 +13216,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			jrParam.setField("DTL_ITM1"	, gdReq.getParam("DTL_ITM1") );
@@ -13233,7 +13233,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			  AND DEL_YN     = 'N'
 		      AND ITEM       = :V_ITEM */
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTcarFormRule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTcarFormRule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13245,15 +13245,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of updYdTcarFormRule		
 	/**
-	 * ÀûÄ¡±âÁØ º¯°æ
+	 * ì ì¹˜ê¸°ì¤€ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updStockRule(GridData gdReq) throws DAOException {
-		String methodNm = "ÀûÄ¡±âÁØ º¯°æ[BSlabJspFaEJB.updStockRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ì ì¹˜ê¸°ì¤€ ë³€ê²½[BSlabJspFaEJB.updStockRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13262,10 +13262,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//¼öÁ¤ÇÒ ·¹ÄÚµå ¼ö
+			//ìˆ˜ì •í•  ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
@@ -13277,7 +13277,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				jrParam.setField("CD_GP"	,commUtils.getValue(gdReq, "CD_GP", ii)); 
 				jrParam.setField("ITEM"	    ,commUtils.getValue(gdReq, "ITEM", ii)); 
 				
-				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockRule", logId, methodNm, "ÀûÄ¡±âÁØ º¯°æ");
+				commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockRule", logId, methodNm, "ì ì¹˜ê¸°ì¤€ ë³€ê²½");
 								
 			}
 
@@ -13294,15 +13294,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * Take Out ÀåÀÔ¼ø¹ø º¹±¸ ¼³Á¤
+	 * Take Out ì¥ì…ìˆœë²ˆ ë³µêµ¬ ì„¤ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updYdTakeOutRecvRule(GridData gdReq) throws DAOException {
-		String methodNm = "Take Out ÀåÀÔ¼ø¹ø º¹±¸ ¿©ºÎ¼³Á¤[BSlabJspSeEJB.updYdTakeOutRecvRule] < " + gdReq.getNavigateValue();
+		String methodNm = "Take Out ì¥ì…ìˆœë²ˆ ë³µêµ¬ ì—¬ë¶€ì„¤ì •[BSlabJspSeEJB.updYdTakeOutRecvRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try { 
@@ -13311,7 +13311,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			jrParam.setField("DTL_ITM1"	, gdReq.getParam("DTL_ITM1") );
@@ -13328,7 +13328,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			  AND DEL_YN     = 'N'
 		      AND ITEM       = :V_ITEM */
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTakeOutRecvRule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTakeOutRecvRule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13341,15 +13341,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updYdTakeOutRecvRule	
 	
 	/**
-	 * ¸ğÀ½ÀÛ¾÷ Ã³¸®
+	 * ëª¨ìŒì‘ì—… ì²˜ë¦¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord procGatherWork(GridData gdReq) throws DAOException {
-		String methodNm = "¸ğÀ½ÀÛ¾÷ Ã³¸®[BSlabJspSeEJB.procGatherWork] < " + gdReq.getNavigateValue();
+		String methodNm = "ëª¨ìŒì‘ì—… ì²˜ë¦¬[BSlabJspSeEJB.procGatherWork] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try { 
@@ -13358,7 +13358,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			//jrParam.setField("DTL_ITM1"	, gdReq.getParam("DTL_ITM1") );
@@ -13375,7 +13375,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			  AND DEL_YN     = 'N'
 		      AND ITEM       = :V_ITEM */
 			
-			//commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTakeOutRecvRule", logId, methodNm, "½ºÄÉÁÙ ±âÁØ ¾ßµå¸ÖÆ¼ÀÛ¾÷¿©ºÎ ¼³Á¤");
+			//commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updYdTakeOutRecvRule", logId, methodNm, "ìŠ¤ì¼€ì¤„ ê¸°ì¤€ ì•¼ë“œë©€í‹°ì‘ì—…ì—¬ë¶€ ì„¤ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13389,15 +13389,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * ÀÌ»óÁ¤º¸Á¤¸®
+	 * ì´ìƒì •ë³´ì •ë¦¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord delAbnomalInfo(GridData gdReq) throws DAOException {
-		String methodNm = "ÀÌ»óÁ¤º¸Á¤¸®[BSlabJspSeEJB.delAbnomalInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "ì´ìƒì •ë³´ì •ë¦¬[BSlabJspSeEJB.delAbnomalInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13410,10 +13410,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sDEL_YN = "";
 			String sYD_CRN_SCH_ID_YN = "";
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			int iDelCnt = 0;
@@ -13421,46 +13421,46 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
 				if(!"".equals(commUtils.getValue(gdReq, "YD_WBOOK_ID", ii))) {
-					//TB_YM_WRKBOOK °ªÀº »èÁ¦µÇ¾ú´Âµ¥ TB_YM_WRKBOOKMTL °ªÀÌ ³²¾Æ ÀÖ´Â Á¤º¸ ÀÌ»óÀç Ã³¸®
+					//TB_YM_WRKBOOK ê°’ì€ ì‚­ì œë˜ì—ˆëŠ”ë° TB_YM_WRKBOOKMTL ê°’ì´ ë‚¨ì•„ ìˆëŠ” ì •ë³´ ì´ìƒì¬ ì²˜ë¦¬
 					jrParam.setField("YD_WBOOK_ID"	, commUtils.getValue(gdReq, "YD_WBOOK_ID", ii));
 					
-					//ÀÛ¾÷¿¹¾à Å×ÀÌºí¿¡ ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å© 
-					rsResult = commDao.select(jrParam,"com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getYmWrkbook", logId, methodNm, "::::: ÀÛ¾÷¿¹¾à Å×ÀÌºí¿¡ ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å© :::::"); 
+					//ì‘ì—…ì˜ˆì•½ í…Œì´ë¸”ì— ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬ 
+					rsResult = commDao.select(jrParam,"com.inisteel.cim.ym.bcoil.dao.BcoilDAO.getYmWrkbook", logId, methodNm, "::::: ì‘ì—…ì˜ˆì•½ í…Œì´ë¸”ì— ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬ :::::"); 
 					
 					if (rsResult.size() > 0) {
-						//Á¸ÀçÇÏ¸é DEL_YN = 'N' ÀÎÁö È®ÀÎÇÑ´Ù.
+						//ì¡´ì¬í•˜ë©´ DEL_YN = 'N' ì¸ì§€ í™•ì¸í•œë‹¤.
 						sDEL_YN = commUtils.nvl(rsResult.getRecord(0).getFieldString("DEL_YN"),"");
 						
 						if("Y".equals(sDEL_YN)) {
-							//ÀÛ¾÷¿¹¾àÀç·á Å×ÀÌºí¿¡ DEL_YN = 'Y'·Î UPDATE
-							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "::::1 ÀÛ¾÷¿¹¾àÀÌ DEL_YN='Y'ÀÓÀ¸·Î ÀÛ¾÷¿¹¾àÀç·á »èÁ¦ :::::");
+							//ì‘ì—…ì˜ˆì•½ì¬ë£Œ í…Œì´ë¸”ì— DEL_YN = 'Y'ë¡œ UPDATE
+							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "::::1 ì‘ì—…ì˜ˆì•½ì´ DEL_YN='Y'ì„ìœ¼ë¡œ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ :::::");
 							iDelCnt++;
 						}
 	
 					} else {
 					
-						//ÀÛ¾÷¿¹¾àÀç·á Å×ÀÌºí¿¡ DEL_YN = 'Y'·Î UPDATE
-						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "::::2 ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½À¸·Î ÀÛ¾÷¿¹¾àÀç·á »èÁ¦ :::::");
+						//ì‘ì—…ì˜ˆì•½ì¬ë£Œ í…Œì´ë¸”ì— DEL_YN = 'Y'ë¡œ UPDATE
+						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "::::2 ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŒìœ¼ë¡œ ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ :::::");
 						iDelCnt++;
 					}
 				}
 				
 				if(!"".equals(commUtils.getValue(gdReq, "STOCK_ID", ii))) {
-					//Å©·¹ÀÎ ½ºÄÉÁÙÀÌ Á¸ÀçÇÏÁö ¾Ê´Âµ¥ ÀûÄ¡´Ü¿¡ 'U' ³ª 'D'·Î ÀâÇô ÀÖ´Â Á¤º¸ ÀÌ»óÀç Ã³¸®
+					//í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë° ì ì¹˜ë‹¨ì— 'U' ë‚˜ 'D'ë¡œ ì¡í˜€ ìˆëŠ” ì •ë³´ ì´ìƒì¬ ì²˜ë¦¬
 					jrParam.setField("STOCK_ID"	, commUtils.getValue(gdReq, "STOCK_ID", ii));
 					
-					//Å©·¹ÀÎ½ºÄÉÁÙ Å×ÀÌºí¿¡  Á¸ÀçÇÏ´ÂÁö Ã¼Å© 
-					rsResult = commDao.select(jrParam,"com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockLoc", logId, methodNm, "::::: ÀÛ¾÷¿¹¾à Å×ÀÌºí¿¡ ÀÛ¾÷¿¹¾àÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å© :::::"); 
+					//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ í…Œì´ë¸”ì—  ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬ 
+					rsResult = commDao.select(jrParam,"com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStockLoc", logId, methodNm, "::::: ì‘ì—…ì˜ˆì•½ í…Œì´ë¸”ì— ì‘ì—…ì˜ˆì•½ì´ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬ :::::"); 
 					
 					if (rsResult.size() > 0) {
-						//Å©·¹ÀÎ½ºÄÉÁÙÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é 'N'
+						//í¬ë ˆì¸ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´ 'N'
 						sYD_CRN_SCH_ID_YN = commUtils.nvl(rsResult.getRecord(0).getFieldString("YD_CRN_SCH_ID_YN"),"");
 						
 						if("N".equals(sYD_CRN_SCH_ID_YN)) {
 							
-							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerU2CByStockId", logId, methodNm, "::::3 Å©·¹ÀÎ ½ºÄÉÁÙÀÌ Á¸ÀçÇÏÁö ¾Ê´Âµ¥ ÀûÄ¡´Ü¿¡ 'U'·Î ÀâÇô ÀÖ´Â Á¤º¸ ÀÌ»óÀç Ã³¸® :::::");
+							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerU2CByStockId", logId, methodNm, "::::3 í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë° ì ì¹˜ë‹¨ì— 'U'ë¡œ ì¡í˜€ ìˆëŠ” ì •ë³´ ì´ìƒì¬ ì²˜ë¦¬ :::::");
 							
-							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerD2EByStockId", logId, methodNm, "::::4 Å©·¹ÀÎ ½ºÄÉÁÙÀÌ Á¸ÀçÇÏÁö ¾Ê´Âµ¥ ÀûÄ¡´Ü¿¡ 'D'·Î ÀâÇô ÀÖ´Â Á¤º¸ ÀÌ»óÀç Ã³¸® :::::");
+							commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerD2EByStockId", logId, methodNm, "::::4 í¬ë ˆì¸ ìŠ¤ì¼€ì¤„ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë° ì ì¹˜ë‹¨ì— 'D'ë¡œ ì¡í˜€ ìˆëŠ” ì •ë³´ ì´ìƒì¬ ì²˜ë¦¬ :::::");
 							
 							iDelCnt++;
 						}
@@ -13469,10 +13469,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			if(iDelCnt>0) {
-				jrRtn.setField("RTN_MSG", "ÀÌ»óÁ¤º¸Á¤¸® " + iDelCnt + " °ÇÀÌ Á¤»ó Ã³¸®µÇ¾ú½À´Ï´Ù!");	
+				jrRtn.setField("RTN_MSG", "ì´ìƒì •ë³´ì •ë¦¬ " + iDelCnt + " ê±´ì´ ì •ìƒ ì²˜ë¦¬ë˜ì—ˆìŠµë‹ˆë‹¤!");	
 				
 			} else {
-				jrRtn.setField("RTN_MSG", "ÀÌ»óÁ¤º¸Á¤¸® ´ë»óÀÌ ¾ø½À´Ï´Ù!!");	
+				jrRtn.setField("RTN_MSG", "ì´ìƒì •ë³´ì •ë¦¬ ëŒ€ìƒì´ ì—†ìŠµë‹ˆë‹¤!!");	
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -13487,18 +13487,18 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of delAbnomalInfo
 	
 	
-	//2018³â 1¿ù 15ÀÏ (¿ù) - Scarfing ÀÔÃâÃø Á¶È¸ È­¸é 
-	//Scarfing M/C»óÅÂ º¯°æ
+	//2018ë…„ 1ì›” 15ì¼ (ì›”) - Scarfing ì…ì¶œì¸¡ ì¡°íšŒ í™”ë©´ 
+	//Scarfing M/Cìƒíƒœ ë³€ê²½
 	/**
-	 * Scarfing M/C»óÅÂ º¯°æ
+	 * Scarfing M/Cìƒíƒœ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updbSlabMcState(GridData gdReq) throws DAOException {
-		String methodNm = "ScarfingÀÔÃâÃø Á¶È¸ - Scarfing M/C»óÅÂ º¯°æ[BSlabJspSeEJB.updbSlabMcState] < " + gdReq.getNavigateValue();
+		String methodNm = "Scarfingì…ì¶œì¸¡ ì¡°íšŒ - Scarfing M/Cìƒíƒœ ë³€ê²½[BSlabJspSeEJB.updbSlabMcState] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13507,7 +13507,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
    
 			jrParam.setField("STACK_COL_GP"    , gdReq.getParam("STACK_COL_GP"));     
@@ -13522,7 +13522,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				  AND DEL_YN = 'N'
 			*/
 				
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updbSlabMcState", logId, methodNm, "Scarfing M/C»óÅÂ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updbSlabMcState", logId, methodNm, "Scarfing M/Cìƒíƒœ ë³€ê²½");
 						
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13534,17 +13534,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of updbSlabMcState
 	
-	//ScarfingÀÔÃâÃø Á¶È¸ - º¸±Ş/ÃßÃâ Å©·¹ÀÎ º¯°æ
+	//Scarfingì…ì¶œì¸¡ ì¡°íšŒ - ë³´ê¸‰/ì¶”ì¶œ í¬ë ˆì¸ ë³€ê²½
 	/**
-	 * º¸±Ş/ÃßÃâ Å©·¹ÀÎ º¯°æ
+	 * ë³´ê¸‰/ì¶”ì¶œ í¬ë ˆì¸ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSlabScarfingSupp(GridData gdReq) throws DAOException {
-		String methodNm = "ScarfingÀÔÃâÃø Á¶È¸ - º¸±Ş/ÃßÃâ Å©·¹ÀÎ º¯°æ[BSlabJspSeEJB.updSlabScarfingSupp] < " + gdReq.getNavigateValue();
+		String methodNm = "Scarfingì…ì¶œì¸¡ ì¡°íšŒ - ë³´ê¸‰/ì¶”ì¶œ í¬ë ˆì¸ ë³€ê²½[BSlabJspSeEJB.updSlabScarfingSupp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13553,7 +13553,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
    
 			jrParam.setField("YD_WRK_CRN"    , gdReq.getParam("YD_WRK_CRN"));     
@@ -13568,7 +13568,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				  AND DEL_YN = 'N'
 			*/
 				
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingSupp", logId, methodNm, "Eµ¿ º¸±Ş/ÃßÃâ Å©·¹ÀÎ º¯°æ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingSupp", logId, methodNm, "Eë™ ë³´ê¸‰/ì¶”ì¶œ í¬ë ˆì¸ ë³€ê²½");
 						
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13581,17 +13581,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSlabScarfingSupp
 	
 	
-	//SCARFING ½ÇÀûÁ¶È¸ ¼öÁ¤
+	//SCARFING ì‹¤ì ì¡°íšŒ ìˆ˜ì •
 	/**
-	 * SCARFING ½ÇÀûÁ¶È¸ - ¼öÁ¤
+	 * SCARFING ì‹¤ì ì¡°íšŒ - ìˆ˜ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSlabScarfingPattern(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ°á°ú ½ÇÀûÆĞÅÏ ¼öÁ¤[BSlabJspSeEJB.updSlabScarfingPattern] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ê²°ê³¼ ì‹¤ì íŒ¨í„´ ìˆ˜ì •[BSlabJspSeEJB.updSlabScarfingPattern] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13600,7 +13600,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
    
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
@@ -13620,7 +13620,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			*/
 				
 			}
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingPattern", logId, methodNm, "½ºÄ«ÇÎ°á°ú ½ÇÀûÆĞÅÏ ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingPattern", logId, methodNm, "ìŠ¤ì¹´í•‘ê²°ê³¼ ì‹¤ì íŒ¨í„´ ìˆ˜ì •");
 						
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13634,17 +13634,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	
-	//SCARFING ±ÙÁ¶/º»¼ö/Áß·® ÀÔ·Â
+	//SCARFING ê·¼ì¡°/ë³¸ìˆ˜/ì¤‘ëŸ‰ ì…ë ¥
 	/**
-	 * SCARFING ±ÙÁ¶/º»¼ö/Áß·® ÀÔ·Â
+	 * SCARFING ê·¼ì¡°/ë³¸ìˆ˜/ì¤‘ëŸ‰ ì…ë ¥
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSlabScarfingQtyWt(GridData gdReq) throws DAOException {
-		String methodNm = "½ºÄ«ÇÎ°á°ú ½ÇÀûÆĞÅÏ ¼öÁ¤[BSlabJspSeEJB.updSlabScarfingQtyWt] < " + gdReq.getNavigateValue();
+		String methodNm = "ìŠ¤ì¹´í•‘ê²°ê³¼ ì‹¤ì íŒ¨í„´ ìˆ˜ì •[BSlabJspSeEJB.updSlabScarfingQtyWt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13658,7 +13658,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("INSPECT_DATE"  , sFROM_DATES);
@@ -13692,7 +13692,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					              ,SYSDATE) */
 		
 			
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingQtyWt", logId, methodNm, "±ÙÁ¶/º»¼ö/Áß·® ÀÔ·Â");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingQtyWt", logId, methodNm, "ê·¼ì¡°/ë³¸ìˆ˜/ì¤‘ëŸ‰ ì…ë ¥");
 						
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13704,17 +13704,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		}	
 	} // end of updSlabScarfingQtyWt
 	
-	//SCARFING Á¤Áö½ÇÀûµî·Ï ¼öÁ¤
+	//SCARFING ì •ì§€ì‹¤ì ë“±ë¡ ìˆ˜ì •
 	/**
-	 * SCARFING Á¤Áö½ÇÀûµî·Ï ¼öÁ¤
+	 * SCARFING ì •ì§€ì‹¤ì ë“±ë¡ ìˆ˜ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updSlabScarfingStopWrReg(GridData gdReq) throws DAOException {
-		String methodNm = "SCARFING Á¤Áö½ÇÀûµî·Ï ¼öÁ¤[BSlabJspSeEJB.updSlabScarfingStopWrReg] < " + gdReq.getNavigateValue();
+		String methodNm = "SCARFING ì •ì§€ì‹¤ì ë“±ë¡ ìˆ˜ì •[BSlabJspSeEJB.updSlabScarfingStopWrReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13723,7 +13723,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
    
 			String sCLASS1_CD     = gdReq.getParam("CLASS1_CD");	
@@ -13748,7 +13748,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				   AND STEP_NO = :V_STEP_NO
 			*/
 				
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingStopWrReg", logId, methodNm, "SCARFING Á¤Áö½ÇÀûµî·Ï ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updSlabScarfingStopWrReg", logId, methodNm, "SCARFING ì •ì§€ì‹¤ì ë“±ë¡ ìˆ˜ì •");
 						
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13761,47 +13761,47 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSlabScarfingPattern
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Â÷·®À§Ä¡ ÃÊ±âÈ­
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì°¨ëŸ‰ìœ„ì¹˜ ì´ˆê¸°í™”
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord initCarLoc(JDTORecord rcvMsg) throws DAOException {
-		String methodNm = "Â÷·®À§Ä¡ ÃÊ±âÈ­[BSlabJspSeEJB.initCarLoc] < " + rcvMsg.getResultMsg();
+		String methodNm = "ì°¨ëŸ‰ìœ„ì¹˜ ì´ˆê¸°í™”[BSlabJspSeEJB.initCarLoc] < " + rcvMsg.getResultMsg();
 		String logId = rcvMsg.getResultCode();
 
 		try {
 			commUtils.printLog(logId, methodNm, "S+");
 			
-			String modifier  	= commUtils.trim(rcvMsg.getFieldString("MODIFIER"   )); //¼öÁ¤ÀÚ
-			String ydStkColGp	= commUtils.trim(rcvMsg.getFieldString("YD_STK_COL_GP")); //ÀûÄ¡¿­(Â÷·®À§Ä¡)
+			String modifier  	= commUtils.trim(rcvMsg.getFieldString("MODIFIER"   )); //ìˆ˜ì •ì
+			String ydStkColGp	= commUtils.trim(rcvMsg.getFieldString("YD_STK_COL_GP")); //ì ì¹˜ì—´(ì°¨ëŸ‰ìœ„ì¹˜)
 			String ydWbookId 	= null;
 			String ydSchCd   	= null;
 			
 			if ("".equals(ydStkColGp)) {
-				throw new Exception("Â÷·®À§Ä¡(YD_STK_COL_GP) Á¤º¸°¡ ¾ø½À´Ï´Ù!");
+				throw new Exception("ì°¨ëŸ‰ìœ„ì¹˜(YD_STK_COL_GP) ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤!");
 			}
 			
 			if (ydStkColGp.length() != 6) {
-				throw new Exception("Â÷·®À§Ä¡(YD_STK_COL_GP) Á¤º¸ ±æÀÌ°¡ 6ÀÚ¸®°¡ ¾Æ´Õ´Ï´Ù!");
+				throw new Exception("ì°¨ëŸ‰ìœ„ì¹˜(YD_STK_COL_GP) ì •ë³´ ê¸¸ì´ê°€ 6ìë¦¬ê°€ ì•„ë‹™ë‹ˆë‹¤!");
 			}
 
 			if (!"PT".equals(ydStkColGp.substring(2,4))) {
-				throw new Exception("Â÷·®À§Ä¡(YD_STK_COL_GP) °¡ PT°¡ ¾Æ´Õ´Ï´Ù!");
+				throw new Exception("ì°¨ëŸ‰ìœ„ì¹˜(YD_STK_COL_GP) ê°€ PTê°€ ì•„ë‹™ë‹ˆë‹¤!");
 			}
 			
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, modifier);
 
 			jrParam.setField("STACK_COL_GP", ydStkColGp);
 			
 			/**********************************************************
-			* 1. »óÇÏÂ÷ ÀÛ¾÷¿¹¾à Á¸Àç¿©ºÎ Check
+			* 1. ìƒí•˜ì°¨ ì‘ì—…ì˜ˆì•½ ì¡´ì¬ì—¬ë¶€ Check
 			**********************************************************/
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdByLoc
 			SELECT  A.YD_WBOOK_ID
@@ -13820,7 +13820,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			              
 			       )
 			GROUP BY A.YD_WBOOK_ID, A.YD_SCH_CD   */
-			JDTORecordSet jsWbookId = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdByLoc", logId, methodNm, "ÀúÀåÀ§Ä¡·Î ÀÛ¾÷¿¹¾àID Á¶È¸");
+			JDTORecordSet jsWbookId = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getWbookIdByLoc", logId, methodNm, "ì €ì¥ìœ„ì¹˜ë¡œ ì‘ì—…ì˜ˆì•½ID ì¡°íšŒ");
 			if( jsWbookId.size() > 0) {
 				
 				for(int ii = 0; ii < jsWbookId.size(); ii++) {
@@ -13829,14 +13829,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					ydSchCd		= commUtils.trim(jsWbookId.getRecord(ii).getFieldString("YD_SCH_CD"));
 					
 					if("PT02LM".equals(ydSchCd.substring(2,8))||"PT02UM".equals(ydSchCd.substring(2,8))) {
-						//ÀÌ¼ÛÇÏÂ÷ ¶Ç´Â ÀÌ¼Û»óÂ÷ÀÇ °æ¿ì
+						//ì´ì†¡í•˜ì°¨ ë˜ëŠ” ì´ì†¡ìƒì°¨ì˜ ê²½ìš°
 						
 						jrParam.setField("YD_WBOOK_ID", ydWbookId);
 
 					    /**********************************************************
-						* 2. ÀÛ¾÷¿¹¾à/Àç·á »èÁ¦
+						* 2. ì‘ì—…ì˜ˆì•½/ì¬ë£Œ ì‚­ì œ
 						**********************************************************/
-						//ÀÛ¾÷¿¹¾àÀç·á »èÁ¦
+						//ì‘ì—…ì˜ˆì•½ì¬ë£Œ ì‚­ì œ
 						/*
 						UPDATE TB_YM_WRKBOOKMTL
 						   SET MODIFIER    = :V_MODIFIER
@@ -13847,7 +13847,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						 */
 						commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updDelYnWrkBookMtl", logId, methodNm, "TB_YM_WRKBOOKMTL");				
 
-						//ÀÛ¾÷¿¹¾à »èÁ¦
+						//ì‘ì—…ì˜ˆì•½ ì‚­ì œ
 						/*
 						UPDATE TB_YM_WRKBOOK
 						   SET MODIFIER    = :V_MODIFIER
@@ -13862,7 +13862,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		    }
 			
 			/**********************************************************
-			* 3. ÀûÄ¡´Ü Clear
+			* 3. ì ì¹˜ë‹¨ Clear
 			**********************************************************/
 			jrParam.setField("STACK_COL_GP"    	, ydStkColGp	);
 			jrParam.setField("STACK_BED_GP"    	, "01"		);
@@ -13879,10 +13879,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			 WHERE  STACK_COL_GP = :V_STACK_COL_GP
 			   AND  STACK_BED_GP = :V_STACK_BED_GP
 			   AND  STACK_LAYER_STAT LIKE :V_STACK_LAYER_STAT1 || '%' */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByBedNo", logId, methodNm, "ÀûÄ¡´Ü  Á¤º¸ Clear");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLyrByBedNo", logId, methodNm, "ì ì¹˜ë‹¨  ì •ë³´ Clear");
 			
 			/**********************************************************
-			* 4. ÀûÄ¡¿­ Clear
+			* 4. ì ì¹˜ì—´ Clear
 			**********************************************************/
 			jrParam.setField("STACK_COL_GP"    	, ydStkColGp	);
 			/* com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStkColCarInitByLoc
@@ -13894,14 +13894,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			      ,TRN_EQP_CD = ''
 			      ,YD_CAR_USE_GP = ''
 			 WHERE STACK_COL_GP = :V_STACK_COL_GP   */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStkColCarInitByLoc", logId, methodNm, "ÀûÄ¡¿­  Á¤º¸ Clear");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStkColCarInitByLoc", logId, methodNm, "ì ì¹˜ì—´  ì •ë³´ Clear");
 
 			/**********************************************************
-			* 5. Â÷·®Æ÷ÀÎÆ® Clear
+			* 5. ì°¨ëŸ‰í¬ì¸íŠ¸ Clear
 			**********************************************************/
 			jrParam.setField("STAT"    				, "C"	);
 			jrParam.setField("TRN_EQP_CD"    		, ""	);
-			jrParam.setField("YS_STK_COL_GP"    	, ydStkColGp	); //Äõ¸® ÆÄ¶ó¸ŞÅÍ ¼öÁ¤ ÈÄ »èÁ¦ÇØ¾ß ÇÔ 
+			jrParam.setField("YS_STK_COL_GP"    	, ydStkColGp	); //ì¿¼ë¦¬ íŒŒë¼ë©”í„° ìˆ˜ì • í›„ ì‚­ì œí•´ì•¼ í•¨ 
 			jrParam.setField("YD_STK_COL_GP"    	, ydStkColGp	);
 			/* com.inisteel.cim.ym.bcommon.dao.YmCommDAO.carpointtrneqpcdupdateC
 			UPDATE TB_YD_CARPOINT
@@ -13910,7 +13910,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			     , MOD_DDTT=sysdate
 			     , MODIFIER='CarPointCP'
 			 WHERE YD_STK_COL_GP=:V_YD_STK_COL_GP */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.carpointtrneqpcdupdateC", logId, methodNm, "Â÷·®Æ÷ÀÎÆ®  Á¤º¸ Clear");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.carpointtrneqpcdupdateC", logId, methodNm, "ì°¨ëŸ‰í¬ì¸íŠ¸  ì •ë³´ Clear");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -13925,15 +13925,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * Holding Bed Á¶È¸ - Layer ¿ëµµ º¯°æ
+	 * Holding Bed ì¡°íšŒ - Layer ìš©ë„ ë³€ê²½
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updLayerOption(GridData gdReq) throws DAOException {
-		String methodNm = "Layer ¿ëµµ º¯°æ[BSlabJspSeEJB.updLayerOption] < " + gdReq.getNavigateValue();
+		String methodNm = "Layer ìš©ë„ ë³€ê²½[BSlabJspSeEJB.updLayerOption] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -13942,7 +13942,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
    
 			String sSTACK_COL_GP1 = gdReq.getParam("STACK_COL_GP1");
@@ -13954,7 +13954,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sSTACK_LAYER_ACTIVE_STAT2 = gdReq.getParam("STACK_LAYER_ACTIVE_STAT2");
 			
 			/*if("N".equals(sSTACK_LAYER_ACTIVE_STAT1)) {
-				//»ç¿ëºÒ°¡ »óÅÂ·Î ¹Ù²Ù±â Àü ÀûÄ¡µÇ¾î ÀÖ´Â ½½¶óºê °¹¼ö È®ÀÎ
+				//ì‚¬ìš©ë¶ˆê°€ ìƒíƒœë¡œ ë°”ê¾¸ê¸° ì „ ì ì¹˜ë˜ì–´ ìˆëŠ” ìŠ¬ë¼ë¸Œ ê°¯ìˆ˜ í™•ì¸
 				jrParam.setField("STACK_COL_GP"    		       , sSTACK_COL_GP1);       
 				jrParam.setField("STACK_BED_GP"      		   , sSTACK_BED_GP1);       
 			} else if("N".equals(sSTACK_LAYER_ACTIVE_STAT2)) {
@@ -13967,7 +13967,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			   WHERE STACK_COL_GP = :V_STACK_COL_GP
 			   AND STACK_BED_GP = :V_STACK_BED_GP
 			*/
-			//JDTORecordSet jsSlabCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabCntByLoc", logId, methodNm, "ÀúÀåÀ§Ä¡·Î ÀûÄ¡ÁßÀÎ ½½¶óºê °¹¼ö Á¶È¸");
+			//JDTORecordSet jsSlabCnt = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getSlabCntByLoc", logId, methodNm, "ì €ì¥ìœ„ì¹˜ë¡œ ì ì¹˜ì¤‘ì¸ ìŠ¬ë¼ë¸Œ ê°¯ìˆ˜ ì¡°íšŒ");
 			
 			/*if( jsSlabCnt.size() > 0) {
 				int ydSlabCnt = jsSlabCnt.getRecord(0).getFieldInt("SLAB_CNT");
@@ -13985,19 +13985,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 						AND STACK_BED_GP = :V_STACK_BED_GP
 					*/
 						
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerOption", logId, methodNm, "Layer ¿ëµµ º¯°æ1");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerOption", logId, methodNm, "Layer ìš©ë„ ë³€ê²½1");
 					
 					jrParam.setField("STACK_COL_GP"    		       , sSTACK_COL_GP2);       
 					jrParam.setField("STACK_BED_GP"      		   , sSTACK_BED_GP2);       
 					jrParam.setField("STACK_LAYER_ACTIVE_STAT"     , sSTACK_LAYER_ACTIVE_STAT2);      
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerOption", logId, methodNm, "Layer ¿ëµµ º¯°æ2");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updLayerOption", logId, methodNm, "Layer ìš©ë„ ë³€ê²½2");
 					
 			/*	} else {
-					throw new Exception("ÀûÄ¡ÁßÀÎ ½½¶óºê°¡ Á¸ÀçÇØ ÀûÄ¡ ´Ü È°¼º»óÅÂ¸¦ º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù!");
+					throw new Exception("ì ì¹˜ì¤‘ì¸ ìŠ¬ë¼ë¸Œê°€ ì¡´ì¬í•´ ì ì¹˜ ë‹¨ í™œì„±ìƒíƒœë¥¼ ë³€ê²½í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
 				}
 			} else {
-				throw new Exception("Äõ¸® ½ÇÇà Áß ¿À·ù ¹ß»ı!");
+				throw new Exception("ì¿¼ë¦¬ ì‹¤í–‰ ì¤‘ ì˜¤ë¥˜ ë°œìƒ!");
 			}*/
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -14011,15 +14011,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updSlabScarfingPattern
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ±¸³»¿î¼Û È¸¼ÛÃ³¸®
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : êµ¬ë‚´ìš´ì†¡ íšŒì†¡ì²˜ë¦¬
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param GridData gdReq
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/
 	public JDTORecord runTsRetHt(GridData gdReq) throws DAOException {
-		String methodNm = "±¸³»¿î¼Û È¸¼ÛÃ³¸®[BSlabJspSeEJB.runTsRetHt] < " + gdReq.getNavigateValue();
+		String methodNm = "êµ¬ë‚´ìš´ì†¡ íšŒì†¡ì²˜ë¦¬[BSlabJspSeEJB.runTsRetHt] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -14027,28 +14027,28 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			
 			//Return Value
 			JDTORecord jrRtn = null;
-			String currDate   = commUtils.getDateTime14();	//ÇöÀç½Ã°¢
+			String currDate   = commUtils.getDateTime14();	//í˜„ì¬ì‹œê°
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			String sRetHt_ID = "";
 			
-			//È¸¼ÛID»ı¼º
+			//íšŒì†¡IDìƒì„±
 			sRetHt_ID = commDao.getSeqId(logId, methodNm, "RetHt");
 
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			int iHsCnt = 0;
 
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± rowCnt : " + rowCnt, "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… rowCnt : " + rowCnt, "");
 			
 			/**********************************************************
-			* È¸¼Û ´ë»óÀç ÀÌ¼ÛÇÏÂ÷ ÀÛ¾÷¿¹¾à »èÁ¦Ã³¸®
+			* íšŒì†¡ ëŒ€ìƒì¬ ì´ì†¡í•˜ì°¨ ì‘ì—…ì˜ˆì•½ ì‚­ì œì²˜ë¦¬
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± È¸¼Û ´ë»óÀç ÀÌ¼ÛÇÏÂ÷ ÀÛ¾÷¿¹¾à »èÁ¦Ã³¸® ½ÃÀÛ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… íšŒì†¡ ëŒ€ìƒì¬ ì´ì†¡í•˜ì°¨ ì‘ì—…ì˜ˆì•½ ì‚­ì œì²˜ë¦¬ ì‹œì‘", "");
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii) )) { //È¸¼ÛÀÎ °æ¿ì¸¸ Ã³¸®..
+				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii) )) { //íšŒì†¡ì¸ ê²½ìš°ë§Œ ì²˜ë¦¬..
 			
 					if(!"".equals( commUtils.getValue(gdReq, "YD_WBOOK_ID", ii))) {
 						jrParam.setField("YD_WBOOK_ID", commUtils.getValue(gdReq, "YD_WBOOK_ID", ii) );
@@ -14061,31 +14061,31 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			//if(iHsCnt == 0) {
-			//	throw new Exception("È¸¼Û ´ë»óÀç°¡ ¾ø½À´Ï´Ù! È¸¼ÛÃ³¸® ºñÁ¤»ó Á¾·á");
+			//	throw new Exception("íšŒì†¡ ëŒ€ìƒì¬ê°€ ì—†ìŠµë‹ˆë‹¤! íšŒì†¡ì²˜ë¦¬ ë¹„ì •ìƒ ì¢…ë£Œ");
 			//}
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± È¸¼Û ´ë»óÀç ÀÌ¼ÛÇÏÂ÷ ÀÛ¾÷¿¹¾à " + iHsCnt + "°Ç »èÁ¦Ã³¸® Á¾·á ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… íšŒì†¡ ëŒ€ìƒì¬ ì´ì†¡í•˜ì°¨ ì‘ì—…ì˜ˆì•½ " + iHsCnt + "ê±´ ì‚­ì œì²˜ë¦¬ ì¢…ë£Œ ", "");
 			
 			
 			/**********************************************************
-			* ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙID »ı¼º
+			* ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ID ìƒì„±
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙ ID »ı¼º ½ÃÀÛ ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ID ìƒì„± ì‹œì‘ ", "");
 			
 			String sYdCarSchId = "";
 			
-			//Â÷·®½ºÄÉÁÙID
+			//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID
 			sYdCarSchId = commDao.getSeqId(logId, methodNm, "CarSch");
 			
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙ ID : " + sYdCarSchId , "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ID : " + sYdCarSchId , "");
 			
 			
 			/**********************************************************
-			* È¸¼ÛÀÌ·Â Å×ÀÌºí (TB_YD_RETHTHIST) Å×ÀÌºí INSERT
+			* íšŒì†¡ì´ë ¥ í…Œì´ë¸” (TB_YD_RETHTHIST) í…Œì´ë¸” INSERT
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± È¸¼ÛÀÌ·Â Å×ÀÌºí (TB_YD_RETHTHIST) Å×ÀÌºí INSERT ½ÃÀÛ ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… íšŒì†¡ì´ë ¥ í…Œì´ë¸” (TB_YD_RETHTHIST) í…Œì´ë¸” INSERT ì‹œì‘ ", "");
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii) )) { //È¸¼ÛÀÎ °æ¿ì¸¸ Ã³¸®..
+				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii) )) { //íšŒì†¡ì¸ ê²½ìš°ë§Œ ì²˜ë¦¬..
 					
 					jrParam.setField("YD_RETHT_HIST_ID"		, sRetHt_ID);
 					jrParam.setField("STL_NO"				, commUtils.getValue(gdReq, "STL_NO", ii) );
@@ -14099,87 +14099,87 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					jrParam.setField("TRN_EQP_CD"			, commUtils.getValue(gdReq, "TRN_EQP_CD", ii) ); 
 					jrParam.setField("YD_CAR_SCH_ID"		, sYdCarSchId ); 
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insRetHtHist", logId, methodNm, "È¸¼ÛÀÌ·Â Å×ÀÌºí INSERT");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bslab.dao.BSalbDAO.insRetHtHist", logId, methodNm, "íšŒì†¡ì´ë ¥ í…Œì´ë¸” INSERT");
 					
 					//iHsCnt++;
 				}
 			}
 			
 			//if(iHsCnt == 0) {
-			//	throw new Exception("È¸¼Û ´ë»óÀç°¡ ¾ø½À´Ï´Ù! È¸¼ÛÃ³¸® ºñÁ¤»ó Á¾·á");
+			//	throw new Exception("íšŒì†¡ ëŒ€ìƒì¬ê°€ ì—†ìŠµë‹ˆë‹¤! íšŒì†¡ì²˜ë¦¬ ë¹„ì •ìƒ ì¢…ë£Œ");
 			//}
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± È¸¼ÛÀÌ·Â Å×ÀÌºí (TB_YD_RETHTHIST) Å×ÀÌºí INSERT Á¾·á ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… íšŒì†¡ì´ë ¥ í…Œì´ë¸” (TB_YD_RETHTHIST) í…Œì´ë¸” INSERT ì¢…ë£Œ ", "");
 			
 			
 			/**********************************************************
-			* ±âÁ¸ Â÷·® ½ºÄÉÁÙ Á¾·á Ã³¸®
+			* ê¸°ì¡´ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ì¢…ë£Œ ì²˜ë¦¬
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ±âÁ¸ Â÷·® ½ºÄÉÁÙ Á¾·á Ã³¸® ½ÃÀÛ ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ê¸°ì¡´ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ì¢…ë£Œ ì²˜ë¦¬ ì‹œì‘ ", "");
 			
-			jrParam.setField("YD_CAR_SCH_ID", commUtils.getValue(gdReq, "YD_CAR_SCH_ID", 0) ); //±âÁ¸ Â÷·®½ºÄÉÁÙID
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.delCarschID", logId, methodNm, "±âÁ¸ Â÷·®½ºÄÉÁÙÁ¤º¸»èÁ¦");
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updDelYnCarSchMtl", logId, methodNm, "±âÁ¸ Â÷·®½ºÄÉÁÙÀç·á »èÁ¦");
+			jrParam.setField("YD_CAR_SCH_ID", commUtils.getValue(gdReq, "YD_CAR_SCH_ID", 0) ); //ê¸°ì¡´ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.delCarschID", logId, methodNm, "ê¸°ì¡´ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ì •ë³´ì‚­ì œ");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updDelYnCarSchMtl", logId, methodNm, "ê¸°ì¡´ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ì¬ë£Œ ì‚­ì œ");
 			
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ±âÁ¸ Â÷·® ½ºÄÉÁÙ Á¾·á Ã³¸® Á¾·á ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ê¸°ì¡´ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ì¢…ë£Œ ì²˜ë¦¬ ì¢…ë£Œ ", "");
 			
 			
 			/**********************************************************
-			* ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙ »ı¼º
+			* ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ìƒì„±
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙ »ı¼º ½ÃÀÛ ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ìƒì„± ì‹œì‘ ", "");
 			
 			//String sYdCarSchId = "";
 			
-			//Â÷·®½ºÄÉÁÙID
+			//ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID
 			//sYdCarSchId = commDao.getSeqId(logId, methodNm, "CarSch");
 			
 			jrParam.setField("YD_CAR_SCH_ID"		, sYdCarSchId);
-			jrParam.setField("OLD_YD_CAR_SCH_ID"	, commUtils.getValue(gdReq, "YD_CAR_SCH_ID", 0) ); //±âÁ¸ Â÷·®½ºÄÉÁÙID
-			jrParam.setField("REGISTER"				, "runTsRetHt"); //PalletÁ¶È¸(B)¿¡¼­ È¸¼Û Ç¥½Ã¸¦ ÇÏ±âÀ§ÇØ REGISTER ¿¡ "runTsRetHt"¸¦ ÀÔ·ÂÇÑ´Ù.
+			jrParam.setField("OLD_YD_CAR_SCH_ID"	, commUtils.getValue(gdReq, "YD_CAR_SCH_ID", 0) ); //ê¸°ì¡´ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ID
+			jrParam.setField("REGISTER"				, "runTsRetHt"); //Palletì¡°íšŒ(B)ì—ì„œ íšŒì†¡ í‘œì‹œë¥¼ í•˜ê¸°ìœ„í•´ REGISTER ì— "runTsRetHt"ë¥¼ ì…ë ¥í•œë‹¤.
 			
-			commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insRetHtCarSch", logId, methodNm, "È¸¼Û Â÷·®½ºÄÉÁÙ INSERT");
+			commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insRetHtCarSch", logId, methodNm, "íšŒì†¡ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ INSERT");
 			
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii))) { //È¸¼ÛÀÎ °æ¿ì¸¸ Ã³¸®..
+				if("HS".equals(commUtils.getValue(gdReq, "CMPL_GP", ii))) { //íšŒì†¡ì¸ ê²½ìš°ë§Œ ì²˜ë¦¬..
 					
 					jrParam.setField("YD_CAR_SCH_ID"		, sYdCarSchId);
 					jrParam.setField("STL_NO"				, commUtils.getValue(gdReq, "STL_NO", ii) ); 
 					jrParam.setField("DEL_YN"				, "N");
 					jrParam.setField("YD_STK_BED_NO"		, "01");
-					jrParam.setField("YD_STK_LYR_NO"		, commUtils.getValue(gdReq, "YD_STK_LYR_NO", ii) );  //ÀûÄ¡´Ü
+					jrParam.setField("YD_STK_LYR_NO"		, commUtils.getValue(gdReq, "YD_STK_LYR_NO", ii) );  //ì ì¹˜ë‹¨
 					
-					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insCarFtMvMtl", logId, methodNm, "È¸¼Û Â÷·®½ºÄÉÁÙ Àç·á INSERT");
+					commDao.insert(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.insCarFtMvMtl", logId, methodNm, "íšŒì†¡ ì°¨ëŸ‰ìŠ¤ì¼€ì¤„ ì¬ë£Œ INSERT");
 				}
 			}
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ½Å±Ô È¸¼Û Â÷·® ½ºÄÉÁÙ »ı¼º Á¾·á ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… ì‹ ê·œ íšŒì†¡ ì°¨ëŸ‰ ìŠ¤ì¼€ì¤„ ìƒì„± ì¢…ë£Œ ", "");
 			
 			
 			/**********************************************************
-			* ±¸³»¿î¼Û È¸¼ÛÇÏÂ÷ ¿Ï·á½ÇÀû Àü¹® ÆíÁı
+			* êµ¬ë‚´ìš´ì†¡ íšŒì†¡í•˜ì°¨ ì™„ë£Œì‹¤ì  ì „ë¬¸ í¸ì§‘
 			**********************************************************/
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ±¸³»¿î¼Û È¸¼ÛÇÏÂ÷ ¿Ï·á½ÇÀû Àü¹® ÆíÁı ½ÃÀÛ ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… êµ¬ë‚´ìš´ì†¡ íšŒì†¡í•˜ì°¨ ì™„ë£Œì‹¤ì  ì „ë¬¸ í¸ì§‘ ì‹œì‘ ", "");
 			
 			JDTORecord jrYDTSJ016 = JDTORecordFactory.getInstance().create();
-			jrYDTSJ016.setField("JMS_TC_CD", "YDTSJ016"); //¾ßµåÀÛ¾÷¿¹¾àID
-			jrYDTSJ016.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTC»ı¼ºÀÏ½Ã	
+			jrYDTSJ016.setField("JMS_TC_CD", "YDTSJ016"); //ì•¼ë“œì‘ì—…ì˜ˆì•½ID
+			jrYDTSJ016.setField("JMS_TC_CREATE_DDTT", currDate); //JMSTCìƒì„±ì¼ì‹œ	
 			
-			jrYDTSJ016.setField("TRN_EQP_CD", commUtils.getValue(gdReq, "TRN_EQP_CD", 0) ); //¿î¼ÛÀåºñÄÚµå
-			jrYDTSJ016.setField("ARR_WLOC_CD", commUtils.getValue(gdReq, "ARR_WLOC_CD", 0) ); //ÂøÁö°³¼ÒÄÚµå
-			jrYDTSJ016.setField("ARR_YD_PNT_CD", commUtils.getValue(gdReq, "YD_PNT_CD3", 0) ); //ÂøÁö¾ßµåÆ÷ÀÎÆ®ÄÚµå
-			jrYDTSJ016.setField("CARUD_CMPL_DT", currDate); //ÇÏÂ÷¿Ï·áÀÏ½Ã
-			jrYDTSJ016.setField("CARLD_SH", commUtils.getValue(gdReq, "CARLD_SH", 0) ); //»óÂ÷¸Å¼ö
+			jrYDTSJ016.setField("TRN_EQP_CD", commUtils.getValue(gdReq, "TRN_EQP_CD", 0) ); //ìš´ì†¡ì¥ë¹„ì½”ë“œ
+			jrYDTSJ016.setField("ARR_WLOC_CD", commUtils.getValue(gdReq, "ARR_WLOC_CD", 0) ); //ì°©ì§€ê°œì†Œì½”ë“œ
+			jrYDTSJ016.setField("ARR_YD_PNT_CD", commUtils.getValue(gdReq, "YD_PNT_CD3", 0) ); //ì°©ì§€ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
+			jrYDTSJ016.setField("CARUD_CMPL_DT", currDate); //í•˜ì°¨ì™„ë£Œì¼ì‹œ
+			jrYDTSJ016.setField("CARLD_SH", commUtils.getValue(gdReq, "CARLD_SH", 0) ); //ìƒì°¨ë§¤ìˆ˜
 			
 			for (int ii = 0; ii < rowCnt; ii++) {
 				
-				jrYDTSJ016.setField("STL_NO" + (ii+1), commUtils.getValue(gdReq, "STL_NO", ii) ); //Àç·á¹øÈ£n
-				jrYDTSJ016.setField("RETHT_CARUD_CMPL_GP" + (ii+1), commUtils.getValue(gdReq, "CMPL_GP", ii) ); //È¸¼ÛÇÏÂ÷¿Ï·á±¸ºĞn
+				jrYDTSJ016.setField("STL_NO" + (ii+1), commUtils.getValue(gdReq, "STL_NO", ii) ); //ì¬ë£Œë²ˆí˜¸n
+				jrYDTSJ016.setField("RETHT_CARUD_CMPL_GP" + (ii+1), commUtils.getValue(gdReq, "CMPL_GP", ii) ); //íšŒì†¡í•˜ì°¨ì™„ë£Œêµ¬ë¶„n
 			}
 			
 			jrRtn = commUtils.addSndData(jrRtn, jrYDTSJ016);
 			
-			commUtils.printLog(logId, "¤±¤±¤±¤±¤±¤± ±¸³»¿î¼Û È¸¼ÛÇÏÂ÷ ¿Ï·á½ÇÀû Àü¹® ÆíÁı Á¾·á ", "");
+			commUtils.printLog(logId, "ã…ã…ã…ã…ã…ã… êµ¬ë‚´ìš´ì†¡ íšŒì†¡í•˜ì°¨ ì™„ë£Œì‹¤ì  ì „ë¬¸ í¸ì§‘ ì¢…ë£Œ ", "");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -14195,8 +14195,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í: º¥µùÃ³¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª…: ë²¤ë”©ì²˜ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inParam
 	 * @return
 	 * @throws DAOException
@@ -14204,7 +14204,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	 */
 	public GridData updStockBendReg(GridData gdReq) throws DAOException {
 		
-		String methodNm = "º¥µùÃ³¸®(¸ğ¹ÙÀÏ)[BSlabJspSeEJB.updStockBendReg] < " + gdReq.getNavigateValue();
+		String methodNm = "ë²¤ë”©ì²˜ë¦¬(ëª¨ë°”ì¼)[BSlabJspSeEJB.updStockBendReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		GridData outGrid = null;
 		
@@ -14215,7 +14215,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			outGrid = dao.updStockBendReg(gdReq);
 			
-			//bend ÀÌ·Â µî·Ï °ü¸® Ãß°¡ (chito 2016.09.01)
+			//bend ì´ë ¥ ë“±ë¡ ê´€ë¦¬ ì¶”ê°€ (chito 2016.09.01)
 			//outGrid = dao.inStockBendReg(gdReq);
 			
 			return outGrid;
@@ -14226,8 +14226,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	////////////////////
 	/**
-	 * [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í: º¥µùÃ³¸®
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * [A] ì˜¤í¼ë ˆì´ì…˜ëª…: ë²¤ë”©ì²˜ë¦¬
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param inParam
 	 * @return
 	 * @throws DAOException
@@ -14235,7 +14235,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	 */
 	public GridData updStockMarkReg(GridData gdReq) throws DAOException {
 		
-		String methodNm = "¸¶Å·Ã³¸®(¸ğ¹ÙÀÏ)[BSlabJspSeEJB.updStockMarkReg] < " + gdReq.getNavigateValue();
+		String methodNm = "ë§ˆí‚¹ì²˜ë¦¬(ëª¨ë°”ì¼)[BSlabJspSeEJB.updStockMarkReg] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 		GridData outGrid = null;
 		
@@ -14246,7 +14246,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 
 			outGrid = dao.updStockMarkReg(gdReq);
 			
-			//bend ÀÌ·Â µî·Ï °ü¸® Ãß°¡ (chito 2016.09.01)
+			//bend ì´ë ¥ ë“±ë¡ ê´€ë¦¬ ì¶”ê°€ (chito 2016.09.01)
 			//outGrid = dao.inStockBendReg(gdReq);
 			
 			return outGrid;
@@ -14257,17 +14257,17 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : 1¿­¿¬ SLAB SCARP ÀÌµ¿Áö½Ã Àü¼Û
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : 1ì—´ì—° SLAB SCARP ì´ë™ì§€ì‹œ ì „ì†¡
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/	
 	public JDTORecord sendSlabScrapMove(GridData gdReq) throws DAOException {
-		String methodNm = "1¿­¿¬ SLAB SCARP ÀÌµ¿Áö½Ã Àü¼Û[BSlabJspSeEJB.sendSlabScrapMove] < " +  gdReq.getNavigateValue();
+		String methodNm = "1ì—´ì—° SLAB SCARP ì´ë™ì§€ì‹œ ì „ì†¡[BSlabJspSeEJB.sendSlabScrapMove] < " +  gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
-		JDTORecord jrRtn = null;	//Å©·¹ÀÎÀÛ¾÷Áö½Ã Àü¹® Return
+		JDTORecord jrRtn = null;	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ ì „ë¬¸ Return
 		
 		try {
 			
@@ -14280,9 +14280,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sMV_GP 		= commUtils.nvl(gdReq.getParam("MV_GP"), "2");
 			String sSCRAP_YARD 	= commUtils.nvl(gdReq.getParam("SCRAP_YARD"), "1");
 			
-			//TB_YM_STACKLAYER Å×ÀÌºí¿¡¼­ SCRAPÀ§Ä¡ X,Y °ªÀ» ÀĞ¾î ¿Â´Ù.
+			//TB_YM_STACKLAYER í…Œì´ë¸”ì—ì„œ SCRAPìœ„ì¹˜ X,Y ê°’ì„ ì½ì–´ ì˜¨ë‹¤.
 			jrParam.setField("STACK_COL_GP"	, sSCRAP_YARD);
-			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "¾ßµå ±âÁØ Á¶È¸"); 
+			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "ì•¼ë“œ ê¸°ì¤€ ì¡°íšŒ"); 
 			
 			if(rsResult2.size() > 0) {
 				
@@ -14291,8 +14291,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("0".equals(sX_AXIS) || "0".equals(sY_AXIS)) {
 					
-					commUtils.printLog(logId, ">>>> 1¿­¿¬ SLAB SCRAP ÀÌµ¿Áö½Ã X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù!!!", "SL");
-					throw new Exception("1¿­¿¬ SLAB SCRAP ÀÌµ¿Áö½Ã X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù ");
+					commUtils.printLog(logId, ">>>> 1ì—´ì—° SLAB SCRAP ì´ë™ì§€ì‹œ X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜!!!", "SL");
+					throw new Exception("1ì—´ì—° SLAB SCRAP ì´ë™ì§€ì‹œ X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜ ");
 				} else {
 					
 					JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
@@ -14303,7 +14303,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					sndL2Msg.setField("YD_WO_LOC_XAXIS" , sX_AXIS);
 					sndL2Msg.setField("YD_WO_LOC_YAXIS" , sY_AXIS);				
 		 
-					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //Àü¼Û Data »ı¼º	
+					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //ì „ì†¡ Data ìƒì„±	
 				}
 			}
 			
@@ -14316,22 +14316,22 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		} catch (Exception e) {
 			throw new DAOException(commUtils.makeErrorLog(logId, methodNm, e));
 		}
-	} // end of sendSlabScrapMove Ã³¸®
+	} // end of sendSlabScrapMove ì²˜ë¦¬
 	
 	/////////////////
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Eµ¿ Turn ÀÛ¾÷ ½ÃÀÛ
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Eë™ Turn ì‘ì—… ì‹œì‘
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/	
 	public JDTORecord doTurnStart(GridData gdReq) throws DAOException {
-		String methodNm = "Eµ¿ Turn ÀÛ¾÷ ½ÃÀÛ[BSlabJspSeEJB.doTurnStart] < " +  gdReq.getNavigateValue();
+		String methodNm = "Eë™ Turn ì‘ì—… ì‹œì‘[BSlabJspSeEJB.doTurnStart] < " +  gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
-		JDTORecord jrRtn = null;	//Å©·¹ÀÎÀÛ¾÷Áö½Ã Àü¹® Return
+		JDTORecord jrRtn = null;	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ ì „ë¬¸ Return
 		
 		try {
 			
@@ -14344,9 +14344,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sMV_GP 			= commUtils.nvl(gdReq.getParam("MV_GP")			, "T");
 			String sSTACK_COL_GP 	= commUtils.nvl(gdReq.getParam("STACK_COL_GP")	, "");
 			
-			//TB_YM_STACKLAYER Å×ÀÌºí¿¡¼­ SCRAPÀ§Ä¡ X,Y °ªÀ» ÀĞ¾î ¿Â´Ù.
+			//TB_YM_STACKLAYER í…Œì´ë¸”ì—ì„œ SCRAPìœ„ì¹˜ X,Y ê°’ì„ ì½ì–´ ì˜¨ë‹¤.
 			jrParam.setField("STACK_COL_GP"	, sSTACK_COL_GP);
-			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "¾ßµå ±âÁØ Á¶È¸"); 
+			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "ì•¼ë“œ ê¸°ì¤€ ì¡°íšŒ"); 
 			
 			if(rsResult2.size() > 0) {
 				
@@ -14355,8 +14355,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("0".equals(sX_AXIS) || "0".equals(sY_AXIS)) {
 					
-					commUtils.printLog(logId, ">>>> 1¿­¿¬ SLAB Turn ÀÛ¾÷  X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù!!!", "SL");
-					throw new Exception("1¿­¿¬ SLAB STurn ÀÛ¾÷  X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù ");
+					commUtils.printLog(logId, ">>>> 1ì—´ì—° SLAB Turn ì‘ì—…  X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜!!!", "SL");
+					throw new Exception("1ì—´ì—° SLAB STurn ì‘ì—…  X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜ ");
 				} else {
 					
 					JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
@@ -14367,13 +14367,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					sndL2Msg.setField("YD_WO_LOC_XAXIS" , sX_AXIS);
 					sndL2Msg.setField("YD_WO_LOC_YAXIS" , sY_AXIS);				
 		 
-					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //Àü¼Û Data »ı¼º	
+					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //ì „ì†¡ Data ìƒì„±	
 					
-					//TB_YM_EQUIP Å×ÀÌºí EQUIP_STAT ¿¡ 'T' UPDATE
+					//TB_YM_EQUIP í…Œì´ë¸” EQUIP_STAT ì— 'T' UPDATE
 					jrParam.setField("EQUIP_STAT"		, sMV_GP);
 					jrParam.setField("YD_EQP_ID"		, sYD_EQP_ID);
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEquipStat", logId, methodNm, "TB_YM_EQUIP ¼öÁ¤");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEquipStat", logId, methodNm, "TB_YM_EQUIP ìˆ˜ì •");
 				}
 				
 			}
@@ -14388,20 +14388,20 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		} catch (Exception e) {
 			throw new DAOException(commUtils.makeErrorLog(logId, methodNm, e));
 		}
-	} // end of doTurnStart Ã³¸®
+	} // end of doTurnStart ì²˜ë¦¬
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : Eµ¿ Turn ÀÛ¾÷ Á¾·á
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : Eë™ Turn ì‘ì—… ì¢…ë£Œ
 	 *
-	 * 		@ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * 		@ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 *      @param JDTORecord rcvMsg
 	 *      @return JDTORecord
 	 *      @throws DAOException
 	*/	
 	public JDTORecord doTurnEnd(GridData gdReq) throws DAOException {
-		String methodNm = "Eµ¿ Turn ÀÛ¾÷ Á¾·á[BSlabJspSeEJB.doTurnEnd] < " +  gdReq.getNavigateValue();
+		String methodNm = "Eë™ Turn ì‘ì—… ì¢…ë£Œ[BSlabJspSeEJB.doTurnEnd] < " +  gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
-		JDTORecord jrRtn = null;	//Å©·¹ÀÎÀÛ¾÷Áö½Ã Àü¹® Return
+		JDTORecord jrRtn = null;	//í¬ë ˆì¸ì‘ì—…ì§€ì‹œ ì „ë¬¸ Return
 		
 		try {
 			
@@ -14414,9 +14414,9 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			String sMV_GP 			= commUtils.nvl(gdReq.getParam("MV_GP")			, "R");
 			String sSTACK_COL_GP 	= commUtils.nvl(gdReq.getParam("STACK_COL_GP")	, "");
 			
-			//TB_YM_STACKLAYER Å×ÀÌºí¿¡¼­ SCRAPÀ§Ä¡ X,Y °ªÀ» ÀĞ¾î ¿Â´Ù.
+			//TB_YM_STACKLAYER í…Œì´ë¸”ì—ì„œ SCRAPìœ„ì¹˜ X,Y ê°’ì„ ì½ì–´ ì˜¨ë‹¤.
 			jrParam.setField("STACK_COL_GP"	, sSTACK_COL_GP);
-			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "¾ßµå ±âÁØ Á¶È¸"); 
+			JDTORecordSet rsResult2 = commDao.select(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.getStackColGpXYAxisYMA8L010", logId, methodNm, "ì•¼ë“œ ê¸°ì¤€ ì¡°íšŒ"); 
 			
 			if(rsResult2.size() > 0) {
 				
@@ -14425,8 +14425,8 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				
 				if("0".equals(sX_AXIS) || "0".equals(sY_AXIS)) {
 					
-					commUtils.printLog(logId, ">>>> 1¿­¿¬ SLAB Turn ÀÛ¾÷  X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù!!!", "SL");
-					throw new Exception("1¿­¿¬ SLAB STurn ÀÛ¾÷  X,Y ÁÂÇ¥ Á¶È¸ ¿À·ù ");
+					commUtils.printLog(logId, ">>>> 1ì—´ì—° SLAB Turn ì‘ì—…  X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜!!!", "SL");
+					throw new Exception("1ì—´ì—° SLAB STurn ì‘ì—…  X,Y ì¢Œí‘œ ì¡°íšŒ ì˜¤ë¥˜ ");
 				} else {
 					
 					JDTORecord sndL2Msg = JDTORecordFactory.getInstance().create();
@@ -14437,13 +14437,13 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					sndL2Msg.setField("YD_WO_LOC_XAXIS" , sX_AXIS);
 					sndL2Msg.setField("YD_WO_LOC_YAXIS" , sY_AXIS);				
 		 
-					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //Àü¼Û Data »ı¼º
+					jrRtn = commUtils.addSndData(jrRtn,commDao.getMsgL2("YMA8L010", sndL2Msg));	 //ì „ì†¡ Data ìƒì„±
 					
-					//TB_YM_EQUIP Å×ÀÌºí EQUIP_STAT ¿¡ 'R' UPDATE
+					//TB_YM_EQUIP í…Œì´ë¸” EQUIP_STAT ì— 'R' UPDATE
 					jrParam.setField("EQUIP_STAT"		, sMV_GP);
 					jrParam.setField("YD_EQP_ID"		, sYD_EQP_ID);
 					
-					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEquipStat", logId, methodNm, "TB_YM_EQUIP ¼öÁ¤");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updEquipStat", logId, methodNm, "TB_YM_EQUIP ìˆ˜ì •");
 				}
 				
 			}
@@ -14457,19 +14457,19 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 		} catch (Exception e) {
 			throw new DAOException(commUtils.makeErrorLog(logId, methodNm, e));
 		}
-	} // end of doTurnEnd Ã³¸®
+	} // end of doTurnEnd ì²˜ë¦¬
 	
 	
 	/**
-	 * WBÀÌ»óÁ¤º¸Á¤¸®
+	 * WBì´ìƒì •ë³´ì •ë¦¬
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updWBChargeLotInfo(GridData gdReq) throws DAOException {
-		String methodNm = "WBÀÌ»óÁ¤º¸Á¤¸®[BSlabJspSeEJB.updWBChargeLotInfo] < " + gdReq.getNavigateValue();
+		String methodNm = "WBì´ìƒì •ë³´ì •ë¦¬[BSlabJspSeEJB.updWBChargeLotInfo] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -14479,10 +14479,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = JDTORecordFactory.getInstance().create();
 			
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
-			//µî·Ï ÇÒ  ·¹ÄÚµå ¼ö
+			//ë“±ë¡ í•   ë ˆì½”ë“œ ìˆ˜
 			int rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			
 			int iDelCnt = 0;
@@ -14492,7 +14492,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 				if("WB".equals(commUtils.getValue(gdReq, "STACK_COL_GP", ii).substring(2, 4))) {
 					
 					/*com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockChargeLotNoClearWb 
-					--CHARGE_LOT_NO Ç×¸ñ CLEAR
+					--CHARGE_LOT_NO í•­ëª© CLEAR
 					MERGE INTO TB_YM_STOCK ST USING (
 					
 					    SELECT A.STOCK_ID
@@ -14510,7 +14510,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 					    ,ST.CTS_RELAY_SADDLE = DD.CHARGE_LOT_NO
 					 * */
 					jrParam.setField("STOCK_ID", commUtils.getValue(gdReq, "STOCK_ID", ii)); 
-					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockChargeLotNoClearWb", logId, methodNm, "ÀåÀÔÀç·á  STOCKÀÇ CHARGE_LOT_NO ¿À·ù Á¤º¸ Clear ");
+					commDao.update(jrParam, "com.inisteel.cim.ym.bslab.dao.BSlabDAO.updStockChargeLotNoClearWb", logId, methodNm, "ì¥ì…ì¬ë£Œ  STOCKì˜ CHARGE_LOT_NO ì˜¤ë¥˜ ì •ë³´ Clear ");
 					
 					iDelCnt++;
 				}
@@ -14518,10 +14518,10 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			}
 			
 			if(iDelCnt>0) {
-				jrRtn.setField("RTN_MSG", "WBÀÌ»óÁ¤º¸Á¤¸® " + iDelCnt + " °ÇÀÌ Á¤»ó Ã³¸®µÇ¾ú½À´Ï´Ù!");	
+				jrRtn.setField("RTN_MSG", "WBì´ìƒì •ë³´ì •ë¦¬ " + iDelCnt + " ê±´ì´ ì •ìƒ ì²˜ë¦¬ë˜ì—ˆìŠµë‹ˆë‹¤!");	
 				
 			} else {
-				jrRtn.setField("RTN_MSG", "WBÀÌ»óÁ¤º¸Á¤¸® ´ë»óÀÌ ¾ø½À´Ï´Ù!!");	
+				jrRtn.setField("RTN_MSG", "WBì´ìƒì •ë³´ì •ë¦¬ ëŒ€ìƒì´ ì—†ìŠµë‹ˆë‹¤!!");	
 			}
 			
 			commUtils.printLog(logId, methodNm, "S-");
@@ -14536,15 +14536,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updWBChargeLotInfo
 	
 	/**
-	 * ¾ßµåÂ÷·®»ç¿ëTYPE
+	 * ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©TYPE
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updCarUseTypeGp(GridData gdReq) throws DAOException {
-		String methodNm = "¾ßµåÂ÷·®»ç¿ëTYPE º¯°æ[BSlabJspSeEJB.updCarUseTypeGp] < " + gdReq.getNavigateValue();
+		String methodNm = "ì•¼ë“œì°¨ëŸ‰ì‚¬ìš©TYPE ë³€ê²½[BSlabJspSeEJB.updCarUseTypeGp] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -14553,7 +14553,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 			
 			jrParam.setField("YD_CAR_USETYPE_GP"	, gdReq.getParam("YD_CAR_USETYPE_GP") );
@@ -14565,7 +14565,7 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			  , MOD_DDTT=SYSDATE
 			  , MODIFIER=:V_MODIFIER
 			 WHERE YD_STK_COL_GP=:V_YD_STK_COL_GP */
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarUseTypeGp", logId, methodNm, "TB_YD_CARPOINT ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcommon.dao.YmCommDAO.updCarUseTypeGp", logId, methodNm, "TB_YD_CARPOINT ìˆ˜ì •");
 			
 			commUtils.printLog(logId, methodNm, "S-");
 
@@ -14578,15 +14578,15 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 	} // end of updCarUseTypeGp
 	
 	/**
-	 * ±âÁØ°ü¸® - »ı»êÅëÁ¦ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö DEL_YN ¼öÁ¤
+	 * ê¸°ì¤€ê´€ë¦¬ - ìƒì‚°í†µì œ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ DEL_YN ìˆ˜ì •
 	 *
-	 * @ejb.interface-method EJBDocletÀ» »ı¼ºÇÏ´Â ÅÂ±×ÀÔ´Ï´Ù.
+	 * @ejb.interface-method EJBDocletì„ ìƒì„±í•˜ëŠ” íƒœê·¸ì…ë‹ˆë‹¤.
 	 * @param GridData gdReq
 	 * @return JDTORecord
 	 * @throws DAOException
 	*/
 	public JDTORecord updCtMsgRule(GridData gdReq) throws DAOException {
-		String methodNm = "±âÁØ°ü¸® - »ı»êÅëÁ¦ ¾Ğ¿¬Áö½Ã ¸Ş¼¼Áö DEL_YN ¼öÁ¤[BSlabJspSeEJB.updCtMsgRule] < " + gdReq.getNavigateValue();
+		String methodNm = "ê¸°ì¤€ê´€ë¦¬ - ìƒì‚°í†µì œ ì••ì—°ì§€ì‹œ ë©”ì„¸ì§€ DEL_YN ìˆ˜ì •[BSlabJspSeEJB.updCtMsgRule] < " + gdReq.getNavigateValue();
 		String logId = gdReq.getIPAddress();
 
 		try {
@@ -14595,14 +14595,14 @@ public class BSlabJspSeEJBSBean extends BaseSessionBean {
 			//Return Value
 			JDTORecord jrRtn = null;
 
-			//DAO Parameter - Log ID, Method, ¼öÁ¤ÀÚ Set
+			//DAO Parameter - Log ID, Method, ìˆ˜ì •ì Set
 			JDTORecord jrParam = commUtils.getParam(logId, methodNm, commUtils.trim(gdReq.getParam("userid")));
 
 			jrParam.setField("DEL_YN"		, "Y"			);
 			jrParam.setField("REPR_CD_GP"	, "MSG001"		);
 			jrParam.setField("CD_GP"		, "*"			);
 			jrParam.setField("ITEM"			, "*"			);
-			commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.updYmRule", logId, methodNm, "»ı»êÅëÁ¦MSG RULE ¼öÁ¤");
+			commDao.update(jrParam, "com.inisteel.cim.ym.bcoil.dao.BcoilDAO.updYmRule", logId, methodNm, "ìƒì‚°í†µì œMSG RULE ìˆ˜ì •");
 			
 
 			commUtils.printLog(logId, methodNm, "S-");

@@ -10,7 +10,7 @@ import com.inisteel.cim.common.exception.DAOException;
 import com.inisteel.cim.ym.common.YmCommonUtil;
 
 /**
- *      [A] Å¬·¡½º¸í : ¾ßµåÀûÄ¡¿­ DAO
+ *      [A] í´ëž˜ìŠ¤ëª… : ì•¼ë“œì ì¹˜ì—´ DAO
  * 
 */
 
@@ -28,15 +28,15 @@ public class YdStkColDao {
 	private String szQueryIdGet2 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkcolEqp";
 	private String szQueryIdGet3 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkcolCol";
 	
-	//ÀÌÇö¼º[090305]_ÈÄÆÇÁ¦Ç°Ã¢°í MAP
+	//ì´í˜„ì„±[090305]_í›„íŒì œí’ˆì°½ê³  MAP
 	private String szQueryIdGet4 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkcolBedInfo_PAGE";	
-	//ÀÌÇö¼º[090308]
+	//ì´í˜„ì„±[090308]
 	private String szQueryIdGet5 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkcolWLocCdandPntCd";
-	//±èÃ¢ÀÏ[090312]
+	//ê¹€ì°½ì¼[090312]
 	private String szQueryIdGet6 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getCoilYdBaySetList_PAGE";
-	//±èÃ¢ÀÏ[090312]
+	//ê¹€ì°½ì¼[090312]
 	private String szQueryIdGet7 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getCoilYdColStsSetInfo";
-	//±èÃ¢ÀÏ[090312]
+	//ê¹€ì°½ì¼[090312]
 	private String szQueryIdGet8 = "com.inisteel.cim.yd.dao.ydstkcoldao.YdStkcolDao.getYdStkPosSet_PAGE";
 	
 	//insert query id
@@ -49,18 +49,18 @@ public class YdStkColDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ SELECT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ SELECT
 	 *      
 	 * @param  JDTORecord    inRec      parameter record
 	 *         JDTORecordSet outRecSet  return recordSet
-	 *         int           intGp      ±¸ºÐ(0:YD_STK_COL_GP,
+	 *         int           intGp      êµ¬ë¶„(0:YD_STK_COL_GP,
 	 *                                      1:YD_GP,YD_BAY_GP,YD_EQP_GP,
 	 *                                      2:YD_GP,YD_BAY_GP,YD_EQP_GP,YD_STK_COL_NO
 	 *                                      3:YD_STK_COL_NO1 ,YD_STK_COL_NO2,YD_STK_COL_NO3,PAGE_CNT1,ROW_CNT1,PAGE_CNT2,ROW_CNT2
 	 *                                      4:V_WLOC_CD ,  V_YD_PNT_CD
 	 *                                      7:V_YD_GP, V_YD_BAY_GP, V_YD_EQP_GP, V_YD_STK_COL_NO, V_PAGE_CNT1, V_ROW_CNT1, V_PAGE_CNT2, V_ROW_CNT2
 	 *                                      )
-	 * @return int                      record count:¼º°ø, 0:data not found, -2:parameter error
+	 * @return int                      record count:ì„±ê³µ, 0:data not found, -2:parameter error
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */	
@@ -73,7 +73,7 @@ public class YdStkColDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ymCommonUtil.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -115,7 +115,7 @@ public class YdStkColDao {
 				return intRtnVal = 0;
 			}
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal = rsTemp.size();
@@ -126,10 +126,10 @@ public class YdStkColDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ SELECT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ SELECT parameter Check
 	 * 
 	 * @param  JDTORecord inRec  parameter record
-	 *         int        intGp  ±¸ºÐ(0:YD_STK_COL_GP,
+	 *         int        intGp  êµ¬ë¶„(0:YD_STK_COL_GP,
 	 *                               1:YD_GP,YD_BAY_GP,YD_EQP_GP,
 	 *                               2:YD_GP,YD_BAY_GP,YD_EQP_GP,YD_STK_COL_NO
 	 *                               3:YD_STK_COL_NO1 ,YD_STK_COL_NO2,YD_STK_COL_NO3,PAGE_CNT1,ROW_CNT1,PAGE_CNT2,ROW_CNT2
@@ -137,7 +137,7 @@ public class YdStkColDao {
 	 *                               5:V_YD_GP, V_PAGE_CNT1, V_ROW_CNT1, V_PAGE_CNT2, V_ROW_CNT2
 	 *                               6:V_YD_STK_COL_GP
 	 *                               )
-	 * @return boolean           true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean           true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkPara_getYdStkcol(JDTORecord inRec, int intGp) throws JDTOException  {
@@ -271,7 +271,7 @@ public class YdStkColDao {
 			
 			
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -282,7 +282,7 @@ public class YdStkColDao {
 /*------------------------------------- INSERT -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ INSERT
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ INSERT
 	 * 
 	 * @param JDTORecord inRec parameter record
 	 * @return int             execution count, -2:parameter error
@@ -295,7 +295,7 @@ public class YdStkColDao {
 		JDTORecord recPara = null;
 		
 		try {
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recPara = ymCommonUtil.conversionFieldname(inRec, 0);
 			
 			//parameter check
@@ -311,17 +311,17 @@ public class YdStkColDao {
 			//query execute
 			intRtnVal = dbAssDao.trtProcess(recPara);
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
 	} // end of insYdStkcol
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ INSERT parameter Check
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ INSERT parameter Check
 	 * 
 	 * @param JDTORecord inRec parameter record
-	 * @return boolean         true(¼º°ø), false(½ÇÆÐ)
+	 * @return boolean         true(ì„±ê³µ), false(ì‹¤íŒ¨)
 	 * @throws JDTOException 
 	 */	
 	public boolean chkParameter(JDTORecord inRec) throws JDTOException  {
@@ -329,91 +329,91 @@ public class YdStkColDao {
 		boolean blnErr = true;
 		
 		try {
-			szFieldName = "V_YD_STK_COL_GP";   	//¾ßµåÀûÄ¡¿­±¸ºÐ
+			szFieldName = "V_YD_STK_COL_GP";   	//ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 6, 1, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_REG_DDTT";			// µî·ÏÀÏ
+			szFieldName = "V_REG_DDTT";			// ë“±ë¡ì¼
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 0, 3, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_REGISTER";			// µî·ÏÀÚ
+			szFieldName = "V_REGISTER";			// ë“±ë¡ìž
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 10, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_MOD_DDTT";			// ¼öÁ¤ÀÏ
+			szFieldName = "V_MOD_DDTT";			// ìˆ˜ì •ì¼
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 0, 3, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_MODIFIER";			// ¼öÁ¤ÀÚ
+			szFieldName = "V_MODIFIER";			// ìˆ˜ì •ìž
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 10, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_DEL_YN";			// »èÁ¦À¯¹«
+			szFieldName = "V_DEL_YN";			// ì‚­ì œìœ ë¬´
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 1, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_GP";			// ¾ßµå±¸ºÐ
+			szFieldName = "V_YD_GP";			// ì•¼ë“œêµ¬ë¶„
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 1, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_BAY_GP";		// ¾ßµåµ¿±¸ºÐ
+			szFieldName = "V_YD_BAY_GP";		// ì•¼ë“œë™êµ¬ë¶„
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 1, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_EQP_GP";		// ¾ßµå¼³ºñ±¸ºÐ
+			szFieldName = "V_YD_EQP_GP";		// ì•¼ë“œì„¤ë¹„êµ¬ë¶„
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 2, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_STK_COL_NO";	// ¾ßµåÀûÄ¡¿­¹øÈ£
+			szFieldName = "V_YD_STK_COL_NO";	// ì•¼ë“œì ì¹˜ì—´ë²ˆí˜¸
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 2, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_YD_STK_COL_ACT_STAT";		// ¾ßµåÀûÄ¡¿­È°¼º»óÅÂ
+			szFieldName = "V_YD_STK_COL_ACT_STAT";		// ì•¼ë“œì ì¹˜ì—´í™œì„±ìƒíƒœ
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 1, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_YD_STK_COL_RULE_XAXIS";	// ¾ßµåÀûÄ¡¿­±âÁØXÃà
+			szFieldName = "V_YD_STK_COL_RULE_XAXIS";	// ì•¼ë“œì ì¹˜ì—´ê¸°ì¤€Xì¶•
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 7, 2, 'L', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_YD_STK_COL_RULE_YAXIS";	// ¾ßµåÀûÄ¡¿­±âÁØYÃà
+			szFieldName = "V_YD_STK_COL_RULE_YAXIS";	// ì•¼ë“œì ì¹˜ì—´ê¸°ì¤€Yì¶•
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 5, 2, 'L', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_YD_STK_COL_W";				// ¾ßµåÀûÄ¡¿­Æø
+			szFieldName = "V_YD_STK_COL_W";				// ì•¼ë“œì ì¹˜ì—´í­
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 5, 2, 'L', 0, 0);
 			if (!blnErr) return blnErr;
 	
-			szFieldName = "V_YD_STK_COL_L";				// ¾ßµåÀûÄ¡¿­±æÀÌ
+			szFieldName = "V_YD_STK_COL_L";				// ì•¼ë“œì ì¹˜ì—´ê¸¸ì´
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 5, 2, 'L', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_CAR_USE_GP";	// Â÷·®»ç¿ë±¸ºÐ
+			szFieldName = "V_YD_CAR_USE_GP";	// ì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 1, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_TRN_EQP_CD";	// ¿î¼ÛÀåºñÄÚµå
+			szFieldName = "V_TRN_EQP_CD";	// ìš´ì†¡ìž¥ë¹„ì½”ë“œ
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 8, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_CAR_NO";	// Â÷·®¹øÈ£
+			szFieldName = "V_CAR_NO";	// ì°¨ëŸ‰ë²ˆí˜¸
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 15, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_CARD_NO";	// Ä«¹øÈ£
+			szFieldName = "V_CARD_NO";	// ì¹´ë²ˆí˜¸
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 4, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_WLOC_CD";	// °³¼ÒÄÚ
+			szFieldName = "V_WLOC_CD";	// ê°œì†Œì½”
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 5, 2, 'S', 0, 0);
 			if (!blnErr) return blnErr;
 			
-			szFieldName = "V_YD_PNT_CD";	// ¾ßµåÆ÷ÀÎÆ®ÄÚµå
+			szFieldName = "V_YD_PNT_CD";	// ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
 			blnErr = ymCommonUtil.chkField(inRec, szFieldName, 4, 2, 'S', 0, 0);
 			
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 		return blnErr;
@@ -423,11 +423,11 @@ public class YdStkColDao {
 /*------------------------------------- UPDATE -------------------------------------------*/
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ UPDATE
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ UPDATE
 	 * 
 	 * @param  JDTORecord      inRec parameter record
-	 *         int             intGp ±¸ºÐ(0:YD_STK_COL_GP))
-	 * @return int             execution count(¼º°ø), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
+	 *         int             intGp êµ¬ë¶„(0:YD_STK_COL_GP))
+	 * @return int             execution count(ì„±ê³µ), 0:data not found, -1:duplicate data, -2:parameter error, -3:execution failed
 	 * @throws DAOException
 	 * @throws JDTOException 
 	 */		
@@ -442,11 +442,11 @@ public class YdStkColDao {
 			//recordSet create
 			JDTORecordSet outRecSet = JDTORecordFactory.getInstance().createRecordSet("retTmp");
 			
-			//º¯È¯¿ë ·¹ÄÚµå
+			//ë³€í™˜ìš© ë ˆì½”ë“œ
 			JDTORecord recInPara = null;
 			JDTORecord recOutPara = null;
 			
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recInPara = ymCommonUtil.conversionFieldname(inRec, 0);
 			
 			//update data select
@@ -476,7 +476,7 @@ public class YdStkColDao {
 			outRecSet.first();
 			outRec = outRecSet.getRecord();
 	
-			//ÇÊµå¸í º¯È¯ (ÇÊµå¸í -> V_ÇÊµå¸í)
+			//í•„ë“œëª… ë³€í™˜ (í•„ë“œëª… -> V_í•„ë“œëª…)
 			recOutPara = ymCommonUtil.conversionFieldname(outRec, 0);
 			
 			//data mapping
@@ -498,7 +498,7 @@ public class YdStkColDao {
 			//execution error return
 			if (intRtnVal <= 0) intRtnVal = -3;
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new DAOException(szDaoName + e.getMessage(), e);
 		}
 		return intRtnVal;
@@ -507,7 +507,7 @@ public class YdStkColDao {
 	
 	
 	/**
-	 *      [A] ¿ÀÆÛ·¹ÀÌ¼Ç¸í : ¾ßµåÀûÄ¡¿­ UPDATE parameter mapping
+	 *      [A] ì˜¤í¼ë ˆì´ì…˜ëª… : ì•¼ë“œì ì¹˜ì—´ UPDATE parameter mapping
 	 * 
 	 * @param JDTORecord inRec
 	 *        JDTORecord outRec
@@ -518,71 +518,71 @@ public class YdStkColDao {
 		String szFieldName = null;
 
 		try {
-			szFieldName = "V_YD_STK_COL_GP";	// ¾ßµåÀûÄ¡¿­±¸ºÐ
+			szFieldName = "V_YD_STK_COL_GP";	// ì•¼ë“œì ì¹˜ì—´êµ¬ë¶„
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_REGISTER";			// µî·ÏÀÚ
+			szFieldName = "V_REGISTER";			// ë“±ë¡ìž
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_REG_DDTT";			// µî·ÏÀÏ
+			szFieldName = "V_REG_DDTT";			// ë“±ë¡ì¼
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_MODIFIER";			// ¼öÁ¤ÀÚ
+			szFieldName = "V_MODIFIER";			// ìˆ˜ì •ìž
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_MOD_DDTT";			// ¼öÁ¤ÀÏ
+			szFieldName = "V_MOD_DDTT";			// ìˆ˜ì •ì¼
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_DEL_YN";			// »èÁ¦À¯¹«
+			szFieldName = "V_DEL_YN";			// ì‚­ì œìœ ë¬´
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_GP";			// ¾ßµå±¸ºÐ
+			szFieldName = "V_YD_GP";			// ì•¼ë“œêµ¬ë¶„
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_BAY_GP";		// ¾ßµåµ¿±¸ºÐ
+			szFieldName = "V_YD_BAY_GP";		// ì•¼ë“œë™êµ¬ë¶„
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_EQP_GP";		// ¾ßµå¼³ºñ±¸ºÐ
+			szFieldName = "V_YD_EQP_GP";		// ì•¼ë“œì„¤ë¹„êµ¬ë¶„
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_STK_COL_NO";	// ¾ßµåÀûÄ¡¿­¹øÈ£
+			szFieldName = "V_YD_STK_COL_NO";	// ì•¼ë“œì ì¹˜ì—´ë²ˆí˜¸
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 	
-			szFieldName = "V_YD_STK_COL_ACT_STAT";	 // ¾ßµåÀûÄ¡¿­È°¼º»óÅÂ
+			szFieldName = "V_YD_STK_COL_ACT_STAT";	 // ì•¼ë“œì ì¹˜ì—´í™œì„±ìƒíƒœ
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 	
-			szFieldName = "V_YD_STK_COL_RULE_XAXIS"; // ¾ßµåÀûÄ¡¿­±âÁØXÃà
+			szFieldName = "V_YD_STK_COL_RULE_XAXIS"; // ì•¼ë“œì ì¹˜ì—´ê¸°ì¤€Xì¶•
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 	
-			szFieldName = "V_YD_STK_COL_RULE_YAXIS"; // ¾ßµå»êÀûLotÄÚµå
+			szFieldName = "V_YD_STK_COL_RULE_YAXIS"; // ì•¼ë“œì‚°ì Lotì½”ë“œ
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 	
-			szFieldName = "V_YD_STK_COL_W";			 // ¾ßµåÀûÄ¡¿­Æø
+			szFieldName = "V_YD_STK_COL_W";			 // ì•¼ë“œì ì¹˜ì—´í­
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 	
-			szFieldName = "V_YD_STK_COL_L";			 // ¾ßµåÀûÄ¡¿­±æÀÌ
+			szFieldName = "V_YD_STK_COL_L";			 // ì•¼ë“œì ì¹˜ì—´ê¸¸ì´
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_CAR_USE_GP";	// Â÷·®»ç¿ë±¸ºÐ
+			szFieldName = "V_YD_CAR_USE_GP";	// ì°¨ëŸ‰ì‚¬ìš©êµ¬ë¶„
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_TRN_EQP_CD";	// ¿î¼ÛÀåºñÄÚµå
+			szFieldName = "V_TRN_EQP_CD";	// ìš´ì†¡ìž¥ë¹„ì½”ë“œ
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_CAR_NO";	// Â÷·®¹øÈ£
+			szFieldName = "V_CAR_NO";	// ì°¨ëŸ‰ë²ˆí˜¸
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_CARD_NO";	// Ä«¹øÈ£
+			szFieldName = "V_CARD_NO";	// ì¹´ë²ˆí˜¸
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_WLOC_CD";	// °³¼ÒÄÚ
+			szFieldName = "V_WLOC_CD";	// ê°œì†Œì½”
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
-			szFieldName = "V_YD_PNT_CD";	// ¾ßµåÆ÷ÀÎÆ®ÄÚµå
+			szFieldName = "V_YD_PNT_CD";	// ì•¼ë“œí¬ì¸íŠ¸ì½”ë“œ
 			ymCommonUtil.mappingData(inRec, outRec, szFieldName);
 			
 		} catch (Exception e) {
-			// Exception¹ß»ý½Ã EJBServiceExceptionÀÇ »ó¼ÓÅ¬·¡½º·Î throwÇÕ´Ï´Ù.
+			// Exceptionë°œìƒì‹œ EJBServiceExceptionì˜ ìƒì†í´ëž˜ìŠ¤ë¡œ throwí•©ë‹ˆë‹¤.
 			throw new JDTOException(szDaoName + e.getMessage(), e);
 		}
 
