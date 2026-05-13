@@ -8,7 +8,7 @@
 	<property file="build.properties" />
 	
 	<!-- =================================================================== -->
-	<!-- ÄÄÆÄÀÏ Å¬·¡½º ÆÐ½º ¼³Á¤	                                                 -->
+	<!-- ì»´íŒŒì¼ í´ëž˜ìŠ¤ íŒ¨ìŠ¤ ì„¤ì •	                                                 -->
 	<!-- =================================================================== -->
 	<path id="build.class.path">
 		<fileset dir="${project.home.dir}/${project.lib}" includes="**/*.jar" />
@@ -64,7 +64,7 @@
 	</target>
 
 	<!-- =================================================================== -->
-	<!-- TEST EJBDOCLET ½ÇÇà                                                                                                       -->
+	<!-- TEST EJBDOCLET ì‹¤í–‰                                                                                                       -->
 	<!-- =================================================================== -->
 	<target name="ejbdoclet">
 		<echo>+---------------------------------------------------+</echo>
@@ -74,7 +74,7 @@
 		<ejbdoclet destdir="${project.home.dir}/${project.name}/${gensrc}"
 		           mergedir="parent-fake-to-debug"
 		           excludedtags="@version,@author,@todo"
-		           addedtags="@author ÀÏ°üÁ¦Ã¶ Á¤º¸È­ ½Ã½ºÅÛ,@version ${xdoclet.version},@copyright Çö´ëÁ¦Ã¶"
+		           addedtags="@author ì¼ê´€ì œì²  ì •ë³´í™” ì‹œìŠ¤í…œ,@version ${xdoclet.version},@copyright í˜„ëŒ€ì œì² "
 		           ejbspec="${xdoclet.ejbspec}"
 		           force="${xdoclet.force}"
 		           verbose="${xdoclet.verbose}" >
@@ -99,7 +99,7 @@
 	</target>
 
 	<!-- =================================================================== -->
-	<!-- ${project.name} ÇÁ·ÎÁ§Æ® ÄÄÆÄÀÏ                                                                                -->
+	<!-- ${project.name} í”„ë¡œì íŠ¸ ì»´íŒŒì¼                                                                                -->
 	<!-- =================================================================== -->
 	<target name="compile" depends="ejbdoclet">
 		<echo>+---------------------------------------------------+</echo>
@@ -117,7 +117,7 @@
 	</target>
 
 	<!-- =================================================================== -->
-	<!-- ${project.name} ÇÁ·ÎÁ§Æ® JAR                                          -->
+	<!-- ${project.name} í”„ë¡œì íŠ¸ JAR                                          -->
 	<!-- =================================================================== -->
 	<target name="jar" depends="compile">
 		<echo>+---------------------------------------------------+</echo>
