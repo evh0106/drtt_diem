@@ -53,17 +53,9 @@ src/dummy.txt
 
 # maven plugin generated files
 .flattened-pom.xml
-pom_back.xml
 /.settings/
 /bin/
-/cCoilYd/
 /dist_prod/
 /META-INF/
 /target/
 /.classpath
-/build.properties
-/build.xml
-/hs_err_pid133928.log
-/replay_pid133928.log
-/yd_j18.xml
-/ys_j18.xml
