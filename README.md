@@ -13,6 +13,9 @@
 | Java | 1.4 |
 | Tomcat | 5.5 |
 
+## lib
+Add the jar files in the lib directory to the .classpath file of each domain.
+
 ## Troubleshooting
 - Encrypted Korean Characters - Converting EUC-KR Documents to UTF-8
 ```powershell

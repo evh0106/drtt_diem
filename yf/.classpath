@@ -15,5 +15,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.weblogic"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xdoclet"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xml"/>
+	<classpathentry kind="lib" path="../lib/jspeed.jar"/>
+	<classpathentry kind="lib" path="../lib/servlet-api-2.4.jar"/>
+	<classpathentry kind="lib" path="../lib/xlib.jar"/>
+	<classpathentry kind="lib" path="../lib/common.jar"/>
+	<classpathentry kind="lib" path="../lib/javax.ejb-api-3.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
