@@ -12,12 +12,40 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.weblogic"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xdoclet"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/inisteel.cim.lib.xml"/>
-	<classpathentry kind="lib" path="../lib/jspeed.jar"/>
-	<classpathentry kind="lib" path="../lib/servlet-api-2.4.jar"/>
-	<classpathentry kind="lib" path="../lib/xlib.jar"/>
-	<classpathentry kind="lib" path="../lib/common.jar"/>
-	<classpathentry kind="lib" path="../lib/common-pi.jar"/>
 	<classpathentry kind="lib" path="../lib/amqp-client-4.9.3.jar"/>
+	<classpathentry kind="lib" path="../lib/apache-activemq-4.1.2_jdk1.4.jar"/>
+	<classpathentry kind="lib" path="../lib/brepf.jar"/>
+	<classpathentry kind="lib" path="../lib/cm.jar"/>
+	<classpathentry kind="lib" path="../lib/common-pi.jar"/>
+	<classpathentry kind="lib" path="../lib/common.jar"/>
+	<classpathentry kind="lib" path="../lib/common1.jar"/>
+	<classpathentry kind="lib" path="../lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="../lib/ct.jar"/>
+	<classpathentry kind="lib" path="../lib/flex-messaging-common.jar"/>
+	<classpathentry kind="lib" path="../lib/flex-messaging-opt.jar"/>
+	<classpathentry kind="lib" path="../lib/flex-messaging-req.jar"/>
+	<classpathentry kind="lib" path="../lib/flex-messaging.jar"/>
+	<classpathentry kind="lib" path="../lib/hr.jar"/>
 	<classpathentry kind="lib" path="../lib/javax.ejb-api-3.2.2.jar"/>
+	<classpathentry kind="lib" path="../lib/jspeed.jar"/>
+	<classpathentry kind="lib" path="../lib/jxl.jar"/>
+	<classpathentry kind="lib" path="../lib/or.jar"/>
+	<classpathentry kind="lib" path="../lib/poi-2.5.1-final-20040804.jar"/>
+	<classpathentry kind="lib" path="../lib/pp.jar"/>
+	<classpathentry kind="lib" path="../lib/pr.jar"/>
+	<classpathentry kind="lib" path="../lib/qm.jar"/>
+	<classpathentry kind="lib" path="../lib/RabbitMQ.jar"/>
+	<classpathentry kind="lib" path="../lib/RAPI4J.jar"/>
+	<classpathentry kind="lib" path="../lib/RAPI5J.jar"/>
+	<classpathentry kind="lib" path="../lib/rdonadapter.jar"/>
+	<classpathentry kind="lib" path="../lib/sb.jar"/>
+	<classpathentry kind="lib" path="../lib/servlet-api-2.4.jar"/>
+	<classpathentry kind="lib" path="../lib/tools.jar"/>
+	<classpathentry kind="lib" path="../lib/ts.jar"/>
+	<classpathentry kind="lib" path="../lib/weblogic.jar"/>
+	<classpathentry kind="lib" path="../lib/xlib.jar"/>
+	<classpathentry kind="lib" path="../lib/yd.jar"/>
+	<classpathentry kind="lib" path="../lib/yf.jar"/>
+	<classpathentry kind="lib" path="../lib/ym.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
