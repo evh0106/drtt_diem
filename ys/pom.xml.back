@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="EUC-KR"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 ================================================================================
  MAVEN POM GENERATED FROM ANT BUILD FILE - CONVERSION TRACEABILITY
@@ -38,7 +38,7 @@
         <groupId>com.hyundai.steel.hds</groupId>
         <artifactId>hds-parent</artifactId>
         <version>2025.00-mars_r2-SNAPSHOT</version> <!-- {연도}.{릴리즈 번호}-{환경 구분} -->
-        <relativePath>../pom-parent.hds.mars_r2.xml </relativePath>
+        <relativePath/>
     </parent>
     
     <!-- =================================================================== -->
@@ -83,7 +83,7 @@
         <!-- REPOSITORY_PLACEHOLDER -->
         <repository>
             <id>maven-public</id>
-            <url>http://10.216.132.161:8081/repository/maven-public</url>
+            <!-- <url>http://10.216.132.161:8081/repository/maven-public</url> -->
         </repository>
     </repositories>
 
