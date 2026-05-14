@@ -61,8 +61,6 @@ pom_back.xml
 /META-INF/
 /target/
 /.classpath
-/build.properties
-/build.xml
 /hs_err_pid133928.log
 /replay_pid133928.log
 /yd_j18.xml
