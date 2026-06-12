@@ -40,3 +40,6 @@ Thumbs.db
 **/dist_prod/
 **/META-INF/
 **/target/
+
+# log
+/log/*.log

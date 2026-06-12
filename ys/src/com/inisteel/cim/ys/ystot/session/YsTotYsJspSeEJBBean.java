@@ -3506,6 +3506,8 @@ public class YsTotYsJspSeEJBBean extends BaseSessionBean implements YsQueryIF, Y
 			rowCnt = gdReq.getHeader("CHECK").getRowCount();
 			Boolean bedChged = false;
 
+			// 루프문 애러로 인한 수정 -->
+			/*  
 			for (int ii = 0; ii < rowCnt; ii++) {
 				if ("1".equals(commUtils.getValue(gdReq, "CHECK", ii))) {
 					commUtils.printLog(logId, methodNm, "SSTL_NO:" + commUtils.getValue(gdReq, "SSTL_NO", ii));
@@ -3517,6 +3519,7 @@ public class YsTotYsJspSeEJBBean extends BaseSessionBean implements YsQueryIF, Y
 					
 					if (stlknd.equals("QT")) {
 						// 각강인 경우는 1회 작업 수량으로 배드를 나눈다.
+						// bedChged == false && ((ii == Integer.parseInt(rPcnt)) || (ii == (Integer.parseInt(maxSeq) - 1)))
 						if (
 							bedChged == false &&
 							(ii == Integer.parseInt(rPcnt)) || (ii == (Integer.parseInt(maxSeq) - 1))
@@ -3586,6 +3589,107 @@ public class YsTotYsJspSeEJBBean extends BaseSessionBean implements YsQueryIF, Y
 //					// ------------------------------------------------------------------------------------------------------
 					commDao.update(jrParam, "com.inisteel.cim.ys.common.dao.YsCommDAO.updPrepMtlDelYBySstlNo", logId, methodNm, "준비재료 삭제");
 					
+					commDao.update(jrParam, "com.inisteel.cim.ys.common.dao.YsCommDAO.updPrepSchDelYBySstlNo", logId, methodNm, "준비스케줄 삭제");
+				}
+			}
+			*/
+			// 루프문 애러로 인한 수정 <--
+
+			/*
+			 * 루프문 수정 후
+			 *  - 각강과 봉강의 배드 변경 기준이 달라서 if문으로 나누어 처리
+			 *  - maxSeq는 현재 배드에 이미 적재된 seq 수 기준으로 판단해 다음 row부터 bed 변경
+			 *  - 기존에는 체크된 row가 maxSeq보다 많을 경우 배드 변경이 안되는 이슈가 있었음
+			 *  - maxSeq는 9로 고정되어 있지만, 향후 배드당 seq 수가 변경될 경우를 대비해 수정
+			 *  
+			 *  - GH01A101071
+			 *  	야드 맵 삭제와 준비재료 삭제는 체크된 row마다 처리해야 하는 로직이므로 루프문 안으로 이동
+			 *  	기존에는 루프문 밖에서 한번만 실행되어 체크된 row가 여러개일 경우 나머지 row들은 야드 맵과 준비재료가 삭제되지 않는 이슈가 있었음
+			 *  
+			 *  - GH01A101071
+			 *  	야드 맵 삭제를 updStrLocReg 메소드로 통합하여 관리하도록 수정
+			 *  	기존에는 야드 맵 삭제 로직이 별도로 존재하여 유지보수성이 떨어지는 이슈가 있었음
+			 *
+			*/
+			for (int ii = 0; ii < rowCnt; ii++) {
+				if ("1".equals(commUtils.getValue(gdReq, "CHECK", ii))) {
+					commUtils.printLog(logId, methodNm, "SSTL_NO:" + commUtils.getValue(gdReq, "SSTL_NO", ii));
+					commUtils.printLog(logId, methodNm, "YS_STK_COL_GP:" + commUtils.getValue(gdReq, "YS_STK_COL_GP", ii));
+
+					if (sstlNo.isEmpty()) {
+						sstlNo = commUtils.getValue(gdReq, "SSTL_NO", ii);
+					}
+
+					if (stlknd.equals("QT")) {
+						// maxSeq는 현재 배드에 이미 적재된 seq 수 기준으로 판단해 다음 row부터 bed 변경
+						if (
+							bedChged == false &&
+							(ii == Integer.parseInt(rPcnt) || tmpSeq == Integer.parseInt(maxSeq))
+						) {
+							bedChged = true;
+							tmpBed = "02";
+							tmpSeq = 0;
+						}
+					} else if (stlknd.equals("RR")) {
+						if (
+							bedChged == false &&
+							(ii >= (Integer.parseInt(rMcnt) / 2) || tmpSeq == Integer.parseInt(maxSeq))
+						) {
+							bedChged = true;
+							tmpBed = "02";
+							tmpSeq = 0;
+						}
+					}
+
+					tmpSeq += 1;
+
+					commUtils.printLog(logId, methodNm, "tmpSeq:" + tmpSeq + ",tmpBed:" + tmpBed);
+
+//					// ------------------------------------------------------------------------------------------------------
+//					// CARSCH MTL 추가
+//					// ------------------------------------------------------------------------------------------------------
+					// 이송작업재료등록
+					jrParam.setField("YS_STK_BED_NO", tmpBed);
+					jrParam.setField("YS_STK_LYR_NO", "01");
+					jrParam.setField("YS_STK_SEQ_NO", String.valueOf(tmpSeq));
+					jrParam.setField("YD_CAR_SCH_ID", ydCarSchId);
+					jrParam.setField("MODIFIE", commUtils.trim(gdReq.getParam("userid")));
+					jrParam.setField("SSTL_NO", commUtils.getValue(gdReq, "SSTL_NO", ii));
+
+					commDao.insert(jrParam, updCarFtMvMtl, logId, methodNm, "이송작업재료등록");
+
+					// GH01A101071
+//					// ------------------------------------------------------------------------------------------------------
+//					// 야드 맵 삭제
+//					// ------------------------------------------------------------------------------------------------------
+					GridData inParam = new GridData();
+					inParam.addParam("YD_GP", szYD_GP);
+					inParam.addParam("userid", commUtils.trim(gdReq.getParam("userid")));
+					inParam.addParam("SSTL_NO", "");
+					inParam.addParam("YS_STK_COL_GP", commUtils.getValue(gdReq, "YS_STK_COL_GP", ii).substring(0, 6));
+					inParam.addParam("YS_STK_BED_NO", commUtils.getValue(gdReq, "YS_STK_COL_GP", ii).substring(6, 8));
+					inParam.addParam("YS_STK_LYR_NO", commUtils.getValue(gdReq, "YS_STK_COL_GP", ii).substring(8, 10));
+					inParam.addParam("YS_STK_SEQ_NO", commUtils.getValue(gdReq, "YS_STK_COL_GP", ii).substring(10, 11));
+					inParam.addParam("OLD_SSTL_NO", commUtils.getValue(gdReq, "SSTL_NO", ii));
+					inParam.addParam("OLD_YS_STK_COL_GP", "");
+					inParam.addParam("OLD_YS_STK_BED_NO", "");
+					inParam.addParam("OLD_YS_STK_LYR_NO", "");
+					inParam.addParam("OLD_YS_STK_SEQ_NO", "");
+					inParam.addParam("FROM_SSTL_NO", "");
+					inParam.addParam("FROM_YS_STK_COL_GP", "");
+					inParam.addParam("FROM_YS_STK_BED_NO", "");
+					inParam.addParam("FROM_YS_STK_LYR_NO", "");
+					inParam.addParam("FROM_YS_STK_SEQ_NO", "");
+
+					commUtils.printParam("inParam", commUtils.gridDataTojdtoRecord(inParam));
+
+					updStrLocReg(inParam);
+
+//					// ------------------------------------------------------------------------------------------------------
+//					// 준비재료 삭제
+//					// ------------------------------------------------------------------------------------------------------
+					commDao.update(jrParam, "com.inisteel.cim.ys.common.dao.YsCommDAO.updPrepMtlDelYBySstlNo", logId, methodNm, "준비재료 삭제");
+
 					commDao.update(jrParam, "com.inisteel.cim.ys.common.dao.YsCommDAO.updPrepSchDelYBySstlNo", logId, methodNm, "준비스케줄 삭제");
 				}
 			}
